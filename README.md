@@ -8,6 +8,8 @@ Developed as part of UC Berkeley EECS 116/216, Fall 2026, Project 3.
 
 **Status:** the unchanged official KLT + IMU baseline is built and evaluated locally: **10/10 public episodes**, mean Sim(3) ATE **2.041635 m**, maximum fuel/frame **141,910,846**. See [baseline evidence](experiments/baseline-klt-imu/README.md). No held-out result or course submission is claimed.
 
+**Experiment branch:** `experiment/perspective-map` starts from tag `baseline-klt-imu-v1`. Read the [perspective and sparse-map design](docs/perspective-map.md). The map algorithm is planned; the executable estimator remains the unchanged baseline.
+
 ## Start here
 
 1. Read [project requirements](docs/requirements.md) and the [original course materials](docs/course/README.md).

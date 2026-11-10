@@ -24,8 +24,10 @@ Read `README.md`, `docs/requirements.md`, `docs/setup.md`, and
 
 ## Next development step
 
-Freeze this baseline before creating `experiment/perspective-map`. Design a
-bounded, causal landmark map and reprojection/PnP correction. Preserve source,
+Baseline commit `8ea22f52b2083ee53d75b9419651c2505f949a67` is tagged
+`baseline-klt-imu-v1`. This branch is `experiment/perspective-map`; its design is
+in `docs/perspective-map.md`. The estimator is still unchanged. Implement and
+validate the bounded, causal landmark map incrementally. Preserve source,
 runner, runtime, input selection and limits for comparisons. Distinguish planned
 architecture from implemented and measured behavior.
 
