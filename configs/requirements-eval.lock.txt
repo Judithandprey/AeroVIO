@@ -1,0 +1,9 @@
+# WSL Linux host packages observed on 2026-11-10. Install the pinned viobench checkout separately.
+conta==0.0.7
+hyperdrone==0.1.10
+hyperlux==0.1.10
+nanobind==3.1.0
+numpy==2.5.4
+opencv-python-headless==5.0.0.93
+PyYAML==6.0.3
+wasmtime==50.0.1

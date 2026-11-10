@@ -6,13 +6,13 @@ A project exploring the accuracy-compute trade-off in visual-inertial odometry: 
 
 Developed as part of UC Berkeley EECS 116/216, Fall 2026, Project 3.
 
-**Status:** project requirements, course sources, and development structure are initialized. No estimator, built WebAssembly module, training run, or evaluation result has been produced yet.
+**Status:** the unchanged official KLT + IMU baseline is built and evaluated locally: **10/10 public episodes**, mean Sim(3) ATE **2.041635 m**, maximum fuel/frame **141,910,846**. See [baseline evidence](experiments/baseline-klt-imu/README.md). No held-out result or course submission is claimed.
 
 ## Start here
 
 1. Read [project requirements](docs/requirements.md) and the [original course materials](docs/course/README.md).
 2. Follow [development setup](docs/setup.md) on Linux, macOS, or WSL2.
-3. Record the first reproducible baseline in [experiments](experiments/README.md).
+3. Review the [measured baseline](experiments/baseline-klt-imu/README.md) before changing the estimator.
 4. Use [HANDOFF.md](HANDOFF.md) to resume work.
 
 ## First-stage checkpoint
@@ -37,7 +37,7 @@ upstream.lock.json  Reviewed viobench revision and documentation reference
 HANDOFF.md          Current state and next steps
 ```
 
-Setup will create a tracked-code workspace at `workspace/`, an ignored upstream checkout at `external/viobench/`, and ignored output folders such as `artifacts/` and `results/`.
+`workspace/` contains the unchanged upstream estimator and runtime build recipes. `scripts/evaluate_public.py` records reproducible runs using `configs/`. The upstream checkout (`external/viobench/`), build products, `artifacts/`, and raw `results/` remain ignored.
 
 ## References
 

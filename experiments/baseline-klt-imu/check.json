@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "-u",
+    "-m",
+    "viobench",
+    "check",
+    "/root/projects/AeroVIO/artifacts/klt_imu.wasm",
+    "--frames",
+    "20",
+    "--logs",
+    "/root/projects/AeroVIO/logs/smoke"
+  ],
+  "exit_code": 0,
+  "frames": 20,
+  "wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237"
+}

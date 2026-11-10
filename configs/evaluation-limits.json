@@ -1,0 +1,8 @@
+{
+  "init_fuel": 200000000000,
+  "step_fuel": 20000000000,
+  "memory_bytes": 2147483648,
+  "table_elements": 1048576,
+  "init_wall_seconds": 300,
+  "step_wall_seconds": 60
+}

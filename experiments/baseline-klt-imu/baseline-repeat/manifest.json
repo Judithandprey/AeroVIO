@@ -1,0 +1,61 @@
+{
+  "started_utc": "2026-11-10T10:09:59.961971+00:00",
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "-u",
+    "-m",
+    "viobench",
+    "evaluate",
+    "/root/projects/AeroVIO/artifacts/klt_imu.wasm",
+    "conta:0386e5c941b50fe9972ddabff84c414540fb8989",
+    "--limits",
+    "/root/projects/AeroVIO/configs/evaluation-limits.json"
+  ],
+  "working_directory": "/root/projects/AeroVIO/results/baseline-repeat",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "solution_sha256": "e6206f62128469ce1e9cf814f32b985219ca8a8f38de60d2b7ec8f3ce486b1d7",
+  "wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237",
+  "wasm_bytes": 50029824,
+  "limits_sha256": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+  "selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "episodes": [
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0000.zip",
+      "hash": "0386e5c941b50fe9972ddabff84c414540fb8989"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "wasmtime": "50.0.1",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "conta": "0.0.7",
+    "viobench": "0.0.1"
+  },
+  "baseline_source_verified": true,
+  "evidence_scope": "Local public-set evaluation only; server limits and held-out performance unverified.",
+  "finished_utc": "2026-11-10T10:10:09.040150+00:00",
+  "exit_code": 0,
+  "report_sha256": "1a92189a50feff84d86c0acbd869fa6dfe7620807b16b29b472f8ae3dadf1406",
+  "summary": {
+    "episodes": 1,
+    "completed": 1,
+    "duration_s_median": 59.949999999999996,
+    "sim3_ate_rmse_mean": 2.0992349930420335,
+    "rpe_translation_rmse_median": 20.78782700074638,
+    "rpe_rotation_rmse_median": 0.019153981617823234,
+    "ate_rmse_median": 450.6132738260891,
+    "rotation_rmse_median": 0.47088456014758556,
+    "velocity_rmse_median": 21.399867200362166,
+    "angular_velocity_rmse_median": 0.12237734727170703,
+    "frames_attempted": 1200,
+    "fuel_per_frame_max": 96767831,
+    "fuel_per_frame_mean": 58702180.946666665,
+    "fuel_per_frame_median": 56638357.0,
+    "fuel_per_frame_p95": 77246748.2,
+    "fuel_per_frame_p99": 83944778.88,
+    "fuel_total": 70442617136,
+    "wall_per_frame_median_ms": 3.0810453463345766
+  }
+}

@@ -1,6 +1,6 @@
 # Experiment records
 
-No experiments have been run yet.
+The [official KLT + IMU baseline](baseline-klt-imu/README.md) has been built and evaluated on all ten public episodes. Its source, build provenance, reports, and one-episode repeatability check are preserved in `baseline-klt-imu/`.
 
 Use one Markdown file per experiment, for example `001-baseline.md`. Keep large raw reports in ignored `results/`, and record their location and hashes here. Commit compact metrics only after inspecting them for credentials or private data.
 

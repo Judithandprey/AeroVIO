@@ -1,0 +1,73 @@
+{
+ "solution": "/root/projects/AeroVIO/artifacts/klt_imu.wasm",
+ "solution_bytes": 50029824,
+ "wasmtime": "50.0.1",
+ "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+ "limits": {
+  "init_fuel": 200000000000,
+  "step_fuel": 20000000000,
+  "memory_bytes": 2147483648,
+  "table_elements": 1048576,
+  "init_wall_seconds": 300.0,
+  "step_wall_seconds": 60.0
+ },
+ "elapsed_s": 8.771819415036589,
+ "summary": {
+  "episodes": 1,
+  "completed": 1,
+  "duration_s_median": 59.949999999999996,
+  "sim3_ate_rmse_mean": 2.0992349930420335,
+  "rpe_translation_rmse_median": 20.78782700074638,
+  "rpe_rotation_rmse_median": 0.019153981617823234,
+  "ate_rmse_median": 450.6132738260891,
+  "rotation_rmse_median": 0.47088456014758556,
+  "velocity_rmse_median": 21.399867200362166,
+  "angular_velocity_rmse_median": 0.12237734727170703,
+  "frames_attempted": 1200,
+  "fuel_per_frame_max": 96767831,
+  "fuel_per_frame_mean": 58702180.946666665,
+  "fuel_per_frame_median": 56638357.0,
+  "fuel_per_frame_p95": 77246748.2,
+  "fuel_per_frame_p99": 83944778.88,
+  "fuel_total": 70442617136,
+  "wall_per_frame_median_ms": 3.0810453463345766
+ },
+ "episodes": [
+  {
+   "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+   "frames": 1200,
+   "frames_attempted": 1200,
+   "duration_s": 59.949999999999996,
+   "completed": true,
+   "failure": null,
+   "fuel_init": 711936155,
+   "fuel_per_frame_max": 96767831,
+   "fuel_per_frame_median": 56638357.0,
+   "fuel_per_frame_p95": 77246748.2,
+   "fuel_per_frame_p99": 83944778.88,
+   "fuel_per_frame_mean": 58702180.946666665,
+   "fuel_total": 70442617136,
+   "wall_init_s": 0.001199610996991396,
+   "wall_per_frame_median_ms": 3.0810453463345766,
+   "wall_per_frame_p95_ms": 4.632753133773804,
+   "metrics": {
+    "frames": 1200,
+    "filled_frames": 0,
+    "rpe_translation_rmse": 20.78782700074638,
+    "rpe_rotation_rmse": 0.019153981617823234,
+    "rpe_pairs": 1180,
+    "ate_rmse": 450.6132738260891,
+    "rotation_rmse": 0.47088456014758556,
+    "rotation_max": 0.7055585409227667,
+    "velocity_rmse": 21.399867200362166,
+    "angular_velocity_rmse": 0.12237734727170703,
+    "sim3_scale": 0.012924927852300542,
+    "sim3_ate_rmse": 2.0992349930420335,
+    "distance_travelled": 19.27355608046622,
+    "final_drift": 857.841960228937,
+    "drift_per_metre": 44.50875368548937
+   },
+   "stderr_tail": ""
+  }
+ ]
+}

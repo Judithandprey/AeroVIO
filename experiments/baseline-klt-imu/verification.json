@@ -1,0 +1,16 @@
+{
+  "upstream_workspace_embedded_source_identical": true,
+  "first_episode_hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+  "first_episode_metrics_exact_match": true,
+  "first_episode_per_frame_fuel_exact_match": true,
+  "first_episode_estimate_tum_byte_match": true,
+  "first_episode_twist_byte_match": true,
+  "repeated_episodes": 1,
+  "full_public_set_repeated": false,
+  "full_public_completed": 10,
+  "full_public_frames_attempted": 12000,
+  "full_public_filled_frames": 0,
+  "evidence_overwrite_guard_passed": true,
+  "runtime_recipe_files_match_upstream": true,
+  "whitespace_check": "Passed excluding unchanged upstream unified .patch files, whose blank context lines require a leading space."
+}

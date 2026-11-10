@@ -1,0 +1,18 @@
+{
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4",
+  "cc": "cc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+  "cmake": "cmake version 4.2.3",
+  "wasi_sdk": "clang version 23.1.0-wasi-sdk (https://github.com/llvm/llvm-project 895aa2c896ada719451be2e3673c83da8ddf1141)",
+  "runtime_build_wasmtime": "wasmtime 50.0.0 (ebe5e8df1 2026-10-20)",
+  "guest_cpython": "3.14.4",
+  "guest_numpy": "2.3.4",
+  "guest_opencv": "4.12.0",
+  "runtime_wasm_sha256": "9d889ab05cd22059913d3ac2ec34aecd9f442865c1341da416730e95add49535",
+  "solution_wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237",
+  "solution_wasm_bytes": 50029824,
+  "upstream_source_unchanged": true,
+  "generated_runtime_recipes_unchanged": true,
+  "build_and_bundle_exit_code": 0,
+  "runtime_smoke": "cv2 4.12.0 numpy 2.3.4; ORB, tracking, essential-matrix pipeline passed during upstream build."
+}
