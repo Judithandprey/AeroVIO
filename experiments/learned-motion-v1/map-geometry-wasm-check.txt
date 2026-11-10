@@ -1,0 +1,25 @@
+module: frames (240, 320, 3)
+init: fuel 816,284,918 wall 15 ms
+step 0: fuel     26,760,241 wall     2.90 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 1: fuel    152,722,662 wall     6.69 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 2: fuel     60,832,777 wall     2.84 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 3: fuel     60,105,561 wall     3.41 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 4: fuel    149,265,593 wall     9.68 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 5: fuel     82,113,893 wall     6.26 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 6: fuel    152,620,680 wall     6.93 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 7: fuel     63,065,045 wall     3.02 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 8: fuel     53,903,559 wall     2.89 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 9: fuel    149,621,039 wall     6.85 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 10: fuel     94,094,249 wall     5.54 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 11: fuel    149,819,133 wall     7.06 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 12: fuel     66,440,432 wall     3.82 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 13: fuel     58,364,771 wall     3.12 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 14: fuel    150,542,899 wall     7.03 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 15: fuel     98,370,317 wall     5.32 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 16: fuel    151,458,398 wall     6.86 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 17: fuel     54,446,968 wall     2.68 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 18: fuel     54,703,171 wall     2.94 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+step 19: fuel    151,923,037 wall     6.78 ms pose [0. 0. 0. 0. 0. 0. 1.] twist [0. 0. 0. 0. 0. 0.]
+--- stdout (tail) ---
+local_map WASM triangulation/PnP/refinement passed
+check: ok (20 steps)

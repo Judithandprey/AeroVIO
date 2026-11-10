@@ -6,11 +6,13 @@ import argparse
 from datetime import datetime, timezone
 import hashlib
 import importlib.metadata
+import io
 import json
 from pathlib import Path
 import platform
 import subprocess
 import sys
+import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -42,11 +44,17 @@ def main():
     import viobench
     if not Path(viobench.__file__).resolve().is_relative_to(upstream.resolve()):
         parser.error("viobench must be installed from external/viobench")
+    from viobench.tools.abi.module import embedded_bundle
+    from viobench.solution.runtime.python.bundler.embed import strip_bundle
+    wasm_bytes = wasm.read_bytes()
+    with zipfile.ZipFile(io.BytesIO(embedded_bundle(wasm_bytes))) as archive:
+        bundle_files = {name: hashlib.sha256(archive.read(name)).hexdigest() for name in archive.namelist()}
+        embedded_meta = json.loads(archive.read("meta.json")) if "meta.json" in archive.namelist() else None
     source = ROOT / "workspace/solution/solution.py"
     if args.verify_baseline:
         baseline = json.loads((ROOT / "experiments/baseline-klt-imu/source.json").read_text())
-        if sha256(source) != baseline["solution_sha256"]:
-            parser.error("solution.py is no longer the unchanged baseline")
+        if bundle_files.get("solution.py") != baseline["solution_sha256"]:
+            parser.error("embedded solution.py is not the unchanged baseline")
     if run_dir.exists():
         parser.error("run directory already exists; choose a new name to preserve evidence")
     run_dir.mkdir(parents=True)
@@ -55,7 +63,10 @@ def main():
     record = {
         "started_utc": datetime.now(timezone.utc).isoformat(),
         "command": command, "working_directory": str(run_dir),
-        "upstream_commit": revision, "solution_sha256": sha256(source),
+        "upstream_commit": revision, "solution_sha256": bundle_files.get("solution.py"),
+        "workspace_solution_sha256": sha256(source),
+        "bundle_files_sha256": bundle_files, "embedded_model_metadata": embedded_meta,
+        "runtime_sha256": hashlib.sha256(strip_bundle(wasm_bytes)).hexdigest(),
         "wasm_sha256": sha256(wasm), "wasm_bytes": wasm.stat().st_size,
         "limits_sha256": sha256(limits), "selection_sha256": sha256(selection),
         "episodes": episodes, "python": sys.version, "host": platform.platform(),

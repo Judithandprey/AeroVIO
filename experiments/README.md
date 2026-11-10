@@ -1,27 +1,45 @@
 # Experiment records
 
-The [official KLT + IMU baseline](baseline-klt-imu/README.md) has been built and evaluated on all ten public episodes. Its source, build provenance, reports, and one-episode repeatability check are preserved in `baseline-klt-imu/`.
+| Record | Scope |
+| --- | --- |
+| [Official KLT + IMU baseline](baseline-klt-imu/README.md) | Frozen source, initial build/public evaluation, source hashes and one-episode repeat |
+| [Small motion network and geometry ablations](learned-motion-v1/README.md) | Separate training data, pose/warp models, optional map, model snapshots and provenance |
+| [Controlled comparison](learned-motion-v1/comparison.md) | Completed four-way public evaluation with matched runtime, inputs and limits |
 
-Use one Markdown file per experiment, for example `001-baseline.md`. Keep large raw reports in ignored `results/`, and record their location and hashes here. Commit compact metrics only after inspecting them for credentials or private data.
+`baseline-klt-imu-v1` preserves the official reference. The current working
+solution is the pose-only learned model; do not assume a working-tree filename
+identifies an earlier artifact. Evaluation manifests record the source and model
+hashes extracted from each actual WASM payload.
 
-## Template
+Use a directory per experiment. Keep compact reports, configurations, model
+snapshots and provenance together; keep raw trajectories, fuel arrays, training
+checkpoints, data and large logs in ignored output directories. Retain failed
+runs and regressions as evidence. Package each variant with an explicit model
+path and a new artifact name.
+
+## Record template
 
 - **Question / hypothesis:**
-- **Implementation commit:**
-- **viobench commit:**
+- **Implementation commit and source hashes:**
+- **Upstream revision, runtime hash and Wasmtime version:**
 - **Environment / dependency versions:**
 - **Method and configuration:**
-- **Dataset / episode hashes:**
+- **Training/validation scenes, episode identities and split checks:**
+- **Public evaluation episode hashes:**
 - **Evaluation limits and scoring definition:**
-- **Random seeds:**
-- **Exact build, training, and evaluation commands:**
-- **Artifact SHA-256:**
+- **Seeds, initialization, batch order and training schedule:**
+- **Checkpoint selection rule and selected epoch:**
+- **Exact generation, training, packaging and evaluation commands:**
+- **Model and artifact SHA-256:**
 - **Raw report location / SHA-256:**
-- **Sim(3) ATE, aggregation rule, and units:**
-- **Maximum fuel per frame:**
-- **Failures / incomplete episodes:**
-- **Comparison baseline:**
-- **Conclusion supported by these results:**
-- **Next change:**
+- **Sim(3) ATE, aggregation rule and units:**
+- **Maximum fuel per frame and host-specific timing:**
+- **Unaligned ATE, fitted scale, rotation and twist errors:**
+- **Failures / filled frames and per-episode regressions:**
+- **Controlled comparison and repeatability evidence:**
+- **Conclusion supported by the data:**
+- **Unresolved limitations and next change:**
 
-Compare accuracy and compute together. Separate public-set results from held-out server results. Record one controlled change at a time when evaluating its effect.
+Compare accuracy and compute together. A public-set gain does not establish
+held-out or physical-robot performance. Keep checkpoint selection independent
+of public evaluation and isolate one intended change per ablation.

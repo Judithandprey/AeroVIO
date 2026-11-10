@@ -1,0 +1,19 @@
+{
+  "scope": "Source/config hashes at evidence archival after evaluation; not all were recorded at data-generation time",
+  "files": {
+    "configs/motion-experiment-v1.json": "fdf5bb353293370e5b0e86b6da74ff233bd666f16d50b03ea644921df9ceeb5d",
+    "configs/requirements-training.lock.txt": "0a16c9822520e33b3aedafa233649c273c9950e5175f3f0f76e27d802f8a1f23",
+    "configs/training-data-v1.json": "3532ad928e199400600e57b2d22a373fe785ce00d201573f08bd75d6c1a989cf",
+    "scripts/compare_motion_runs.py": "2701ce4d759e458caf915b6c2f59f7c3750bde22826e48b34c588e9cc9b0022e",
+    "scripts/evaluate_public.py": "209ba610a5b9d0885bb7c5069926715d8a3dfdcd3d78e990d5181260c3d94f92",
+    "scripts/generate_training_data.py": "7281e225a657bf012607eee1a09f67239902db2204e08626ff3c3852ba76a2e3",
+    "scripts/package_motion.py": "22e8012e4dbe4dca4d00d4d9d6a5d57ba9398f67c5477303a2aca38496587f69",
+    "scripts/prepare_motion_data.py": "9d945ffdbbe810d22e258b17afaa363cb71259495f729177bb0cb54bb3ad07f8",
+    "scripts/train_motion.py": "807dd18eea6c456531a1e76b807fe90ca5bd0ebbd6f3db7158a778fa3a8492c9",
+    "training/motion_model.py": "fcb1a1c2b41b628d699116b22677a84e42a8a938dc18c463d34ce192292ea704",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "f5f5b393fa46b0e527ad3d09cce3662e39cf23a8956cf25191e2d2559b83781c",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "ab5e668f31d80101a1b6da81982ef634d01c13b9514d00ca2ea5c3cb36bfb75e"
+  }
+}

@@ -17,7 +17,7 @@ Source snapshot: November 9, 2026 (America/Los_Angeles). Course requirements com
 | Reproducibility | Solution must be reproducible; ML training pipelines must be repeatable |
 | Learned methods | Course slides say data generation should be based on HyperDrone |
 
-Coordinate frames, quaternion order, and ABI details must be read from the pinned upstream [TASK](https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/docs/TASK.md) and [ABI](https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/docs/ABI.md) before implementation. Those interfaces have not yet been audited in this repository.
+Coordinate frames, quaternion order, and ABI details must be read from the pinned upstream [TASK](https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/docs/TASK.md) and [ABI](https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/docs/ABI.md) before implementation. The pinned interfaces have been audited and exercised by both the frozen baseline and learned variants. The implemented convention is camera pose relative to the first camera, quaternion `[qx, qy, qz, qw]`, and camera-centre linear/angular velocity in current camera axes. The learned estimator reports a finite-interval mean twist; see [implementation details](learned-motion.md).
 
 ## Latest first-stage update
 
@@ -57,15 +57,17 @@ The main slides mark this schedule **tentative**, with possible metric/dataset c
 
 One absence is permitted across the first two progress presentations, but at least one team member must present. Final presentation attendance is mandatory for all team members.
 
-## First development milestone
+## Verified development milestones (November 10)
 
-- [ ] Audit the pinned task/ABI and select Python or native implementation.
-- [ ] Generate the corresponding upstream workspace.
-- [ ] Bundle a baseline to `.wasm`.
-- [ ] Run `viobench check`.
-- [ ] Evaluate on the public episodes and retain raw reports.
-- [ ] Record commit, upstream revision, configuration, metrics, and artifact hash.
-- [ ] Compare to baselines under matching evaluation limits.
+- [x] Audit the pinned task/ABI and select Python or native implementation.
+- [x] Generate the corresponding upstream workspace.
+- [x] Bundle a baseline to `.wasm`.
+- [x] Run `viobench check`.
+- [x] Evaluate on the public episodes and retain raw reports.
+- [x] Record commit, upstream revision, configuration, metrics, and artifact hash.
+- [x] Compare to baselines under matching evaluation limits.
 - [ ] Verify current server rules and remaining quota before a separately authorized submission.
+
+The learned extension has completed supervised and warping-constrained training on separately generated, scene-disjoint HyperDrone splits. Both models and the optional map variant have been packaged, checked and compared on the public set; see the [experiment record](../experiments/learned-motion-v1/README.md) and [comparison](../experiments/learned-motion-v1/comparison.md). Training depth and reference poses are labels only and are excluded from inference.
 
 Building, local checking, public-set evaluation, server upload, and held-out scoring are separate milestones.

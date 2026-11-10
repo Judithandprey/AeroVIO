@@ -1,0 +1,12 @@
+0386e5c941b50fe9972ddabff84c414540fb8989: ok Sim(3) ATE 2.099 m  RPE 20.788 m/1 s  ATE 450.613 m  rot 27.0 deg  vel 21.400 m/s  filled 0  fuel/frame max 96,767,831 (p95 77,246,748)  wall/frame 3.2 ms
+9b6a92791e46815931b6d6f20e74ca9ebf62682e: ok Sim(3) ATE 1.914 m  RPE 29.350 m/1 s  ATE 692.833 m  rot 62.6 deg  vel 29.670 m/s  filled 0  fuel/frame max 128,921,610 (p95 85,053,953)  wall/frame 3.2 ms
+6e8e3766f46272c1b91eca39c320081251884947: ok Sim(3) ATE 2.500 m  RPE 2.125 m/1 s  ATE 27.495 m  rot 28.0 deg  vel 2.296 m/s  filled 0  fuel/frame max 112,516,201 (p95 84,727,967)  wall/frame 3.4 ms
+f8fb89fff0c39d51e0f073603ef93b9a2ee00455: ok Sim(3) ATE 1.929 m  RPE 2.080 m/1 s  ATE 37.573 m  rot 8.3 deg  vel 2.184 m/s  filled 0  fuel/frame max 110,577,010 (p95 85,091,155)  wall/frame 3.1 ms
+489ad518363d88bfa877f86afea144de0d846258: ok Sim(3) ATE 1.074 m  RPE 8.954 m/1 s  ATE 149.903 m  rot 22.2 deg  vel 9.197 m/s  filled 0  fuel/frame max 92,238,317 (p95 77,541,586)  wall/frame 3.0 ms
+51ea6311a50f4eeb59672012b9796244dab52f60: ok Sim(3) ATE 2.331 m  RPE 0.941 m/1 s  ATE 20.802 m  rot 8.1 deg  vel 1.018 m/s  filled 0  fuel/frame max 128,219,402 (p95 98,847,802)  wall/frame 3.6 ms
+60ed4323f3aab9c83a854f30062cb4ffbefeac12: ok Sim(3) ATE 2.198 m  RPE 3.281 m/1 s  ATE 47.523 m  rot 6.7 deg  vel 3.409 m/s  filled 0  fuel/frame max 141,910,846 (p95 90,354,758)  wall/frame 3.0 ms
+8fff5c8dc6376171fc6f865fd214cee44df2b7c3: ok Sim(3) ATE 2.156 m  RPE 1.376 m/1 s  ATE 18.047 m  rot 7.0 deg  vel 1.499 m/s  filled 0  fuel/frame max 107,702,849 (p95 81,106,859)  wall/frame 3.5 ms
+41e11443a9a5cc165ef9aeeaef11dba63614685b: ok Sim(3) ATE 2.620 m  RPE 1.755 m/1 s  ATE 36.894 m  rot 6.8 deg  vel 1.922 m/s  filled 0  fuel/frame max 109,326,087 (p95 85,108,137)  wall/frame 3.6 ms
+8321da1faa306e72df46f86a72aa3fa0d611c6d9: ok Sim(3) ATE 1.596 m  RPE 2.636 m/1 s  ATE 45.285 m  rot 18.2 deg  vel 2.817 m/s  filled 0  fuel/frame max 96,744,104 (p95 84,393,202)  wall/frame 3.7 ms
+report: /root/projects/AeroVIO/results/baseline-comparison-v1/report-klt_imu/report.json
+summary: 10/10 episodes completed, Sim(3) ATE mean 2.042 m, fuel/frame max 141,910,846 (mean 60,274,323, median 58,192,154, p95 84,760,422, p99 98,694,785)

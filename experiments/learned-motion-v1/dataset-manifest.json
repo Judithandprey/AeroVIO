@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "seed": 271828,
+  "train": [
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828",
+      "scene": "ProcTHOR-Train-2",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828/depth_64x48.npy",
+      "seed": 271828,
+      "frames": 200,
+      "archive_sha256": "1b548e9e8833a989f9bbe5d525e66bd2d82107206a405a03c631ed56b8a62313",
+      "depth_sha256": "354af2c4147a6f504b670471247a5f0c657a384053da132503298f229ba4f095",
+      "camera_fov_degrees": 116.563797,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829",
+      "scene": "ProcTHOR-Train-2",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829/depth_64x48.npy",
+      "seed": 271829,
+      "frames": 200,
+      "archive_sha256": "510daca7097665a4216a36b99488b1af2e7a59957cb020fcd9e55cf62284f69c",
+      "depth_sha256": "4617f9fbc937b4b7e116d48a0cf68e09572ea82f296c0ea2f145865e8cbdb130",
+      "camera_fov_degrees": 128.182831,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830",
+      "scene": "ProcTHOR-Train-2",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830/depth_64x48.npy",
+      "seed": 271830,
+      "frames": 200,
+      "archive_sha256": "3e5c874c1ad4e9cc834b8fd8aba429977839b45138a266e7096c8ad24fb19ff7",
+      "depth_sha256": "7375bee97e7224dda6e7d876e8bf7c129f4cdcb42fef1ad2530608e517d39335",
+      "camera_fov_degrees": 117.617149,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831",
+      "scene": "ProcTHOR-Train-2",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831/depth_64x48.npy",
+      "seed": 271831,
+      "frames": 200,
+      "archive_sha256": "f1f085aeb54d2c911cc84a9ddd2471397d6c242cecacf843208e8ca02fe0afd3",
+      "depth_sha256": "ea2affd85e9662a8a61c582a293461bebd3031dde55c66162631071eb1a392b6",
+      "camera_fov_degrees": 121.233704,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832",
+      "scene": "ProcTHOR-Train-3",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832/depth_64x48.npy",
+      "seed": 271832,
+      "frames": 200,
+      "archive_sha256": "0193db3d026f54a25b155b7cd12950fc5758536b51cc8ebcd7c28e0dbd8a7706",
+      "depth_sha256": "b43f4241f358d9b17285be5b1cd4db8b144ab015d68bfedd85e3608a61562bcd",
+      "camera_fov_degrees": 133.698441,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833",
+      "scene": "ProcTHOR-Train-3",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833/depth_64x48.npy",
+      "seed": 271833,
+      "frames": 200,
+      "archive_sha256": "d149e47d2ac419fe7fe7bc4569f5c863f0010a2364c7447c3db4c781548b9145",
+      "depth_sha256": "e22141d1e3203f3c831218f69ea773a687c250ba9d9a7d0725430b2fb288a276",
+      "camera_fov_degrees": 130.111191,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834",
+      "scene": "ProcTHOR-Train-3",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834/depth_64x48.npy",
+      "seed": 271834,
+      "frames": 200,
+      "archive_sha256": "c401975bf403d7cf4ffd3b3fae6dc3851c250f8ad029bc89dd25404ea2aea50b",
+      "depth_sha256": "0bb9a4fdb43213891e2a48eb571496d30bda5d84498666f4b9a8876d5e45901c",
+      "camera_fov_degrees": 127.994972,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835",
+      "scene": "ProcTHOR-Train-3",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835/depth_64x48.npy",
+      "seed": 271835,
+      "frames": 200,
+      "archive_sha256": "e9e687495ef11af2cb025ffb4c107af36a72c6db60a3bd6bad5d9273e61c98f0",
+      "depth_sha256": "4e2e1bf3a5bceb7eb4eb966f3ca4dfd725a7e1baf5c52f9150df39cbf12c8558",
+      "camera_fov_degrees": 105.544373,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836",
+      "scene": "ProcTHOR-Train-4",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836/depth_64x48.npy",
+      "seed": 271836,
+      "frames": 200,
+      "archive_sha256": "ae7b1708c0724f7ff537cf89e2cdbbe92a04bb9109778dd75f70c59037c1f2c9",
+      "depth_sha256": "baf38d93dc21e39faedfbf1012e5bffa24549800061e0ecca71b07163303a09b",
+      "camera_fov_degrees": 123.285057,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837",
+      "scene": "ProcTHOR-Train-4",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837/depth_64x48.npy",
+      "seed": 271837,
+      "frames": 200,
+      "archive_sha256": "5c0a23dab792a0be546cc287aacf78448f3ab215b7b4828ae187ee2954bcb7c5",
+      "depth_sha256": "1687dd816a66d54f7ffece669a6006eff81b38170defa3d3b897eaf1aa0fce44",
+      "camera_fov_degrees": 118.196106,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838",
+      "scene": "ProcTHOR-Train-4",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838/depth_64x48.npy",
+      "seed": 271838,
+      "frames": 200,
+      "archive_sha256": "5728a9c8fbc31d19357a435adde0a013e26961012b50ed52532ee1b7db64d97e",
+      "depth_sha256": "565e8660881ef1a6528eb5ad80139b8cbf03a1f8d56a3b575cfd5113b5ee9919",
+      "camera_fov_degrees": 118.063072,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839",
+      "scene": "ProcTHOR-Train-4",
+      "depth_path": "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839/depth_64x48.npy",
+      "seed": 271839,
+      "frames": 200,
+      "archive_sha256": "c139b34ef18fa24fbda616249bf12945da61256f1f93028a8efa9162e7e65b85",
+      "depth_sha256": "2add25be8f62bea5105c19909e813df1e38b257ffd0ad30ed9a314a003d46f82",
+      "camera_fov_degrees": 134.035202,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    }
+  ],
+  "validation": [
+    {
+      "path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840",
+      "scene": "ProcTHOR-Train-5",
+      "depth_path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840/depth_64x48.npy",
+      "seed": 271840,
+      "frames": 200,
+      "archive_sha256": "636bd4731b9ebdd856ba76871274c3d5a2d9a6e9f51d249e6e1e5e0ed8e06013",
+      "depth_sha256": "f4bb950837384944b3ee3358e07eb8e1de4993d46732fce60ecea900d68f23f1",
+      "camera_fov_degrees": 107.243729,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841",
+      "scene": "ProcTHOR-Train-5",
+      "depth_path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841/depth_64x48.npy",
+      "seed": 271841,
+      "frames": 200,
+      "archive_sha256": "84f8328139c72e9628a94373c3caa1c12896a8effd89ac1953827756f78ad19d",
+      "depth_sha256": "8eb5c52b046bbe56fe94da556291eb8350eab2f256561b4c60125dcd8abacfb3",
+      "camera_fov_degrees": 121.452209,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+      "scene": "ProcTHOR-Train-6",
+      "depth_path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842/depth_64x48.npy",
+      "seed": 271842,
+      "frames": 200,
+      "archive_sha256": "e47c3b925a20c049686b542c8435f129dc82d1ea6cc6e638175d7a3f2d6c0da6",
+      "depth_sha256": "5385c032573ab1df43ee0d5e6536c9a1d491ae556b80c4754b041265250b2fb9",
+      "camera_fov_degrees": 132.111053,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843",
+      "scene": "ProcTHOR-Train-6",
+      "depth_path": "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843/depth_64x48.npy",
+      "seed": 271843,
+      "frames": 200,
+      "archive_sha256": "5ae40c894abdce7b541d46167519892840db1255cc67f5acd235d48547dd97b3",
+      "depth_sha256": "a8e3681e2b1ea5754e790dfc20a2f849796376bfb835d8b2fd23e416552cca27",
+      "camera_fov_degrees": 109.082253,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    }
+  ],
+  "created_utc": "2026-11-10T11:47:24.014062+00:00",
+  "status": "complete",
+  "generator_sha256": "7281e225a657bf012607eee1a09f67239902db2204e08626ff3c3852ba76a2e3",
+  "config_sha256": "3532ad928e199400600e57b2d22a373fe785ce00d201573f08bd75d6c1a989cf",
+  "world_header_sha256": "b293bfec235d464bdf71fa0023c614b490c189c4f6dd9673d99f619eb6573067",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "hyperdrone": "0.1.10",
+    "hyperlux": "0.1.10",
+    "viobench": "0.0.1"
+  },
+  "depth": {
+    "kind": "camera_z_metres",
+    "shape_per_frame": [
+      48,
+      64
+    ],
+    "invalid_value": 0,
+    "sample_source": "640x480 RGB-aligned depth",
+    "sample_x": "floor((u+0.5)*10)",
+    "sample_y": "floor((v+0.5)*10)",
+    "pixel_centre_note": "Nearest source pixel is +0.5 source pixels from ideal resized pixel centre (= +0.05 small-image pixels). No depth averaging across surfaces.",
+    "valid_range_m": [
+      0,
+      100
+    ]
+  },
+  "training_only_ground_truth": true,
+  "public_evaluation_scene_excluded": "ProcTHOR-Train-1",
+  "attempts": [
+    {
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271828,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 24.45305202715099
+    },
+    {
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271829,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 23.58668146422133
+    },
+    {
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271830,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 25.362608388997614
+    },
+    {
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271831,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 23.242152392398566
+    },
+    {
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271832,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 29.619420937728137
+    },
+    {
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271833,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 19.751563193742186
+    },
+    {
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271834,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 25.566847297828645
+    },
+    {
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271835,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 25.60327457776293
+    },
+    {
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271836,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 35.620870447251946
+    },
+    {
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271837,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 30.131699949968606
+    },
+    {
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271838,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 32.84911434119567
+    },
+    {
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271839,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 36.88687783572823
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 271840,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 22.905633514747024
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 271841,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 21.691603356041014
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 271842,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 30.329750497825444
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 271843,
+      "crashed": false,
+      "frames": 200,
+      "elapsed_s": 31.82693739887327
+    }
+  ],
+  "finished_utc": "2026-11-10T11:56:01.660297+00:00"
+}

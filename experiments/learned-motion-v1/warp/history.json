@@ -1,0 +1,402 @@
+[
+  {
+    "epoch": 1,
+    "train_objective": 0.35428265675627807,
+    "pose_loss": 0.3285336479469759,
+    "photo_loss": 0.004512249772909598,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011251634875884736,
+    "rotation_residual_rmse_rad": 0.0021149471290719526,
+    "elapsed_s": 0.3222039109095931
+  },
+  {
+    "epoch": 2,
+    "train_objective": 0.312029162942864,
+    "pose_loss": 0.3204400239877365,
+    "photo_loss": 0.0046026143198598865,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01164662529131308,
+    "rotation_residual_rmse_rad": 0.0020637348283779936,
+    "elapsed_s": 0.30238763615489006
+  },
+  {
+    "epoch": 3,
+    "train_objective": 0.28347563633767003,
+    "pose_loss": 0.28433636804321905,
+    "photo_loss": 0.0044744126217898415,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011032257182954773,
+    "rotation_residual_rmse_rad": 0.0018887505587062963,
+    "elapsed_s": 0.26726528629660606
+  },
+  {
+    "epoch": 4,
+    "train_objective": 0.2660265376719598,
+    "pose_loss": 0.2713449449095894,
+    "photo_loss": 0.0044950902597725995,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011034798965700077,
+    "rotation_residual_rmse_rad": 0.00184411849612468,
+    "elapsed_s": 0.2867984031327069
+  },
+  {
+    "epoch": 5,
+    "train_objective": 0.25472036780324614,
+    "pose_loss": 0.28379023764001665,
+    "photo_loss": 0.004591080952136211,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011517052512753242,
+    "rotation_residual_rmse_rad": 0.0018562256829736136,
+    "elapsed_s": 0.2641546740196645
+  },
+  {
+    "epoch": 6,
+    "train_objective": 0.25000744079624987,
+    "pose_loss": 0.2724417883846628,
+    "photo_loss": 0.004548746013742446,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011430760514933937,
+    "rotation_residual_rmse_rad": 0.0018297875879785676,
+    "elapsed_s": 0.28559151012450457
+  },
+  {
+    "epoch": 7,
+    "train_objective": 0.24543113275189296,
+    "pose_loss": 0.2714636373759514,
+    "photo_loss": 0.004552822061650567,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01130617029307792,
+    "rotation_residual_rmse_rad": 0.0018354533997819741,
+    "elapsed_s": 0.29758548084646463
+  },
+  {
+    "epoch": 8,
+    "train_objective": 0.2412719015450134,
+    "pose_loss": 0.27159745279868047,
+    "photo_loss": 0.004589282118963387,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011233907269657607,
+    "rotation_residual_rmse_rad": 0.0018217689123280387,
+    "elapsed_s": 0.264639793895185
+  },
+  {
+    "epoch": 9,
+    "train_objective": 0.23782079770437237,
+    "pose_loss": 0.27934787665779265,
+    "photo_loss": 0.004614879325706156,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011419392486322122,
+    "rotation_residual_rmse_rad": 0.0018710430507586863,
+    "elapsed_s": 0.2880666651763022
+  },
+  {
+    "epoch": 10,
+    "train_objective": 0.2347153271213049,
+    "pose_loss": 0.27754154307159346,
+    "photo_loss": 0.004629657559340174,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011270832340016523,
+    "rotation_residual_rmse_rad": 0.0018348764873185404,
+    "elapsed_s": 0.2643336462788284
+  },
+  {
+    "epoch": 11,
+    "train_objective": 0.22989537662996518,
+    "pose_loss": 0.281056443350998,
+    "photo_loss": 0.0046791365585434974,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011413288997679022,
+    "rotation_residual_rmse_rad": 0.0018548354994429533,
+    "elapsed_s": 0.2907015699893236
+  },
+  {
+    "epoch": 12,
+    "train_objective": 0.22687989385982654,
+    "pose_loss": 0.280213618847593,
+    "photo_loss": 0.004624145135901232,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011386050504438507,
+    "rotation_residual_rmse_rad": 0.0018528657056049284,
+    "elapsed_s": 0.3017489109188318
+  },
+  {
+    "epoch": 13,
+    "train_objective": 0.22502524209781308,
+    "pose_loss": 0.29157494749855156,
+    "photo_loss": 0.004716625488620607,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011780274442071609,
+    "rotation_residual_rmse_rad": 0.0019126145021802626,
+    "elapsed_s": 0.25858324533328414
+  },
+  {
+    "epoch": 14,
+    "train_objective": 0.22128787444564366,
+    "pose_loss": 0.2849196498118453,
+    "photo_loss": 0.004623546089565185,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011202812978315806,
+    "rotation_residual_rmse_rad": 0.0019006406957260893,
+    "elapsed_s": 0.27629701187834144
+  },
+  {
+    "epoch": 15,
+    "train_objective": 0.2173736799801614,
+    "pose_loss": 0.28116682965551787,
+    "photo_loss": 0.004635477508769263,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011435928775256118,
+    "rotation_residual_rmse_rad": 0.00185139344702953,
+    "elapsed_s": 0.28903367929160595
+  },
+  {
+    "epoch": 16,
+    "train_objective": 0.21597962408409246,
+    "pose_loss": 0.28838285444369866,
+    "photo_loss": 0.004656074959410345,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011162556055933078,
+    "rotation_residual_rmse_rad": 0.0019216746303642757,
+    "elapsed_s": 0.2653965917415917
+  },
+  {
+    "epoch": 17,
+    "train_objective": 0.21391312540875407,
+    "pose_loss": 0.2887259950889415,
+    "photo_loss": 0.004618751640951065,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011053812607397155,
+    "rotation_residual_rmse_rad": 0.001942120800921168,
+    "elapsed_s": 0.2809690092690289
+  },
+  {
+    "epoch": 18,
+    "train_objective": 0.21002561575304124,
+    "pose_loss": 0.2968346705688304,
+    "photo_loss": 0.004651887850115197,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01087324778133006,
+    "rotation_residual_rmse_rad": 0.0020034629540879698,
+    "elapsed_s": 0.2829149728640914
+  },
+  {
+    "epoch": 19,
+    "train_objective": 0.20845961021618228,
+    "pose_loss": 0.29364838851756186,
+    "photo_loss": 0.004638541548339715,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011117274979132575,
+    "rotation_residual_rmse_rad": 0.001959241338946784,
+    "elapsed_s": 0.30371920205652714
+  },
+  {
+    "epoch": 20,
+    "train_objective": 0.20609076722982142,
+    "pose_loss": 0.28307458503761485,
+    "photo_loss": 0.004584818069902646,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011122554843257039,
+    "rotation_residual_rmse_rad": 0.0018886128571811071,
+    "elapsed_s": 0.3012449126690626
+  },
+  {
+    "epoch": 21,
+    "train_objective": 0.2033618814881323,
+    "pose_loss": 0.2970929011028616,
+    "photo_loss": 0.004685426669092334,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011723323099626426,
+    "rotation_residual_rmse_rad": 0.0019170416044425429,
+    "elapsed_s": 0.28456516098231077
+  },
+  {
+    "epoch": 22,
+    "train_objective": 0.20178862687331348,
+    "pose_loss": 0.30070902863938603,
+    "photo_loss": 0.004717402614128949,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011964897897145397,
+    "rotation_residual_rmse_rad": 0.0019109130135155996,
+    "elapsed_s": 0.3012163108214736
+  },
+  {
+    "epoch": 23,
+    "train_objective": 0.19984262203251696,
+    "pose_loss": 0.3072675617795494,
+    "photo_loss": 0.0048187305593872486,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.012336323438969862,
+    "rotation_residual_rmse_rad": 0.0019156120151500081,
+    "elapsed_s": 0.2914863880723715
+  },
+  {
+    "epoch": 24,
+    "train_objective": 0.19873274178860376,
+    "pose_loss": 0.29490063612784573,
+    "photo_loss": 0.004633024571248185,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011401418835292273,
+    "rotation_residual_rmse_rad": 0.001932287113679928,
+    "elapsed_s": 0.32653961097821593
+  },
+  {
+    "epoch": 25,
+    "train_objective": 0.19600331551166036,
+    "pose_loss": 0.2955572353535561,
+    "photo_loss": 0.004609018185143195,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011416617982420059,
+    "rotation_residual_rmse_rad": 0.0019452552762549296,
+    "elapsed_s": 0.264837599825114
+  },
+  {
+    "epoch": 26,
+    "train_objective": 0.1934747075665137,
+    "pose_loss": 0.29782940978979944,
+    "photo_loss": 0.00464891385867368,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01190146283501224,
+    "rotation_residual_rmse_rad": 0.0019105534298775038,
+    "elapsed_s": 0.256517190951854
+  },
+  {
+    "epoch": 27,
+    "train_objective": 0.19199538093615617,
+    "pose_loss": 0.29605057820602876,
+    "photo_loss": 0.004612006062183098,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011263591465122761,
+    "rotation_residual_rmse_rad": 0.001957169372473264,
+    "elapsed_s": 0.2677124417386949
+  },
+  {
+    "epoch": 28,
+    "train_objective": 0.19076726546938494,
+    "pose_loss": 0.2988175263057402,
+    "photo_loss": 0.004613610141297531,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011453392153866874,
+    "rotation_residual_rmse_rad": 0.00195917591957482,
+    "elapsed_s": 0.247994985897094
+  },
+  {
+    "epoch": 29,
+    "train_objective": 0.1891393318048474,
+    "pose_loss": 0.3029974734962885,
+    "photo_loss": 0.004628804404681651,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011642716294945161,
+    "rotation_residual_rmse_rad": 0.0019696192753440108,
+    "elapsed_s": 0.3028333932161331
+  },
+  {
+    "epoch": 30,
+    "train_objective": 0.18827133744306102,
+    "pose_loss": 0.3033998361484489,
+    "photo_loss": 0.00463360072998096,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011176464921803256,
+    "rotation_residual_rmse_rad": 0.0020182226671548787,
+    "elapsed_s": 0.30293750017881393
+  },
+  {
+    "epoch": 31,
+    "train_objective": 0.18747132951690124,
+    "pose_loss": 0.29657098501171897,
+    "photo_loss": 0.004639305263270985,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01181923295458238,
+    "rotation_residual_rmse_rad": 0.0019013641513075546,
+    "elapsed_s": 0.29675945779308677
+  },
+  {
+    "epoch": 32,
+    "train_objective": 0.18595584305986088,
+    "pose_loss": 0.3026147712415187,
+    "photo_loss": 0.0046356379302527435,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011728430870005805,
+    "rotation_residual_rmse_rad": 0.0019633955467001367,
+    "elapsed_s": 0.2782100602053106
+  },
+  {
+    "epoch": 33,
+    "train_objective": 0.18475796996149385,
+    "pose_loss": 0.30052926717092043,
+    "photo_loss": 0.004645265266767249,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011651215518858657,
+    "rotation_residual_rmse_rad": 0.0019379918145817705,
+    "elapsed_s": 0.2984660961665213
+  },
+  {
+    "epoch": 34,
+    "train_objective": 0.18386650102921268,
+    "pose_loss": 0.30210147281387945,
+    "photo_loss": 0.0046328560065421924,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011614918239103244,
+    "rotation_residual_rmse_rad": 0.0019647928833394714,
+    "elapsed_s": 0.2849822510033846
+  },
+  {
+    "epoch": 35,
+    "train_objective": 0.18323471742858438,
+    "pose_loss": 0.30494223707285356,
+    "photo_loss": 0.004627996206227409,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011545241959460445,
+    "rotation_residual_rmse_rad": 0.0019936520438105683,
+    "elapsed_s": 0.28360791923478246
+  },
+  {
+    "epoch": 36,
+    "train_objective": 0.18285025776031627,
+    "pose_loss": 0.3011827994531123,
+    "photo_loss": 0.004624448005278506,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01161669720150929,
+    "rotation_residual_rmse_rad": 0.0019570933074705902,
+    "elapsed_s": 0.28248025104403496
+  },
+  {
+    "epoch": 37,
+    "train_objective": 0.18194338651857583,
+    "pose_loss": 0.30369466348509094,
+    "photo_loss": 0.004644205571437751,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.012020448732655073,
+    "rotation_residual_rmse_rad": 0.0019447962337073713,
+    "elapsed_s": 0.2766160052269697
+  },
+  {
+    "epoch": 38,
+    "train_objective": 0.18215837897467654,
+    "pose_loss": 0.3031812319204436,
+    "photo_loss": 0.004659675475883873,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011901024418430507,
+    "rotation_residual_rmse_rad": 0.0019396613052225474,
+    "elapsed_s": 0.30913160275667906
+  },
+  {
+    "epoch": 39,
+    "train_objective": 0.18107816309884964,
+    "pose_loss": 0.3006827792330603,
+    "photo_loss": 0.004618511666267661,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.011460152721702695,
+    "rotation_residual_rmse_rad": 0.001967574858560423,
+    "elapsed_s": 0.2826754138804972
+  },
+  {
+    "epoch": 40,
+    "train_objective": 0.18094357051941218,
+    "pose_loss": 0.30488285182708474,
+    "photo_loss": 0.004656321797332722,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.01188772622633511,
+    "rotation_residual_rmse_rad": 0.001954488008734355,
+    "elapsed_s": 0.29095915611833334
+  }
+]

@@ -4,6 +4,11 @@
 20-frame synthetic check, and all ten public episodes. See `source.json`,
 `build.json`, `verification.json`, and [upstream attribution](../../THIRD_PARTY_NOTICES.md).
 
+The original estimator is preserved at tag `baseline-klt-imu-v1` (commit
+`8ea22f52b2083ee53d75b9419651c2505f949a67`). The current experimental branch
+contains a learned estimator instead. These records describe the original
+baseline artifact, not the current working `workspace/solution/solution.py`.
+
 ## Results
 
 | Measure | Observed result |
@@ -46,11 +51,14 @@ baseline observations instead of changing the reference implementation.
 
 The first public episode was rerun using the same binary, inputs, runner and
 limits. All trajectory metrics, all 1,200 per-frame fuel values, `estimate.tum`
-and `twist.txt` matched exactly. Wall time differed as expected. The other nine
-episodes were not repeated.
+and `twist.txt` matched exactly. Wall time differed as expected. That initial
+repeat covered only one episode. The later [learned-motion comparison](../learned-motion-v1/comparison.md)
+includes a fresh full-public-set baseline run; its timing is recorded separately.
 
-The source extracted from the built WASM, tracked `solution.py`, and the pinned
-upstream example are byte-identical. Runtime and solution hashes are recorded.
+The source extracted from the original baseline WASM, `solution.py` at the
+baseline tag, and the pinned upstream example are byte-identical. Runtime and
+solution hashes are recorded. This claim does not apply to the learned working
+solution introduced later on the experiment branch.
 
 ## Evidence and reproduction
 
@@ -59,7 +67,8 @@ upstream example are byte-identical. Runtime and solution hashes are recorded.
 - `baseline-repeat/`: repeat report and provenance for episode 00.
 - `check.json` and `smoke-check.txt`: 20-frame ABI smoke evidence.
 - `../../configs/`: public episode manifest, limits, and host dependency snapshot.
-- [Setup commands](../../docs/setup.md).
+- [Current setup commands](../../docs/setup.md): use the original artifact or an
+  isolated worktree at the baseline tag, then verify the embedded source hash.
 
 Raw trajectories, fuel arrays, full build logs, binaries and cached datasets
 remain local under ignored output/cache directories. Compact reports are tracked.

@@ -1,74 +1,120 @@
-# Perspective-aware spatial memory
+# Perspective geometry and sparse spatial memory
 
-**Status: design only.** This branch starts from the measured, unchanged official KLT + IMU baseline. The proposed map estimator has not been implemented or evaluated.
+**Status:** implemented as the optional map stage of the learned-motion pilot.
+The default working model has map correction disabled. The original KLT + IMU
+reference is preserved at tag `baseline-klt-imu-v1`.
 
-## Research question
+Read [learned-motion.md](learned-motion.md) for the trained network, warping loss,
+data separation and runtime architecture. The [controlled comparison](../experiments/learned-motion-v1/comparison.md)
+contains measured outcomes; implemented geometry is not itself evidence of an
+accuracy improvement.
 
-Can a small, causal 3D landmark map reduce localization drift at an acceptable increase in maximum per-frame WASM fuel?
+## Research question and observed boundary
 
-The baseline already uses perspective and epipolar geometry through camera intrinsics, `findEssentialMat`, and `recoverPose`. It detects new corners each frame and has no persistent 3D landmarks or bundle adjustment. The proposed contribution is persistent geometric consistency with bounded computation; perspective projection, triangulation, and PnP are established methods.
+Can a bounded, causal landmark map improve the accuracy-compute trade-off of a
+small learned visual-inertial motion estimator?
 
-## Projection and coordinates
+The initial map-enabled pilot increased mean Sim(3) positional error and runtime
+relative to the same warp-trained weights with the map disabled, while reducing
+rotation error. The map remains an opt-in experiment. See the complete comparison
+for individual episodes, scale, twist and failure metrics.
 
-Let W be the first camera frame. Store camera pose `T_WC`, which maps current camera coordinates to W. For a landmark `P_W`, compute `P_C = inverse(T_WC) P_W`. With `P_C = (Xc, Yc, Zc)` and `Zc > 0`:
+Perspective projection, triangulation, KLT and PnP are established methods.
+The original KLT + IMU reference already uses camera intrinsics and two-view
+`findEssentialMat`/`recoverPose`; it does not maintain a persistent 3D map.
+The experiment tests a persistent local geometry correction on a learned prior.
+
+## Projection and coordinate convention
+
+Let W be the first camera frame. `T_WC` maps current camera coordinates into W.
+For a stored landmark `P_W`, compute `P_C = inverse(T_WC) P_W`. With
+`P_C = (Xc, Yc, Zc)` and `Zc > 0`:
 
 ```text
 u = fx * Xc / Zc + cx
 v = fy * Yc / Zc + cy
 ```
 
-Use the episode's intrinsics. Images are rectified; do not add lens distortion. `T_cam_imu` maps IMU to camera. OpenCV PnP returns the map-to-camera transform `T_CW`; invert it before publishing `T_WC`. Output twist is at the current camera centre in current camera axes.
+Use each episode's intrinsics. Images are rectified; no lens distortion is added.
+`T_cam_imu` maps IMU to camera. OpenCV PnP returns `T_CW`; invert it before updating
+`T_WC`. The output quaternion is scalar-last. Twist is expressed at the current
+camera centre in current camera axes and is recomputed after any map correction.
 
-Perspective describes projection; parallax is the viewpoint change that provides depth information. Raw pixel motion includes rotation, so use rotation-compensated bearing change to select triangulation candidates. Pure rotation, tiny baseline, weak texture, and repetitive structure can make depth unreliable. Near-large/far-small appearance in one image does not establish absolute depth or metric scale.
+Perspective describes image projection; parallax supplies depth constraints.
+Raw pixel motion includes rotation. Triangulation uses rotation-compensated
+bearing change and rejects weak baselines, behind-camera points and poor
+reprojection consistency. A consistent projection alone does not resolve
+monocular metric scale.
 
-## Proposed data flow
+## Implemented data flow
 
 ```text
-RGB -> persistent KLT tracks -> keyframes -> sparse 3D landmarks
-IMU -> rotation/translation prediction ------------|
-map points + current 2D observations -> PnP/RANSAC -> gated pose update
-accepted pose + IMU state -> ABI pose/twist; rejected update -> IMU fallback
+RGB pair + IMU + intrinsics -> small CNN -> predicted relative camera motion
+previous corrected pose + predicted motion -> current pose prior
+RGB -> persistent KLT tracks + bounded keyframes -> sparse 3D landmarks
+existing landmarks + current observations -> PnP/RANSAC -> gated correction
+accepted correction or unchanged learned prior -> pose and camera-axis twist
 ```
 
-Triangulate from earlier/current observations and estimated poses only. Ground truth stays in evaluation. Do not prebuild a map of evaluation trajectories or revise outputs already returned. Reset all state between episodes.
+Only earlier/current observations and estimated poses enter the map. Newly
+triangulated points cannot correct the frame that created them. No ground truth,
+prebuilt evaluation-scene map, future observations, loop closure or rewriting of
+previous outputs is used. All state resets at episode initialization.
 
-The map is explicit numerical state. Start with sparse reliable points; dense point clouds and training a world model are outside this first experiment. PyTorch is unnecessary for this geometric stage.
+Static scene geometry is the working assumption. Landmarks remain in this local
+map while their image tracks remain valid; lost or occluded tracks are discarded.
+There is no landmark re-identification after disappearance. A never-observed
+surface becomes a candidate after it is observed and can be triangulated reliably.
+Dense reconstruction and generative world/action models are outside this
+implementation.
 
-## Incremental comparisons
+## Fixed pilot budgets and gates
 
-| Stage | Change | Question |
-| --- | --- | --- |
-| B0 | Unchanged official KLT + IMU | What accuracy, failures, and fuel do we start with? |
-| P1 | Persistent tracks and triangulation; no map feedback | Are map points geometrically consistent? |
-| P2 | Gated 2D-3D PnP/reprojection pose correction | Does map feedback reduce drift? |
-| P3 | Explicit feature, keyframe, landmark and iteration budgets | Can we retain the gain with less worst-frame fuel? |
+- At most 160 active tracks/landmarks and four retained anchor keyframes.
+- KLT forward/backward agreement; 15x15 windows, two pyramid levels and
+  a 12-iteration tracking cap.
+- Keyframe interval 5; minimum 0.03 m baseline and 1.5-degree compensated parallax.
+- Positive depth in the 0.2-30 m range and two-view reprojection checks.
+- At least 12 map correspondences; PnP RANSAC capped at 40 iterations and
+  refinement at five iterations, with a 2-pixel reprojection threshold.
+- Reject large rotation/translation innovations and geometric degeneracy.
+  Rejection retains the learned pose prior exactly.
 
-For P2, compare map feedback enabled/disabled with otherwise identical code. B0 versus P2 alone mixes tracking changes with map feedback. Log inlier counts, rejected updates, landmark counts, reprojection errors and depth/parallax checks. Low reprojection error alone does not prove correct scale or lower trajectory error.
+These settings were fixed for the pilot rather than tuned on public results.
+A map built from poor estimated poses can reinforce its own scale or drift errors.
+Bounded computation and conservative gates do not guarantee beneficial corrections.
 
-Initial, untested settings: at most 300 tracks, 5 recent keyframes, and 500 landmarks, with explicit RANSAC iteration caps. Keep position, rotation, velocity and camera/IMU transforms consistent when accepting a correction. Reject non-finite results, behind-camera points, weak support and geometric degeneracy. Avoid hardcoded public-scene structure.
+## Source and tests
 
-The measured baseline has substantial unaligned drift on several episodes. Triangulating from poor baseline poses can create a self-consistent but wrong map. Validate initialization and scale before trusting map feedback; retain the IMU fallback when geometry is uncertain.
+- `workspace/solution/solution.py`: lifecycle, learned motion integration and ABI.
+- `workspace/solution/motion_inference.py`: ONNX model and metadata validation.
+- `workspace/solution/preintegrate.py`: shared training/inference IMU features.
+- `workspace/solution/local_map.py`: tracking, triangulation, bounded map and PnP.
+- `training/motion_model.py`: host-only network and differentiable warping objective.
+- `tests/test_local_map.py`: coordinate, triangulation, rejection and tracking checks.
+- `tests/test_motion_runtime.py`: state composition, camera-axis twist and map integration.
+- `tests/test_warp_training.py`: training projection, gradients, visibility and ONNX parity.
 
-## Proposed files
+The map's triangulation, SVD, PnP and refinement operations were exercised in
+WASM, and the complete learned/map variant passed a 20-frame synthetic check.
+Full public evaluation remains the evidence for trajectory behavior and compute.
 
-- `workspace/solution/solution.py`: lifecycle, IMU prediction, fusion, ABI.
-- `workspace/solution/geometry.py`: projection, transforms, triangulation checks.
-- `workspace/solution/tracking.py`: persistent track IDs, KLT, outlier rejection.
-- `workspace/solution/local_map.py`: bounded keyframes, landmarks, observations.
-- `workspace/solution/pose_update.py`: PnP and acceptance checks.
-- `tests/test_geometry.py`: known-transform projection/PnP, extrinsic direction, pure-rotation rejection and degenerate correspondences.
-- `experiments/<run>/`: parameters, provenance, reports and conclusions.
+## Controlled comparisons
 
-These modules and tests are planned. Keep host-only tests out of the bundled solution directory. Confirm required functions work in WASM OpenCV; host Python success alone is insufficient.
+B0 is the frozen upstream KLT baseline. N1 and N2 share architecture, training
+data, initialization, batch order and schedule; only the warping loss changes.
+N3 uses N2's identical weights with map correction enabled. This separates the
+training-loss effect from the inference-time map effect. B0 versus N3 alone
+would mix several changes.
 
-## Acceptance
-
-Use the same ten public hashes, limits, runner and runtime. Inspect mean Sim(3) ATE and every episode, maximum fuel, failures/filled frames, rotation error, velocity error and unaligned ATE. Sim(3) alignment removes a global scale factor: a good aligned score alone does not establish a metrically accurate map.
-
-Report regressions and repeatability. Public-set improvements do not prove unseen-scene performance, physical robot success or hackathon impact.
+Inspect mean Sim(3) ATE, every episode, maximum fuel, failed/filled frames,
+unaligned ATE, rotation and twist errors. Sim(3) removes a global scale factor.
+This single-seed, small-data pilot does not establish unseen-scene or physical
+robot performance. Follow [setup](setup.md) to package variants explicitly.
 
 ## Primary references
 
 - [OpenCV projection and calibration](https://docs.opencv.org/4.x/d9/d0c/group__calib3d.html)
-- [OpenCV PnP and reprojection refinement](https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html)
-- [Pinned baseline source](https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/viobench/solution/examples/python/klt_imu/solution.py)
+- [OpenCV PnP and refinement](https://docs.opencv.org/4.x/d5/d1f/calib3d_solvePnP.html)
+- [Pinned KLT + IMU source](https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/viobench/solution/examples/python/klt_imu/solution.py)
+- [Pinned tiny-CNN teaching example](https://github.com/jonas-eschmann/viobench/tree/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/viobench/solution/examples/python/tiny_cnn)

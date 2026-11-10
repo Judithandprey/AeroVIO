@@ -1,0 +1,16 @@
+{
+  "audit_scope": "source audit of generator timing, channel order, coordinate conventions and depth type; generated episode end-to-end checks remain separate",
+  "timestamp_conclusion": "Post-step capture at step*dt is correct: step copies next states before return; due-frame observe renders current state. Do not apply an extra -0.005s shift.",
+  "rgb_depth_pair": "Same rendering capture; one camera index 0; read depth after frames() resolves pending render.",
+  "imu": "observe_imu first six channels are ax,ay,az,gx,gy,gz in body axes; final two channels are frame cadence diagnostics and excluded.",
+  "ground_truth": "body pose in simulation world, not preconverted camera pose; Episode applies T_body_camera and first-camera normalization.",
+  "depth": "camera-z metres, not ray range; generic renderer projects ray-hit distance onto camera-plane normal.",
+  "spatial_approximation": "Depth sidecar nearest pixel (5,15,...) is +0.5 source pixel / +0.05 low-resolution pixel from INTER_AREA RGB centres; known documented approximation.",
+  "recommended_readback_check": "Episode.check_consistency() verifies all IMU windows, quaternion norm, transforms, frame timing and GT coverage.",
+  "source_sha256": {
+    "environment_binding": "c1d04a42b9cba0328f6f6c5a0d28b9ebc5e7133df0d95954dad483200e77b9da",
+    "task_operations": "b432f4e2e7e7dd66f8f9a17b7b924a456876ab1a857c90184b62c8e41b726520",
+    "base_operations": "088daaac1330a6c217d64b8f7ab1b71580b4d949040c2d98b7d822fbf7196c28",
+    "depth_renderer": "3a444c6adcb543383ab33a0f04eb2d90a0a3a85f2028429b25753e97d29a1b59"
+  }
+}

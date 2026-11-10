@@ -10,6 +10,7 @@ credentials*.json
 
 # Python / editors
 .venv/
+.train-venv/
 venv/
 __pycache__/
 *.py[cod]
@@ -53,3 +54,8 @@ report-*/
 *.npy
 *.zip
 *.mp4
+
+# Small audited inference models retained with experiment evidence
+!experiments/learned-motion-v1/pose/net.onnx
+!experiments/learned-motion-v1/warp/net.onnx
+!workspace/solution/net.onnx

@@ -1,0 +1,14 @@
+{
+  "seed": 271828,
+  "duration_seconds": 10.0,
+  "fov_degrees": 120.0,
+  "train": [
+    {"scene": "ProcTHOR-Train-2", "episodes": 4},
+    {"scene": "ProcTHOR-Train-3", "episodes": 4},
+    {"scene": "ProcTHOR-Train-4", "episodes": 4}
+  ],
+  "validation": [
+    {"scene": "ProcTHOR-Train-5", "episodes": 2},
+    {"scene": "ProcTHOR-Train-6", "episodes": 2}
+  ]
+}

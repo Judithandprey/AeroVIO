@@ -1,0 +1,208 @@
+[
+  {
+    "stage": "prepare",
+    "exit_code": 0,
+    "elapsed_s": 16.45882558822632,
+    "command": [
+      ".train-venv/bin/python",
+      "scripts/prepare_motion_data.py",
+      "--manifest",
+      "/root/projects/AeroVIO/data/hyperdrone-motion-v2/data_manifest.json",
+      "--out",
+      "data/motion-cache-v2"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-prepare.log"
+  },
+  {
+    "stage": "train-pose",
+    "exit_code": 0,
+    "elapsed_s": 10.42878246307373,
+    "command": [
+      ".train-venv/bin/python",
+      "-u",
+      "scripts/train_motion.py",
+      "--cache",
+      "data/motion-cache-v2",
+      "--out",
+      "models/motion-pose-v1",
+      "--warp-weight",
+      "0"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-train-pose.log"
+  },
+  {
+    "stage": "train-warp",
+    "exit_code": 0,
+    "elapsed_s": 13.979392766952515,
+    "command": [
+      ".train-venv/bin/python",
+      "-u",
+      "scripts/train_motion.py",
+      "--cache",
+      "data/motion-cache-v2",
+      "--out",
+      "models/motion-warp-v1",
+      "--warp-weight",
+      "2"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-train-warp.log"
+  },
+  {
+    "stage": "package-pose",
+    "exit_code": 0,
+    "elapsed_s": 0.5348358154296875,
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/motion-pose-v1",
+      "--name",
+      "motion-pose-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-package-pose.log"
+  },
+  {
+    "stage": "package-warp",
+    "exit_code": 0,
+    "elapsed_s": 0.6019518375396729,
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/motion-warp-v1",
+      "--name",
+      "motion-warp-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-package-warp.log"
+  },
+  {
+    "stage": "package-map",
+    "exit_code": 0,
+    "elapsed_s": 0.6709327697753906,
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/motion-warp-v1",
+      "--name",
+      "motion-warp-map-v1",
+      "--map"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-package-map.log"
+  },
+  {
+    "stage": "check-motion-pose-v1",
+    "exit_code": 0,
+    "elapsed_s": 4.5988733768463135,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-pose-v1.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-pose-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-check-motion-pose-v1.log"
+  },
+  {
+    "stage": "check-motion-warp-v1",
+    "exit_code": 0,
+    "elapsed_s": 4.456416368484497,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-warp-v1.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-warp-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-check-motion-warp-v1.log"
+  },
+  {
+    "stage": "check-motion-warp-map-v1",
+    "exit_code": 0,
+    "elapsed_s": 4.848241090774536,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-warp-map-v1.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-warp-map-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-check-motion-warp-map-v1.log"
+  },
+  {
+    "stage": "evaluate-baseline",
+    "exit_code": 0,
+    "elapsed_s": 85.33404159545898,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/klt_imu.wasm",
+      "--run-dir",
+      "results/baseline-comparison-v1",
+      "--verify-baseline"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-evaluate-baseline.log"
+  },
+  {
+    "stage": "evaluate-motion-pose-v1",
+    "exit_code": 0,
+    "elapsed_s": 54.4674391746521,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-pose-v1.wasm",
+      "--run-dir",
+      "results/motion-pose-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-evaluate-motion-pose-v1.log"
+  },
+  {
+    "stage": "evaluate-motion-warp-v1",
+    "exit_code": 0,
+    "elapsed_s": 54.248483180999756,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-warp-v1.wasm",
+      "--run-dir",
+      "results/motion-warp-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-evaluate-motion-warp-v1.log"
+  },
+  {
+    "stage": "evaluate-motion-warp-map-v1",
+    "exit_code": 0,
+    "elapsed_s": 101.95406103134155,
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-warp-map-v1.wasm",
+      "--run-dir",
+      "results/motion-warp-map-v1"
+    ],
+    "log": "/root/projects/AeroVIO/logs/pipeline-evaluate-motion-warp-map-v1.log"
+  }
+]

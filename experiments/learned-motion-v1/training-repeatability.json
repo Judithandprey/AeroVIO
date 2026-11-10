@@ -1,0 +1,22 @@
+{
+  "scope": "Same environment, seed, cached data and settings; separate complete 40-epoch training run",
+  "checks": {
+    "seed": true,
+    "epochs": true,
+    "batch": true,
+    "learning_rate": true,
+    "warp_weight": true,
+    "parameters": true,
+    "initial_weights_sha256": true,
+    "train_cache_sha256": true,
+    "validation_cache_sha256": true,
+    "source_sha256": true,
+    "best_epoch": true,
+    "best_validation": true,
+    "model_sha256": true
+  },
+  "model_sha256": "1bbedba0b834237d8358ea8d4000881cb57cdeb94b78e2e181c899ec319e0c4f",
+  "best_epoch": 4,
+  "repeat_elapsed_s": 7.1851475378498435,
+  "repeat_finished_utc": "2026-11-10T12:02:17.497270+00:00"
+}

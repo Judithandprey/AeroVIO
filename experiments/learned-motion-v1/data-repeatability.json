@@ -1,0 +1,9 @@
+{
+  "repeated_seed": 271828,
+  "prefix_frames": 40,
+  "frame_times_equal": true,
+  "imu_equal": true,
+  "ground_truth_equal": true,
+  "rgb_equal": true,
+  "depth_equal": true
+}

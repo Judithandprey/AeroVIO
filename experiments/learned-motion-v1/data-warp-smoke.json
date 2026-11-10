@@ -1,0 +1,7 @@
+{
+  "pairs": 39,
+  "valid_pixel_fraction": 0.9662877270299145,
+  "true_motion_photometric_error": 0.006131674628704786,
+  "perturbed_translation_error": 0.08246898651123047,
+  "positive_control": "+0.25m camera-x translation error"
+}
