@@ -1,0 +1,32 @@
+{
+  "purpose": "Diagnose accumulated rotation error and image-input contribution; settings fixed before new public evaluation",
+  "parent_commit": "bd340cfe9c90d564d10bbd1b6ce23c95d127e001",
+  "reference_model": "experiments/learned-motion-v1/warp",
+  "reference_onnx_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "variants": [
+    "unchanged official KLT+IMU artifact",
+    "reference image+IMU warp model with new backward-compatible runtime, rotation residual enabled",
+    "same reference weights with only rotation residual disabled",
+    "matched full-graph IMU-only retrain with constant zero image inputs, rotation residual enabled",
+    "algebraically compacted IMU-only model if output equivalence passes, no retraining"
+  ],
+  "input_ablation": "IMU-only retains IMU9, camera intrinsics4 and dt; no image information enters the predictor. Real images/depth remain training-only warping labels in both variants.",
+  "training": {
+    "cache": "data/motion-cache-v2",
+    "seed": 17,
+    "epochs": 40,
+    "batch_size": 64,
+    "learning_rate": 0.001,
+    "warp_weight": 2.0,
+    "threads": 4,
+    "device": "cpu",
+    "checkpoint_selection": "minimum scene-disjoint validation normalized pose loss",
+    "control": "repeat image+IMU training and require original model hash and validation metrics before accepting the refactor"
+  },
+  "map_enabled": false,
+  "comparison_set": "configs/public-episodes.json",
+  "limits": "configs/evaluation-limits.json",
+  "timing": "serial full public runs after training and other heavy tasks stop",
+  "rotation_diagnostics": "post-hoc saved guest trajectories and reference GT only; do not feed GT back into inference or tune parameters",
+  "server_submission": false
+}

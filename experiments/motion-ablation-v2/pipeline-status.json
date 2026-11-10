@@ -1,0 +1,207 @@
+[
+  {
+    "stage": "package-motion-current-v2",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "experiments/learned-motion-v1/warp",
+      "--name",
+      "motion-current-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.747978687286377,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-package-motion-current-v2.log"
+  },
+  {
+    "stage": "package-motion-no-rotation-v2",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "experiments/learned-motion-v1/warp",
+      "--name",
+      "motion-no-rotation-v2",
+      "--disable-rotation-residual"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.7916247844696045,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-package-motion-no-rotation-v2.log"
+  },
+  {
+    "stage": "package-motion-imu-only-v2",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/motion-imu-only-v2",
+      "--name",
+      "motion-imu-only-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.7361054420471191,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-package-motion-imu-only-v2.log"
+  },
+  {
+    "stage": "package-motion-imu-compact-v2",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/motion-imu-only-compact-v2",
+      "--name",
+      "motion-imu-compact-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.7664821147918701,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-package-motion-imu-compact-v2.log"
+  },
+  {
+    "stage": "check-motion-current-v2",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-current-v2.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-current-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.094328165054321,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-check-motion-current-v2.log"
+  },
+  {
+    "stage": "check-motion-no-rotation-v2",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-no-rotation-v2.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-no-rotation-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.2152698040008545,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-check-motion-no-rotation-v2.log"
+  },
+  {
+    "stage": "check-motion-imu-only-v2",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-imu-only-v2.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-imu-only-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.11638069152832,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-check-motion-imu-only-v2.log"
+  },
+  {
+    "stage": "check-motion-imu-compact-v2",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/motion-imu-compact-v2.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-motion-imu-compact-v2"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.237706661224365,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-check-motion-imu-compact-v2.log"
+  },
+  {
+    "stage": "evaluate-baseline",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/klt_imu.wasm",
+      "--run-dir",
+      "results/ablation-v2-baseline",
+      "--verify-baseline"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 84.34938430786133,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-evaluate-baseline.log"
+  },
+  {
+    "stage": "evaluate-current",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-current-v2.wasm",
+      "--run-dir",
+      "results/ablation-v2-current"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 54.95134377479553,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-evaluate-current.log"
+  },
+  {
+    "stage": "evaluate-no-rotation",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-no-rotation-v2.wasm",
+      "--run-dir",
+      "results/ablation-v2-no-rotation"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 54.614813566207886,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-evaluate-no-rotation.log"
+  },
+  {
+    "stage": "evaluate-imu-only",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-imu-only-v2.wasm",
+      "--run-dir",
+      "results/ablation-v2-imu-only"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 55.18570518493652,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-evaluate-imu-only.log"
+  },
+  {
+    "stage": "evaluate-imu-compact",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-imu-compact-v2.wasm",
+      "--run-dir",
+      "results/ablation-v2-imu-compact"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 51.63939642906189,
+    "log": "/root/projects/AeroVIO/logs/ablation-v2-evaluate-imu-compact.log"
+  }
+]

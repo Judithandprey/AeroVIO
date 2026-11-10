@@ -1,0 +1,684 @@
+[
+  {
+    "name": "baseline",
+    "episodes": 10,
+    "completed": 10,
+    "filled_frames": 0,
+    "sim3_ate_mean_m": 2.04163486385224,
+    "fuel_per_frame_max": 141910846,
+    "fuel_per_frame_mean": 60274322.67391667,
+    "wall_per_frame_median_ms": 3.2113497145473957,
+    "unaligned_ate_median_m": 41.42875375995165,
+    "velocity_rmse_median_m_s": 2.5566041829414696,
+    "rotation_rmse_median_rad": 0.23116779492804967,
+    "rotation_rmse_median_deg": 13.244939008722964,
+    "rpe_translation_rmse_median_m": 2.3801332950194043,
+    "rpe_rotation_rmse_median_deg": 0.8885955281264709,
+    "angular_velocity_rmse_median_rad_s": 0.12197852620502328,
+    "sim3_scale_median": 0.06426887024821804,
+    "sim3_scale_range": [
+      0.008366544819301077,
+      0.29284790136189937
+    ],
+    "ate_change_percent": 0.0,
+    "max_fuel_change_percent": 0.0,
+    "wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237",
+    "model_metadata": null,
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "sim3_ate_m": 2.0992349930420335,
+        "max_fuel": 96767831,
+        "completed": true
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "sim3_ate_m": 1.9141201995915653,
+        "max_fuel": 128921610,
+        "completed": true
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "sim3_ate_m": 2.499867629131487,
+        "max_fuel": 112516201,
+        "completed": true
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "sim3_ate_m": 1.928537444232877,
+        "max_fuel": 110577010,
+        "completed": true
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "sim3_ate_m": 1.0741717112262261,
+        "max_fuel": 92238317,
+        "completed": true
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "sim3_ate_m": 2.330614646521935,
+        "max_fuel": 128219402,
+        "completed": true
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "sim3_ate_m": 2.1976043515852335,
+        "max_fuel": 141910846,
+        "completed": true
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "sim3_ate_m": 2.1561385472804777,
+        "max_fuel": 107702849,
+        "completed": true
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "sim3_ate_m": 2.6198808453952545,
+        "max_fuel": 109326087,
+        "completed": true
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "sim3_ate_m": 1.5961782705153091,
+        "max_fuel": 96744104,
+        "completed": true
+      }
+    ]
+  },
+  {
+    "name": "current",
+    "episodes": 10,
+    "completed": 10,
+    "filled_frames": 0,
+    "sim3_ate_mean_m": 0.9666223655565684,
+    "fuel_per_frame_max": 14078994,
+    "fuel_per_frame_mean": 13025492.080583334,
+    "wall_per_frame_median_ms": 1.0643195128068328,
+    "unaligned_ate_median_m": 2.935910602463791,
+    "velocity_rmse_median_m_s": 0.262472215420898,
+    "rotation_rmse_median_rad": 0.3768700966225025,
+    "rotation_rmse_median_deg": 21.593065961156935,
+    "rpe_translation_rmse_median_m": 0.2593109832855024,
+    "rpe_rotation_rmse_median_deg": 0.9038516577719385,
+    "angular_velocity_rmse_median_rad_s": 0.032257110670809386,
+    "sim3_scale_median": 2.156312440796272,
+    "sim3_scale_range": [
+      1.565562508514045,
+      3.8455390857577463
+    ],
+    "ate_change_percent": -52.65449357909642,
+    "max_fuel_change_percent": -90.07898663362207,
+    "wasm_sha256": "6f6d0343975343329624c261fb02839e50c7eb11cd8beed6fe8cc4bb691aabb3",
+    "model_metadata": {
+      "schema_version": 1,
+      "input_width": 64,
+      "input_height": 48,
+      "state_mean": [
+        0.0002903045096900314,
+        -0.0024019810371100903,
+        4.056700709043071e-05,
+        -0.0006200654897838831,
+        -0.48943668603897095,
+        -0.0006987960077822208,
+        -1.5106808859854937e-05,
+        -0.012232117354869843,
+        -1.4507308151223697e-05,
+        0.27396294474601746,
+        0.36528390645980835,
+        0.5,
+        0.5,
+        0.05000000819563866
+      ],
+      "state_std": [
+        0.0016396129503846169,
+        0.010300121270120144,
+        0.00165434496011585,
+        0.007795785553753376,
+        0.008918380364775658,
+        0.006590625736862421,
+        0.00020447226415853947,
+        0.0002373328316025436,
+        0.0001760648301569745,
+        0.046288568526506424,
+        0.06171809509396553,
+        9.999999974752427e-07,
+        9.999999974752427e-07,
+        9.999999974752427e-07
+      ],
+      "target_mean": [
+        -7.096362969605252e-05,
+        -0.0015134280547499657,
+        0.008229664526879787,
+        -0.0002667608205229044,
+        -2.9533328415709548e-05,
+        -5.9541638620430604e-05
+      ],
+      "target_std": [
+        0.0010000000474974513,
+        0.005779764149338007,
+        0.00969107635319233,
+        0.001214494463056326,
+        0.0013117530616000295,
+        0.0012225416721776128
+      ],
+      "map": {
+        "enabled": false
+      },
+      "diagnostics_interval": 0,
+      "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+      "training_stage": "warp",
+      "training_seed": 17
+    },
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "sim3_ate_m": 0.6683078570054157,
+        "max_fuel": 14078494,
+        "completed": true
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "sim3_ate_m": 0.558813354602588,
+        "max_fuel": 14078744,
+        "completed": true
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "sim3_ate_m": 0.9830211762852415,
+        "max_fuel": 14078494,
+        "completed": true
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "sim3_ate_m": 0.6072437970183293,
+        "max_fuel": 14078744,
+        "completed": true
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "sim3_ate_m": 0.6360325791823814,
+        "max_fuel": 14078994,
+        "completed": true
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "sim3_ate_m": 1.5214550811199326,
+        "max_fuel": 14078744,
+        "completed": true
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "sim3_ate_m": 1.5524185146928169,
+        "max_fuel": 14078744,
+        "completed": true
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "sim3_ate_m": 1.058314609424784,
+        "max_fuel": 14078494,
+        "completed": true
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "sim3_ate_m": 1.5899271902191707,
+        "max_fuel": 14078744,
+        "completed": true
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "sim3_ate_m": 0.49068949601502276,
+        "max_fuel": 14078994,
+        "completed": true
+      }
+    ]
+  },
+  {
+    "name": "no-rotation",
+    "episodes": 10,
+    "completed": 10,
+    "filled_frames": 0,
+    "sim3_ate_mean_m": 0.963882105022676,
+    "fuel_per_frame_max": 13994827,
+    "fuel_per_frame_mean": 12938672.64575,
+    "wall_per_frame_median_ms": 1.0527592385187745,
+    "unaligned_ate_median_m": 2.938100577077902,
+    "velocity_rmse_median_m_s": 0.2624622407147258,
+    "rotation_rmse_median_rad": 0.467506666102941,
+    "rotation_rmse_median_deg": 26.786158861930303,
+    "rpe_translation_rmse_median_m": 0.2593871887165648,
+    "rpe_rotation_rmse_median_deg": 1.3511648734348993,
+    "angular_velocity_rmse_median_rad_s": 0.04462782135915448,
+    "sim3_scale_median": 2.181887144616283,
+    "sim3_scale_range": [
+      1.6984261874171345,
+      3.888167568133485
+    ],
+    "ate_change_percent": -52.78871251228616,
+    "max_fuel_change_percent": -90.13829640618167,
+    "wasm_sha256": "d5cc8444fc4a9343f267f8dd7bcc2f65bc7f0e26a1ad9a0c6a496c0bc77790eb",
+    "model_metadata": {
+      "schema_version": 1,
+      "input_width": 64,
+      "input_height": 48,
+      "state_mean": [
+        0.0002903045096900314,
+        -0.0024019810371100903,
+        4.056700709043071e-05,
+        -0.0006200654897838831,
+        -0.48943668603897095,
+        -0.0006987960077822208,
+        -1.5106808859854937e-05,
+        -0.012232117354869843,
+        -1.4507308151223697e-05,
+        0.27396294474601746,
+        0.36528390645980835,
+        0.5,
+        0.5,
+        0.05000000819563866
+      ],
+      "state_std": [
+        0.0016396129503846169,
+        0.010300121270120144,
+        0.00165434496011585,
+        0.007795785553753376,
+        0.008918380364775658,
+        0.006590625736862421,
+        0.00020447226415853947,
+        0.0002373328316025436,
+        0.0001760648301569745,
+        0.046288568526506424,
+        0.06171809509396553,
+        9.999999974752427e-07,
+        9.999999974752427e-07,
+        9.999999974752427e-07
+      ],
+      "target_mean": [
+        -7.096362969605252e-05,
+        -0.0015134280547499657,
+        0.008229664526879787,
+        -0.0002667608205229044,
+        -2.9533328415709548e-05,
+        -5.9541638620430604e-05
+      ],
+      "target_std": [
+        0.0010000000474974513,
+        0.005779764149338007,
+        0.00969107635319233,
+        0.001214494463056326,
+        0.0013117530616000295,
+        0.0012225416721776128
+      ],
+      "map": {
+        "enabled": false
+      },
+      "diagnostics_interval": 0,
+      "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+      "training_stage": "warp",
+      "training_seed": 17,
+      "rotation_residual_enabled": false
+    },
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "sim3_ate_m": 0.657448146215071,
+        "max_fuel": 13994577,
+        "completed": true
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "sim3_ate_m": 0.6647567267858444,
+        "max_fuel": 13994577,
+        "completed": true
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "sim3_ate_m": 0.9879448089672412,
+        "max_fuel": 13994827,
+        "completed": true
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "sim3_ate_m": 0.6059844528661668,
+        "max_fuel": 13994827,
+        "completed": true
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "sim3_ate_m": 0.6406820095078392,
+        "max_fuel": 13994577,
+        "completed": true
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "sim3_ate_m": 1.4937890564597678,
+        "max_fuel": 13994827,
+        "completed": true
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "sim3_ate_m": 1.6414131092921607,
+        "max_fuel": 13994327,
+        "completed": true
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "sim3_ate_m": 1.0287939774536694,
+        "max_fuel": 13994577,
+        "completed": true
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "sim3_ate_m": 1.3851360356432063,
+        "max_fuel": 13994827,
+        "completed": true
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "sim3_ate_m": 0.5328727270357922,
+        "max_fuel": 13994827,
+        "completed": true
+      }
+    ]
+  },
+  {
+    "name": "imu-only",
+    "episodes": 10,
+    "completed": 10,
+    "filled_frames": 0,
+    "sim3_ate_mean_m": 1.101235435983479,
+    "fuel_per_frame_max": 14162855,
+    "fuel_per_frame_mean": 13089194.253833333,
+    "wall_per_frame_median_ms": 1.066849334165454,
+    "unaligned_ate_median_m": 3.1217323398467736,
+    "velocity_rmse_median_m_s": 0.25395287267442607,
+    "rotation_rmse_median_rad": 0.26925707915522623,
+    "rotation_rmse_median_deg": 15.427294239614396,
+    "rpe_translation_rmse_median_m": 0.2490539239160754,
+    "rpe_rotation_rmse_median_deg": 0.9172054430018111,
+    "angular_velocity_rmse_median_rad_s": 0.030792831180185876,
+    "sim3_scale_median": 1.9546123349697915,
+    "sim3_scale_range": [
+      1.1805057366701248,
+      3.5731103569472205
+    ],
+    "ate_change_percent": -46.06109762910185,
+    "max_fuel_change_percent": -90.01989248940141,
+    "wasm_sha256": "8a8c0f353a638df8d3fcb56a8271dd40662c0c23045357f4f79250df1c939ca2",
+    "model_metadata": {
+      "schema_version": 1,
+      "input_width": 64,
+      "input_height": 48,
+      "state_mean": [
+        0.0002903045096900314,
+        -0.0024019810371100903,
+        4.056700709043071e-05,
+        -0.0006200654897838831,
+        -0.48943668603897095,
+        -0.0006987960077822208,
+        -1.5106808859854937e-05,
+        -0.012232117354869843,
+        -1.4507308151223697e-05,
+        0.27396294474601746,
+        0.36528390645980835,
+        0.5,
+        0.5,
+        0.05000000819563866
+      ],
+      "state_std": [
+        0.0016396129503846169,
+        0.010300121270120144,
+        0.00165434496011585,
+        0.007795785553753376,
+        0.008918380364775658,
+        0.006590625736862421,
+        0.00020447226415853947,
+        0.0002373328316025436,
+        0.0001760648301569745,
+        0.046288568526506424,
+        0.06171809509396553,
+        9.999999974752427e-07,
+        9.999999974752427e-07,
+        9.999999974752427e-07
+      ],
+      "target_mean": [
+        -7.096362969605252e-05,
+        -0.0015134280547499657,
+        0.008229664526879787,
+        -0.0002667608205229044,
+        -2.9533328415709548e-05,
+        -5.9541638620430604e-05
+      ],
+      "target_std": [
+        0.0010000000474974513,
+        0.005779764149338007,
+        0.00969107635319233,
+        0.001214494463056326,
+        0.0013117530616000295,
+        0.0012225416721776128
+      ],
+      "map": {
+        "enabled": false
+      },
+      "diagnostics_interval": 0,
+      "input_mode": "imu_only",
+      "network_inputs": "images_state",
+      "model_sha256": "b1a3ecb7c4241a3364254f539e5f6aadd1d3744bb66df475fddd81a634145fce",
+      "training_stage": "warp",
+      "training_seed": 17
+    },
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "sim3_ate_m": 0.6323629762709688,
+        "max_fuel": 14162105,
+        "completed": true
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "sim3_ate_m": 1.7500750787048294,
+        "max_fuel": 14162105,
+        "completed": true
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "sim3_ate_m": 0.8340376215225244,
+        "max_fuel": 14161855,
+        "completed": true
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "sim3_ate_m": 0.5900218287812903,
+        "max_fuel": 14162605,
+        "completed": true
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "sim3_ate_m": 0.5922160106858805,
+        "max_fuel": 14162105,
+        "completed": true
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "sim3_ate_m": 1.5758505914873318,
+        "max_fuel": 14162355,
+        "completed": true
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "sim3_ate_m": 1.7297892735433977,
+        "max_fuel": 14161855,
+        "completed": true
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "sim3_ate_m": 1.114688219787588,
+        "max_fuel": 14162355,
+        "completed": true
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "sim3_ate_m": 1.6930150429490878,
+        "max_fuel": 14162355,
+        "completed": true
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "sim3_ate_m": 0.5002977161018906,
+        "max_fuel": 14162855,
+        "completed": true
+      }
+    ]
+  },
+  {
+    "name": "imu-compact",
+    "episodes": 10,
+    "completed": 10,
+    "filled_frames": 0,
+    "sim3_ate_mean_m": 1.1012355005945509,
+    "fuel_per_frame_max": 6296120,
+    "fuel_per_frame_mean": 6001503.302583333,
+    "wall_per_frame_median_ms": 0.7563483668491244,
+    "unaligned_ate_median_m": 3.1217323227086986,
+    "velocity_rmse_median_m_s": 0.2539528774644357,
+    "rotation_rmse_median_rad": 0.2692570517912831,
+    "rotation_rmse_median_deg": 15.427292671775945,
+    "rpe_translation_rmse_median_m": 0.2490539292720481,
+    "rpe_rotation_rmse_median_deg": 0.9172054700091214,
+    "angular_velocity_rmse_median_rad_s": 0.030792831512404875,
+    "sim3_scale_median": 1.9546124062168797,
+    "sim3_scale_range": [
+      1.1805059076609437,
+      3.573109953419773
+    ],
+    "ate_change_percent": -46.061094464428635,
+    "max_fuel_change_percent": -95.56332713286764,
+    "wasm_sha256": "ec60a3ed37de74bb6004e9aef5d30247b0c4fdd56bfc9647d5c7c983eb647462",
+    "model_metadata": {
+      "schema_version": 1,
+      "input_width": 64,
+      "input_height": 48,
+      "state_mean": [
+        0.0002903045096900314,
+        -0.0024019810371100903,
+        4.056700709043071e-05,
+        -0.0006200654897838831,
+        -0.48943668603897095,
+        -0.0006987960077822208,
+        -1.5106808859854937e-05,
+        -0.012232117354869843,
+        -1.4507308151223697e-05,
+        0.27396294474601746,
+        0.36528390645980835,
+        0.5,
+        0.5,
+        0.05000000819563866
+      ],
+      "state_std": [
+        0.0016396129503846169,
+        0.010300121270120144,
+        0.00165434496011585,
+        0.007795785553753376,
+        0.008918380364775658,
+        0.006590625736862421,
+        0.00020447226415853947,
+        0.0002373328316025436,
+        0.0001760648301569745,
+        0.046288568526506424,
+        0.06171809509396553,
+        9.999999974752427e-07,
+        9.999999974752427e-07,
+        9.999999974752427e-07
+      ],
+      "target_mean": [
+        -7.096362969605252e-05,
+        -0.0015134280547499657,
+        0.008229664526879787,
+        -0.0002667608205229044,
+        -2.9533328415709548e-05,
+        -5.9541638620430604e-05
+      ],
+      "target_std": [
+        0.0010000000474974513,
+        0.005779764149338007,
+        0.00969107635319233,
+        0.001214494463056326,
+        0.0013117530616000295,
+        0.0012225416721776128
+      ],
+      "map": {
+        "enabled": false
+      },
+      "diagnostics_interval": 0,
+      "input_mode": "imu_only",
+      "network_inputs": "state",
+      "model_sha256": "710de3d43219f61390b12dcf40cc4d205cc2a8120c2b9230fc57cfeb29a0e28b",
+      "training_stage": "warp",
+      "training_seed": 17,
+      "source_model_sha256": "b1a3ecb7c4241a3364254f539e5f6aadd1d3744bb66df475fddd81a634145fce"
+    },
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "sim3_ate_m": 0.6323629243111486,
+        "max_fuel": 6295370,
+        "completed": true
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "sim3_ate_m": 1.750075399349236,
+        "max_fuel": 6295620,
+        "completed": true
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "sim3_ate_m": 0.8340381889058507,
+        "max_fuel": 6295120,
+        "completed": true
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "sim3_ate_m": 0.5900219109630995,
+        "max_fuel": 6295870,
+        "completed": true
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "sim3_ate_m": 0.5922159930069418,
+        "max_fuel": 6295370,
+        "completed": true
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "sim3_ate_m": 1.575850566046518,
+        "max_fuel": 6295620,
+        "completed": true
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "sim3_ate_m": 1.729789225954827,
+        "max_fuel": 6295370,
+        "completed": true
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "sim3_ate_m": 1.1146882024045106,
+        "max_fuel": 6295370,
+        "completed": true
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "sim3_ate_m": 1.6930149655940487,
+        "max_fuel": 6295370,
+        "completed": true
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "sim3_ate_m": 0.500297629409328,
+        "max_fuel": 6296120,
+        "completed": true
+      }
+    ]
+  }
+]

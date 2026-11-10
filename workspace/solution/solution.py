@@ -8,7 +8,7 @@ the same network weights and is applied before recomputing pose and twist.
 import cv2
 import numpy as np
 
-from motion_inference import MotionPredictor
+from motion_inference import MotionPredictor, validate_motion_options
 from preintegrate import camera_features, exp_so3, log_so3, make_state, prepare_frame
 
 
@@ -48,6 +48,7 @@ class Solution:
             import solution_bundle as bundle
             predictor = MotionPredictor(bundle)
         self.predictor = predictor
+        _, _, self.rotation_residual_enabled = validate_motion_options(predictor.meta)
         self.size = tuple(predictor.size)
         self.previous = None
         self.previous_t = None
@@ -81,7 +82,9 @@ class Solution:
         if motion.shape != (6,) or not np.isfinite(motion).all():
             raise ValueError("motion prediction must contain six finite values")
         delta = np.eye(4)
-        delta[:3, :3] = exp_so3(state[:3].astype(np.float64)) @ exp_so3(motion[3:])
+        delta[:3, :3] = exp_so3(state[:3].astype(np.float64))
+        if self.rotation_residual_enabled:
+            delta[:3, :3] = delta[:3, :3] @ exp_so3(motion[3:])
         delta[:3, 3] = motion[:3]
         previous_pose = self.T
         pose = previous_pose @ delta

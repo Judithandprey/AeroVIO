@@ -1,0 +1,26 @@
+[
+  {
+    "name": "motion-current-v2",
+    "sha256": "6f6d0343975343329624c261fb02839e50c7eb11cd8beed6fe8cc4bb691aabb3",
+    "bytes": 50169974,
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-motion-current-v2.wasm"
+  },
+  {
+    "name": "motion-no-rotation-v2",
+    "sha256": "d5cc8444fc4a9343f267f8dd7bcc2f65bc7f0e26a1ad9a0c6a496c0bc77790eb",
+    "bytes": 50170012,
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-motion-no-rotation-v2.wasm"
+  },
+  {
+    "name": "motion-imu-only-v2",
+    "sha256": "8a8c0f353a638df8d3fcb56a8271dd40662c0c23045357f4f79250df1c939ca2",
+    "bytes": 50170038,
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-motion-imu-only-v2.wasm"
+  },
+  {
+    "name": "motion-imu-compact-v2",
+    "sha256": "ec60a3ed37de74bb6004e9aef5d30247b0c4fdd56bfc9647d5c7c983eb647462",
+    "bytes": 50056303,
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-motion-imu-compact-v2.wasm"
+  }
+]

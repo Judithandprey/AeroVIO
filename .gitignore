@@ -58,4 +58,6 @@ report-*/
 # Small audited inference models retained with experiment evidence
 !experiments/learned-motion-v1/pose/net.onnx
 !experiments/learned-motion-v1/warp/net.onnx
+!experiments/motion-ablation-v2/imu-only/net.onnx
+!experiments/motion-ablation-v2/imu-only-compact/net.onnx
 !workspace/solution/net.onnx

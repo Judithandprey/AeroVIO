@@ -25,9 +25,12 @@ and matrix-to-quaternion helpers also draw on those examples.
 Project-specific changes include normalized camera-intrinsic/time inputs,
 including the first IMU interval, explicit normalization/ONNX metadata contracts,
 causality and numerical checks, separate generated train/validation scenes,
-training-only masked warping loss, bounded sparse-map correction, and controlled
-measurement/provenance tooling. Their behavior and evidence limits are documented
-in `docs/learned-motion.md` and `experiments/learned-motion-v1/`.
+training-only masked warping loss, bounded sparse-map correction, controlled
+rotation/image-input ablations, constant-feature folding for the IMU-only export,
+and measurement/provenance tooling. Their behavior and evidence limits are
+documented in `docs/learned-motion.md`, `experiments/learned-motion-v1/`, and
+`experiments/motion-ablation-v2/`. The compact graph derives from the same
+upstream-inspired trained architecture; it is not a separately trained model.
 These changes do not claim invention of CNN odometry, image warping, KLT,
 triangulation, PnP, or the upstream estimator.
 

@@ -6,12 +6,17 @@ Estimate camera pose and twist from RGB + IMU while measuring the
 accuracy-compute trade-off in a WebAssembly runtime. Developed for UC Berkeley
 EECS 116/216, Fall 2026, Project 3.
 
-**Current experiment:** a trained small motion network, a matched version with
-training-only warping supervision, and an optional bounded sparse 3D map.
-The three learned variants build and pass 20-frame WASM smoke checks. See the
-[experiment record](experiments/learned-motion-v1/README.md) and
-[measured comparison](experiments/learned-motion-v1/comparison.md) for completed
-public-set results, per-episode regressions, and evidence limits.
+**Current investigation:** isolate the small motion network's rotation correction
+and visual input, then measure an equivalent compact IMU-only export. See the
+[rotation/input experiment](experiments/motion-ablation-v2/README.md),
+[comparison](experiments/motion-ablation-v2/comparison.md), and
+[rotation diagnostics](experiments/motion-ablation-v2/rotation-diagnostics.md).
+
+The [first experiment](experiments/learned-motion-v1/README.md) preserves the
+completed CNN, training-only warping and sparse-map comparison, including its
+rotation/scale limitations and map regression. The
+[warping and world-model guide](docs/warping-and-world-models.md) explains how the
+implemented geometric constraint relates to the broader project ideas.
 
 The official KLT + IMU reference remains frozen at tag `baseline-klt-imu-v1`.
 It completed 10/10 public episodes with mean Sim(3) ATE **2.041635 m** and maximum
@@ -28,7 +33,8 @@ KLT baseline. Package each variant explicitly to avoid mixing model identities.
 2. Follow [setup and artifact reproduction](docs/setup.md).
 3. Review the [learned architecture and training protocol](docs/learned-motion.md)
    and [sparse-map geometry](docs/perspective-map.md).
-4. Read the [controlled comparison](experiments/learned-motion-v1/comparison.md)
+4. Read the [current ablations](experiments/motion-ablation-v2/README.md) and
+   [earlier geometry comparison](experiments/learned-motion-v1/comparison.md)
    before drawing conclusions or changing parameters.
 5. Use [HANDOFF.md](HANDOFF.md) to resume development.
 
@@ -54,6 +60,7 @@ configs/             Pinned inputs, limits and dependency snapshots
 experiments/         Compact reports, model snapshots and provenance
     baseline-klt-imu/
     learned-motion-v1/
+    motion-ablation-v2/
 docs/                Course sources, requirements, architecture and setup
 reports/             Presentation and final-report sources
 HANDOFF.md           Verified state and development boundaries
@@ -61,7 +68,7 @@ HANDOFF.md           Verified state and development boundaries
 
 `external/viobench/`, generated data, runtime builds, training checkpoints,
 `artifacts/`, and raw `results/` remain ignored. The compact ONNX checkpoints and
-metadata in `experiments/learned-motion-v1/` identify the recorded experiments.
+metadata under `experiments/` identify the recorded experiments.
 The evaluation helper records source/model hashes from each actual WASM payload.
 
 ## References

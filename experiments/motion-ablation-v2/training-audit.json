@@ -1,0 +1,97 @@
+{
+  "status": "passed",
+  "checks": {
+    "control_reproduces_original_onnx": true,
+    "control_reproduces_original_best_validation": true,
+    "control_reproduces_all40_epoch_metrics": true,
+    "matched_training_controls": {
+      "seed": true,
+      "epochs": true,
+      "batch": true,
+      "learning_rate": true,
+      "warp_weight": true,
+      "threads": true,
+      "device": true,
+      "parameters": true,
+      "initial_weights_sha256": true,
+      "train_cache_sha256": true,
+      "validation_cache_sha256": true,
+      "cache_provenance": true,
+      "source_sha256": true,
+      "minibatch_order_sha256": true
+    },
+    "normalization_identical": {
+      "state_mean": true,
+      "state_std": true,
+      "target_mean": true,
+      "target_std": true
+    },
+    "compact_meta_other_fields_identical": true,
+    "compact_parent_link_correct": true,
+    "artifact_hash_checks": {
+      "motion-warp-control-v2": {
+        "onnx": true,
+        "checkpoint": true
+      },
+      "motion-imu-only-v2": {
+        "onnx": true,
+        "checkpoint": true
+      },
+      "motion-imu-only-compact-v2": {
+        "onnx": true,
+        "checkpoint": true
+      }
+    },
+    "source_hash_checks": {
+      "motion-warp-control-v2": {
+        "scripts/train_motion.py": true,
+        "training/motion_model.py": true,
+        "workspace/solution/preintegrate.py": true
+      },
+      "motion-imu-only-v2": {
+        "scripts/train_motion.py": true,
+        "training/motion_model.py": true,
+        "workspace/solution/preintegrate.py": true
+      },
+      "motion-imu-only-compact-v2": {
+        "scripts/train_motion.py": true,
+        "training/motion_model.py": true,
+        "workspace/solution/preintegrate.py": true
+      }
+    }
+  },
+  "paths": {
+    "control": "models/motion-warp-control-v2",
+    "imu_only": "models/motion-imu-only-v2",
+    "compact": "models/motion-imu-only-compact-v2"
+  },
+  "compact_equivalence": {
+    "samples": 860,
+    "validation_samples": 796,
+    "synthetic_samples": 64,
+    "maximum_torch_difference": 9.5367431640625e-07,
+    "maximum_opencv_difference": 1.430511474609375e-06,
+    "tolerance": 1e-05
+  },
+  "selected_epochs": {
+    "control": 4,
+    "imu_only": 14
+  },
+  "model_bytes": {
+    "full": 119770,
+    "compact": 5949
+  },
+  "minibatch_order_sha256": "4f03096bfdabe2435d28a897eb296a298f1eab94147c7633fcfa0a671c4df62e",
+  "validation_only_relative_changes_percent": {
+    "pose_loss": -4.807716919562144,
+    "photo_loss": -0.9130504721561294,
+    "translation_rmse_m": -3.4922609146868733,
+    "rotation_residual_rmse_rad": -0.24885610712747086
+  },
+  "limitations": [
+    "Single-seed pilot, 120s training and40s validation.",
+    "IMU-only still uses real RGB/depth for training-only photometric supervision.",
+    "Compact is a separate compute ablation; fullgraph is the matched image-information control.",
+    "No public evaluation data or scores used in model fitting/checkpoint selection."
+  ]
+}

@@ -9,6 +9,18 @@ import statistics
 ROOT = Path(__file__).resolve().parents[1]
 
 
+def normalized_meta(meta):
+    value = json.loads(json.dumps(meta))
+    value.setdefault("input_mode", "image_imu")
+    value.setdefault("network_inputs", "images_state")
+    value.setdefault("rotation_residual_enabled", True)
+    return value
+
+
+def files_except(manifest, *names):
+    return {k: v for k, v in manifest["bundle_files_sha256"].items() if k not in names}
+
+
 def load(name, directory):
     directory = Path(directory)
     manifest = json.loads((directory / "manifest.json").read_text())
@@ -51,6 +63,9 @@ def main():
             raise ValueError("episode selection/order differs")
         if run["report"]["wasmtime"] != base["report"]["wasmtime"]:
             raise ValueError("Wasmtime version differs")
+        for key in ["host", "python", "packages"]:
+            if run["manifest"].get(key) != base["manifest"].get(key):
+                raise ValueError(f"incomparable environment {key} for {run['name']}")
     learned = [run for run in runs if run["manifest"].get("embedded_model_metadata")]
     if learned:
         reference_sources = {k: v for k, v in learned[0]["manifest"]["bundle_files_sha256"].items() if k.endswith(".py")}
@@ -61,9 +76,34 @@ def main():
             meta = run["manifest"]["embedded_model_metadata"]
             if meta["model_sha256"] != run["manifest"]["bundle_files_sha256"].get("net.onnx"):
                 raise ValueError("metadata model hash differs from the actual embedded ONNX")
+            if not meta.get("rotation_residual_enabled", True):
+                candidates = [other for other in learned
+                              if other["manifest"]["embedded_model_metadata"].get("rotation_residual_enabled", True)
+                              and not other["manifest"]["embedded_model_metadata"].get("map", {}).get("enabled")
+                              and other["manifest"]["bundle_files_sha256"].get("net.onnx") == meta["model_sha256"]]
+                if len(candidates) != 1:
+                    raise ValueError("rotation ablation needs exactly one rotation-on counterpart with identical ONNX weights")
+                counterpart = candidates[0]["manifest"]
+                a, b = normalized_meta(meta), normalized_meta(counterpart["embedded_model_metadata"])
+                a["rotation_residual_enabled"] = True
+                if files_except(run["manifest"], "meta.json") != files_except(counterpart, "meta.json") or a != b:
+                    raise ValueError("rotation on/off bundles must differ only in rotation_residual_enabled")
+            if meta.get("network_inputs", "images_state") == "state":
+                candidates = [other for other in learned
+                              if other["manifest"]["bundle_files_sha256"].get("net.onnx") == meta.get("source_model_sha256")
+                              and other["manifest"]["embedded_model_metadata"].get("network_inputs", "images_state") == "images_state"]
+                if len(candidates) != 1 or meta.get("input_mode") != "imu_only":
+                    raise ValueError("compact model needs exactly one full-graph IMU-only parent")
+                counterpart = candidates[0]["manifest"]
+                a, b = normalized_meta(meta), normalized_meta(counterpart["embedded_model_metadata"])
+                a["network_inputs"] = "images_state"
+                a["model_sha256"] = a.pop("source_model_sha256")
+                if files_except(run["manifest"], "meta.json", "net.onnx") != files_except(counterpart, "meta.json", "net.onnx") or a != b:
+                    raise ValueError("compact metadata must preserve its full-graph IMU-only training identity")
             if meta.get("map", {}).get("enabled"):
                 candidates = [other for other in learned
                               if not other["manifest"]["embedded_model_metadata"].get("map", {}).get("enabled")
+                              and other["manifest"]["embedded_model_metadata"].get("rotation_residual_enabled", True) == meta.get("rotation_residual_enabled", True)
                               and other["manifest"]["bundle_files_sha256"].get("net.onnx") == run["manifest"]["bundle_files_sha256"].get("net.onnx")]
                 if len(candidates) != 1:
                     raise ValueError("map ablation needs exactly one map-off run with identical ONNX weights")
@@ -112,6 +152,10 @@ def main():
               "| --- | ---: | ---: | ---: | ---: | ---: |"]
     for row in result:
         lines.append(f"| {row['name']} | {row['unaligned_ate_median_m']:.4f} | {row['rotation_rmse_median_deg']:.3f} | {row['rpe_translation_rmse_median_m']:.4f} | {row['velocity_rmse_median_m_s']:.4f} | {row['sim3_scale_median']:.3f} |")
+    lines += ["", "| Variant | Rotation RMSE (deg) | 1 s rotation RPE (deg) | Angular velocity RMSE (rad/s) |",
+              "| --- | ---: | ---: | ---: |"]
+    for row in result:
+        lines.append(f"| {row['name']} | {row['rotation_rmse_median_deg']:.3f} | {row['rpe_rotation_rmse_median_deg']:.3f} | {row['angular_velocity_rmse_median_rad_s']:.5f} |")
     lines += ["", "## Per-episode Sim(3) ATE", "", "| Episode | " + " | ".join(r["name"] for r in result) + " |",
               "| --- | " + " | ".join("---:" for _ in result) + " |"]
     for index, episode in enumerate(result[0]["per_episode"]):

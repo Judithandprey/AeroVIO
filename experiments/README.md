@@ -4,7 +4,10 @@
 | --- | --- |
 | [Official KLT + IMU baseline](baseline-klt-imu/README.md) | Frozen source, initial build/public evaluation, source hashes and one-episode repeat |
 | [Small motion network and geometry ablations](learned-motion-v1/README.md) | Separate training data, pose/warp models, optional map, model snapshots and provenance |
-| [Controlled comparison](learned-motion-v1/comparison.md) | Completed four-way public evaluation with matched runtime, inputs and limits |
+| [First geometry comparison](learned-motion-v1/comparison.md) | Completed four-way public evaluation with matched runtime, inputs and limits |
+| [Rotation and visual-input ablations](motion-ablation-v2/README.md) | Fixed-weight rotation toggle, matched IMU-only training and equivalent compact export |
+| [Current ablation comparison](motion-ablation-v2/comparison.md) | Accuracy, compute and completion evidence for the controlled v2 variants |
+| [Rotation diagnostics](motion-ablation-v2/rotation-diagnostics.md) | Saved-trajectory evidence and limits on interpreting accumulated orientation errors |
 
 `baseline-klt-imu-v1` preserves the official reference. The current working
 solution is the pose-only learned model; do not assume a working-tree filename
@@ -16,6 +19,12 @@ snapshots and provenance together; keep raw trajectories, fuel arrays, training
 checkpoints, data and large logs in ignored output directories. Retain failed
 runs and regressions as evidence. Package each variant with an explicit model
 path and a new artifact name.
+
+The [warping and world-model guide](../docs/warping-and-world-models.md) connects
+the experiments to the project ideas. The v2 IMU-only control keeps real RGB and
+geometry as training supervision while withholding RGB from the prediction
+network. Its compact export is an inference-graph transformation of that same
+checkpoint, and should be reported separately from the input-information ablation.
 
 ## Record template
 

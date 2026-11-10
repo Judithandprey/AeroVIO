@@ -5,11 +5,30 @@ import cv2
 import numpy as np
 
 
+def validate_motion_options(meta):
+    """Validate optional ablation controls while preserving old model defaults."""
+    input_mode = meta.get("input_mode", "image_imu")
+    if input_mode not in ("image_imu", "imu_only"):
+        raise ValueError("input_mode must be image_imu or imu_only")
+    network_inputs = meta.get("network_inputs", "images_state")
+    if network_inputs not in ("images_state", "state"):
+        raise ValueError("network_inputs must be images_state or state")
+    if network_inputs == "state" and input_mode != "imu_only":
+        raise ValueError("state-only network requires input_mode imu_only")
+    rotation_enabled = meta.get("rotation_residual_enabled", True)
+    if type(rotation_enabled) is not bool:
+        raise ValueError("rotation_residual_enabled must be a Boolean")
+    if not rotation_enabled and meta.get("map", {}).get("enabled", False):
+        raise ValueError("disabled rotation residual requires map correction disabled")
+    return input_mode, network_inputs, rotation_enabled
+
+
 class MotionPredictor:
     def __init__(self, bundle):
         self.meta = json.loads(bundle.read_text("meta.json"))
         if self.meta.get("schema_version") != 1:
             raise ValueError("unsupported motion metadata schema")
+        self.input_mode, self.network_inputs, self.rotation_residual_enabled = validate_motion_options(self.meta)
         self.size = (int(self.meta["input_width"]), int(self.meta["input_height"]))
         if min(self.size) <= 0:
             raise ValueError("network image dimensions must be positive")
@@ -40,7 +59,11 @@ class MotionPredictor:
         if not np.isfinite(pair).all() or not np.isfinite(state).all():
             raise ValueError("motion network inputs must be finite")
         normalized = (state - self.state_mean) / self.state_std
-        self.net.setInput(np.ascontiguousarray(pair[None]), "images")
+        if self.network_inputs == "images_state":
+            # The matched information ablation keeps the entire CNN graph and cost.
+            # Its separately trained weights never receive visual observations.
+            images = np.zeros_like(pair) if self.input_mode == "imu_only" else pair
+            self.net.setInput(np.ascontiguousarray(images[None]), "images")
         self.net.setInput(np.ascontiguousarray(normalized[None]), "state")
         raw = np.asarray(self.net.forward(), dtype=np.float32).reshape(-1)
         if raw.shape != (6,):

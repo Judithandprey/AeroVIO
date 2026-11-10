@@ -1,0 +1,19 @@
+{
+  "image_input_ate_reduction_percent_vs_imu": 12.223822992645694,
+  "removing_image_ate_increase_percent_vs_current": 13.926128260999038,
+  "image_input_ate_wins": 6,
+  "largest_image_gain_episode": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+  "largest_episode_share_of_net_ate_gain_percent": 88.49524940812101,
+  "without_largest_gain_episode_means": {
+    "current": 1.0119344778847883,
+    "imu_only": 1.0291421423477733
+  },
+  "rotation_off_ate_change_percent_vs_current": -0.2834882195504207,
+  "rotation_on_rmse_reduction_percent_vs_off": 19.38722504985224,
+  "compact_step_reduction_percent_vs_full_imu": 29.104481520740677,
+  "compact_max_fuel_reduction_percent_vs_full_imu": 55.54483894666718,
+  "compact_public_max_position_difference_m": 1.2963506471746495e-06,
+  "compact_public_max_rotation_difference_rad": 1.1920928955078128e-07,
+  "compact_public_max_twist_component_difference": 7.500000000215667e-08,
+  "note": "Largest-episode analysis is a post-hoc sensitivity description, not a rule for dropping an episode from the headline score."
+}

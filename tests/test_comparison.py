@@ -43,6 +43,13 @@ class ComparisonGuards(unittest.TestCase):
         update(value)
         path.write_text(json.dumps(value))
 
+    def add_rotation_control(self):
+        name = 'cnn-warp-no-rotation'
+        shutil.copytree(self.directory / 'cnn-warp', self.directory / name)
+        self.mutate_manifest(name, lambda m: m['embedded_model_metadata'].update(rotation_residual_enabled=False))
+        self.names.append(name)
+        return name
+
     def test_archived_comparison_is_complete(self):
         self.run_comparison()
         result = json.loads((self.directory / 'comparison.json').read_text())
@@ -76,6 +83,31 @@ class ComparisonGuards(unittest.TestCase):
         path.write_text(json.dumps(report))
         self.mutate_manifest('motion-cnn', lambda m: m.update(report_sha256=hashlib.sha256(path.read_bytes()).hexdigest()))
         with self.assertRaisesRegex(ValueError, 'actual limits differ'):
+            self.run_comparison()
+
+    def test_rotation_toggle_can_coexist_with_map_control(self):
+        self.add_rotation_control()
+        self.run_comparison()
+
+    def test_rotation_toggle_rejects_changed_normalization(self):
+        name = self.add_rotation_control()
+        self.mutate_manifest(name, lambda m: m['embedded_model_metadata'].update(state_mean=[99] * 14))
+        with self.assertRaisesRegex(ValueError, 'differ only in rotation_residual_enabled'):
+            self.run_comparison()
+
+    def test_rotation_toggle_requires_unchanged_weights(self):
+        name = self.add_rotation_control()
+        def change_weights(manifest):
+            manifest['embedded_model_metadata']['model_sha256'] = 'changed'
+            manifest['bundle_files_sha256']['net.onnx'] = 'changed'
+        self.mutate_manifest(name, change_weights)
+        with self.assertRaisesRegex(ValueError, 'rotation-on counterpart'):
+            self.run_comparison()
+
+    def test_compact_model_requires_parent(self):
+        self.mutate_manifest('motion-cnn', lambda m: m['embedded_model_metadata'].update(
+            input_mode='imu_only', network_inputs='state', source_model_sha256='missing'))
+        with self.assertRaisesRegex(ValueError, 'full-graph IMU-only parent'):
             self.run_comparison()
 
 

@@ -1,0 +1,20 @@
+{
+  "scope": "Source hashes at completed experiment archival",
+  "files": {
+    "configs/motion-ablation-v2.json": "5434721412d33852d0da84b46620f434d9958eee101764f4a581b7da970865ac",
+    "configs/requirements-training.lock.txt": "0a16c9822520e33b3aedafa233649c273c9950e5175f3f0f76e27d802f8a1f23",
+    "scripts/analyze_rotation_ablation.py": "cbd93caf75662cedeb0526ee7a990f8d41caaa81455e1da813e35d072c88d570",
+    "scripts/compare_motion_runs.py": "24d98c874342db9115bd962a083f39173769f43bfe75ac7e05d7ca4e0dd557af",
+    "scripts/evaluate_public.py": "209ba610a5b9d0885bb7c5069926715d8a3dfdcd3d78e990d5181260c3d94f92",
+    "scripts/generate_training_data.py": "7281e225a657bf012607eee1a09f67239902db2204e08626ff3c3852ba76a2e3",
+    "scripts/package_motion.py": "1eb78c34e2b08cd187df404062c93803a9254139789adb93827146b4b4c801d2",
+    "scripts/prepare_motion_data.py": "9d945ffdbbe810d22e258b17afaa363cb71259495f729177bb0cb54bb3ad07f8",
+    "scripts/train_motion.py": "dcdde8c3e6bc2da3f7b55bd847026c6c3e2fcaa1abe4a81672c099d9842ca091",
+    "scripts/verify_ablation_outputs.py": "ceda1d8df6e846fa53551ff5bcdc7fc95b88c26677f59c8d3becd4553a50cc44",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "4f6efaefcac8b6f584abe5d0c7b2fd4338e2300788cf457627fa8594597586f6",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "32f32969d695b7a6e7a1a2c69f9016e73609b3cf6aaf9e453b6e2d3afadd944e"
+  }
+}

@@ -1,7 +1,12 @@
 """Coordinate, causality and fail-fast tests for the learned motion guest."""
+import contextlib
+import hashlib
+import importlib.util
+import io
 import json
 from pathlib import Path
 import sys
+import tempfile
 import types
 import unittest
 from unittest.mock import patch
@@ -9,7 +14,7 @@ from unittest.mock import patch
 import numpy as np
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "workspace/solution"))
-from motion_inference import MotionPredictor
+from motion_inference import MotionPredictor, validate_motion_options
 from preintegrate import camera_features, exp_so3, log_so3, make_state, preintegrate
 from solution import Solution, quaternion_from_matrix
 
@@ -89,6 +94,40 @@ class MotionRuntimeTests(unittest.TestCase):
         solution.step(0.05, FRAME, [[0.05, 0, 0, 0, 0, 0, 2]])
         expected = exp_so3([0, 0, 0.1]) @ exp_so3(residual)
         np.testing.assert_allclose(solution.T[:3, :3], expected, atol=1e-7)
+
+    def test_rotation_ablation_preserves_predicted_camera_translation(self):
+        motion = [0.1, -0.02, 0.03, 0.15, -0.05, 0.02]
+        enabled = Solution(CONFIG, Predictor(motion))
+        disabled = Solution(CONFIG, Predictor(motion, {"rotation_residual_enabled": False}))
+        for solution in (enabled, disabled):
+            solution.step(0, FRAME, EMPTY)
+        for frame in (1, 2):
+            t = frame * .05
+            imu = [[t, 0, 0, 0, 0, 0, 2]]
+            old_enabled, old_disabled = enabled.T.copy(), disabled.T.copy()
+            out_enabled = enabled.step(t, FRAME, imu)
+            out_disabled = disabled.step(t, FRAME, imu)
+            delta_enabled = np.linalg.inv(old_enabled) @ enabled.T
+            delta_disabled = np.linalg.inv(old_disabled) @ disabled.T
+            np.testing.assert_allclose(delta_enabled[:3, 3], motion[:3], atol=1e-9)
+            np.testing.assert_allclose(delta_disabled[:3, 3], motion[:3], atol=1e-9)
+            np.testing.assert_allclose(delta_disabled[:3, :3], exp_so3([0, 0, .1]), atol=1e-7)
+            self.assertFalse(np.allclose(delta_enabled[:3, :3], delta_disabled[:3, :3]))
+            np.testing.assert_allclose(out_disabled[10:], [0, 0, 2], atol=1e-7)
+            if frame == 1:
+                np.testing.assert_array_equal(out_enabled[:3], out_disabled[:3])
+            # Subsequent world-axis position may differ because its reference
+            # orientation changed; the predicted local translation must not.
+            for a, b in zip(enabled.predictor.calls[-1], disabled.predictor.calls[-1]):
+                np.testing.assert_array_equal(a, b)
+
+    def test_rotation_ablation_requires_boolean_and_disabled_map(self):
+        for value in (0, 1, "false", None):
+            with self.subTest(value=value), self.assertRaisesRegex(ValueError, "Boolean"):
+                Solution(CONFIG, Predictor(np.zeros(6), {"rotation_residual_enabled": value}))
+        with self.assertRaisesRegex(ValueError, "map correction disabled"):
+            Solution(CONFIG, Predictor(np.zeros(6),
+                                       {"rotation_residual_enabled": False, "map": {"enabled": True}}))
 
     def test_new_episode_resets_pose_and_history(self):
         one = Solution(CONFIG, Predictor([0.1, 0, 0, 0, 0, 0]))
@@ -180,6 +219,83 @@ class InferenceContractTests(unittest.TestCase):
         np.testing.assert_allclose(output, np.full(6, 3.1), atol=1e-6)
         self.assertEqual(network.inputs["images"].shape, (1, 2, 48, 64))
 
+    def input_sensitive_network(self):
+        class Network:
+            def __init__(self): self.inputs = {}
+            def setPreferableBackend(self, value): pass
+            def setPreferableTarget(self, value): pass
+            def enableFusion(self, value): pass
+            def setInput(self, data, name): self.inputs[name] = data.copy()
+            def forward(self):
+                value = self.inputs["state"].mean()
+                if "images" in self.inputs:
+                    value += self.inputs["images"].mean()
+                return np.full((1, 6), value, dtype=np.float32)
+        return Network()
+
+    def test_imu_only_zeros_images_without_mutating_caller_inputs(self):
+        network = self.input_sensitive_network()
+        meta = dict(self.metadata(), input_mode="imu_only")
+        with patch("cv2.dnn.readNetFromONNX", return_value=network):
+            predictor = MotionPredictor(self.bundle(meta))
+        pair = np.ones((2, 48, 64), dtype=np.float32)
+        state = np.full(14, 5, dtype=np.float32)
+        one = predictor.predict(pair, state)
+        two = predictor.predict(pair * 0.25, state)
+        np.testing.assert_array_equal(one, two)
+        np.testing.assert_array_equal(network.inputs["images"], np.zeros((1, 2, 48, 64)))
+        np.testing.assert_array_equal(pair, np.ones((2, 48, 64)))
+        np.testing.assert_array_equal(state, np.full(14, 5))
+        with self.assertRaisesRegex(ValueError, "finite"):
+            predictor.predict(pair * np.nan, state)
+
+    def test_default_image_mode_preserves_visual_input(self):
+        network = self.input_sensitive_network()
+        with patch("cv2.dnn.readNetFromONNX", return_value=network):
+            predictor = MotionPredictor(self.bundle(self.metadata()))
+        one = predictor.predict(np.ones((2, 48, 64)), np.full(14, 5))
+        two = predictor.predict(np.zeros((2, 48, 64)), np.full(14, 5))
+        self.assertFalse(np.array_equal(one, two))
+        self.assertEqual(validate_motion_options({}), ("image_imu", "images_state", True))
+
+    def test_compact_imu_graph_receives_only_normalized_state(self):
+        network = self.input_sensitive_network()
+        meta = dict(self.metadata(), input_mode="imu_only", network_inputs="state")
+        with patch("cv2.dnn.readNetFromONNX", return_value=network):
+            predictor = MotionPredictor(self.bundle(meta))
+        one = predictor.predict(np.ones((2, 48, 64)), np.full(14, 5))
+        two = predictor.predict(np.zeros((2, 48, 64)), np.full(14, 5))
+        np.testing.assert_array_equal(one, two)
+        self.assertEqual(set(network.inputs), {"state"})
+        np.testing.assert_array_equal(network.inputs["state"], np.full((1, 14), 2))
+
+    def test_invalid_ablation_metadata_fails_before_loading_weights(self):
+        cases = [({"input_mode": "images"}, "input_mode"),
+                 ({"input_mode": None}, "input_mode"),
+                 ({"network_inputs": "both"}, "network_inputs"),
+                 ({"network_inputs": "state"}, "requires input_mode imu_only"),
+                 ({"rotation_residual_enabled": 0}, "Boolean"),
+                 ({"rotation_residual_enabled": "false"}, "Boolean"),
+                 ({"rotation_residual_enabled": False, "map": {"enabled": True}}, "map correction disabled")]
+        for options, error in cases:
+            with self.subTest(options=options), self.assertRaisesRegex(ValueError, error):
+                MotionPredictor(self.bundle(dict(self.metadata(), **options), missing=True))
+
+    def test_imu_only_actual_onnx_is_independent_of_images(self):
+        folder = Path(__file__).resolve().parents[1] / "experiments/learned-motion-v1/warp"
+        metadata = json.loads((folder / "meta.json").read_text())
+        metadata["input_mode"] = "imu_only"
+        class Bundle:
+            def read_text(self, name): return json.dumps(metadata)
+            def read_bytes(self, name): return (folder / name).read_bytes()
+        predictor = MotionPredictor(Bundle())
+        state = np.asarray(metadata["state_mean"], dtype=np.float32)
+        pair = np.random.default_rng(7).random((2, 48, 64), dtype=np.float32)
+        one = predictor.predict(pair, state)
+        two = predictor.predict(1 - pair, state)
+        np.testing.assert_array_equal(one, two)
+        self.assertTrue(np.isfinite(one).all())
+
     def test_missing_weights_and_invalid_normalization_fail(self):
         with self.assertRaises(FileNotFoundError):
             MotionPredictor(self.bundle(self.metadata(), missing=True))
@@ -187,6 +303,54 @@ class InferenceContractTests(unittest.TestCase):
         metadata["state_std"][0] = 0
         with self.assertRaisesRegex(ValueError, "positive"):
             MotionPredictor(self.bundle(metadata))
+
+
+class PackagingAblationTests(unittest.TestCase):
+    def package_module(self):
+        path = Path(__file__).resolve().parents[1] / "scripts/package_motion.py"
+        spec = importlib.util.spec_from_file_location("package_motion_test", path)
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+        return module
+
+    def test_package_preserves_checkpoint_and_inherits_input_mode(self):
+        module = self.package_module()
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            source = root / "workspace/solution"
+            source.mkdir(parents=True)
+            (source / "solution.py").write_text("# packaging test fixture\n")
+            model = root / "model"
+            model.mkdir()
+            weights = b"fixed weight fixture"
+            (model / "net.onnx").write_bytes(weights)
+            metadata = {"model_sha256": hashlib.sha256(weights).hexdigest(), "input_mode": "imu_only"}
+            original = json.dumps(metadata)
+            (model / "meta.json").write_text(original)
+            def bundle(command, **kwargs):
+                Path(command[command.index("-o") + 1]).write_bytes(b"bundled fixture")
+            argv = ["package_motion.py", "--model", str(model), "--name", "imu-rotation-off",
+                    "--disable-rotation-residual"]
+            with patch.object(module, "ROOT", root), patch.object(sys, "argv", argv), \
+                 patch.object(sys, "path", sys.path.copy()), patch.object(module.subprocess, "run", side_effect=bundle), \
+                 contextlib.redirect_stdout(io.StringIO()):
+                module.main()
+            stage = root / "artifacts/imu-rotation-off-solution"
+            saved = json.loads((stage / "meta.json").read_text())
+            self.assertIs(saved["rotation_residual_enabled"], False)
+            self.assertEqual(saved["input_mode"], "imu_only")
+            self.assertEqual(saved["map"], {"enabled": False})
+            self.assertEqual((stage / "net.onnx").read_bytes(), weights)
+            self.assertEqual((model / "meta.json").read_text(), original)
+
+    def test_packaging_rejects_map_with_rotation_ablation(self):
+        module = self.package_module()
+        argv = ["package_motion.py", "--model", "unused", "--name", "invalid",
+                "--map", "--disable-rotation-residual"]
+        with patch.object(sys, "argv", argv), contextlib.redirect_stderr(io.StringIO()), \
+             self.assertRaises(SystemExit) as raised:
+            module.main()
+        self.assertEqual(raised.exception.code, 2)
 
 
 if __name__ == "__main__":

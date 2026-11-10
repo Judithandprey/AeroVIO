@@ -4,9 +4,13 @@ This experiment implements the proposed inverse inference: estimate camera
 motion from consecutive observations. Warping supplies a training constraint;
 it does not require a full image generator at inference time.
 
-The first full experiment is complete. See the
+The first full experiment is preserved in the
 [measured results and limitations](../experiments/learned-motion-v1/README.md)
 and [four-way comparison](../experiments/learned-motion-v1/comparison.md).
+The follow-up [rotation/input experiment](../experiments/motion-ablation-v2/README.md)
+isolates learned rotation correction and visual information. Read the
+[warping and world-model guide](warping-and-world-models.md) for the conceptual
+scope of this estimator.
 
 ## Variants
 
@@ -39,6 +43,47 @@ sample interval is included. Its 1 microsecond timestamp tolerance matches the
 upstream episode reader and only clips rounding at the frame endpoint. This
 intentional adaptation differs from the upstream tiny-CNN example. The original
 KLT baseline remains unchanged in its tagged artifact.
+
+## Rotation and visual-input controls
+
+The runtime accepts optional metadata fields with backward-compatible defaults:
+
+| Field | Default | Supported ablation |
+| --- | --- | --- |
+| `rotation_residual_enabled` | `true` | `false` composes `exp(IMU_rotation)` alone; sparse map must be disabled |
+| `input_mode` | `image_imu` | `imu_only` replaces the network's image input with zeros at training and inference |
+| `network_inputs` | `images_state` | `state` selects the equivalent compact graph and requires `input_mode=imu_only` |
+
+Rotation on/off packages use identical ONNX weights, image inputs and
+normalization. Disabling the residual leaves each predicted local translation
+unchanged. World-axis translations on later frames can change because they are
+composed using a different orientation. Twist is recomputed from the resulting
+pose. See the [rotation diagnostics](../experiments/motion-ablation-v2/rotation-diagnostics.md)
+for checks on the saved trajectories and limits on causal interpretation.
+
+The primary IMU-only control retrains the same 29,398-parameter model with zero
+images. Its 14 state values still contain nine IMU features, four normalized
+camera-intrinsic values, and dt. It retains the same data/cache, seed 17,
+initialization, batch order, 40-epoch schedule, warping weight 2, and validation
+checkpoint-selection rule as the image+IMU warping run. A different selected
+epoch is allowed by that shared rule.
+
+Real RGB pairs remain **training supervision**: the photometric loss warps the
+observed source image and compares it with the observed target image. Depth,
+visibility and reference poses are also training labels. Only the prediction
+network receives zero images; replacing the photometric target with zeros would
+change the loss and invalidate this input-information comparison. Inference has
+no access to those labels.
+
+An optional compact export evaluates the trained visual branch on zero images,
+then folds its constant feature contribution into the first head-layer bias.
+The remaining two-layer MLP has 1,350 parameters and a 5,949-byte ONNX graph.
+It uses the same trained checkpoint without additional optimization. Its
+`source_model_sha256` records the full model, and the export validates full versus
+compact predictions in both PyTorch and OpenCV on all validation states plus
+seeded synthetic states. Floating-point roundoff is recorded explicitly. Treat
+this as a separate compute experiment; the full graph remains the primary
+control for whether images contribute useful information.
 
 ## Training data
 
@@ -107,6 +152,23 @@ python3 -m venv .train-venv
 .venv/bin/python scripts/package_motion.py --model models/motion-warp-v1 --name motion-warp-v1
 .venv/bin/python scripts/package_motion.py --model models/motion-warp-v1 --name motion-warp-map-v1 --map
 ```
+
+To reproduce the IMU-only training and its optional compact export from the same
+cache, use new output directories. `--compact-out` requires `--input-mode
+imu_only`; it exports after checkpoint selection, without another training run.
+
+```bash
+.train-venv/bin/python scripts/train_motion.py --cache data/motion-cache-v2 --out models/motion-imu-only-v2-repro --input-mode imu_only --warp-weight 2 --epochs 40 --batch 64 --seed 17 --lr .001 --threads 4 --compact-out models/motion-imu-only-compact-v2-repro
+.venv/bin/python scripts/package_motion.py --model models/motion-imu-only-v2-repro --name motion-imu-only-trained-repro
+.venv/bin/python scripts/package_motion.py --model models/motion-imu-only-compact-v2-repro --name motion-imu-compact-trained-repro
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name motion-rotation-off-trained-repro --disable-rotation-residual
+```
+
+The archived v2 models are in `experiments/motion-ablation-v2/imu-only/` and
+`imu-only-compact/`; [setup](setup.md) shows how to package them without retraining.
+The rotation control reuses the archived v1 warping ONNX file. Refer to the
+[v2 experiment record](../experiments/motion-ablation-v2/README.md) for training
+provenance, compact equivalence checks, and completed evaluation status.
 
 Run synthetic `viobench check` on each artifact, then use `evaluate_public.py`
 with a new results directory for every run. Run measurements sequentially after

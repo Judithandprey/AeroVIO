@@ -1,14 +1,18 @@
 # Development setup and artifact reproduction
 
 The experimental branch contains a trained **small motion CNN**, a version with
-training-only warping supervision, and optional sparse-map correction. The
-original official KLT + IMU baseline is frozen at `baseline-klt-imu-v1`.
+training-only warping supervision, optional sparse-map correction, and explicit
+rotation/input ablations. The original official KLT + IMU baseline is frozen at
+`baseline-klt-imu-v1`.
 The working `workspace/solution/` currently selects the pose-only learned model.
 
 The runner and runtime are pinned to
 [viobench 2072fa9](https://github.com/jonas-eschmann/viobench/tree/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca).
-Read [architecture/training](learned-motion.md), [experiment evidence](../experiments/learned-motion-v1/README.md)
-and [comparison](../experiments/learned-motion-v1/comparison.md) alongside these commands.
+Read [architecture/training](learned-motion.md), the
+[current rotation/input experiment](../experiments/motion-ablation-v2/README.md),
+and [earlier geometry evidence](../experiments/learned-motion-v1/README.md)
+alongside these commands. The [warping/world-model guide](warping-and-world-models.md)
+explains the scope of the implemented geometry.
 
 ## Environment
 
@@ -72,6 +76,55 @@ The map variant uses exactly the warp model's weights; only the geometric map
 switch changes. The runtime must exist before `package_motion.py` is called.
 Model inference is OpenCV DNN/ONNX. PyTorch, training depth and warping loss are
 not included in the deployed solution.
+
+## Package the rotation and input ablations
+
+The on/off pair uses the same v1 warping checkpoint and current guest source.
+Only `rotation_residual_enabled` changes; it defaults to `true` when absent.
+The `--disable-rotation-residual` switch uses gyro-only rotation while preserving
+predicted local translation. It cannot be combined with `--map`.
+
+```bash
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name motion-current-v2-repro
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name motion-no-rotation-v2-repro --disable-rotation-residual
+.venv/bin/python scripts/package_motion.py --model experiments/motion-ablation-v2/imu-only --name motion-imu-only-v2-repro
+.venv/bin/python scripts/package_motion.py --model experiments/motion-ablation-v2/imu-only-compact --name motion-imu-compact-v2-repro
+.venv/bin/python -m viobench check artifacts/motion-current-v2-repro.wasm --frames 20
+.venv/bin/python -m viobench check artifacts/motion-no-rotation-v2-repro.wasm --frames 20
+.venv/bin/python -m viobench check artifacts/motion-imu-only-v2-repro.wasm --frames 20
+.venv/bin/python -m viobench check artifacts/motion-imu-compact-v2-repro.wasm --frames 20
+```
+
+Packaging inherits the checkpoint's `input_mode` and `network_inputs` metadata.
+The primary `imu-only` control retains the complete CNN and receives zero images;
+it still uses the 14-value state, including intrinsics and dt. The compact export
+folds its constant visual features into the head and takes only normalized state.
+It is a separate compute comparison using the same trained function, with
+floating-point equivalence checks archived alongside it. Its 5,949-byte ONNX size
+does not describe the complete WASM bundle, which includes the shared runtime.
+
+Run all compared variants from the same guest source revision and existing
+runtime. Use the new filenames in the evaluation commands below, give each run
+its own directory, and compare the rotation-on and rotation-off pair explicitly:
+
+```bash
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/motion-current-v2-repro.wasm --run-dir results/motion-current-v2-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/motion-no-rotation-v2-repro.wasm --run-dir results/motion-no-rotation-v2-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/motion-imu-only-v2-repro.wasm --run-dir results/motion-imu-only-v2-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/motion-imu-compact-v2-repro.wasm --run-dir results/motion-imu-compact-v2-repro
+.venv/bin/python scripts/compare_motion_runs.py --run rotation-on results/motion-current-v2-repro --run rotation-off results/motion-no-rotation-v2-repro --run imu-only results/motion-imu-only-v2-repro --run imu-compact results/motion-imu-compact-v2-repro --out reports/ablation-repro-comparison.md
+```
+
+See the [v2 comparison](../experiments/motion-ablation-v2/comparison.md) and
+[rotation diagnostics](../experiments/motion-ablation-v2/rotation-diagnostics.md)
+for recorded results and interpretation. All v1 evidence remains in its original
+experiment directory; the workspace's default model is still pose-only.
+
+The Windows copy names are `AeroVIO-motion-current-v2.wasm`,
+`AeroVIO-motion-no-rotation-v2.wasm`, `AeroVIO-motion-imu-only-v2.wasm`, and
+`AeroVIO-motion-imu-compact-v2.wasm` under
+`C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/`. Copy/hash verification belongs
+in the v2 record; these filenames alone do not prove evaluation or submission.
 
 ## Reproduce the frozen baseline
 

@@ -1,8 +1,17 @@
 # AeroVIO - Handoff
 
+The rotation/image ablation is complete: all five variants finished 10/10 public
+episodes (12,000 frames each), 62 tests pass, and all four new Windows WASM copies
+are SHA-256 verified. See `experiments/motion-ablation-v2/README.md` for the current
+findings: learned rotation correction helps overall; image input gives a mixed,
+episode-dependent trajectory benefit; compact IMU-only offers a compute tradeoff.
+
 Read `README.md`, `docs/requirements.md`, `docs/setup.md`,
-`docs/learned-motion.md`, and `experiments/learned-motion-v1/README.md` first.
-Use `experiments/learned-motion-v1/comparison.md` as the current result summary.
+`docs/learned-motion.md`, and `experiments/motion-ablation-v2/README.md` first.
+Use `experiments/motion-ablation-v2/comparison.md` and `rotation-diagnostics.md`
+for the current investigation; preserve `experiments/learned-motion-v1/` as the
+completed first experiment. See `docs/warping-and-world-models.md` for the
+conceptual distinction between geometric warping and a learned world model.
 
 ## Workspace and branch
 
@@ -16,7 +25,7 @@ Use `experiments/learned-motion-v1/comparison.md` as the current result summary.
 - Keep the evaluation `.venv` and training `.train-venv` separate. Host PyTorch
   training uses CPU; guest inference uses ONNX through OpenCV DNN in WASM.
 
-## Verified implementation and training
+## First experiment: preserved implementation and evidence
 
 - B0: original KLT + IMU, frozen at commit
   `8ea22f52b2083ee53d75b9419651c2505f949a67`, tag `baseline-klt-imu-v1`.
@@ -35,7 +44,8 @@ Use `experiments/learned-motion-v1/comparison.md` as the current result summary.
   and best validation metrics; see the archived training-repeatability record.
 - Current `workspace/solution/net.onnx` and `meta.json` select N1 (pose-only).
   For N2/N3, package the recorded checkpoint explicitly; see `docs/setup.md`.
-- All 39 host tests pass. Each learned variant passed a 20-frame WASM check.
+- The v1 evidence archive records 39 passing host tests and a 20-frame WASM
+  check for each learned variant.
   These checks establish execution/geometry contracts, not accuracy by themselves.
 - Completed public-run reports and the accuracy/compute comparison belong in
   `experiments/learned-motion-v1/`; refer there rather than copying provisional
@@ -47,6 +57,40 @@ Windows upload-ready copies have been hash-verified in
 `C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/`:
 `AeroVIO-motion-pose-v1.wasm`, `AeroVIO-motion-warp-v1.wasm`, and
 `AeroVIO-motion-warp-map-v1.wasm`. Packaging/copying is not a server submission.
+
+## Rotation and input ablations
+
+`experiments/motion-ablation-v2/` records the fixed-weight rotation toggle,
+matched IMU-only training, and optional algebraically compacted export. Consult
+its reports and checks for completed evaluation status and metrics.
+
+- Rotation on/off packages reuse `experiments/learned-motion-v1/warp/net.onnx`.
+  `rotation_residual_enabled` defaults to `true`; `false` composes only the IMU
+  rotation. The predicted relative translation is unchanged, while subsequent
+  world-axis translation can change because the orientation has changed.
+  This ablation requires the sparse map to be disabled.
+- `input_mode` defaults to `image_imu`. The `imu_only` model is trained with
+  zero image inputs and receives zero images at inference. It retains all 14
+  state values, including normalized calibration and elapsed time. Real RGB,
+  depth and reference motion still supervise its training losses.
+- The primary input ablation retains the original 29,398-parameter graph,
+  initialization, cache, seed 17, 40 epochs, batch order and warping weight 2.
+  Checkpoint selection follows the same validation rule; the IMU-only run
+  selected epoch 14.
+- `network_inputs` defaults to `images_state`. The optional `state` export
+  requires `input_mode=imu_only`; it folds constant zero-image features into
+  the first head-layer bias. It has 1,350 parameters and a 5,949-byte ONNX file,
+  derived from the same trained checkpoint without retraining. Numerical
+  equivalence evidence belongs with `imu-only-compact/run.json`.
+- All compared v2 packages use the same guest Python source. The current
+  workspace default remains N1, the pose-only image+IMU model.
+
+The v2 Windows artifact filenames under
+`C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/` are:
+`AeroVIO-motion-current-v2.wasm`, `AeroVIO-motion-no-rotation-v2.wasm`,
+`AeroVIO-motion-imu-only-v2.wasm`, and `AeroVIO-motion-imu-compact-v2.wasm`.
+Check the v2 experiment record for copy/hash verification. Packaging and copying
+remain separate from a course-server submission.
 
 ## Important implementation details
 

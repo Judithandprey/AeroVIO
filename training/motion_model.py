@@ -3,9 +3,20 @@
 The convolutional backbone follows viobench's attributed tiny_cnn example.
 The 14-value state additionally includes camera intrinsics and frame interval.
 """
+import copy
+
 import torch
 from torch import nn
 from torch.nn import functional as F
+
+
+def network_image_input(images, input_mode="image_imu"):
+    """Select network information without mutating real photometric labels."""
+    if input_mode == "image_imu":
+        return images
+    if input_mode == "imu_only":
+        return torch.zeros_like(images)
+    raise ValueError(f"unsupported input mode: {input_mode}")
 
 
 class MotionNet(nn.Module):
@@ -21,6 +32,33 @@ class MotionNet(nn.Module):
 
     def forward(self, images, state):
         return self.head(torch.cat((self.features(images), state), dim=1))
+
+
+class StateOnlyMotionNet(nn.Module):
+    """Dense inference graph derived algebraically from a trained zero-image net."""
+    def __init__(self, first, last):
+        super().__init__()
+        self.head = nn.Sequential(first, nn.ReLU(), last)
+
+    def forward(self, state):
+        return self.head(state)
+
+
+def fold_zero_image_features(net, height=48, width=64):
+    """Fold W_visual * features(zeros) into the first dense layer's bias.
+
+    This changes inference compute only. It must only be deployed with the
+    IMU-only contract, since the folded visual features are image-independent.
+    """
+    first, last = net.head[0], net.head[2]
+    with torch.no_grad():
+        visual = net.features(first.weight.new_zeros(1, 2, height, width))[0]
+        state_width = first.in_features - visual.numel()
+        folded = nn.Linear(state_width, first.out_features, device=first.weight.device,
+                           dtype=first.weight.dtype)
+        folded.weight.copy_(first.weight[:, visual.numel():])
+        folded.bias.copy_(first.bias + first.weight[:, :visual.numel()] @ visual)
+    return StateOnlyMotionNet(folded, copy.deepcopy(last)).eval()
 
 
 def so3_exp(vector):
