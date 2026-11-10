@@ -1,4 +1,4 @@
-# Handoff
+# AeroVIO - Handoff
 
 ## Read first
 
@@ -9,6 +9,7 @@
 
 ## Current state
 
+- AeroVIO is the project's name; repository: https://github.com/Judithandprey/AeroVIO.
 - Repository scaffold and English-first documentation are prepared for EECS 116/216 Project 3.
 - Two original course PDFs and extracted text are included with provenance and checksums.
 - viobench documentation was reviewed at commit `2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca`.

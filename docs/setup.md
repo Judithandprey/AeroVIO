@@ -4,7 +4,7 @@ This setup is adapted from the [upstream student guide at 2072fa9b5b4a5eb34160a5
 
 ## Environment
 
-Upstream supports Linux and macOS. On Windows, use **WSL2**, with the build checkout inside the Linux filesystem (for example `~/projects/eecs116-project3-vio`). The initial Windows checkout is suitable for editing these documents; create a separate Linux checkout for builds.
+Upstream supports Linux and macOS. On Windows, use **WSL2**, with the build checkout inside the Linux filesystem (for example `~/projects/AeroVIO`). The initial Windows checkout is suitable for editing these documents; create a separate Linux checkout for builds.
 
 Upstream lists Python 3.10-3.14, git, curl, CMake, a C compiler, make, and venv. On Ubuntu:
 
@@ -17,8 +17,8 @@ sudo apt install build-essential cmake curl git python3-venv xz-utils
 Run in a Linux/macOS shell:
 
 ```bash
-git clone https://github.com/Judithandprey/eecs116-project3-vio.git
-cd eecs116-project3-vio
+git clone https://github.com/Judithandprey/AeroVIO.git
+cd AeroVIO
 python3 -m venv .venv
 source .venv/bin/activate
 mkdir -p external

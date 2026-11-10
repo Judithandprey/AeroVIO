@@ -1,6 +1,10 @@
-# EECS 116/216 Project 3: Compute-Aware VIO
+# AeroVIO
 
-Working repository for the Fall 2026 project: estimate camera pose and twist from RGB + IMU while balancing trajectory accuracy and compute cost.
+**Compute-Aware Visual-Inertial Odometry**
+
+A project exploring the accuracy-compute trade-off in visual-inertial odometry: estimate camera pose and twist from RGB + IMU, targeting WebAssembly for deterministic compute measurement.
+
+Developed as part of UC Berkeley EECS 116/216, Fall 2026, Project 3.
 
 **Status:** project requirements, course sources, and development structure are initialized. No estimator, built WebAssembly module, training run, or evaluation result has been produced yet.
 
