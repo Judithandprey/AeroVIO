@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "current",
+    "windows_path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-gyro-v4-current.wasm",
+    "sha256": "f57b5c216e26ed4b111f84a3c7b4effdeb6cf313407bd35490830b3fd4b45660",
+    "bytes": 50177986,
+    "copy_verified": true,
+    "role": "selected current fallback"
+  },
+  {
+    "variant": "calibrated-gyro",
+    "windows_path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-gyro-v4-cal-gyro.wasm",
+    "sha256": "5c6a8414d059111f72a1d68dab6b6eb46df526fea5c7fdc1f3539c4a70e3affd",
+    "bytes": 50178023,
+    "copy_verified": true,
+    "role": "unselected calibrated-gyro diagnostic"
+  }
+]

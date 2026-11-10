@@ -1,0 +1,30 @@
+{
+  "abi_config.py": {
+    "source": "/root/projects/AeroVIO/external/viobench/viobench/tools/abi/config.py",
+    "sha256": "e4377be9d8b17d20259aba70597d22bba67cb09f6cce4c4cfbda762957d43428"
+  },
+  "hyperdrone_world.h.in": {
+    "source": "/root/projects/AeroVIO/external/viobench/viobench/tools/datasets/generate/hyperdrone_world.h.in",
+    "sha256": "69098225a95ba906878248a2385efb9ca18eb492b8628f8d813b990ad8ada808"
+  },
+  "generated_training_world.h": {
+    "source": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/hyperdrone_training_world.h",
+    "sha256": "b293bfec235d464bdf71fa0023c614b490c189c4f6dd9673d99f619eb6573067"
+  },
+  "tracking_operations_cpu.h": {
+    "source": "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/hyperlux/_vendor/rl-tools/include/rl_tools/rl/environments/hyperdrone/tasks/visual_inertial_localization/tracking_operations_cpu.h",
+    "sha256": "db5cea3a88d250ef7a36a4853c063c8fd150e8852353e1997b1ccb849c978aa3"
+  },
+  "planning_operations_cpu.h": {
+    "source": "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/hyperlux/_vendor/rl-tools/include/rl_tools/rl/environments/hyperdrone/tasks/visual_inertial_localization/planning_operations_cpu.h",
+    "sha256": "6d1837bafe6680c91cec204c114fce2386d70785fc01d90969c10d189b1e07ee"
+  },
+  "operations_cpu.h": {
+    "source": "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/hyperlux/_vendor/rl-tools/include/rl_tools/rl/environments/hyperdrone/tasks/visual_inertial_localization/operations_cpu.h",
+    "sha256": "b432f4e2e7e7dd66f8f9a17b7b924a456876ab1a857c90184b62c8e41b726520"
+  },
+  "baseline_solution.py": {
+    "source": "git tag baseline-klt-imu-v1:workspace/solution/solution.py",
+    "sha256": "e6206f62128469ce1e9cf814f32b985219ca8a8f38de60d2b7ec8f3ce486b1d7"
+  }
+}

@@ -1,0 +1,207 @@
+[
+  {
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_std_norm_range": [
+      0.14711029215022528,
+      0.1771862354996905
+    ],
+    "accel_std_norm_range": [
+      0.7465535130523644,
+      0.8254760021516186
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gate_accept_counts": {
+      "train": 0,
+      "validation": 0
+    },
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_std_norm_range": [
+      0.14473591059128366,
+      0.17163574676318996
+    ],
+    "accel_std_norm_range": [
+      0.7263823665075287,
+      0.803538848092535
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gate_accept_counts": {
+      "train": 0,
+      "validation": 0
+    },
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_std_norm_range": [
+      0.1233739015059243,
+      0.1392836977926326
+    ],
+    "accel_std_norm_range": [
+      0.5126701261877749,
+      0.5736695697504877
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gate_accept_counts": {
+      "train": 4,
+      "validation": 2
+    },
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_std_norm_range": [
+      0.11532977937682402,
+      0.13356746375420225
+    ],
+    "accel_std_norm_range": [
+      0.44303949209185894,
+      0.5127743385188861
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gate_accept_counts": {
+      "train": 12,
+      "validation": 4
+    },
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_std_norm_range": [
+      0.13681372954803697,
+      0.15346382974036074
+    ],
+    "accel_std_norm_range": [
+      0.6220047673718112,
+      0.6868182275829431
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gate_accept_counts": {
+      "train": 0,
+      "validation": 0
+    },
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  }
+]

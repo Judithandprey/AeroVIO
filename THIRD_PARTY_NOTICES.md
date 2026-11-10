@@ -42,6 +42,24 @@ Illustrative image pairs derive from the same simulated ProcTHOR observations;
 they do not represent a newly invented renderer or learned world model. See
 `experiments/rotation-focus-v3/` for the negative transfer result and provenance.
 
+## Startup gyro calibration
+
+The optional v4 calibrator adapts the gyro-mean bias estimate and the
+accelerometer/gyro low-variation thresholds from upstream's official `klt_imu`
+example. Its one-second collection window and bias/noise prior guard use the
+pinned HyperDrone task's documented initial hold and stored sensor configuration.
+The baseline implementation and generator source snapshots are retained with
+hashes under `experiments/gyro-bias-v4/startup-audit-sources/`.
+
+Project-specific changes are bounded causal collection, explicit acceptance and
+rejection states, next-interval activation without resetting pose, and a separate
+debiased integration path that preserves the trained model's raw inputs. The
+four-cell comparison and provenance distinguish calibration from the learned
+residual. This does not claim invention of gyro-bias estimation or modify the
+frozen KLT baseline's initialization. See `docs/gyro-bias-calibration.md` for
+assumptions and `experiments/gyro-bias-v4/validation.md` for the retained-current
+decision; public performance is pending.
+
 ## Runtime, simulation and dependencies
 
 The generated `workspace/runtime/`, `workspace/toolchain/` and workspace ignore

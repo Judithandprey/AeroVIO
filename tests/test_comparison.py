@@ -110,6 +110,37 @@ class ComparisonGuards(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, 'full-graph IMU-only parent'):
             self.run_comparison()
 
+    def add_calibration_control(self, original='cnn-warp'):
+        name = original + '-calibrated'
+        shutil.copytree(self.directory / original, self.directory / name)
+        self.mutate_manifest(name, lambda m: m['embedded_model_metadata'].update(gyro_bias={'enabled': True}))
+        self.names.append(name)
+        return name
+
+    def test_calibration_rotation_factorial_matches_both_axes(self):
+        off = self.add_rotation_control()
+        self.add_calibration_control()
+        self.add_calibration_control(off)
+        self.run_comparison()
+
+    def test_calibration_rejects_changed_normalization(self):
+        name = self.add_calibration_control()
+        self.mutate_manifest(name, lambda m: m['embedded_model_metadata'].update(state_mean=[99] * 14))
+        with self.assertRaisesRegex(ValueError, 'differ only in gyro_bias.enabled'):
+            self.run_comparison()
+
+    def test_calibration_requires_matching_uncalibrated_parent(self):
+        self.add_calibration_control()
+        self.names.remove('cnn-warp')
+        self.names.remove('cnn-warp-map')
+        with self.assertRaisesRegex(ValueError, 'calibration-off counterpart'):
+            self.run_comparison()
+
+    def test_calibration_rejects_simultaneous_map_correction(self):
+        self.mutate_manifest('cnn-warp-map', lambda m: m['embedded_model_metadata'].update(gyro_bias={'enabled': True}))
+        with self.assertRaisesRegex(ValueError, 'requires map correction disabled'):
+            self.run_comparison()
+
 
 if __name__ == '__main__':
     unittest.main()

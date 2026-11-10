@@ -14,6 +14,9 @@ def normalized_meta(meta):
     value.setdefault("input_mode", "image_imu")
     value.setdefault("network_inputs", "images_state")
     value.setdefault("rotation_residual_enabled", True)
+    calibration = dict(value.get("gyro_bias", {}))
+    calibration.setdefault("enabled", False)
+    value["gyro_bias"] = calibration
     return value
 
 
@@ -74,12 +77,18 @@ def main():
             if sources != reference_sources:
                 raise ValueError("learned variants must use identical inference Python sources")
             meta = run["manifest"]["embedded_model_metadata"]
+            calibration = normalized_meta(meta)["gyro_bias"]
+            if set(calibration) != {"enabled"} or type(calibration["enabled"]) is not bool:
+                raise ValueError("gyro calibration metadata must contain only a Boolean enabled flag")
+            if calibration["enabled"] and meta.get("map", {}).get("enabled", False):
+                raise ValueError("gyro calibration requires map correction disabled")
             if meta["model_sha256"] != run["manifest"]["bundle_files_sha256"].get("net.onnx"):
                 raise ValueError("metadata model hash differs from the actual embedded ONNX")
             if not meta.get("rotation_residual_enabled", True):
                 candidates = [other for other in learned
                               if other["manifest"]["embedded_model_metadata"].get("rotation_residual_enabled", True)
                               and not other["manifest"]["embedded_model_metadata"].get("map", {}).get("enabled")
+                              and normalized_meta(other["manifest"]["embedded_model_metadata"])["gyro_bias"] == calibration
                               and other["manifest"]["bundle_files_sha256"].get("net.onnx") == meta["model_sha256"]]
                 if len(candidates) != 1:
                     raise ValueError("rotation ablation needs exactly one rotation-on counterpart with identical ONNX weights")
@@ -88,6 +97,19 @@ def main():
                 a["rotation_residual_enabled"] = True
                 if files_except(run["manifest"], "meta.json") != files_except(counterpart, "meta.json") or a != b:
                     raise ValueError("rotation on/off bundles must differ only in rotation_residual_enabled")
+            if calibration["enabled"]:
+                candidates = [other for other in learned
+                              if not normalized_meta(other["manifest"]["embedded_model_metadata"])["gyro_bias"]["enabled"]
+                              and other["manifest"]["embedded_model_metadata"].get("rotation_residual_enabled", True) == meta.get("rotation_residual_enabled", True)
+                              and not other["manifest"]["embedded_model_metadata"].get("map", {}).get("enabled")
+                              and other["manifest"]["bundle_files_sha256"].get("net.onnx") == meta["model_sha256"]]
+                if len(candidates) != 1:
+                    raise ValueError("gyro calibration needs exactly one calibration-off counterpart with identical ONNX and residual setting")
+                counterpart = candidates[0]["manifest"]
+                a, b = normalized_meta(meta), normalized_meta(counterpart["embedded_model_metadata"])
+                a["gyro_bias"] = {"enabled": False}
+                if files_except(run["manifest"], "meta.json") != files_except(counterpart, "meta.json") or a != b:
+                    raise ValueError("calibration on/off bundles must differ only in gyro_bias.enabled")
             if meta.get("network_inputs", "images_state") == "state":
                 candidates = [other for other in learned
                               if other["manifest"]["bundle_files_sha256"].get("net.onnx") == meta.get("source_model_sha256")
@@ -103,6 +125,7 @@ def main():
             if meta.get("map", {}).get("enabled"):
                 candidates = [other for other in learned
                               if not other["manifest"]["embedded_model_metadata"].get("map", {}).get("enabled")
+                              and normalized_meta(other["manifest"]["embedded_model_metadata"])["gyro_bias"] == calibration
                               and other["manifest"]["embedded_model_metadata"].get("rotation_residual_enabled", True) == meta.get("rotation_residual_enabled", True)
                               and other["manifest"]["bundle_files_sha256"].get("net.onnx") == run["manifest"]["bundle_files_sha256"].get("net.onnx")]
                 if len(candidates) != 1:

@@ -1,0 +1,112 @@
+{
+  "selected_variant": "current",
+  "candidate_eligibility": {
+    "current": {
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.12128190948248371,
+        "mean_episode_unaligned_position_rmse_m": 0.5187004621868077,
+        "mean_episode_sim3_ate_m": 0.26555731796659,
+        "mean_episode_velocity_rmse_m_s": 0.21739022643124228,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.04041398083781683,
+        "mean_episode_rotation_rpe_rad": 0.023688654203868995,
+        "mean_episode_rotation_rmse_deg": 6.948941544633995,
+        "episodes": 4,
+        "frames": 800
+      },
+      "rotation_wins": 0,
+      "conditions": {
+        "rotation_material_improvement": false,
+        "aligned_ate_nonregression": true,
+        "unaligned_position_nonregression": true,
+        "rotation_win_count": false
+      },
+      "eligible": false,
+      "is_reference": true
+    },
+    "gyro-only": {
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.13333767410208702,
+        "mean_episode_unaligned_position_rmse_m": 0.5215854854570119,
+        "mean_episode_sim3_ate_m": 0.26558478508880307,
+        "mean_episode_velocity_rmse_m_s": 0.21739627758795843,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.04831487239497213,
+        "mean_episode_rotation_rpe_rad": 0.025214956136634097,
+        "mean_episode_rotation_rmse_deg": 7.639685976140405,
+        "episodes": 4,
+        "frames": 800
+      },
+      "rotation_wins": 3,
+      "conditions": {
+        "rotation_material_improvement": false,
+        "aligned_ate_nonregression": false,
+        "unaligned_position_nonregression": false,
+        "rotation_win_count": true
+      },
+      "eligible": false,
+      "is_reference": false
+    },
+    "calibrated-residual": {
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.0847713203537425,
+        "mean_episode_unaligned_position_rmse_m": 0.509897097058575,
+        "mean_episode_sim3_ate_m": 0.2657552643629536,
+        "mean_episode_velocity_rmse_m_s": 0.21740989209864775,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.03867350062241874,
+        "mean_episode_rotation_rpe_rad": 0.019651767387499162,
+        "mean_episode_rotation_rmse_deg": 4.857038880020898,
+        "episodes": 4,
+        "frames": 800
+      },
+      "rotation_wins": 3,
+      "conditions": {
+        "rotation_material_improvement": true,
+        "aligned_ate_nonregression": false,
+        "unaligned_position_nonregression": true,
+        "rotation_win_count": true
+      },
+      "eligible": false,
+      "is_reference": false
+    },
+    "calibrated-gyro": {
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.03788184352459292,
+        "mean_episode_unaligned_position_rmse_m": 0.5113318972602299,
+        "mean_episode_sim3_ate_m": 0.26563040483152245,
+        "mean_episode_velocity_rmse_m_s": 0.21741588877335072,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.04332552942427841,
+        "mean_episode_rotation_rpe_rad": 0.011535370839989716,
+        "mean_episode_rotation_rmse_deg": 2.1704697541341615,
+        "episodes": 4,
+        "frames": 800
+      },
+      "rotation_wins": 4,
+      "conditions": {
+        "rotation_material_improvement": true,
+        "aligned_ate_nonregression": false,
+        "unaligned_position_nonregression": true,
+        "rotation_win_count": true
+      },
+      "eligible": false,
+      "is_reference": false
+    }
+  },
+  "decision": "retain_current",
+  "selection_rule": "among eligible candidates, lowest equal-episode mean Sim3 ATE; then rotation RMSE; then protocol order; otherwise retain current",
+  "win_definition": "episode orientation RMSE lower than current by more than numeric_absolute_tolerance",
+  "validation_complete": true,
+  "repeat_verified": true,
+  "protocol_sha256": "431959235d61a07e4d28c6b4946c9887a61a08e317b07191a5a0d477a687f5de",
+  "source_sha256": {
+    "scripts/validate_gyro_bias.py": "52dcef2a1f7583d85ef47c3d608f143fbe4f03934840204ee8bc4ff0d199103d",
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "ee11810e47403fb3e4cf94fc568e521b7e27a4318190d53fa743c66afdea6efe",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "bc9b2601fb83f9e26b47eac132151b81e2ad0f34b63803e900d8a204b8d1826d"
+  },
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "validation_manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+  "frozen_utc": "2026-11-10T13:28:36.654503+00:00",
+  "public_data_used": false,
+  "validation_sha256": "cec2065f1e3aaa38c1a73bc41d6542f2dade95cf73d32efc31f2c9c6f32a9a4b"
+}

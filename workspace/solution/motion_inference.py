@@ -5,8 +5,21 @@ import cv2
 import numpy as np
 
 
+def validate_gyro_bias_options(meta):
+    settings = meta.get("gyro_bias", {})
+    if not isinstance(settings, dict) or set(settings) - {"enabled"}:
+        raise ValueError("gyro_bias must contain only the fixed enabled switch")
+    enabled = settings.get("enabled", False)
+    if type(enabled) is not bool:
+        raise ValueError("gyro_bias.enabled must be a Boolean")
+    if enabled and meta.get("map", {}).get("enabled", False):
+        raise ValueError("gyro calibration requires map correction disabled")
+    return enabled
+
+
 def validate_motion_options(meta):
     """Validate optional ablation controls while preserving old model defaults."""
+    validate_gyro_bias_options(meta)
     input_mode = meta.get("input_mode", "image_imu")
     if input_mode not in ("image_imu", "imu_only"):
         raise ValueError("input_mode must be image_imu or imu_only")

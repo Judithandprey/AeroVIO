@@ -9,6 +9,7 @@
 | [Current ablation comparison](motion-ablation-v2/comparison.md) | Accuracy, compute and completion evidence for the controlled v2 variants |
 | [Rotation diagnostics](motion-ablation-v2/rotation-diagnostics.md) | Saved-trajectory evidence and limits on interpreting accumulated orientation errors |
 | [Rotation-focused training](rotation-focus-v3/README.md) | Calibrated pure-rotation data and matched continuation; six complete public runs show no accepted rotation gain; epoch-zero selection retained |
+| [Startup gyro-calibration experiment](gyro-bias-v4/README.md) | Seven complete public runs and exact repeats; diagnostic improves baseline accuracy/compute, while strict validation still retains current |
 
 `baseline-klt-imu-v1` preserves the official reference. The current working
 solution is the pose-only learned model; do not assume a working-tree filename
@@ -37,6 +38,18 @@ checkpoints, for six compared variants. It does not revise the selection rule.
 The [input examples](rotation-focus-v3/rotation-examples.png) illustrate the
 auxiliary task; their [caption](rotation-focus-v3/rotation-examples-caption.md)
 records selection and display limits.
+
+The [startup calibration guide](../docs/gyro-bias-calibration.md) explains v4's
+documented-hover assumption, causal activation and distinction from the official
+KLT initialization. Its [frozen selection](gyro-bias-v4/selection.json) retains
+`current`; calibrated-gyro improves validation rotation by 68.77% but raises
+aligned ATE by 0.02752%. These are four original simulated validation flights,
+not public scores or physical-sensor results. The
+[pre-public replication addendum](../configs/gyro-bias-v4-public-replication.json)
+adds a diagnostic repeat without changing selection. The seven public runs are
+the baseline, four factorial cells, selected-current repeat and calibrated-gyro
+diagnostic repeat. All completed; see the [public comparison](gyro-bias-v4/comparison.md)
+and [exact output/fuel verification](gyro-bias-v4/output-verification.md).
 
 ## Record template
 

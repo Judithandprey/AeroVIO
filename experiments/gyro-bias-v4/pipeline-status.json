@@ -1,0 +1,255 @@
+[
+  {
+    "stage": "package-current",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "experiments/learned-motion-v1/warp",
+      "--name",
+      "gyro-v4-current"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.9920510211959481,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-package-current.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "check-current",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/gyro-v4-current.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-gyro-v4-current"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.340843288227916,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-check-current.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "package-gyro-only",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "experiments/learned-motion-v1/warp",
+      "--name",
+      "gyro-v4-raw",
+      "--disable-rotation-residual"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.6447860817424953,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-package-gyro-only.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "check-gyro-only",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/gyro-v4-raw.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-gyro-v4-raw"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.283778505399823,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-check-gyro-only.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "package-calibrated-residual",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "experiments/learned-motion-v1/warp",
+      "--name",
+      "gyro-v4-cal-residual",
+      "--calibrate-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.6354772630147636,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-package-calibrated-residual.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "check-calibrated-residual",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/gyro-v4-cal-residual.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-gyro-v4-cal-residual"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.268057292792946,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-check-calibrated-residual.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "package-calibrated-gyro",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "experiments/learned-motion-v1/warp",
+      "--name",
+      "gyro-v4-cal-gyro",
+      "--calibrate-gyro",
+      "--disable-rotation-residual"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.6595755908638239,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-package-calibrated-gyro.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "check-calibrated-gyro",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/gyro-v4-cal-gyro.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-gyro-v4-cal-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.3363423170521855,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-check-calibrated-gyro.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-baseline",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/klt_imu.wasm",
+      "--run-dir",
+      "results/gyro-v4-baseline",
+      "--verify-baseline"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 84.27838509064168,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-baseline.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-current",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-current.wasm",
+      "--run-dir",
+      "results/gyro-v4-current"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 54.57313286093995,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-current.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-gyro-only",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-raw.wasm",
+      "--run-dir",
+      "results/gyro-v4-gyro-only"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 54.79838539613411,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-gyro-only.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-calibrated-residual",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-cal-residual.wasm",
+      "--run-dir",
+      "results/gyro-v4-calibrated-residual"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 57.26354595879093,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-calibrated-residual.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-calibrated-gyro",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-cal-gyro.wasm",
+      "--run-dir",
+      "results/gyro-v4-calibrated-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 57.221674118656665,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-calibrated-gyro.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-selected-repeat",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-current.wasm",
+      "--run-dir",
+      "results/gyro-v4-selected-repeat"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 55.18432150501758,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-selected-repeat.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  },
+  {
+    "stage": "evaluate-calibrated-gyro-repeat",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-cal-gyro.wasm",
+      "--run-dir",
+      "results/gyro-v4-calibrated-gyro-repeat"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 57.265055681113154,
+    "log": "/root/projects/AeroVIO/logs/gyro-v4-evaluate-calibrated-gyro-repeat.log",
+    "selection_sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da"
+  }
+]

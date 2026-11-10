@@ -1,0 +1,1303 @@
+{
+  "status": "complete",
+  "created_utc": "2026-11-10T13:40:06.001011+00:00",
+  "evidence_scope": "Calibration state is inferred by host replay of the exact deployed helper. Actual WASM internal diagnostics were not logged. Saved output prefixes and an independent first-correction calculation verify observable behavior separately.",
+  "public_gt_used": false,
+  "rgb_decoded": false,
+  "model_inference_run": false,
+  "replay_horizon_seconds": 1.1,
+  "rotation_frobenius_tolerance": 2e-06,
+  "protocol_sha256": "431959235d61a07e4d28c6b4946c9887a61a08e317b07191a5a0d477a687f5de",
+  "selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "script_sha256": "545f2a87e115348eea401f724ede5b2d4938ccb575387de8c00f161f4d1a2c91",
+  "helper_sha256": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+  "runs": {
+    "current": {
+      "manifest_sha256": "6291c81129cb493603cf71e2639cd6604c77a15c8e5958919a39034a9d13d586",
+      "report_sha256": "3bb82b1aeadb62cf04ad2bb65b0e85781d0159a490678761e56b58de50f8e9d5",
+      "wasm_sha256": "f57b5c216e26ed4b111f84a3c7b4effdeb6cf313407bd35490830b3fd4b45660"
+    },
+    "gyro-only": {
+      "manifest_sha256": "840d50bb9ea4d07e1304a51af69e47ab02462a0b777735510983d96ad5ab8c10",
+      "report_sha256": "4876894bc79bcc87eb2e5abe2035b1c2ebe3aaa8ffdc29f705a6460ced7a7767",
+      "wasm_sha256": "9e3138656b8989ceda7393ef909b1492dc11b5ba4124552ff45b0fe3dd2efb5d"
+    },
+    "calibrated-residual": {
+      "manifest_sha256": "5c03fd03585e58ede3e055bee8ac8ae0f0ff112546de880fa7adc041cf8ae43a",
+      "report_sha256": "67be1e8ae89c0f999526e9593d0e36d7a99dd53c0b2cce9e210aef694d4f1f85",
+      "wasm_sha256": "198622e7cbe310518a5d146a6f93c784d57f65c05b6b3fcd19ad90d01587e111"
+    },
+    "calibrated-gyro": {
+      "manifest_sha256": "4eecd2ad58bc800bd33a771aeddf42508106706b52ce82b4cc5bf4d3b87e72f8",
+      "report_sha256": "18557c6517d812dbe0f750ea4bd967c52fc7eb41c604b6b168007acf606bc984",
+      "wasm_sha256": "5c6a8414d059111f72a1d68dab6b6eb46df526fea5c7fdc1f3539c4a70e3affd"
+    }
+  },
+  "episodes": [
+    {
+      "episode": "0386e5c941b50fe9972ddabff84c414540fb8989",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6661815779870701,
+          "gyro_std_norm": 0.14905787971031145,
+          "gyro_mean_imu": [
+            -0.0032085934882099994,
+            0.010254258161400003,
+            -0.004472014363881999
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            -0.0032085934882099994,
+            0.010254258161400003,
+            -0.004472014363881999
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "f90847653af8e172083802bcad7363b71bd6a4bdd51665545d5f34abdf71bdc5"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "2163736db5b222f1136f5ab6c5cbd3f54b3ddaedf8e6708aa67d353a8e23e0de",
+        "independent_raw_gyro_frobenius_error": 6.092548977757355e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.999999875913044,
+            0.00047823758104315674,
+            0.00013950882570523245
+          ],
+          [
+            -0.00047815361349257113,
+            0.9999997049075428,
+            -0.0006012935632121437
+          ],
+          [
+            -0.0001397963457163972,
+            0.0006012267819503269,
+            0.9999998094916511
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999985177203594,
+            -0.0010869511830698647,
+            -0.0013353255069010047
+          ],
+          [
+            0.0010881294629770482,
+            0.9999990190404056,
+            0.0008819821415402719
+          ],
+          [
+            0.00133436552546835,
+            -0.0008834338412228535,
+            0.9999987195058264
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 1.935131692753663e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0008229329204642082,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 3.96180725358933e-11,
+            "uncalibrated_alternative_frobenius_error": 0.000822932894447968,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/0386e5c941b50fe9972ddabff84c414540fb8989/estimate.tum",
+          "estimate_sha256": "4efa24a7c37664e0b8a590d265c1c9cb006d835756630578ada42cd1eff981ee",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/0386e5c941b50fe9972ddabff84c414540fb8989/twist.txt",
+          "twist_sha256": "340aa8d88d365a476a868ff0664b289f8c217f2def040bbd474c5084bf2421c9"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/0386e5c941b50fe9972ddabff84c414540fb8989/estimate.tum",
+          "estimate_sha256": "f60b782d1f8038cedad6e4c5ba3e5752e3f47fbe255055a0a596d4bc1117c0f6",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/0386e5c941b50fe9972ddabff84c414540fb8989/twist.txt",
+          "twist_sha256": "cb09e3698d95586379b9fed8431e35b630005445a21b3544a4e70408594f0f47"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/0386e5c941b50fe9972ddabff84c414540fb8989/estimate.tum",
+          "estimate_sha256": "2ac33531d3c43157ff94d6c6b65b93401cd13d2e661b12bf2f9fd7c153308d95",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/0386e5c941b50fe9972ddabff84c414540fb8989/twist.txt",
+          "twist_sha256": "758ea804d147f7651326e2de72a827aed87486e6a993107436f843a6a592d1b5"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/0386e5c941b50fe9972ddabff84c414540fb8989/estimate.tum",
+          "estimate_sha256": "14cd000ed943861b9008e3cbbb322f3bde870e4e16e8ab646a7267ab53483c0b",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/0386e5c941b50fe9972ddabff84c414540fb8989/twist.txt",
+          "twist_sha256": "92f554fdcf70d0d4d0e014053eae0bf67db780b0bb7813570c0d577a0568869a"
+        }
+      }
+    },
+    {
+      "episode": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6444796561273871,
+          "gyro_std_norm": 0.1458012583976076,
+          "gyro_mean_imu": [
+            -0.013320564537855,
+            0.011984600996764997,
+            0.004257019902740004
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            -0.013320564537855,
+            0.011984600996764997,
+            0.004257019902740004
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "5a592522e67bffc3118df8aa8c81e8e31d5ba18c5a72e13da40c25810b2a8810"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "a560d387052f1a8f23b96717172fd6a0d9a231ab9532ab4320a3a5a25796c527",
+        "independent_raw_gyro_frobenius_error": 3.4322687343063786e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999999123668152,
+            -0.00016743399194775517,
+            -0.0003837085092064208
+          ],
+          [
+            0.00016752156338200062,
+            0.9999999599299396,
+            0.00022820307807406816
+          ],
+          [
+            0.00038367028487885956,
+            -0.00022826733752525377,
+            0.9999999003455625
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999997131108712,
+            -0.00023677042359757664,
+            0.0007195261923533281
+          ],
+          [
+            0.00023706846317601604,
+            0.9999998861352669,
+            -0.00041415938583312667
+          ],
+          [
+            -0.0007194280497314251,
+            0.00041432984398390616,
+            0.9999996553769712
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 2.4413730657433578e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0013022868587888202,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 3.4895309832686614e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0013022868246620985,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/estimate.tum",
+          "estimate_sha256": "46c1c14403f49b15e804ee6e5e326b92629408f0d92c059f1fe32d125e8fec3e",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/twist.txt",
+          "twist_sha256": "982d5f29b862d6f8693f91074e0c27297a128c823952581ea007f82a1c6ee3a1"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/estimate.tum",
+          "estimate_sha256": "91c0f797fbaac09856b6b52188ecdb4657278b5a325e95e0da0d95f076a00fc0",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/twist.txt",
+          "twist_sha256": "7eec2ef78c00bc1839a35e4f82349d2cfe6590da9b9f43e4457158173a0597df"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/estimate.tum",
+          "estimate_sha256": "b6542f7f1cdd6c10216f0772c76e62e19eabac0ad4be32af860b8889dcf3c4ef",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/twist.txt",
+          "twist_sha256": "909b4940d8bde9d7fc7d7db6446287fa9d6cd6d023b250a733127da0447f949d"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/estimate.tum",
+          "estimate_sha256": "2a0af3801f8b6ab452d0051bf4f204c0cceda21ff13d12e1b9b43b9d36ff07af",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/9b6a92791e46815931b6d6f20e74ca9ebf62682e/twist.txt",
+          "twist_sha256": "f5fe49c6243477b7094177d1126a9cdfc79dab40d59819945a6b668d3f801b67"
+        }
+      }
+    },
+    {
+      "episode": "6e8e3766f46272c1b91eca39c320081251884947",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.7012622952823799,
+          "gyro_std_norm": 0.15359030277075533,
+          "gyro_mean_imu": [
+            -0.0031616171324149985,
+            0.015405659868829993,
+            0.011312469576679005
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            -0.0031616171324149985,
+            0.015405659868829993,
+            0.011312469576679005
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "efd8da07981a33bef20f406c3b475a7386b6744136d5bf56877bf9f50133dbbf"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "b911a428b26d3e007bf258f485d541f92a53ae206aed81081cf62a5ab2ba79d3",
+        "independent_raw_gyro_frobenius_error": 1.5344497126641373e-10,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999986092273894,
+            0.0016610423064722798,
+            0.00014993913030165594
+          ],
+          [
+            -0.0016610389953680945,
+            0.9999986202272491,
+            -2.220481607275049e-05
+          ],
+          [
+            -0.00014997580655863298,
+            2.1955730448541926e-05,
+            0.9999999885126015
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999952823885953,
+            -0.0029023351848158716,
+            -0.001005808644278155
+          ],
+          [
+            0.0029027155099229478,
+            0.9999957160946185,
+            0.0003768754173421194
+          ],
+          [
+            0.001004710516705029,
+            -0.00037979321574216064,
+            0.9999994231567787
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 2.856181267118112e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0013698573093421868,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 3.78085106553393e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0013698572951856007,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/6e8e3766f46272c1b91eca39c320081251884947/estimate.tum",
+          "estimate_sha256": "2868ba584a482eb4c60de7f2a1fd571f8f1c46d2a150a742f4e128aa3c7e6e0a",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/6e8e3766f46272c1b91eca39c320081251884947/twist.txt",
+          "twist_sha256": "7b8d8e5705c162877a4cfab3cf92d1eabf221699690b651d0d18a89776b4f0d7"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/6e8e3766f46272c1b91eca39c320081251884947/estimate.tum",
+          "estimate_sha256": "ab7ee8eee79bbdc1112c6cddd648e108c5818053c6960da5461e495a7f66bf63",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/6e8e3766f46272c1b91eca39c320081251884947/twist.txt",
+          "twist_sha256": "f7f821acc3a6dac1b1eb4e26fb649c60629530bac5e28c502696204d9ec83f0d"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/6e8e3766f46272c1b91eca39c320081251884947/estimate.tum",
+          "estimate_sha256": "feba99b9ae52237ed2a4d928a6f69cf8d42407c8e57c6ec821efccdc54019c99",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/6e8e3766f46272c1b91eca39c320081251884947/twist.txt",
+          "twist_sha256": "0e8833f7b8e3e76284cf95a5e364ec7b544ff7bb9a380c9abe685158521a68b7"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/6e8e3766f46272c1b91eca39c320081251884947/estimate.tum",
+          "estimate_sha256": "84178e9dd7ba84b45af9af465769a163ca00068330f28df4e862c3df5bc81d35",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/6e8e3766f46272c1b91eca39c320081251884947/twist.txt",
+          "twist_sha256": "7a687d6c8db23bde4befaf20e1dfddc32f0aa2ab8dfbb64710c53395fbe71c37"
+        }
+      }
+    },
+    {
+      "episode": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.668917968324231,
+          "gyro_std_norm": 0.14387205881593895,
+          "gyro_mean_imu": [
+            0.02005767802975999,
+            0.011356387293100007,
+            -0.016101063159045
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            0.02005767802975999,
+            0.011356387293100007,
+            -0.016101063159045
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "03a69e2bfafb4c5c6711ff28b649f33950b5887297db9dcb57d99fe83d95f808"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "1256433d87c90081b525d3a3407d8204a1bd699f7f139e99df1ac1319b95be95",
+        "independent_raw_gyro_frobenius_error": 6.711933380513136e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999996891618865,
+            0.0007712257438457021,
+            -0.0001639725060786855
+          ],
+          [
+            -0.0007713330656708752,
+            0.9999994877096606,
+            -0.0006554584029447816
+          ],
+          [
+            0.00016346691568278572,
+            0.0006555846766191257,
+            0.9999997717436235
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999996971697485,
+            -0.0003136619887817685,
+            -0.0007122335067768759
+          ],
+          [
+            0.0003144600358317471,
+            0.9999993226293041,
+            0.0011206497305308813
+          ],
+          [
+            0.0007118815191076016,
+            -0.0011208733601383337,
+            0.9999991184334179
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 1.9018679568357036e-11,
+            "uncalibrated_alternative_frobenius_error": 0.001988117103391439,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 4.458488887450181e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0019881171298737465,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/estimate.tum",
+          "estimate_sha256": "5c771e8203a9e88cf8779ccdd1639b206eab71c08b23f69ea7d65715f9d03f8f",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/twist.txt",
+          "twist_sha256": "0e39f6321020e11c6049a9fbd16dd230c5e5c2d0cad562f9ffe12f6fdcc84138"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/estimate.tum",
+          "estimate_sha256": "cbae46d4fd869a11bcc37edb3a00be185723a4016862ffe2337edff1b04a4c9b",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/twist.txt",
+          "twist_sha256": "7a435d262d112a3387237ca2253dd68555b46e3b60aca4e2b1fae09c20b4843d"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/estimate.tum",
+          "estimate_sha256": "70fa7b1e8962f724d009d99b9b6be798b81b52fdcd4e2a1d3804d3cec31e1a02",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/twist.txt",
+          "twist_sha256": "b6d79d19c98381684c6a3f4b1dc783412da380b45e38b8937087dacfedf2711c"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/estimate.tum",
+          "estimate_sha256": "069464cc5534329ed13ef7b95333dcde1c179157fb74b805bd52e28b0b7e4a3f",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/f8fb89fff0c39d51e0f073603ef93b9a2ee00455/twist.txt",
+          "twist_sha256": "8d049c733d731fdb14dcdb73f9d699ecc662f741edc5df8bf8ee9215a1fd3625"
+        }
+      }
+    },
+    {
+      "episode": "489ad518363d88bfa877f86afea144de0d846258",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6654586644015085,
+          "gyro_std_norm": 0.14969758573633823,
+          "gyro_mean_imu": [
+            0.011639228562129993,
+            0.009320705626400005,
+            -0.00651579834901
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            0.011639228562129993,
+            0.009320705626400005,
+            -0.00651579834901
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "5672448b43198a4f72ef4c0509000c51fc4f2f1186169566936e079cc7537ff3"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "bb93131b045e109b1c0b7925643b780227af26cd9af63d5734ef289a4722c105",
+        "independent_raw_gyro_frobenius_error": 7.587512005898027e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999997973768158,
+            -0.0006106701702150678,
+            -0.00017980064179823858
+          ],
+          [
+            0.0006104294921949738,
+            0.9999989217623466,
+            -0.0013356084677304092
+          ],
+          [
+            0.0001806160641807474,
+            0.0013354984414906937,
+            0.9999990919104629
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.999997213397938,
+            0.001925135611012697,
+            0.0013664001019500968
+          ],
+          [
+            -0.0019288906846433185,
+            0.9999943524434364,
+            0.0027521740423660235
+          ],
+          [
+            -0.0013610940768715898,
+            -0.002754802009580253,
+            0.9999952792332581
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 2.2866368455390998e-11,
+            "uncalibrated_alternative_frobenius_error": 0.001150657602656865,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 9.5615967761846e-12,
+            "uncalibrated_alternative_frobenius_error": 0.0011506576246980396,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/489ad518363d88bfa877f86afea144de0d846258/estimate.tum",
+          "estimate_sha256": "1d3cb42df94ee5faee4288b03fb308ca06f6bb0c600ed21ff004754527851d86",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/489ad518363d88bfa877f86afea144de0d846258/twist.txt",
+          "twist_sha256": "d12e619e5e07e03459eacd3d5b99d607835b0afc61978948fd9e206c436343c2"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/489ad518363d88bfa877f86afea144de0d846258/estimate.tum",
+          "estimate_sha256": "5bea499a23d30cefa1bb228ad7d2c03879973a2b0ff02b00f9489d1f327706b7",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/489ad518363d88bfa877f86afea144de0d846258/twist.txt",
+          "twist_sha256": "aaef143342c8eb53cdd0e567f769e73d08a6fced39c1d6907af0ed9c5d3f0df8"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/489ad518363d88bfa877f86afea144de0d846258/estimate.tum",
+          "estimate_sha256": "1be2467c5e184cb4cb84bc67e6a3be3587bea622fd6645a12bf8adfa157ae77d",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/489ad518363d88bfa877f86afea144de0d846258/twist.txt",
+          "twist_sha256": "5a68face9fc3e15ee5e959bc4aada916406efd90363ae75f639a1182500cbea3"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/489ad518363d88bfa877f86afea144de0d846258/estimate.tum",
+          "estimate_sha256": "5c42298c97fdacad0184a8a7e4bdcb12763d2fbc25e48d7041025883a05f8562",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/489ad518363d88bfa877f86afea144de0d846258/twist.txt",
+          "twist_sha256": "f0ea2709a60a0f672ce66bef0e2afa03981cd7d428cfa4fffc41c12bf7778f94"
+        }
+      }
+    },
+    {
+      "episode": "51ea6311a50f4eeb59672012b9796244dab52f60",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6477262703032804,
+          "gyro_std_norm": 0.13672264049058483,
+          "gyro_mean_imu": [
+            0.008047897736139998,
+            -0.007174963643101655,
+            0.005257678027735001
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            0.008047897736139998,
+            -0.007174963643101655,
+            0.005257678027735001
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "91beb68f6bc209b83b0257eb3ffb8abb0d424fa16c09bf049907892c24172a75"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "5ce033308cd6a7837aa40a2a13d276b927d59b428ba6d9adfe07b8768640ab8b",
+        "independent_raw_gyro_frobenius_error": 2.1493146557064288e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999998618800646,
+            -0.0005161184825911611,
+            -9.930540673209241e-05
+          ],
+          [
+            0.0005161614778324877,
+            0.9999997728611854,
+            0.0004334223190215534
+          ],
+          [
+            9.908168690636475e-05,
+            -0.000433473516782786,
+            0.9999999011417599
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999960239130357,
+            0.0012965566429063986,
+            -0.0025042162429286057
+          ],
+          [
+            -0.001296867845110491,
+            0.9999991515448441,
+            -0.0001226514745760997
+          ],
+          [
+            0.0025040550936293,
+            0.00012589862442588905,
+            0.9999968569238726
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 2.2849947101723016e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0008482092515939934,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 2.6731199357976238e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0008482092660546044,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/51ea6311a50f4eeb59672012b9796244dab52f60/estimate.tum",
+          "estimate_sha256": "3e9a4d7d45c6255564bbb6c0a09efb7f9eafe70493be93cbb171827ba29fc01a",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/51ea6311a50f4eeb59672012b9796244dab52f60/twist.txt",
+          "twist_sha256": "c4625736af8d90df97243f4726f42496fce7c9b14d1bba621e480a511e6e85bc"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/51ea6311a50f4eeb59672012b9796244dab52f60/estimate.tum",
+          "estimate_sha256": "0da9dbe0c4a999bf6e06b4dbae83a7776d8893907e679ccbecab6691b688c7e6",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/51ea6311a50f4eeb59672012b9796244dab52f60/twist.txt",
+          "twist_sha256": "13a4afe8646044782d4a65fcb2950502d3ea4539be1833dc02a1308e4f56a2b0"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/51ea6311a50f4eeb59672012b9796244dab52f60/estimate.tum",
+          "estimate_sha256": "71ddff80e6429dbc4a6a5fc0e09171bc0959616f496cec66021041f7480293ba",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/51ea6311a50f4eeb59672012b9796244dab52f60/twist.txt",
+          "twist_sha256": "f02787833476bc455683c097961a6bc9b66959e850dd85c2cb16426b7c8612f3"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/51ea6311a50f4eeb59672012b9796244dab52f60/estimate.tum",
+          "estimate_sha256": "f3fad73d02094abee14763d528f2258f099ef4ff5054cffa3af18c4026e97467",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/51ea6311a50f4eeb59672012b9796244dab52f60/twist.txt",
+          "twist_sha256": "924b86c64e20bbd8c1ed258f5902010dd2a3369cf3c8064ff3092391a000ea5e"
+        }
+      }
+    },
+    {
+      "episode": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6713987763637133,
+          "gyro_std_norm": 0.1421633606096686,
+          "gyro_mean_imu": [
+            -0.0073044114510400025,
+            -0.001270759011750003,
+            -0.012798907941175003
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            -0.0073044114510400025,
+            -0.001270759011750003,
+            -0.012798907941175003
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "f7b2b296eab3ccb5b27e81c7ec13d3ec447a560ffc55c00bf403f6b40331db9b"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "37f7e9f1394cc0c9803745d5b8f796b6e150379f87c93a8af13d09f5ed2a70a7",
+        "independent_raw_gyro_frobenius_error": 2.30900901706203e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999999592731177,
+            5.051740685370754e-05,
+            -0.0002808945620019867
+          ],
+          [
+            -5.0577462839027094e-05,
+            0.9999999758658257,
+            -0.00021379959877524123
+          ],
+          [
+            0.0002808837546215128,
+            0.0002138137970021219,
+            0.9999999376939863
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999994464216404,
+            -0.00035985309656461946,
+            -0.0009887680020615984
+          ],
+          [
+            0.0003607533485543254,
+            0.9999995204678571,
+            0.0009104510296134609
+          ],
+          [
+            0.0009884398992932438,
+            -0.0009108072269751541,
+            0.9999990967079724
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 1.775585747513726e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0010458996109771873,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 3.4778550068520235e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0010458996244676877,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/estimate.tum",
+          "estimate_sha256": "0eb689a0f3a7734a743568902be7ced67b8ec83923502298c1ded6b11fbb15b3",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/twist.txt",
+          "twist_sha256": "d6631b45c4ed3b2880a40914d8fca0c92ee26584f8e5512fafc01fbd9dec409b"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/estimate.tum",
+          "estimate_sha256": "9e953a5418815ee76167e7c28a1bde3789efbef442e4411b1b587cc560e9444c",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/twist.txt",
+          "twist_sha256": "06b68adde15bc2966b9c36c4fcb60bd08774938d98611405007c0dc90304e4ce"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/estimate.tum",
+          "estimate_sha256": "5fb9023747ea3fff6ce460d351c19855946d46f73eb141da842f22c40b41f1f9",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/twist.txt",
+          "twist_sha256": "cf66ddc76606596045ba12a042eaa1e40ac95724fefaf0e2ed169b6b88c6ac43"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/estimate.tum",
+          "estimate_sha256": "8e469bfb9ccc608eb316074a9f2f63c375e8ab68652884e9e56b762bf5a00e13",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/60ed4323f3aab9c83a854f30062cb4ffbefeac12/twist.txt",
+          "twist_sha256": "625e2a88c2a9662cf7b1fc705e25a7e6fd6202d6f8b5ed85d00a376b2b0416ae"
+        }
+      }
+    },
+    {
+      "episode": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6765100454162445,
+          "gyro_std_norm": 0.14869838359112436,
+          "gyro_mean_imu": [
+            -0.002104132921884988,
+            -0.007319236457849994,
+            0.006458879353109999
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            -0.002104132921884988,
+            -0.007319236457849994,
+            0.006458879353109999
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "b1186f2f859709899c30098dfbd6ee0143f49791e90ff7627c055f04615ba031"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "1c46034d9e7b0a06086c7c30e4240bb9d283a0d0d0d67388a063b4c4243e8235",
+        "independent_raw_gyro_frobenius_error": 1.2767526427772054e-10,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999997491056287,
+            -0.0006999186923238811,
+            -0.00010909859689981442
+          ],
+          [
+            0.0006998719198866317,
+            0.999999663425953,
+            -0.000428167346193076
+          ],
+          [
+            0.00010939824250910267,
+            0.0004280908837238297,
+            0.9999999023851052
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999982982787791,
+            0.0007614292058452383,
+            -0.001680376478736908
+          ],
+          [
+            -0.0007598607960116821,
+            0.999999275305664,
+            0.0009338092511882665
+          ],
+          [
+            0.0016810862906142113,
+            -0.000932530809896554,
+            0.9999981521658785
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 1.957363718731029e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0007061007642014663,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 2.6840925052033963e-11,
+            "uncalibrated_alternative_frobenius_error": 0.000706100765365482,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/estimate.tum",
+          "estimate_sha256": "880a4109b90bf938e02da0ffe30320362af237f8a8667531b85a24071cbd4c64",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/twist.txt",
+          "twist_sha256": "eb7602c991e003a4ce74b77d11631e4a9389a620e6ca99c8ea76e4d4fea8bd3d"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/estimate.tum",
+          "estimate_sha256": "a06b0cfe2efd66759e5df24b32c8754ae04582e6281652e1d0f52d1220afde0e",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/twist.txt",
+          "twist_sha256": "11b6270b70af496fbd2c022b0f3a7d60c62ed324a4d32eff402c93c585327d0f"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/estimate.tum",
+          "estimate_sha256": "eab2e2c69d041a6cbd932565d12c5c96df24f3adb4cd4d203c387acccbb43b06",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/twist.txt",
+          "twist_sha256": "c0fd3c52768a90b36a11084e1b0aff517743a5c112ca0579d1109cd81bd57245"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/estimate.tum",
+          "estimate_sha256": "df9feae3ed0b7ae6e376fcab991c2ea28011c59a820b6df0bd7bb38069bb2e82",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/8fff5c8dc6376171fc6f865fd214cee44df2b7c3/twist.txt",
+          "twist_sha256": "cb67e199d5eae74f001ccd3a43bc1f0498ffe9669f1f9b3d7156a6e186fd9610"
+        }
+      }
+    },
+    {
+      "episode": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.64007505058332,
+          "gyro_std_norm": 0.1486728234565299,
+          "gyro_mean_imu": [
+            0.01658815106595,
+            -0.004669470126469999,
+            -0.011141074028
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            0.01658815106595,
+            -0.004669470126469999,
+            -0.011141074028
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "c1fdde50932977e97976263f6c5b2ba60ac39bc51c33b5c56a66b5218dcfef9e"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "347f1ddaa850006efe2606255a01fce4eebeff7fd1e56e45106789b2d7a3726b",
+        "independent_raw_gyro_frobenius_error": 2.876764372763543e-11,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999999325533101,
+            -0.00012514168387941406,
+            0.0003453012223173261
+          ],
+          [
+            0.00012460798565617614,
+            0.9999987984284481,
+            0.0015451907681260544
+          ],
+          [
+            -0.0003454941751878354,
+            -0.001545147636618295,
+            0.9999987465754925
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999986398613768,
+            0.001044982994890923,
+            -0.00127604307799403
+          ],
+          [
+            -0.0010478895340055128,
+            0.9999968535030221,
+            -0.0022792348672048754
+          ],
+          [
+            0.0012736573012506584,
+            0.0022805689193159317,
+            0.999996588395422
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 2.872007650938021e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0014510236161434337,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 1.4792857167411e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0014510235787178751,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/estimate.tum",
+          "estimate_sha256": "bf02f747a3e4cc6db335a76b5fd1f2fea928e2731800777bfa4f551b3c91d532",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/twist.txt",
+          "twist_sha256": "adf25cfbc1c362192ca95e44eed5a5a81c20d42745eaf546787b7f319944cd5e"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/estimate.tum",
+          "estimate_sha256": "53e149f796ed815e5683633f30bb6e5d0f3a407bcfa68bc1db259384e493d43b",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/twist.txt",
+          "twist_sha256": "fe888654bc9d312330d2ddaff2dd94f5d5ba5cb916ab52da9d08175914a8bc07"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/estimate.tum",
+          "estimate_sha256": "14e218255ed4d7202a6f1ad81c0ac107ce8cc58f7a37ede1fcfad6dd518275e8",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/twist.txt",
+          "twist_sha256": "75db8f0ca37bc402d939a391a8f5074296bec5d29a900abc356baf0a5d36f499"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/estimate.tum",
+          "estimate_sha256": "c0a99942bdd37d570a4f5f0ef55e8a95ec8ed335683cec02e1bc691338f33f1c",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/41e11443a9a5cc165ef9aeeaef11dba63614685b/twist.txt",
+          "twist_sha256": "362fc3ded1de2b396245e382b72320617b6c87de4e3914cae3bcedd8083aad9b"
+        }
+      }
+    },
+    {
+      "episode": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+      "replay": {
+        "diagnostics": {
+          "enabled": true,
+          "status": "accepted",
+          "reason": "accepted",
+          "anchor_t": -0.005,
+          "deadline_t": 0.995,
+          "samples": 200,
+          "sample_span_s": 0.995,
+          "accel_std_norm": 0.6847158137098329,
+          "gyro_std_norm": 0.14982352982414132,
+          "gyro_mean_imu": [
+            0.009992367912139997,
+            -0.018255619132984995,
+            0.010728130820940002
+          ],
+          "mean_guard_limit": 0.0348492424049175,
+          "bias_imu": [
+            0.009992367912139997,
+            -0.018255619132984995,
+            0.010728130820940002
+          ],
+          "finalized_at_t": 0.995,
+          "activation_after_t": 0.995
+        },
+        "finalized_frame_index": 19,
+        "replayed_frames": 22,
+        "first_frame_time_s": 0.045,
+        "last_replayed_frame_time_s": 1.095,
+        "imu_rows_replayed": 220,
+        "imu_windows_sha256": "81ef7b41c06ea2174801498693dd55279bc571f2699ea962ac0ece78823be0dc"
+      },
+      "actual_saved_prefix_checks": {
+        "calibrated-residual": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        },
+        "calibrated-gyro": {
+          "uncorrected_prefix_frames": 20,
+          "pose_prefix_exact": true,
+          "twist_prefix_exact": true
+        }
+      },
+      "first_post_window_rotation_check": {
+        "frame_index": 20,
+        "interval_start_s": 0.995,
+        "interval_end_s": 1.045,
+        "imu_window_sha256": "9265e3a13005e18b00d0543a2dd921ac5016d8bb695c30e31a08a6dd895e504f",
+        "independent_raw_gyro_frobenius_error": 1.3383168796705777e-10,
+        "recovered_learned_residual_rotation": [
+          [
+            0.9999999890798678,
+            -0.0001475280614048857,
+            -8.702592808118909e-06
+          ],
+          [
+            0.00014754138494175415,
+            0.9999987857183262,
+            0.0015513843536835174
+          ],
+          [
+            8.473709514523448e-06,
+            -0.001551385620734798,
+            0.9999987965647019
+          ]
+        ],
+        "independent_debiased_imu_rotation": [
+          [
+            0.9999985124760725,
+            0.0008747376238302174,
+            0.0014865664233448006
+          ],
+          [
+            -0.0008727338037629681,
+            0.9999987105254395,
+            -0.001348066454512688
+          ],
+          [
+            -0.0014877437109024653,
+            0.001346767072462353,
+            0.9999979864165244
+          ]
+        ],
+        "cells": {
+          "calibrated-gyro": {
+            "expected_rotation_frobenius_error": 3.7886643137190385e-11,
+            "uncalibrated_alternative_frobenius_error": 0.001655607876739181,
+            "correction_resolved_above_saved_text_tolerance": true
+          },
+          "calibrated-residual": {
+            "expected_rotation_frobenius_error": 1.1639589356046983e-11,
+            "uncalibrated_alternative_frobenius_error": 0.0016556078998531778,
+            "correction_resolved_above_saved_text_tolerance": true
+          }
+        }
+      },
+      "saved_outputs": {
+        "current": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/estimate.tum",
+          "estimate_sha256": "248d92db2e661420357114dd3c8c1ff25ed50e69b953f8cd90dc95eb13aee330",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-current/report-gyro-v4-current/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/twist.txt",
+          "twist_sha256": "513974af54177870fcd5a83e5c6aff8c741afc3f86e2e3c7126bff74c4de4095"
+        },
+        "gyro-only": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/estimate.tum",
+          "estimate_sha256": "781435a0fbb269743a5b75538e7771c15eb4be68dbce26d86d3fac6d21d620f8",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-gyro-only/report-gyro-v4-raw/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/twist.txt",
+          "twist_sha256": "5c0cd18ad27c748a0e959e29f88b52b30d8ca84ae3f9f6da1f8edc5b491b5857"
+        },
+        "calibrated-residual": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/estimate.tum",
+          "estimate_sha256": "45488cd986fb688734032c290b6fcc626798352bbd787cbb07f6ce55d3bb1714",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-residual/report-gyro-v4-cal-residual/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/twist.txt",
+          "twist_sha256": "4a408ea35e83ae80ae45b11cdf8b08a103b7dcc5d6b25d1aaed0f1b25f9de8a6"
+        },
+        "calibrated-gyro": {
+          "estimate_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/estimate.tum",
+          "estimate_sha256": "abc8e27b5e29b6ba412c99c522edf7deb65f54a90f84fe0e9b71ac9ea0308f8f",
+          "twist_path": "/root/projects/AeroVIO/results/gyro-v4-calibrated-gyro/report-gyro-v4-cal-gyro/logs/8321da1faa306e72df46f86a72aa3fa0d611c6d9/twist.txt",
+          "twist_sha256": "1fda977e567f8ea2c36827adac9be2a55cb410421be33c4704a36801b8d383c8"
+        }
+      }
+    }
+  ],
+  "replay_decision_counts": {
+    "accepted": 10,
+    "rejected": 0
+  }
+}

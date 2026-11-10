@@ -1,0 +1,64 @@
+{
+  "purpose": "Test causal full-hover gyro calibration and its interaction with the existing learned rotation residual",
+  "parent_commit": "d33ab4c0ec5b1bc555cc28eab07fea17e6002395",
+  "hypothesis": "Persistent gyro offset contributes to orientation drift; using the complete documented initial hover avoids part of the startup transient contamination",
+  "model": "experiments/learned-motion-v1/warp",
+  "onnx_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "training_budget": "No retraining, architecture changes or parameter search",
+  "calibration": {
+    "duration_seconds": 1.0,
+    "window_basis": "200-step initial hover at 200 Hz in pinned generator; selected from source/startup audit before candidate evaluation",
+    "anchor": "first IMU timestamp minus first positive sample interval observed in the first frame; reject calibration if fewer than two unique initial samples",
+    "sample_selection": "initial anchor < timestamp <= anchor + 1.0 seconds, with existing 1e-6 boundary tolerance; unique timestamps only",
+    "minimum_samples": 180,
+    "minimum_span_seconds": 0.9,
+    "accel_std_norm_limit": 1.0,
+    "gyro_std_norm_limit": 0.2,
+    "gyro_bias_abs_prior_rad_s": 0.02,
+    "gyro_noise_std_rad_s": 0.07,
+    "mean_guard": "each abs(mean gyro axis) <= 0.02 + 3 * 0.07 / sqrt(sample_count)",
+    "estimate": "sample mean gyro in IMU coordinates, computed by bounded online moments",
+    "activation": "finish after emitting the first frame at or beyond the window end; correct only subsequent whole frame intervals",
+    "rejection": "freeze rejection on bad initial anchor, insufficient coverage, or failed low-variation/prior checks; never retry or extend window",
+    "known_limitation": "low-variation gates cannot distinguish small constant true rotation from sensor bias; this method assumes a documented initial hover"
+  },
+  "variants": [
+    {"name": "current", "gyro_bias_enabled": false, "rotation_residual_enabled": true},
+    {"name": "gyro-only", "gyro_bias_enabled": false, "rotation_residual_enabled": false},
+    {"name": "calibrated-residual", "gyro_bias_enabled": true, "rotation_residual_enabled": true},
+    {"name": "calibrated-gyro", "gyro_bias_enabled": true, "rotation_residual_enabled": false}
+  ],
+  "invariants": [
+    "Identical raw paired images, raw IMU-derived network state and ONNX predictions in all four cells",
+    "Identical camera-local translation increments; world positions may differ through orientation composition",
+    "Bias subtraction in IMU coordinates before every sample exponential, followed by camera extrinsic rotation",
+    "No pose reset, gravity realignment, output hold, retrospective correction, map correction or ground truth input",
+    "Existing default metadata keeps calibration disabled"
+  ],
+  "validation": {
+    "manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+    "splits": "all four original simulated validation flights from scenes 5/6; no public episodes",
+    "reference": "current",
+    "eligibility": {
+      "mean_episode_rotation_rmse_ratio_max": 0.8,
+      "mean_episode_sim3_ate_ratio_max": 1.0,
+      "mean_episode_unaligned_position_rmse_ratio_max": 1.0,
+      "minimum_rotation_wins": 3,
+      "numeric_absolute_tolerance": 1e-6
+    },
+    "selection": "among eligible candidates, lowest equal-episode mean Sim3 ATE; then rotation RMSE; then protocol order; otherwise retain current",
+    "scope": "Engineering acceptance thresholds, not a statistical significance claim",
+    "repeat": "repeat all four complete validation rollouts; require identical outputs, predictions and calibration state"
+  },
+  "public_comparison": {
+    "variants": "unchanged official baseline plus all four factorial cells, then full selected-model repeat",
+    "episodes": "configs/public-episodes.json",
+    "limits": "configs/evaluation-limits.json",
+    "timing": "serial after validation and other compute stop",
+    "selection_frozen_before_public": true,
+    "replication": "exact pose/twist and per-episode accuracy reproduction; report fuel and wall time separately"
+  },
+  "stop_rule": "One fixed calibration experiment; no public-driven tuning. Together with failed v3, a second non-improving round ends this continuation with a saved decision point.",
+  "server_submission": false,
+  "paid_resources": false
+}

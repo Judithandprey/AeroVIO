@@ -1,0 +1,824 @@
+{
+  "scope": "Original simulated HyperDrone training/validation flights only; no public episode access and no physical sensor measurements.",
+  "source_manifest": {
+    "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/data_manifest.json",
+    "sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d"
+  },
+  "guest_config_keys": [
+    "width",
+    "height",
+    "fx",
+    "fy",
+    "cx",
+    "cy",
+    "T_cam_imu"
+  ],
+  "source_snapshots": {
+    "abi_config.py": {
+      "source": "/root/projects/AeroVIO/external/viobench/viobench/tools/abi/config.py",
+      "sha256": "e4377be9d8b17d20259aba70597d22bba67cb09f6cce4c4cfbda762957d43428"
+    },
+    "hyperdrone_world.h.in": {
+      "source": "/root/projects/AeroVIO/external/viobench/viobench/tools/datasets/generate/hyperdrone_world.h.in",
+      "sha256": "69098225a95ba906878248a2385efb9ca18eb492b8628f8d813b990ad8ada808"
+    },
+    "generated_training_world.h": {
+      "source": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/hyperdrone_training_world.h",
+      "sha256": "b293bfec235d464bdf71fa0023c614b490c189c4f6dd9673d99f619eb6573067"
+    },
+    "tracking_operations_cpu.h": {
+      "source": "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/hyperlux/_vendor/rl-tools/include/rl_tools/rl/environments/hyperdrone/tasks/visual_inertial_localization/tracking_operations_cpu.h",
+      "sha256": "db5cea3a88d250ef7a36a4853c063c8fd150e8852353e1997b1ccb849c978aa3"
+    },
+    "planning_operations_cpu.h": {
+      "source": "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/hyperlux/_vendor/rl-tools/include/rl_tools/rl/environments/hyperdrone/tasks/visual_inertial_localization/planning_operations_cpu.h",
+      "sha256": "6d1837bafe6680c91cec204c114fce2386d70785fc01d90969c10d189b1e07ee"
+    },
+    "operations_cpu.h": {
+      "source": "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/hyperlux/_vendor/rl-tools/include/rl_tools/rl/environments/hyperdrone/tasks/visual_inertial_localization/operations_cpu.h",
+      "sha256": "b432f4e2e7e7dd66f8f9a17b7b924a456876ab1a857c90184b62c8e41b726520"
+    },
+    "baseline_solution.py": {
+      "source": "git tag baseline-klt-imu-v1:workspace/solution/solution.py",
+      "sha256": "e6206f62128469ce1e9cf814f32b985219ca8a8f38de60d2b7ec8f3ce486b1d7"
+    }
+  },
+  "frozen_protocol_sha256": "431959235d61a07e4d28c6b4946c9887a61a08e317b07191a5a0d477a687f5de",
+  "windows": [
+    {
+      "window": [
+        0,
+        0.5
+      ],
+      "N": 100,
+      "gyro_std_norm_range": [
+        0.14711029215022528,
+        0.1771862354996905
+      ],
+      "accel_std_norm_range": [
+        0.7465535130523644,
+        0.8254760021516186
+      ],
+      "gt_net_rotation_deg": 0.3263700094501439,
+      "gt_path_rotation_deg": 2.900673056903325,
+      "gt_mean_body_rate_rad_s": [
+        -0.009943620977341501,
+        -0.00555122293479147,
+        -0.00020678045377664833
+      ],
+      "gate_accept_counts": {
+        "train": 0,
+        "validation": 0
+      },
+      "thresholds": {
+        "gyro_std_norm": 0.1356448354820281,
+        "accel_std_norm": 0.5425793419281124,
+        "gyro_abs_mean": 0.041
+      },
+      "imu_first_timestamp": 0.005,
+      "imu_last_timestamp": 0.499999989,
+      "ground_truth_start_timestamp": 0.0,
+      "ground_truth_end_timestamp": 0.499999989,
+      "ground_truth_duration_seconds": 0.499999989,
+      "gt_mean_camera_rate_rad_s": [
+        0.00555122293479147,
+        0.00020678045377664833,
+        -0.009943620977341501
+      ]
+    },
+    {
+      "window": [
+        0,
+        0.55
+      ],
+      "N": 110,
+      "gyro_std_norm_range": [
+        0.14473591059128366,
+        0.17163574676318996
+      ],
+      "accel_std_norm_range": [
+        0.7263823665075287,
+        0.803538848092535
+      ],
+      "gt_net_rotation_deg": 0.41718296486346573,
+      "gt_path_rotation_deg": 3.008750111522755,
+      "gt_mean_body_rate_rad_s": [
+        -0.012397832874745735,
+        -0.004634121696995145,
+        -0.0001808530058894715
+      ],
+      "gate_accept_counts": {
+        "train": 0,
+        "validation": 0
+      },
+      "thresholds": {
+        "gyro_std_norm": 0.1349949678794028,
+        "accel_std_norm": 0.5399798715176112,
+        "gyro_abs_mean": 0.04002271437415744
+      },
+      "imu_first_timestamp": 0.005,
+      "imu_last_timestamp": 0.549999988,
+      "ground_truth_start_timestamp": 0.0,
+      "ground_truth_end_timestamp": 0.549999988,
+      "ground_truth_duration_seconds": 0.549999988,
+      "gt_mean_camera_rate_rad_s": [
+        0.004634121696995145,
+        0.0001808530058894715,
+        -0.012397832874745735
+      ]
+    },
+    {
+      "window": [
+        0.25,
+        0.75
+      ],
+      "N": 100,
+      "gyro_std_norm_range": [
+        0.1233739015059243,
+        0.1392836977926326
+      ],
+      "accel_std_norm_range": [
+        0.5126701261877749,
+        0.5736695697504877
+      ],
+      "gt_net_rotation_deg": 0.7399693671232639,
+      "gt_path_rotation_deg": 1.4882404479340634,
+      "gt_mean_body_rate_rad_s": [
+        -0.01623059032734625,
+        -0.020091269490879585,
+        -3.331294724157914e-05
+      ],
+      "gate_accept_counts": {
+        "train": 4,
+        "validation": 2
+      },
+      "thresholds": {
+        "gyro_std_norm": 0.1356448354820281,
+        "accel_std_norm": 0.5425793419281124,
+        "gyro_abs_mean": 0.041
+      },
+      "imu_first_timestamp": 0.254999994,
+      "imu_last_timestamp": 0.749999984,
+      "ground_truth_start_timestamp": 0.249999994,
+      "ground_truth_end_timestamp": 0.749999984,
+      "ground_truth_duration_seconds": 0.49999999,
+      "gt_mean_camera_rate_rad_s": [
+        0.020091269490879585,
+        3.331294724157914e-05,
+        -0.01623059032734625
+      ]
+    },
+    {
+      "window": [
+        0.5,
+        1.0
+      ],
+      "N": 100,
+      "gyro_std_norm_range": [
+        0.11532977937682402,
+        0.13356746375420225
+      ],
+      "accel_std_norm_range": [
+        0.44303949209185894,
+        0.5127743385188861
+      ],
+      "gt_net_rotation_deg": 0.32246884280306154,
+      "gt_path_rotation_deg": 0.709021799839008,
+      "gt_mean_body_rate_rad_s": [
+        0.010832858242661836,
+        0.0027052848448397954,
+        0.001419256982477907
+      ],
+      "gate_accept_counts": {
+        "train": 12,
+        "validation": 4
+      },
+      "thresholds": {
+        "gyro_std_norm": 0.1356448354820281,
+        "accel_std_norm": 0.5425793419281124,
+        "gyro_abs_mean": 0.041
+      },
+      "imu_first_timestamp": 0.504999989,
+      "imu_last_timestamp": 0.999999978,
+      "ground_truth_start_timestamp": 0.499999989,
+      "ground_truth_end_timestamp": 0.999999978,
+      "ground_truth_duration_seconds": 0.499999989,
+      "gt_mean_camera_rate_rad_s": [
+        -0.0027052848448397954,
+        -0.001419256982477907,
+        0.010832858242661836
+      ]
+    },
+    {
+      "window": [
+        0,
+        1.0
+      ],
+      "N": 200,
+      "gyro_std_norm_range": [
+        0.13681372954803697,
+        0.15346382974036074
+      ],
+      "accel_std_norm_range": [
+        0.6220047673718112,
+        0.6868182275829431
+      ],
+      "gt_net_rotation_deg": 0.09266462684529711,
+      "gt_path_rotation_deg": 3.6096948567423333,
+      "gt_mean_body_rate_rad_s": [
+        0.0004446186326601666,
+        -0.0014229690449758373,
+        0.0006062382643506293
+      ],
+      "gate_accept_counts": {
+        "train": 0,
+        "validation": 0
+      },
+      "thresholds": {
+        "gyro_std_norm": 0.1315211206431636,
+        "accel_std_norm": 0.5260844825726544,
+        "gyro_abs_mean": 0.0348492424049175
+      },
+      "imu_first_timestamp": 0.005,
+      "imu_last_timestamp": 0.999999978,
+      "ground_truth_start_timestamp": 0.0,
+      "ground_truth_end_timestamp": 0.999999978,
+      "ground_truth_duration_seconds": 0.999999978,
+      "gt_mean_camera_rate_rad_s": [
+        0.0014229690449758373,
+        -0.0006062382643506293,
+        0.0004446186326601666
+      ]
+    }
+  ],
+  "full_hold_causal_timing": [
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271828,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.014782453508085009,
+        0.005387802812615,
+        0.019926181454489995
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10222598471923015,
+        0.08688598796541988,
+        0.06752445125790893
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2917011469822194,
+        0.29302555534958385,
+        0.5076086177067376
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271829,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.004169106923749999,
+        -0.001383551243715001,
+        0.019914852877830007
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09121089745707174,
+        0.07419880241426653,
+        0.06995074337137228
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2702327627601742,
+        0.2637598388280031,
+        0.5126237019634299
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271830,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.00012467932284999553,
+        -0.015894449870359494,
+        -0.009535131969794998
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09568680723762252,
+        0.0775243468360996,
+        0.07361995525367804
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.29140867265009696,
+        0.26635341796577694,
+        0.5334494027512943
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-2",
+      "seed": 271831,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.016954558412000005,
+        0.013161030470670005,
+        -0.007415890438925
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10608234761580675,
+        0.07178381496476549,
+        0.07354852745487973
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2657898062261163,
+        0.3122994979375074,
+        0.5502740316983675
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271832,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.018882190435260002,
+        -0.02367911061413501,
+        -0.005445418319838002
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09877984632204248,
+        0.07757333080880256,
+        0.07191525085038636
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2643558977415195,
+        0.24851165793276575,
+        0.5600848337027677
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271833,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.0015314309356000034,
+        -0.007240550091350002,
+        0.022940906799905
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09180296744146309,
+        0.07902183190373757,
+        0.06621356941004472
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2901434205076942,
+        0.26134151786193244,
+        0.51754729073477
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271834,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.014024343986195812,
+        0.0014577718721079974,
+        -0.0008352177273499993
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10227695816947115,
+        0.08518403546366732,
+        0.07208767124300923
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.29360106604565717,
+        0.28793881504727453,
+        0.5500990188558789
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-3",
+      "seed": 271835,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.009318736379464995,
+        -0.010342116214469996,
+        0.013592022254950003
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10047969007212854,
+        0.08235292445451374,
+        0.07171366172510502
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.27044785866274956,
+        0.2809388590155558,
+        0.5119044262950395
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271836,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.010087494351011006,
+        -0.007146137052584996,
+        -0.025902055608105004
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09353118971271497,
+        0.0799270574169483,
+        0.07363046162244831
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.27288564284390177,
+        0.2810467569496112,
+        0.5024053961729107
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271837,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.003281004832307004,
+        0.007700730088390505,
+        -0.011935298478543
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10522834116669416,
+        0.08667300693904906,
+        0.07046937719341502
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2660080033314242,
+        0.2693258603205086,
+        0.49931669000130385
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271838,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.005606258824309999,
+        -0.014321192057590002,
+        0.018824206112925002
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.1069054494360781,
+        0.07882347790127579,
+        0.06833886503491228
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.26217648991845877,
+        0.2900899690763107,
+        0.5325343190987845
+      ]
+    },
+    {
+      "split": "train",
+      "scene": "ProcTHOR-Train-4",
+      "seed": 271839,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.0162681298642,
+        0.002117770419145001,
+        -0.002612737796364999
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10581608933843378,
+        0.08247710364640452,
+        0.06942067535508285
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.28010265960918806,
+        0.2641482255979076,
+        0.5054456172499368
+      ]
+    },
+    {
+      "split": "validation",
+      "scene": "ProcTHOR-Train-5",
+      "seed": 271840,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.005864166384994996,
+        0.02088569765095002,
+        0.012383876862590001
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09993862567827662,
+        0.08646038170782533,
+        0.07236554802013201
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.2888148530487201,
+        0.27209846295316464,
+        0.5341377626177741
+      ]
+    },
+    {
+      "split": "validation",
+      "scene": "ProcTHOR-Train-5",
+      "seed": 271841,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.005722131072645003,
+        -0.014352762186875008,
+        0.012403025037059994
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09562784089064282,
+        0.0808986899498837,
+        0.07714594108460446
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.28341851937551554,
+        0.27282176196203045,
+        0.5114754500974076
+      ]
+    },
+    {
+      "split": "validation",
+      "scene": "ProcTHOR-Train-6",
+      "seed": 271842,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        -0.002361590285671257,
+        -0.009823311879410001,
+        0.016551613771324997
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.10453559633548014,
+        0.08033047534205671,
+        0.06363276095043069
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.27639783273424573,
+        0.2681484922061874,
+        0.488457321391154
+      ]
+    },
+    {
+      "split": "validation",
+      "scene": "ProcTHOR-Train-6",
+      "seed": 271843,
+      "first_call_imu_samples": 10,
+      "first_imu_timestamp": 0.005,
+      "first_positive_observed_gap": 0.005,
+      "anchor": 0.0,
+      "mathematical_cutoff": 1.0,
+      "closing_frame_index": 19,
+      "closing_frame_timestamp": 0.999999978,
+      "calibration_sample_count": 200,
+      "calibration_first_timestamp": 0.005,
+      "calibration_last_timestamp": 0.999999978,
+      "first_corrected_frame_index": 20,
+      "first_corrected_frame_timestamp": 1.049999977,
+      "first_corrected_imu_timestamp": 1.004999978,
+      "prior_component_bound_rad_s": 0.0348492424049175,
+      "gate_pass": true,
+      "raw_gyro_mean_body_rad_s": [
+        0.021173474762314987,
+        -0.025756086177070005,
+        -0.012436104421399991
+      ],
+      "raw_gyro_std_body_rad_s": [
+        0.09969770366137007,
+        0.07577455346242482,
+        0.07931986952607586
+      ],
+      "raw_accel_std_body_m_s2": [
+        0.270082463899209,
+        0.27726790362458503,
+        0.5133799403198089
+      ]
+    }
+  ],
+  "limitations": [
+    "All16flights share the same deterministic startup motion; noise/seeds/scenes vary, but this is not16independent initialization-motion patterns.",
+    "Ground truth is diagnostic only and must never enter online calibration.",
+    "Low-variance constant motion within the bias/noise prior cannot be distinguished from a bias using only these IMU statistics.",
+    "GT-derived post-hold gyro residual means are finite-difference diagnostics, not direct stored true bias values.",
+    "Frozen bias ignores later bias random walk; effects must be evaluated independently with learned rotation residual on/off."
+  ],
+  "ground_truth_diagnostic_origin": "GT orientation comparisons start at simulator time0 for0-start windows; this includes initialmotion beforethefirstdeliveredframe at0.05s. GTdoesnotenteronlinecalibration."
+}

@@ -1,5 +1,22 @@
 # AeroVIO - Handoff
 
+The v4 startup gyro-calibration experiment has completed original simulated-flight
+validation. Selection remains `current`: the unchanged v1 warp model with bias
+calibration off and its learned residual on. Calibrated gyro-only rotation lowers
+mean orientation RMSE by 68.77% across all four validation flights, but aligned
+ATE rises by 0.02752%, violating the frozen nonregression guard. Calibration with
+the residual also fails that guard (ATE +0.07454%). No threshold was relaxed.
+All 104 host tests and the four new 40-frame WASM checks pass. All seven public
+runs completed 10/10 episodes. Calibrated-gyro achieves 0.881818 m mean Sim(3)
+ATE, 12.196 degrees median rotation RMSE and 14,757,111 max fuel/frame: 56.81%,
+7.92% and 89.60% lower than the official baseline, respectively. Its full repeat
+matches poses, twists, accuracy and every frame's fuel exactly. Against current,
+it costs 16.69% more median step time and increases median unaligned ATE 1.55%.
+The current and candidate Windows WASM copies are SHA-256 verified. Public
+results do not override the earlier strict validation decision.
+See `docs/gyro-bias-calibration.md`, `experiments/gyro-bias-v4/validation.md`, and
+the frozen `selection.json`. No new training or default-model change occurred.
+
 The v3 rotation-focused training run is complete. Both the matched continuation
 control and the rotation-auxiliary fine-tune selected epoch zero: neither supplied
 a qualifying improvement on original simulated-flight validation within the fixed translation guards.
@@ -18,10 +35,11 @@ new Windows WASM copies were SHA-256 verified. Its findings remain in
 overall; visual-input benefits vary by episode; compact IMU-only trades compute.
 
 Read `README.md`, `docs/requirements.md`, `docs/setup.md`,
-`docs/learned-motion.md`, `docs/rotation-focused-training.md`, and
+`docs/learned-motion.md`, `docs/gyro-bias-calibration.md`,
+`experiments/gyro-bias-v4/validation.md`, `docs/rotation-focused-training.md`, and
 `experiments/rotation-focus-v3/README.md` first.
 Use `experiments/motion-ablation-v2/comparison.md` and `rotation-diagnostics.md`
-for the current investigation; preserve `experiments/learned-motion-v1/` as the
+for the earlier input/rotation investigation; preserve `experiments/learned-motion-v1/` as the
 completed first experiment. See `docs/warping-and-world-models.md` for the
 conceptual distinction between geometric warping and a learned world model.
 
@@ -103,6 +121,31 @@ The v2 Windows artifact filenames under
 `AeroVIO-motion-imu-only-v2.wasm`, and `AeroVIO-motion-imu-compact-v2.wasm`.
 Check the v2 experiment record for copy/hash verification. Packaging and copying
 remain separate from a course-server submission.
+
+## Startup gyro calibration
+
+`configs/gyro-bias-v4.json` fixes a two-by-two experiment: calibration on/off
+and learned rotation residual on/off. All four cells share the original warp
+ONNX, raw image/IMU predictor inputs and camera-local translation predictions.
+The optional calibrator collects the first complete one-second hover window,
+applies the fixed count, span, variation and simulator-prior gates, then either
+freezes rejection or applies its IMU-axis bias estimate to future integration.
+The closing frame is emitted before activation. There is no reset, replay,
+gravity realignment, output hold, map correction or ground-truth input.
+
+Startup evidence comes only from original simulated training/validation flights.
+They share a deterministic startup motion; hover does not mean a frozen pose.
+The method assumes that documented startup, and low variation cannot distinguish
+small constant true rotation from sensor bias. Keep this limitation with claims.
+
+Validation repeats all four complete flights per cell, checks unchanged raw
+network inputs/outputs and freezes selection before public evaluation. The
+pre-public `configs/gyro-bias-v4-public-replication.json` adds a full repeat of
+the promising but unselected calibrated-gyro candidate. Seven public runs cover
+the official baseline, four cells, the selected-current repeat and that diagnostic
+repeat. Reproducibility cannot retroactively make a candidate eligible.
+Four new packages cover `current`, `gyro-only`, `calibrated-residual`, and
+`calibrated-gyro`; see `docs/setup.md` for explicit packaging flags.
 
 ## Important implementation details
 

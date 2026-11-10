@@ -1,0 +1,3202 @@
+[
+  {
+    "split": "train",
+    "seed": 271828,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.009895822000500005,
+      -0.0013751274768699976,
+      0.024728580254479996
+    ],
+    "gyro_std_norm": 0.17613902216703525,
+    "accel_std_norm": 0.7723413032832392,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271828,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      0.004778360697090913,
+      0.0005198677276636386,
+      0.024025430703163635
+    ],
+    "gyro_std_norm": 0.17163574676318996,
+    "accel_std_norm": 0.7484573937846363,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271828,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.003920671336530002,
+      -0.012302529125870001,
+      0.016710487377269996
+    ],
+    "gyro_std_norm": 0.13455325662464193,
+    "accel_std_norm": 0.5491929164534478,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271828,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.01966908501567,
+      0.012150733102099997,
+      0.015123782654500002
+    ],
+    "gyro_std_norm": 0.11792982134659499,
+    "accel_std_norm": 0.5092012189678161,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271828,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.014782453508085009,
+      0.005387802812615,
+      0.019926181454489995
+    ],
+    "gyro_std_norm": 0.15019613302021156,
+    "accel_std_norm": 0.6546908003086795,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271829,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.010026789165699998,
+      -0.003572101931960003,
+      0.02789407584063
+    ],
+    "gyro_std_norm": 0.1512415500787823,
+    "accel_std_norm": 0.7718849218814464,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271829,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.015347321920636361,
+      -0.0028165141946909123,
+      0.026514036906027272
+    ],
+    "gyro_std_norm": 0.15163974987161186,
+    "accel_std_norm": 0.7505751929121898,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271829,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.017956055766699997,
+      -0.01956862829349999,
+      0.029671025311
+    ],
+    "gyro_std_norm": 0.1233739015059243,
+    "accel_std_norm": 0.5325671225508339,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271829,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.0016885753181999986,
+      0.0008049994445299993,
+      0.011935629915029994
+    ],
+    "gyro_std_norm": 0.11981838893320375,
+    "accel_std_norm": 0.4592073242195743,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271829,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.004169106923749999,
+      -0.001383551243715001,
+      0.019914852877830007
+    ],
+    "gyro_std_norm": 0.13681372954803697,
+    "accel_std_norm": 0.6366930645627155,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271830,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.007241796229100007,
+      -0.016429706830819,
+      -0.010892135463889993
+    ],
+    "gyro_std_norm": 0.1617603246150261,
+    "accel_std_norm": 0.8254760021516186,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271830,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.01183972622100001,
+      -0.015623420521835449,
+      -0.011570674675899995
+    ],
+    "gyro_std_norm": 0.158726859820803,
+    "accel_std_norm": 0.8001838836545202,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271830,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.0171558809255,
+      -0.037928738035489996,
+      -0.0047590989311
+    ],
+    "gyro_std_norm": 0.12554003207229553,
+    "accel_std_norm": 0.5136723344517062,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271830,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.007491154874800001,
+      -0.015359192909899996,
+      -0.008178128475699998
+    ],
+    "gyro_std_norm": 0.12203518355715172,
+    "accel_std_norm": 0.44303949209185894,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271830,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.00012467932284999553,
+      -0.015894449870359494,
+      -0.009535131969794998
+    ],
+    "gyro_std_norm": 0.14347782840302312,
+    "accel_std_norm": 0.663650075757892,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271831,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.015281902928800006,
+      -0.0009659021877400013,
+      -0.01696034021878
+    ],
+    "gyro_std_norm": 0.16394515872680218,
+    "accel_std_norm": 0.8209573617643505,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271831,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      0.012139338407818185,
+      0.001589396148872726,
+      -0.015486316447981818
+    ],
+    "gyro_std_norm": 0.16093718526625275,
+    "accel_std_norm": 0.7967107379680067,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271831,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.00047462429069999553,
+      0.0008998964124599901,
+      -0.008360880953940003
+    ],
+    "gyro_std_norm": 0.13369391349208007,
+    "accel_std_norm": 0.5508971440185852,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271831,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.018627213895200005,
+      0.027287963129080012,
+      0.0021285593409300007
+    ],
+    "gyro_std_norm": 0.12714790126524825,
+    "accel_std_norm": 0.5125625412383887,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271831,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.016954558412000005,
+      0.013161030470670005,
+      -0.007415890438925
+    ],
+    "gyro_std_norm": 0.1477016129138668,
+    "accel_std_norm": 0.6862774274790856,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271832,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.013098442562789995,
+      -0.02421459116107,
+      -0.006781966939766001
+    ],
+    "gyro_std_norm": 0.1601277148000654,
+    "accel_std_norm": 0.8062118038572951,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271832,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      0.007480417804081812,
+      -0.024041164137336365,
+      -0.009590493499787273
+    ],
+    "gyro_std_norm": 0.15887330939974265,
+    "accel_std_norm": 0.7849077603324519,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271832,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.009521508459490001,
+      -0.04286945893140001,
+      -0.002993200958676001
+    ],
+    "gyro_std_norm": 0.1309939078709954,
+    "accel_std_norm": 0.5506179128744775,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271832,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.024665938307730003,
+      -0.023143630067199997,
+      -0.00410886969991
+    ],
+    "gyro_std_norm": 0.12720782705812422,
+    "accel_std_norm": 0.4870561006423102,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271832,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.018882190435260002,
+      -0.02367911061413501,
+      -0.005445418319838002
+    ],
+    "gyro_std_norm": 0.14473038035275193,
+    "accel_std_norm": 0.6673358268091664,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271833,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.00652290317320001,
+      -0.005348567168900001,
+      0.02667488858981999
+    ],
+    "gyro_std_norm": 0.14711029215022528,
+    "accel_std_norm": 0.7740387262348283,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271833,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.01070545700772728,
+      -0.005788492372636364,
+      0.027446471874381807
+    ],
+    "gyro_std_norm": 0.14473591059128366,
+    "accel_std_norm": 0.7596621883575055,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271833,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.020337622014799987,
+      -0.02573673239129999,
+      0.022571224230209994
+    ],
+    "gyro_std_norm": 0.12410745182310987,
+    "accel_std_norm": 0.5384504090975385,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271833,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.003460041302000001,
+      -0.009132533013800005,
+      0.019206925009989998
+    ],
+    "gyro_std_norm": 0.1280102767730184,
+    "accel_std_norm": 0.4905476272126143,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271833,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.0015314309356000034,
+      -0.007240550091350002,
+      0.022940906799905
+    ],
+    "gyro_std_norm": 0.13804517928018964,
+    "accel_std_norm": 0.6483346293151276,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271834,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.02566621168705001,
+      -0.009314708388020005,
+      -0.0026605302872000007
+    ],
+    "gyro_std_norm": 0.1690057755484764,
+    "accel_std_norm": 0.8238604368784815,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271834,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.027166183050954546,
+      -0.0056444634522000055,
+      -0.002254428459272728
+    ],
+    "gyro_std_norm": 0.16759880024081422,
+    "accel_std_norm": 0.803538848092535,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271834,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.03158807171765001,
+      -0.018009919999559993,
+      -0.008827944932599996
+    ],
+    "gyro_std_norm": 0.13903424638982478,
+    "accel_std_norm": 0.5575489963998244,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271834,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.0023824762853416307,
+      0.012230252132236002,
+      0.0009900948325000003
+    ],
+    "gyro_std_norm": 0.1294383339716955,
+    "accel_std_norm": 0.5127743385188861,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271834,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.014024343986195812,
+      0.0014577718721079974,
+      -0.0008352177273499993
+    ],
+    "gyro_std_norm": 0.15137215204757862,
+    "accel_std_norm": 0.6868182275829431,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271835,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.0069249144110199974,
+      -0.010271147683070003,
+      0.010481198026300003
+    ],
+    "gyro_std_norm": 0.1701399886279534,
+    "accel_std_norm": 0.7695379951412642,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271835,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.009678311288563638,
+      -0.013572633659381819,
+      0.010787933072090913
+    ],
+    "gyro_std_norm": 0.16594060863619398,
+    "accel_std_norm": 0.7493234425477805,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271835,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.008855767299270007,
+      -0.03379380150664999,
+      0.007066053649399999
+    ],
+    "gyro_std_norm": 0.13697474364517706,
+    "accel_std_norm": 0.5452637750101941,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271835,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.025562387169950008,
+      -0.01041308474587,
+      0.016702846483599997
+    ],
+    "gyro_std_norm": 0.12061239771389469,
+    "accel_std_norm": 0.48519545155132204,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271835,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.009318736379464995,
+      -0.010342116214469996,
+      0.013592022254950003
+    ],
+    "gyro_std_norm": 0.14839481649041739,
+    "accel_std_norm": 0.6435175432112806,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271836,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.017842020581300008,
+      -0.018773280807270004,
+      -0.028379856108799992
+    ],
+    "gyro_std_norm": 0.1557665953960721,
+    "accel_std_norm": 0.7550616393418004,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271836,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.023012050656636373,
+      -0.016729929873063636,
+      -0.025560401195818178
+    ],
+    "gyro_std_norm": 0.15209410450199828,
+    "accel_std_norm": 0.7392769604467322,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271836,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.030162936397622003,
+      -0.02970412636340999,
+      -0.03366293008239998
+    ],
+    "gyro_std_norm": 0.1274014149632761,
+    "accel_std_norm": 0.5357104208030777,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271836,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.0023329681207220044,
+      0.0044810067021,
+      -0.023424255107409992
+    ],
+    "gyro_std_norm": 0.1282558698089991,
+    "accel_std_norm": 0.4914283139460375,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271836,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.010087494351011006,
+      -0.007146137052584996,
+      -0.025902055608105004
+    ],
+    "gyro_std_norm": 0.14338013403237865,
+    "accel_std_norm": 0.6370753768321945,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271837,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.011580879765400003,
+      0.008532605505331007,
+      -0.020986320106606
+    ],
+    "gyro_std_norm": 0.17230896796998355,
+    "accel_std_norm": 0.7465535130523644,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271837,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.014237251036909095,
+      0.009386196404764553,
+      -0.017685056803732727
+    ],
+    "gyro_std_norm": 0.16803090292596998,
+    "accel_std_norm": 0.7263823665075287,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271837,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.022652016853444,
+      -0.005475302876318994,
+      -0.018610962109607995
+    ],
+    "gyro_std_norm": 0.1392836977926326,
+    "accel_std_norm": 0.5126701261877749,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271837,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.005018870100785998,
+      0.006868854671449998,
+      -0.0028842768504799996
+    ],
+    "gyro_std_norm": 0.13080103886446823,
+    "accel_std_norm": 0.4757563033339879,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271837,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.003281004832307004,
+      0.007700730088390505,
+      -0.011935298478543
+    ],
+    "gyro_std_norm": 0.15346382974036074,
+    "accel_std_norm": 0.6265890469738609,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271838,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.00938548298038,
+      -0.014154153000449993,
+      0.020598610414050006
+    ],
+    "gyro_std_norm": 0.17036950535586232,
+    "accel_std_norm": 0.808885076069973,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271838,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.012489408045345452,
+      -0.014766145129499994,
+      0.020153309656136365
+    ],
+    "gyro_std_norm": 0.16506135801857458,
+    "accel_std_norm": 0.7891722787647107,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271838,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.007962327458980002,
+      -0.0293424577337,
+      0.019115529820949998
+    ],
+    "gyro_std_norm": 0.1286858249563756,
+    "accel_std_norm": 0.5618231654908861,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271838,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.020598000628999996,
+      -0.014488231114730004,
+      0.017049801811800002
+    ],
+    "gyro_std_norm": 0.12305529935141492,
+    "accel_std_norm": 0.46561249851403536,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271838,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.005606258824309999,
+      -0.014321192057590002,
+      0.018824206112925002
+    ],
+    "gyro_std_norm": 0.14937240796694254,
+    "accel_std_norm": 0.6606674678252779,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271839,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.02753490787181,
+      0.001324658955490004,
+      -0.01239938735033
+    ],
+    "gyro_std_norm": 0.1716108441845469,
+    "accel_std_norm": 0.7777020132974962,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271839,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.02821850871490001,
+      -0.00046015599173636004,
+      -0.0141017084173
+    ],
+    "gyro_std_norm": 0.1677117908627867,
+    "accel_std_norm": 0.7583617100155653,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271839,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.03240179108189,
+      -0.018738848397410017,
+      -0.006955948876559992
+    ],
+    "gyro_std_norm": 0.13793502264280283,
+    "accel_std_norm": 0.5169693316392603,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271839,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.005001351856590003,
+      0.0029108818827999964,
+      0.0071739117576
+    ],
+    "gyro_std_norm": 0.12546121960757342,
+    "accel_std_norm": 0.4495343549879353,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "train",
+    "seed": 271839,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.0162681298642,
+      0.002117770419145001,
+      -0.002612737796364999
+    ],
+    "gyro_std_norm": 0.15105875530910137,
+    "accel_std_norm": 0.6353794590666536,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271840,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.0236534345807,
+      0.01531565362900002,
+      0.010273056262669998
+    ],
+    "gyro_std_norm": 0.1771862354996905,
+    "accel_std_norm": 0.8037433959691835,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271840,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.023866569360045452,
+      0.01590996264190911,
+      0.0101922625457
+    ],
+    "gyro_std_norm": 0.17161860935223452,
+    "accel_std_norm": 0.7811632865383857,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271840,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.017373680439849982,
+      -0.0053587543169,
+      0.017613403498309997
+    ],
+    "gyro_std_norm": 0.13586230022379742,
+    "accel_std_norm": 0.5596533009833673,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271840,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.011925101810710001,
+      0.026455741672900004,
+      0.01449469746251
+    ],
+    "gyro_std_norm": 0.11532977937682402,
+    "accel_std_norm": 0.4882569959622491,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271840,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.005864166384994996,
+      0.02088569765095002,
+      0.012383876862590001
+    ],
+    "gyro_std_norm": 0.1506648567111109,
+    "accel_std_norm": 0.6653981832988051,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271841,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.01817122975549,
+      -0.021943219542899996,
+      0.008737155864629996
+    ],
+    "gyro_std_norm": 0.15807979523202506,
+    "accel_std_norm": 0.7706228174588006,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271841,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.021978092202263634,
+      -0.02286227659172727,
+      0.008930588824218178
+    ],
+    "gyro_std_norm": 0.15571956145426602,
+    "accel_std_norm": 0.7468319375427179,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271841,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.015073129233500005,
+      -0.03731403755415,
+      0.015467080717490004
+    ],
+    "gyro_std_norm": 0.13181071950423331,
+    "accel_std_norm": 0.534044000935749,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271841,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.006726967610199999,
+      -0.0067623048308500045,
+      0.01606889420949
+    ],
+    "gyro_std_norm": 0.13356746375420225,
+    "accel_std_norm": 0.4875503876325544,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271841,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.005722131072645003,
+      -0.014352762186875008,
+      0.012403025037059994
+    ],
+    "gyro_std_norm": 0.14710804945631892,
+    "accel_std_norm": 0.6452634399820139,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271842,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.018115604692600006,
+      -0.009627472365900001,
+      0.011845250248489996
+    ],
+    "gyro_std_norm": 0.16859523339281635,
+    "accel_std_norm": 0.746900825909106,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271842,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      -0.018329753645818188,
+      -0.008864331592636365,
+      0.011408405638627267
+    ],
+    "gyro_std_norm": 0.16473108158212196,
+    "accel_std_norm": 0.7270682881074308,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271842,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      -0.024548388758722495,
+      -0.027119915104419995,
+      0.011433274265660003
+    ],
+    "gyro_std_norm": 0.12665146076288797,
+    "accel_std_norm": 0.5187463117728924,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271842,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.013392424121257495,
+      -0.01001915139292,
+      0.02125797729416
+    ],
+    "gyro_std_norm": 0.11787494130664869,
+    "accel_std_norm": 0.46085136834951346,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271842,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      -0.002361590285671257,
+      -0.009823311879410001,
+      0.016551613771324997
+    ],
+    "gyro_std_norm": 0.14638922240407554,
+    "accel_std_norm": 0.6220047673718112,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271843,
+    "window": [
+      0,
+      0.5
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.010690687991229996,
+      -0.026459278381899997,
+      -0.010777034531899998
+    ],
+    "gyro_std_norm": 0.16547438258417121,
+    "accel_std_norm": 0.7586650555856906,
+    "gt_mean_body_rate_rad_s": [
+      -0.009943620977341501,
+      -0.00555122293479147,
+      -0.00020678045377664833
+    ],
+    "gt_net_rotation_deg": 0.3263700094501439,
+    "gt_path_rotation_deg": 2.900673056903325,
+    "bias_mean_motion_contamination_rad_s": 0.011390102386231867,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.499999989,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.499999989,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      0.00555122293479147,
+      0.00020678045377664833,
+      -0.009943620977341501
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271843,
+    "window": [
+      0,
+      0.55
+    ],
+    "N": 110,
+    "gyro_mean": [
+      0.0038011469611181807,
+      -0.02287871079,
+      -0.011313668865363632
+    ],
+    "gyro_std_norm": 0.16336577885890788,
+    "accel_std_norm": 0.7432287253223937,
+    "gt_mean_body_rate_rad_s": [
+      -0.012397832874745735,
+      -0.004634121696995145,
+      -0.0001808530058894715
+    ],
+    "gt_net_rotation_deg": 0.41718296486346573,
+    "gt_path_rotation_deg": 3.008750111522755,
+    "bias_mean_motion_contamination_rad_s": 0.013236844476778689,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1349949678794028,
+      "accel_std_norm": 0.5399798715176112,
+      "gyro_abs_mean": 0.04002271437415744
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.549999988,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.549999988,
+    "ground_truth_duration_seconds": 0.549999988,
+    "gt_mean_camera_rate_rad_s": [
+      0.004634121696995145,
+      0.0001808530058894715,
+      -0.012397832874745735
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271843,
+    "window": [
+      0.25,
+      0.75
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.005430040899499997,
+      -0.03822190199903999,
+      -0.010968235013600001
+    ],
+    "gyro_std_norm": 0.136484961335069,
+    "accel_std_norm": 0.5736695697504877,
+    "gt_mean_body_rate_rad_s": [
+      -0.01623059032734625,
+      -0.020091269490879585,
+      -3.331294724157914e-05
+    ],
+    "gt_net_rotation_deg": 0.7399693671232639,
+    "gt_path_rotation_deg": 1.4882404479340634,
+    "bias_mean_motion_contamination_rad_s": 0.025828129662864643,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.254999994,
+    "imu_last_timestamp": 0.749999984,
+    "ground_truth_start_timestamp": 0.249999994,
+    "ground_truth_end_timestamp": 0.749999984,
+    "ground_truth_duration_seconds": 0.49999999,
+    "gt_mean_camera_rate_rad_s": [
+      0.020091269490879585,
+      3.331294724157914e-05,
+      -0.01623059032734625
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271843,
+    "window": [
+      0.5,
+      1.0
+    ],
+    "N": 100,
+    "gyro_mean": [
+      0.031656261533399996,
+      -0.02505289397224002,
+      -0.014095174310900002
+    ],
+    "gyro_std_norm": 0.12782046246939008,
+    "accel_std_norm": 0.49862138684991447,
+    "gt_mean_body_rate_rad_s": [
+      0.010832858242661836,
+      0.0027052848448397954,
+      0.001419256982477907
+    ],
+    "gt_net_rotation_deg": 0.32246884280306154,
+    "gt_path_rotation_deg": 0.709021799839008,
+    "bias_mean_motion_contamination_rad_s": 0.011255384230653285,
+    "noise_prior_gate": true,
+    "thresholds": {
+      "gyro_std_norm": 0.1356448354820281,
+      "accel_std_norm": 0.5425793419281124,
+      "gyro_abs_mean": 0.041
+    },
+    "imu_first_timestamp": 0.504999989,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.499999989,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.499999989,
+    "gt_mean_camera_rate_rad_s": [
+      -0.0027052848448397954,
+      -0.001419256982477907,
+      0.010832858242661836
+    ]
+  },
+  {
+    "split": "validation",
+    "seed": 271843,
+    "window": [
+      0,
+      1.0
+    ],
+    "N": 200,
+    "gyro_mean": [
+      0.021173474762314987,
+      -0.025756086177070005,
+      -0.012436104421399991
+    ],
+    "gyro_std_norm": 0.14823311630473784,
+    "accel_std_norm": 0.6429471135396833,
+    "gt_mean_body_rate_rad_s": [
+      0.0004446186326601666,
+      -0.0014229690449758373,
+      0.0006062382643506293
+    ],
+    "gt_net_rotation_deg": 0.09266462684529711,
+    "gt_path_rotation_deg": 3.6096948567423333,
+    "bias_mean_motion_contamination_rad_s": 0.001609363683146512,
+    "noise_prior_gate": false,
+    "thresholds": {
+      "gyro_std_norm": 0.1315211206431636,
+      "accel_std_norm": 0.5260844825726544,
+      "gyro_abs_mean": 0.0348492424049175
+    },
+    "imu_first_timestamp": 0.005,
+    "imu_last_timestamp": 0.999999978,
+    "ground_truth_start_timestamp": 0.0,
+    "ground_truth_end_timestamp": 0.999999978,
+    "ground_truth_duration_seconds": 0.999999978,
+    "gt_mean_camera_rate_rad_s": [
+      0.0014229690449758373,
+      -0.0006062382643506293,
+      0.0004446186326601666
+    ]
+  }
+]

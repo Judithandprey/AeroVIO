@@ -18,7 +18,11 @@ def main():
     ablation.add_argument("--map", action="store_true")
     ablation.add_argument("--disable-rotation-residual", action="store_true",
                           help="use the same predicted translation with gyro-only rotation; map stays off")
+    parser.add_argument("--calibrate-gyro", action="store_true",
+                        help="enable the fixed causal one-second initial gyro calibration; map stays off")
     args = parser.parse_args()
+    if args.calibrate_gyro and args.map:
+        parser.error("--calibrate-gyro cannot be combined with --map")
     if not args.name.replace("-", "").replace("_", "").isalnum():
         parser.error("name must contain only letters, digits, dash or underscore")
     stage = ROOT / "artifacts" / (args.name + "-solution")
@@ -34,6 +38,7 @@ def main():
     if args.disable_rotation_residual:
         meta["rotation_residual_enabled"] = False
     meta["map"] = {"enabled": args.map}
+    meta["gyro_bias"] = {"enabled": args.calibrate_gyro}
     sys.path.insert(0, str(ROOT / "workspace/solution"))
     from motion_inference import validate_motion_options
     input_mode, network_inputs, rotation_enabled = validate_motion_options(meta)
@@ -49,7 +54,8 @@ def main():
     print(json.dumps({"wasm": str(artifact), "sha256": hashlib.sha256(artifact.read_bytes()).hexdigest(),
                       "model_sha256": meta["model_sha256"], "map_enabled": args.map,
                       "rotation_residual_enabled": rotation_enabled, "input_mode": input_mode,
-                      "network_inputs": network_inputs}, indent=2))
+                      "network_inputs": network_inputs,
+                      "gyro_bias_enabled": args.calibrate_gyro}, indent=2))
 
 
 if __name__ == "__main__":

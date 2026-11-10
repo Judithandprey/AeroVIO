@@ -1,0 +1,1796 @@
+{
+  "status": "complete",
+  "started_utc": "2026-11-10T13:28:30.500378+00:00",
+  "scope": "Original simulated validation flights; actual host Solution.step, no public evaluation or estimator GT input",
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "scripts/validate_gyro_bias.py",
+    "--protocol",
+    "configs/gyro-bias-v4.json",
+    "--raw-dir",
+    "results/gyro-bias-v4-validation",
+    "--out-dir",
+    "experiments/gyro-bias-v4"
+  ],
+  "protocol_sha256": "431959235d61a07e4d28c6b4946c9887a61a08e317b07191a5a0d477a687f5de",
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "model_metadata_sha256": "baabc4ba9d2700ed177eb31936bd0cfc6b460f58166e8d11f21c2639f17ba934",
+  "validation_manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+  "historical_cache_sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516",
+  "source_sha256": {
+    "scripts/validate_gyro_bias.py": "52dcef2a1f7583d85ef47c3d608f143fbe4f03934840204ee8bc4ff0d199103d",
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "ee11810e47403fb3e4cf94fc568e521b7e27a4318190d53fa743c66afdea6efe",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "bc9b2601fb83f9e26b47eac132151b81e2ad0f34b63803e900d8a204b8d1826d"
+  },
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "upstream_metric_source_sha256": "75ae84260b4ae175ff9d7cddd41722489ef83617dc2714313146997e14c2626a",
+  "packages": {
+    "numpy": "2.5.4",
+    "opencv": "5.0.0"
+  },
+  "raw_directory": "/root/projects/AeroVIO/results/gyro-bias-v4-validation",
+  "variants": {
+    "current": {
+      "settings": {
+        "name": "current",
+        "gyro_bias_enabled": false,
+        "rotation_residual_enabled": true
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.20042118371824758,
+            "rpe_rotation_rmse": 0.028078164300072938,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.6506016112035136,
+            "rotation_rmse": 0.1409591287434727,
+            "rotation_max": 0.24755187872206974,
+            "velocity_rmse": 0.2028748006870372,
+            "angular_velocity_rmse": 0.04231560308502368,
+            "sim3_scale": 2.099911040771249,
+            "sim3_ate_rmse": 0.17418072229183698,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.1362289485305148,
+            "drift_per_metre": 0.6906205691415929
+          },
+          "reference_state_sha256": "03b173eeb759a995b18cdd9a5791e224d60a858567dc69dd2dc8cce3d8d2cf80",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 0.0,
+            "max_local_translation_vs_prediction_difference_m": 5.551115123125783e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-current.npz",
+              "sha256": "3fb8a841c13ec658345433123002315c7cd66de7348dd223abd23288fa8552c8",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "91533b158348f5ec9678a5b44b73f958e0d2a0c1000513c620af8bdca566bad6",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-current.npz",
+              "sha256": "3fb8a841c13ec658345433123002315c7cd66de7348dd223abd23288fa8552c8",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "91533b158348f5ec9678a5b44b73f958e0d2a0c1000513c620af8bdca566bad6",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            }
+          ]
+        },
+        {
+          "episode_id": 1,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2010292103289847,
+            "rpe_rotation_rmse": 0.025280101622417825,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.42198818847824693,
+            "rotation_rmse": 0.13482644741923652,
+            "rotation_max": 0.2390111746109512,
+            "velocity_rmse": 0.20159070752743968,
+            "angular_velocity_rmse": 0.04197790150754725,
+            "sim3_scale": 1.2730725645468377,
+            "sim3_ate_rmse": 0.2937036126006515,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.45519471253409927,
+            "drift_per_metre": 0.2161582801419901
+          },
+          "reference_state_sha256": "4f46135c93becbd9f88430a9b33a14bca13a5dc000b550bc77f542c8617cab3f",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 0.0,
+            "max_local_translation_vs_prediction_difference_m": 1.1102230246251565e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-current.npz",
+              "sha256": "ba96e48ef113955ae5b71aa6b64c51f097ad09b76a2f32ddd045bb5209ae8507",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "bbe9aad923cbb5f9c49275d68a3cca037ba05917c707b51a8fc75a674d537d22",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-current.npz",
+              "sha256": "ba96e48ef113955ae5b71aa6b64c51f097ad09b76a2f32ddd045bb5209ae8507",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "bbe9aad923cbb5f9c49275d68a3cca037ba05917c707b51a8fc75a674d537d22",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            }
+          ]
+        },
+        {
+          "episode_id": 2,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17095411031729205,
+            "rpe_rotation_rmse": 0.027547927795537983,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4998150627056225,
+            "rotation_rmse": 0.14703472504991844,
+            "rotation_max": 0.25924775847110554,
+            "velocity_rmse": 0.1844533792635121,
+            "angular_velocity_rmse": 0.04330389276301633,
+            "sim3_scale": 0.9399951042997862,
+            "sim3_ate_rmse": 0.23070456898868358,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.6545308028502138,
+            "drift_per_metre": 0.4087702465500276
+          },
+          "reference_state_sha256": "2dec9aa3b1adbc1fc621dfea793865e8a4e1e2f606f54b0221e9eb1da6a2a3dc",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 0.0,
+            "max_local_translation_vs_prediction_difference_m": 6.071532165918825e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-current.npz",
+              "sha256": "d86e088d4296b327d2cd261ed894d670fc9b5f19dbbc056e340b8208f0bba333",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "6bf544646bee3b3a9950c0c2ad4e3f71eb672e7908068df10d6e519f528afd7c",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-current.npz",
+              "sha256": "d86e088d4296b327d2cd261ed894d670fc9b5f19dbbc056e340b8208f0bba333",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "6bf544646bee3b3a9950c0c2ad4e3f71eb672e7908068df10d6e519f528afd7c",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            }
+          ]
+        },
+        {
+          "episode_id": 3,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.27788101405994403,
+            "rpe_rotation_rmse": 0.013848423097447233,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5023969863598476,
+            "rotation_rmse": 0.06230733671730719,
+            "rotation_max": 0.11174503990676786,
+            "velocity_rmse": 0.2806420182469801,
+            "angular_velocity_rmse": 0.03405852599568007,
+            "sim3_scale": 1.783954039786618,
+            "sim3_ate_rmse": 0.36364036798518795,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.231102937530185,
+            "drift_per_metre": 0.4677088663925367
+          },
+          "reference_state_sha256": "69d732ac1f83feff35b4ac091ed7a89cbb56dde8704303d166b961eb5ff545e9",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 0.0,
+            "max_local_translation_vs_prediction_difference_m": 8.673617379884035e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-current.npz",
+              "sha256": "35882bf2a5f39bcde85a4db12eb40d840752e695666c398ca9b20c2b649105df",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "13f277c94aacb691da3b69e88924534b89acc0cd1641252f0af7e5b3cb3a966d",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-current.npz",
+              "sha256": "35882bf2a5f39bcde85a4db12eb40d840752e695666c398ca9b20c2b649105df",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-current.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "13f277c94aacb691da3b69e88924534b89acc0cd1641252f0af7e5b3cb3a966d",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.12128190948248371,
+        "mean_episode_unaligned_position_rmse_m": 0.5187004621868077,
+        "mean_episode_sim3_ate_m": 0.26555731796659,
+        "mean_episode_velocity_rmse_m_s": 0.21739022643124228,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.04041398083781683,
+        "mean_episode_rotation_rpe_rad": 0.023688654203868995,
+        "mean_episode_rotation_rmse_deg": 6.948941544633995,
+        "episodes": 4,
+        "frames": 800
+      }
+    },
+    "gyro-only": {
+      "settings": {
+        "name": "gyro-only",
+        "gyro_bias_enabled": false,
+        "rotation_residual_enabled": false
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2001226968749709,
+            "rpe_rotation_rmse": 0.024369607608213956,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.6578863046807462,
+            "rotation_rmse": 0.1398519216597309,
+            "rotation_max": 0.22919177277248043,
+            "velocity_rmse": 0.20291055841583377,
+            "angular_velocity_rmse": 0.04780521003779109,
+            "sim3_scale": 2.1022819224814473,
+            "sim3_ate_rmse": 0.17436625046037976,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.1472840171986016,
+            "drift_per_metre": 0.6973400404464982
+          },
+          "reference_state_sha256": "03b173eeb759a995b18cdd9a5791e224d60a858567dc69dd2dc8cce3d8d2cf80",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.0581813203458523e-16,
+            "max_local_translation_vs_prediction_difference_m": 5.551115123125783e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-gyro-only.npz",
+              "sha256": "7bb907650117afbcc39e2da4e98ca6dfba6af1229244b80c2df9b75489efecd2",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "cf9b229f5f1f0f090f3390f90a6f8ac8ba7e7524b7a986ac12adc0d051bc7c2d",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-gyro-only.npz",
+              "sha256": "7bb907650117afbcc39e2da4e98ca6dfba6af1229244b80c2df9b75489efecd2",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "cf9b229f5f1f0f090f3390f90a6f8ac8ba7e7524b7a986ac12adc0d051bc7c2d",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            }
+          ]
+        },
+        {
+          "episode_id": 1,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.20096465343153067,
+            "rpe_rotation_rmse": 0.024084477771099535,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.41908091252598695,
+            "rotation_rmse": 0.1231987872288045,
+            "rotation_max": 0.22369068757519553,
+            "velocity_rmse": 0.2015984516239397,
+            "angular_velocity_rmse": 0.048813134350687716,
+            "sim3_scale": 1.272546037426365,
+            "sim3_ate_rmse": 0.29346543111777157,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.44243539851675134,
+            "drift_per_metre": 0.2100992656195512
+          },
+          "reference_state_sha256": "4f46135c93becbd9f88430a9b33a14bca13a5dc000b550bc77f542c8617cab3f",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.8041124150158794e-16,
+            "max_local_translation_vs_prediction_difference_m": 1.0061396160665481e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-gyro-only.npz",
+              "sha256": "a537426b389fa7a3313e9284d5a2ddbf8753861956a947bd20f302bf16a6be3c",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "388261dd4bc2d34cb39845cb7868ea92be032e438c86c6ba80118130a4a87de9",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-gyro-only.npz",
+              "sha256": "a537426b389fa7a3313e9284d5a2ddbf8753861956a947bd20f302bf16a6be3c",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "388261dd4bc2d34cb39845cb7868ea92be032e438c86c6ba80118130a4a87de9",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            }
+          ]
+        },
+        {
+          "episode_id": 2,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17108110400686738,
+            "rpe_rotation_rmse": 0.02448762540403276,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5043571331277275,
+            "rotation_rmse": 0.12663323432666518,
+            "rotation_max": 0.22522673827118217,
+            "velocity_rmse": 0.18444041223041815,
+            "angular_velocity_rmse": 0.04781989810375217,
+            "sim3_scale": 0.9400292774802055,
+            "sim3_ate_rmse": 0.23064500404806798,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.6767460292742222,
+            "drift_per_metre": 0.42264419036285183
+          },
+          "reference_state_sha256": "2dec9aa3b1adbc1fc621dfea793865e8a4e1e2f606f54b0221e9eb1da6a2a3dc",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.0321604682062002e-16,
+            "max_local_translation_vs_prediction_difference_m": 6.158268339717665e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-gyro-only.npz",
+              "sha256": "e312373dce6c0df120f7c4eaddde961a842f002888aa9b38ba8fc09be968ae80",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "fdbb057743eb16ca4999c63469801649cc1d2d8fb1ce7a85f384a0149751a008",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-gyro-only.npz",
+              "sha256": "e312373dce6c0df120f7c4eaddde961a842f002888aa9b38ba8fc09be968ae80",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "fdbb057743eb16ca4999c63469801649cc1d2d8fb1ce7a85f384a0149751a008",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            }
+          ]
+        },
+        {
+          "episode_id": 3,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2779192278201178,
+            "rpe_rotation_rmse": 0.027918113763190137,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.505017591493587,
+            "rotation_rmse": 0.1436667531931475,
+            "rotation_max": 0.2539084830552919,
+            "velocity_rmse": 0.2806356880816421,
+            "angular_velocity_rmse": 0.048821247087657546,
+            "sim3_scale": 1.785755005437139,
+            "sim3_ate_rmse": 0.363862454728993,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.2439232201138017,
+            "drift_per_metre": 0.4725794256700938
+          },
+          "reference_state_sha256": "69d732ac1f83feff35b4ac091ed7a89cbb56dde8704303d166b961eb5ff545e9",
+          "calibration": {
+            "final": {
+              "enabled": false,
+              "status": "disabled",
+              "bias_imu": [
+                0.0,
+                0.0,
+                0.0
+              ]
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "disabled",
+                "reason": null
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.3877787807814457e-16,
+            "max_local_translation_vs_prediction_difference_m": 9.280770596475918e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-gyro-only.npz",
+              "sha256": "b9f6b35ee535bdcda0e5692c68cc3f6f2339df168ede63a21510dcf5a83340b2",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "e08b260914b689efb7f370ba279d9730de594c4b8030fd812257605d127abf7e",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-gyro-only.npz",
+              "sha256": "b9f6b35ee535bdcda0e5692c68cc3f6f2339df168ede63a21510dcf5a83340b2",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-gyro-only.calibration.json",
+              "calibration_sha256": "4de3665cfa52d022be22c5f5b3b2b017c5a845f125cd563344fdb9821741c762",
+              "outputs_sha256": "e08b260914b689efb7f370ba279d9730de594c4b8030fd812257605d127abf7e",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.13333767410208702,
+        "mean_episode_unaligned_position_rmse_m": 0.5215854854570119,
+        "mean_episode_sim3_ate_m": 0.26558478508880307,
+        "mean_episode_velocity_rmse_m_s": 0.21739627758795843,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.04831487239497213,
+        "mean_episode_rotation_rpe_rad": 0.025214956136634097,
+        "mean_episode_rotation_rmse_deg": 7.639685976140405,
+        "episodes": 4,
+        "frames": 800
+      }
+    },
+    "calibrated-residual": {
+      "settings": {
+        "name": "calibrated-residual",
+        "gyro_bias_enabled": true,
+        "rotation_residual_enabled": true
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.19979718765702342,
+            "rpe_rotation_rmse": 0.018040947182887686,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.6179766267397347,
+            "rotation_rmse": 0.04589433852455251,
+            "rotation_max": 0.09193568367580475,
+            "velocity_rmse": 0.20293557493566103,
+            "angular_velocity_rmse": 0.03671395941106888,
+            "sim3_scale": 2.1024786154312185,
+            "sim3_ate_rmse": 0.17522808780053037,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.0680159296000438,
+            "drift_per_metre": 0.6491594586694872
+          },
+          "reference_state_sha256": "03b173eeb759a995b18cdd9a5791e224d60a858567dc69dd2dc8cce3d8d2cf80",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6653981832988053,
+              "gyro_std_norm": 0.1506648567111109,
+              "gyro_mean_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.1796119636642288e-16,
+            "max_local_translation_vs_prediction_difference_m": 6.245004513516506e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-calibrated-residual.npz",
+              "sha256": "856c6094e30f4d684ae7637e4ee58e32c86001e45613f50defdf0d1e42904cf9",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-calibrated-residual.calibration.json",
+              "calibration_sha256": "e9dadb39cd4c2052998b852c8c638b2c64366c73d82ed803ee46e1814daf3fb2",
+              "outputs_sha256": "025b5d66fdda08a8684a49f64545bc4e9739b508279d6a0be1ee0e8b3cc15363",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-calibrated-residual.npz",
+              "sha256": "856c6094e30f4d684ae7637e4ee58e32c86001e45613f50defdf0d1e42904cf9",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-calibrated-residual.calibration.json",
+              "calibration_sha256": "e9dadb39cd4c2052998b852c8c638b2c64366c73d82ed803ee46e1814daf3fb2",
+              "outputs_sha256": "025b5d66fdda08a8684a49f64545bc4e9739b508279d6a0be1ee0e8b3cc15363",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            }
+          ]
+        },
+        {
+          "episode_id": 1,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2011113334763078,
+            "rpe_rotation_rmse": 0.019626532786044065,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4265698975568871,
+            "rotation_rmse": 0.0984647827474189,
+            "rotation_max": 0.17862240869150872,
+            "velocity_rmse": 0.20158160002151526,
+            "angular_velocity_rmse": 0.03927281959825325,
+            "sim3_scale": 1.2716179006798725,
+            "sim3_ate_rmse": 0.2932623610670301,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.4713637704312786,
+            "drift_per_metre": 0.22383647949345714
+          },
+          "reference_state_sha256": "4f46135c93becbd9f88430a9b33a14bca13a5dc000b550bc77f542c8617cab3f",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6452634399820144,
+              "gyro_std_norm": 0.14710804945631892,
+              "gyro_mean_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.7694179454963432e-16,
+            "max_local_translation_vs_prediction_difference_m": 1.1275702593849246e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-calibrated-residual.npz",
+              "sha256": "7b1c0d7cc9e98414523dd70f1d96197f0216601f9de3e9fb9bd1210cd2f7fec7",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-calibrated-residual.calibration.json",
+              "calibration_sha256": "a1c1a33ccc8bc9ac95789245aaa23bb1f0ee50b78e9f395b68dc00636ecc2f97",
+              "outputs_sha256": "3016bfdddf0e89f581b5be51017b0547b933c0ce45a827efe51e7894ad064bc0",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-calibrated-residual.npz",
+              "sha256": "7b1c0d7cc9e98414523dd70f1d96197f0216601f9de3e9fb9bd1210cd2f7fec7",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-calibrated-residual.calibration.json",
+              "calibration_sha256": "a1c1a33ccc8bc9ac95789245aaa23bb1f0ee50b78e9f395b68dc00636ecc2f97",
+              "outputs_sha256": "3016bfdddf0e89f581b5be51017b0547b933c0ce45a827efe51e7894ad064bc0",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            }
+          ]
+        },
+        {
+          "episode_id": 2,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17072159228711145,
+            "rpe_rotation_rmse": 0.012858357684103714,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4881591740781095,
+            "rotation_rmse": 0.06404031752871439,
+            "rotation_max": 0.10869176564068406,
+            "velocity_rmse": 0.18447629095015072,
+            "angular_velocity_rmse": 0.03655596205515317,
+            "sim3_scale": 0.9391065896884692,
+            "sim3_ate_rmse": 0.23057805197418704,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.5834260924892476,
+            "drift_per_metre": 0.3643636428293896
+          },
+          "reference_state_sha256": "2dec9aa3b1adbc1fc621dfea793865e8a4e1e2f606f54b0221e9eb1da6a2a3dc",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6220047673718117,
+              "gyro_std_norm": 0.1463892224040755,
+              "gyro_mean_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.448494102440634e-16,
+            "max_local_translation_vs_prediction_difference_m": 1.205632815803881e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-calibrated-residual.npz",
+              "sha256": "0db208d8a020930b7c51680564cde9f9d1f7acc4c01f71500aea522edabc1469",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-calibrated-residual.calibration.json",
+              "calibration_sha256": "69e2bf0e225fde81fc3a5a8ade16803f67328812219ca364aa8ff5e400ddaae1",
+              "outputs_sha256": "98babc1996103cab9ff7435d25371237624d84a55e070baa4c2c025099ea7d32",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-calibrated-residual.npz",
+              "sha256": "0db208d8a020930b7c51680564cde9f9d1f7acc4c01f71500aea522edabc1469",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-calibrated-residual.calibration.json",
+              "calibration_sha256": "69e2bf0e225fde81fc3a5a8ade16803f67328812219ca364aa8ff5e400ddaae1",
+              "outputs_sha256": "98babc1996103cab9ff7435d25371237624d84a55e070baa4c2c025099ea7d32",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            }
+          ]
+        },
+        {
+          "episode_id": 3,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.27785492285067115,
+            "rpe_rotation_rmse": 0.028081231896961177,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5068826898595686,
+            "rotation_rmse": 0.13068584261428423,
+            "rotation_max": 0.24590210931124537,
+            "velocity_rmse": 0.280646102487264,
+            "angular_velocity_rmse": 0.042151261425199676,
+            "sim3_scale": 1.7813741990816279,
+            "sim3_ate_rmse": 0.36395255661006687,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.2368256302967764,
+            "drift_per_metre": 0.4698829771553174
+          },
+          "reference_state_sha256": "69d732ac1f83feff35b4ac091ed7a89cbb56dde8704303d166b961eb5ff545e9",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6429471135396831,
+              "gyro_std_norm": 0.14823311630473782,
+              "gyro_mean_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.4311468676808659e-16,
+            "max_local_translation_vs_prediction_difference_m": 8.500145032286355e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-calibrated-residual.npz",
+              "sha256": "625771d47fced76487a63283735e6ca3b1cb3c2ac5ea64b144e7df59552db550",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-calibrated-residual.calibration.json",
+              "calibration_sha256": "fea89ba366387693551616d58934efcfa3a88f777a7a7fcf4e7cc5ca90836ec4",
+              "outputs_sha256": "77ffca825d2a164966b30730e2f14ab06f0443bf0d62eb7cb5bb80d653e6fdd7",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-calibrated-residual.npz",
+              "sha256": "625771d47fced76487a63283735e6ca3b1cb3c2ac5ea64b144e7df59552db550",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-calibrated-residual.calibration.json",
+              "calibration_sha256": "fea89ba366387693551616d58934efcfa3a88f777a7a7fcf4e7cc5ca90836ec4",
+              "outputs_sha256": "77ffca825d2a164966b30730e2f14ab06f0443bf0d62eb7cb5bb80d653e6fdd7",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.0847713203537425,
+        "mean_episode_unaligned_position_rmse_m": 0.509897097058575,
+        "mean_episode_sim3_ate_m": 0.2657552643629536,
+        "mean_episode_velocity_rmse_m_s": 0.21740989209864775,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.03867350062241874,
+        "mean_episode_rotation_rpe_rad": 0.019651767387499162,
+        "mean_episode_rotation_rmse_deg": 4.857038880020898,
+        "episodes": 4,
+        "frames": 800
+      }
+    },
+    "calibrated-gyro": {
+      "settings": {
+        "name": "calibrated-gyro",
+        "gyro_bias_enabled": true,
+        "rotation_residual_enabled": false
+      },
+      "episodes": [
+        {
+          "episode_id": 0,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1995049892861569,
+            "rpe_rotation_rmse": 0.010654413883117275,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.6257078752841813,
+            "rotation_rmse": 0.03125655641601177,
+            "rotation_max": 0.043255244761070934,
+            "velocity_rmse": 0.20297139264576214,
+            "angular_velocity_rmse": 0.0426224572885226,
+            "sim3_scale": 2.104931771635829,
+            "sim3_ate_rmse": 0.17552932696119597,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.080594277609439,
+            "drift_per_metre": 0.6568048067943913
+          },
+          "reference_state_sha256": "03b173eeb759a995b18cdd9a5791e224d60a858567dc69dd2dc8cce3d8d2cf80",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6653981832988053,
+              "gyro_std_norm": 0.1506648567111109,
+              "gyro_mean_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 9.912318361948724e-17,
+            "max_local_translation_vs_prediction_difference_m": 6.591949208711867e-17,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-calibrated-gyro.npz",
+              "sha256": "80743284344dc02abd0ee35a5917e94d6aa8c3b5d03d4441ab84449d733c2bdc",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-0-calibrated-gyro.calibration.json",
+              "calibration_sha256": "e9dadb39cd4c2052998b852c8c638b2c64366c73d82ed803ee46e1814daf3fb2",
+              "outputs_sha256": "9f9564d036b3f4bae1624444085ef0de56ddf5d36ca6ac06a9d30e92f34ca3c7",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-calibrated-gyro.npz",
+              "sha256": "80743284344dc02abd0ee35a5917e94d6aa8c3b5d03d4441ab84449d733c2bdc",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-0/repeat-1-calibrated-gyro.calibration.json",
+              "calibration_sha256": "e9dadb39cd4c2052998b852c8c638b2c64366c73d82ed803ee46e1814daf3fb2",
+              "outputs_sha256": "9f9564d036b3f4bae1624444085ef0de56ddf5d36ca6ac06a9d30e92f34ca3c7",
+              "states_sha256": "34b5df9ae047160342ae40bda0cdc3ad816d2742f359b5878f0002b798fff90b",
+              "predictions_sha256": "792d6f4d379c08980286ed9d693309042ab0182ee4329195774fea53776a3faf",
+              "image_pair_hashes_sha256": "1c20956988c7b69edd31883d480d346442de35063a3886eaf5187c0371fce8d0"
+            }
+          ]
+        },
+        {
+          "episode_id": 1,
+          "scene": "ProcTHOR-Train-5",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.20103955899708736,
+            "rpe_rotation_rmse": 0.011441788292945634,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.42238463296931295,
+            "rotation_rmse": 0.04460490137848785,
+            "rotation_max": 0.07917019757505171,
+            "velocity_rmse": 0.20158926298733731,
+            "angular_velocity_rmse": 0.04437192857378627,
+            "sim3_scale": 1.2708680477943246,
+            "sim3_ate_rmse": 0.29300810854219084,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.4506140549697446,
+            "drift_per_metre": 0.21398306361647712
+          },
+          "reference_state_sha256": "4f46135c93becbd9f88430a9b33a14bca13a5dc000b550bc77f542c8617cab3f",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6452634399820144,
+              "gyro_std_norm": 0.14710804945631892,
+              "gyro_mean_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 2.0816681711721685e-16,
+            "max_local_translation_vs_prediction_difference_m": 1.3530843112619095e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-calibrated-gyro.npz",
+              "sha256": "6d5e21286609726f97e5306ce853921da2b88131ac7e1b3d5e417120c3da5d06",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-0-calibrated-gyro.calibration.json",
+              "calibration_sha256": "a1c1a33ccc8bc9ac95789245aaa23bb1f0ee50b78e9f395b68dc00636ecc2f97",
+              "outputs_sha256": "de867776e53046bccae3e39f19868506c3c7e37c2bb46752ec77666a17d024ea",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-calibrated-gyro.npz",
+              "sha256": "6d5e21286609726f97e5306ce853921da2b88131ac7e1b3d5e417120c3da5d06",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-1/repeat-1-calibrated-gyro.calibration.json",
+              "calibration_sha256": "a1c1a33ccc8bc9ac95789245aaa23bb1f0ee50b78e9f395b68dc00636ecc2f97",
+              "outputs_sha256": "de867776e53046bccae3e39f19868506c3c7e37c2bb46752ec77666a17d024ea",
+              "states_sha256": "9bc3e8b6a47f32078ffda6355b707418593e528e97381cc6fb2adf69684b4357",
+              "predictions_sha256": "3b08766eca6ba7d602aae11001285278e0d45bf717c4e0e3dd1f198b0b2727c0",
+              "image_pair_hashes_sha256": "ddd3ceb0daec5158c1deeb5d61353749079ea1139d8b08f482942f26b714a40d"
+            }
+          ]
+        },
+        {
+          "episode_id": 2,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17084879680518417,
+            "rpe_rotation_rmse": 0.010495005605654415,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.49311539568950485,
+            "rotation_rmse": 0.03782372322702544,
+            "rotation_max": 0.07052608088462155,
+            "velocity_rmse": 0.18446333005745874,
+            "angular_velocity_rmse": 0.04296681606974091,
+            "sim3_scale": 0.9391706259701856,
+            "sim3_ate_rmse": 0.2305240094079467,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.6102566748883006,
+            "drift_per_metre": 0.38111998757983157
+          },
+          "reference_state_sha256": "2dec9aa3b1adbc1fc621dfea793865e8a4e1e2f606f54b0221e9eb1da6a2a3dc",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6220047673718117,
+              "gyro_std_norm": 0.1463892224040755,
+              "gyro_mean_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.457167719820518e-16,
+            "max_local_translation_vs_prediction_difference_m": 1.0408340855860843e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-calibrated-gyro.npz",
+              "sha256": "2e01a815254db17f73a216f696633c3f41eff2282d57ec9dfadd61fa871ee003",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-0-calibrated-gyro.calibration.json",
+              "calibration_sha256": "69e2bf0e225fde81fc3a5a8ade16803f67328812219ca364aa8ff5e400ddaae1",
+              "outputs_sha256": "fd82b27fd3e23cff062a928138d4b6cd0ab739e78e93f33a9d61c9b304da707b",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-calibrated-gyro.npz",
+              "sha256": "2e01a815254db17f73a216f696633c3f41eff2282d57ec9dfadd61fa871ee003",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-2/repeat-1-calibrated-gyro.calibration.json",
+              "calibration_sha256": "69e2bf0e225fde81fc3a5a8ade16803f67328812219ca364aa8ff5e400ddaae1",
+              "outputs_sha256": "fd82b27fd3e23cff062a928138d4b6cd0ab739e78e93f33a9d61c9b304da707b",
+              "states_sha256": "9ea2f021afe04b4e72d5a612a40dda1c13ba42c95b607ef21062a73aa2654328",
+              "predictions_sha256": "de1144f330dda9555c9a6879dc719b6c764d7f04ac0e9fc687045fe1e6b340b2",
+              "image_pair_hashes_sha256": "2d8d34d3590ad2ba5b736b8d2f6e6e122d82392e8bba6218740868d67c9d8147"
+            }
+          ]
+        },
+        {
+          "episode_id": 3,
+          "scene": "ProcTHOR-Train-6",
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2778721989955363,
+            "rpe_rotation_rmse": 0.013550275578241544,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5041196850979203,
+            "rotation_rmse": 0.03784219307684662,
+            "rotation_max": 0.07094517698676887,
+            "velocity_rmse": 0.2806395694028446,
+            "angular_velocity_rmse": 0.04334091576506387,
+            "sim3_scale": 1.781750046542842,
+            "sim3_ate_rmse": 0.3634601744147563,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.2305122407364966,
+            "drift_per_metre": 0.46748445451004056
+          },
+          "reference_state_sha256": "69d732ac1f83feff35b4ac091ed7a89cbb56dde8704303d166b961eb5ff545e9",
+          "calibration": {
+            "final": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6429471135396831,
+              "gyro_std_norm": 0.14823311630473782,
+              "gyro_mean_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            },
+            "transitions": [
+              {
+                "frame_index": 0,
+                "time_s": 0.049999999,
+                "status": "collecting",
+                "reason": "collecting"
+              },
+              {
+                "frame_index": 19,
+                "time_s": 0.999999978,
+                "status": "accepted",
+                "reason": "accepted"
+              }
+            ]
+          },
+          "invariants": {
+            "raw_states_identical": true,
+            "raw_predictions_identical": true,
+            "image_pairs_identical": true,
+            "max_local_translation_difference_m": 1.8214596497756474e-16,
+            "max_local_translation_vs_prediction_difference_m": 1.1622647289044608e-16,
+            "outputs_identical": null,
+            "calibration_trace_identical": null
+          },
+          "repeats": [
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-calibrated-gyro.npz",
+              "sha256": "3050748e15a28d4d03664341080617f05b1b6614591b4d9ae687991e8686d1f3",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-0-calibrated-gyro.calibration.json",
+              "calibration_sha256": "fea89ba366387693551616d58934efcfa3a88f777a7a7fcf4e7cc5ca90836ec4",
+              "outputs_sha256": "c75803f02b08da6e0754db2eb37454eb1d65fbfaa36c82daf9d2ea03e0b1a152",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            },
+            {
+              "path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-calibrated-gyro.npz",
+              "sha256": "3050748e15a28d4d03664341080617f05b1b6614591b4d9ae687991e8686d1f3",
+              "calibration_path": "/root/projects/AeroVIO/results/gyro-bias-v4-validation/episode-3/repeat-1-calibrated-gyro.calibration.json",
+              "calibration_sha256": "fea89ba366387693551616d58934efcfa3a88f777a7a7fcf4e7cc5ca90836ec4",
+              "outputs_sha256": "c75803f02b08da6e0754db2eb37454eb1d65fbfaa36c82daf9d2ea03e0b1a152",
+              "states_sha256": "126c22829cd17a845fe5d01e008eb3134e66939424a64194abb215027b4fc27d",
+              "predictions_sha256": "c6191b0356a15c39e9cde24121fe83ca94217ee315fb17ad1d88cbd80acf1037",
+              "image_pair_hashes_sha256": "b202a9db60f1d95c4ede0618d07be5a0463ed785ada098a01d938f9bc446701d"
+            }
+          ]
+        }
+      ],
+      "summary": {
+        "mean_episode_rotation_rmse_rad": 0.03788184352459292,
+        "mean_episode_unaligned_position_rmse_m": 0.5113318972602299,
+        "mean_episode_sim3_ate_m": 0.26563040483152245,
+        "mean_episode_velocity_rmse_m_s": 0.21741588877335072,
+        "mean_episode_angular_velocity_rmse_rad_s": 0.04332552942427841,
+        "mean_episode_rotation_rpe_rad": 0.011535370839989716,
+        "mean_episode_rotation_rmse_deg": 2.1704697541341615,
+        "episodes": 4,
+        "frames": 800
+      }
+    }
+  },
+  "repeat_checks": [
+    {
+      "episode_id": 0,
+      "variant": "current",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 5.551115123125783e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 0,
+      "variant": "gyro-only",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 5.551115123125783e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 0,
+      "variant": "calibrated-residual",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 6.245004513516506e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 0,
+      "variant": "calibrated-gyro",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 6.591949208711867e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 1,
+      "variant": "current",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.1102230246251565e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 1,
+      "variant": "gyro-only",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.0061396160665481e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 1,
+      "variant": "calibrated-residual",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.1275702593849246e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 1,
+      "variant": "calibrated-gyro",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.3530843112619095e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 2,
+      "variant": "current",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 6.071532165918825e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 2,
+      "variant": "gyro-only",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 6.158268339717665e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 2,
+      "variant": "calibrated-residual",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.205632815803881e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 2,
+      "variant": "calibrated-gyro",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.0408340855860843e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 3,
+      "variant": "current",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 8.673617379884035e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 3,
+      "variant": "gyro-only",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 9.280770596475918e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 3,
+      "variant": "calibrated-residual",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 8.500145032286355e-17,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    },
+    {
+      "episode_id": 3,
+      "variant": "calibrated-gyro",
+      "raw_states_identical": true,
+      "raw_predictions_identical": true,
+      "image_pairs_identical": true,
+      "max_local_translation_difference_m": 0.0,
+      "max_local_translation_vs_prediction_difference_m": 1.1622647289044608e-16,
+      "outputs_identical": true,
+      "calibration_trace_identical": true
+    }
+  ],
+  "causal_prefix_checks": [
+    {
+      "episode_id": 0,
+      "repeat": 0,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 0,
+      "repeat": 0,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 0,
+      "repeat": 1,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 0,
+      "repeat": 1,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 1,
+      "repeat": 0,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 1,
+      "repeat": 0,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 1,
+      "repeat": 1,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 1,
+      "repeat": 1,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 2,
+      "repeat": 0,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 2,
+      "repeat": 0,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 2,
+      "repeat": 1,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 2,
+      "repeat": 1,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 3,
+      "repeat": 0,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 3,
+      "repeat": 0,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 3,
+      "repeat": 1,
+      "variant": "calibrated-residual",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    },
+    {
+      "episode_id": 3,
+      "repeat": 1,
+      "variant": "calibrated-gyro",
+      "uncorrected_prefix_frames": 20,
+      "prefix_outputs_identical": true,
+      "first_permitted_corrected_frame": 20
+    }
+  ],
+  "input_provenance": [
+    {
+      "episode_id": 0,
+      "scene": "ProcTHOR-Train-5",
+      "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840",
+      "seed": 271840,
+      "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9",
+      "actual_adapted_rgb_times_imu_stream_sha256": "df7d43f296e93d75cf2434898a177c5425032a4f5854484ee9101a46b1161ef0",
+      "frames": 200
+    },
+    {
+      "episode_id": 1,
+      "scene": "ProcTHOR-Train-5",
+      "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841",
+      "seed": 271841,
+      "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b",
+      "actual_adapted_rgb_times_imu_stream_sha256": "87c3bb216b1cac01d2cc5c204d751cb2c17f06add741fd59ef09dd7118835ce1",
+      "frames": 200
+    },
+    {
+      "episode_id": 2,
+      "scene": "ProcTHOR-Train-6",
+      "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+      "seed": 271842,
+      "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a",
+      "actual_adapted_rgb_times_imu_stream_sha256": "57a3795cfd21e3147a76d9672aaef18932982e9d17f2a64cf18205872b3a3a25",
+      "frames": 200
+    },
+    {
+      "episode_id": 3,
+      "scene": "ProcTHOR-Train-6",
+      "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843",
+      "seed": 271843,
+      "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a",
+      "actual_adapted_rgb_times_imu_stream_sha256": "9177521a1ef3ef19c3b991cd260335c157ce82ef8b49cf37ed9b3a780e6d93db",
+      "frames": 200
+    }
+  ],
+  "historical_control_check": {
+    "passed": true,
+    "audit_sha256": "03ddf34fcadc34f4f2ba8f6c49d4454103f8ac8d0bb09e29362c0c24a2bfaf1e",
+    "absolute_differences": {
+      "rotation_rmse_rad": 6.83804263212906e-10,
+      "unaligned_position_rmse_m": 2.90626722687648e-09
+    },
+    "tolerance": 1e-06,
+    "raw_inputs_match_original_cache": true
+  },
+  "finished_utc": "2026-11-10T13:28:36.654171+00:00",
+  "validation_complete": true,
+  "repeat_verified": true
+}

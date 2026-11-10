@@ -1,0 +1,12 @@
+wrote /root/projects/AeroVIO/artifacts/gyro-v4-cal-residual.wasm (47.9 MiB, bundle 153 KiB, 7 files)
+next: viobench check /root/projects/AeroVIO/artifacts/gyro-v4-cal-residual.wasm
+{
+  "wasm": "/root/projects/AeroVIO/artifacts/gyro-v4-cal-residual.wasm",
+  "sha256": "198622e7cbe310518a5d146a6f93c784d57f65c05b6b3fcd19ad90d01587e111",
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "map_enabled": false,
+  "rotation_residual_enabled": true,
+  "input_mode": "image_imu",
+  "network_inputs": "images_state",
+  "gyro_bias_enabled": true
+}

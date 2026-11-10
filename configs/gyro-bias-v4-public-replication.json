@@ -1,0 +1,12 @@
+{
+  "purpose": "Repeat the promising but strictly unselected calibration-only candidate",
+  "decision_boundary": "After original-flight validation and before any v4 public evaluation",
+  "candidate": "calibrated-gyro",
+  "reason": "Validation rotation improves 68.77 percent in all four flights, but aligned ATE increases 0.02752 percent and therefore fails the original strict nonregression guard",
+  "selection_unchanged": "current",
+  "extra_run": "Repeat all ten public episodes using the same calibrated-gyro WASM artifact",
+  "required_checks": "Byte-identical poses/twists, exact per-episode accuracy and per-frame fuel",
+  "no_threshold_relaxation": true,
+  "no_public_driven_tuning": true,
+  "interpretation": "This can reproduce a diagnostic tradeoff; it cannot retroactively make the candidate pass the original validation rule"
+}

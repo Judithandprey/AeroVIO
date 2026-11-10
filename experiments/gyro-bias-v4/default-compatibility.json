@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Synthetic host real-ONNX compatibility only; no validation or public episodes",
+  "reference_commit": "d33ab4c",
+  "legacy_solution_source_sha256": "32f32969d695b7a6e7a1a2c69f9016e73609b3cf6aaf9e453b6e2d3afadd944e",
+  "current_solution_source_sha256": "bc9b2601fb83f9e26b47eac132151b81e2ad0f34b63803e900d8a204b8d1826d",
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "frames": 24,
+  "outputs": 312,
+  "maximum_absolute_difference": 0.0,
+  "byte_identical_output_arrays": true,
+  "output_array_sha256": "e1078e8b18392b3c812f2fb0ed7605d2dcb6075dd5334455a3d408e8fde873ba",
+  "gyro_bias_metadata": "absent (default disabled)"
+}

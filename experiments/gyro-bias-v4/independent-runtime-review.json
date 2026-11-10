@@ -1,0 +1,167 @@
+{
+  "status": "passed",
+  "scope": "Independent read-only source/math review plus original 16 simulated startup-window checks; no ONNX rollout or public data",
+  "code_sha256": {
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/solution.py": "bc9b2601fb83f9e26b47eac132151b81e2ad0f34b63803e900d8a204b8d1826d",
+    "workspace/solution/motion_inference.py": "ee11810e47403fb3e4cf94fc568e521b7e27a4318190d53fa743c66afdea6efe",
+    "tests/test_gyro_bias.py": "ee033dd9ae7cbf62668567d057a383949b53a25e7b4372e2edb69dd588209227"
+  },
+  "checks": [
+    {
+      "split": "train",
+      "seed": 271828,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 2.0816681711721685e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271829,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 1.0842021724855044e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271830,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 8.673617379884035e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271831,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 8.673617379884035e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271832,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 1.734723475976807e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271833,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 1.0408340855860843e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271834,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 3.469446951953614e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271835,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 6.938893903907228e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271836,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 1.5612511283791264e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271837,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 2.168404344971009e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271838,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 5.204170427930421e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "train",
+      "seed": 271839,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 2.0816681711721685e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "validation",
+      "seed": 271840,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 1.3877787807814457e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "validation",
+      "seed": 271841,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 7.806255641895632e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "validation",
+      "seed": 271842,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 6.938893903907228e-18,
+      "first_corrected_interval_matrix_max_error": 0.0
+    },
+    {
+      "split": "validation",
+      "seed": 271843,
+      "accepted": true,
+      "N": 200,
+      "finalized_t": 0.999999978,
+      "mean_error_max": 1.3877787807814457e-17,
+      "first_corrected_interval_matrix_max_error": 0.0
+    }
+  ],
+  "findings": [
+    "Window closes after frame19 at .999999978 with200 unique observations for all16 flights.",
+    "Welford bias means match batch reference within1e-15rad/s.",
+    "First corrected interval implements ordered body-sample debiased rotations and camera extrinsic conjugation.",
+    "Solution computes output before observe_after_output; deadline-crossing interval uses old rotation.",
+    "Raw network state and local translation are untouched; default-disabled branch retains original composition."
+  ],
+  "known_limits": [
+    "Small constant true angular velocity can pass gate, as documented in protocol.",
+    "Upstream timestamps are ordered; stale/duplicate rows are skipped consistently with preintegrate."
+  ]
+}

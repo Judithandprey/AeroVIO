@@ -15,6 +15,13 @@ their starting checkpoint under the fixed real-validation rule. Read the
 [warping and world-model guide](warping-and-world-models.md) for the conceptual
 scope of this estimator.
 
+The [v4 startup-calibration experiment](gyro-bias-calibration.md) changes only
+inference-time rotation integration, using the same v1 warp checkpoint. Original
+simulated-flight validation retains `current`: its calibrated-gyro alternative
+improves rotation but fails the strict aligned-ATE guard. All seven public runs
+are complete, including exact selected/current and diagnostic repeats; no new
+model was trained or promoted.
+
 ## Variants
 
 - **B0:** immutable official KLT + IMU baseline, tag `baseline-klt-imu-v1`.
@@ -56,6 +63,7 @@ The runtime accepts optional metadata fields with backward-compatible defaults:
 | `rotation_residual_enabled` | `true` | `false` composes `exp(IMU_rotation)` alone; sparse map must be disabled |
 | `input_mode` | `image_imu` | `imu_only` replaces the network's image input with zeros at training and inference |
 | `network_inputs` | `images_state` | `state` selects the equivalent compact graph and requires `input_mode=imu_only` |
+| `gyro_bias` | `{"enabled": false}` | `{"enabled": true}` enables the fixed causal startup calibrator; sparse map must be disabled |
 
 Rotation on/off packages use identical ONNX weights, image inputs and
 normalization. Disabling the residual leaves each predicted local translation
@@ -87,6 +95,33 @@ compact predictions in both PyTorch and OpenCV on all validation states plus
 seeded synthetic states. Floating-point roundoff is recorded explicitly. Treat
 this as a separate compute experiment; the full graph remains the primary
 control for whether images contribute useful information.
+
+## Fixed startup-calibration control
+
+V4 crosses bias calibration on/off with learned rotation residual on/off. Every
+cell uses the same ONNX and raw 14-value network state; correction never changes
+the predictor inputs or its camera-local translation output. After the complete
+initial one-second window passes the fixed coverage, variation and prior gates,
+a separate path subtracts the frozen IMU-coordinate gyro mean before every
+sample exponential, then transforms the integrated rotation into camera axes.
+Correction begins after the closing frame has been emitted. The residual is
+composed afterward when enabled. No output is replayed or reset.
+
+On the four original simulated validation flights, calibrated-gyro lowers mean
+rotation RMSE from 6.948942° to 2.170470° (68.77%), while mean Sim(3) ATE increases
+from 0.265557 m to 0.265630 m (0.02752%). The fixed nonregression rule therefore
+retains the uncalibrated `current` reference. Calibration with the residual also
+fails the aligned-ATE guard. Exact repeated validation outputs establish
+reproduction, not statistical significance. The completed public calibrated-gyro
+diagnostic improves aligned ATE and rotation versus current at additional
+compute and a small unaligned-position regression; the selection remains fixed.
+
+The [calibration guide](gyro-bias-calibration.md) explains why the simulator's
+documented initial hover is an assumption: its pose still moves, and a low gyro
+standard deviation cannot rule out slow constant rotation. The experiment
+contains no physical-sensor measurements. See the
+[validation decision](../experiments/gyro-bias-v4/validation.md) and
+[reproduction commands](setup.md#reproduce-startup-gyro-calibration).
 
 ## Training data
 

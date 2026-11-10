@@ -1,0 +1,118 @@
+{
+  "created_utc": "2026-11-10T13:41:47.627793+00:00",
+  "scope": "Plot of frozen public summaries only; no inference, training, selection or confidence-interval estimation",
+  "input": {
+    "path": "experiments/gyro-bias-v4/comparison.json",
+    "sha256": "94566536f6d7ac2b18fb49c72618d66fc172776d06ef931d5f60c282a4447bb3"
+  },
+  "selection": {
+    "path": "experiments/gyro-bias-v4/selection.json",
+    "sha256": "deff76f7a6c8877bcdbe9f349301e093bdef581ab19da50b3bd9c8ce803278da",
+    "selected_variant": "current"
+  },
+  "public_episodes_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "script_sha256": "cdd952545443d81837bd9c624a8788bb55232a602ca70c35e916762c7bab51e4",
+  "figure": {
+    "path": "comparison.png",
+    "sha256": "684ceccd6c6776617384dddca5bd6ab61cfe4a4872f2c22b97d1979a77796c82",
+    "pixels": [
+      2688,
+      1088
+    ],
+    "axis_limits": [
+      [
+        0.0,
+        2.858288809393136
+      ],
+      [
+        0.0,
+        37.50062240670242
+      ],
+      [
+        0.0,
+        198.67518439999998
+      ]
+    ],
+    "bar_values_unrounded": true,
+    "label_decimal_places": 6
+  },
+  "metrics": [
+    {
+      "source_key": "sim3_ate_mean_m",
+      "title": "Mean Sim(3) ATE",
+      "display_unit": "meters",
+      "scale": 1.0
+    },
+    {
+      "source_key": "rotation_rmse_median_deg",
+      "title": "Median rotation RMSE",
+      "display_unit": "degrees",
+      "scale": 1.0
+    },
+    {
+      "source_key": "fuel_per_frame_max",
+      "title": "Maximum fuel / frame",
+      "display_unit": "million fuel units",
+      "scale": 1e-06
+    }
+  ],
+  "variants": [
+    {
+      "name": "baseline",
+      "display_label": "Official KLT + IMU\nbaseline",
+      "wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237",
+      "values": {
+        "sim3_ate_mean_m": 2.04163486385224,
+        "rotation_rmse_median_deg": 13.244939008722964,
+        "fuel_per_frame_max": 141910846
+      }
+    },
+    {
+      "name": "current",
+      "display_label": "Current + residual\nselected fallback",
+      "wasm_sha256": "f57b5c216e26ed4b111f84a3c7b4effdeb6cf313407bd35490830b3fd4b45660",
+      "values": {
+        "sim3_ate_mean_m": 0.9666223655565684,
+        "rotation_rmse_median_deg": 21.593065961156935,
+        "fuel_per_frame_max": 14090709
+      }
+    },
+    {
+      "name": "gyro-only",
+      "display_label": "Gyro-only\nresidual disabled",
+      "wasm_sha256": "9e3138656b8989ceda7393ef909b1492dc11b5ba4124552ff45b0fe3dd2efb5d",
+      "values": {
+        "sim3_ate_mean_m": 0.963882105022676,
+        "rotation_rmse_median_deg": 26.786158861930303,
+        "fuel_per_frame_max": 13998029
+      }
+    },
+    {
+      "name": "calibrated-residual",
+      "display_label": "Calibrated + residual\nunselected",
+      "wasm_sha256": "198622e7cbe310518a5d146a6f93c784d57f65c05b6b3fcd19ad90d01587e111",
+      "values": {
+        "sim3_ate_mean_m": 0.9042108113158273,
+        "rotation_rmse_median_deg": 18.755554259171685,
+        "fuel_per_frame_max": 14830095
+      }
+    },
+    {
+      "name": "calibrated-gyro",
+      "display_label": "Calibrated gyro-only\ndiagnostic, unselected",
+      "wasm_sha256": "5c6a8414d059111f72a1d68dab6b6eb46df526fea5c7fdc1f3539c4a70e3affd",
+      "values": {
+        "sim3_ate_mean_m": 0.8818179740254486,
+        "rotation_rmse_median_deg": 12.196272984977124,
+        "fuel_per_frame_max": 14757111
+      }
+    }
+  ],
+  "caption": "Local public set: 10 simulated flights per variant, all completed. No confidence intervals or statistical-superiority claim.\nSelection was frozen on separate validation: current remains the fallback; calibrated gyro-only is an unselected diagnostic.\nATE is the equal-episode mean; rotation is the episode median; fuel is the maximum over all frames. Labels show six decimals.",
+  "environment": {
+    "python": "3.13.14",
+    "matplotlib": "3.10.8",
+    "numpy": "2.4.1",
+    "platform": "Windows"
+  }
+}

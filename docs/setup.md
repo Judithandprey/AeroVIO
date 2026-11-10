@@ -2,7 +2,8 @@
 
 The experimental branch contains a trained **small motion CNN**, a version with
 training-only warping supervision, optional sparse-map correction, and explicit
-rotation/input ablations, plus a rotation-focused auxiliary-training experiment.
+rotation/input ablations, a rotation-focused auxiliary-training experiment, and
+an optional fixed startup gyro-calibration experiment.
 The original official KLT + IMU baseline is frozen at
 `baseline-klt-imu-v1`.
 The working `workspace/solution/` currently selects the pose-only learned model.
@@ -10,8 +11,10 @@ The working `workspace/solution/` currently selects the pose-only learned model.
 The runner and runtime are pinned to
 [viobench 2072fa9](https://github.com/jonas-eschmann/viobench/tree/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca).
 Read [architecture/training](learned-motion.md), the
+[calibration guide](gyro-bias-calibration.md), the
+[v4 validation decision](../experiments/gyro-bias-v4/validation.md), the
 [rotation-training guide](rotation-focused-training.md), the
-[current v3 record](../experiments/rotation-focus-v3/README.md), the
+[completed v3 record](../experiments/rotation-focus-v3/README.md), the
 [completed rotation/input experiment](../experiments/motion-ablation-v2/README.md),
 and [earlier geometry evidence](../experiments/learned-motion-v1/README.md)
 alongside these commands. The [warping/world-model guide](warping-and-world-models.md)
@@ -175,6 +178,67 @@ Their compact selected-model records are archived under
 subdirectories identify the unselected epoch-20 exports. See the
 [rotation-training guide](rotation-focused-training.md) and
 [input illustration](../experiments/rotation-focus-v3/rotation-examples.png).
+
+## Reproduce startup gyro calibration
+
+V4 needs no retraining. It uses the archived v1 warp model and the original
+simulated validation flights/cache already described in [learned-motion.md](learned-motion.md).
+The [frozen protocol](../configs/gyro-bias-v4.json) defines four cells and the
+strict selection rule. Validate on scenes 5/6 before any public comparison,
+using new output directories to preserve the recorded evidence:
+
+```bash
+.venv/bin/python scripts/validate_gyro_bias.py --protocol configs/gyro-bias-v4.json --raw-dir results/gyro-bias-v4-validation-repro --out-dir reports/gyro-bias-v4-validation-repro
+```
+
+This runs actual host `Solution.step` twice per cell and flight. It checks
+predictor-input/output identity, local translation, causal activation and exact
+repeats, then uses reference trajectories for scoring. It is not a WASM speed
+measurement. The recorded validation retained `current`: calibrated-gyro improved
+mean rotation RMSE by 68.77% but increased aligned ATE by 0.02752%, which fails
+the fixed nonregression guard. Neither that guard nor the selection changed.
+
+Package the same four cells from one guest source/runtime revision:
+
+```bash
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name gyro-v4-current-repro
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name gyro-v4-raw-repro --disable-rotation-residual
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name gyro-v4-cal-residual-repro --calibrate-gyro
+.venv/bin/python scripts/package_motion.py --model experiments/learned-motion-v1/warp --name gyro-v4-cal-gyro-repro --calibrate-gyro --disable-rotation-residual
+for name in current raw cal-residual cal-gyro; do
+  .venv/bin/python -m viobench check "artifacts/gyro-v4-${name}-repro.wasm" --frames 40
+done
+```
+
+`--calibrate-gyro` enables the fixed rule and cannot be combined with `--map`.
+The predictor still receives raw IMU features; only a separate future-rotation
+integration path uses the accepted bias estimate. Calibration is disabled by
+default. The four recorded packages passed their 40-frame checks, and the full
+host suite passed 104 tests. These checks do not establish trajectory accuracy.
+
+After the baseline reproduction below and after all competing compute stops,
+run the public evaluation serially. The
+[pre-public replication addendum](../configs/gyro-bias-v4-public-replication.json)
+adds a diagnostic repeat without changing validation selection. The seven roles
+are baseline, four cells, selected-current repeat and calibrated-gyro repeat:
+
+```bash
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/klt-imu-repro.wasm --run-dir results/gyro-v4-baseline-repro --verify-baseline
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/gyro-v4-current-repro.wasm --run-dir results/gyro-v4-current-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/gyro-v4-raw-repro.wasm --run-dir results/gyro-v4-gyro-only-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/gyro-v4-cal-residual-repro.wasm --run-dir results/gyro-v4-calibrated-residual-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/gyro-v4-cal-gyro-repro.wasm --run-dir results/gyro-v4-calibrated-gyro-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/gyro-v4-current-repro.wasm --run-dir results/gyro-v4-selected-repeat-repro
+.venv/bin/python scripts/evaluate_public.py --wasm artifacts/gyro-v4-cal-gyro-repro.wasm --run-dir results/gyro-v4-calibrated-gyro-repeat-repro
+```
+
+All seven recorded public runs completed; actual full trajectory and per-frame
+fuel repeats pass. See the [v4 comparison](../experiments/gyro-bias-v4/comparison.md).
+The verified Windows files are `artifacts/AeroVIO-gyro-v4-current.wasm` and
+`artifacts/AeroVIO-gyro-v4-cal-gyro.wasm` in the Windows mirror; exact hashes and
+roles are in the [copy record](../experiments/gyro-bias-v4/windows-artifacts.json). Keep
+the selected-current and unselected diagnostic roles explicit in all reports;
+even an exact diagnostic repeat cannot change the frozen validation decision.
 
 ## Reproduce the frozen baseline
 

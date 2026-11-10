@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "profile": {
+    "candidate_id": "aerovio-project-owner",
+    "target_roles": ["Physical AI hackathon participant"],
+    "updated_at": "2026-11-10"
+  },
+  "claims": [
+    {
+      "id": "claim-aerovio-design-001",
+      "source_fact": "The user proposed perspective/3D-map-aware motion estimation, keeping an unchanged baseline on a separate branch, rotation-focused training, and controlled accuracy/speed comparisons.",
+      "candidate_wording": "Co-designed AeroVIO's experimental direction, proposing perspective-aware motion estimation and controlled baseline, image-input and rotation ablations.",
+      "sources": [{"type": "conversation", "location": "AeroVIO project chat: user requests for baseline/branch separation, perspective geometry, and rotation training", "public": false, "note": "Direct recorded user decisions; no assumption of sole implementation ownership"}],
+      "responsibility_level": "参与",
+      "verification_status": "已确认",
+      "allowed_uses": ["Physical AI hackathon project description", "Portfolio project summary"],
+      "interview_details": {
+        "decisions": ["Keep baseline and experimental branches distinct", "Test whether image changes can identify motion", "Compare rotation correction and IMU-only controls"],
+        "difficulties": ["Separating camera rotation from translation and distinguishing pairwise learning from accumulated trajectory drift"],
+        "verification": ["User requests in project chat", "Committed v1-v4 experiment protocols and reports"],
+        "result": "Reproducible project experiments preserve both positive and negative results"
+      },
+      "boundary": "The user supplied research direction and requested comparisons; implementation, training orchestration and audits in this chat were AI-assisted. Do not imply independent authorship of every code component.",
+      "risk_notes": ["Stronger personal engineering or team leadership claims require additional confirmed ownership evidence"],
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "claim-aerovio-system-002",
+      "source_fact": "The repository contains a 29,398-parameter RGB+IMU motion network, ONNX/OpenCV inference in WASM, training-only geometric warping, and reproducible accuracy/compute evaluations against the pinned official KLT+IMU teaching baseline.",
+      "candidate_wording": "Used AI-assisted development to build and evaluate a compact RGB+IMU odometry prototype that estimates pose and twist in WebAssembly, with controlled geometric and inertial ablations.",
+      "sources": [{"type": "repository", "location": "workspace/solution; experiments/learned-motion-v1; experiments/motion-ablation-v2; experiments/rotation-focus-v3; experiments/gyro-bias-v4", "public": false, "note": "Private coursework repository; source attribution preserved"}],
+      "responsibility_level": "参与",
+      "verification_status": "已确认",
+      "allowed_uses": ["Physical AI hackathon project description", "Portfolio project summary"],
+      "interview_details": {
+        "decisions": ["Separate training from deployment dependencies", "Measure complete fixed public trajectories and actual embedded model/runtime hashes"],
+        "difficulties": ["Small angular biases accumulate", "Synthetic rotation improvement can fail to transfer", "Sim3 alignment can hide metric-scale errors"],
+        "verification": ["Host tests and upstream WASM execution checks", "Saved complete public reports and model manifests"],
+        "result": "A runnable simulated-flight localization prototype with auditable experiments"
+      },
+      "boundary": "Project capability, not proof of sole personal implementation. Backbone and initial predictor design adapt the upstream teaching example. No physical-robot deployment, world/action model, course-server score or hackathon acceptance is claimed.",
+      "risk_notes": ["Describe the official teaching baseline explicitly", "Keep public-scene and startup-distribution limits attached to performance claims"],
+      "last_verified": "2026-11-10"
+    },
+    {
+      "id": "claim-aerovio-measurement-003",
+      "source_fact": "On ten fixed local public simulated flights, the calibrated-gyro diagnostic has mean Sim3 ATE 0.881818 m, median rotation RMSE 12.196 degrees, maximum frame fuel 14757111 and median guest step 1.241 ms. The official baseline has 2.041635 m, 13.245 degrees, 141910846 fuel and 3.212 ms. Full repeated output and fuel checks pass.",
+      "candidate_wording": "A fixed calibration experiment reduced mean Sim(3)-aligned trajectory error by 56.8% and maximum per-frame fuel by 89.6% versus the official KLT+IMU teaching baseline on ten local public simulated flights; a complete repeat reproduced every pose, twist and frame's fuel exactly.",
+      "sources": [
+        {"type": "experiment_report", "location": "experiments/gyro-bias-v4/comparison.json", "public": false, "note": "All five primary variants, all ten public flights, fixed runner/runtime/limits"},
+        {"type": "verification", "location": "experiments/gyro-bias-v4/output-verification.json", "public": false, "note": "Complete deterministic public repetitions and unchanged controls"},
+        {"type": "selection_record", "location": "experiments/gyro-bias-v4/selection.json", "public": false, "note": "Current remains selected; calibrated-gyro is a diagnostic candidate"}
+      ],
+      "responsibility_level": "参与",
+      "verification_status": "已确认",
+      "allowed_uses": ["Physical AI hackathon project description with local simulated benchmark scope", "Portfolio comparison with validation decision and tradeoffs linked"],
+      "interview_details": {
+        "decisions": ["Freeze calibration protocol before candidate evaluation", "Keep strict validation selection despite a tiny aligned-ATE regression", "Repeat promising diagnostic separately without public-driven tuning"],
+        "difficulties": ["Startup motion contaminates gyro-bias estimates", "Learned residuals were trained against raw IMU", "Aligned position and orientation metrics can disagree"],
+        "verification": ["Ten complete public episodes per run, no filled outputs", "Exact complete pose/twist/fuel repeat", "Same ONNX and raw predictor inputs across the factorial experiment"],
+        "result": "A reproducible diagnostic improvement relative to the official baseline with documented remaining tradeoffs"
+      },
+      "boundary": "Project-level measured result from AI-assisted execution, not sole personal implementation. Diagnostic remains unselected: original validation aligned ATE increases 0.02752% despite rotation improving 68.77%. Against current on public data, step time increases 16.69%, median unaligned position error increases 1.55%, and angular-velocity RMSE increases 25.56%.",
+      "risk_notes": ["All public flights use one scene; original validation flights share deterministic startup dynamics", "Deterministic repetition is not statistical or physical-robot generalization", "Uses a documented initial-hover assumption; no world/action model or accurate metric map claim", "No course-server or hackathon submission has occurred"],
+      "last_verified": "2026-11-10"
+    }
+  ]
+}

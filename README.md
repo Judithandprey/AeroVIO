@@ -6,8 +6,20 @@ Estimate camera pose and twist from RGB + IMU while measuring the
 accuracy-compute trade-off in a WebAssembly runtime. Developed for UC Berkeley
 EECS 116/216, Fall 2026, Project 3.
 
-**Current investigation:** teach the existing network how calibrated rotation
-changes its view, using a matched continued-training control. Both v3 fine-tunes
+**Current investigation:** test a fixed, causal startup gyro calibration with
+the existing model, without retraining. On four original simulated validation
+flights, calibration without the learned rotation residual reduces mean rotation
+RMSE by 68.77%, but raises aligned ATE by 0.02752%. It fails the frozen
+nonregression guard, so the selected variant remains `current` (the v1 warp model
+with calibration off and its residual on). All seven public runs completed;
+the calibrated-gyro diagnostic reduces mean aligned ATE by 56.81% and maximum
+fuel/frame by 89.60% versus the official baseline, with exact complete-run
+reproduction. Its validation status and tradeoffs remain explicit. See the
+[calibration guide](docs/gyro-bias-calibration.md) and
+[completed comparison](experiments/gyro-bias-v4/README.md).
+
+The previous rotation-focused experiment used calibrated view changes during
+training with a matched continued-training control. Both v3 fine-tunes
 retained their starting checkpoint under the fixed original-flight validation
 rule; no deployed improvement was established. All six public variants completed.
 The final focused candidate slightly improves aligned position error but worsens
@@ -40,7 +52,8 @@ KLT baseline. Package each variant explicitly to avoid mixing model identities.
 2. Follow [setup and artifact reproduction](docs/setup.md).
 3. Review the [learned architecture and training protocol](docs/learned-motion.md)
    and [sparse-map geometry](docs/perspective-map.md).
-4. Read the [rotation-focused training experiment](experiments/rotation-focus-v3/README.md),
+4. Read the [gyro-calibration validation](experiments/gyro-bias-v4/validation.md),
+   [rotation-focused training experiment](experiments/rotation-focus-v3/README.md),
    [completed input ablations](experiments/motion-ablation-v2/README.md), and
    [earlier geometry comparison](experiments/learned-motion-v1/comparison.md)
    before drawing conclusions or changing parameters.
@@ -70,6 +83,7 @@ experiments/         Compact reports, model snapshots and provenance
     learned-motion-v1/
     motion-ablation-v2/
     rotation-focus-v3/
+    gyro-bias-v4/
 docs/                Course sources, requirements, architecture and setup
 reports/             Presentation and final-report sources
 HANDOFF.md           Verified state and development boundaries

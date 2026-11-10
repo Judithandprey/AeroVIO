@@ -1,0 +1,12 @@
+wrote /root/projects/AeroVIO/artifacts/gyro-v4-current.wasm (47.9 MiB, bundle 153 KiB, 7 files)
+next: viobench check /root/projects/AeroVIO/artifacts/gyro-v4-current.wasm
+{
+  "wasm": "/root/projects/AeroVIO/artifacts/gyro-v4-current.wasm",
+  "sha256": "f57b5c216e26ed4b111f84a3c7b4effdeb6cf313407bd35490830b3fd4b45660",
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "map_enabled": false,
+  "rotation_residual_enabled": true,
+  "input_mode": "image_imu",
+  "network_inputs": "images_state",
+  "gyro_bias_enabled": false
+}

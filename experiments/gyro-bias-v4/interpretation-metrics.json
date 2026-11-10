@@ -1,0 +1,46 @@
+{
+  "candidate": "calibrated-gyro",
+  "selected_variant": "current",
+  "scope": "Fixed public diagnostic; validation acceptance rule and selection unchanged",
+  "comparisons": {
+    "baseline": {
+      "sim3_ate_mean_m_change_percent": -56.808242764742054,
+      "rotation_rmse_median_deg_change_percent": -7.91748473175452,
+      "wall_per_frame_median_ms_change_percent": -61.373393949453515,
+      "fuel_per_frame_max_change_percent": -89.60113943651636,
+      "unaligned_ate_median_m_change_percent": -92.8036402523044,
+      "angular_velocity_rmse_median_rad_s_change_percent": -66.79587498681673,
+      "per_episode_wins": {
+        "sim3_ate_rmse": 10,
+        "rotation_rmse": 6,
+        "ate_rmse": 10
+      }
+    },
+    "current": {
+      "sim3_ate_mean_m_change_percent": -8.773270157295665,
+      "rotation_rmse_median_deg_change_percent": -43.51764123299302,
+      "wall_per_frame_median_ms_change_percent": 16.692008742715082,
+      "fuel_per_frame_max_change_percent": 4.729371673206795,
+      "unaligned_ate_median_m_change_percent": 1.548124696002473,
+      "angular_velocity_rmse_median_rad_s_change_percent": 25.559609921932868,
+      "per_episode_wins": {
+        "sim3_ate_rmse": 5,
+        "rotation_rmse": 6,
+        "ate_rmse": 5
+      }
+    },
+    "gyro-only": {
+      "sim3_ate_mean_m_change_percent": -8.513917891991241,
+      "rotation_rmse_median_deg_change_percent": -54.46800324061761,
+      "wall_per_frame_median_ms_change_percent": 16.92119778134671,
+      "fuel_per_frame_max_change_percent": 5.422777735351181,
+      "unaligned_ate_median_m_change_percent": 1.4724336808854988,
+      "angular_velocity_rmse_median_rad_s_change_percent": -9.245172412956448,
+      "per_episode_wins": {
+        "sim3_ate_rmse": 7,
+        "rotation_rmse": 9,
+        "ate_rmse": 7
+      }
+    }
+  }
+}

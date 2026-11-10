@@ -8,7 +8,8 @@ the same network weights and is applied before recomputing pose and twist.
 import cv2
 import numpy as np
 
-from motion_inference import MotionPredictor, validate_motion_options
+from motion_inference import MotionPredictor, validate_motion_options, validate_gyro_bias_options
+from gyro_bias import InitialGyroBias, integrate_debiased_rotation
 from preintegrate import camera_features, exp_so3, log_so3, make_state, prepare_frame
 
 
@@ -49,6 +50,7 @@ class Solution:
             predictor = MotionPredictor(bundle)
         self.predictor = predictor
         _, _, self.rotation_residual_enabled = validate_motion_options(predictor.meta)
+        self.gyro_calibration = InitialGyroBias() if validate_gyro_bias_options(predictor.meta) else None
         self.size = tuple(predictor.size)
         self.previous = None
         self.previous_t = None
@@ -62,6 +64,12 @@ class Solution:
             self.map = SparseLocalMap(**settings)
         self.diagnostics_interval = int(predictor.meta.get("diagnostics_interval", 0))
 
+    @property
+    def gyro_bias_diagnostics(self):
+        if self.gyro_calibration is None:
+            return {"enabled": False, "status": "disabled", "bias_imu": [0.0, 0.0, 0.0]}
+        return self.gyro_calibration.diagnostics()
+
     def step(self, t, frame, imu):
         t = float(t)
         if not np.isfinite(t):
@@ -73,6 +81,8 @@ class Solution:
             if self.map is not None:
                 gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
                 self.T, self.last_map_diagnostics = self.map.update(gray, self.K, self.T.copy())
+            if self.gyro_calibration is not None:
+                self.gyro_calibration.observe_after_output(t, imu)
             self.previous, self.previous_t = small, t
             self.frames += 1
             return np.array([0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0])
@@ -83,6 +93,9 @@ class Solution:
             raise ValueError("motion prediction must contain six finite values")
         delta = np.eye(4)
         delta[:3, :3] = exp_so3(state[:3].astype(np.float64))
+        if self.gyro_calibration is not None and self.gyro_calibration.accepted:
+            delta[:3, :3] = integrate_debiased_rotation(imu, self.T_cam_imu, self.previous_t, t,
+                                                       self.gyro_calibration.bias_imu)
         if self.rotation_residual_enabled:
             delta[:3, :3] = delta[:3, :3] @ exp_so3(motion[3:])
         delta[:3, 3] = motion[:3]
@@ -102,6 +115,10 @@ class Solution:
                                  velocity, angular_velocity])
         if not np.isfinite(result).all():
             raise ValueError("non-finite ABI output")
+        # Freeze calibration only after this frame's output has been computed.
+        # Even the deadline/crossing frame uses the previously active rotation.
+        if self.gyro_calibration is not None:
+            self.gyro_calibration.observe_after_output(t, imu)
         self.T = pose.copy()
         self.previous, self.previous_t = small, t
         self.frames += 1
