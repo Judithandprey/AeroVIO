@@ -34,6 +34,14 @@ upstream-inspired trained architecture; it is not a separately trained model.
 These changes do not claim invention of CNN odometry, image warping, KLT,
 triangulation, PnP, or the upstream estimator.
 
+The rotation-focused experiment adds calibrated pure-rotation view synthesis,
+consistent synthetic IMU samples, and matched continued-training controls. Its
+homography is standard projective geometry, documented in
+[OpenCV's tutorial](https://docs.opencv.org/4.11.0/d9/dab/tutorial_homography.html).
+Illustrative image pairs derive from the same simulated ProcTHOR observations;
+they do not represent a newly invented renderer or learned world model. See
+`experiments/rotation-focus-v3/` for the negative transfer result and provenance.
+
 ## Runtime, simulation and dependencies
 
 The generated `workspace/runtime/`, `workspace/toolchain/` and workspace ignore

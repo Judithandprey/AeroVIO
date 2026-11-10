@@ -1,0 +1,354 @@
+{
+  "scope": "Selected epoch-zero fallback only; trained epoch20 candidates remain validation diagnostics.",
+  "initial_and_selected_onnx_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "comparisons": [
+    {
+      "comparison": "baseline_repeat",
+      "before": "ablation-v2-baseline",
+      "after": "rotation-v3-baseline",
+      "episodes": [
+        {
+          "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "98ac04d70a8ffb4ad9136b85fb5f4b7eec3afee3b47db89c69f60b71bc60a632",
+            "twist.txt": "80461ef28337606d73021fb1570079e2cd0c1143e9df35bd3538cc1d50f4209b"
+          }
+        },
+        {
+          "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "abd1c5c346a42f137bacc895e1375e17781b53afbc52ea957c642781dfbbe870",
+            "twist.txt": "dea848c74c5ed6a359f54d84a70a112d06bab48e9c496fcc239e5b3c2482019e"
+          }
+        },
+        {
+          "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "007842be2e79b86829b455401aebc496fb6d2ec9e95984c3e420bc6040b6138f",
+            "twist.txt": "30588d39ac410d35bb237af9d5a8c36239aecee37b8f67112c3442dc8ae9dd6e"
+          }
+        },
+        {
+          "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "77bc9652033704c8c77c65215a31c99ee9ae0260425728ca1228e13ce3e32f2f",
+            "twist.txt": "ef13d125f029c3751efd1f433a4bb846e0f38d9a3fa4f81476bc518b8f5b3d91"
+          }
+        },
+        {
+          "hash": "489ad518363d88bfa877f86afea144de0d846258",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "acc75ec21552b852a847551a9133329f8ac3825cc6b8cedad608381ba2019302",
+            "twist.txt": "72851e47b8a844ed1abfdff4efef2dbb19d9ece8dc6c954404a6d8280ea09c83"
+          }
+        },
+        {
+          "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "5248910e72b6e56aeff58979e795df12368a4b017feefb3d20997350f27083d3",
+            "twist.txt": "91cae3f6560687c51d8506c7e3fd6d5163cc251ea4b0c92bd4c197d1aab02caf"
+          }
+        },
+        {
+          "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "beecf38f97866f86d0592bcdfc8b3308b5d91f605733298750473603f9147858",
+            "twist.txt": "7a8757446d72d23eadf1946d612cdb3108a3e8865ae6903346e9ae27cbafbc2d"
+          }
+        },
+        {
+          "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "d5a0b100c9c7ebf047377afbc4a66c651e37ced6a5d81987608fcf2c52a7d426",
+            "twist.txt": "56445c57394afabdf2c050f479d4bc8a512927b9579d2998366a6fb491ec74bc"
+          }
+        },
+        {
+          "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "2703a8f0a71c720abe916ece1dd28bc74887d81a738070c0d2efb78bdbab786e",
+            "twist.txt": "cfb6d3f0438f579e7b0277f3da4455c4951a10a86b88e4cfd6699ea7b9b03371"
+          }
+        },
+        {
+          "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "76da9a93b1dd62fc844af1eb9ac04712b616dfe56b8f0ced7876a1101eb4faba",
+            "twist.txt": "43b190c46a21e092fdbcabe352310747d31e5d10cddddab67b956ce2815bf66d"
+          }
+        }
+      ]
+    },
+    {
+      "comparison": "current_repeat",
+      "before": "ablation-v2-current",
+      "after": "rotation-v3-current",
+      "episodes": [
+        {
+          "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "4efa24a7c37664e0b8a590d265c1c9cb006d835756630578ada42cd1eff981ee",
+            "twist.txt": "340aa8d88d365a476a868ff0664b289f8c217f2def040bbd474c5084bf2421c9"
+          }
+        },
+        {
+          "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "46c1c14403f49b15e804ee6e5e326b92629408f0d92c059f1fe32d125e8fec3e",
+            "twist.txt": "982d5f29b862d6f8693f91074e0c27297a128c823952581ea007f82a1c6ee3a1"
+          }
+        },
+        {
+          "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "2868ba584a482eb4c60de7f2a1fd571f8f1c46d2a150a742f4e128aa3c7e6e0a",
+            "twist.txt": "7b8d8e5705c162877a4cfab3cf92d1eabf221699690b651d0d18a89776b4f0d7"
+          }
+        },
+        {
+          "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "5c771e8203a9e88cf8779ccdd1639b206eab71c08b23f69ea7d65715f9d03f8f",
+            "twist.txt": "0e39f6321020e11c6049a9fbd16dd230c5e5c2d0cad562f9ffe12f6fdcc84138"
+          }
+        },
+        {
+          "hash": "489ad518363d88bfa877f86afea144de0d846258",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "1d3cb42df94ee5faee4288b03fb308ca06f6bb0c600ed21ff004754527851d86",
+            "twist.txt": "d12e619e5e07e03459eacd3d5b99d607835b0afc61978948fd9e206c436343c2"
+          }
+        },
+        {
+          "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "3e9a4d7d45c6255564bbb6c0a09efb7f9eafe70493be93cbb171827ba29fc01a",
+            "twist.txt": "c4625736af8d90df97243f4726f42496fce7c9b14d1bba621e480a511e6e85bc"
+          }
+        },
+        {
+          "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "0eb689a0f3a7734a743568902be7ced67b8ec83923502298c1ded6b11fbb15b3",
+            "twist.txt": "d6631b45c4ed3b2880a40914d8fca0c92ee26584f8e5512fafc01fbd9dec409b"
+          }
+        },
+        {
+          "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "880a4109b90bf938e02da0ffe30320362af237f8a8667531b85a24071cbd4c64",
+            "twist.txt": "eb7602c991e003a4ce74b77d11631e4a9389a620e6ca99c8ea76e4d4fea8bd3d"
+          }
+        },
+        {
+          "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "bf02f747a3e4cc6db335a76b5fd1f2fea928e2731800777bfa4f551b3c91d532",
+            "twist.txt": "adf25cfbc1c362192ca95e44eed5a5a81c20d42745eaf546787b7f319944cd5e"
+          }
+        },
+        {
+          "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "248d92db2e661420357114dd3c8c1ff25ed50e69b953f8cd90dc95eb13aee330",
+            "twist.txt": "513974af54177870fcd5a83e5c6aff8c741afc3f86e2e3c7126bff74c4de4095"
+          }
+        }
+      ]
+    },
+    {
+      "comparison": "control_fallback",
+      "before": "rotation-v3-current",
+      "after": "rotation-v3-control",
+      "episodes": [
+        {
+          "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "4efa24a7c37664e0b8a590d265c1c9cb006d835756630578ada42cd1eff981ee",
+            "twist.txt": "340aa8d88d365a476a868ff0664b289f8c217f2def040bbd474c5084bf2421c9"
+          }
+        },
+        {
+          "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "46c1c14403f49b15e804ee6e5e326b92629408f0d92c059f1fe32d125e8fec3e",
+            "twist.txt": "982d5f29b862d6f8693f91074e0c27297a128c823952581ea007f82a1c6ee3a1"
+          }
+        },
+        {
+          "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "2868ba584a482eb4c60de7f2a1fd571f8f1c46d2a150a742f4e128aa3c7e6e0a",
+            "twist.txt": "7b8d8e5705c162877a4cfab3cf92d1eabf221699690b651d0d18a89776b4f0d7"
+          }
+        },
+        {
+          "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "5c771e8203a9e88cf8779ccdd1639b206eab71c08b23f69ea7d65715f9d03f8f",
+            "twist.txt": "0e39f6321020e11c6049a9fbd16dd230c5e5c2d0cad562f9ffe12f6fdcc84138"
+          }
+        },
+        {
+          "hash": "489ad518363d88bfa877f86afea144de0d846258",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "1d3cb42df94ee5faee4288b03fb308ca06f6bb0c600ed21ff004754527851d86",
+            "twist.txt": "d12e619e5e07e03459eacd3d5b99d607835b0afc61978948fd9e206c436343c2"
+          }
+        },
+        {
+          "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "3e9a4d7d45c6255564bbb6c0a09efb7f9eafe70493be93cbb171827ba29fc01a",
+            "twist.txt": "c4625736af8d90df97243f4726f42496fce7c9b14d1bba621e480a511e6e85bc"
+          }
+        },
+        {
+          "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "0eb689a0f3a7734a743568902be7ced67b8ec83923502298c1ded6b11fbb15b3",
+            "twist.txt": "d6631b45c4ed3b2880a40914d8fca0c92ee26584f8e5512fafc01fbd9dec409b"
+          }
+        },
+        {
+          "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "880a4109b90bf938e02da0ffe30320362af237f8a8667531b85a24071cbd4c64",
+            "twist.txt": "eb7602c991e003a4ce74b77d11631e4a9389a620e6ca99c8ea76e4d4fea8bd3d"
+          }
+        },
+        {
+          "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "bf02f747a3e4cc6db335a76b5fd1f2fea928e2731800777bfa4f551b3c91d532",
+            "twist.txt": "adf25cfbc1c362192ca95e44eed5a5a81c20d42745eaf546787b7f319944cd5e"
+          }
+        },
+        {
+          "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "248d92db2e661420357114dd3c8c1ff25ed50e69b953f8cd90dc95eb13aee330",
+            "twist.txt": "513974af54177870fcd5a83e5c6aff8c741afc3f86e2e3c7126bff74c4de4095"
+          }
+        }
+      ]
+    },
+    {
+      "comparison": "focus_fallback",
+      "before": "rotation-v3-current",
+      "after": "rotation-v3-focus",
+      "episodes": [
+        {
+          "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "4efa24a7c37664e0b8a590d265c1c9cb006d835756630578ada42cd1eff981ee",
+            "twist.txt": "340aa8d88d365a476a868ff0664b289f8c217f2def040bbd474c5084bf2421c9"
+          }
+        },
+        {
+          "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "46c1c14403f49b15e804ee6e5e326b92629408f0d92c059f1fe32d125e8fec3e",
+            "twist.txt": "982d5f29b862d6f8693f91074e0c27297a128c823952581ea007f82a1c6ee3a1"
+          }
+        },
+        {
+          "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "2868ba584a482eb4c60de7f2a1fd571f8f1c46d2a150a742f4e128aa3c7e6e0a",
+            "twist.txt": "7b8d8e5705c162877a4cfab3cf92d1eabf221699690b651d0d18a89776b4f0d7"
+          }
+        },
+        {
+          "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "5c771e8203a9e88cf8779ccdd1639b206eab71c08b23f69ea7d65715f9d03f8f",
+            "twist.txt": "0e39f6321020e11c6049a9fbd16dd230c5e5c2d0cad562f9ffe12f6fdcc84138"
+          }
+        },
+        {
+          "hash": "489ad518363d88bfa877f86afea144de0d846258",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "1d3cb42df94ee5faee4288b03fb308ca06f6bb0c600ed21ff004754527851d86",
+            "twist.txt": "d12e619e5e07e03459eacd3d5b99d607835b0afc61978948fd9e206c436343c2"
+          }
+        },
+        {
+          "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "3e9a4d7d45c6255564bbb6c0a09efb7f9eafe70493be93cbb171827ba29fc01a",
+            "twist.txt": "c4625736af8d90df97243f4726f42496fce7c9b14d1bba621e480a511e6e85bc"
+          }
+        },
+        {
+          "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "0eb689a0f3a7734a743568902be7ced67b8ec83923502298c1ded6b11fbb15b3",
+            "twist.txt": "d6631b45c4ed3b2880a40914d8fca0c92ee26584f8e5512fafc01fbd9dec409b"
+          }
+        },
+        {
+          "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "880a4109b90bf938e02da0ffe30320362af237f8a8667531b85a24071cbd4c64",
+            "twist.txt": "eb7602c991e003a4ce74b77d11631e4a9389a620e6ca99c8ea76e4d4fea8bd3d"
+          }
+        },
+        {
+          "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "bf02f747a3e4cc6db335a76b5fd1f2fea928e2731800777bfa4f551b3c91d532",
+            "twist.txt": "adf25cfbc1c362192ca95e44eed5a5a81c20d42745eaf546787b7f319944cd5e"
+          }
+        },
+        {
+          "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+          "accuracy_identical": true,
+          "output_sha256": {
+            "estimate.tum": "248d92db2e661420357114dd3c8c1ff25ed50e69b953f8cd90dc95eb13aee330",
+            "twist.txt": "513974af54177870fcd5a83e5c6aff8c741afc3f86e2e3c7126bff74c4de4095"
+          }
+        }
+      ]
+    }
+  ]
+}

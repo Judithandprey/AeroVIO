@@ -1,0 +1,269 @@
+{
+  "status": "passed",
+  "selection_unchanged": true,
+  "no_public_data_used": true,
+  "initial_source_archive": "provenance/train_rotation_focus.initial.py",
+  "checks": {
+    "matched_initial_checkpoint_and_weights": true,
+    "frozen_starting_normalization": true,
+    "matched_real_minibatch_order": true,
+    "matched_optimizer_steps": 760,
+    "matched_real_examples_processed": 47760,
+    "retention_only_source_change": true,
+    "all_non_timing_history_fields_identical": true,
+    "selected_onnx_identical_to_initial": true,
+    "source_hashes_verified": true,
+    "same_actual_guest_architecture_and_input_contract": true
+  },
+  "variants": {
+    "control": {
+      "non_timing_history_identical": true,
+      "selected_metadata_byte_identical": true,
+      "selected_epoch": 0,
+      "selected_model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+      "fixed_final_candidate": {
+        "epoch": 20,
+        "selected_for_deployment": false,
+        "directory": "diagnostic-last",
+        "model_sha256": "297ffd78033c78c55c323004b020aae165c4551cf02472c45b8ab692d787f709",
+        "checkpoint_sha256": "97ee86ee8cc347028c4f36a7492e4003a7eab806c97b9aa9896b0565d72cfccd",
+        "opencv_torch_max_abs_difference": 4.76837158203125e-07,
+        "real_validation": {
+          "pair_translation_rmse_m": 0.011203019147019551,
+          "trajectory_position_rmse_mean_m": 0.5596859543095841,
+          "rotation_rmse_mean_rad": 0.12137781873837926,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.011074822199030722,
+              "trajectory_position_rmse_mean_m": 0.8110002978003223,
+              "rotation_rmse_mean_rad": 0.1349687741033254,
+              "final_rotation_error_rad": 0.23977233890533317,
+              "final_position_error_m": 1.4529605676103237
+            },
+            {
+              "episode_id": 1,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.010122206028548427,
+              "trajectory_position_rmse_mean_m": 0.419629895338529,
+              "rotation_rmse_mean_rad": 0.1402765928869384,
+              "final_rotation_error_rad": 0.24736990864162978,
+              "final_position_error_m": 0.5303266366989696
+            },
+            {
+              "episode_id": 2,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.00901679591691954,
+              "trajectory_position_rmse_mean_m": 0.5111256189040824,
+              "rotation_rmse_mean_rad": 0.15396491657571665,
+              "final_rotation_error_rad": 0.2708276802284403,
+              "final_position_error_m": 0.5691050418740741
+            },
+            {
+              "episode_id": 3,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.013986321954039382,
+              "trajectory_position_rmse_mean_m": 0.4969880051954028,
+              "rotation_rmse_mean_rad": 0.056300991387536574,
+              "final_rotation_error_rad": 0.10175314668638859,
+              "final_position_error_m": 1.232504140323426
+            }
+          ],
+          "normalized_pose_loss": 0.27302446542073733,
+          "photo_loss": 0.004538219145981211,
+          "visible_pairs": 796,
+          "rotation_residual_rmse_rad": 0.001852330518886447
+        },
+        "auxiliary_validation": {
+          "rotation_geodesic_rmse_rad": 0.009911788209400571,
+          "normalized_rotation_huber": 3.1024145603179933,
+          "pairs": 800
+        }
+      },
+      "baseline": {
+        "epoch": 0,
+        "real_rotation_rmse_deg": 6.948941505454897,
+        "pair_translation_rmse_m": 0.011034798892776303,
+        "trajectory_position_rmse_m": 0.5187004592805404,
+        "pair_guard_pass": true,
+        "trajectory_guard_pass": true,
+        "rotation_improved": false,
+        "aux_rotation_rmse_deg": 0.4876190293064323,
+        "aux_normalized_huber": 2.6357000255584717
+      },
+      "best_trained_rotation_epoch": {
+        "epoch": 17,
+        "real_rotation_rmse_deg": 6.940445569181802,
+        "pair_translation_rmse_m": 0.011194821532141038,
+        "trajectory_position_rmse_m": 0.5588215981523762,
+        "pair_guard_pass": true,
+        "trajectory_guard_pass": false,
+        "rotation_improved": true,
+        "aux_rotation_rmse_deg": 0.5666366435440965,
+        "aux_normalized_huber": 3.0954509449005125
+      },
+      "final_epoch": {
+        "epoch": 20,
+        "real_rotation_rmse_deg": 6.95443674021305,
+        "pair_translation_rmse_m": 0.011203019147019551,
+        "trajectory_position_rmse_m": 0.5596859543095841,
+        "pair_guard_pass": true,
+        "trajectory_guard_pass": false,
+        "rotation_improved": false,
+        "aux_rotation_rmse_deg": 0.5679036318261842,
+        "aux_normalized_huber": 3.1024145603179933
+      },
+      "eligible_epochs": [
+        0,
+        1
+      ],
+      "guard_thresholds": {
+        "pair_translation_rmse_m": 0.011586538837415119,
+        "trajectory_position_rmse_mean_m": 0.5446354822445675
+      },
+      "optimizer_steps": 760,
+      "real_examples_processed": 47760,
+      "auxiliary_examples_processed": 0,
+      "initial_run_elapsed_s": 6.805338364560157,
+      "retained_run_elapsed_s": 6.252619005739689,
+      "initial_auxiliary_forward_backward_s": 0.0,
+      "retained_auxiliary_forward_backward_s": 0.0,
+      "logs": {
+        "logs/rotation-control-v3-training.log": "22dbb764f0d31272b79f553522de244171a9c525bfe3dd854eb7074dbd92ca0b",
+        "logs/rotation-control-v3-retained-training.log": "e26933c781344244fa3eecfac311d32d0a93619d4f78fc7cc54121f0b39d9e5f"
+      },
+      "archived_diagnostic_path": "control/diagnostic-last"
+    },
+    "focus": {
+      "non_timing_history_identical": true,
+      "selected_metadata_byte_identical": true,
+      "selected_epoch": 0,
+      "selected_model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+      "fixed_final_candidate": {
+        "epoch": 20,
+        "selected_for_deployment": false,
+        "directory": "diagnostic-last",
+        "model_sha256": "d2c1703c70be4070f76492bf8c79fe10a4a3c30f9c1a04b5fd0a86123fd84c41",
+        "checkpoint_sha256": "7885157cadf739f0729d5e0a4bee806c8af798c5ae01268d0c4d2bf87b969f96",
+        "opencv_torch_max_abs_difference": 2.384185791015625e-07,
+        "real_validation": {
+          "pair_translation_rmse_m": 0.011243136482327026,
+          "trajectory_position_rmse_mean_m": 0.552148513444165,
+          "rotation_rmse_mean_rad": 0.13438101843117706,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.011062939238319767,
+              "trajectory_position_rmse_mean_m": 0.8185665792382347,
+              "rotation_rmse_mean_rad": 0.1621743758207499,
+              "final_rotation_error_rad": 0.27703656452864006,
+              "final_position_error_m": 1.453894071974927
+            },
+            {
+              "episode_id": 1,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.010207308633527451,
+              "trajectory_position_rmse_mean_m": 0.41170374379729546,
+              "rotation_rmse_mean_rad": 0.13313548826827304,
+              "final_rotation_error_rad": 0.23634970618241039,
+              "final_position_error_m": 0.5669772185620495
+            },
+            {
+              "episode_id": 2,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.009041528281054458,
+              "trajectory_position_rmse_mean_m": 0.4788265481187402,
+              "rotation_rmse_mean_rad": 0.15185478665941093,
+              "final_rotation_error_rad": 0.26760417979585716,
+              "final_position_error_m": 0.5945734574152023
+            },
+            {
+              "episode_id": 3,
+              "pairs": 199,
+              "pair_translation_rmse_m": 0.014046546338975464,
+              "trajectory_position_rmse_mean_m": 0.49949718262238957,
+              "rotation_rmse_mean_rad": 0.09035942297627438,
+              "final_rotation_error_rad": 0.1608953103969412,
+              "final_position_error_m": 1.1941971525921047
+            }
+          ],
+          "normalized_pose_loss": 0.31256986607858284,
+          "photo_loss": 0.004621612874500866,
+          "visible_pairs": 796,
+          "rotation_residual_rmse_rad": 0.0020062352996319532
+        },
+        "auxiliary_validation": {
+          "rotation_geodesic_rmse_rad": 0.004147755907682074,
+          "normalized_rotation_huber": 1.1483858060836791,
+          "pairs": 800
+        }
+      },
+      "baseline": {
+        "epoch": 0,
+        "real_rotation_rmse_deg": 6.948941505454897,
+        "pair_translation_rmse_m": 0.011034798892776303,
+        "trajectory_position_rmse_m": 0.5187004592805404,
+        "pair_guard_pass": true,
+        "trajectory_guard_pass": true,
+        "rotation_improved": false,
+        "aux_rotation_rmse_deg": 0.4876190293064323,
+        "aux_normalized_huber": 2.6357000255584717
+      },
+      "best_trained_rotation_epoch": {
+        "epoch": 1,
+        "real_rotation_rmse_deg": 7.046741553998134,
+        "pair_translation_rmse_m": 0.011158060393346122,
+        "trajectory_position_rmse_m": 0.5132963931508038,
+        "pair_guard_pass": true,
+        "trajectory_guard_pass": true,
+        "rotation_improved": false,
+        "aux_rotation_rmse_deg": 0.43855145021186737,
+        "aux_normalized_huber": 2.323519468307495
+      },
+      "final_epoch": {
+        "epoch": 20,
+        "real_rotation_rmse_deg": 7.699465202776173,
+        "pair_translation_rmse_m": 0.011243136482327026,
+        "trajectory_position_rmse_m": 0.552148513444165,
+        "pair_guard_pass": true,
+        "trajectory_guard_pass": false,
+        "rotation_improved": false,
+        "aux_rotation_rmse_deg": 0.23764890796063676,
+        "aux_normalized_huber": 1.1483858060836791
+      },
+      "eligible_epochs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "guard_thresholds": {
+        "pair_translation_rmse_m": 0.011586538837415119,
+        "trajectory_position_rmse_mean_m": 0.5446354822445675
+      },
+      "optimizer_steps": 760,
+      "real_examples_processed": 47760,
+      "auxiliary_examples_processed": 24320,
+      "initial_run_elapsed_s": 8.70032668672502,
+      "retained_run_elapsed_s": 9.328880042769015,
+      "initial_auxiliary_forward_backward_s": 2.3998316349461675,
+      "retained_auxiliary_forward_backward_s": 2.4755428000353277,
+      "logs": {
+        "logs/rotation-focus-v3-training.log": "41e5dcb2ce994c4c83f567e453966cf649d0425e0666261ec08ed91046072d6d",
+        "logs/rotation-focus-v3-retained-training.log": "a6e338879edda4814fcb340faf76d67ba0fe7ea7e946ca1137fa281330d20542"
+      },
+      "archived_diagnostic_path": "focus/diagnostic-last"
+    }
+  }
+}

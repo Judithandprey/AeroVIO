@@ -8,6 +8,7 @@
 | [Rotation and visual-input ablations](motion-ablation-v2/README.md) | Fixed-weight rotation toggle, matched IMU-only training and equivalent compact export |
 | [Current ablation comparison](motion-ablation-v2/comparison.md) | Accuracy, compute and completion evidence for the controlled v2 variants |
 | [Rotation diagnostics](motion-ablation-v2/rotation-diagnostics.md) | Saved-trajectory evidence and limits on interpreting accumulated orientation errors |
+| [Rotation-focused training](rotation-focus-v3/README.md) | Calibrated pure-rotation data and matched continuation; six complete public runs show no accepted rotation gain; epoch-zero selection retained |
 
 `baseline-klt-imu-v1` preserves the official reference. The current working
 solution is the pose-only learned model; do not assume a working-tree filename
@@ -25,6 +26,17 @@ the experiments to the project ideas. The v2 IMU-only control keeps real RGB and
 geometry as training supervision while withholding RGB from the prediction
 network. Its compact export is an inference-graph transformation of that same
 checkpoint, and should be reported separately from the input-information ablation.
+
+The [rotation-training guide](../docs/rotation-focused-training.md) explains v3's
+perspective geometry and coherent virtual IMU. Both v3 fine-tunes retained the
+initial checkpoint under the fixed real-validation guards. The separately saved
+last-epoch candidates are diagnostics, not selected deployment improvements.
+The [pre-public diagnostic addendum](../configs/rotation-focus-v3-public-diagnostics.json)
+fixes their inclusion alongside the baseline, starting model and two selected
+checkpoints, for six compared variants. It does not revise the selection rule.
+The [input examples](rotation-focus-v3/rotation-examples.png) illustrate the
+auxiliary task; their [caption](rotation-focus-v3/rotation-examples-caption.md)
+records selection and display limits.
 
 ## Record template
 

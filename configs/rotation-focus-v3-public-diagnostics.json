@@ -1,0 +1,14 @@
+{
+  "purpose": "Report actual trained models as diagnostics when the preregistered selection retains epoch zero",
+  "decision_boundary": "Added after real validation and before any v3 public evaluation",
+  "original_protocol": "configs/rotation-focus-v3.json",
+  "original_selection_unchanged": true,
+  "extra_variants": [
+    {"name": "control-final", "model": "models/rotation-control-v3-retained/diagnostic-last", "epoch": 20},
+    {"name": "focus-final", "model": "models/rotation-focus-v3-retained/diagnostic-last", "epoch": 20}
+  ],
+  "checkpoint_rule": "Fixed final epoch of the already specified 20-epoch budget; no epoch picked by public performance",
+  "interpretation": "These candidates failed the original validation selection and are not promoted even if their public scores improve",
+  "timing": "All six runs serial after training, repeatability checks and image probes finish",
+  "no_further_tuning": true
+}

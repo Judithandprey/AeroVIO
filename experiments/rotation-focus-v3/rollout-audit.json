@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "scope": "Host Solution.step composition with cached states and fixed learned/GT relative motions; network parity checked separately. No public episodes or training run.",
+  "episodes": 4,
+  "pairs": 796,
+  "checkpoint_onnx_max_abs_difference": 4.76837158203125e-07,
+  "max_runtime_rollout_rotation_rmse_difference_rad": 2.220446049250313e-16,
+  "max_runtime_rollout_position_rmse_difference_m": 5.551115123125783e-16,
+  "baseline_validation": {
+    "pair_translation_rmse_m": 0.011034798892776303,
+    "trajectory_position_rmse_mean_m": 0.5187004592805404,
+    "rotation_rmse_mean_rad": 0.12128190879867945,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.010135789305265163,
+        "trajectory_position_rmse_mean_m": 0.6506016136306181,
+        "rotation_rmse_mean_rad": 0.1409591267130427,
+        "final_rotation_error_rad": 0.2475518740445884,
+        "final_position_error_m": 1.1362289514344424
+      },
+      {
+        "episode_id": 1,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.010103793208418569,
+        "trajectory_position_rmse_mean_m": 0.4219881886508053,
+        "rotation_rmse_mean_rad": 0.13482644666060595,
+        "final_rotation_error_rad": 0.23901117331425528,
+        "final_position_error_m": 0.45519471651778937
+      },
+      {
+        "episode_id": 2,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.00921681617060437,
+        "trajectory_position_rmse_mean_m": 0.49981504756851386,
+        "rotation_rmse_mean_rad": 0.14703472499556797,
+        "final_rotation_error_rad": 0.25924775789381754,
+        "final_position_error_m": 0.654530800510909
+      },
+      {
+        "episode_id": 3,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.014046230243525887,
+        "trajectory_position_rmse_mean_m": 0.5023969872722244,
+        "rotation_rmse_mean_rad": 0.06230733682550119,
+        "final_rotation_error_rad": 0.11174504001201349,
+        "final_position_error_m": 1.231102945506356
+      }
+    ]
+  },
+  "actual_runtime_per_episode": [
+    {
+      "episode_id": 0,
+      "rotation_rmse_rad": 0.14095912671304278,
+      "position_rmse_m": 0.6506016136306186
+    },
+    {
+      "episode_id": 1,
+      "rotation_rmse_rad": 0.13482644666060606,
+      "position_rmse_m": 0.4219881886508052
+    },
+    {
+      "episode_id": 2,
+      "rotation_rmse_rad": 0.1470347249955679,
+      "position_rmse_m": 0.4998150475685138
+    },
+    {
+      "episode_id": 3,
+      "rotation_rmse_rad": 0.062307336825501415,
+      "position_rmse_m": 0.5023969872722244
+    }
+  ]
+}

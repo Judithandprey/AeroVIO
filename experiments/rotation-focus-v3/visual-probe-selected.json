@@ -1,0 +1,3179 @@
+{
+  "schema_version": 1,
+  "analysis_source_sha256": "fed0fbe34f5ce9cd475ecdc797d9f819aef11676e1e967026a4cc8345e79f16d",
+  "scope": "Post-training, out-of-distribution image correspondence sensitivity; not standalone proof of visual usefulness and never checkpoint selection.",
+  "shuffle_seed": 314162,
+  "angle_edges_deg": [
+    0.0,
+    0.1,
+    0.5,
+    1.0,
+    2.0,
+    3.0,
+    5.0,
+    null
+  ],
+  "packages": {
+    "numpy": "2.5.4",
+    "opencv": "5.0.0"
+  },
+  "datasets": {
+    "real_validation": {
+      "path": "/root/projects/AeroVIO/data/motion-cache-v2/validation.npz",
+      "sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516",
+      "coverage": {
+        "pairs": 796,
+        "episodes": 4,
+        "rotation_norm_deg": {
+          "min": 0.0006468162831296912,
+          "p10": 0.022013499597584522,
+          "p25": 0.03404239398788521,
+          "p50": 0.06086428213306448,
+          "p75": 0.25396226160052543,
+          "p90": 0.9284846367016322,
+          "p95": 1.5892066719308997,
+          "p99": 1.8350587445029847,
+          "max": 1.91756770842743
+        },
+        "absolute_rotation_components_deg": {
+          "50": [
+            0.024473964883435194,
+            0.034670391013996674,
+            0.0027503983311370915
+          ],
+          "95": [
+            0.15148580706583073,
+            1.58867879540585,
+            0.08557545502642513
+          ],
+          "100": [
+            0.33819343064481044,
+            1.9175410735071088,
+            0.4603296922787614
+          ]
+        },
+        "gyro_residual_norm_deg": {
+          "min": 0.007581643294543028,
+          "p10": 0.05778179317712784,
+          "p25": 0.08187620714306831,
+          "p50": 0.11242828145623207,
+          "p75": 0.14645372703671455,
+          "p90": 0.18447086960077286,
+          "p95": 0.21151899173855782,
+          "p99": 0.25212098658084847,
+          "max": 0.3159182667732239
+        },
+        "mean_residual_camera_channels_deg": [
+          -0.017089164623318148,
+          0.02659248198820008,
+          0.009255730121699923
+        ],
+        "below_angle_deg_counts": {
+          "0.01": 19,
+          "0.05": 356,
+          "0.1": 467,
+          "0.25": 595,
+          "0.5": 667,
+          "1": 720,
+          "2": 796,
+          "3": 796
+        },
+        "frame_dt_range_s": [
+          0.04999999701976776,
+          0.05000000074505806
+        ],
+        "translation_norm_m": {
+          "min": 2.4253657102235593e-05,
+          "p10": 0.0002978390548378229,
+          "p25": 0.0006321768451016396,
+          "p50": 0.004549667472019792,
+          "p75": 0.020037883426994085,
+          "p90": 0.025708126835525036,
+          "p95": 0.02943068090826273,
+          "p99": 0.03252305034548044,
+          "max": 0.032677557319402695
+        },
+        "below_translation_m_counts": {
+          "1e-05": 0,
+          "0.0001": 15,
+          "0.001": 251
+        }
+      },
+      "shuffle": {
+        "seed": 314162,
+        "permutation_sha256": "34315735889ba670fb52eb7293ad75d65a778673a1025a30e82691ace3c7fce8",
+        "unchanged_pair_indices": 0
+      },
+      "models": {
+        "original": {
+          "directory": "/root/projects/AeroVIO/models/motion-warp-v1",
+          "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+          "metadata_sha256": "baabc4ba9d2700ed177eb31936bd0cfc6b460f58166e8d11f21c2639f17ba934",
+          "input_mode": "image_imu",
+          "max_motion_component_change": 0.0021917198318988085,
+          "imu_only_invariance_passed": null,
+          "errors": {
+            "overall": {
+              "pairs": 796,
+              "paired": {
+                "rotation_rmse_deg": 0.10566020178534084,
+                "rotation_median_deg": 0.08513393092876544,
+                "rotation_p95_deg": 0.18137618938461414,
+                "error_component_rmse_deg": [
+                  0.046311217279467715,
+                  0.08559420925204136,
+                  0.041145847152909955
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.0022397170049373778,
+                  -0.04188782944799423,
+                  -0.007023801178608447
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.10526570546412604,
+                "rotation_median_deg": 0.08505993015541466,
+                "rotation_p95_deg": 0.18199959905746194,
+                "error_component_rmse_deg": [
+                  0.04505071517620684,
+                  0.08555845118126287,
+                  0.041605927948261075
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.002171820317981015,
+                  -0.041884736039569756,
+                  -0.006960756184957341
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": -0.00039449632121479894,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.00739280589054571,
+                "rotation_median_deg": 0.0015454767241400826,
+                "rotation_max_deg": 0.019377035698086208
+              }
+            },
+            "axis_grouping": "dominant ground-truth camera-axis component; real motion may be mixed",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 273,
+                "paired": {
+                  "rotation_rmse_deg": 0.09674941996875562,
+                  "rotation_median_deg": 0.07941083558894148,
+                  "rotation_p95_deg": 0.17414468391523732,
+                  "error_component_rmse_deg": [
+                    0.05449206083010174,
+                    0.07465262986572581,
+                    0.028601580811383167
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009620176240700596,
+                    -0.015170297862846367,
+                    0.00013007717638925854
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09601750994007856,
+                  "rotation_median_deg": 0.07798488753289612,
+                  "rotation_p95_deg": 0.17058092915896975,
+                  "error_component_rmse_deg": [
+                    0.05284454012308705,
+                    0.07462669531541435,
+                    0.029286057101850362
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009969536753727753,
+                    -0.01521427895973002,
+                    0.000197887907776106
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000731910028677063,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0067398326559798055,
+                  "rotation_median_deg": 0.001333559288166587,
+                  "rotation_max_deg": 0.015988375472101635
+                }
+              },
+              "camera_y": {
+                "pairs": 455,
+                "paired": {
+                  "rotation_rmse_deg": 0.10548617819704285,
+                  "rotation_median_deg": 0.09003646107184085,
+                  "rotation_p95_deg": 0.17971964427521692,
+                  "error_component_rmse_deg": [
+                    0.03887285240712849,
+                    0.09220104289347783,
+                    0.03339465265138939
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0025306428053611216,
+                    -0.05809843404665459,
+                    -0.010757599019814722
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10526007859444035,
+                  "rotation_median_deg": 0.08945769129685191,
+                  "rotation_p95_deg": 0.18113210276290487,
+                  "error_component_rmse_deg": [
+                    0.037967160738591604,
+                    0.09216926016956369,
+                    0.03380837663883008
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0027910150352474863,
+                    -0.05808047839822851,
+                    -0.01063935148594308
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.00022609960260250306,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007740544126185904,
+                  "rotation_median_deg": 0.00197263465551451,
+                  "rotation_max_deg": 0.019377035698086208
+                }
+              },
+              "camera_z": {
+                "pairs": 68,
+                "paired": {
+                  "rotation_rmse_deg": 0.13656858238344485,
+                  "rotation_median_deg": 0.11607070796189495,
+                  "rotation_p95_deg": 0.2334835138424198,
+                  "error_component_rmse_deg": [
+                    0.05544104610269769,
+                    0.08065782985862248,
+                    0.0952448559438242
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.004528663215561742,
+                    -0.040682844600272,
+                    -0.010761018431042471
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.13624315155390943,
+                  "rotation_median_deg": 0.11268736948696786,
+                  "rotation_p95_deg": 0.2335217810957335,
+                  "error_component_rmse_deg": [
+                    0.053863317438724884,
+                    0.08055306493620508,
+                    0.09577130629379665
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0040734894173946505,
+                    -0.04059020676907673,
+                    -0.01108647641095326
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000325430829535428,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007516001777032869,
+                  "rotation_median_deg": 0.001202208161358741,
+                  "rotation_max_deg": 0.018090829662273218
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 467,
+                "paired": {
+                  "rotation_rmse_deg": 0.09875565132576716,
+                  "rotation_median_deg": 0.07941083558894148,
+                  "rotation_p95_deg": 0.17351200607740108,
+                  "error_component_rmse_deg": [
+                    0.039698487379778956,
+                    0.08537635407096289,
+                    0.029792397253051293
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.00402427099329331,
+                    -0.034792041941505335,
+                    -0.006979494472003267
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09829721682861224,
+                  "rotation_median_deg": 0.07848123941735541,
+                  "rotation_p95_deg": 0.1726137439006056,
+                  "error_component_rmse_deg": [
+                    0.0380323130082263,
+                    0.0856014002481241,
+                    0.029804131912471114
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0033512447738026285,
+                    -0.03505362364127723,
+                    -0.006083577501184311
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000458434497154922,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007220204237554695,
+                  "rotation_median_deg": 0.0014636448085756932,
+                  "rotation_max_deg": 0.019377035698086208
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.11663944473459092,
+                  "rotation_median_deg": 0.10155287839432361,
+                  "rotation_p95_deg": 0.1965243985225756,
+                  "error_component_rmse_deg": [
+                    0.06069241021312003,
+                    0.08491787108288573,
+                    0.05205906819437373
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.024610391788855126,
+                    -0.05222484890417847,
+                    -0.0005495420377237434
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.11593829471644772,
+                  "rotation_median_deg": 0.10119915409644219,
+                  "rotation_p95_deg": 0.19523857383214221,
+                  "error_component_rmse_deg": [
+                    0.059358565505594305,
+                    0.08437516541767015,
+                    0.052906335571618994
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.02315462254835546,
+                    -0.05173054410767905,
+                    -0.0021043725654500984
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0007011500181432068,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007870956756855148,
+                  "rotation_median_deg": 0.0013316354649945254,
+                  "rotation_max_deg": 0.018090829662273218
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 53,
+                "paired": {
+                  "rotation_rmse_deg": 0.12328226282432368,
+                  "rotation_median_deg": 0.09622186257178682,
+                  "rotation_p95_deg": 0.21532545366668618,
+                  "error_component_rmse_deg": [
+                    0.04672708830620009,
+                    0.09215796121335086,
+                    0.06724586032246684
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.010785159983020938,
+                    -0.061286010933847286,
+                    -0.02203293760016376
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.12345453718289878,
+                  "rotation_median_deg": 0.0943311418252263,
+                  "rotation_p95_deg": 0.21566197621837085,
+                  "error_component_rmse_deg": [
+                    0.04682806221825842,
+                    0.09171448927993683,
+                    0.06809264127677091
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.012000715700463137,
+                    -0.06083908801177432,
+                    -0.02337175338311645
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0001722743585751002,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007341787262513022,
+                  "rotation_median_deg": 0.005549023682168278,
+                  "rotation_max_deg": 0.015730790701719195
+                }
+              },
+              "[1,2)": {
+                "pairs": 76,
+                "paired": {
+                  "rotation_rmse_deg": 0.10295834382722212,
+                  "rotation_median_deg": 0.08681034374510106,
+                  "rotation_p95_deg": 0.16882734728561277,
+                  "error_component_rmse_deg": [
+                    0.03953532481228411,
+                    0.08393503350983084,
+                    0.04463506251071294
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.009056784064115591,
+                    -0.04475921438935268,
+                    -0.013866680518333762
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10336099079735665,
+                  "rotation_median_deg": 0.08737924130491011,
+                  "rotation_p95_deg": 0.16840399492281105,
+                  "error_component_rmse_deg": [
+                    0.03959168391815573,
+                    0.08392376408668992,
+                    0.04552795629783647
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.00922481967194499,
+                    -0.04473193632712059,
+                    -0.013686234049707586
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00040264697013453477,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0071742587701327095,
+                  "rotation_median_deg": 0.003767021032682907,
+                  "rotation_max_deg": 0.01603511318721084
+                }
+              },
+              "[2,3)": {
+                "pairs": 0
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        },
+        "control": {
+          "directory": "/root/projects/AeroVIO/models/rotation-control-v3",
+          "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+          "metadata_sha256": "dbb7c479802b6ee9f85c8af66ef7d0bd059b6816e560753f9c522b84de40e57e",
+          "input_mode": "image_imu",
+          "max_motion_component_change": 0.0021917198318988085,
+          "imu_only_invariance_passed": null,
+          "errors": {
+            "overall": {
+              "pairs": 796,
+              "paired": {
+                "rotation_rmse_deg": 0.10566020178534084,
+                "rotation_median_deg": 0.08513393092876544,
+                "rotation_p95_deg": 0.18137618938461414,
+                "error_component_rmse_deg": [
+                  0.046311217279467715,
+                  0.08559420925204136,
+                  0.041145847152909955
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.0022397170049373778,
+                  -0.04188782944799423,
+                  -0.007023801178608447
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.10526570546412604,
+                "rotation_median_deg": 0.08505993015541466,
+                "rotation_p95_deg": 0.18199959905746194,
+                "error_component_rmse_deg": [
+                  0.04505071517620684,
+                  0.08555845118126287,
+                  0.041605927948261075
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.002171820317981015,
+                  -0.041884736039569756,
+                  -0.006960756184957341
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": -0.00039449632121479894,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.00739280589054571,
+                "rotation_median_deg": 0.0015454767241400826,
+                "rotation_max_deg": 0.019377035698086208
+              }
+            },
+            "axis_grouping": "dominant ground-truth camera-axis component; real motion may be mixed",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 273,
+                "paired": {
+                  "rotation_rmse_deg": 0.09674941996875562,
+                  "rotation_median_deg": 0.07941083558894148,
+                  "rotation_p95_deg": 0.17414468391523732,
+                  "error_component_rmse_deg": [
+                    0.05449206083010174,
+                    0.07465262986572581,
+                    0.028601580811383167
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009620176240700596,
+                    -0.015170297862846367,
+                    0.00013007717638925854
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09601750994007856,
+                  "rotation_median_deg": 0.07798488753289612,
+                  "rotation_p95_deg": 0.17058092915896975,
+                  "error_component_rmse_deg": [
+                    0.05284454012308705,
+                    0.07462669531541435,
+                    0.029286057101850362
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009969536753727753,
+                    -0.01521427895973002,
+                    0.000197887907776106
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000731910028677063,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0067398326559798055,
+                  "rotation_median_deg": 0.001333559288166587,
+                  "rotation_max_deg": 0.015988375472101635
+                }
+              },
+              "camera_y": {
+                "pairs": 455,
+                "paired": {
+                  "rotation_rmse_deg": 0.10548617819704285,
+                  "rotation_median_deg": 0.09003646107184085,
+                  "rotation_p95_deg": 0.17971964427521692,
+                  "error_component_rmse_deg": [
+                    0.03887285240712849,
+                    0.09220104289347783,
+                    0.03339465265138939
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0025306428053611216,
+                    -0.05809843404665459,
+                    -0.010757599019814722
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10526007859444035,
+                  "rotation_median_deg": 0.08945769129685191,
+                  "rotation_p95_deg": 0.18113210276290487,
+                  "error_component_rmse_deg": [
+                    0.037967160738591604,
+                    0.09216926016956369,
+                    0.03380837663883008
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0027910150352474863,
+                    -0.05808047839822851,
+                    -0.01063935148594308
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.00022609960260250306,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007740544126185904,
+                  "rotation_median_deg": 0.00197263465551451,
+                  "rotation_max_deg": 0.019377035698086208
+                }
+              },
+              "camera_z": {
+                "pairs": 68,
+                "paired": {
+                  "rotation_rmse_deg": 0.13656858238344485,
+                  "rotation_median_deg": 0.11607070796189495,
+                  "rotation_p95_deg": 0.2334835138424198,
+                  "error_component_rmse_deg": [
+                    0.05544104610269769,
+                    0.08065782985862248,
+                    0.0952448559438242
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.004528663215561742,
+                    -0.040682844600272,
+                    -0.010761018431042471
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.13624315155390943,
+                  "rotation_median_deg": 0.11268736948696786,
+                  "rotation_p95_deg": 0.2335217810957335,
+                  "error_component_rmse_deg": [
+                    0.053863317438724884,
+                    0.08055306493620508,
+                    0.09577130629379665
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0040734894173946505,
+                    -0.04059020676907673,
+                    -0.01108647641095326
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000325430829535428,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007516001777032869,
+                  "rotation_median_deg": 0.001202208161358741,
+                  "rotation_max_deg": 0.018090829662273218
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 467,
+                "paired": {
+                  "rotation_rmse_deg": 0.09875565132576716,
+                  "rotation_median_deg": 0.07941083558894148,
+                  "rotation_p95_deg": 0.17351200607740108,
+                  "error_component_rmse_deg": [
+                    0.039698487379778956,
+                    0.08537635407096289,
+                    0.029792397253051293
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.00402427099329331,
+                    -0.034792041941505335,
+                    -0.006979494472003267
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09829721682861224,
+                  "rotation_median_deg": 0.07848123941735541,
+                  "rotation_p95_deg": 0.1726137439006056,
+                  "error_component_rmse_deg": [
+                    0.0380323130082263,
+                    0.0856014002481241,
+                    0.029804131912471114
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0033512447738026285,
+                    -0.03505362364127723,
+                    -0.006083577501184311
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000458434497154922,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007220204237554695,
+                  "rotation_median_deg": 0.0014636448085756932,
+                  "rotation_max_deg": 0.019377035698086208
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.11663944473459092,
+                  "rotation_median_deg": 0.10155287839432361,
+                  "rotation_p95_deg": 0.1965243985225756,
+                  "error_component_rmse_deg": [
+                    0.06069241021312003,
+                    0.08491787108288573,
+                    0.05205906819437373
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.024610391788855126,
+                    -0.05222484890417847,
+                    -0.0005495420377237434
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.11593829471644772,
+                  "rotation_median_deg": 0.10119915409644219,
+                  "rotation_p95_deg": 0.19523857383214221,
+                  "error_component_rmse_deg": [
+                    0.059358565505594305,
+                    0.08437516541767015,
+                    0.052906335571618994
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.02315462254835546,
+                    -0.05173054410767905,
+                    -0.0021043725654500984
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0007011500181432068,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007870956756855148,
+                  "rotation_median_deg": 0.0013316354649945254,
+                  "rotation_max_deg": 0.018090829662273218
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 53,
+                "paired": {
+                  "rotation_rmse_deg": 0.12328226282432368,
+                  "rotation_median_deg": 0.09622186257178682,
+                  "rotation_p95_deg": 0.21532545366668618,
+                  "error_component_rmse_deg": [
+                    0.04672708830620009,
+                    0.09215796121335086,
+                    0.06724586032246684
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.010785159983020938,
+                    -0.061286010933847286,
+                    -0.02203293760016376
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.12345453718289878,
+                  "rotation_median_deg": 0.0943311418252263,
+                  "rotation_p95_deg": 0.21566197621837085,
+                  "error_component_rmse_deg": [
+                    0.04682806221825842,
+                    0.09171448927993683,
+                    0.06809264127677091
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.012000715700463137,
+                    -0.06083908801177432,
+                    -0.02337175338311645
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0001722743585751002,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007341787262513022,
+                  "rotation_median_deg": 0.005549023682168278,
+                  "rotation_max_deg": 0.015730790701719195
+                }
+              },
+              "[1,2)": {
+                "pairs": 76,
+                "paired": {
+                  "rotation_rmse_deg": 0.10295834382722212,
+                  "rotation_median_deg": 0.08681034374510106,
+                  "rotation_p95_deg": 0.16882734728561277,
+                  "error_component_rmse_deg": [
+                    0.03953532481228411,
+                    0.08393503350983084,
+                    0.04463506251071294
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.009056784064115591,
+                    -0.04475921438935268,
+                    -0.013866680518333762
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10336099079735665,
+                  "rotation_median_deg": 0.08737924130491011,
+                  "rotation_p95_deg": 0.16840399492281105,
+                  "error_component_rmse_deg": [
+                    0.03959168391815573,
+                    0.08392376408668992,
+                    0.04552795629783647
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.00922481967194499,
+                    -0.04473193632712059,
+                    -0.013686234049707586
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00040264697013453477,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0071742587701327095,
+                  "rotation_median_deg": 0.003767021032682907,
+                  "rotation_max_deg": 0.01603511318721084
+                }
+              },
+              "[2,3)": {
+                "pairs": 0
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        },
+        "focus": {
+          "directory": "/root/projects/AeroVIO/models/rotation-focus-v3",
+          "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+          "metadata_sha256": "c4a74cf53956856ada38d53d53c3bb833195559d1c012db78c1286e51f6593fa",
+          "input_mode": "image_imu",
+          "max_motion_component_change": 0.0021917198318988085,
+          "imu_only_invariance_passed": null,
+          "errors": {
+            "overall": {
+              "pairs": 796,
+              "paired": {
+                "rotation_rmse_deg": 0.10566020178534084,
+                "rotation_median_deg": 0.08513393092876544,
+                "rotation_p95_deg": 0.18137618938461414,
+                "error_component_rmse_deg": [
+                  0.046311217279467715,
+                  0.08559420925204136,
+                  0.041145847152909955
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.0022397170049373778,
+                  -0.04188782944799423,
+                  -0.007023801178608447
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.10526570546412604,
+                "rotation_median_deg": 0.08505993015541466,
+                "rotation_p95_deg": 0.18199959905746194,
+                "error_component_rmse_deg": [
+                  0.04505071517620684,
+                  0.08555845118126287,
+                  0.041605927948261075
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.002171820317981015,
+                  -0.041884736039569756,
+                  -0.006960756184957341
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": -0.00039449632121479894,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.00739280589054571,
+                "rotation_median_deg": 0.0015454767241400826,
+                "rotation_max_deg": 0.019377035698086208
+              }
+            },
+            "axis_grouping": "dominant ground-truth camera-axis component; real motion may be mixed",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 273,
+                "paired": {
+                  "rotation_rmse_deg": 0.09674941996875562,
+                  "rotation_median_deg": 0.07941083558894148,
+                  "rotation_p95_deg": 0.17414468391523732,
+                  "error_component_rmse_deg": [
+                    0.05449206083010174,
+                    0.07465262986572581,
+                    0.028601580811383167
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009620176240700596,
+                    -0.015170297862846367,
+                    0.00013007717638925854
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09601750994007856,
+                  "rotation_median_deg": 0.07798488753289612,
+                  "rotation_p95_deg": 0.17058092915896975,
+                  "error_component_rmse_deg": [
+                    0.05284454012308705,
+                    0.07462669531541435,
+                    0.029286057101850362
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009969536753727753,
+                    -0.01521427895973002,
+                    0.000197887907776106
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000731910028677063,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0067398326559798055,
+                  "rotation_median_deg": 0.001333559288166587,
+                  "rotation_max_deg": 0.015988375472101635
+                }
+              },
+              "camera_y": {
+                "pairs": 455,
+                "paired": {
+                  "rotation_rmse_deg": 0.10548617819704285,
+                  "rotation_median_deg": 0.09003646107184085,
+                  "rotation_p95_deg": 0.17971964427521692,
+                  "error_component_rmse_deg": [
+                    0.03887285240712849,
+                    0.09220104289347783,
+                    0.03339465265138939
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0025306428053611216,
+                    -0.05809843404665459,
+                    -0.010757599019814722
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10526007859444035,
+                  "rotation_median_deg": 0.08945769129685191,
+                  "rotation_p95_deg": 0.18113210276290487,
+                  "error_component_rmse_deg": [
+                    0.037967160738591604,
+                    0.09216926016956369,
+                    0.03380837663883008
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0027910150352474863,
+                    -0.05808047839822851,
+                    -0.01063935148594308
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.00022609960260250306,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007740544126185904,
+                  "rotation_median_deg": 0.00197263465551451,
+                  "rotation_max_deg": 0.019377035698086208
+                }
+              },
+              "camera_z": {
+                "pairs": 68,
+                "paired": {
+                  "rotation_rmse_deg": 0.13656858238344485,
+                  "rotation_median_deg": 0.11607070796189495,
+                  "rotation_p95_deg": 0.2334835138424198,
+                  "error_component_rmse_deg": [
+                    0.05544104610269769,
+                    0.08065782985862248,
+                    0.0952448559438242
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.004528663215561742,
+                    -0.040682844600272,
+                    -0.010761018431042471
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.13624315155390943,
+                  "rotation_median_deg": 0.11268736948696786,
+                  "rotation_p95_deg": 0.2335217810957335,
+                  "error_component_rmse_deg": [
+                    0.053863317438724884,
+                    0.08055306493620508,
+                    0.09577130629379665
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0040734894173946505,
+                    -0.04059020676907673,
+                    -0.01108647641095326
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000325430829535428,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007516001777032869,
+                  "rotation_median_deg": 0.001202208161358741,
+                  "rotation_max_deg": 0.018090829662273218
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 467,
+                "paired": {
+                  "rotation_rmse_deg": 0.09875565132576716,
+                  "rotation_median_deg": 0.07941083558894148,
+                  "rotation_p95_deg": 0.17351200607740108,
+                  "error_component_rmse_deg": [
+                    0.039698487379778956,
+                    0.08537635407096289,
+                    0.029792397253051293
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.00402427099329331,
+                    -0.034792041941505335,
+                    -0.006979494472003267
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09829721682861224,
+                  "rotation_median_deg": 0.07848123941735541,
+                  "rotation_p95_deg": 0.1726137439006056,
+                  "error_component_rmse_deg": [
+                    0.0380323130082263,
+                    0.0856014002481241,
+                    0.029804131912471114
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0033512447738026285,
+                    -0.03505362364127723,
+                    -0.006083577501184311
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.000458434497154922,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007220204237554695,
+                  "rotation_median_deg": 0.0014636448085756932,
+                  "rotation_max_deg": 0.019377035698086208
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.11663944473459092,
+                  "rotation_median_deg": 0.10155287839432361,
+                  "rotation_p95_deg": 0.1965243985225756,
+                  "error_component_rmse_deg": [
+                    0.06069241021312003,
+                    0.08491787108288573,
+                    0.05205906819437373
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.024610391788855126,
+                    -0.05222484890417847,
+                    -0.0005495420377237434
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.11593829471644772,
+                  "rotation_median_deg": 0.10119915409644219,
+                  "rotation_p95_deg": 0.19523857383214221,
+                  "error_component_rmse_deg": [
+                    0.059358565505594305,
+                    0.08437516541767015,
+                    0.052906335571618994
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.02315462254835546,
+                    -0.05173054410767905,
+                    -0.0021043725654500984
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0007011500181432068,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007870956756855148,
+                  "rotation_median_deg": 0.0013316354649945254,
+                  "rotation_max_deg": 0.018090829662273218
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 53,
+                "paired": {
+                  "rotation_rmse_deg": 0.12328226282432368,
+                  "rotation_median_deg": 0.09622186257178682,
+                  "rotation_p95_deg": 0.21532545366668618,
+                  "error_component_rmse_deg": [
+                    0.04672708830620009,
+                    0.09215796121335086,
+                    0.06724586032246684
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.010785159983020938,
+                    -0.061286010933847286,
+                    -0.02203293760016376
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.12345453718289878,
+                  "rotation_median_deg": 0.0943311418252263,
+                  "rotation_p95_deg": 0.21566197621837085,
+                  "error_component_rmse_deg": [
+                    0.04682806221825842,
+                    0.09171448927993683,
+                    0.06809264127677091
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.012000715700463137,
+                    -0.06083908801177432,
+                    -0.02337175338311645
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0001722743585751002,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007341787262513022,
+                  "rotation_median_deg": 0.005549023682168278,
+                  "rotation_max_deg": 0.015730790701719195
+                }
+              },
+              "[1,2)": {
+                "pairs": 76,
+                "paired": {
+                  "rotation_rmse_deg": 0.10295834382722212,
+                  "rotation_median_deg": 0.08681034374510106,
+                  "rotation_p95_deg": 0.16882734728561277,
+                  "error_component_rmse_deg": [
+                    0.03953532481228411,
+                    0.08393503350983084,
+                    0.04463506251071294
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.009056784064115591,
+                    -0.04475921438935268,
+                    -0.013866680518333762
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10336099079735665,
+                  "rotation_median_deg": 0.08737924130491011,
+                  "rotation_p95_deg": 0.16840399492281105,
+                  "error_component_rmse_deg": [
+                    0.03959168391815573,
+                    0.08392376408668992,
+                    0.04552795629783647
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.00922481967194499,
+                    -0.04473193632712059,
+                    -0.013686234049707586
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00040264697013453477,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0071742587701327095,
+                  "rotation_median_deg": 0.003767021032682907,
+                  "rotation_max_deg": 0.01603511318721084
+                }
+              },
+              "[2,3)": {
+                "pairs": 0
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        },
+        "imu-only": {
+          "directory": "/root/projects/AeroVIO/models/motion-imu-only-v2",
+          "model_sha256": "b1a3ecb7c4241a3364254f539e5f6aadd1d3744bb66df475fddd81a634145fce",
+          "metadata_sha256": "f57d32161c7f5c6f3a4b4a7b791f4676fc218b835a461331a1391f03cfcc8112",
+          "input_mode": "imu_only",
+          "max_motion_component_change": 0.0,
+          "imu_only_invariance_passed": true,
+          "errors": {
+            "overall": {
+              "pairs": 796,
+              "paired": {
+                "rotation_rmse_deg": 0.1053972557708068,
+                "rotation_median_deg": 0.08169004476058392,
+                "rotation_p95_deg": 0.191899555940212,
+                "error_component_rmse_deg": [
+                  0.04301337954409827,
+                  0.088296686728228,
+                  0.03823775381778312
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  0.008039070598965728,
+                  -0.048814487418084036,
+                  -0.0018333475628994139
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.1053972557708068,
+                "rotation_median_deg": 0.08169004476058392,
+                "rotation_p95_deg": 0.191899555940212,
+                "error_component_rmse_deg": [
+                  0.04301337954409827,
+                  0.088296686728228,
+                  0.03823775381778312
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  0.008039070598965728,
+                  -0.048814487418084036,
+                  -0.0018333475628994139
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": 0.0,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.0,
+                "rotation_median_deg": 0.0,
+                "rotation_max_deg": 0.0
+              }
+            },
+            "axis_grouping": "dominant ground-truth camera-axis component; real motion may be mixed",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 273,
+                "paired": {
+                  "rotation_rmse_deg": 0.09165543162563812,
+                  "rotation_median_deg": 0.07524955587003594,
+                  "rotation_p95_deg": 0.16450306262710768,
+                  "error_component_rmse_deg": [
+                    0.051660398056992476,
+                    0.0729430567346067,
+                    0.02027885335237318
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0029666021448533746,
+                    -0.0196978037839216,
+                    0.0021506953955138268
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09165543162563812,
+                  "rotation_median_deg": 0.07524955587003594,
+                  "rotation_p95_deg": 0.16450306262710768,
+                  "error_component_rmse_deg": [
+                    0.051660398056992476,
+                    0.0729430567346067,
+                    0.02027885335237318
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0029666021448533746,
+                    -0.0196978037839216,
+                    0.0021506953955138268
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "camera_y": {
+                "pairs": 455,
+                "paired": {
+                  "rotation_rmse_deg": 0.10571616121007969,
+                  "rotation_median_deg": 0.08558368705992132,
+                  "rotation_p95_deg": 0.18929927263292592,
+                  "error_component_rmse_deg": [
+                    0.03615278299722331,
+                    0.0971958224219598,
+                    0.020539112110071787
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.010955272573523191,
+                    -0.06698999583293226,
+                    -0.0023100997694448957
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10571616121007969,
+                  "rotation_median_deg": 0.08558368705992132,
+                  "rotation_p95_deg": 0.18929927263292592,
+                  "error_component_rmse_deg": [
+                    0.03615278299722331,
+                    0.0971958224219598,
+                    0.020539112110071787
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.010955272573523191,
+                    -0.06698999583293226,
+                    -0.0023100997694448957
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "camera_z": {
+                "pairs": 68,
+                "paired": {
+                  "rotation_rmse_deg": 0.14672890528688978,
+                  "rotation_median_deg": 0.11684256537227017,
+                  "rotation_p95_deg": 0.2485452607479093,
+                  "error_component_rmse_deg": [
+                    0.04687950042556702,
+                    0.08179176904237064,
+                    0.11243571764994358
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.008890717504098464,
+                    -0.04409387423235507,
+                    -0.01463807511684963
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.14672890528688978,
+                  "rotation_median_deg": 0.11684256537227017,
+                  "rotation_p95_deg": 0.2485452607479093,
+                  "error_component_rmse_deg": [
+                    0.04687950042556702,
+                    0.08179176904237064,
+                    0.11243571764994358
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.008890717504098464,
+                    -0.04409387423235507,
+                    -0.01463807511684963
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 467,
+                "paired": {
+                  "rotation_rmse_deg": 0.09550862251636948,
+                  "rotation_median_deg": 0.07555964439826729,
+                  "rotation_p95_deg": 0.1741275910480522,
+                  "error_component_rmse_deg": [
+                    0.036786322778242286,
+                    0.08618726707909143,
+                    0.018450431563155872
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.013964963699216997,
+                    -0.03993406595172747,
+                    -0.0020074751003606155
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09550862251636948,
+                  "rotation_median_deg": 0.07555964439826729,
+                  "rotation_p95_deg": 0.1741275910480522,
+                  "error_component_rmse_deg": [
+                    0.036786322778242286,
+                    0.08618726707909143,
+                    0.018450431563155872
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.013964963699216997,
+                    -0.03993406595172747,
+                    -0.0020074751003606155
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.11602740685466156,
+                  "rotation_median_deg": 0.09612663999555014,
+                  "rotation_p95_deg": 0.19810826368332737,
+                  "error_component_rmse_deg": [
+                    0.0541642927931145,
+                    0.08551817460811019,
+                    0.056703001149284046
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.014207245198258622,
+                    -0.055691559161437344,
+                    0.005814426353272059
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.11602740685466156,
+                  "rotation_median_deg": 0.09612663999555014,
+                  "rotation_p95_deg": 0.19810826368332737,
+                  "error_component_rmse_deg": [
+                    0.0541642927931145,
+                    0.08551817460811019,
+                    0.056703001149284046
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.014207245198258622,
+                    -0.055691559161437344,
+                    0.005814426353272059
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 53,
+                "paired": {
+                  "rotation_rmse_deg": 0.1318746064670829,
+                  "rotation_median_deg": 0.0933397563476157,
+                  "rotation_p95_deg": 0.22951470939456192,
+                  "error_component_rmse_deg": [
+                    0.046367266257698894,
+                    0.0990744792662584,
+                    0.07365620142768274
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.01926969244299238,
+                    -0.07026767930508591,
+                    -0.023777208182579196
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.1318746064670829,
+                  "rotation_median_deg": 0.0933397563476157,
+                  "rotation_p95_deg": 0.22951470939456192,
+                  "error_component_rmse_deg": [
+                    0.046367266257698894,
+                    0.0990744792662584,
+                    0.07365620142768274
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.01926969244299238,
+                    -0.07026767930508591,
+                    -0.023777208182579196
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[1,2)": {
+                "pairs": 76,
+                "paired": {
+                  "rotation_rmse_deg": 0.1128759712020948,
+                  "rotation_median_deg": 0.08665779984171039,
+                  "rotation_p95_deg": 0.19781924187514555,
+                  "error_component_rmse_deg": [
+                    0.04292893850093146,
+                    0.0996019548431923,
+                    0.031265663361170815
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.022337072229151437,
+                    -0.07032400460369952,
+                    -0.005586145068121506
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.1128759712020948,
+                  "rotation_median_deg": 0.08665779984171039,
+                  "rotation_p95_deg": 0.19781924187514555,
+                  "error_component_rmse_deg": [
+                    0.04292893850093146,
+                    0.0996019548431923,
+                    0.031265663361170815
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.022337072229151437,
+                    -0.07032400460369952,
+                    -0.005586145068121506
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[2,3)": {
+                "pairs": 0
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        }
+      }
+    },
+    "aux_validation": {
+      "path": "/root/projects/AeroVIO/data/rotation-aux-v3/validation.npz",
+      "sha256": "6661effc0b36f0e5084d016a05e1f132c0fd1d89b24229b1d86611821db52a67",
+      "coverage": {
+        "pairs": 800,
+        "episodes": 4,
+        "rotation_norm_deg": {
+          "min": 0.001872411535764804,
+          "p10": 0.3161533030476633,
+          "p25": 0.7566688797513502,
+          "p50": 1.484940414751556,
+          "p75": 2.2332240291965006,
+          "p90": 2.702544648267091,
+          "p95": 2.852026065292776,
+          "p99": 2.9583936190771594,
+          "max": 2.99314784193637
+        },
+        "absolute_rotation_components_deg": {
+          "50": [
+            0.0005140772319763496,
+            0.0002658911612979648,
+            0.0001971321603914094
+          ],
+          "95": [
+            2.472061038350026,
+            2.4820355674067742,
+            2.4384805263196796
+          ],
+          "100": [
+            2.9865598400316555,
+            2.99314784193637,
+            2.9725495145020493
+          ]
+        },
+        "gyro_residual_norm_deg": {
+          "min": 0.011701792478561401,
+          "p10": 0.056188004463911055,
+          "p25": 0.08057853952050209,
+          "p50": 0.11321498826146126,
+          "p75": 0.145120270550251,
+          "p90": 0.1782676488161087,
+          "p95": 0.198590475320816,
+          "p99": 0.22868489101529121,
+          "max": 0.2589084208011627
+        },
+        "mean_residual_camera_channels_deg": [
+          -0.0014641546252841234,
+          0.00038947347824474463,
+          0.004653242486481879
+        ],
+        "below_angle_deg_counts": {
+          "0.01": 3,
+          "0.05": 12,
+          "0.1": 25,
+          "0.25": 58,
+          "0.5": 139,
+          "1": 271,
+          "2": 551,
+          "3": 800
+        },
+        "frame_dt_range_s": [
+          0.05000000074505806,
+          0.05000000074505806
+        ],
+        "aux_axis_counts": {
+          "0": 200,
+          "1": 200,
+          "2": 200,
+          "3": 200
+        }
+      },
+      "shuffle": {
+        "seed": 314162,
+        "permutation_sha256": "db0c791ef14d0e8616b1fd8193a29eda4c374764f48662b7ecf4b03e4df0486c",
+        "unchanged_pair_indices": 0
+      },
+      "models": {
+        "original": {
+          "directory": "/root/projects/AeroVIO/models/motion-warp-v1",
+          "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+          "metadata_sha256": "baabc4ba9d2700ed177eb31936bd0cfc6b460f58166e8d11f21c2639f17ba934",
+          "input_mode": "image_imu",
+          "max_motion_component_change": 0.0020905679557472467,
+          "imu_only_invariance_passed": null,
+          "errors": {
+            "overall": {
+              "pairs": 800,
+              "paired": {
+                "rotation_rmse_deg": 0.4876190245770354,
+                "rotation_median_deg": 0.32581906552896966,
+                "rotation_p95_deg": 0.9733021692462683,
+                "error_component_rmse_deg": [
+                  0.3403075777918027,
+                  0.09481956010850898,
+                  0.3361135472541454
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06169455397756619,
+                  0.018418724112210388,
+                  -0.04431913930476306
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.4874091643425035,
+                "rotation_median_deg": 0.32548270392453227,
+                "rotation_p95_deg": 0.9846126742727516,
+                "error_component_rmse_deg": [
+                  0.3397951506138363,
+                  0.09483261398725444,
+                  0.3363238386268842
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06143785049937268,
+                  0.018301390081032008,
+                  -0.04425295076153453
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": -0.00020986023453190006,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.00707495186997638,
+                "rotation_median_deg": 0.002277083021412292,
+                "rotation_max_deg": 0.01964496172491625
+              }
+            },
+            "axis_grouping": "synthetic labelled axis",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.5884551024427278,
+                  "rotation_median_deg": 0.5045244900483474,
+                  "rotation_p95_deg": 1.0197656315471157,
+                  "error_component_rmse_deg": [
+                    0.5731138768494025,
+                    0.09747187225298201,
+                    0.09120924225662394
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06532653416325632,
+                    0.029740410192656674,
+                    -0.06584938830230339
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5874461177762936,
+                  "rotation_median_deg": 0.5028139886583055,
+                  "rotation_p95_deg": 1.025013679325807,
+                  "error_component_rmse_deg": [
+                    0.5720381019572534,
+                    0.09751977512486923,
+                    0.0914070274058676
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0647023578006515,
+                    0.02972745446386102,
+                    -0.06590504393503543
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0010089846664341762,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.006109610528461249,
+                  "rotation_median_deg": 0.002185355094666207,
+                  "rotation_max_deg": 0.01676699762545612
+                }
+              },
+              "camera_y": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.09598204501631469,
+                  "rotation_median_deg": 0.07473939609460013,
+                  "rotation_p95_deg": 0.16784090006576713,
+                  "error_component_rmse_deg": [
+                    0.04176693692256574,
+                    0.07607422231070318,
+                    0.0409974224243669
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.020870156656027268,
+                    -0.0011857815862867018,
+                    -0.011117398903924793
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09604805065839472,
+                  "rotation_median_deg": 0.0743499149584956,
+                  "rotation_p95_deg": 0.1679330819301369,
+                  "error_component_rmse_deg": [
+                    0.04151372682307983,
+                    0.07604667407280266,
+                    0.04145771198463793
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.020373510646782757,
+                    -0.0013695795778709283,
+                    -0.011025947436474481
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 6.60056420800359e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007108952988452244,
+                  "rotation_median_deg": 0.0019135246551390348,
+                  "rotation_max_deg": 0.01633629653896988
+                }
+              },
+              "camera_z": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.592785946918755,
+                  "rotation_median_deg": 0.4849077948529661,
+                  "rotation_p95_deg": 1.103134739058714,
+                  "error_component_rmse_deg": [
+                    0.12506987125368976,
+                    0.11120311105568172,
+                    0.568670883957046
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.09686632809665605,
+                    0.02598616015719389,
+                    -0.038193285552452994
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5929488531996657,
+                  "rotation_median_deg": 0.4877340329001154,
+                  "rotation_p95_deg": 1.0978250024582692,
+                  "error_component_rmse_deg": [
+                    0.12493284674681678,
+                    0.11117568048805919,
+                    0.5688761678806313
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.09697373681775755,
+                    0.02591696809949348,
+                    -0.037912266705545934
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00016290628091075732,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007873381414793332,
+                  "rotation_median_deg": 0.0023449574146920055,
+                  "rotation_max_deg": 0.01964496172491625
+                }
+              },
+              "mixed": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.4941681020635365,
+                  "rotation_median_deg": 0.36402791942540375,
+                  "rotation_p95_deg": 0.9078177306634847,
+                  "error_component_rmse_deg": [
+                    0.34262300631661435,
+                    0.0911526786635608,
+                    0.34424232426025225
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06371519699432522,
+                    0.019134107685277634,
+                    -0.06211648446037116
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.4943321374376895,
+                  "rotation_median_deg": 0.36484555619045234,
+                  "rotation_p95_deg": 0.8968584214077129,
+                  "error_component_rmse_deg": [
+                    0.3424671980217325,
+                    0.09121218993478517,
+                    0.3446169130935956
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06370179673229892,
+                    0.018930717338644418,
+                    -0.06216854496908217
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00016403537415299319,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007096836446305311,
+                  "rotation_median_deg": 0.0024766225779572102,
+                  "rotation_max_deg": 0.01827061545774987
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 25,
+                "paired": {
+                  "rotation_rmse_deg": 0.08412329586917869,
+                  "rotation_median_deg": 0.06957869553557809,
+                  "rotation_p95_deg": 0.1441090931640235,
+                  "error_component_rmse_deg": [
+                    0.037230612227501736,
+                    0.06934389917655016,
+                    0.029699058369773573
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.010953184254857537,
+                    -0.015919718173354875,
+                    0.0018375651793782891
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.08304336353084471,
+                  "rotation_median_deg": 0.06813312252366628,
+                  "rotation_p95_deg": 0.14168298325652962,
+                  "error_component_rmse_deg": [
+                    0.035191257451708105,
+                    0.06920990829850233,
+                    0.02945783798578104
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.010801056192718381,
+                    -0.016251642653413924,
+                    0.00294110431327716
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0010799323383339776,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.005916895647648486,
+                  "rotation_median_deg": 0.0009389026460412145,
+                  "rotation_max_deg": 0.01676699762545612
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 114,
+                "paired": {
+                  "rotation_rmse_deg": 0.16187575221993397,
+                  "rotation_median_deg": 0.14693685903596315,
+                  "rotation_p95_deg": 0.24305736268380854,
+                  "error_component_rmse_deg": [
+                    0.09396586900482547,
+                    0.07032730312834712,
+                    0.1114820391526412
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.018117532551809055,
+                    0.0019877428882151883,
+                    -0.008966893550398897
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.1626047510541249,
+                  "rotation_median_deg": 0.14892218247226002,
+                  "rotation_p95_deg": 0.246529128933265,
+                  "error_component_rmse_deg": [
+                    0.09437287581244798,
+                    0.0705482462653446,
+                    0.11205806675624247
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.018073474285957375,
+                    0.0017940471264997389,
+                    -0.008833127853226567
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0007289988341909193,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.006466915350731881,
+                  "rotation_median_deg": 0.001469616661580706,
+                  "rotation_max_deg": 0.017592380675059548
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 132,
+                "paired": {
+                  "rotation_rmse_deg": 0.2806557483868219,
+                  "rotation_median_deg": 0.2549056667110141,
+                  "rotation_p95_deg": 0.455327467244581,
+                  "error_component_rmse_deg": [
+                    0.19692019263746605,
+                    0.07431130021253095,
+                    0.185655372922287
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.038598598609739215,
+                    0.006265888185138938,
+                    -0.032420036240611336
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.2806320029797856,
+                  "rotation_median_deg": 0.2551024237991744,
+                  "rotation_p95_deg": 0.4584235074196997,
+                  "error_component_rmse_deg": [
+                    0.19713395230677627,
+                    0.07453401473316693,
+                    0.18530301290619133
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.03781205983383923,
+                    0.006261715377186586,
+                    -0.03296696696106354
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -2.3745407036313004e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.00700097669108449,
+                  "rotation_median_deg": 0.002928587475110904,
+                  "rotation_max_deg": 0.018803237794513664
+                }
+              },
+              "[1,2)": {
+                "pairs": 280,
+                "paired": {
+                  "rotation_rmse_deg": 0.4554806468768101,
+                  "rotation_median_deg": 0.431677003195431,
+                  "rotation_p95_deg": 0.7751584071009133,
+                  "error_component_rmse_deg": [
+                    0.31665185509770305,
+                    0.09082486611105212,
+                    0.3145553465424012
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.050083041355990475,
+                    0.023228533263099285,
+                    -0.04951256783731238
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.4555074056128733,
+                  "rotation_median_deg": 0.4308021718587519,
+                  "rotation_p95_deg": 0.7694450351496387,
+                  "error_component_rmse_deg": [
+                    0.31585672367118467,
+                    0.09077018931817173,
+                    0.31540814734407036
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.049977447103867,
+                    0.022990515936772905,
+                    -0.04922874619486464
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 2.6758736063170474e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.00733365248023225,
+                  "rotation_median_deg": 0.0025648527402316367,
+                  "rotation_max_deg": 0.01964496172491625
+                }
+              },
+              "[2,3)": {
+                "pairs": 249,
+                "paired": {
+                  "rotation_rmse_deg": 0.6900522084469648,
+                  "rotation_median_deg": 0.6664790324788167,
+                  "rotation_p95_deg": 1.1116631128588876,
+                  "error_component_rmse_deg": [
+                    0.48434273324599003,
+                    0.11804734408843305,
+                    0.4771257608723345
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.11204075609884495,
+                    0.030422823296142567,
+                    -0.06560667040297699
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.6894955538650308,
+                  "rotation_median_deg": 0.6634267568176665,
+                  "rotation_p95_deg": 1.1103162833946207,
+                  "error_component_rmse_deg": [
+                    0.4837032307172109,
+                    0.11800141905337665,
+                    0.4769810986766327
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.11178715196358043,
+                    0.030437714323915344,
+                    -0.06559527336694466
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0005566545819339908,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007189971540230891,
+                  "rotation_median_deg": 0.002167306195361509,
+                  "rotation_max_deg": 0.017507243671038574
+                }
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        },
+        "control": {
+          "directory": "/root/projects/AeroVIO/models/rotation-control-v3",
+          "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+          "metadata_sha256": "dbb7c479802b6ee9f85c8af66ef7d0bd059b6816e560753f9c522b84de40e57e",
+          "input_mode": "image_imu",
+          "max_motion_component_change": 0.0020905679557472467,
+          "imu_only_invariance_passed": null,
+          "errors": {
+            "overall": {
+              "pairs": 800,
+              "paired": {
+                "rotation_rmse_deg": 0.4876190245770354,
+                "rotation_median_deg": 0.32581906552896966,
+                "rotation_p95_deg": 0.9733021692462683,
+                "error_component_rmse_deg": [
+                  0.3403075777918027,
+                  0.09481956010850898,
+                  0.3361135472541454
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06169455397756619,
+                  0.018418724112210388,
+                  -0.04431913930476306
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.4874091643425035,
+                "rotation_median_deg": 0.32548270392453227,
+                "rotation_p95_deg": 0.9846126742727516,
+                "error_component_rmse_deg": [
+                  0.3397951506138363,
+                  0.09483261398725444,
+                  0.3363238386268842
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06143785049937268,
+                  0.018301390081032008,
+                  -0.04425295076153453
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": -0.00020986023453190006,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.00707495186997638,
+                "rotation_median_deg": 0.002277083021412292,
+                "rotation_max_deg": 0.01964496172491625
+              }
+            },
+            "axis_grouping": "synthetic labelled axis",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.5884551024427278,
+                  "rotation_median_deg": 0.5045244900483474,
+                  "rotation_p95_deg": 1.0197656315471157,
+                  "error_component_rmse_deg": [
+                    0.5731138768494025,
+                    0.09747187225298201,
+                    0.09120924225662394
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06532653416325632,
+                    0.029740410192656674,
+                    -0.06584938830230339
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5874461177762936,
+                  "rotation_median_deg": 0.5028139886583055,
+                  "rotation_p95_deg": 1.025013679325807,
+                  "error_component_rmse_deg": [
+                    0.5720381019572534,
+                    0.09751977512486923,
+                    0.0914070274058676
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0647023578006515,
+                    0.02972745446386102,
+                    -0.06590504393503543
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0010089846664341762,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.006109610528461249,
+                  "rotation_median_deg": 0.002185355094666207,
+                  "rotation_max_deg": 0.01676699762545612
+                }
+              },
+              "camera_y": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.09598204501631469,
+                  "rotation_median_deg": 0.07473939609460013,
+                  "rotation_p95_deg": 0.16784090006576713,
+                  "error_component_rmse_deg": [
+                    0.04176693692256574,
+                    0.07607422231070318,
+                    0.0409974224243669
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.020870156656027268,
+                    -0.0011857815862867018,
+                    -0.011117398903924793
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09604805065839472,
+                  "rotation_median_deg": 0.0743499149584956,
+                  "rotation_p95_deg": 0.1679330819301369,
+                  "error_component_rmse_deg": [
+                    0.04151372682307983,
+                    0.07604667407280266,
+                    0.04145771198463793
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.020373510646782757,
+                    -0.0013695795778709283,
+                    -0.011025947436474481
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 6.60056420800359e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007108952988452244,
+                  "rotation_median_deg": 0.0019135246551390348,
+                  "rotation_max_deg": 0.01633629653896988
+                }
+              },
+              "camera_z": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.592785946918755,
+                  "rotation_median_deg": 0.4849077948529661,
+                  "rotation_p95_deg": 1.103134739058714,
+                  "error_component_rmse_deg": [
+                    0.12506987125368976,
+                    0.11120311105568172,
+                    0.568670883957046
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.09686632809665605,
+                    0.02598616015719389,
+                    -0.038193285552452994
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5929488531996657,
+                  "rotation_median_deg": 0.4877340329001154,
+                  "rotation_p95_deg": 1.0978250024582692,
+                  "error_component_rmse_deg": [
+                    0.12493284674681678,
+                    0.11117568048805919,
+                    0.5688761678806313
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.09697373681775755,
+                    0.02591696809949348,
+                    -0.037912266705545934
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00016290628091075732,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007873381414793332,
+                  "rotation_median_deg": 0.0023449574146920055,
+                  "rotation_max_deg": 0.01964496172491625
+                }
+              },
+              "mixed": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.4941681020635365,
+                  "rotation_median_deg": 0.36402791942540375,
+                  "rotation_p95_deg": 0.9078177306634847,
+                  "error_component_rmse_deg": [
+                    0.34262300631661435,
+                    0.0911526786635608,
+                    0.34424232426025225
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06371519699432522,
+                    0.019134107685277634,
+                    -0.06211648446037116
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.4943321374376895,
+                  "rotation_median_deg": 0.36484555619045234,
+                  "rotation_p95_deg": 0.8968584214077129,
+                  "error_component_rmse_deg": [
+                    0.3424671980217325,
+                    0.09121218993478517,
+                    0.3446169130935956
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06370179673229892,
+                    0.018930717338644418,
+                    -0.06216854496908217
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00016403537415299319,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007096836446305311,
+                  "rotation_median_deg": 0.0024766225779572102,
+                  "rotation_max_deg": 0.01827061545774987
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 25,
+                "paired": {
+                  "rotation_rmse_deg": 0.08412329586917869,
+                  "rotation_median_deg": 0.06957869553557809,
+                  "rotation_p95_deg": 0.1441090931640235,
+                  "error_component_rmse_deg": [
+                    0.037230612227501736,
+                    0.06934389917655016,
+                    0.029699058369773573
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.010953184254857537,
+                    -0.015919718173354875,
+                    0.0018375651793782891
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.08304336353084471,
+                  "rotation_median_deg": 0.06813312252366628,
+                  "rotation_p95_deg": 0.14168298325652962,
+                  "error_component_rmse_deg": [
+                    0.035191257451708105,
+                    0.06920990829850233,
+                    0.02945783798578104
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.010801056192718381,
+                    -0.016251642653413924,
+                    0.00294110431327716
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0010799323383339776,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.005916895647648486,
+                  "rotation_median_deg": 0.0009389026460412145,
+                  "rotation_max_deg": 0.01676699762545612
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 114,
+                "paired": {
+                  "rotation_rmse_deg": 0.16187575221993397,
+                  "rotation_median_deg": 0.14693685903596315,
+                  "rotation_p95_deg": 0.24305736268380854,
+                  "error_component_rmse_deg": [
+                    0.09396586900482547,
+                    0.07032730312834712,
+                    0.1114820391526412
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.018117532551809055,
+                    0.0019877428882151883,
+                    -0.008966893550398897
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.1626047510541249,
+                  "rotation_median_deg": 0.14892218247226002,
+                  "rotation_p95_deg": 0.246529128933265,
+                  "error_component_rmse_deg": [
+                    0.09437287581244798,
+                    0.0705482462653446,
+                    0.11205806675624247
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.018073474285957375,
+                    0.0017940471264997389,
+                    -0.008833127853226567
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0007289988341909193,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.006466915350731881,
+                  "rotation_median_deg": 0.001469616661580706,
+                  "rotation_max_deg": 0.017592380675059548
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 132,
+                "paired": {
+                  "rotation_rmse_deg": 0.2806557483868219,
+                  "rotation_median_deg": 0.2549056667110141,
+                  "rotation_p95_deg": 0.455327467244581,
+                  "error_component_rmse_deg": [
+                    0.19692019263746605,
+                    0.07431130021253095,
+                    0.185655372922287
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.038598598609739215,
+                    0.006265888185138938,
+                    -0.032420036240611336
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.2806320029797856,
+                  "rotation_median_deg": 0.2551024237991744,
+                  "rotation_p95_deg": 0.4584235074196997,
+                  "error_component_rmse_deg": [
+                    0.19713395230677627,
+                    0.07453401473316693,
+                    0.18530301290619133
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.03781205983383923,
+                    0.006261715377186586,
+                    -0.03296696696106354
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -2.3745407036313004e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.00700097669108449,
+                  "rotation_median_deg": 0.002928587475110904,
+                  "rotation_max_deg": 0.018803237794513664
+                }
+              },
+              "[1,2)": {
+                "pairs": 280,
+                "paired": {
+                  "rotation_rmse_deg": 0.4554806468768101,
+                  "rotation_median_deg": 0.431677003195431,
+                  "rotation_p95_deg": 0.7751584071009133,
+                  "error_component_rmse_deg": [
+                    0.31665185509770305,
+                    0.09082486611105212,
+                    0.3145553465424012
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.050083041355990475,
+                    0.023228533263099285,
+                    -0.04951256783731238
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.4555074056128733,
+                  "rotation_median_deg": 0.4308021718587519,
+                  "rotation_p95_deg": 0.7694450351496387,
+                  "error_component_rmse_deg": [
+                    0.31585672367118467,
+                    0.09077018931817173,
+                    0.31540814734407036
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.049977447103867,
+                    0.022990515936772905,
+                    -0.04922874619486464
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 2.6758736063170474e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.00733365248023225,
+                  "rotation_median_deg": 0.0025648527402316367,
+                  "rotation_max_deg": 0.01964496172491625
+                }
+              },
+              "[2,3)": {
+                "pairs": 249,
+                "paired": {
+                  "rotation_rmse_deg": 0.6900522084469648,
+                  "rotation_median_deg": 0.6664790324788167,
+                  "rotation_p95_deg": 1.1116631128588876,
+                  "error_component_rmse_deg": [
+                    0.48434273324599003,
+                    0.11804734408843305,
+                    0.4771257608723345
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.11204075609884495,
+                    0.030422823296142567,
+                    -0.06560667040297699
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.6894955538650308,
+                  "rotation_median_deg": 0.6634267568176665,
+                  "rotation_p95_deg": 1.1103162833946207,
+                  "error_component_rmse_deg": [
+                    0.4837032307172109,
+                    0.11800141905337665,
+                    0.4769810986766327
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.11178715196358043,
+                    0.030437714323915344,
+                    -0.06559527336694466
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0005566545819339908,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007189971540230891,
+                  "rotation_median_deg": 0.002167306195361509,
+                  "rotation_max_deg": 0.017507243671038574
+                }
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        },
+        "focus": {
+          "directory": "/root/projects/AeroVIO/models/rotation-focus-v3",
+          "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+          "metadata_sha256": "c4a74cf53956856ada38d53d53c3bb833195559d1c012db78c1286e51f6593fa",
+          "input_mode": "image_imu",
+          "max_motion_component_change": 0.0020905679557472467,
+          "imu_only_invariance_passed": null,
+          "errors": {
+            "overall": {
+              "pairs": 800,
+              "paired": {
+                "rotation_rmse_deg": 0.4876190245770354,
+                "rotation_median_deg": 0.32581906552896966,
+                "rotation_p95_deg": 0.9733021692462683,
+                "error_component_rmse_deg": [
+                  0.3403075777918027,
+                  0.09481956010850898,
+                  0.3361135472541454
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06169455397756619,
+                  0.018418724112210388,
+                  -0.04431913930476306
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.4874091643425035,
+                "rotation_median_deg": 0.32548270392453227,
+                "rotation_p95_deg": 0.9846126742727516,
+                "error_component_rmse_deg": [
+                  0.3397951506138363,
+                  0.09483261398725444,
+                  0.3363238386268842
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06143785049937268,
+                  0.018301390081032008,
+                  -0.04425295076153453
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": -0.00020986023453190006,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.00707495186997638,
+                "rotation_median_deg": 0.002277083021412292,
+                "rotation_max_deg": 0.01964496172491625
+              }
+            },
+            "axis_grouping": "synthetic labelled axis",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.5884551024427278,
+                  "rotation_median_deg": 0.5045244900483474,
+                  "rotation_p95_deg": 1.0197656315471157,
+                  "error_component_rmse_deg": [
+                    0.5731138768494025,
+                    0.09747187225298201,
+                    0.09120924225662394
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06532653416325632,
+                    0.029740410192656674,
+                    -0.06584938830230339
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5874461177762936,
+                  "rotation_median_deg": 0.5028139886583055,
+                  "rotation_p95_deg": 1.025013679325807,
+                  "error_component_rmse_deg": [
+                    0.5720381019572534,
+                    0.09751977512486923,
+                    0.0914070274058676
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0647023578006515,
+                    0.02972745446386102,
+                    -0.06590504393503543
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0010089846664341762,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.006109610528461249,
+                  "rotation_median_deg": 0.002185355094666207,
+                  "rotation_max_deg": 0.01676699762545612
+                }
+              },
+              "camera_y": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.09598204501631469,
+                  "rotation_median_deg": 0.07473939609460013,
+                  "rotation_p95_deg": 0.16784090006576713,
+                  "error_component_rmse_deg": [
+                    0.04176693692256574,
+                    0.07607422231070318,
+                    0.0409974224243669
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.020870156656027268,
+                    -0.0011857815862867018,
+                    -0.011117398903924793
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.09604805065839472,
+                  "rotation_median_deg": 0.0743499149584956,
+                  "rotation_p95_deg": 0.1679330819301369,
+                  "error_component_rmse_deg": [
+                    0.04151372682307983,
+                    0.07604667407280266,
+                    0.04145771198463793
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.020373510646782757,
+                    -0.0013695795778709283,
+                    -0.011025947436474481
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 6.60056420800359e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007108952988452244,
+                  "rotation_median_deg": 0.0019135246551390348,
+                  "rotation_max_deg": 0.01633629653896988
+                }
+              },
+              "camera_z": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.592785946918755,
+                  "rotation_median_deg": 0.4849077948529661,
+                  "rotation_p95_deg": 1.103134739058714,
+                  "error_component_rmse_deg": [
+                    0.12506987125368976,
+                    0.11120311105568172,
+                    0.568670883957046
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.09686632809665605,
+                    0.02598616015719389,
+                    -0.038193285552452994
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5929488531996657,
+                  "rotation_median_deg": 0.4877340329001154,
+                  "rotation_p95_deg": 1.0978250024582692,
+                  "error_component_rmse_deg": [
+                    0.12493284674681678,
+                    0.11117568048805919,
+                    0.5688761678806313
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.09697373681775755,
+                    0.02591696809949348,
+                    -0.037912266705545934
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00016290628091075732,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007873381414793332,
+                  "rotation_median_deg": 0.0023449574146920055,
+                  "rotation_max_deg": 0.01964496172491625
+                }
+              },
+              "mixed": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.4941681020635365,
+                  "rotation_median_deg": 0.36402791942540375,
+                  "rotation_p95_deg": 0.9078177306634847,
+                  "error_component_rmse_deg": [
+                    0.34262300631661435,
+                    0.0911526786635608,
+                    0.34424232426025225
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06371519699432522,
+                    0.019134107685277634,
+                    -0.06211648446037116
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.4943321374376895,
+                  "rotation_median_deg": 0.36484555619045234,
+                  "rotation_p95_deg": 0.8968584214077129,
+                  "error_component_rmse_deg": [
+                    0.3424671980217325,
+                    0.09121218993478517,
+                    0.3446169130935956
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.06370179673229892,
+                    0.018930717338644418,
+                    -0.06216854496908217
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.00016403537415299319,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007096836446305311,
+                  "rotation_median_deg": 0.0024766225779572102,
+                  "rotation_max_deg": 0.01827061545774987
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 25,
+                "paired": {
+                  "rotation_rmse_deg": 0.08412329586917869,
+                  "rotation_median_deg": 0.06957869553557809,
+                  "rotation_p95_deg": 0.1441090931640235,
+                  "error_component_rmse_deg": [
+                    0.037230612227501736,
+                    0.06934389917655016,
+                    0.029699058369773573
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.010953184254857537,
+                    -0.015919718173354875,
+                    0.0018375651793782891
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.08304336353084471,
+                  "rotation_median_deg": 0.06813312252366628,
+                  "rotation_p95_deg": 0.14168298325652962,
+                  "error_component_rmse_deg": [
+                    0.035191257451708105,
+                    0.06920990829850233,
+                    0.02945783798578104
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.010801056192718381,
+                    -0.016251642653413924,
+                    0.00294110431327716
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0010799323383339776,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.005916895647648486,
+                  "rotation_median_deg": 0.0009389026460412145,
+                  "rotation_max_deg": 0.01676699762545612
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 114,
+                "paired": {
+                  "rotation_rmse_deg": 0.16187575221993397,
+                  "rotation_median_deg": 0.14693685903596315,
+                  "rotation_p95_deg": 0.24305736268380854,
+                  "error_component_rmse_deg": [
+                    0.09396586900482547,
+                    0.07032730312834712,
+                    0.1114820391526412
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.018117532551809055,
+                    0.0019877428882151883,
+                    -0.008966893550398897
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.1626047510541249,
+                  "rotation_median_deg": 0.14892218247226002,
+                  "rotation_p95_deg": 0.246529128933265,
+                  "error_component_rmse_deg": [
+                    0.09437287581244798,
+                    0.0705482462653446,
+                    0.11205806675624247
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.018073474285957375,
+                    0.0017940471264997389,
+                    -0.008833127853226567
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0007289988341909193,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.006466915350731881,
+                  "rotation_median_deg": 0.001469616661580706,
+                  "rotation_max_deg": 0.017592380675059548
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 132,
+                "paired": {
+                  "rotation_rmse_deg": 0.2806557483868219,
+                  "rotation_median_deg": 0.2549056667110141,
+                  "rotation_p95_deg": 0.455327467244581,
+                  "error_component_rmse_deg": [
+                    0.19692019263746605,
+                    0.07431130021253095,
+                    0.185655372922287
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.038598598609739215,
+                    0.006265888185138938,
+                    -0.032420036240611336
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.2806320029797856,
+                  "rotation_median_deg": 0.2551024237991744,
+                  "rotation_p95_deg": 0.4584235074196997,
+                  "error_component_rmse_deg": [
+                    0.19713395230677627,
+                    0.07453401473316693,
+                    0.18530301290619133
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.03781205983383923,
+                    0.006261715377186586,
+                    -0.03296696696106354
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -2.3745407036313004e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.00700097669108449,
+                  "rotation_median_deg": 0.002928587475110904,
+                  "rotation_max_deg": 0.018803237794513664
+                }
+              },
+              "[1,2)": {
+                "pairs": 280,
+                "paired": {
+                  "rotation_rmse_deg": 0.4554806468768101,
+                  "rotation_median_deg": 0.431677003195431,
+                  "rotation_p95_deg": 0.7751584071009133,
+                  "error_component_rmse_deg": [
+                    0.31665185509770305,
+                    0.09082486611105212,
+                    0.3145553465424012
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.050083041355990475,
+                    0.023228533263099285,
+                    -0.04951256783731238
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.4555074056128733,
+                  "rotation_median_deg": 0.4308021718587519,
+                  "rotation_p95_deg": 0.7694450351496387,
+                  "error_component_rmse_deg": [
+                    0.31585672367118467,
+                    0.09077018931817173,
+                    0.31540814734407036
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.049977447103867,
+                    0.022990515936772905,
+                    -0.04922874619486464
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 2.6758736063170474e-05,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.00733365248023225,
+                  "rotation_median_deg": 0.0025648527402316367,
+                  "rotation_max_deg": 0.01964496172491625
+                }
+              },
+              "[2,3)": {
+                "pairs": 249,
+                "paired": {
+                  "rotation_rmse_deg": 0.6900522084469648,
+                  "rotation_median_deg": 0.6664790324788167,
+                  "rotation_p95_deg": 1.1116631128588876,
+                  "error_component_rmse_deg": [
+                    0.48434273324599003,
+                    0.11804734408843305,
+                    0.4771257608723345
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.11204075609884495,
+                    0.030422823296142567,
+                    -0.06560667040297699
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.6894955538650308,
+                  "rotation_median_deg": 0.6634267568176665,
+                  "rotation_p95_deg": 1.1103162833946207,
+                  "error_component_rmse_deg": [
+                    0.4837032307172109,
+                    0.11800141905337665,
+                    0.4769810986766327
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.11178715196358043,
+                    0.030437714323915344,
+                    -0.06559527336694466
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": -0.0005566545819339908,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.007189971540230891,
+                  "rotation_median_deg": 0.002167306195361509,
+                  "rotation_max_deg": 0.017507243671038574
+                }
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        },
+        "imu-only": {
+          "directory": "/root/projects/AeroVIO/models/motion-imu-only-v2",
+          "model_sha256": "b1a3ecb7c4241a3364254f539e5f6aadd1d3744bb66df475fddd81a634145fce",
+          "metadata_sha256": "f57d32161c7f5c6f3a4b4a7b791f4676fc218b835a461331a1391f03cfcc8112",
+          "input_mode": "imu_only",
+          "max_motion_component_change": 0.0,
+          "imu_only_invariance_passed": true,
+          "errors": {
+            "overall": {
+              "pairs": 800,
+              "paired": {
+                "rotation_rmse_deg": 0.5814119471801196,
+                "rotation_median_deg": 0.3584515356101793,
+                "rotation_p95_deg": 1.1776584903773353,
+                "error_component_rmse_deg": [
+                  0.391343551465719,
+                  0.10398205701596591,
+                  0.417226328110661
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06735074630715361,
+                  0.025531806783152353,
+                  -0.053038309443135576
+                ]
+              },
+              "shuffled": {
+                "rotation_rmse_deg": 0.5814119471801196,
+                "rotation_median_deg": 0.3584515356101793,
+                "rotation_p95_deg": 1.1776584903773353,
+                "error_component_rmse_deg": [
+                  0.391343551465719,
+                  0.10398205701596591,
+                  0.417226328110661
+                ],
+                "mean_signed_error_camera_channels_deg": [
+                  -0.06735074630715361,
+                  0.025531806783152353,
+                  -0.053038309443135576
+                ]
+              },
+              "shuffled_minus_paired_rmse_deg": 0.0,
+              "paired_shuffled_prediction_difference": {
+                "rotation_rms_deg": 0.0,
+                "rotation_median_deg": 0.0,
+                "rotation_max_deg": 0.0
+              }
+            },
+            "axis_grouping": "synthetic labelled axis",
+            "by_axis": {
+              "camera_x": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.6693535090583039,
+                  "rotation_median_deg": 0.5691032761962778,
+                  "rotation_p95_deg": 1.1859546923223656,
+                  "error_component_rmse_deg": [
+                    0.6575220892684905,
+                    0.1114000149099717,
+                    0.05734857357181587
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0802722881066351,
+                    0.03799406232001318,
+                    -0.02768167763024586
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.6693535090583039,
+                  "rotation_median_deg": 0.5691032761962778,
+                  "rotation_p95_deg": 1.1859546923223656,
+                  "error_component_rmse_deg": [
+                    0.6575220892684905,
+                    0.1114000149099717,
+                    0.05734857357181587
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0802722881066351,
+                    0.03799406232001318,
+                    -0.02768167763024586
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "camera_y": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.10803596453097647,
+                  "rotation_median_deg": 0.08671168843461444,
+                  "rotation_p95_deg": 0.18538310669036562,
+                  "error_component_rmse_deg": [
+                    0.0363290600372715,
+                    0.09806744916896734,
+                    0.027106169822362202
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.013539805527787243,
+                    -0.009125938094989034,
+                    -0.00932942470230866
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.10803596453097647,
+                  "rotation_median_deg": 0.08671168843461444,
+                  "rotation_p95_deg": 0.18538310669036562,
+                  "error_component_rmse_deg": [
+                    0.0363290600372715,
+                    0.09806744916896734,
+                    0.027106169822362202
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.013539805527787243,
+                    -0.009125938094989034,
+                    -0.00932942470230866
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "camera_z": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.7366372658591852,
+                  "rotation_median_deg": 0.5729840671366371,
+                  "rotation_p95_deg": 1.48077632625332,
+                  "error_component_rmse_deg": [
+                    0.16383993211878217,
+                    0.10847479009980371,
+                    0.7099465881378769
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.10296864272096673,
+                    0.04806722893107028,
+                    -0.09441689469472711
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.7366372658591852,
+                  "rotation_median_deg": 0.5729840671366371,
+                  "rotation_p95_deg": 1.48077632625332,
+                  "error_component_rmse_deg": [
+                    0.16383993211878217,
+                    0.10847479009980371,
+                    0.7099465881378769
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.10296864272096673,
+                    0.04806722893107028,
+                    -0.09441689469472711
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "mixed": {
+                "pairs": 200,
+                "paired": {
+                  "rotation_rmse_deg": 0.5914550347421293,
+                  "rotation_median_deg": 0.41181670759391575,
+                  "rotation_p95_deg": 1.0821471632726076,
+                  "error_component_rmse_deg": [
+                    0.39000061443455053,
+                    0.0972373628264362,
+                    0.43389339028504054
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0726222488732255,
+                    0.02519187397651506,
+                    -0.08072524074526079
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5914550347421293,
+                  "rotation_median_deg": 0.41181670759391575,
+                  "rotation_p95_deg": 1.0821471632726076,
+                  "error_component_rmse_deg": [
+                    0.39000061443455053,
+                    0.0972373628264362,
+                    0.43389339028504054
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.0726222488732255,
+                    0.02519187397651506,
+                    -0.08072524074526079
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              }
+            },
+            "by_angle_deg": {
+              "[0,0.1)": {
+                "pairs": 25,
+                "paired": {
+                  "rotation_rmse_deg": 0.08349383655915771,
+                  "rotation_median_deg": 0.06430192428374824,
+                  "rotation_p95_deg": 0.13183199709556653,
+                  "error_component_rmse_deg": [
+                    0.030870904424678606,
+                    0.0716453819563952,
+                    0.029751424296862533
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0005866922912620067,
+                    -0.011850807501206045,
+                    0.010812213305702582
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.08349383655915771,
+                  "rotation_median_deg": 0.06430192428374824,
+                  "rotation_p95_deg": 0.13183199709556653,
+                  "error_component_rmse_deg": [
+                    0.030870904424678606,
+                    0.0716453819563952,
+                    0.029751424296862533
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    0.0005866922912620067,
+                    -0.011850807501206045,
+                    0.010812213305702582
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[0.1,0.5)": {
+                "pairs": 114,
+                "paired": {
+                  "rotation_rmse_deg": 0.17792252479069395,
+                  "rotation_median_deg": 0.15415200680335261,
+                  "rotation_p95_deg": 0.2959617838469182,
+                  "error_component_rmse_deg": [
+                    0.09894186274976585,
+                    0.06768070873726154,
+                    0.13147720064073304
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009988223779780602,
+                    0.005151947803738034,
+                    -0.00904984476126199
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.17792252479069395,
+                  "rotation_median_deg": 0.15415200680335261,
+                  "rotation_p95_deg": 0.2959617838469182,
+                  "error_component_rmse_deg": [
+                    0.09894186274976585,
+                    0.06768070873726154,
+                    0.13147720064073304
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.009988223779780602,
+                    0.005151947803738034,
+                    -0.00904984476126199
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[0.5,1)": {
+                "pairs": 132,
+                "paired": {
+                  "rotation_rmse_deg": 0.32638058962973593,
+                  "rotation_median_deg": 0.2880270942094597,
+                  "rotation_p95_deg": 0.5656913975991921,
+                  "error_component_rmse_deg": [
+                    0.2190644419483222,
+                    0.0774342381899708,
+                    0.22921387025409948
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.039529835581696426,
+                    0.008724031266045654,
+                    -0.03923185304243263
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.32638058962973593,
+                  "rotation_median_deg": 0.2880270942094597,
+                  "rotation_p95_deg": 0.5656913975991921,
+                  "error_component_rmse_deg": [
+                    0.2190644419483222,
+                    0.0774342381899708,
+                    0.22921387025409948
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.039529835581696426,
+                    0.008724031266045654,
+                    -0.03923185304243263
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[1,2)": {
+                "pairs": 280,
+                "paired": {
+                  "rotation_rmse_deg": 0.5402656510383596,
+                  "rotation_median_deg": 0.4691034847780148,
+                  "rotation_p95_deg": 0.921940124465845,
+                  "error_component_rmse_deg": [
+                    0.36040670545713865,
+                    0.09651849520696985,
+                    0.390740528274731
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.05780183371208641,
+                    0.030514899973162025,
+                    -0.05835397311266617
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.5402656510383596,
+                  "rotation_median_deg": 0.4691034847780148,
+                  "rotation_p95_deg": 0.921940124465845,
+                  "error_component_rmse_deg": [
+                    0.36040670545713865,
+                    0.09651849520696985,
+                    0.390740528274731
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.05780183371208641,
+                    0.030514899973162025,
+                    -0.05835397311266617
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[2,3)": {
+                "pairs": 249,
+                "paired": {
+                  "rotation_rmse_deg": 0.8283607708168288,
+                  "rotation_median_deg": 0.7442073669806344,
+                  "rotation_p95_deg": 1.4789301247575983,
+                  "error_component_rmse_deg": [
+                    0.5621079671999314,
+                    0.1359095647070186,
+                    0.593080761835823
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.12592030163028645,
+                    0.04192228692699807,
+                    -0.08092993377999816
+                  ]
+                },
+                "shuffled": {
+                  "rotation_rmse_deg": 0.8283607708168288,
+                  "rotation_median_deg": 0.7442073669806344,
+                  "rotation_p95_deg": 1.4789301247575983,
+                  "error_component_rmse_deg": [
+                    0.5621079671999314,
+                    0.1359095647070186,
+                    0.593080761835823
+                  ],
+                  "mean_signed_error_camera_channels_deg": [
+                    -0.12592030163028645,
+                    0.04192228692699807,
+                    -0.08092993377999816
+                  ]
+                },
+                "shuffled_minus_paired_rmse_deg": 0.0,
+                "paired_shuffled_prediction_difference": {
+                  "rotation_rms_deg": 0.0,
+                  "rotation_median_deg": 0.0,
+                  "rotation_max_deg": 0.0
+                }
+              },
+              "[3,5)": {
+                "pairs": 0
+              },
+              "[5,inf)": {
+                "pairs": 0
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "inference_source_sha256": "4f6efaefcac8b6f584abe5d0c7b2fd4338e2300788cf457627fa8594597586f6"
+}

@@ -1,0 +1,12 @@
+{
+  "initial_source_sha256": "914ec78437fab5d5dc5ba6f46a5c1c934da6b82778a44881c1060ff7ae522ef3",
+  "retained_source_sha256": "b7d4fbc57d84ac8b73dc5ba0bca73b78977b6cbfca3e5f2e324e914fb2ba5593",
+  "initial_source_archive": "provenance/train_rotation_focus.initial.py",
+  "change": "After all optimization and checkpoint selection, save last.pt and export fixed final-epoch diagnostic-last ONNX/meta. Selection, objectives, seeds, optimizer, minibatches, normalization and validation unchanged.",
+  "repeat_outputs": [
+    "models/rotation-control-v3-retained",
+    "models/rotation-focus-v3-retained"
+  ],
+  "status": "passed: full non-timing histories, selected model and metadata repeat exactly",
+  "audit": "../training-audit.json"
+}

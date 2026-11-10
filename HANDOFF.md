@@ -1,13 +1,25 @@
 # AeroVIO - Handoff
 
-The rotation/image ablation is complete: all five variants finished 10/10 public
-episodes (12,000 frames each), 62 tests pass, and all four new Windows WASM copies
-are SHA-256 verified. See `experiments/motion-ablation-v2/README.md` for the current
-findings: learned rotation correction helps overall; image input gives a mixed,
-episode-dependent trajectory benefit; compact IMU-only offers a compute tradeoff.
+The v3 rotation-focused training run is complete. Both the matched continuation
+control and the rotation-auxiliary fine-tune selected epoch zero: neither supplied
+a qualifying improvement on original simulated-flight validation within the fixed translation guards.
+Their selected model is the original v1 warp checkpoint. Epoch-20 candidates are
+retained separately as unselected diagnostics. All six public variants completed
+10/10 episodes; 84 tests and all four new WASM checks pass. Final focused training
+lowered aligned ATE by 0.44% but worsened rotation RMSE by 11.54% versus the original
+model, so it remains unselected. Four Windows WASM copies are hash-verified.
+See `experiments/rotation-focus-v3/README.md` and
+`docs/rotation-focused-training.md`.
+
+The previous rotation/image ablation remains complete: all five v2 variants
+finished 10/10 public episodes (12,000 frames each), 62 tests passed, and all four
+new Windows WASM copies were SHA-256 verified. Its findings remain in
+`experiments/motion-ablation-v2/README.md`: learned rotation correction helps
+overall; visual-input benefits vary by episode; compact IMU-only trades compute.
 
 Read `README.md`, `docs/requirements.md`, `docs/setup.md`,
-`docs/learned-motion.md`, and `experiments/motion-ablation-v2/README.md` first.
+`docs/learned-motion.md`, `docs/rotation-focused-training.md`, and
+`experiments/rotation-focus-v3/README.md` first.
 Use `experiments/motion-ablation-v2/comparison.md` and `rotation-diagnostics.md`
 for the current investigation; preserve `experiments/learned-motion-v1/` as the
 completed first experiment. See `docs/warping-and-world-models.md` for the
@@ -93,6 +105,37 @@ Check the v2 experiment record for copy/hash verification. Packaging and copying
 remain separate from a course-server submission.
 
 ## Important implementation details
+
+The v3 auxiliary cache is `data/rotation-aux-v3/`: 2,400 training pairs from
+scenes 2/3/4 and 800 validation pairs from scenes 5/6. It reprojects existing
+320x240 adapted images into symmetric virtual rotations, then uses the shared
+64x48 preprocessing. Camera x/y/z/mixed axes are balanced over 0–3 degrees;
+the fixed crop and source-support check avoid padded borders. Synthetic IMU
+samples include the actual extrinsics, gravity, lever-arm acceleration and
+configured independent sensor noise. Only rotation is supervised by this cache.
+
+The fixed protocol is `configs/rotation-focus-v3.json`. Both 20-epoch fine-tunes
+start from `models/motion-warp-v1/best.pt`, share 760 optimizer steps and real
+minibatches, and keep the original normalization and deployed architecture.
+Selection minimizes accumulated real-validation rotation RMSE subject to both
+translation guards; synthetic validation and public scores do not select weights.
+
+The retention-only reruns live in `models/rotation-{control|focus}-v3-retained/`,
+with compact records archived under `experiments/rotation-focus-v3/control/`
+and `focus/`. Their top-level `net.onnx` is the selected epoch-zero model.
+`diagnostic-last/net.onnx` is the unselected epoch-20 candidate, explicitly marked
+as such in metadata. Keep these roles distinct in packaging, reporting and any
+public comparison. The original v3 run records remain preserved as well.
+The pre-public addendum `configs/rotation-focus-v3-public-diagnostics.json`
+adds the fixed epoch-20 candidates without changing checkpoint selection.
+The six compared variants are the original baseline, the starting warp model,
+both selected v3 models and both last-epoch diagnostics. Four new v3 packages
+cover the selected/control, selected/focus and two diagnostic roles. Public
+completion and metrics must come from the finished reports, not package creation.
+
+See `experiments/rotation-focus-v3/rotation-examples.png` for calibrated input
+examples and its caption/JSON for exact sample identities and display settings.
+The illustration is not evidence that the network estimates those rotations well.
 
 The network receives two 64x48 grayscale frames and 14 values: camera-frame
 IMU rotation/delta-velocity/delta-position, normalized intrinsics, and frame dt.

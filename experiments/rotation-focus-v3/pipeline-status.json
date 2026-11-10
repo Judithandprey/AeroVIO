@@ -1,0 +1,221 @@
+[
+  {
+    "stage": "package-control",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/rotation-control-v3-retained",
+      "--name",
+      "rotation-control-v3"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.7863669907674193,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-package-control.log"
+  },
+  {
+    "stage": "check-control",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/rotation-control-v3.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-rotation-control-v3"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.24467117106542,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-check-control.log"
+  },
+  {
+    "stage": "package-control-final",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/rotation-control-v3-retained/diagnostic-last",
+      "--name",
+      "rotation-control-v3-final"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.6217966969124973,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-package-control-final.log"
+  },
+  {
+    "stage": "check-control-final",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/rotation-control-v3-final.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-rotation-control-v3-final"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.313474379945546,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-check-control-final.log"
+  },
+  {
+    "stage": "package-focus",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/rotation-focus-v3-retained",
+      "--name",
+      "rotation-focus-v3"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.6850647157989442,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-package-focus.log"
+  },
+  {
+    "stage": "check-focus",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/rotation-focus-v3.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-rotation-focus-v3"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.491375423036516,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-check-focus.log"
+  },
+  {
+    "stage": "package-focus-final",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/rotation-focus-v3-retained/diagnostic-last",
+      "--name",
+      "rotation-focus-v3-final"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 0.6845707450993359,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-package-focus-final.log"
+  },
+  {
+    "stage": "check-focus-final",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/rotation-focus-v3-final.wasm",
+      "--frames",
+      "20",
+      "--logs",
+      "logs/check-rotation-focus-v3-final"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 4.455250426195562,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-check-focus-final.log"
+  },
+  {
+    "stage": "evaluate-baseline",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/klt_imu.wasm",
+      "--run-dir",
+      "results/rotation-v3-baseline",
+      "--verify-baseline"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 86.95808217581362,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-evaluate-baseline.log"
+  },
+  {
+    "stage": "evaluate-current",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-current-v2.wasm",
+      "--run-dir",
+      "results/rotation-v3-current"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 55.975814294070005,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-evaluate-current.log"
+  },
+  {
+    "stage": "evaluate-control",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/rotation-control-v3.wasm",
+      "--run-dir",
+      "results/rotation-v3-control"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 55.035152550786734,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-evaluate-control.log"
+  },
+  {
+    "stage": "evaluate-focus",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/rotation-focus-v3.wasm",
+      "--run-dir",
+      "results/rotation-v3-focus"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 55.22539117466658,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-evaluate-focus.log"
+  },
+  {
+    "stage": "evaluate-control-final",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/rotation-control-v3-final.wasm",
+      "--run-dir",
+      "results/rotation-v3-control-final"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 54.9450599080883,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-evaluate-control-final.log"
+  },
+  {
+    "stage": "evaluate-focus-final",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/rotation-focus-v3-final.wasm",
+      "--run-dir",
+      "results/rotation-v3-focus-final"
+    ],
+    "exit_code": 0,
+    "elapsed_s": 55.767766260076314,
+    "log": "/root/projects/AeroVIO/logs/rotation-v3-evaluate-focus-final.log"
+  }
+]

@@ -60,4 +60,8 @@ report-*/
 !experiments/learned-motion-v1/warp/net.onnx
 !experiments/motion-ablation-v2/imu-only/net.onnx
 !experiments/motion-ablation-v2/imu-only-compact/net.onnx
+!experiments/rotation-focus-v3/control/net.onnx
+!experiments/rotation-focus-v3/focus/net.onnx
+!experiments/rotation-focus-v3/control/diagnostic-last/net.onnx
+!experiments/rotation-focus-v3/focus/diagnostic-last/net.onnx
 !workspace/solution/net.onnx

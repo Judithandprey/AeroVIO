@@ -1,0 +1,160 @@
+{
+  "status": "passed",
+  "audited_utc": "2026-11-10T12:57:32.814617+00:00",
+  "config_sha256": "c0ec852fa11834fb03bad8773fd33ab260f445b7c48d80cbcdd8517f3b7b221f",
+  "figure_examples_sha256": "748320f13cef948734bea49fce066159b3a7eaf2670f63135deb9b7b542e209d",
+  "figure_sha256": "870b37471f320e291bdbd36801776907bdde30da7c473fbc7bb1ca0a6f7206b1",
+  "runs": {
+    "control": {
+      "checks": {
+        "hyperparameters": {
+          "seed": true,
+          "epochs": true,
+          "batch": true,
+          "aux_batch": true,
+          "auxiliary_sampler_seed": true,
+          "learning_rate": true,
+          "final_learning_rate": true,
+          "gradient_clip_norm": true,
+          "threads": true,
+          "device": true
+        },
+        "source_hashes": {
+          "scripts/train_rotation_focus.py": true,
+          "configs/rotation-focus-v3.json": true,
+          "training/rotation_focus.py": true,
+          "training/motion_model.py": true,
+          "workspace/solution/preintegrate.py": true,
+          "workspace/solution/motion_inference.py": true
+        },
+        "original_trainer_archived_hash_matches": true,
+        "retention_rerun_all_nontiming_history_matches": true,
+        "retention_selected_model_unchanged": true,
+        "aux_record_matches": true,
+        "real_record_matches": true,
+        "model_hash_matches": true,
+        "checkpoint_hash_matches": true,
+        "last_model_hash_matches": true,
+        "last_checkpoint_hash_matches": true,
+        "last_role_is_unselected": true,
+        "initial_model_matches": true,
+        "initial_checkpoint_matches": true,
+        "initial_metadata_matches": true,
+        "guard_flags_correct": true,
+        "selection_correct": true,
+        "history_complete": true,
+        "selected_metrics_match": true
+      },
+      "eligible_epochs": [
+        0,
+        1
+      ],
+      "selected_epoch": 0,
+      "optimizer_steps": 760,
+      "auxiliary_examples_processed": 0,
+      "selected_model_equals_initial": true,
+      "diagnostic_last_epoch": 20
+    },
+    "focus": {
+      "checks": {
+        "hyperparameters": {
+          "seed": true,
+          "epochs": true,
+          "batch": true,
+          "aux_batch": true,
+          "auxiliary_sampler_seed": true,
+          "learning_rate": true,
+          "final_learning_rate": true,
+          "gradient_clip_norm": true,
+          "threads": true,
+          "device": true
+        },
+        "source_hashes": {
+          "scripts/train_rotation_focus.py": true,
+          "configs/rotation-focus-v3.json": true,
+          "training/rotation_focus.py": true,
+          "training/motion_model.py": true,
+          "workspace/solution/preintegrate.py": true,
+          "workspace/solution/motion_inference.py": true
+        },
+        "original_trainer_archived_hash_matches": true,
+        "retention_rerun_all_nontiming_history_matches": true,
+        "retention_selected_model_unchanged": true,
+        "aux_record_matches": true,
+        "real_record_matches": true,
+        "model_hash_matches": true,
+        "checkpoint_hash_matches": true,
+        "last_model_hash_matches": true,
+        "last_checkpoint_hash_matches": true,
+        "last_role_is_unselected": true,
+        "initial_model_matches": true,
+        "initial_checkpoint_matches": true,
+        "initial_metadata_matches": true,
+        "guard_flags_correct": true,
+        "selection_correct": true,
+        "history_complete": true,
+        "selected_metrics_match": true
+      },
+      "eligible_epochs": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "selected_epoch": 0,
+      "optimizer_steps": 760,
+      "auxiliary_examples_processed": 24320,
+      "selected_model_equals_initial": true,
+      "diagnostic_last_epoch": 20
+    }
+  },
+  "matched_control_fields": {
+    "initial_weights_sha256": true,
+    "normalization": true,
+    "epochs": true,
+    "batch": true,
+    "aux_batch": true,
+    "learning_rate": true,
+    "final_learning_rate": true,
+    "optimizer_steps": true,
+    "real_minibatch_order_sha256": true,
+    "source_sha256": true,
+    "selection": true
+  },
+  "cache_hash_checks": {
+    "real": {
+      "train": true,
+      "validation": true
+    },
+    "aux": {
+      "train": true,
+      "validation": true
+    }
+  },
+  "aux_source_hashes": {
+    "scripts/prepare_rotation_data.py": true,
+    "training/rotation_augmentation.py": true,
+    "workspace/solution/preintegrate.py": true
+  },
+  "scene_split": {
+    "train": [
+      "ProcTHOR-Train-2",
+      "ProcTHOR-Train-3",
+      "ProcTHOR-Train-4"
+    ],
+    "validation": [
+      "ProcTHOR-Train-5",
+      "ProcTHOR-Train-6"
+    ]
+  },
+  "interpretation": "Both variants correctly retain epoch0 under preregistered real-validation rotation objective and translation guards. Original trainer hash matches its preserved snapshot; retention reruns match the current trainer and repeat all non-timing history exactly. Unselected epoch20 diagnostics are separate; public results are not audited here."
+}

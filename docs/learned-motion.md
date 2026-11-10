@@ -8,7 +8,10 @@ The first full experiment is preserved in the
 [measured results and limitations](../experiments/learned-motion-v1/README.md)
 and [four-way comparison](../experiments/learned-motion-v1/comparison.md).
 The follow-up [rotation/input experiment](../experiments/motion-ablation-v2/README.md)
-isolates learned rotation correction and visual information. Read the
+isolates learned rotation correction and visual information. The
+[v3 rotation-focused experiment](../experiments/rotation-focus-v3/README.md)
+adds calibrated rotational view changes during training; both fine-tunes retained
+their starting checkpoint under the fixed real-validation rule. Read the
 [warping and world-model guide](warping-and-world-models.md) for the conceptual
 scope of this estimator.
 
@@ -86,6 +89,42 @@ this as a separate compute experiment; the full graph remains the primary
 control for whether images contribute useful information.
 
 ## Training data
+
+The [rotation-training guide](rotation-focused-training.md) explains v3's
+additional training-only examples. `prepare_rotation_data.py` uses each existing
+source frame to create two virtual views through the calibrated SO(3) homography.
+Both views follow the same 640→320 adaptation, symmetric perspective reprojection,
+fixed 0.85 crop and shared 64x48 grayscale preprocessing. Source-support checks
+reject unsupported rays instead of exposing angle-dependent padded borders.
+
+The auxiliary cache contains 2,400 training and 800 validation pairs, retaining
+the original scene split. Camera x/y/z/mixed axes are balanced, with independent
+signed rotations of 0–3 degrees over 0.05 seconds. Ten synthetic IMU samples
+describe the same stationary-camera-centre rotation, using source gravity,
+camera/IMU extrinsics, centripetal lever-arm acceleration and configured
+noise/bias/random-walk priors. The updated intrinsics enter the state vector.
+
+`train_rotation_focus.py` continues the original warp model with frozen
+normalization. The control and focus runs share real minibatches, 760 optimizer
+steps and the 20-epoch schedule; focus additionally uses rotation-only SO(3)
+supervision. Auxiliary samples do not teach zero translation. Their validation
+split is diagnostic only. Selection minimizes accumulated rotation error on
+original simulated-flight validation, retaining epoch zero unless both pair-translation and integrated
+position guards permit an improvement.
+
+Both recorded runs selected epoch zero, so this trial established no deployed
+gain. A retention-only rerun preserves the unselected epoch-20 candidate under
+`diagnostic-last/`, separately from the selected top-level model. The
+[pre-public addendum](../configs/rotation-focus-v3-public-diagnostics.json)
+fixes a six-way comparison: baseline, starting warp model, two selected models
+and two last-epoch diagnostics. All six public runs completed. The focused final
+candidate slightly improves aligned ATE but worsens rotation RMSE; see the
+[v3 record](../experiments/rotation-focus-v3/README.md).
+See [setup](setup.md#reproduce-rotation-focused-training) for reproduction commands.
+
+The [input examples](../experiments/rotation-focus-v3/rotation-examples.png) show
+actual auxiliary validation inputs with exact signed labels. They illustrate
+perspective changes and provide no model-accuracy evidence by themselves.
 
 `scripts/generate_training_data.py` uses the pinned HyperDrone/HyperLux stack,
 CPU generic rendering, static ProcTHOR scenes, an X500 camera/IMU/autopilot, and

@@ -1,0 +1,77 @@
+{
+  "status": "passed",
+  "cache_json_sha256": "a610f85f66d829345595c379591c908c50177b8685d7a4b202722b78c89d9235",
+  "sources_match": {
+    "scripts/prepare_rotation_data.py": true,
+    "training/rotation_augmentation.py": true,
+    "workspace/solution/preintegrate.py": true
+  },
+  "splits": {
+    "train": {
+      "sha256": "a45580df51474f08fb058a67c2d6befa88c0cd3a05ac72121ae1d43637199b11",
+      "pairs": 2400,
+      "allfinite": true,
+      "proper_rotation_max_orthogonality_error": 5.9596827028940424e-08,
+      "proper_rotation_max_determinant_error": 8.29137820623771e-08,
+      "first_pair_exact_seed_replay": {
+        "images": true,
+        "state": true,
+        "rotation_gt": true,
+        "rotation_residual": true,
+        "visibility": true,
+        "intrinsics": true,
+        "source_clearance_pixels": true
+      },
+      "signed_axis_reconstruction": true,
+      "dtype": {
+        "images": "float32",
+        "state": "float32",
+        "rotation_gt": "float32",
+        "rotation_residual": "float32",
+        "visibility": "bool",
+        "intrinsics": "float32",
+        "source_clearance_pixels": "float32",
+        "episode_id": "int32",
+        "frame_index": "int32",
+        "axis_id": "int32",
+        "rotation_vector_gt": "float32",
+        "angle_degrees": "float32",
+        "signed_angle_degrees": "float32",
+        "axis_vector": "float32"
+      }
+    },
+    "validation": {
+      "sha256": "6661effc0b36f0e5084d016a05e1f132c0fd1d89b24229b1d86611821db52a67",
+      "pairs": 800,
+      "allfinite": true,
+      "proper_rotation_max_orthogonality_error": 5.9599770230178706e-08,
+      "proper_rotation_max_determinant_error": 7.837853277514739e-08,
+      "first_pair_exact_seed_replay": {
+        "images": true,
+        "state": true,
+        "rotation_gt": true,
+        "rotation_residual": true,
+        "visibility": true,
+        "intrinsics": true,
+        "source_clearance_pixels": true
+      },
+      "signed_axis_reconstruction": true,
+      "dtype": {
+        "images": "float32",
+        "state": "float32",
+        "rotation_gt": "float32",
+        "rotation_residual": "float32",
+        "visibility": "bool",
+        "intrinsics": "float32",
+        "source_clearance_pixels": "float32",
+        "episode_id": "int32",
+        "frame_index": "int32",
+        "axis_id": "int32",
+        "rotation_vector_gt": "float32",
+        "angle_degrees": "float32",
+        "signed_angle_degrees": "float32",
+        "axis_vector": "float32"
+      }
+    }
+  }
+}

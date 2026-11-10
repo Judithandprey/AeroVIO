@@ -6,11 +6,18 @@ Estimate camera pose and twist from RGB + IMU while measuring the
 accuracy-compute trade-off in a WebAssembly runtime. Developed for UC Berkeley
 EECS 116/216, Fall 2026, Project 3.
 
-**Current investigation:** isolate the small motion network's rotation correction
-and visual input, then measure an equivalent compact IMU-only export. See the
-[rotation/input experiment](experiments/motion-ablation-v2/README.md),
-[comparison](experiments/motion-ablation-v2/comparison.md), and
-[rotation diagnostics](experiments/motion-ablation-v2/rotation-diagnostics.md).
+**Current investigation:** teach the existing network how calibrated rotation
+changes its view, using a matched continued-training control. Both v3 fine-tunes
+retained their starting checkpoint under the fixed original-flight validation
+rule; no deployed improvement was established. All six public variants completed.
+The final focused candidate slightly improves aligned position error but worsens
+rotation error by 11.54%; it remains unselected. See the [rotation-training guide](docs/rotation-focused-training.md)
+and [v3 experiment record](experiments/rotation-focus-v3/README.md).
+
+The completed [rotation/input experiment](experiments/motion-ablation-v2/README.md),
+[v2 comparison](experiments/motion-ablation-v2/comparison.md), and
+[rotation diagnostics](experiments/motion-ablation-v2/rotation-diagnostics.md)
+preserve the earlier rotation toggle, visual-input and compact-export evidence.
 
 The [first experiment](experiments/learned-motion-v1/README.md) preserves the
 completed CNN, training-only warping and sparse-map comparison, including its
@@ -33,7 +40,8 @@ KLT baseline. Package each variant explicitly to avoid mixing model identities.
 2. Follow [setup and artifact reproduction](docs/setup.md).
 3. Review the [learned architecture and training protocol](docs/learned-motion.md)
    and [sparse-map geometry](docs/perspective-map.md).
-4. Read the [current ablations](experiments/motion-ablation-v2/README.md) and
+4. Read the [rotation-focused training experiment](experiments/rotation-focus-v3/README.md),
+   [completed input ablations](experiments/motion-ablation-v2/README.md), and
    [earlier geometry comparison](experiments/learned-motion-v1/comparison.md)
    before drawing conclusions or changing parameters.
 5. Use [HANDOFF.md](HANDOFF.md) to resume development.
@@ -61,6 +69,7 @@ experiments/         Compact reports, model snapshots and provenance
     baseline-klt-imu/
     learned-motion-v1/
     motion-ablation-v2/
+    rotation-focus-v3/
 docs/                Course sources, requirements, architecture and setup
 reports/             Presentation and final-report sources
 HANDOFF.md           Verified state and development boundaries

@@ -1,0 +1,1259 @@
+[
+  {
+    "epoch": 0,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011034798892776303,
+      "trajectory_position_rmse_mean_m": 0.5187004592805404,
+      "rotation_rmse_mean_rad": 0.12128190879867945,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010135789305265163,
+          "trajectory_position_rmse_mean_m": 0.6506016136306181,
+          "rotation_rmse_mean_rad": 0.1409591267130427,
+          "final_rotation_error_rad": 0.2475518740445884,
+          "final_position_error_m": 1.1362289514344424
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010103793208418569,
+          "trajectory_position_rmse_mean_m": 0.4219881886508053,
+          "rotation_rmse_mean_rad": 0.13482644666060595,
+          "final_rotation_error_rad": 0.23901117331425528,
+          "final_position_error_m": 0.45519471651778937
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.00921681617060437,
+          "trajectory_position_rmse_mean_m": 0.49981504756851386,
+          "rotation_rmse_mean_rad": 0.14703472499556797,
+          "final_rotation_error_rad": 0.25924775789381754,
+          "final_position_error_m": 0.654530800510909
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014046230243525887,
+          "trajectory_position_rmse_mean_m": 0.5023969872722244,
+          "rotation_rmse_mean_rad": 0.06230733682550119,
+          "final_rotation_error_rad": 0.11174504001201349,
+          "final_position_error_m": 1.231102945506356
+        }
+      ],
+      "normalized_pose_loss": 0.2713449449095894,
+      "photo_loss": 0.0044950902597725995,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001844118582084775
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.008510557556775966,
+      "normalized_rotation_huber": 2.6357000255584717,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": true
+  },
+  {
+    "epoch": 1,
+    "real_train_objective": 0.26111834682212204,
+    "aux_train_objective": 2.6014236180405867,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011158060393346122,
+      "trajectory_position_rmse_mean_m": 0.5132963931508038,
+      "rotation_rmse_mean_rad": 0.12298884165436923,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010432443344150872,
+          "trajectory_position_rmse_mean_m": 0.6972079371287464,
+          "rotation_rmse_mean_rad": 0.142659580389866,
+          "final_rotation_error_rad": 0.24871870941329488,
+          "final_position_error_m": 1.2176595364398124
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010229827200207415,
+          "trajectory_position_rmse_mean_m": 0.4233608988509494,
+          "rotation_rmse_mean_rad": 0.13061659236210288,
+          "final_rotation_error_rad": 0.23212742193556302,
+          "final_position_error_m": 0.5379707597348662
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009018876843784374,
+          "trajectory_position_rmse_mean_m": 0.41701816928067204,
+          "rotation_rmse_mean_rad": 0.1457121855777256,
+          "final_rotation_error_rad": 0.25735586974195657,
+          "final_position_error_m": 0.5324642374549765
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014254257917123087,
+          "trajectory_position_rmse_mean_m": 0.5155985673428473,
+          "rotation_rmse_mean_rad": 0.0729670082877824,
+          "final_rotation_error_rad": 0.129235429181786,
+          "final_position_error_m": 1.2948090169324047
+        }
+      ],
+      "normalized_pose_loss": 0.2815994782064428,
+      "photo_loss": 0.0044834840640275925,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0018682035151869059
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.0076541667455930695,
+      "normalized_rotation_huber": 2.323519468307495,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4245404112152755
+  },
+  {
+    "epoch": 2,
+    "real_train_objective": 0.26628936065900666,
+    "aux_train_objective": 2.2753597058747945,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011148552933243122,
+      "trajectory_position_rmse_mean_m": 0.5142289958308947,
+      "rotation_rmse_mean_rad": 0.12477488469327239,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010426431508616356,
+          "trajectory_position_rmse_mean_m": 0.6973102374858167,
+          "rotation_rmse_mean_rad": 0.14781862685384617,
+          "final_rotation_error_rad": 0.25662622503454235,
+          "final_position_error_m": 1.2160470103910255
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01023431930473022,
+          "trajectory_position_rmse_mean_m": 0.4236773247165004,
+          "rotation_rmse_mean_rad": 0.13029339944405877,
+          "final_rotation_error_rad": 0.2316203286858492,
+          "final_position_error_m": 0.5383692349741855
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009010741431590932,
+          "trajectory_position_rmse_mean_m": 0.4228877723102027,
+          "rotation_rmse_mean_rad": 0.14574284377976213,
+          "final_rotation_error_rad": 0.2574684958094919,
+          "final_position_error_m": 0.5282976671071483
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014230801215647147,
+          "trajectory_position_rmse_mean_m": 0.5130406488110588,
+          "rotation_rmse_mean_rad": 0.07524466869542243,
+          "final_rotation_error_rad": 0.13309109552821646,
+          "final_position_error_m": 1.28178292839108
+        }
+      ],
+      "normalized_pose_loss": 0.28571656331345063,
+      "photo_loss": 0.004492615047729944,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001888261060230434
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.007203782853866536,
+      "normalized_rotation_huber": 2.1704806327819823,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.41640511294826865
+  },
+  {
+    "epoch": 3,
+    "real_train_objective": 0.2676499695634123,
+    "aux_train_objective": 2.2413859273258008,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.01119660258841693,
+      "trajectory_position_rmse_mean_m": 0.5181980560574381,
+      "rotation_rmse_mean_rad": 0.12641402160277176,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010547549650672403,
+          "trajectory_position_rmse_mean_m": 0.71690143568565,
+          "rotation_rmse_mean_rad": 0.14989459735477936,
+          "final_rotation_error_rad": 0.2597853040369346,
+          "final_position_error_m": 1.2559735321382113
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010269165066408282,
+          "trajectory_position_rmse_mean_m": 0.4179551480021192,
+          "rotation_rmse_mean_rad": 0.13118831103844747,
+          "final_rotation_error_rad": 0.23318132522587573,
+          "final_position_error_m": 0.5698314248831261
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009030196257132837,
+          "trajectory_position_rmse_mean_m": 0.42358274837937715,
+          "rotation_rmse_mean_rad": 0.14662429244292555,
+          "final_rotation_error_rad": 0.258827555100686,
+          "final_position_error_m": 0.5474215622640012
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01425498645579515,
+          "trajectory_position_rmse_mean_m": 0.5143528921626056,
+          "rotation_rmse_mean_rad": 0.07794888557493472,
+          "final_rotation_error_rad": 0.13778474378574865,
+          "final_position_error_m": 1.291887482986431
+        }
+      ],
+      "normalized_pose_loss": 0.28940594465888325,
+      "photo_loss": 0.0045105596189972145,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001902869320474565
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.0068236858344281675,
+      "normalized_rotation_huber": 2.044233741760254,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4498156919144094
+  },
+  {
+    "epoch": 4,
+    "real_train_objective": 0.2685498675609154,
+    "aux_train_objective": 2.0573509398259615,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011231889531827202,
+      "trajectory_position_rmse_mean_m": 0.5218315218104289,
+      "rotation_rmse_mean_rad": 0.12745526283880482,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010631545587085381,
+          "trajectory_position_rmse_mean_m": 0.7301693020362331,
+          "rotation_rmse_mean_rad": 0.15052395674807753,
+          "final_rotation_error_rad": 0.2605006806017127,
+          "final_position_error_m": 1.2833749378714125
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010278523082824245,
+          "trajectory_position_rmse_mean_m": 0.4140859412408568,
+          "rotation_rmse_mean_rad": 0.13112394638392802,
+          "final_rotation_error_rad": 0.2330783918268785,
+          "final_position_error_m": 0.5819975347224239
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.00905293540976925,
+          "trajectory_position_rmse_mean_m": 0.42705250219621704,
+          "rotation_rmse_mean_rad": 0.14627099361476723,
+          "final_rotation_error_rad": 0.25824095561396243,
+          "final_position_error_m": 0.5689767667614141
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014282434384683818,
+          "trajectory_position_rmse_mean_m": 0.5160183417684088,
+          "rotation_rmse_mean_rad": 0.08190215460844656,
+          "final_rotation_error_rad": 0.1446250527411104,
+          "final_position_error_m": 1.304677398551831
+        }
+      ],
+      "normalized_pose_loss": 0.2922167960722842,
+      "photo_loss": 0.004523293431099485,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019124774262309074
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.006478830738018858,
+      "normalized_rotation_huber": 1.9280433416366578,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4110297719016671
+  },
+  {
+    "epoch": 5,
+    "real_train_objective": 0.26961136535683666,
+    "aux_train_objective": 1.9638080628294694,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011213609088927478,
+      "trajectory_position_rmse_mean_m": 0.5254681400749873,
+      "rotation_rmse_mean_rad": 0.1284944062370355,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010652964592153785,
+          "trajectory_position_rmse_mean_m": 0.738186294962272,
+          "rotation_rmse_mean_rad": 0.1525230364816785,
+          "final_rotation_error_rad": 0.26338055649836384,
+          "final_position_error_m": 1.2973164930878283
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010259510132237816,
+          "trajectory_position_rmse_mean_m": 0.41502654343024104,
+          "rotation_rmse_mean_rad": 0.1312784937280236,
+          "final_rotation_error_rad": 0.2332613517744545,
+          "final_position_error_m": 0.5723765060163667
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009056351816798798,
+          "trajectory_position_rmse_mean_m": 0.43760583441490236,
+          "rotation_rmse_mean_rad": 0.14685206436591464,
+          "final_rotation_error_rad": 0.25918914897344353,
+          "final_position_error_m": 0.5727069056157201
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014220386922032055,
+          "trajectory_position_rmse_mean_m": 0.5110538874925339,
+          "rotation_rmse_mean_rad": 0.08332403037252528,
+          "final_rotation_error_rad": 0.14727182260251784,
+          "final_position_error_m": 1.2776925208420502
+        }
+      ],
+      "normalized_pose_loss": 0.2947048386137689,
+      "photo_loss": 0.004533451698701735,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019246212905272841
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.006149289625749535,
+      "normalized_rotation_huber": 1.818203854560852,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4671727940440178
+  },
+  {
+    "epoch": 6,
+    "real_train_objective": 0.26989090787106423,
+    "aux_train_objective": 1.86950756687867,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011217766118972282,
+      "trajectory_position_rmse_mean_m": 0.5294399483401838,
+      "rotation_rmse_mean_rad": 0.12933166389598183,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010717683698975316,
+          "trajectory_position_rmse_mean_m": 0.7517777674842278,
+          "rotation_rmse_mean_rad": 0.15456066620844464,
+          "final_rotation_error_rad": 0.2665132162204933,
+          "final_position_error_m": 1.323528965131839
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01025950306384632,
+          "trajectory_position_rmse_mean_m": 0.4144629699724286,
+          "rotation_rmse_mean_rad": 0.13181535517416293,
+          "final_rotation_error_rad": 0.23418706470596024,
+          "final_position_error_m": 0.5757459467668989
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009051631593653528,
+          "trajectory_position_rmse_mean_m": 0.4425006039560009,
+          "rotation_rmse_mean_rad": 0.14752528118976274,
+          "final_rotation_error_rad": 0.26011631341856917,
+          "final_position_error_m": 0.5755850085773551
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014187844279673708,
+          "trajectory_position_rmse_mean_m": 0.509018451948078,
+          "rotation_rmse_mean_rad": 0.08342535301155704,
+          "final_rotation_error_rad": 0.14758801441905278,
+          "final_position_error_m": 1.261907726111024
+        }
+      ],
+      "normalized_pose_loss": 0.29693634051773415,
+      "photo_loss": 0.00454569920597963,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019342716550454497
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.005862211444878303,
+      "normalized_rotation_huber": 1.7234715509414673,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4282113607041538
+  },
+  {
+    "epoch": 7,
+    "real_train_objective": 0.2712914017676508,
+    "aux_train_objective": 1.6883838239469027,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011246797925215808,
+      "trajectory_position_rmse_mean_m": 0.5341694159255983,
+      "rotation_rmse_mean_rad": 0.1302717947436888,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01082147898256803,
+          "trajectory_position_rmse_mean_m": 0.7693454207228159,
+          "rotation_rmse_mean_rad": 0.1551391714107144,
+          "final_rotation_error_rad": 0.26754834573271097,
+          "final_position_error_m": 1.3577898102373744
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010269652483269491,
+          "trajectory_position_rmse_mean_m": 0.4127577959396425,
+          "rotation_rmse_mean_rad": 0.13283621131834378,
+          "final_rotation_error_rad": 0.2359326387988119,
+          "final_position_error_m": 0.5873566109951237
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009050728048703799,
+          "trajectory_position_rmse_mean_m": 0.4449894293787537,
+          "rotation_rmse_mean_rad": 0.14867963136348988,
+          "final_rotation_error_rad": 0.26217288139451683,
+          "final_position_error_m": 0.5815714344026474
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014194224409021999,
+          "trajectory_position_rmse_mean_m": 0.5095850176611809,
+          "rotation_rmse_mean_rad": 0.08443216488220708,
+          "final_rotation_error_rad": 0.14935779042394287,
+          "final_position_error_m": 1.2622299323555455
+        }
+      ],
+      "normalized_pose_loss": 0.29970689020564206,
+      "photo_loss": 0.004558733963973858,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019447054946795106
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.00560206576300004,
+      "normalized_rotation_huber": 1.6370058012008668,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4375379141420126
+  },
+  {
+    "epoch": 8,
+    "real_train_objective": 0.2723359916377906,
+    "aux_train_objective": 1.7373433583661129,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011250529533780952,
+      "trajectory_position_rmse_mean_m": 0.5383236894008347,
+      "rotation_rmse_mean_rad": 0.1308547421836935,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010868880766971309,
+          "trajectory_position_rmse_mean_m": 0.781411382711125,
+          "rotation_rmse_mean_rad": 0.15909462132559452,
+          "final_rotation_error_rad": 0.27344514889792265,
+          "final_position_error_m": 1.3799829419466558
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010255639575463065,
+          "trajectory_position_rmse_mean_m": 0.41457656900697826,
+          "rotation_rmse_mean_rad": 0.13300753403858193,
+          "final_rotation_error_rad": 0.2361762939380948,
+          "final_position_error_m": 0.5810837950864488
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009031601844371741,
+          "trajectory_position_rmse_mean_m": 0.4469196180024103,
+          "rotation_rmse_mean_rad": 0.1489529275387867,
+          "final_rotation_error_rad": 0.26250182048258053,
+          "final_position_error_m": 0.570203317385719
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.0141921497687351,
+          "trajectory_position_rmse_mean_m": 0.5103871878828256,
+          "rotation_rmse_mean_rad": 0.08236388583181091,
+          "final_rotation_error_rad": 0.14619180151247224,
+          "final_position_error_m": 1.2566490638928034
+        }
+      ],
+      "normalized_pose_loss": 0.30209489084368374,
+      "photo_loss": 0.004567936322553523,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019561329390853643
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.005349806846526857,
+      "normalized_rotation_huber": 1.5519450283050538,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4337308113463223
+  },
+  {
+    "epoch": 9,
+    "real_train_objective": 0.27346436734275403,
+    "aux_train_objective": 1.5646147602482845,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.01124047566785401,
+      "trajectory_position_rmse_mean_m": 0.5390757263726016,
+      "rotation_rmse_mean_rad": 0.13129279940081204,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01087583358683026,
+          "trajectory_position_rmse_mean_m": 0.7828158167555247,
+          "rotation_rmse_mean_rad": 0.1585324504240515,
+          "final_rotation_error_rad": 0.2723660117079244,
+          "final_position_error_m": 1.3830161763305284
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010248412065033026,
+          "trajectory_position_rmse_mean_m": 0.41290034183791896,
+          "rotation_rmse_mean_rad": 0.13263307361310678,
+          "final_rotation_error_rad": 0.23551753375194526,
+          "final_position_error_m": 0.5789689940155025
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009048381083196704,
+          "trajectory_position_rmse_mean_m": 0.4545485751796463,
+          "rotation_rmse_mean_rad": 0.14914727042105858,
+          "final_rotation_error_rad": 0.2629323356622054,
+          "final_position_error_m": 0.5837822002220938
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014149426372421623,
+          "trajectory_position_rmse_mean_m": 0.5060381717173166,
+          "rotation_rmse_mean_rad": 0.08485840314503125,
+          "final_rotation_error_rad": 0.1505580947165316,
+          "final_position_error_m": 1.2385202704257348
+        }
+      ],
+      "normalized_pose_loss": 0.3034977869472312,
+      "photo_loss": 0.004575580454445514,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001963165123015642
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.005131631282204123,
+      "normalized_rotation_huber": 1.4785600757598878,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.43858771957457066
+  },
+  {
+    "epoch": 10,
+    "real_train_objective": 0.2738585594411272,
+    "aux_train_objective": 1.5914534157828282,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011230601077121568,
+      "trajectory_position_rmse_mean_m": 0.5393440389855582,
+      "rotation_rmse_mean_rad": 0.13169257447345417,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010867057949966206,
+          "trajectory_position_rmse_mean_m": 0.7809138983669137,
+          "rotation_rmse_mean_rad": 0.1578670214835722,
+          "final_rotation_error_rad": 0.27117085782878647,
+          "final_position_error_m": 1.3802732926860957
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010225998047156125,
+          "trajectory_position_rmse_mean_m": 0.4113915792561408,
+          "rotation_rmse_mean_rad": 0.13245607873249882,
+          "final_rotation_error_rad": 0.23522942066326932,
+          "final_position_error_m": 0.5668283150109216
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009060413133071024,
+          "trajectory_position_rmse_mean_m": 0.46031638711141765,
+          "rotation_rmse_mean_rad": 0.14947753161345137,
+          "final_rotation_error_rad": 0.26352554278090684,
+          "final_position_error_m": 0.5956471065501999
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014133312829039265,
+          "trajectory_position_rmse_mean_m": 0.5047542912077603,
+          "rotation_rmse_mean_rad": 0.08696966606429436,
+          "final_rotation_error_rad": 0.15429686998809244,
+          "final_position_error_m": 1.232574989362244
+        }
+      ],
+      "normalized_pose_loss": 0.3046036100567286,
+      "photo_loss": 0.004580329408653867,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019695826340466738
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.0049380608013286625,
+      "normalized_rotation_huber": 1.4135491275787353,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4237462808378041
+  },
+  {
+    "epoch": 11,
+    "real_train_objective": 0.27483318713641847,
+    "aux_train_objective": 1.458108923937145,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011238560357861855,
+      "trajectory_position_rmse_mean_m": 0.5430232171723242,
+      "rotation_rmse_mean_rad": 0.13242884495732324,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010932684703958412,
+          "trajectory_position_rmse_mean_m": 0.7932965035036327,
+          "rotation_rmse_mean_rad": 0.15910595109172718,
+          "final_rotation_error_rad": 0.2730329398118336,
+          "final_position_error_m": 1.4037523142797848
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010230317064126408,
+          "trajectory_position_rmse_mean_m": 0.41245408336554024,
+          "rotation_rmse_mean_rad": 0.13294144053370274,
+          "final_rotation_error_rad": 0.2360556502542687,
+          "final_position_error_m": 0.5716270085055768
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009047906520925504,
+          "trajectory_position_rmse_mean_m": 0.4628772553231538,
+          "rotation_rmse_mean_rad": 0.15014481738866683,
+          "final_rotation_error_rad": 0.26467632048384887,
+          "final_position_error_m": 0.5909261143860954
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014112879266439128,
+          "trajectory_position_rmse_mean_m": 0.5034650264969697,
+          "rotation_rmse_mean_rad": 0.0875231708151962,
+          "final_rotation_error_rad": 0.1552987388974698,
+          "final_position_error_m": 1.2220585631725596
+        }
+      ],
+      "normalized_pose_loss": 0.30656068798285635,
+      "photo_loss": 0.00459007338513082,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001977643696591258
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.0047795230550619,
+      "normalized_rotation_huber": 1.3606798553466797,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.45596114499494433
+  },
+  {
+    "epoch": 12,
+    "real_train_objective": 0.27535024489989035,
+    "aux_train_objective": 1.4030990318248147,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011240871632292503,
+      "trajectory_position_rmse_mean_m": 0.5445551098919446,
+      "rotation_rmse_mean_rad": 0.13258534770320918,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01095911866489971,
+          "trajectory_position_rmse_mean_m": 0.7987272277799242,
+          "rotation_rmse_mean_rad": 0.16038830895869338,
+          "final_rotation_error_rad": 0.2747332596967432,
+          "final_position_error_m": 1.4147022204480675
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010232387270673977,
+          "trajectory_position_rmse_mean_m": 0.4116369303846125,
+          "rotation_rmse_mean_rad": 0.13262385508823044,
+          "final_rotation_error_rad": 0.2354852929600061,
+          "final_position_error_m": 0.575441846106255
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009046748724148613,
+          "trajectory_position_rmse_mean_m": 0.46516080779760555,
+          "rotation_rmse_mean_rad": 0.15022560289300682,
+          "final_rotation_error_rad": 0.2646819824537566,
+          "final_position_error_m": 0.5904269462306403
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014098974663727311,
+          "trajectory_position_rmse_mean_m": 0.5026954736056359,
+          "rotation_rmse_mean_rad": 0.08710362387290603,
+          "final_rotation_error_rad": 0.15482055507993803,
+          "final_position_error_m": 1.2152356804547613
+        }
+      ],
+      "normalized_pose_loss": 0.3075954078429907,
+      "photo_loss": 0.0045972615316622525,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019826265051960945
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.0046432028698216105,
+      "normalized_rotation_huber": 1.3150070428848266,
+      "pairs": 800
+    },
+    "eligible": true,
+    "selected": false,
+    "elapsed_s": 0.4284246866591275
+  },
+  {
+    "epoch": 13,
+    "real_train_objective": 0.27590978959297613,
+    "aux_train_objective": 1.4256185073601573,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011230855456421027,
+      "trajectory_position_rmse_mean_m": 0.5462062692524396,
+      "rotation_rmse_mean_rad": 0.1332443891736771,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010966309176285235,
+          "trajectory_position_rmse_mean_m": 0.8013348121898347,
+          "rotation_rmse_mean_rad": 0.16102547844628032,
+          "final_rotation_error_rad": 0.27561157021892974,
+          "final_position_error_m": 1.4193214171166904
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010219444890904601,
+          "trajectory_position_rmse_mean_m": 0.41234082214029455,
+          "rotation_rmse_mean_rad": 0.13281863803591173,
+          "final_rotation_error_rad": 0.23584576107716068,
+          "final_position_error_m": 0.5681112826906481
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009049998397541887,
+          "trajectory_position_rmse_mean_m": 0.47054932257322835,
+          "rotation_rmse_mean_rad": 0.15052074931336637,
+          "final_rotation_error_rad": 0.2652928841597783,
+          "final_position_error_m": 0.5945372536846059
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014068724011382951,
+          "trajectory_position_rmse_mean_m": 0.5006001201064011,
+          "rotation_rmse_mean_rad": 0.08861269089914992,
+          "final_rotation_error_rad": 0.15747916889133765,
+          "final_position_error_m": 1.2032345575617538
+        }
+      ],
+      "normalized_pose_loss": 0.30886737800123704,
+      "photo_loss": 0.0046025446274472245,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001989212818443775
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.0045254091462372465,
+      "normalized_rotation_huber": 1.2752683973312378,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.4319626190699637
+  },
+  {
+    "epoch": 14,
+    "real_train_objective": 0.2763753556326606,
+    "aux_train_objective": 1.266695488440363,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.01126008851242316,
+      "trajectory_position_rmse_mean_m": 0.5488476954178211,
+      "rotation_rmse_mean_rad": 0.13343946093369918,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.011042054800526727,
+          "trajectory_position_rmse_mean_m": 0.8133378889325413,
+          "rotation_rmse_mean_rad": 0.16158413247329856,
+          "final_rotation_error_rad": 0.27639358823945026,
+          "final_position_error_m": 1.4432032599213234
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010236986113961951,
+          "trajectory_position_rmse_mean_m": 0.410945759776597,
+          "rotation_rmse_mean_rad": 0.13302119420705985,
+          "final_rotation_error_rad": 0.2361524797744816,
+          "final_position_error_m": 0.5823687635553911
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009043890699407012,
+          "trajectory_position_rmse_mean_m": 0.46847192240595475,
+          "rotation_rmse_mean_rad": 0.15090265019681917,
+          "final_rotation_error_rad": 0.2659190034964813,
+          "final_position_error_m": 0.5925569208080512
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014094096470945212,
+          "trajectory_position_rmse_mean_m": 0.5026352105561912,
+          "rotation_rmse_mean_rad": 0.08824986685761911,
+          "final_rotation_error_rad": 0.15697662165621695,
+          "final_position_error_m": 1.2136141612228426
+        }
+      ],
+      "normalized_pose_loss": 0.31005922094661387,
+      "photo_loss": 0.00461035785288667,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019925942178815603
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.004435760678702447,
+      "normalized_rotation_huber": 1.2452733945846557,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.44660082506015897
+  },
+  {
+    "epoch": 15,
+    "real_train_objective": 0.2764914061755591,
+    "aux_train_objective": 1.2954405357963161,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011247115648438336,
+      "trajectory_position_rmse_mean_m": 0.5495142305362453,
+      "rotation_rmse_mean_rad": 0.13380791251563573,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.011032643673095878,
+          "trajectory_position_rmse_mean_m": 0.8121705451586293,
+          "rotation_rmse_mean_rad": 0.16131377252772888,
+          "final_rotation_error_rad": 0.2759893855074003,
+          "final_position_error_m": 1.4414157978672137
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010225050373932199,
+          "trajectory_position_rmse_mean_m": 0.4106713474567179,
+          "rotation_rmse_mean_rad": 0.13353952287931092,
+          "final_rotation_error_rad": 0.23705174976253032,
+          "final_position_error_m": 0.5757684384920532
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009048825240538702,
+          "trajectory_position_rmse_mean_m": 0.47458115371297865,
+          "rotation_rmse_mean_rad": 0.15161015184211535,
+          "final_rotation_error_rad": 0.2671421657454742,
+          "final_position_error_m": 0.5968888555765567
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014065501122840319,
+          "trajectory_position_rmse_mean_m": 0.5006338758166549,
+          "rotation_rmse_mean_rad": 0.08876820281338778,
+          "final_rotation_error_rad": 0.15788321621017493,
+          "final_position_error_m": 1.2021424193459667
+        }
+      ],
+      "normalized_pose_loss": 0.3104197844189016,
+      "photo_loss": 0.00461376190241707,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019956929609179497
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.004367052717343641,
+      "normalized_rotation_huber": 1.2222847843170166,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.43243574164807796
+  },
+  {
+    "epoch": 16,
+    "real_train_objective": 0.2769461776842823,
+    "aux_train_objective": 1.3042114471134387,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011234937125316754,
+      "trajectory_position_rmse_mean_m": 0.5491373933495984,
+      "rotation_rmse_mean_rad": 0.1337603861838883,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.011015502998731138,
+          "trajectory_position_rmse_mean_m": 0.8101363615402325,
+          "rotation_rmse_mean_rad": 0.16128113784992537,
+          "final_rotation_error_rad": 0.2757052787596737,
+          "final_position_error_m": 1.437185785687658
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010210047224520716,
+          "trajectory_position_rmse_mean_m": 0.4116637516449108,
+          "rotation_rmse_mean_rad": 0.13276554019923834,
+          "final_rotation_error_rad": 0.23572933940496044,
+          "final_position_error_m": 0.5661410570581564
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009046999819860317,
+          "trajectory_position_rmse_mean_m": 0.4749605125567026,
+          "rotation_rmse_mean_rad": 0.15109562263432766,
+          "final_rotation_error_rad": 0.26627669546475846,
+          "final_position_error_m": 0.5957914695507475
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014052070041696074,
+          "trajectory_position_rmse_mean_m": 0.49978894765654813,
+          "rotation_rmse_mean_rad": 0.08989924405206183,
+          "final_rotation_error_rad": 0.15995664371581605,
+          "final_position_error_m": 1.1963662405254596
+        }
+      ],
+      "normalized_pose_loss": 0.3108576694924628,
+      "photo_loss": 0.004612847317908727,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0019983185920864344
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.004295222219554131,
+      "normalized_rotation_huber": 1.1978297805786133,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.4294886579737067
+  },
+  {
+    "epoch": 17,
+    "real_train_objective": 0.2772642787377439,
+    "aux_train_objective": 1.2339977982797121,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011232406882933454,
+      "trajectory_position_rmse_mean_m": 0.550022880244236,
+      "rotation_rmse_mean_rad": 0.13394553058541084,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01102140672211241,
+          "trajectory_position_rmse_mean_m": 0.8112510185681511,
+          "rotation_rmse_mean_rad": 0.16156684059781612,
+          "final_rotation_error_rad": 0.2761191198260752,
+          "final_position_error_m": 1.4397006680885325
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010205721319751154,
+          "trajectory_position_rmse_mean_m": 0.41158143437820205,
+          "rotation_rmse_mean_rad": 0.13286122312550186,
+          "final_rotation_error_rad": 0.23588187535099756,
+          "final_position_error_m": 0.5642151543319911
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.00904721950895077,
+          "trajectory_position_rmse_mean_m": 0.47827888425560827,
+          "rotation_rmse_mean_rad": 0.15130569337359384,
+          "final_rotation_error_rad": 0.26666885996394457,
+          "final_position_error_m": 0.5965314482877525
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014042347485420518,
+          "trajectory_position_rmse_mean_m": 0.4989801837749824,
+          "rotation_rmse_mean_rad": 0.09004836524473153,
+          "final_rotation_error_rad": 0.16025974306292806,
+          "final_position_error_m": 1.1927859167305384
+        }
+      ],
+      "normalized_pose_loss": 0.3112139284011707,
+      "photo_loss": 0.0046160041387356705,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0020004711113870144
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.004249128296174046,
+      "normalized_rotation_huber": 1.1823110675811768,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.47822486935183406
+  },
+  {
+    "epoch": 18,
+    "real_train_objective": 0.2775573975826228,
+    "aux_train_objective": 1.325414732882851,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011234856446239984,
+      "trajectory_position_rmse_mean_m": 0.5504888580947572,
+      "rotation_rmse_mean_rad": 0.13410993556308484,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.01102922064741076,
+          "trajectory_position_rmse_mean_m": 0.8130336533556731,
+          "rotation_rmse_mean_rad": 0.16188310262871794,
+          "final_rotation_error_rad": 0.2765761601629766,
+          "final_position_error_m": 1.4430610587728858
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010203170418171988,
+          "trajectory_position_rmse_mean_m": 0.4121510165905466,
+          "rotation_rmse_mean_rad": 0.13288037310433806,
+          "final_rotation_error_rad": 0.23591889757874382,
+          "final_position_error_m": 0.5626595861060371
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009042657372740254,
+          "trajectory_position_rmse_mean_m": 0.4771636493945415,
+          "rotation_rmse_mean_rad": 0.15149924134570233,
+          "final_rotation_error_rad": 0.2669657449039242,
+          "final_position_error_m": 0.5937364754250525
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014048841604850381,
+          "trajectory_position_rmse_mean_m": 0.4996071130382678,
+          "rotation_rmse_mean_rad": 0.09017702517358105,
+          "final_rotation_error_rad": 0.16053799596143545,
+          "final_position_error_m": 1.1947272466020553
+        }
+      ],
+      "normalized_pose_loss": 0.31174476916466526,
+      "photo_loss": 0.004616816942322644,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.002003088826313615
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.004205069764464382,
+      "normalized_rotation_huber": 1.1676056480407715,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.4648351729847491
+  },
+  {
+    "epoch": 19,
+    "real_train_objective": 0.2775969311619923,
+    "aux_train_objective": 1.1881975437465466,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011245904910296194,
+      "trajectory_position_rmse_mean_m": 0.551755954349649,
+      "rotation_rmse_mean_rad": 0.1341787884664233,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.011061016852736092,
+          "trajectory_position_rmse_mean_m": 0.8180455831639599,
+          "rotation_rmse_mean_rad": 0.16193954924778173,
+          "final_rotation_error_rad": 0.2766534729310947,
+          "final_position_error_m": 1.453015346069963
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010210548222599444,
+          "trajectory_position_rmse_mean_m": 0.4114681845947174,
+          "rotation_rmse_mean_rad": 0.13300202343595627,
+          "final_rotation_error_rad": 0.23611392348691704,
+          "final_position_error_m": 0.5686720704915806
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009042475369038058,
+          "trajectory_position_rmse_mean_m": 0.4775407693698315,
+          "rotation_rmse_mean_rad": 0.1516614993646709,
+          "final_rotation_error_rad": 0.2672529808583878,
+          "final_position_error_m": 0.5947423594915076
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014053958850925087,
+          "trajectory_position_rmse_mean_m": 0.4999692802700871,
+          "rotation_rmse_mean_rad": 0.09011208181728432,
+          "final_rotation_error_rad": 0.16045422433511144,
+          "final_position_error_m": 1.197419029239136
+        }
+      ],
+      "normalized_pose_loss": 0.3121129154559955,
+      "photo_loss": 0.00462033395566533,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0020037288777530193
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.00417893708710136,
+      "normalized_rotation_huber": 1.1588925123214722,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.6763572101481259
+  },
+  {
+    "epoch": 20,
+    "real_train_objective": 0.277714625475195,
+    "aux_train_objective": 1.2770291755073948,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011243136482327026,
+      "trajectory_position_rmse_mean_m": 0.552148513444165,
+      "rotation_rmse_mean_rad": 0.13438101843117706,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.011062939238319767,
+          "trajectory_position_rmse_mean_m": 0.8185665792382347,
+          "rotation_rmse_mean_rad": 0.1621743758207499,
+          "final_rotation_error_rad": 0.27703656452864006,
+          "final_position_error_m": 1.453894071974927
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010207308633527451,
+          "trajectory_position_rmse_mean_m": 0.41170374379729546,
+          "rotation_rmse_mean_rad": 0.13313548826827304,
+          "final_rotation_error_rad": 0.23634970618241039,
+          "final_position_error_m": 0.5669772185620495
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.009041528281054458,
+          "trajectory_position_rmse_mean_m": 0.4788265481187402,
+          "rotation_rmse_mean_rad": 0.15185478665941093,
+          "final_rotation_error_rad": 0.26760417979585716,
+          "final_position_error_m": 0.5945734574152023
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.014046546338975464,
+          "trajectory_position_rmse_mean_m": 0.49949718262238957,
+          "rotation_rmse_mean_rad": 0.09035942297627438,
+          "final_rotation_error_rad": 0.1608953103969412,
+          "final_position_error_m": 1.1941971525921047
+        }
+      ],
+      "normalized_pose_loss": 0.31256986607858284,
+      "photo_loss": 0.004621612874500866,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.0020062352996319532
+    },
+    "aux_validation": {
+      "rotation_geodesic_rmse_rad": 0.004147755907682074,
+      "normalized_rotation_huber": 1.1483858060836791,
+      "pairs": 800
+    },
+    "eligible": false,
+    "selected": false,
+    "elapsed_s": 0.44522539898753166
+  }
+]

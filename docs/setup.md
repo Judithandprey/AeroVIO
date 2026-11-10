@@ -2,14 +2,17 @@
 
 The experimental branch contains a trained **small motion CNN**, a version with
 training-only warping supervision, optional sparse-map correction, and explicit
-rotation/input ablations. The original official KLT + IMU baseline is frozen at
+rotation/input ablations, plus a rotation-focused auxiliary-training experiment.
+The original official KLT + IMU baseline is frozen at
 `baseline-klt-imu-v1`.
 The working `workspace/solution/` currently selects the pose-only learned model.
 
 The runner and runtime are pinned to
 [viobench 2072fa9](https://github.com/jonas-eschmann/viobench/tree/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca).
 Read [architecture/training](learned-motion.md), the
-[current rotation/input experiment](../experiments/motion-ablation-v2/README.md),
+[rotation-training guide](rotation-focused-training.md), the
+[current v3 record](../experiments/rotation-focus-v3/README.md), the
+[completed rotation/input experiment](../experiments/motion-ablation-v2/README.md),
 and [earlier geometry evidence](../experiments/learned-motion-v1/README.md)
 alongside these commands. The [warping/world-model guide](warping-and-world-models.md)
 explains the scope of the implemented geometry.
@@ -125,6 +128,53 @@ The Windows copy names are `AeroVIO-motion-current-v2.wasm`,
 `AeroVIO-motion-imu-compact-v2.wasm` under
 `C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/`. Copy/hash verification belongs
 in the v2 record; these filenames alone do not prove evaluation or submission.
+
+## Reproduce rotation-focused training
+
+The v3 experiment reuses the generated raw episodes, original real-motion cache,
+and the v1 warp model's `best.pt`. Run the first training reproduction in
+[learned-motion.md](learned-motion.md) if those ignored local files are absent.
+Do not regenerate or overwrite an earlier cache/model directory. The example
+commands below use new `-repro` directories.
+
+```bash
+.train-venv/bin/python scripts/prepare_rotation_data.py --manifest data/hyperdrone-motion-v2/data_manifest.json --real-cache data/motion-cache-v2 --out data/rotation-aux-v3-repro
+.train-venv/bin/python scripts/train_rotation_focus.py --cache data/motion-cache-v2 --rotation-cache data/rotation-aux-v3-repro --initial-model models/motion-warp-v1 --variant control --out models/rotation-control-v3-repro --epochs 20 --batch 64 --aux-batch 32 --lr 0.0001 --seed 17 --threads 4 --translation-guard 1.05
+.train-venv/bin/python scripts/train_rotation_focus.py --cache data/motion-cache-v2 --rotation-cache data/rotation-aux-v3-repro --initial-model models/motion-warp-v1 --variant focus --out models/rotation-focus-v3-repro --epochs 20 --batch 64 --aux-batch 32 --lr 0.0001 --seed 17 --threads 4 --aux-weight 0.1 --translation-guard 1.05
+```
+
+The auxiliary data is only for rotation supervision; original real-data pose
+and photometric losses remain active. Both runs use the fixed protocol in
+[`rotation-focus-v3.json`](../configs/rotation-focus-v3.json). The selected
+checkpoint is top-level `net.onnx`; `diagnostic-last/net.onnx` preserves the final
+epoch whether or not it qualified for selection. In the recorded run, **both
+selected epoch zero**. No deployed improvement was established.
+
+Package all four roles explicitly when reproducing the public diagnostics:
+
+```bash
+.venv/bin/python scripts/package_motion.py --model models/rotation-control-v3-repro --name rotation-control-selected-v3-repro
+.venv/bin/python scripts/package_motion.py --model models/rotation-focus-v3-repro --name rotation-focus-selected-v3-repro
+.venv/bin/python scripts/package_motion.py --model models/rotation-control-v3-repro/diagnostic-last --name rotation-control-last-v3-repro
+.venv/bin/python scripts/package_motion.py --model models/rotation-focus-v3-repro/diagnostic-last --name rotation-focus-last-v3-repro
+```
+
+The selected and unselected artifacts have different scientific roles, even when
+a filename is similar. The [pre-public addendum](../configs/rotation-focus-v3-public-diagnostics.json)
+includes the two fixed epoch-20 candidates without changing the original
+selection rule. The six-way comparison also includes the unchanged official
+baseline and starting warp model. All six public runs completed 10/10 episodes;
+consult the [v3 record](../experiments/rotation-focus-v3/README.md) for verification
+and metrics. Bundle checks and full evaluations must run serially after training
+and other compute stop. Preserve earlier v1/v2 reports.
+
+The recorded retention-only reruns are in
+`models/rotation-control-v3-retained/` and `models/rotation-focus-v3-retained/`.
+Their compact selected-model records are archived under
+`experiments/rotation-focus-v3/control/` and `focus/`; their `diagnostic-last/`
+subdirectories identify the unselected epoch-20 exports. See the
+[rotation-training guide](rotation-focused-training.md) and
+[input illustration](../experiments/rotation-focus-v3/rotation-examples.png).
 
 ## Reproduce the frozen baseline
 

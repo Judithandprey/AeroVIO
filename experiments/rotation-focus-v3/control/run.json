@@ -1,0 +1,1467 @@
+{
+  "status": "complete",
+  "started_utc": "2026-11-10T12:53:14.574906+00:00",
+  "variant": "control",
+  "seed": 17,
+  "epochs": 20,
+  "batch": 64,
+  "aux_batch": 32,
+  "auxiliary_sampler_seed": 314161,
+  "learning_rate": 0.0001,
+  "final_learning_rate": 1e-05,
+  "optimizer": "fresh Adam, all MotionNet parameters",
+  "gradient_clip_norm": 5.0,
+  "threads": 4,
+  "device": "cpu",
+  "parameters": 29398,
+  "initial_weights_sha256": "5d594698aa7710432c509203e7d386a0295fde91a5acaf3837e1a182c610bf64",
+  "initial_checkpoint_sha256": "5cec91213dc289da88d9d29c300c234663672c900cf3e7e49379c0de646a45a0",
+  "initial_model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "initial_metadata_sha256": "baabc4ba9d2700ed177eb31936bd0cfc6b460f58166e8d11f21c2639f17ba934",
+  "initial_checkpoint_onnx_max_abs_difference": 4.76837158203125e-07,
+  "normalization": {
+    "state_mean": [
+      0.0002903045096900314,
+      -0.0024019810371100903,
+      4.056700709043071e-05,
+      -0.0006200654897838831,
+      -0.48943668603897095,
+      -0.0006987960077822208,
+      -1.5106808859854937e-05,
+      -0.012232117354869843,
+      -1.4507308151223697e-05,
+      0.27396294474601746,
+      0.36528390645980835,
+      0.5,
+      0.5,
+      0.05000000819563866
+    ],
+    "state_std": [
+      0.0016396129503846169,
+      0.010300121270120144,
+      0.00165434496011585,
+      0.007795785553753376,
+      0.008918380364775658,
+      0.006590625736862421,
+      0.00020447226415853947,
+      0.0002373328316025436,
+      0.0001760648301569745,
+      0.046288568526506424,
+      0.06171809509396553,
+      9.999999974752427e-07,
+      9.999999974752427e-07,
+      9.999999974752427e-07
+    ],
+    "target_mean": [
+      -7.096362969605252e-05,
+      -0.0015134280547499657,
+      0.008229664526879787,
+      -0.0002667608205229044,
+      -2.9533328415709548e-05,
+      -5.9541638620430604e-05
+    ],
+    "target_std": [
+      0.0010000000474974513,
+      0.005779764149338007,
+      0.00969107635319233,
+      0.001214494463056326,
+      0.0013117530616000295,
+      0.0012225416721776128
+    ]
+  },
+  "real_objective": "normalized pose SmoothL1 + 2 * real-image masked photometric loss",
+  "auxiliary_objective": "SmoothL1(SO3 angle / norm(initial target_std[3:]), 0), rotation only",
+  "auxiliary_weight": 0.0,
+  "auxiliary_rotation_scale_rad": 0.0021657103206962347,
+  "selection": {
+    "objective": "minimum arithmetic mean per-episode accumulated rotation RMSE on real validation",
+    "guards": "pair translation RMSE and mean unaligned trajectory position RMSE each <= ratio * epoch0",
+    "translation_guard_ratio": 1.05,
+    "include_epoch_zero": true,
+    "ties": "keep earlier checkpoint",
+    "auxiliary_validation": "diagnostic only"
+  },
+  "planned_optimizer_steps": 760,
+  "train_pairs": 2388,
+  "validation_pairs": 796,
+  "aux_train_pairs": 2400,
+  "aux_validation_pairs": 800,
+  "real_cache": {
+    "source_manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+    "source_manifest": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/data_manifest.json",
+    "input_width": 64,
+    "input_height": 48,
+    "guest_resolution": [
+      320,
+      240
+    ],
+    "splits": {
+      "train": {
+        "pairs": 2388,
+        "episodes": [
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "depth_sha256": "354af2c4147a6f504b670471247a5f0c657a384053da132503298f229ba4f095",
+            "episode_json_sha256": "be64325ef6e72000c38a0c0a85bbf7d52786d219e2d1c700d7f01ecd58d33fa0"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "depth_sha256": "4617f9fbc937b4b7e116d48a0cf68e09572ea82f296c0ea2f145865e8cbdb130",
+            "episode_json_sha256": "0d176cd9ee3baad7709d48267b2da634314ae60174f7a0c2323672a191b9861b"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "depth_sha256": "7375bee97e7224dda6e7d876e8bf7c129f4cdcb42fef1ad2530608e517d39335",
+            "episode_json_sha256": "df4b92c6c01218801c7364514880f44280598a1d74442c7fba9e2b14328cd804"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "depth_sha256": "ea2affd85e9662a8a61c582a293461bebd3031dde55c66162631071eb1a392b6",
+            "episode_json_sha256": "d26fe35a155247b5463a90f6ff36cfca5509e6865f4dfa3cc077cd50a8934b67"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "depth_sha256": "b43f4241f358d9b17285be5b1cd4db8b144ab015d68bfedd85e3608a61562bcd",
+            "episode_json_sha256": "e5a3ea7759b2c8959cb18a2cd8590d99992e382013ec7b6f207c4205dec50180"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "depth_sha256": "e22141d1e3203f3c831218f69ea773a687c250ba9d9a7d0725430b2fb288a276",
+            "episode_json_sha256": "2db9430b532030a60308f4c37921b4e3a030fcd6d755e830758ea020f25273b2"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "depth_sha256": "0bb9a4fdb43213891e2a48eb571496d30bda5d84498666f4b9a8876d5e45901c",
+            "episode_json_sha256": "1b4581c4e10a9e869fb3b7586ef41492fbe122435687ed37260f75e9966e989e"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "depth_sha256": "4e2e1bf3a5bceb7eb4eb966f3ca4dfd725a7e1baf5c52f9150df39cbf12c8558",
+            "episode_json_sha256": "6c40043c4aa6b02e0d5c39d65bb46d02ff35e930342ec219da391649fe6047c5"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "depth_sha256": "baf38d93dc21e39faedfbf1012e5bffa24549800061e0ecca71b07163303a09b",
+            "episode_json_sha256": "fd2e2484449bed4904d3999544738084d36c018501ff01e17855a4647061eb37"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "depth_sha256": "1687dd816a66d54f7ffece669a6006eff81b38170defa3d3b897eaf1aa0fce44",
+            "episode_json_sha256": "63dc13b57b3849b6c284b164b3db2225b8767c067a121fd8d10aa288618a11f4"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "depth_sha256": "565e8660881ef1a6528eb5ad80139b8cbf03a1f8d56a3b575cfd5113b5ee9919",
+            "episode_json_sha256": "5642a34e1fb27506814f227d792f87c9a328945a4c2d7cf7189c7df7badb6141"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "depth_sha256": "2add25be8f62bea5105c19909e813df1e38b257ffd0ad30ed9a314a003d46f82",
+            "episode_json_sha256": "e5760be16a7e135365f76fc649bd88764c0d88461aa531f14c0b3c2b6fe2b60f"
+          }
+        ],
+        "visible_pixel_fraction": 0.9652377010922669,
+        "sha256": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336"
+      },
+      "validation": {
+        "pairs": 796,
+        "episodes": [
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840",
+            "scene": "ProcTHOR-Train-5",
+            "frames": 200,
+            "depth_sha256": "f4bb950837384944b3ee3358e07eb8e1de4993d46732fce60ecea900d68f23f1",
+            "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841",
+            "scene": "ProcTHOR-Train-5",
+            "frames": 200,
+            "depth_sha256": "8eb5c52b046bbe56fe94da556291eb8350eab2f256561b4c60125dcd8abacfb3",
+            "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+            "scene": "ProcTHOR-Train-6",
+            "frames": 200,
+            "depth_sha256": "5385c032573ab1df43ee0d5e6536c9a1d491ae556b80c4754b041265250b2fb9",
+            "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a"
+          },
+          {
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843",
+            "scene": "ProcTHOR-Train-6",
+            "frames": 200,
+            "depth_sha256": "a8e3681e2b1ea5754e790dfc20a2f849796376bfb835d8b2fd23e416552cca27",
+            "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a"
+          }
+        ],
+        "visible_pixel_fraction": 0.9626689763923786,
+        "sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516"
+      }
+    }
+  },
+  "auxiliary_cache": {
+    "schema_version": 1,
+    "kind": "pure_rotation_augmentation",
+    "status": "complete",
+    "created_utc": "2026-11-10T12:45:43.941439+00:00",
+    "source_manifest": {
+      "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/data_manifest.json",
+      "sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d"
+    },
+    "source_real_cache": {
+      "path": "/root/projects/AeroVIO/data/motion-cache-v2",
+      "cache_json_sha256": "dd10f8f9d774c36bceb006c9f69a309266ebac509e8285503fb0652d89648c08",
+      "train_sha256": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336",
+      "validation_sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516"
+    },
+    "source_sha256": {
+      "scripts/prepare_rotation_data.py": "2420d3832a3c6c3bb4c9d7cdf746b7b229385b0e900aed07c77f05992c09757e",
+      "training/rotation_augmentation.py": "0dca2c3c963a37ccab3fb5a168e45071ac91796c463487ba3586c623b65beac5",
+      "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024"
+    },
+    "seeds": {
+      "train": 314159,
+      "validation": 314160
+    },
+    "config": {
+      "crop": 0.85,
+      "max_angle_degrees": 3.0,
+      "duration_s": 0.05,
+      "axis_classes": [
+        "camera_x_pitch",
+        "camera_y_yaw",
+        "camera_z_roll",
+        "mixed"
+      ],
+      "sampling": "balanced axis classes; uniform magnitude 0 to 3 deg; independent random sign",
+      "signed_angle_convention": "axis_vector has nonnegative dominant component; rotation_vector = axis_vector * signed_angle_radians",
+      "preprocessing": "upstream RGB640-to320 area resize, symmetric SO3 reprojection at320, shared grayscale64x48 area resize",
+      "imu": "constant camera-centre angular velocity, actual extrinsic/gravity/centripetal acceleration; independent configured bias/noise/randomwalk",
+      "supervision": "rotation only; no synthetic translation target or depth label"
+    },
+    "splits": {
+      "train": {
+        "pairs": 2400,
+        "sha256": "a45580df51474f08fb058a67c2d6befa88c0cd3a05ac72121ae1d43637199b11",
+        "scenes": [
+          "ProcTHOR-Train-2",
+          "ProcTHOR-Train-3",
+          "ProcTHOR-Train-4"
+        ],
+        "episodes": [
+          {
+            "episode_id": 0,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "episode_json_sha256": "be64325ef6e72000c38a0c0a85bbf7d52786d219e2d1c700d7f01ecd58d33fa0",
+            "source_archive_sha256": "1b548e9e8833a989f9bbe5d525e66bd2d82107206a405a03c631ed56b8a62313",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 1,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "episode_json_sha256": "0d176cd9ee3baad7709d48267b2da634314ae60174f7a0c2323672a191b9861b",
+            "source_archive_sha256": "510daca7097665a4216a36b99488b1af2e7a59957cb020fcd9e55cf62284f69c",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 2,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "episode_json_sha256": "df4b92c6c01218801c7364514880f44280598a1d74442c7fba9e2b14328cd804",
+            "source_archive_sha256": "3e5c874c1ad4e9cc834b8fd8aba429977839b45138a266e7096c8ad24fb19ff7",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 3,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831",
+            "scene": "ProcTHOR-Train-2",
+            "frames": 200,
+            "episode_json_sha256": "d26fe35a155247b5463a90f6ff36cfca5509e6865f4dfa3cc077cd50a8934b67",
+            "source_archive_sha256": "f1f085aeb54d2c911cc84a9ddd2471397d6c242cecacf843208e8ca02fe0afd3",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 4,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "episode_json_sha256": "e5a3ea7759b2c8959cb18a2cd8590d99992e382013ec7b6f207c4205dec50180",
+            "source_archive_sha256": "0193db3d026f54a25b155b7cd12950fc5758536b51cc8ebcd7c28e0dbd8a7706",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 5,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "episode_json_sha256": "2db9430b532030a60308f4c37921b4e3a030fcd6d755e830758ea020f25273b2",
+            "source_archive_sha256": "d149e47d2ac419fe7fe7bc4569f5c863f0010a2364c7447c3db4c781548b9145",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 6,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "episode_json_sha256": "1b4581c4e10a9e869fb3b7586ef41492fbe122435687ed37260f75e9966e989e",
+            "source_archive_sha256": "c401975bf403d7cf4ffd3b3fae6dc3851c250f8ad029bc89dd25404ea2aea50b",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 7,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835",
+            "scene": "ProcTHOR-Train-3",
+            "frames": 200,
+            "episode_json_sha256": "6c40043c4aa6b02e0d5c39d65bb46d02ff35e930342ec219da391649fe6047c5",
+            "source_archive_sha256": "e9e687495ef11af2cb025ffb4c107af36a72c6db60a3bd6bad5d9273e61c98f0",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 8,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "episode_json_sha256": "fd2e2484449bed4904d3999544738084d36c018501ff01e17855a4647061eb37",
+            "source_archive_sha256": "ae7b1708c0724f7ff537cf89e2cdbbe92a04bb9109778dd75f70c59037c1f2c9",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 9,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "episode_json_sha256": "63dc13b57b3849b6c284b164b3db2225b8767c067a121fd8d10aa288618a11f4",
+            "source_archive_sha256": "5c0a23dab792a0be546cc287aacf78448f3ab215b7b4828ae187ee2954bcb7c5",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 10,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "episode_json_sha256": "5642a34e1fb27506814f227d792f87c9a328945a4c2d7cf7189c7df7badb6141",
+            "source_archive_sha256": "5728a9c8fbc31d19357a435adde0a013e26961012b50ed52532ee1b7db64d97e",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 11,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839",
+            "scene": "ProcTHOR-Train-4",
+            "frames": 200,
+            "episode_json_sha256": "e5760be16a7e135365f76fc649bd88764c0d88461aa531f14c0b3c2b6fe2b60f",
+            "source_archive_sha256": "c139b34ef18fa24fbda616249bf12945da61256f1f93028a8efa9162e7e65b85",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          }
+        ]
+      },
+      "validation": {
+        "pairs": 800,
+        "sha256": "6661effc0b36f0e5084d016a05e1f132c0fd1d89b24229b1d86611821db52a67",
+        "scenes": [
+          "ProcTHOR-Train-5",
+          "ProcTHOR-Train-6"
+        ],
+        "episodes": [
+          {
+            "episode_id": 0,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840",
+            "scene": "ProcTHOR-Train-5",
+            "frames": 200,
+            "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9",
+            "source_archive_sha256": "636bd4731b9ebdd856ba76871274c3d5a2d9a6e9f51d249e6e1e5e0ed8e06013",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 1,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841",
+            "scene": "ProcTHOR-Train-5",
+            "frames": 200,
+            "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b",
+            "source_archive_sha256": "84f8328139c72e9628a94373c3caa1c12896a8effd89ac1953827756f78ad19d",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 2,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+            "scene": "ProcTHOR-Train-6",
+            "frames": 200,
+            "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a",
+            "source_archive_sha256": "e47c3b925a20c049686b542c8435f129dc82d1ea6cc6e638175d7a3f2d6c0da6",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          },
+          {
+            "episode_id": 3,
+            "path": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843",
+            "scene": "ProcTHOR-Train-6",
+            "frames": 200,
+            "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a",
+            "source_archive_sha256": "5ae40c894abdce7b541d46167519892840db1255cc67f5acd235d48547dd97b3",
+            "imu_priors": {
+              "T_cam_imu": [
+                -0.0,
+                -1.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -0.0,
+                -1.0,
+                -0.0,
+                1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "T_imu_cam": [
+                0.0,
+                0.0,
+                1.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                -1.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+              ],
+              "accel_bias_init_max": 0.2,
+              "accel_bias_random_walk": 0.001,
+              "accel_noise_std": 0.28,
+              "gravity": [
+                0.0,
+                0.0,
+                -9.81
+              ],
+              "gyro_bias_init_max": 0.02,
+              "gyro_bias_random_walk": 0.0006,
+              "gyro_noise_std": 0.07,
+              "rate_hz": 200.0
+            }
+          }
+        ]
+      }
+    },
+    "geometry_audit": {
+      "train": {
+        "all_source_rays_inside_margin_pixels": 1.0,
+        "minimum_source_clearance_pixels": 9.71567440032959,
+        "maximum_rotation_reconstruction_frobenius_error": 4.8648794054418805e-08,
+        "visible_fraction": 0.9503508843315972,
+        "axis_counts": [
+          600,
+          600,
+          600,
+          600
+        ],
+        "angle_degrees_quantiles": [
+          0.0008539055124856532,
+          0.7426546812057495,
+          1.492124319076538,
+          2.2441118359565735,
+          2.9970285892486572
+        ],
+        "imu_residual_radians_std": [
+          0.001274641021154821,
+          0.0012029227800667286,
+          0.0012451617512851954
+        ],
+        "rejected_attempts": 0
+      },
+      "validation": {
+        "all_source_rays_inside_margin_pixels": 1.0,
+        "minimum_source_clearance_pixels": 10.39411735534668,
+        "maximum_rotation_reconstruction_frobenius_error": 4.872548701206149e-08,
+        "visible_fraction": 0.9508121744791667,
+        "axis_counts": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "angle_degrees_quantiles": [
+          0.001872411579824984,
+          0.7566688656806946,
+          1.4849404096603394,
+          2.2332241535186768,
+          2.993147850036621
+        ],
+        "imu_residual_radians_std": [
+          0.0012613353319466114,
+          0.0012234169989824295,
+          0.0012592271668836474
+        ],
+        "rejected_attempts": 0
+      }
+    },
+    "limitations": [
+      "One-frame textures model static geometry under pure camera-centre rotation; no translation/disocclusion generation.",
+      "Fixed virtual crop changes calibration; network state contains the updated intrinsic values.",
+      "Synthetic bias/noise follows stored sensor priors, not a measured new sensor sequence.",
+      "Auxiliary rotation supervision must be mixed with real-motion translation/rotation losses."
+    ],
+    "finished_utc": "2026-11-10T12:46:03.631533+00:00",
+    "elapsed_s": 19.68903461517766
+  },
+  "source_sha256": {
+    "scripts/train_rotation_focus.py": "b7d4fbc57d84ac8b73dc5ba0bca73b78977b6cbfca3e5f2e324e914fb2ba5593",
+    "configs/rotation-focus-v3.json": "c0ec852fa11834fb03bad8773fd33ab260f445b7c48d80cbcdd8517f3b7b221f",
+    "training/rotation_focus.py": "05a94a4e57fdf56b22e3ff6910d55c62a197b2c3128f15556e97a8e74ae8bd53",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/motion_inference.py": "4f6efaefcac8b6f584abe5d0c7b2fd4338e2300788cf457627fa8594597586f6"
+  },
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "onnx": "1.23.2",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "finished_utc": "2026-11-10T12:53:20.831578+00:00",
+  "elapsed_s": 6.252619005739689,
+  "best_epoch": 0,
+  "best_validation": {
+    "pair_translation_rmse_m": 0.011034798892776303,
+    "trajectory_position_rmse_mean_m": 0.5187004592805404,
+    "rotation_rmse_mean_rad": 0.12128190879867945,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.010135789305265163,
+        "trajectory_position_rmse_mean_m": 0.6506016136306181,
+        "rotation_rmse_mean_rad": 0.1409591267130427,
+        "final_rotation_error_rad": 0.2475518740445884,
+        "final_position_error_m": 1.1362289514344424
+      },
+      {
+        "episode_id": 1,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.010103793208418569,
+        "trajectory_position_rmse_mean_m": 0.4219881886508053,
+        "rotation_rmse_mean_rad": 0.13482644666060595,
+        "final_rotation_error_rad": 0.23901117331425528,
+        "final_position_error_m": 0.45519471651778937
+      },
+      {
+        "episode_id": 2,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.00921681617060437,
+        "trajectory_position_rmse_mean_m": 0.49981504756851386,
+        "rotation_rmse_mean_rad": 0.14703472499556797,
+        "final_rotation_error_rad": 0.25924775789381754,
+        "final_position_error_m": 0.654530800510909
+      },
+      {
+        "episode_id": 3,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.014046230243525887,
+        "trajectory_position_rmse_mean_m": 0.5023969872722244,
+        "rotation_rmse_mean_rad": 0.06230733682550119,
+        "final_rotation_error_rad": 0.11174504001201349,
+        "final_position_error_m": 1.231102945506356
+      }
+    ],
+    "normalized_pose_loss": 0.2713449449095894,
+    "photo_loss": 0.0044950902597725995,
+    "visible_pairs": 796,
+    "rotation_residual_rmse_rad": 0.001844118582084775
+  },
+  "best_auxiliary_validation": {
+    "rotation_geodesic_rmse_rad": 0.008510557556775966,
+    "normalized_rotation_huber": 2.6357000255584717,
+    "pairs": 800
+  },
+  "baseline_validation": {
+    "pair_translation_rmse_m": 0.011034798892776303,
+    "trajectory_position_rmse_mean_m": 0.5187004592805404,
+    "rotation_rmse_mean_rad": 0.12128190879867945,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.010135789305265163,
+        "trajectory_position_rmse_mean_m": 0.6506016136306181,
+        "rotation_rmse_mean_rad": 0.1409591267130427,
+        "final_rotation_error_rad": 0.2475518740445884,
+        "final_position_error_m": 1.1362289514344424
+      },
+      {
+        "episode_id": 1,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.010103793208418569,
+        "trajectory_position_rmse_mean_m": 0.4219881886508053,
+        "rotation_rmse_mean_rad": 0.13482644666060595,
+        "final_rotation_error_rad": 0.23901117331425528,
+        "final_position_error_m": 0.45519471651778937
+      },
+      {
+        "episode_id": 2,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.00921681617060437,
+        "trajectory_position_rmse_mean_m": 0.49981504756851386,
+        "rotation_rmse_mean_rad": 0.14703472499556797,
+        "final_rotation_error_rad": 0.25924775789381754,
+        "final_position_error_m": 0.654530800510909
+      },
+      {
+        "episode_id": 3,
+        "pairs": 199,
+        "pair_translation_rmse_m": 0.014046230243525887,
+        "trajectory_position_rmse_mean_m": 0.5023969872722244,
+        "rotation_rmse_mean_rad": 0.06230733682550119,
+        "final_rotation_error_rad": 0.11174504001201349,
+        "final_position_error_m": 1.231102945506356
+      }
+    ],
+    "normalized_pose_loss": 0.2713449449095894,
+    "photo_loss": 0.0044950902597725995,
+    "visible_pairs": 796,
+    "rotation_residual_rmse_rad": 0.001844118582084775
+  },
+  "optimizer_steps": 760,
+  "real_examples_processed": 47760,
+  "auxiliary_examples_processed": 0,
+  "train_step_s": 5.166766281239688,
+  "auxiliary_forward_backward_s": 0.0,
+  "extra_compute_scope": "aux sampling, forward, loss and backward; excludes shared optimizer/clip and validation",
+  "real_minibatch_order_sha256": "247b24ba35c64a773e98e78a070f837c0f4780f3f7b507b45b70922df3ef4871",
+  "auxiliary_minibatch_order_sha256": null,
+  "checkpoint_sha256": "5cec91213dc289da88d9d29c300c234663672c900cf3e7e49379c0de646a45a0",
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "model_bytes": 119770,
+  "opencv_torch_max_abs_difference": 4.76837158203125e-07,
+  "last_candidate": {
+    "epoch": 20,
+    "selected_for_deployment": false,
+    "directory": "diagnostic-last",
+    "model_sha256": "297ffd78033c78c55c323004b020aae165c4551cf02472c45b8ab692d787f709",
+    "checkpoint_sha256": "97ee86ee8cc347028c4f36a7492e4003a7eab806c97b9aa9896b0565d72cfccd",
+    "opencv_torch_max_abs_difference": 4.76837158203125e-07,
+    "real_validation": {
+      "pair_translation_rmse_m": 0.011203019147019551,
+      "trajectory_position_rmse_mean_m": 0.5596859543095841,
+      "rotation_rmse_mean_rad": 0.12137781873837926,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.011074822199030722,
+          "trajectory_position_rmse_mean_m": 0.8110002978003223,
+          "rotation_rmse_mean_rad": 0.1349687741033254,
+          "final_rotation_error_rad": 0.23977233890533317,
+          "final_position_error_m": 1.4529605676103237
+        },
+        {
+          "episode_id": 1,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.010122206028548427,
+          "trajectory_position_rmse_mean_m": 0.419629895338529,
+          "rotation_rmse_mean_rad": 0.1402765928869384,
+          "final_rotation_error_rad": 0.24736990864162978,
+          "final_position_error_m": 0.5303266366989696
+        },
+        {
+          "episode_id": 2,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.00901679591691954,
+          "trajectory_position_rmse_mean_m": 0.5111256189040824,
+          "rotation_rmse_mean_rad": 0.15396491657571665,
+          "final_rotation_error_rad": 0.2708276802284403,
+          "final_position_error_m": 0.5691050418740741
+        },
+        {
+          "episode_id": 3,
+          "pairs": 199,
+          "pair_translation_rmse_m": 0.013986321954039382,
+          "trajectory_position_rmse_mean_m": 0.4969880051954028,
+          "rotation_rmse_mean_rad": 0.056300991387536574,
+          "final_rotation_error_rad": 0.10175314668638859,
+          "final_position_error_m": 1.232504140323426
+        }
+      ],
+      "normalized_pose_loss": 0.27302446542073733,
+      "photo_loss": 0.004538219145981211,
+      "visible_pairs": 796,
+      "rotation_residual_rmse_rad": 0.001852330518886447
+    },
+    "auxiliary_validation": {
+      "rotation_geodesic_rmse_rad": 0.009911788209400571,
+      "normalized_rotation_huber": 3.1024145603179933,
+      "pairs": 800
+    }
+  }
+}

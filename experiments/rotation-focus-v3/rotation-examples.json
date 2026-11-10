@@ -1,0 +1,57 @@
+{
+  "figure": "rotation-examples.png",
+  "cache_json_sha256": "a610f85f66d829345595c379591c908c50177b8685d7a4b202722b78c89d9235",
+  "validation_cache_sha256": "6661effc0b36f0e5084d016a05e1f132c0fd1d89b24229b1d86611821db52a67",
+  "selection": "For each x/y/z axis, highest previous-image intensity standard deviation among validation examples with absolute angle 1.5 to 2.5 degrees. No model predictions used.",
+  "display": "Nearest-neighbour display enlargement; input grayscale [0,1]; absolute difference magma scale [0,0.25], values above0.25 saturated.",
+  "examples": [
+    {
+      "cache_index": 448,
+      "axis_id": 0,
+      "signed_angle_degrees": -1.8403599262237549,
+      "rotation_vector_gt_radians": [
+        -0.03212033957242966,
+        -0.0,
+        -0.0
+      ],
+      "episode_id": 2,
+      "source_episode": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+      "scene": "ProcTHOR-Train-6",
+      "source_frame_index": 48,
+      "minimum_source_clearance_pixels": 14.369840621948242,
+      "previous_intensity_std": 0.24965129792690277
+    },
+    {
+      "cache_index": 445,
+      "axis_id": 1,
+      "signed_angle_degrees": 1.8300073146820068,
+      "rotation_vector_gt_radians": [
+        0.0,
+        0.03193965181708336,
+        0.0
+      ],
+      "episode_id": 2,
+      "source_episode": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+      "scene": "ProcTHOR-Train-6",
+      "source_frame_index": 45,
+      "minimum_source_clearance_pixels": 14.718812942504883,
+      "previous_intensity_std": 0.24972371757030487
+    },
+    {
+      "cache_index": 442,
+      "axis_id": 2,
+      "signed_angle_degrees": -1.9551697969436646,
+      "rotation_vector_gt_radians": [
+        -0.0,
+        -0.0,
+        -0.03412415087223053
+      ],
+      "episode_id": 2,
+      "source_episode": "/root/projects/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+      "scene": "ProcTHOR-Train-6",
+      "source_frame_index": 42,
+      "minimum_source_clearance_pixels": 15.62670612335205,
+      "previous_intensity_std": 0.24784699082374573
+    }
+  ]
+}

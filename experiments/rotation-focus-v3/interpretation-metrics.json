@@ -1,0 +1,23 @@
+{
+  "scope": "Fixed epoch20 diagnostics; all selected checkpoints remain epoch zero.",
+  "comparisons": {
+    "current": {
+      "sim3_ate_mean_m_change_percent": -0.4447897598160222,
+      "rotation_rmse_median_deg_change_percent": 11.535968554264242,
+      "wall_per_frame_median_ms_change_percent": 0.22633113769776614,
+      "fuel_per_frame_max_change_percent": 0.01666312237933454
+    },
+    "control-final": {
+      "sim3_ate_mean_m_change_percent": -0.7460116970533059,
+      "rotation_rmse_median_deg_change_percent": 12.104993492047322,
+      "wall_per_frame_median_ms_change_percent": 0.6809085077758237,
+      "fuel_per_frame_max_change_percent": 0.009715928412368235
+    },
+    "baseline": {
+      "sim3_ate_mean_m_change_percent": -52.865081543389635,
+      "rotation_rmse_median_deg_change_percent": 81.83575812977368,
+      "wall_per_frame_median_ms_change_percent": -67.31143783361297,
+      "fuel_per_frame_max_change_percent": -90.07733348302355
+    }
+  }
+}

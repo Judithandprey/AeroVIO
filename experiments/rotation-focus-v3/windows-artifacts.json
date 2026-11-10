@@ -1,0 +1,38 @@
+[
+  {
+    "name": "rotation-control-v3",
+    "source": "/root/projects/AeroVIO/artifacts/rotation-control-v3.wasm",
+    "windows_path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-rotation-control-v3.wasm",
+    "bytes": 50170088,
+    "sha256": "7edad4109150dec16bd9c41b3ddd2864b4f0622c81fbaadf314e7fec60ca580a",
+    "copy_verified": true,
+    "role": "selected epoch0 fallback"
+  },
+  {
+    "name": "rotation-focus-v3",
+    "source": "/root/projects/AeroVIO/artifacts/rotation-focus-v3.wasm",
+    "windows_path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-rotation-focus-v3.wasm",
+    "bytes": 50170086,
+    "sha256": "1857d1064d754390f9cb65bacc5c520daec27fdf071f6c47e50f4f7c3ed35d33",
+    "copy_verified": true,
+    "role": "selected epoch0 fallback"
+  },
+  {
+    "name": "rotation-control-v3-final",
+    "source": "/root/projects/AeroVIO/artifacts/rotation-control-v3-final.wasm",
+    "windows_path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-rotation-control-v3-final.wasm",
+    "bytes": 50170201,
+    "sha256": "a4f2726bc55ed9b6545d6c4979f93508b82e8dddc18fff78d079d9ce9c2da099",
+    "copy_verified": true,
+    "role": "unselected epoch20 diagnostic"
+  },
+  {
+    "name": "rotation-focus-v3-final",
+    "source": "/root/projects/AeroVIO/artifacts/rotation-focus-v3-final.wasm",
+    "windows_path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-rotation-focus-v3-final.wasm",
+    "bytes": 50170199,
+    "sha256": "623a8cbf377aec199287ce900633f3ecbf4ba36f1a02c6ce6c612c533198d643",
+    "copy_verified": true,
+    "role": "unselected epoch20 diagnostic"
+  }
+]

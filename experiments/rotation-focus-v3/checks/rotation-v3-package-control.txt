@@ -1,0 +1,11 @@
+wrote /root/projects/AeroVIO/artifacts/rotation-control-v3.wasm (47.8 MiB, bundle 145 KiB, 6 files)
+next: viobench check /root/projects/AeroVIO/artifacts/rotation-control-v3.wasm
+{
+  "wasm": "/root/projects/AeroVIO/artifacts/rotation-control-v3.wasm",
+  "sha256": "7edad4109150dec16bd9c41b3ddd2864b4f0622c81fbaadf314e7fec60ca580a",
+  "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "map_enabled": false,
+  "rotation_residual_enabled": true,
+  "input_mode": "image_imu",
+  "network_inputs": "images_state"
+}

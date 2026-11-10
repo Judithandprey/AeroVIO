@@ -1,0 +1,11 @@
+wrote /root/projects/AeroVIO/artifacts/rotation-focus-v3-final.wasm (47.8 MiB, bundle 145 KiB, 6 files)
+next: viobench check /root/projects/AeroVIO/artifacts/rotation-focus-v3-final.wasm
+{
+  "wasm": "/root/projects/AeroVIO/artifacts/rotation-focus-v3-final.wasm",
+  "sha256": "623a8cbf377aec199287ce900633f3ecbf4ba36f1a02c6ce6c612c533198d643",
+  "model_sha256": "d2c1703c70be4070f76492bf8c79fe10a4a3c30f9c1a04b5fd0a86123fd84c41",
+  "map_enabled": false,
+  "rotation_residual_enabled": true,
+  "input_mode": "image_imu",
+  "network_inputs": "images_state"
+}

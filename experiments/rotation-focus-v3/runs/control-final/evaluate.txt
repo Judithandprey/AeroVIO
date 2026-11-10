@@ -1,0 +1,12 @@
+0386e5c941b50fe9972ddabff84c414540fb8989: ok Sim(3) ATE 0.728 m  RPE 0.260 m/1 s  ATE 5.176 m  rot 20.4 deg  vel 0.263 m/s  filled 0  fuel/frame max 14,079,722 (p95 13,070,974)  wall/frame 1.1 ms
+9b6a92791e46815931b6d6f20e74ca9ebf62682e: ok Sim(3) ATE 1.216 m  RPE 0.290 m/1 s  ATE 6.946 m  rot 25.9 deg  vel 0.294 m/s  filled 0  fuel/frame max 14,079,472 (p95 13,075,682)  wall/frame 1.1 ms
+6e8e3766f46272c1b91eca39c320081251884947: ok Sim(3) ATE 0.825 m  RPE 0.293 m/1 s  ATE 2.339 m  rot 30.8 deg  vel 0.296 m/s  filled 0  fuel/frame max 14,079,222 (p95 13,071,078)  wall/frame 1.1 ms
+f8fb89fff0c39d51e0f073603ef93b9a2ee00455: ok Sim(3) ATE 0.700 m  RPE 0.185 m/1 s  ATE 2.689 m  rot 27.1 deg  vel 0.190 m/s  filled 0  fuel/frame max 14,079,722 (p95 13,075,124)  wall/frame 1.1 ms
+489ad518363d88bfa877f86afea144de0d846258: ok Sim(3) ATE 0.558 m  RPE 0.198 m/1 s  ATE 2.544 m  rot 14.1 deg  vel 0.202 m/s  filled 0  fuel/frame max 14,079,472 (p95 13,076,334)  wall/frame 1.1 ms
+51ea6311a50f4eeb59672012b9796244dab52f60: ok Sim(3) ATE 1.406 m  RPE 0.294 m/1 s  ATE 3.447 m  rot 22.5 deg  vel 0.297 m/s  filled 0  fuel/frame max 14,079,972 (p95 13,075,155)  wall/frame 1.1 ms
+60ed4323f3aab9c83a854f30062cb4ffbefeac12: ok Sim(3) ATE 1.280 m  RPE 0.268 m/1 s  ATE 4.009 m  rot 9.6 deg  vel 0.271 m/s  filled 0  fuel/frame max 14,079,222 (p95 13,075,126)  wall/frame 1.1 ms
+8fff5c8dc6376171fc6f865fd214cee44df2b7c3: ok Sim(3) ATE 0.969 m  RPE 0.278 m/1 s  ATE 3.139 m  rot 2.5 deg  vel 0.283 m/s  filled 0  fuel/frame max 14,079,972 (p95 13,075,177)  wall/frame 1.1 ms
+41e11443a9a5cc165ef9aeeaef11dba63614685b: ok Sim(3) ATE 1.576 m  RPE 0.251 m/1 s  ATE 2.434 m  rot 43.6 deg  vel 0.254 m/s  filled 0  fuel/frame max 14,079,222 (p95 13,077,646)  wall/frame 1.1 ms
+8321da1faa306e72df46f86a72aa3fa0d611c6d9: ok Sim(3) ATE 0.436 m  RPE 0.237 m/1 s  ATE 1.931 m  rot 2.9 deg  vel 0.243 m/s  filled 0  fuel/frame max 14,079,722 (p95 13,075,374)  wall/frame 1.1 ms
+report: /root/projects/AeroVIO/results/rotation-v3-control-final/report-rotation-control-v3-final/report.json
+summary: 10/10 episodes completed, Sim(3) ATE mean 0.970 m, fuel/frame max 14,079,972 (mean 13,027,176, median 13,020,156, p95 13,075,803, p99 13,082,466)
