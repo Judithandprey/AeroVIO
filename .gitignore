@@ -1,0 +1,55 @@
+# Local credentials and settings
+.env
+.env.*
+!.env.example
+.private/
+secrets/
+credentials*.json
+*token*.txt
+*token*.json
+
+# Python / editors
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Upstream dependency and generated build products
+/external/
+build/
+dist/
+CMakeFiles/
+CMakeCache.txt
+*.wasm
+*.o
+*.a
+*.so
+*.dll
+*.dylib
+
+# Local datasets, models, evaluations, artifacts
+/data/
+/datasets/
+/models/
+/checkpoints/
+/artifacts/
+/results/
+/logs/
+report-*/
+*.pt
+*.pth
+*.ckpt
+*.onnx
+*.npz
+*.npy
+*.zip
+*.mp4

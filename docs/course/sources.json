@@ -1,0 +1,42 @@
+{
+  "course": "EECS 116/216 Fall 2026",
+  "course_id": 1557688,
+  "retrieved_at": "2026-11-09T23:23:14.029132-08:00",
+  "course_timezone": "America/Los_Angeles",
+  "files": [
+    {
+      "canvas_file_id": 95981686,
+      "original_name": "Project 3.pdf",
+      "local_name": "Project_3.pdf",
+      "text_file": "Project_3.txt",
+      "pages": 13,
+      "size_bytes": 1339986,
+      "sha256": "d6252d9f350fa717cf4b4c71ac240f322a337ebc415cde0cd897a25fc912d16b",
+      "source_url": "https://bcourses.berkeley.edu/courses/1557688/files/95981686",
+      "source_updated_at": "2026-11-05T01:55:22Z"
+    },
+    {
+      "canvas_file_id": 96020701,
+      "original_name": "Project 3: First Stage.pdf",
+      "local_name": "Project_3_First_Stage.pdf",
+      "text_file": "Project_3_First_Stage.txt",
+      "pages": 1,
+      "size_bytes": 125925,
+      "sha256": "2c037e69659d405c4118cbeeaacf9c3907efb37451a44ce0b4e444bfef8e2309",
+      "source_url": "https://bcourses.berkeley.edu/courses/1557688/files/96020701",
+      "source_updated_at": "2026-11-09T20:19:28Z"
+    }
+  ],
+  "announcements": [
+    {
+      "title": "Project 3: First Stage",
+      "posted_at": "2026-11-09T12:29:04-08:00",
+      "url": "https://bcourses.berkeley.edu/courses/1557688/discussion_topics/7395748"
+    },
+    {
+      "title": "Project 3 Pre-Announcement",
+      "posted_at": "2026-10-26T19:46:21-07:00",
+      "url": "https://bcourses.berkeley.edu/courses/1557688/discussion_topics/7386838"
+    }
+  ]
+}

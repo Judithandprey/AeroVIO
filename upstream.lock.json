@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/jonas-eschmann/viobench",
+  "commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "reviewed_on": "2026-11-09",
+  "timezone": "America/Los_Angeles",
+  "student_guide_blob": "796dfc313b2f2dfba123f2064e5fe10578ddfa65",
+  "student_guide_url": "https://github.com/jonas-eschmann/viobench/blob/2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca/docs/STUDENT_GUIDE.md",
+  "status": "Documentation reviewed. Upstream source not installed or built. Transitive dependencies are not locked."
+}

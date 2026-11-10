@@ -1,0 +1,9 @@
+--- Page 1 ---
+14
+First Stage
+Submissions until Sunday 11/15 11:59 pm
+We will automatically pick your best submission
+Presentations: Monday 11/16
+Pareto curve: Sim(3) ATE vs. max fuel per frame
+10 held-out test episodes from a very similar distribution as the public ones
+Submission quota increased to 2 per team per day

@@ -1,0 +1,152 @@
+--- Page 1 ---
+Project 3
+EECS 116/216 Fall 2026
+https://arplaboratory.github.io/
+
+
+--- Page 2 ---
+2
+Teams
+• Groups of 3
+• At least one undergrad (enrolled in EECS 116)
+• At least one grad (enrolled in EECS 216)
+• Sign up form: https://forms.gle/6rLpqzZswP4pFqAL8
+• Link in bCourses announcement
+• Open until today 11:59pm
+• Afterwards we will manually assign teams
+
+--- Page 3 ---
+3
+Challenge: Compute-Aware VIO
+Task: Implementing a compute efficient VIO system
+• Input
+• RGB frames 320x240/640x480 (20Hz)
+• IMU (acceleration, angular rates) (200Hz)
+• Output:
+• Pose (relative to first frame, metric)
+• Position
+• Orientation
+• Twist
+• Linear velocity
+• Angular velocity
+
+
+--- Page 4 ---
+4
+Methods
+Up to you!
+Inputs
+RGB / IMU
+Outputs
+Pose / Twist
+Your Implementation
+Classic Method / Open Source /
+Neural Network / ...
+State
+
+--- Page 5 ---
+5
+Compute-Awareness
+Inputs
+RGB / IMU
+Outputs
+Pose / Twist
+Your Implementation
+Classic Method / Open Source /
+Neural Network / ...
+State
+WebAssembly! ➔ a single .wasm file
+WebAssembly “Fuel”: Measures compute costs deterministically
+Submission Server
+https://viobench.rl.tools
+Held-out test episodes
+Pareto Curve
+Submit .wasm
+
+--- Page 6 ---
+6
+Pareto Curve
+
+
+--- Page 7 ---
+7
+Compute & Submissions
+Compute
+• Two teams per lab workstation (RTX 5080)
+• Alternating daily schedule (handover at noon)
+Submissions
+• https://viobench.rl.tools
+• Group identified by token (sent to the emails registered in the form)
+• One per day per team
+
+--- Page 8 ---
+8
+AI Policy
+“Everything Goes!”
+• Industry & Academia now heavily rely on agentic coding
+• ➔ Realistic project workflow
+• Only requirement: Your solution needs to be reproducible
+• E.g. if you rely on ML, your training pipeline needs to be repeatable
+• Check out the Google Student Plan
+• Free for one year
+• You can use Antigravity (CLI)
+• Non AI-based, artisanal solutions are also appreciated
+• Robustness, simplicity of the architecture etc.
+• Please highlight this in the report
+
+--- Page 9 ---
+9
+Learning-Based Methods
+• Should be based on HyperDrone (for data-generation)
+• Example
+• Included in the viobench package
+• Training a CNN using HyperDrone
+• Bundling the trained model into a .wasm
+
+
+--- Page 10 ---
+10
+Quickstart
+Documentation & Code
+
+
+--- Page 11 ---
+11
+Training on Lab Workstations
+Conda:
+/share/instsww/anaconda3/bin/ conda init
+Restart terminal
+conda config --set auto_activate_base  false
+conda deactivate
+conda create -n myenv python=3.14 -c conda-forge
+conda activate myenv
+conda install -c nvidia/label/cuda -13.2.0 "cuda-toolkit=13.2" " cuda-nvcc=13.2" "cuda-version=13.2"
+conda install cmake
+Train and bundle model
+git clone https:// github.com/jonas-eschmann/viobench
+pip install -e viobench[train]
+cd viobench/viobench/solution/examples/python/ tiny_cnn
+python train.py --generate 8 --epochs 10
+python3 -m viobench bundle solution -o tiny_cnn.wasm
+python3 -m viobench check tiny_cnn.wasm
+
+--- Page 12 ---
+12
+Timeline (Tentative)
+Week
+11/02 Soft-launch
+11/09 First stage metrics and test datasets finalized; Pareto frontier based on
+examples/baselines
+11/16 First stage progress presentations; New Pareto frontier frozen; (New metrics
+/ test datasets)
+11/23 Second stage progress presentations; New Pareto frontier frozen; (New
+metrics / test datasets)
+11/30 Third and final presentations; Final Pareto frontier
+TBD Report submission deadline
+
+--- Page 13 ---
+13
+Progress Presentation Attendance
+• One miss permitted (in either progress presenation 1 or 2)
+• But at least someone from the team needs to present
+• Final presentations: attendance mandatory for all
