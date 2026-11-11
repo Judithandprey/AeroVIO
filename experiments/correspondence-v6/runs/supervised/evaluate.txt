@@ -1,0 +1,12 @@
+0386e5c941b50fe9972ddabff84c414540fb8989: ok Sim(3) ATE 0.580 m  RPE 0.255 m/1 s  ATE 4.856 m  rot 9.3 deg  vel 0.258 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,272,555)  wall/frame 1.5 ms
+9b6a92791e46815931b6d6f20e74ca9ebf62682e: ok Sim(3) ATE 0.681 m  RPE 0.275 m/1 s  ATE 6.322 m  rot 33.4 deg  vel 0.279 m/s  filled 0  fuel/frame max 21,874,382 (p95 19,285,036)  wall/frame 1.5 ms
+6e8e3766f46272c1b91eca39c320081251884947: ok Sim(3) ATE 0.817 m  RPE 0.286 m/1 s  ATE 2.261 m  rot 14.2 deg  vel 0.290 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,279,795)  wall/frame 1.5 ms
+f8fb89fff0c39d51e0f073603ef93b9a2ee00455: ok Sim(3) ATE 0.456 m  RPE 0.182 m/1 s  ATE 2.440 m  rot 6.5 deg  vel 0.186 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,283,910)  wall/frame 1.5 ms
+489ad518363d88bfa877f86afea144de0d846258: ok Sim(3) ATE 0.692 m  RPE 0.198 m/1 s  ATE 2.524 m  rot 8.2 deg  vel 0.201 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,285,824)  wall/frame 1.5 ms
+51ea6311a50f4eeb59672012b9796244dab52f60: ok Sim(3) ATE 1.460 m  RPE 0.299 m/1 s  ATE 3.488 m  rot 8.5 deg  vel 0.302 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,283,336)  wall/frame 1.5 ms
+60ed4323f3aab9c83a854f30062cb4ffbefeac12: ok Sim(3) ATE 1.525 m  RPE 0.263 m/1 s  ATE 4.127 m  rot 15.8 deg  vel 0.267 m/s  filled 0  fuel/frame max 21,873,632 (p95 19,283,550)  wall/frame 1.5 ms
+8fff5c8dc6376171fc6f865fd214cee44df2b7c3: ok Sim(3) ATE 1.065 m  RPE 0.279 m/1 s  ATE 3.280 m  rot 12.9 deg  vel 0.283 m/s  filled 0  fuel/frame max 21,873,882 (p95 19,284,161)  wall/frame 1.5 ms
+41e11443a9a5cc165ef9aeeaef11dba63614685b: ok Sim(3) ATE 0.888 m  RPE 0.248 m/1 s  ATE 1.995 m  rot 8.0 deg  vel 0.252 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,285,272)  wall/frame 1.5 ms
+8321da1faa306e72df46f86a72aa3fa0d611c6d9: ok Sim(3) ATE 0.522 m  RPE 0.239 m/1 s  ATE 1.909 m  rot 12.0 deg  vel 0.245 m/s  filled 0  fuel/frame max 21,874,132 (p95 19,285,309)  wall/frame 1.5 ms
+report: /root/projects/AeroVIO/results/correspondence-v6-supervised/report-correspondence-v6-supervised/report.json
+summary: 10/10 episodes completed, Sim(3) ATE mean 0.869 m, fuel/frame max 21,874,382 (mean 19,219,652, median 19,220,107, p95 19,284,517, p99 19,287,278)

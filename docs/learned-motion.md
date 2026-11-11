@@ -1,5 +1,10 @@
 # Small motion network and controlled geometry ablations
 
+The [explicit-correspondence experiment](correspondence-supervision.md) adds
+training-only local matching labels to V5, with matched continued-training control.
+The deployed graph is unchanged. Cross-entropy decreases but matching endpoint
+error worsens; no upgrade is selected after validation and seven public runs.
+
 The completed [feature-correlation follow-up](feature-correlation.md) freezes this
 translation model and adds a local matching rotation branch. Both the temporal
 branch and a matched single-frame control fail original-flight validation; their

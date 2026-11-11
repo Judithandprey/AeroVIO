@@ -1,0 +1,14 @@
+{
+  "train": {
+    "v5-temporal": 0.35528700177868205,
+    "v5-single-frame": 0.9818603346745173,
+    "continuation": 0.33035844564437866,
+    "supervised": 1.0844192455212276
+  },
+  "validation": {
+    "v5-temporal": 0.3362661302089691,
+    "v5-single-frame": 0.9959215819835663,
+    "continuation": 0.30663013458251953,
+    "supervised": 1.0675765573978424
+  }
+}

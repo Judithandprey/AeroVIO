@@ -6,7 +6,15 @@ Estimate camera pose and twist from RGB + IMU while measuring the
 accuracy-compute trade-off in a WebAssembly runtime. Developed for UC Berkeley
 EECS 116/216, Fall 2026, Project 3.
 
-**Latest completed experiment:** a lightweight local feature-correlation branch
+**Latest completed experiment:** explicit geometric correspondence supervision
+continues the V5 temporal network without changing its deployed architecture.
+Matching endpoint error worsens despite lower cross-entropy; public median
+rotation error rises from 9.7654 to 10.6784 degrees, with nearly unchanged aligned
+ATE and compute. All seven public runs and the full repeat complete. No new model
+is accepted; see [v6 evidence](experiments/correspondence-v6/README.md) and the
+[supervision guide](docs/correspondence-supervision.md).
+
+**Previous completed experiment:** a lightweight local feature-correlation branch
 adds 6,243 trainable rotation parameters while freezing translation. Across ten
 public flights it achieves 0.870938 m aligned ATE, 9.7654 degrees median rotation
 error and 1.522 ms median WASM step time. However, the matched single-frame
@@ -94,6 +102,7 @@ experiments/         Compact reports, model snapshots and provenance
     rotation-focus-v3/
     gyro-bias-v4/
     feature-correlation-v5/
+    correspondence-v6/
 docs/                Course sources, requirements, architecture and setup
 reports/             Presentation and final-report sources
 HANDOFF.md           Verified state and development boundaries

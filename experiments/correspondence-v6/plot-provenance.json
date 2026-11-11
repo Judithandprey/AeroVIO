@@ -1,0 +1,8 @@
+{
+  "script_sha256": "7b0a28714d5383fc327dba3dd2936a298ebdea68732106acfd73cd169a921842",
+  "comparison_sha256": "0d58e9056118e0fbb419a015259efda56846602a0cd100285878d0b17b880474",
+  "matching_audit_sha256": "9ca703e690d9d3a5e63e8321701aab1eb29d559a4451b2b1cc066c227df7441d",
+  "figure_sha256": "e1a32c8b964f25543cb3f81ef094e6581e9eedd085bd2b41bcc4d5eb2af5a8fd",
+  "zero_axes": true,
+  "matplotlib": "3.10.8"
+}

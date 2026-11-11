@@ -1,0 +1,112 @@
+{
+  "started_utc": "2026-11-11T02:20:43.524561+00:00",
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "-u",
+    "-m",
+    "viobench",
+    "evaluate",
+    "/root/projects/AeroVIO/artifacts/klt_imu.wasm",
+    "conta:0386e5c941b50fe9972ddabff84c414540fb8989",
+    "conta:9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+    "conta:6e8e3766f46272c1b91eca39c320081251884947",
+    "conta:f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+    "conta:489ad518363d88bfa877f86afea144de0d846258",
+    "conta:51ea6311a50f4eeb59672012b9796244dab52f60",
+    "conta:60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+    "conta:8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+    "conta:41e11443a9a5cc165ef9aeeaef11dba63614685b",
+    "conta:8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+    "--limits",
+    "/root/projects/AeroVIO/configs/evaluation-limits.json"
+  ],
+  "working_directory": "/root/projects/AeroVIO/results/correspondence-v6-baseline",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "solution_sha256": "e6206f62128469ce1e9cf814f32b985219ca8a8f38de60d2b7ec8f3ce486b1d7",
+  "workspace_solution_sha256": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9",
+  "bundle_files_sha256": {
+    "solution.py": "e6206f62128469ce1e9cf814f32b985219ca8a8f38de60d2b7ec8f3ce486b1d7"
+  },
+  "embedded_model_metadata": null,
+  "runtime_sha256": "9d889ab05cd22059913d3ac2ec34aecd9f442865c1341da416730e95add49535",
+  "wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237",
+  "wasm_bytes": 50029824,
+  "limits_sha256": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+  "selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "episodes": [
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0000.zip",
+      "hash": "0386e5c941b50fe9972ddabff84c414540fb8989"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0001.zip",
+      "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0002.zip",
+      "hash": "6e8e3766f46272c1b91eca39c320081251884947"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0003.zip",
+      "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0004.zip",
+      "hash": "489ad518363d88bfa877f86afea144de0d846258"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0005.zip",
+      "hash": "51ea6311a50f4eeb59672012b9796244dab52f60"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0006.zip",
+      "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0007.zip",
+      "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0008.zip",
+      "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0009.zip",
+      "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "wasmtime": "50.0.1",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "conta": "0.0.7",
+    "viobench": "0.0.1"
+  },
+  "baseline_source_verified": true,
+  "evidence_scope": "Local public-set evaluation only; server limits and held-out performance unverified.",
+  "finished_utc": "2026-11-11T02:22:06.704226+00:00",
+  "exit_code": 0,
+  "report_sha256": "be4a2d867f35f24dcb581ba147e80648b207c6815a36814138fad1ec439cdc77",
+  "summary": {
+    "episodes": 10,
+    "completed": 10,
+    "duration_s_median": 59.949999999999996,
+    "sim3_ate_rmse_mean": 2.04163486385224,
+    "rpe_translation_rmse_median": 2.3801332950194043,
+    "rpe_rotation_rmse_median": 0.015508917684304797,
+    "ate_rmse_median": 41.42875375995165,
+    "rotation_rmse_median": 0.23116779492804967,
+    "velocity_rmse_median": 2.5566041829414696,
+    "angular_velocity_rmse_median": 0.12197852620502328,
+    "frames_attempted": 12000,
+    "fuel_per_frame_max": 141910846,
+    "fuel_per_frame_mean": 60274322.67391667,
+    "fuel_per_frame_median": 58192153.5,
+    "fuel_per_frame_p95": 84760421.85,
+    "fuel_per_frame_p99": 98694784.53000003,
+    "fuel_total": 723291872087,
+    "wall_per_frame_median_ms": 3.101998008787632
+  }
+}

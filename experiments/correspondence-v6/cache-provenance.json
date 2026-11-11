@@ -1,0 +1,62 @@
+{
+  "protocol_sha256": "a5759341257c9a6b8f3956cf4aa205e73aeb5bc6cd7f03cb61492c05d16b951f",
+  "source_sha256": {
+    "scripts/train_correspondence.py": "123c4a6c5c3deb4aac3aba7dff17b153671c0480ea1db6d92c4c9e280de2fbd9",
+    "configs/correspondence-v6.json": "a5759341257c9a6b8f3956cf4aa205e73aeb5bc6cd7f03cb61492c05d16b951f",
+    "training/correspondence_supervision.py": "ece7d8073988d3f18f44994b8f4f2d3fe06ea6270f9cf884405d86e3e424e9f4",
+    "training/feature_correlation.py": "028be4cce7187007aa2ad1cafd8d3b077990be8b169e7f1356663cbed1356655",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+    "scripts/train_feature_correlation.py": "258328211acc5e63f8994d583e59871c80bc0427210a06ed0410545dd8c30d34",
+    "training/rotation_focus.py": "05a94a4e57fdf56b22e3ff6910d55c62a197b2c3128f15556e97a8e74ae8bd53"
+  },
+  "splits": {
+    "train": {
+      "sha256": "6fa2cbeedc48b992be1f92a850d01e0cbf5920553213393e7a09090e0bb38e33",
+      "original_sha256": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336",
+      "pairs": 2388,
+      "valid_points": 329148,
+      "valid_fraction_all_grid_points": 0.7178863065326633,
+      "pairs_with_no_valid_points": 0,
+      "displacement_image_pixels_mean": 0.267690509557724,
+      "displacement_image_pixels_quantiles": [
+        1.206313208967913e-05,
+        0.04041731916368008,
+        0.12972377240657806,
+        0.3387927711009979,
+        1.0205206751823424,
+        2.8847131729125977
+      ],
+      "moving_fraction_valid_points": 0.32482348366084557,
+      "nearest_centre_fraction_valid_points": 0.9956007631825197,
+      "scenes": [
+        "ProcTHOR-Train-2",
+        "ProcTHOR-Train-3",
+        "ProcTHOR-Train-4"
+      ]
+    },
+    "validation": {
+      "sha256": "b1c9e0143a7a6fcacf56cde1dda06342faae53aa4901972d6e0ba309078908f6",
+      "original_sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516",
+      "pairs": 796,
+      "valid_points": 108751,
+      "valid_fraction_all_grid_points": 0.7115721838358459,
+      "pairs_with_no_valid_points": 0,
+      "displacement_image_pixels_mean": 0.2366497963666916,
+      "displacement_image_pixels_quantiles": [
+        5.017450894229114e-05,
+        0.032782182097435,
+        0.11052370816469193,
+        0.30629901587963104,
+        0.8971023261547089,
+        2.7690470218658447
+      ],
+      "moving_fraction_valid_points": 0.2990409283592795,
+      "nearest_centre_fraction_valid_points": 0.9994758668885804,
+      "scenes": [
+        "ProcTHOR-Train-5",
+        "ProcTHOR-Train-6"
+      ]
+    }
+  },
+  "status": "complete"
+}

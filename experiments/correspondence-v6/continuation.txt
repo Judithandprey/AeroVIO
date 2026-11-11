@@ -1,0 +1,49 @@
+continuation 01 rotation=3.00227 EPE=0.30215 best=1
+continuation 02 rotation=3.05939 EPE=0.29226 best=1
+continuation 03 rotation=3.08304 EPE=0.29206 best=1
+continuation 04 rotation=3.00064 EPE=0.30663 best=4
+continuation 05 rotation=3.04070 EPE=0.32713 best=4
+continuation 06 rotation=3.04627 EPE=0.33667 best=4
+continuation 07 rotation=3.12402 EPE=0.33635 best=4
+continuation 08 rotation=3.05925 EPE=0.35321 best=4
+continuation 09 rotation=3.05958 EPE=0.31476 best=4
+continuation 10 rotation=3.04908 EPE=0.36036 best=4
+continuation 11 rotation=3.17754 EPE=0.34220 best=4
+continuation 12 rotation=3.07687 EPE=0.34138 best=4
+continuation 13 rotation=3.09610 EPE=0.36815 best=4
+continuation 14 rotation=3.11808 EPE=0.34749 best=4
+continuation 15 rotation=3.20209 EPE=0.38635 best=4
+continuation 16 rotation=3.45401 EPE=0.39392 best=4
+continuation 17 rotation=3.54768 EPE=0.42694 best=4
+continuation 18 rotation=3.29986 EPE=0.38258 best=4
+continuation 19 rotation=3.52722 EPE=0.42328 best=4
+continuation 20 rotation=3.30452 EPE=0.41112 best=4
+continuation 21 rotation=3.42859 EPE=0.41039 best=4
+continuation 22 rotation=3.45163 EPE=0.42528 best=4
+continuation 23 rotation=3.45618 EPE=0.41676 best=4
+continuation 24 rotation=3.43239 EPE=0.41946 best=4
+continuation 25 rotation=3.57623 EPE=0.43260 best=4
+continuation 26 rotation=3.54381 EPE=0.41661 best=4
+continuation 27 rotation=3.53200 EPE=0.41892 best=4
+continuation 28 rotation=3.49119 EPE=0.41948 best=4
+continuation 29 rotation=3.55815 EPE=0.42515 best=4
+continuation 30 rotation=3.66718 EPE=0.43609 best=4
+continuation 31 rotation=3.56702 EPE=0.42446 best=4
+continuation 32 rotation=3.56163 EPE=0.42378 best=4
+continuation 33 rotation=3.52601 EPE=0.42155 best=4
+continuation 34 rotation=3.53612 EPE=0.42167 best=4
+continuation 35 rotation=3.55452 EPE=0.42401 best=4
+continuation 36 rotation=3.52833 EPE=0.42289 best=4
+continuation 37 rotation=3.54046 EPE=0.42392 best=4
+continuation 38 rotation=3.51654 EPE=0.42266 best=4
+continuation 39 rotation=3.52477 EPE=0.42188 best=4
+continuation 40 rotation=3.52941 EPE=0.42183 best=4
+/root/projects/AeroVIO/scripts/train_correspondence.py:226: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(net, (torch.zeros(1, 2, 48, 64), torch.zeros(1, 14), torch.zeros(1, 3)), str(path),
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/jit_utils.py:308: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_node_shape_type_inference(node, params_dict, opset_version)
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:712: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:1185: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+{"status": "complete", "best_epoch": 4, "elapsed_seconds": 9.636086056008935, "pose_eligibility": {"eligible": false, "checks": {"rotation": false, "aligned_position": true, "unaligned_position": true, "rotation_wins": false}, "rotation_wins": 0}}

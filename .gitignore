@@ -67,3 +67,5 @@ report-*/
 !workspace/solution/net.onnx
 !experiments/feature-correlation-v5/single-frame/net.onnx
 !experiments/feature-correlation-v5/temporal/net.onnx
+!experiments/correspondence-v6/continuation/net.onnx
+!experiments/correspondence-v6/supervised/net.onnx

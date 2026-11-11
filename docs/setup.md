@@ -1,5 +1,10 @@
 # Development setup and artifact reproduction
 
+The completed [v6 correspondence-supervision experiment](correspondence-supervision.md)
+keeps V5 inference unchanged and adds host-only geometric labels/loss. Both new
+exports are unselected diagnostics. Its guide lists data, training, verification
+and explicit packaging commands; previous artifacts remain intact.
+
 The completed [v5 feature-correlation experiment](feature-correlation.md) adds an
 optional three-value causal rotation-prior ONNX input. Its two trained exports
 are unselected diagnostics; package them with `--calibrate-gyro` as shown in that

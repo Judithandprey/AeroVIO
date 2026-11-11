@@ -1,0 +1,18 @@
+{
+  "configs/correspondence-v6.json": "a5759341257c9a6b8f3956cf4aa205e73aeb5bc6cd7f03cb61492c05d16b951f",
+  "scripts/audit_correspondence.py": "5f2c2e13cf8517ea1e1d8d29bec9881f0d62402a31fdd1b4a767d2f290ebd5cb",
+  "scripts/plot_correspondence.py": "7b0a28714d5383fc327dba3dd2936a298ebdea68732106acfd73cd169a921842",
+  "scripts/report_correspondence.py": "1b0be3fc402e6a58241deba83245da8155797b5013bd6d6e061c51acd375aa26",
+  "scripts/run_correspondence_evaluation.py": "c43825b74b538d11c08d83f4d05ab70dc1536ea6e1f30dbc2cf4c5eab39dfb32",
+  "scripts/train_correspondence.py": "123c4a6c5c3deb4aac3aba7dff17b153671c0480ea1db6d92c4c9e280de2fbd9",
+  "scripts/validate_correspondence.py": "8d29be1a809ef50bc2dd336a19de93466c83c5ebfe00ac054f515a92fc19e8aa",
+  "training/correspondence_supervision.py": "ece7d8073988d3f18f44994b8f4f2d3fe06ea6270f9cf884405d86e3e424e9f4",
+  "tests/test_correspondence_supervision.py": "a74096b2a63342c63452d976fcf4144d0af4b554ed6f6265b8b9b0c12981a083",
+  "training/feature_correlation.py": "028be4cce7187007aa2ad1cafd8d3b077990be8b169e7f1356663cbed1356655",
+  "scripts/train_feature_correlation.py": "258328211acc5e63f8994d583e59871c80bc0427210a06ed0410545dd8c30d34",
+  "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+  "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+  "workspace/solution/motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+  "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+  "workspace/solution/solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+}

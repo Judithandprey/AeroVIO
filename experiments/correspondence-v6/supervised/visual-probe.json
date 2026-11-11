@@ -1,0 +1,336 @@
+{
+  "type": "previous-only shuffle; fixed current/state/prior/labels/translation",
+  "seed": 314162,
+  "ordinary_pose": {
+    "rotation_deg": 2.7275941543095867,
+    "sim3_ate_m": 0.2655634093537699,
+    "unaligned_ate_m": 0.5116028053447728,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.1998887850255563,
+          "rpe_rotation_rmse": 0.01413104714888637,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6256080019689426,
+          "rotation_rmse": 0.04577650108157347,
+          "rotation_max": 0.08107747596554916,
+          "velocity_rmse": 0.20292815016609575,
+          "angular_velocity_rmse": 0.036636313362989406,
+          "sim3_scale": 2.1022023016417593,
+          "sim3_ate_rmse": 0.1750068636301848,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.083110450714896,
+          "drift_per_metre": 0.6583341824579818
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.20104125873106354,
+          "rpe_rotation_rmse": 0.011446065138491628,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.4206693111122986,
+          "rotation_rmse": 0.047584899484113326,
+          "rotation_max": 0.08517360637645725,
+          "velocity_rmse": 0.20158736189897536,
+          "angular_velocity_rmse": 0.037994740576420105,
+          "sim3_scale": 1.2709811532611548,
+          "sim3_ate_rmse": 0.2930442112748537,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.4431963331208594,
+          "drift_per_metre": 0.21046061057984045
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.17082572780275884,
+          "rpe_rotation_rmse": 0.011460532306562063,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.49221764628140524,
+          "rotation_rmse": 0.05486290410417864,
+          "rotation_max": 0.09242704218005672,
+          "velocity_rmse": 0.1844655541097188,
+          "angular_velocity_rmse": 0.037243028194165397,
+          "sim3_scale": 0.9392122897104609,
+          "sim3_ate_rmse": 0.2305382498444335,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.6068446342623127,
+          "drift_per_metre": 0.3789890860518206
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27786997968775956,
+          "rpe_rotation_rmse": 0.011586799388478683,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5079162620164444,
+          "rotation_rmse": 0.042197689933544856,
+          "rotation_max": 0.07691233555073437,
+          "velocity_rmse": 0.28064208692051124,
+          "angular_velocity_rmse": 0.03534396522818365,
+          "sim3_scale": 1.7801955916546859,
+          "sim3_ate_rmse": 0.36366431266560745,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.235614335697478,
+          "drift_per_metre": 0.4694227936835422
+        }
+      }
+    ]
+  },
+  "ordinary_matching": {
+    "all": {
+      "mean_episode_epe_pixels": 1.0675765573978424,
+      "mean_episode_zero_epe_pixels": 0.2365165278315544,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "valid_points": 27376,
+          "epe_pixels": 1.0463283061981201,
+          "zero_epe_pixels": 0.23250435292720795,
+          "cross_entropy": 1.5801405906677246,
+          "entropy": 1.6209567785263062
+        },
+        {
+          "episode_id": 1,
+          "valid_points": 26779,
+          "epe_pixels": 1.0465209484100342,
+          "zero_epe_pixels": 0.2103329449892044,
+          "cross_entropy": 1.5715280771255493,
+          "entropy": 1.6154605150222778
+        },
+        {
+          "episode_id": 2,
+          "valid_points": 27277,
+          "epe_pixels": 1.0457353591918945,
+          "zero_epe_pixels": 0.22259509563446045,
+          "cross_entropy": 1.3228870630264282,
+          "entropy": 1.659169316291809
+        },
+        {
+          "episode_id": 3,
+          "valid_points": 27319,
+          "epe_pixels": 1.1317216157913208,
+          "zero_epe_pixels": 0.28063371777534485,
+          "cross_entropy": 1.3230117559432983,
+          "entropy": 1.5712522268295288
+        }
+      ]
+    },
+    "moving": {
+      "mean_episode_epe_pixels": 1.2516857087612152,
+      "mean_episode_zero_epe_pixels": 0.6097755879163742,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "valid_points": 7035,
+          "epe_pixels": 1.3439772129058838,
+          "zero_epe_pixels": 0.7092739343643188,
+          "cross_entropy": 1.9360325336456299,
+          "entropy": 1.6728461980819702
+        },
+        {
+          "episode_id": 1,
+          "valid_points": 7478,
+          "epe_pixels": 1.2386187314987183,
+          "zero_epe_pixels": 0.5375983119010925,
+          "cross_entropy": 1.8824020624160767,
+          "entropy": 1.7010376453399658
+        },
+        {
+          "episode_id": 2,
+          "valid_points": 8195,
+          "epe_pixels": 1.1593458652496338,
+          "zero_epe_pixels": 0.557502806186676,
+          "cross_entropy": 1.6359388828277588,
+          "entropy": 1.7168083190917969
+        },
+        {
+          "episode_id": 3,
+          "valid_points": 9813,
+          "epe_pixels": 1.264801025390625,
+          "zero_epe_pixels": 0.6347272992134094,
+          "cross_entropy": 1.6951853036880493,
+          "entropy": 1.6968474388122559
+        }
+      ]
+    }
+  },
+  "shuffled_pose": {
+    "rotation_deg": 2.814863800288073,
+    "sim3_ate_m": 0.26551172185301497,
+    "unaligned_ate_m": 0.5158037992304515,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.20000732254784143,
+          "rpe_rotation_rmse": 0.01470997964427852,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6351650010801654,
+          "rotation_rmse": 0.05518391091092081,
+          "rotation_max": 0.08416673761931864,
+          "velocity_rmse": 0.2029169212576564,
+          "angular_velocity_rmse": 0.03713465608547965,
+          "sim3_scale": 2.101987611777823,
+          "sim3_ate_rmse": 0.17479272685590053,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.1040776829590768,
+          "drift_per_metre": 0.6710784466175312
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.20106193743395223,
+          "rpe_rotation_rmse": 0.012185191952434822,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.42213834377728726,
+          "rotation_rmse": 0.05301036228301146,
+          "rotation_max": 0.0980813549502669,
+          "velocity_rmse": 0.20158565903683306,
+          "angular_velocity_rmse": 0.03856019430669908,
+          "sim3_scale": 1.271055773550743,
+          "sim3_ate_rmse": 0.2930707251880435,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.4495836772419528,
+          "drift_per_metre": 0.21349376821957727
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.17088033985822645,
+          "rpe_rotation_rmse": 0.010536682818593738,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.4970758397603305,
+          "rotation_rmse": 0.051777202561186716,
+          "rotation_max": 0.08454680191477275,
+          "velocity_rmse": 0.18446035852707943,
+          "angular_velocity_rmse": 0.036771964915055556,
+          "sim3_scale": 0.9392650310147252,
+          "sim3_ate_rmse": 0.2305021089523529,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.631932377511319,
+          "drift_per_metre": 0.39465698578797237
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2778684667926982,
+          "rpe_rotation_rmse": 0.010703203239906518,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5088360123040229,
+          "rotation_rmse": 0.03654308948578893,
+          "rotation_max": 0.06658517431225339,
+          "velocity_rmse": 0.2806420254328845,
+          "angular_velocity_rmse": 0.03568039849648366,
+          "sim3_scale": 1.7799214210010046,
+          "sim3_ate_rmse": 0.3636813264157631,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.2370767564034437,
+          "drift_per_metre": 0.4699783825865696
+        }
+      }
+    ]
+  },
+  "shuffled_matching": {
+    "all": {
+      "mean_episode_epe_pixels": 1.9191988706588745,
+      "mean_episode_zero_epe_pixels": 0.2365165278315544,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "valid_points": 27376,
+          "epe_pixels": 1.785080075263977,
+          "zero_epe_pixels": 0.23250435292720795,
+          "cross_entropy": 3.012316942214966,
+          "entropy": 1.675644040107727
+        },
+        {
+          "episode_id": 1,
+          "valid_points": 26779,
+          "epe_pixels": 1.76494300365448,
+          "zero_epe_pixels": 0.2103329449892044,
+          "cross_entropy": 3.0206449031829834,
+          "entropy": 1.6953240633010864
+        },
+        {
+          "episode_id": 2,
+          "valid_points": 27277,
+          "epe_pixels": 2.0241992473602295,
+          "zero_epe_pixels": 0.22259509563446045,
+          "cross_entropy": 3.239285945892334,
+          "entropy": 1.596958875656128
+        },
+        {
+          "episode_id": 3,
+          "valid_points": 27319,
+          "epe_pixels": 2.1025731563568115,
+          "zero_epe_pixels": 0.28063371777534485,
+          "cross_entropy": 3.2881150245666504,
+          "entropy": 1.5729315280914307
+        }
+      ]
+    },
+    "moving": {
+      "mean_episode_epe_pixels": 2.1148355305194855,
+      "mean_episode_zero_epe_pixels": 0.6097755879163742,
+      "episodes": [
+        {
+          "episode_id": 0,
+          "valid_points": 7035,
+          "epe_pixels": 2.0668728351593018,
+          "zero_epe_pixels": 0.7092739343643188,
+          "cross_entropy": 3.149308204650879,
+          "entropy": 1.6859914064407349
+        },
+        {
+          "episode_id": 1,
+          "valid_points": 7478,
+          "epe_pixels": 1.915352463722229,
+          "zero_epe_pixels": 0.5375983119010925,
+          "cross_entropy": 3.1219935417175293,
+          "entropy": 1.7191083431243896
+        },
+        {
+          "episode_id": 2,
+          "valid_points": 8195,
+          "epe_pixels": 2.190667152404785,
+          "zero_epe_pixels": 0.557502806186676,
+          "cross_entropy": 3.3717782497406006,
+          "entropy": 1.59984290599823
+        },
+        {
+          "episode_id": 3,
+          "valid_points": 9813,
+          "epe_pixels": 2.286449670791626,
+          "zero_epe_pixels": 0.6347272992134094,
+          "cross_entropy": 3.435403347015381,
+          "entropy": 1.579655408859253
+        }
+      ]
+    }
+  },
+  "correction_change_rms_rad": 0.0003206467372365296,
+  "interpretation": "OOD sensitivity diagnostic, not causal proof of useful matching"
+}

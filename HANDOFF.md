@@ -1,5 +1,27 @@
 # AeroVIO - Handoff
 
+The v6 explicit-correspondence supervision experiment is complete and rejected
+by the frozen acceptance rule. V5 temporal architecture and all guest source are
+unchanged; two 40-epoch fine-tunes share initial weights and minibatches. The
+supervised arm adds geometric bilinear soft-label matching cross-entropy; the
+continuation arm retains rotation-only supervision. Trained epochs 13 and 4,
+respectively, are archived as diagnostics. Matching validation EPE worsens from
+0.336266 (V5) to 1.067577 image pixels (supervised), versus 0.306630 for continuation
+and 0.236517 for zero motion. Cross-entropy decreases but displacement does not
+improve. Independent OpenCV projection and all 118 host tests pass.
+
+All seven v6 public runs completed 10/10 episodes. Supervised achieves 0.868606 m
+aligned ATE, 10.6784 degrees median rotation error and 1.506 ms median WASM step,
+versus V5 temporal's 0.870938 m, 9.7654 degrees and 1.561 ms in this round. Its
+rotation median worsens 9.35% while ATE improves only 0.27%; the V5 single-frame
+control remains better on both. Max fuel is 21,874,382 (+0.093% versus V5).
+Both new 40-frame WASM checks pass. Full supervised repetition and all four
+preserved-reference reruns match outputs, accuracy and per-frame fuel exactly.
+See `docs/correspondence-supervision.md`, `experiments/correspondence-v6/README.md`,
+`selection.json`, `matching-audit.json` and `windows-artifacts.json` in that record.
+All previous selections/defaults and artifacts remain unchanged. No new run is
+pending; future continuous-displacement supervision is only a hypothesis.
+
 The v5 lightweight feature-correlation experiment is complete. The old translation
 network is frozen; a 6,243-parameter local matching branch corrects the actual
 causal calibrated gyro prior. A matched current/current-image control isolates

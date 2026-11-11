@@ -1,0 +1,1162 @@
+{
+  "source_sha256": "5f2c2e13cf8517ea1e1d8d29bec9881f0d62402a31fdd1b4a767d2f290ebd5cb",
+  "scope": "Post-fit diagnosis only; no training or selection changes",
+  "projection": {
+    "train": {
+      "sampled_pairs": 128,
+      "valid_points_checked": 17607,
+      "max_abs_difference_image_pixels": 1.0442060855098134e-05,
+      "tolerance_pixels": 0.0005,
+      "seed": 161803
+    },
+    "validation": {
+      "sampled_pairs": 128,
+      "valid_points_checked": 17541,
+      "max_abs_difference_image_pixels": 9.684765430506559e-06,
+      "tolerance_pixels": 0.0005,
+      "seed": 161803
+    }
+  },
+  "matching": {
+    "train": {
+      "v5-temporal": {
+        "all": {
+          "mean_episode_epe_pixels": 0.35528700177868205,
+          "mean_episode_zero_epe_pixels": 0.2678363583981991,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27840,
+              "epe_pixels": 0.385698527097702,
+              "zero_epe_pixels": 0.22442194819450378,
+              "cross_entropy": 2.0936532020568848,
+              "entropy": 1.9953138828277588
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 27794,
+              "epe_pixels": 0.7416560649871826,
+              "zero_epe_pixels": 0.5928605198860168,
+              "cross_entropy": 2.202474355697632,
+              "entropy": 2.003490447998047
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27733,
+              "epe_pixels": 0.45780861377716064,
+              "zero_epe_pixels": 0.22365844249725342,
+              "cross_entropy": 2.061032772064209,
+              "entropy": 1.9268392324447632
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27837,
+              "epe_pixels": 0.38792145252227783,
+              "zero_epe_pixels": 0.29140907526016235,
+              "cross_entropy": 2.1373066902160645,
+              "entropy": 2.0608153343200684
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 27149,
+              "epe_pixels": 0.3687126338481903,
+              "zero_epe_pixels": 0.29709213972091675,
+              "cross_entropy": 2.1712915897369385,
+              "entropy": 2.1391429901123047
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 27581,
+              "epe_pixels": 0.21095657348632812,
+              "zero_epe_pixels": 0.1817762851715088,
+              "cross_entropy": 2.1777005195617676,
+              "entropy": 2.1676275730133057
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 27451,
+              "epe_pixels": 0.30315521359443665,
+              "zero_epe_pixels": 0.23070180416107178,
+              "cross_entropy": 2.153381586074829,
+              "entropy": 2.131723165512085
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 27504,
+              "epe_pixels": 0.12949417531490326,
+              "zero_epe_pixels": 0.12017294764518738,
+              "cross_entropy": 2.1902291774749756,
+              "entropy": 2.1852498054504395
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 27106,
+              "epe_pixels": 0.26020824909210205,
+              "zero_epe_pixels": 0.19771409034729004,
+              "cross_entropy": 2.14192795753479,
+              "entropy": 2.1283507347106934
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 27556,
+              "epe_pixels": 0.30513325333595276,
+              "zero_epe_pixels": 0.24317315220832825,
+              "cross_entropy": 2.1721630096435547,
+              "entropy": 2.1514484882354736
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 27152,
+              "epe_pixels": 0.2481653094291687,
+              "zero_epe_pixels": 0.18699006736278534,
+              "cross_entropy": 2.1554622650146484,
+              "entropy": 2.1233742237091064
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 26445,
+              "epe_pixels": 0.4645339548587799,
+              "zero_epe_pixels": 0.42406582832336426,
+              "cross_entropy": 2.198125123977661,
+              "entropy": 2.1450421810150146
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 0.6777704035242399,
+          "mean_episode_zero_epe_pixels": 0.6054185529549917,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 9858,
+              "epe_pixels": 0.618591845035553,
+              "zero_epe_pixels": 0.46721720695495605,
+              "cross_entropy": 2.2389438152313232,
+              "entropy": 2.015307664871216
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 14857,
+              "epe_pixels": 1.1480669975280762,
+              "zero_epe_pixels": 1.0249258279800415,
+              "cross_entropy": 2.355609655380249,
+              "entropy": 2.0292913913726807
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8997,
+              "epe_pixels": 0.7531370520591736,
+              "zero_epe_pixels": 0.5259006023406982,
+              "cross_entropy": 2.2595736980438232,
+              "entropy": 1.9324225187301636
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 10412,
+              "epe_pixels": 0.7378439903259277,
+              "zero_epe_pixels": 0.641311764717102,
+              "cross_entropy": 2.2455713748931885,
+              "entropy": 2.0787692070007324
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 8445,
+              "epe_pixels": 0.8264305591583252,
+              "zero_epe_pixels": 0.776228666305542,
+              "cross_entropy": 2.239448070526123,
+              "entropy": 2.1456308364868164
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 6466,
+              "epe_pixels": 0.5429450273513794,
+              "zero_epe_pixels": 0.5288040041923523,
+              "cross_entropy": 2.2049596309661865,
+              "entropy": 2.183985471725464
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 8022,
+              "epe_pixels": 0.6353371739387512,
+              "zero_epe_pixels": 0.5994888544082642,
+              "cross_entropy": 2.2160394191741943,
+              "entropy": 2.164304256439209
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 3064,
+              "epe_pixels": 0.38442546129226685,
+              "zero_epe_pixels": 0.37911444902420044,
+              "cross_entropy": 2.1938364505767822,
+              "entropy": 2.1916000843048096
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 7800,
+              "epe_pixels": 0.4914884865283966,
+              "zero_epe_pixels": 0.45785200595855713,
+              "cross_entropy": 2.197115421295166,
+              "entropy": 2.161619186401367
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 9178,
+              "epe_pixels": 0.6028717160224915,
+              "zero_epe_pixels": 0.5769524574279785,
+              "cross_entropy": 2.211399793624878,
+              "entropy": 2.1704423427581787
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 6505,
+              "epe_pixels": 0.6051911115646362,
+              "zero_epe_pixels": 0.5453905463218689,
+              "cross_entropy": 2.224626302719116,
+              "entropy": 2.128061056137085
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 13311,
+              "epe_pixels": 0.7869154214859009,
+              "zero_epe_pixels": 0.7418362498283386,
+              "cross_entropy": 2.232426166534424,
+              "entropy": 2.140381097793579
+            }
+          ]
+        }
+      },
+      "v5-single-frame": {
+        "all": {
+          "mean_episode_epe_pixels": 0.9818603346745173,
+          "mean_episode_zero_epe_pixels": 0.2678363583981991,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27840,
+              "epe_pixels": 1.1548001766204834,
+              "zero_epe_pixels": 0.22442194819450378,
+              "cross_entropy": 1.3358460664749146,
+              "entropy": 1.614086627960205
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 27794,
+              "epe_pixels": 1.3626132011413574,
+              "zero_epe_pixels": 0.5928605198860168,
+              "cross_entropy": 1.579599142074585,
+              "entropy": 1.6441383361816406
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27733,
+              "epe_pixels": 1.1365138292312622,
+              "zero_epe_pixels": 0.22365844249725342,
+              "cross_entropy": 1.2768341302871704,
+              "entropy": 1.5884013175964355
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27837,
+              "epe_pixels": 1.1682665348052979,
+              "zero_epe_pixels": 0.29140907526016235,
+              "cross_entropy": 1.3821104764938354,
+              "entropy": 1.6811624765396118
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 27149,
+              "epe_pixels": 0.8991014957427979,
+              "zero_epe_pixels": 0.29709213972091675,
+              "cross_entropy": 1.8617596626281738,
+              "entropy": 1.8881194591522217
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 27581,
+              "epe_pixels": 0.8016054034233093,
+              "zero_epe_pixels": 0.1817762851715088,
+              "cross_entropy": 1.922619104385376,
+              "entropy": 1.9582295417785645
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 27451,
+              "epe_pixels": 0.8499464392662048,
+              "zero_epe_pixels": 0.23070180416107178,
+              "cross_entropy": 1.8092848062515259,
+              "entropy": 1.8798261880874634
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 27504,
+              "epe_pixels": 0.8123459219932556,
+              "zero_epe_pixels": 0.12017294764518738,
+              "cross_entropy": 1.8685318231582642,
+              "entropy": 1.9672553539276123
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 27106,
+              "epe_pixels": 0.864871621131897,
+              "zero_epe_pixels": 0.19771409034729004,
+              "cross_entropy": 1.8211686611175537,
+              "entropy": 1.8996680974960327
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 27556,
+              "epe_pixels": 0.7963837385177612,
+              "zero_epe_pixels": 0.24317315220832825,
+              "cross_entropy": 1.8797564506530762,
+              "entropy": 1.947503685951233
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 27152,
+              "epe_pixels": 0.9121130704879761,
+              "zero_epe_pixels": 0.18699006736278534,
+              "cross_entropy": 1.8201544284820557,
+              "entropy": 1.8660563230514526
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 26445,
+              "epe_pixels": 1.023762583732605,
+              "zero_epe_pixels": 0.42406582832336426,
+              "cross_entropy": 1.997544288635254,
+              "entropy": 1.91943359375
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 1.1703705489635468,
+          "mean_episode_zero_epe_pixels": 0.6054185529549917,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 9858,
+              "epe_pixels": 1.1967211961746216,
+              "zero_epe_pixels": 0.46721720695495605,
+              "cross_entropy": 1.5352681875228882,
+              "entropy": 1.6758694648742676
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 14857,
+              "epe_pixels": 1.5496480464935303,
+              "zero_epe_pixels": 1.0249258279800415,
+              "cross_entropy": 1.8599250316619873,
+              "entropy": 1.646722435951233
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8997,
+              "epe_pixels": 1.1887856721878052,
+              "zero_epe_pixels": 0.5259006023406982,
+              "cross_entropy": 1.4944298267364502,
+              "entropy": 1.6539462804794312
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 10412,
+              "epe_pixels": 1.309893012046814,
+              "zero_epe_pixels": 0.641311764717102,
+              "cross_entropy": 1.628637671470642,
+              "entropy": 1.7092185020446777
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 8445,
+              "epe_pixels": 1.1821519136428833,
+              "zero_epe_pixels": 0.776228666305542,
+              "cross_entropy": 2.045377016067505,
+              "entropy": 1.8849676847457886
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 6466,
+              "epe_pixels": 1.1396238803863525,
+              "zero_epe_pixels": 0.5288040041923523,
+              "cross_entropy": 2.099513292312622,
+              "entropy": 1.9494909048080444
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 8022,
+              "epe_pixels": 1.0525773763656616,
+              "zero_epe_pixels": 0.5994888544082642,
+              "cross_entropy": 1.9738996028900146,
+              "entropy": 1.9145359992980957
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 3064,
+              "epe_pixels": 1.1038601398468018,
+              "zero_epe_pixels": 0.37911444902420044,
+              "cross_entropy": 1.9478676319122314,
+              "entropy": 1.938714623451233
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 7800,
+              "epe_pixels": 0.9704388380050659,
+              "zero_epe_pixels": 0.45785200595855713,
+              "cross_entropy": 1.943688154220581,
+              "entropy": 1.9331027269363403
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 9178,
+              "epe_pixels": 0.9016355276107788,
+              "zero_epe_pixels": 0.5769524574279785,
+              "cross_entropy": 1.9743914604187012,
+              "entropy": 1.9566373825073242
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 6505,
+              "epe_pixels": 1.1893008947372437,
+              "zero_epe_pixels": 0.5453905463218689,
+              "cross_entropy": 2.011885166168213,
+              "entropy": 1.8741039037704468
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 13311,
+              "epe_pixels": 1.2598100900650024,
+              "zero_epe_pixels": 0.7418362498283386,
+              "cross_entropy": 2.1727077960968018,
+              "entropy": 1.9062925577163696
+            }
+          ]
+        }
+      },
+      "continuation": {
+        "all": {
+          "mean_episode_epe_pixels": 0.33035844564437866,
+          "mean_episode_zero_epe_pixels": 0.2678363583981991,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27840,
+              "epe_pixels": 0.33292123675346375,
+              "zero_epe_pixels": 0.22442194819450378,
+              "cross_entropy": 2.1315619945526123,
+              "entropy": 2.076340436935425
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 27794,
+              "epe_pixels": 0.6727252006530762,
+              "zero_epe_pixels": 0.5928605198860168,
+              "cross_entropy": 2.196880340576172,
+              "entropy": 2.0927252769470215
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27733,
+              "epe_pixels": 0.3796294331550598,
+              "zero_epe_pixels": 0.22365844249725342,
+              "cross_entropy": 2.0814905166625977,
+              "entropy": 2.0045602321624756
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27837,
+              "epe_pixels": 0.36091697216033936,
+              "zero_epe_pixels": 0.29140907526016235,
+              "cross_entropy": 2.1650259494781494,
+              "entropy": 2.1222341060638428
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 27149,
+              "epe_pixels": 0.3646186590194702,
+              "zero_epe_pixels": 0.29709213972091675,
+              "cross_entropy": 2.179020643234253,
+              "entropy": 2.1486806869506836
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 27581,
+              "epe_pixels": 0.1999567747116089,
+              "zero_epe_pixels": 0.1817762851715088,
+              "cross_entropy": 2.183922529220581,
+              "entropy": 2.1756467819213867
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 27451,
+              "epe_pixels": 0.2917580306529999,
+              "zero_epe_pixels": 0.23070180416107178,
+              "cross_entropy": 2.1626670360565186,
+              "entropy": 2.1432862281799316
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 27504,
+              "epe_pixels": 0.12599967420101166,
+              "zero_epe_pixels": 0.12017294764518738,
+              "cross_entropy": 2.1912903785705566,
+              "entropy": 2.1878201961517334
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 27106,
+              "epe_pixels": 0.2551271915435791,
+              "zero_epe_pixels": 0.19771409034729004,
+              "cross_entropy": 2.146169900894165,
+              "entropy": 2.1352949142456055
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 27556,
+              "epe_pixels": 0.3003716468811035,
+              "zero_epe_pixels": 0.24317315220832825,
+              "cross_entropy": 2.1760916709899902,
+              "entropy": 2.159759998321533
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 27152,
+              "epe_pixels": 0.2242206186056137,
+              "zero_epe_pixels": 0.18699006736278534,
+              "cross_entropy": 2.167119026184082,
+              "entropy": 2.14261794090271
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 26445,
+              "epe_pixels": 0.4560559093952179,
+              "zero_epe_pixels": 0.42406582832336426,
+              "cross_entropy": 2.199810266494751,
+              "entropy": 2.156511068344116
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 0.6527257213989893,
+          "mean_episode_zero_epe_pixels": 0.6054185529549917,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 9858,
+              "epe_pixels": 0.5491148233413696,
+              "zero_epe_pixels": 0.46721720695495605,
+              "cross_entropy": 2.217575788497925,
+              "entropy": 2.0976622104644775
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 14857,
+              "epe_pixels": 1.0924328565597534,
+              "zero_epe_pixels": 1.0249258279800415,
+              "cross_entropy": 2.276533603668213,
+              "entropy": 2.104647636413574
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8997,
+              "epe_pixels": 0.6772927045822144,
+              "zero_epe_pixels": 0.5259006023406982,
+              "cross_entropy": 2.2237725257873535,
+              "entropy": 2.0256752967834473
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 10412,
+              "epe_pixels": 0.6937070488929749,
+              "zero_epe_pixels": 0.641311764717102,
+              "cross_entropy": 2.220090389251709,
+              "entropy": 2.131572961807251
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 8445,
+              "epe_pixels": 0.8180655837059021,
+              "zero_epe_pixels": 0.776228666305542,
+              "cross_entropy": 2.240041971206665,
+              "entropy": 2.1564621925354004
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 6466,
+              "epe_pixels": 0.5392017364501953,
+              "zero_epe_pixels": 0.5288040041923523,
+              "cross_entropy": 2.204136371612549,
+              "entropy": 2.1892786026000977
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 8022,
+              "epe_pixels": 0.6293900012969971,
+              "zero_epe_pixels": 0.5994888544082642,
+              "cross_entropy": 2.213627576828003,
+              "entropy": 2.172046422958374
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 3064,
+              "epe_pixels": 0.38480138778686523,
+              "zero_epe_pixels": 0.37911444902420044,
+              "cross_entropy": 2.1966590881347656,
+              "entropy": 2.1918225288391113
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 7800,
+              "epe_pixels": 0.4839927554130554,
+              "zero_epe_pixels": 0.45785200595855713,
+              "cross_entropy": 2.190537452697754,
+              "entropy": 2.166752338409424
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 9178,
+              "epe_pixels": 0.5985378623008728,
+              "zero_epe_pixels": 0.5769524574279785,
+              "cross_entropy": 2.2046802043914795,
+              "entropy": 2.178987503051758
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 6505,
+              "epe_pixels": 0.5916151404380798,
+              "zero_epe_pixels": 0.5453905463218689,
+              "cross_entropy": 2.219572067260742,
+              "entropy": 2.142967939376831
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 13311,
+              "epe_pixels": 0.7745567560195923,
+              "zero_epe_pixels": 0.7418362498283386,
+              "cross_entropy": 2.2253589630126953,
+              "entropy": 2.153618335723877
+            }
+          ]
+        }
+      },
+      "supervised": {
+        "all": {
+          "mean_episode_epe_pixels": 1.0844192455212276,
+          "mean_episode_zero_epe_pixels": 0.2678363583981991,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27840,
+              "epe_pixels": 1.092157244682312,
+              "zero_epe_pixels": 0.22442194819450378,
+              "cross_entropy": 1.071532130241394,
+              "entropy": 1.2827954292297363
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 27794,
+              "epe_pixels": 1.300592064857483,
+              "zero_epe_pixels": 0.5928605198860168,
+              "cross_entropy": 1.385392427444458,
+              "entropy": 1.2664902210235596
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27733,
+              "epe_pixels": 1.0327295064926147,
+              "zero_epe_pixels": 0.22365844249725342,
+              "cross_entropy": 0.9935510754585266,
+              "entropy": 1.2278138399124146
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27837,
+              "epe_pixels": 1.1078213453292847,
+              "zero_epe_pixels": 0.29140907526016235,
+              "cross_entropy": 1.0654065608978271,
+              "entropy": 1.2158350944519043
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 27149,
+              "epe_pixels": 0.9766806364059448,
+              "zero_epe_pixels": 0.29709213972091675,
+              "cross_entropy": 1.6653709411621094,
+              "entropy": 1.7049497365951538
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 27581,
+              "epe_pixels": 0.8697293996810913,
+              "zero_epe_pixels": 0.1817762851715088,
+              "cross_entropy": 1.7626720666885376,
+              "entropy": 1.805498480796814
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 27451,
+              "epe_pixels": 0.9736467003822327,
+              "zero_epe_pixels": 0.23070180416107178,
+              "cross_entropy": 1.5669008493423462,
+              "entropy": 1.651121735572815
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 27504,
+              "epe_pixels": 0.916461706161499,
+              "zero_epe_pixels": 0.12017294764518738,
+              "cross_entropy": 1.7201207876205444,
+              "entropy": 1.8461837768554688
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 27106,
+              "epe_pixels": 1.1699203252792358,
+              "zero_epe_pixels": 0.19771409034729004,
+              "cross_entropy": 1.2077523469924927,
+              "entropy": 1.4074753522872925
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 27556,
+              "epe_pixels": 1.1359155178070068,
+              "zero_epe_pixels": 0.24317315220832825,
+              "cross_entropy": 1.205737590789795,
+              "entropy": 1.4006483554840088
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 27152,
+              "epe_pixels": 1.1356946229934692,
+              "zero_epe_pixels": 0.18699006736278534,
+              "cross_entropy": 1.2564582824707031,
+              "entropy": 1.481985092163086
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 26445,
+              "epe_pixels": 1.3016818761825562,
+              "zero_epe_pixels": 0.42406582832336426,
+              "cross_entropy": 1.526836633682251,
+              "entropy": 1.4609428644180298
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 1.3230079511801403,
+          "mean_episode_zero_epe_pixels": 0.6054185529549917,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 9858,
+              "epe_pixels": 1.2404468059539795,
+              "zero_epe_pixels": 0.46721720695495605,
+              "cross_entropy": 1.3627218008041382,
+              "entropy": 1.3143184185028076
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 14857,
+              "epe_pixels": 1.6034716367721558,
+              "zero_epe_pixels": 1.0249258279800415,
+              "cross_entropy": 1.8820465803146362,
+              "entropy": 1.3345551490783691
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8997,
+              "epe_pixels": 1.2104829549789429,
+              "zero_epe_pixels": 0.5259006023406982,
+              "cross_entropy": 1.3939316272735596,
+              "entropy": 1.3281534910202026
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 10412,
+              "epe_pixels": 1.4030841588974,
+              "zero_epe_pixels": 0.641311764717102,
+              "cross_entropy": 1.5608271360397339,
+              "entropy": 1.3087621927261353
+            },
+            {
+              "episode_id": 4,
+              "valid_points": 8445,
+              "epe_pixels": 1.2947558164596558,
+              "zero_epe_pixels": 0.776228666305542,
+              "cross_entropy": 2.0224735736846924,
+              "entropy": 1.7899152040481567
+            },
+            {
+              "episode_id": 5,
+              "valid_points": 6466,
+              "epe_pixels": 1.2028077840805054,
+              "zero_epe_pixels": 0.5288040041923523,
+              "cross_entropy": 2.0394155979156494,
+              "entropy": 1.8686959743499756
+            },
+            {
+              "episode_id": 6,
+              "valid_points": 8022,
+              "epe_pixels": 1.1516450643539429,
+              "zero_epe_pixels": 0.5994888544082642,
+              "cross_entropy": 1.953009009361267,
+              "entropy": 1.8075993061065674
+            },
+            {
+              "episode_id": 7,
+              "valid_points": 3064,
+              "epe_pixels": 1.1145576238632202,
+              "zero_epe_pixels": 0.37911444902420044,
+              "cross_entropy": 1.938175082206726,
+              "entropy": 1.9187954664230347
+            },
+            {
+              "episode_id": 8,
+              "valid_points": 7800,
+              "epe_pixels": 1.3452460765838623,
+              "zero_epe_pixels": 0.45785200595855713,
+              "cross_entropy": 1.620384693145752,
+              "entropy": 1.4392071962356567
+            },
+            {
+              "episode_id": 9,
+              "valid_points": 9178,
+              "epe_pixels": 1.3521554470062256,
+              "zero_epe_pixels": 0.5769524574279785,
+              "cross_entropy": 1.7408878803253174,
+              "entropy": 1.5298120975494385
+            },
+            {
+              "episode_id": 10,
+              "valid_points": 6505,
+              "epe_pixels": 1.4081870317459106,
+              "zero_epe_pixels": 0.5453905463218689,
+              "cross_entropy": 1.7646125555038452,
+              "entropy": 1.5685609579086304
+            },
+            {
+              "episode_id": 11,
+              "valid_points": 13311,
+              "epe_pixels": 1.5492550134658813,
+              "zero_epe_pixels": 0.7418362498283386,
+              "cross_entropy": 1.9340646266937256,
+              "entropy": 1.4792516231536865
+            }
+          ]
+        }
+      }
+    },
+    "validation": {
+      "v5-temporal": {
+        "all": {
+          "mean_episode_epe_pixels": 0.3362661302089691,
+          "mean_episode_zero_epe_pixels": 0.2365165278315544,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27376,
+              "epe_pixels": 0.3185381591320038,
+              "zero_epe_pixels": 0.23250435292720795,
+              "cross_entropy": 2.1646201610565186,
+              "entropy": 2.1105620861053467
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 26779,
+              "epe_pixels": 0.2997344732284546,
+              "zero_epe_pixels": 0.2103329449892044,
+              "cross_entropy": 2.13720703125,
+              "entropy": 2.112434148788452
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27277,
+              "epe_pixels": 0.3024090528488159,
+              "zero_epe_pixels": 0.22259509563446045,
+              "cross_entropy": 2.1519129276275635,
+              "entropy": 2.1110994815826416
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27319,
+              "epe_pixels": 0.4243828356266022,
+              "zero_epe_pixels": 0.28063371777534485,
+              "cross_entropy": 2.083916664123535,
+              "entropy": 2.0154151916503906
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 0.6775464117527008,
+          "mean_episode_zero_epe_pixels": 0.6097755879163742,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 7035,
+              "epe_pixels": 0.7791606783866882,
+              "zero_epe_pixels": 0.7092739343643188,
+              "cross_entropy": 2.2640206813812256,
+              "entropy": 2.1206395626068115
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 7478,
+              "epe_pixels": 0.5948949456214905,
+              "zero_epe_pixels": 0.5375983119010925,
+              "cross_entropy": 2.195213794708252,
+              "entropy": 2.125380516052246
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8195,
+              "epe_pixels": 0.616123616695404,
+              "zero_epe_pixels": 0.557502806186676,
+              "cross_entropy": 2.2138383388519287,
+              "entropy": 2.1359975337982178
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 9813,
+              "epe_pixels": 0.7200064063072205,
+              "zero_epe_pixels": 0.6347272992134094,
+              "cross_entropy": 2.217247247695923,
+              "entropy": 2.073444128036499
+            }
+          ]
+        }
+      },
+      "v5-single-frame": {
+        "all": {
+          "mean_episode_epe_pixels": 0.9959215819835663,
+          "mean_episode_zero_epe_pixels": 0.2365165278315544,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27376,
+              "epe_pixels": 0.9232475161552429,
+              "zero_epe_pixels": 0.23250435292720795,
+              "cross_entropy": 1.7836263179779053,
+              "entropy": 1.8443715572357178
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 26779,
+              "epe_pixels": 0.904318630695343,
+              "zero_epe_pixels": 0.2103329449892044,
+              "cross_entropy": 1.7770793437957764,
+              "entropy": 1.8278627395629883
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27277,
+              "epe_pixels": 1.01670241355896,
+              "zero_epe_pixels": 0.22259509563446045,
+              "cross_entropy": 1.721807837486267,
+              "entropy": 1.9110791683197021
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27319,
+              "epe_pixels": 1.1394177675247192,
+              "zero_epe_pixels": 0.28063371777534485,
+              "cross_entropy": 1.580586552619934,
+              "entropy": 1.6983386278152466
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 1.1581449210643768,
+          "mean_episode_zero_epe_pixels": 0.6097755879163742,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 7035,
+              "epe_pixels": 1.2194342613220215,
+              "zero_epe_pixels": 0.7092739343643188,
+              "cross_entropy": 1.937058687210083,
+              "entropy": 1.8248730897903442
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 7478,
+              "epe_pixels": 1.0835838317871094,
+              "zero_epe_pixels": 0.5375983119010925,
+              "cross_entropy": 1.9831730127334595,
+              "entropy": 1.8733296394348145
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8195,
+              "epe_pixels": 1.1370187997817993,
+              "zero_epe_pixels": 0.557502806186676,
+              "cross_entropy": 1.9229809045791626,
+              "entropy": 1.944778323173523
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 9813,
+              "epe_pixels": 1.1925427913665771,
+              "zero_epe_pixels": 0.6347272992134094,
+              "cross_entropy": 1.8651436567306519,
+              "entropy": 1.8058662414550781
+            }
+          ]
+        }
+      },
+      "continuation": {
+        "all": {
+          "mean_episode_epe_pixels": 0.30663013458251953,
+          "mean_episode_zero_epe_pixels": 0.2365165278315544,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27376,
+              "epe_pixels": 0.297044038772583,
+              "zero_epe_pixels": 0.23250435292720795,
+              "cross_entropy": 2.1775600910186768,
+              "entropy": 2.1304984092712402
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 26779,
+              "epe_pixels": 0.2954704761505127,
+              "zero_epe_pixels": 0.2103329449892044,
+              "cross_entropy": 2.1476075649261475,
+              "entropy": 2.1266088485717773
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27277,
+              "epe_pixels": 0.2603870928287506,
+              "zero_epe_pixels": 0.22259509563446045,
+              "cross_entropy": 2.164869546890259,
+              "entropy": 2.139885187149048
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27319,
+              "epe_pixels": 0.3736189305782318,
+              "zero_epe_pixels": 0.28063371777534485,
+              "cross_entropy": 2.1255173683166504,
+              "entropy": 2.0682451725006104
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 0.6607441008090973,
+          "mean_episode_zero_epe_pixels": 0.6097755879163742,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 7035,
+              "epe_pixels": 0.7631852030754089,
+              "zero_epe_pixels": 0.7092739343643188,
+              "cross_entropy": 2.2529304027557373,
+              "entropy": 2.1325323581695557
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 7478,
+              "epe_pixels": 0.5952503681182861,
+              "zero_epe_pixels": 0.5375983119010925,
+              "cross_entropy": 2.194305419921875,
+              "entropy": 2.1335501670837402
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8195,
+              "epe_pixels": 0.5920174717903137,
+              "zero_epe_pixels": 0.557502806186676,
+              "cross_entropy": 2.2069263458251953,
+              "entropy": 2.155320405960083
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 9813,
+              "epe_pixels": 0.6925233602523804,
+              "zero_epe_pixels": 0.6347272992134094,
+              "cross_entropy": 2.223728656768799,
+              "entropy": 2.1102454662323
+            }
+          ]
+        }
+      },
+      "supervised": {
+        "all": {
+          "mean_episode_epe_pixels": 1.0675765573978424,
+          "mean_episode_zero_epe_pixels": 0.2365165278315544,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 27376,
+              "epe_pixels": 1.0463283061981201,
+              "zero_epe_pixels": 0.23250435292720795,
+              "cross_entropy": 1.5801405906677246,
+              "entropy": 1.6209567785263062
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 26779,
+              "epe_pixels": 1.0465209484100342,
+              "zero_epe_pixels": 0.2103329449892044,
+              "cross_entropy": 1.5715280771255493,
+              "entropy": 1.6154605150222778
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 27277,
+              "epe_pixels": 1.0457353591918945,
+              "zero_epe_pixels": 0.22259509563446045,
+              "cross_entropy": 1.3228870630264282,
+              "entropy": 1.659169316291809
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 27319,
+              "epe_pixels": 1.1317216157913208,
+              "zero_epe_pixels": 0.28063371777534485,
+              "cross_entropy": 1.3230117559432983,
+              "entropy": 1.5712522268295288
+            }
+          ]
+        },
+        "moving": {
+          "mean_episode_epe_pixels": 1.2516857087612152,
+          "mean_episode_zero_epe_pixels": 0.6097755879163742,
+          "episodes": [
+            {
+              "episode_id": 0,
+              "valid_points": 7035,
+              "epe_pixels": 1.3439772129058838,
+              "zero_epe_pixels": 0.7092739343643188,
+              "cross_entropy": 1.9360325336456299,
+              "entropy": 1.6728461980819702
+            },
+            {
+              "episode_id": 1,
+              "valid_points": 7478,
+              "epe_pixels": 1.2386187314987183,
+              "zero_epe_pixels": 0.5375983119010925,
+              "cross_entropy": 1.8824020624160767,
+              "entropy": 1.7010376453399658
+            },
+            {
+              "episode_id": 2,
+              "valid_points": 8195,
+              "epe_pixels": 1.1593458652496338,
+              "zero_epe_pixels": 0.557502806186676,
+              "cross_entropy": 1.6359388828277588,
+              "entropy": 1.7168083190917969
+            },
+            {
+              "episode_id": 3,
+              "valid_points": 9813,
+              "epe_pixels": 1.264801025390625,
+              "zero_epe_pixels": 0.6347272992134094,
+              "cross_entropy": 1.6951853036880493,
+              "entropy": 1.6968474388122559
+            }
+          ]
+        }
+      }
+    }
+  }
+}

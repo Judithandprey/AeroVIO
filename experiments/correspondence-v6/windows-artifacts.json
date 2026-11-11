@@ -1,0 +1,19 @@
+{
+  "copies": [
+    {
+      "source": "\\\\wsl.localhost\\Ubuntu\\root\\projects\\AeroVIO\\artifacts\\correspondence-v6-supervised.wasm",
+      "destination": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-correspondence-supervised-v6.wasm",
+      "sha256": "cd3ccdc38451b02733e760e4f86df7c229c3376c6688957ae60c405c264cde0b",
+      "bytes": 50219357,
+      "role": "unselected diagnostic; not submitted"
+    },
+    {
+      "source": "\\\\wsl.localhost\\Ubuntu\\root\\projects\\AeroVIO\\artifacts\\correspondence-v6-continuation.wasm",
+      "destination": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-correspondence-control-v6.wasm",
+      "sha256": "1fb4395e7da7e02b23cd6e9b02c0ae8cc358731ee1057aed6fffd95a63829682",
+      "bytes": 50219360,
+      "role": "unselected diagnostic; not submitted"
+    }
+  ],
+  "verified_utc": "2026-11-11T02:31:40.0984835Z"
+}

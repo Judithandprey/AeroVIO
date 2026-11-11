@@ -1,0 +1,185 @@
+[
+  {
+    "stage": "package-continuation",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/correspondence-continuation-v6",
+      "--name",
+      "correspondence-v6-continuation",
+      "--calibrate-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.0264566540718079,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-package-continuation.log"
+  },
+  {
+    "stage": "check-continuation",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/correspondence-v6-continuation.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-correspondence-v6-continuation"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.552232949063182,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-check-continuation.log"
+  },
+  {
+    "stage": "package-supervised",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/correspondence-supervised-v6",
+      "--name",
+      "correspondence-v6-supervised",
+      "--calibrate-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6894602621905506,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-package-supervised.log"
+  },
+  {
+    "stage": "check-supervised",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/correspondence-v6-supervised.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-correspondence-v6-supervised"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.318168987054378,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-check-supervised.log"
+  },
+  {
+    "stage": "evaluate-baseline",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/klt_imu.wasm",
+      "--run-dir",
+      "results/correspondence-v6-baseline",
+      "--verify-baseline"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 83.45138119300827,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-baseline.log"
+  },
+  {
+    "stage": "evaluate-calibrated-gyro",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-cal-gyro.wasm",
+      "--run-dir",
+      "results/correspondence-v6-calibrated-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 56.85909705609083,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-calibrated-gyro.log"
+  },
+  {
+    "stage": "evaluate-v5-single-frame",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correlation-v5-single-frame.wasm",
+      "--run-dir",
+      "results/correspondence-v6-v5-single-frame"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 60.0278162099421,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-v5-single-frame.log"
+  },
+  {
+    "stage": "evaluate-v5-temporal",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correlation-v5-temporal.wasm",
+      "--run-dir",
+      "results/correspondence-v6-v5-temporal"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 61.911372047849,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-v5-temporal.log"
+  },
+  {
+    "stage": "evaluate-continuation",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correspondence-v6-continuation.wasm",
+      "--run-dir",
+      "results/correspondence-v6-continuation"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 61.095521688926965,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-continuation.log"
+  },
+  {
+    "stage": "evaluate-supervised",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correspondence-v6-supervised.wasm",
+      "--run-dir",
+      "results/correspondence-v6-supervised"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 60.29419092228636,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-supervised.log"
+  },
+  {
+    "stage": "evaluate-supervised-repeat",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correspondence-v6-supervised.wasm",
+      "--run-dir",
+      "results/correspondence-v6-supervised-repeat"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 60.8702148841694,
+    "selection_sha256": "281260357b57ff2a6a6cef5f3d6f3587f0e0696aeac75aee17c396d8871b7f93",
+    "log": "/root/projects/AeroVIO/logs/correspondence-v6-evaluate-supervised-repeat.log"
+  }
+]

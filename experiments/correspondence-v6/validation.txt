@@ -1,0 +1,78 @@
+[ WARN:0@1.539] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.652] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.762] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.870] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.973] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@2.809] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@2.918] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@3.029] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@3.137] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@3.238] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.341] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.453] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.561] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.670] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.773] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@5.986] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@6.097] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@6.205] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@6.319] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@6.420] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+{
+  "selected": false,
+  "pose_decisions": {
+    "continuation": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 0
+    },
+    "supervised": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 0
+    }
+  },
+  "matching_checks": {
+    "v5_all": false,
+    "v5_moving": false,
+    "continuation_all": false,
+    "continuation_moving": false
+  },
+  "metrics": {
+    "continuation": {
+      "rotation_deg": 3.0006433995721946,
+      "sim3_ate_m": 0.2655563462711749,
+      "unaligned_ate_m": 0.5142821727721503
+    },
+    "supervised": {
+      "rotation_deg": 2.727594527971309,
+      "sim3_ate_m": 0.2655634098517019,
+      "unaligned_ate_m": 0.5116028108061347
+    },
+    "v5-temporal": {
+      "rotation_deg": 2.7807532515960767,
+      "sim3_ate_m": 0.2655546278818073,
+      "unaligned_ate_m": 0.5139040894902918
+    },
+    "v5-single-frame": {
+      "rotation_deg": 2.4532874570592305,
+      "sim3_ate_m": 0.2655266915159537,
+      "unaligned_ate_m": 0.5121525643910966
+    },
+    "calibrated-gyro": {
+      "rotation_deg": 2.1704697541341615,
+      "sim3_ate_m": 0.26563040483152245,
+      "unaligned_ate_m": 0.5113318972602299
+    }
+  }
+}

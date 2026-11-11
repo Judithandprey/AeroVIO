@@ -11,6 +11,7 @@
 | [Rotation-focused training](rotation-focus-v3/README.md) | Calibrated pure-rotation data and matched continuation; six complete public runs show no accepted rotation gain; epoch-zero selection retained |
 | [Startup gyro-calibration experiment](gyro-bias-v4/README.md) | Seven complete public runs and exact repeats; diagnostic improves baseline accuracy/compute, while strict validation still retains current |
 | [Lightweight feature correlation](feature-correlation-v5/README.md) | Frozen translation and calibrated prior; matched temporal versus single-frame rotation branches, validation decision and six public runs |
+| [Explicit correspondence supervision](correspondence-v6/README.md) | Same deployed graph with geometric soft matching labels versus matched continuation; matching EPE and public rotation regress, all seven runs and exact repeat complete |
 
 `baseline-klt-imu-v1` preserves the official reference. The current working
 solution is the pose-only learned model; do not assume a working-tree filename

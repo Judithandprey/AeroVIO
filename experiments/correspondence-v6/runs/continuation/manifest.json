@@ -1,0 +1,188 @@
+{
+  "started_utc": "2026-11-11T02:25:05.776755+00:00",
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "-u",
+    "-m",
+    "viobench",
+    "evaluate",
+    "/root/projects/AeroVIO/artifacts/correspondence-v6-continuation.wasm",
+    "conta:0386e5c941b50fe9972ddabff84c414540fb8989",
+    "conta:9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+    "conta:6e8e3766f46272c1b91eca39c320081251884947",
+    "conta:f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+    "conta:489ad518363d88bfa877f86afea144de0d846258",
+    "conta:51ea6311a50f4eeb59672012b9796244dab52f60",
+    "conta:60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+    "conta:8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+    "conta:41e11443a9a5cc165ef9aeeaef11dba63614685b",
+    "conta:8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+    "--limits",
+    "/root/projects/AeroVIO/configs/evaluation-limits.json"
+  ],
+  "working_directory": "/root/projects/AeroVIO/results/correspondence-v6-continuation",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "solution_sha256": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9",
+  "workspace_solution_sha256": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9",
+  "bundle_files_sha256": {
+    "gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "meta.json": "c01de5eef15425b3e958a7aade74e4a1c010e1673d083381ede9959354730616",
+    "motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+    "net.onnx": "d490b571c44207e441c0a5102dc79b0ed647ece2fd836126afc2b1662fabfd74",
+    "preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+  },
+  "embedded_model_metadata": {
+    "schema_version": 1,
+    "input_width": 64,
+    "input_height": 48,
+    "state_mean": [
+      0.0002903045096900314,
+      -0.0024019810371100903,
+      4.056700709043071e-05,
+      -0.0006200654897838831,
+      -0.48943668603897095,
+      -0.0006987960077822208,
+      -1.5106808859854937e-05,
+      -0.012232117354869843,
+      -1.4507308151223697e-05,
+      0.27396294474601746,
+      0.36528390645980835,
+      0.5,
+      0.5,
+      0.05000000819563866
+    ],
+    "state_std": [
+      0.0016396129503846169,
+      0.010300121270120144,
+      0.00165434496011585,
+      0.007795785553753376,
+      0.008918380364775658,
+      0.006590625736862421,
+      0.00020447226415853947,
+      0.0002373328316025436,
+      0.0001760648301569745,
+      0.046288568526506424,
+      0.06171809509396553,
+      9.999999974752427e-07,
+      9.999999974752427e-07,
+      9.999999974752427e-07
+    ],
+    "target_mean": [
+      -7.096362969605252e-05,
+      -0.0015134280547499657,
+      0.008229664526879787,
+      -0.0002667608205229044,
+      -2.9533328415709548e-05,
+      -5.9541638620430604e-05
+    ],
+    "target_std": [
+      0.0010000000474974513,
+      0.005779764149338007,
+      0.00969107635319233,
+      0.001214494463056326,
+      0.0013117530616000295,
+      0.0012225416721776128
+    ],
+    "map": {
+      "enabled": false
+    },
+    "diagnostics_interval": 0,
+    "model_sha256": "d490b571c44207e441c0a5102dc79b0ed647ece2fd836126afc2b1662fabfd74",
+    "training_stage": "correspondence-v6-continuation",
+    "training_seed": 17,
+    "rotation_prior_input": true,
+    "rotation_residual_enabled": true,
+    "gyro_bias": {
+      "enabled": true
+    },
+    "architecture": "local-correlation-v5",
+    "correlation_variant": "temporal",
+    "selected_epoch": 4,
+    "checkpoint_role": "validation-selected trained diagnostic; acceptance separate",
+    "source_model_sha256": "dfc4185c04da67ca198cf371edd9936478909ee0622fd7a29363c646df8dd7f7",
+    "correspondence_variant": "continuation"
+  },
+  "runtime_sha256": "9d889ab05cd22059913d3ac2ec34aecd9f442865c1341da416730e95add49535",
+  "wasm_sha256": "1fb4395e7da7e02b23cd6e9b02c0ae8cc358731ee1057aed6fffd95a63829682",
+  "wasm_bytes": 50219360,
+  "limits_sha256": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+  "selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "episodes": [
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0000.zip",
+      "hash": "0386e5c941b50fe9972ddabff84c414540fb8989"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0001.zip",
+      "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0002.zip",
+      "hash": "6e8e3766f46272c1b91eca39c320081251884947"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0003.zip",
+      "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0004.zip",
+      "hash": "489ad518363d88bfa877f86afea144de0d846258"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0005.zip",
+      "hash": "51ea6311a50f4eeb59672012b9796244dab52f60"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0006.zip",
+      "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0007.zip",
+      "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0008.zip",
+      "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0009.zip",
+      "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "wasmtime": "50.0.1",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "conta": "0.0.7",
+    "viobench": "0.0.1"
+  },
+  "baseline_source_verified": false,
+  "evidence_scope": "Local public-set evaluation only; server limits and held-out performance unverified.",
+  "finished_utc": "2026-11-11T02:26:06.602756+00:00",
+  "exit_code": 0,
+  "report_sha256": "07eafaf4a2e346ff2f31fbba689b108b1f83685e42a23a820b9f8a15a69054a6",
+  "summary": {
+    "episodes": 10,
+    "completed": 10,
+    "duration_s_median": 59.949999999999996,
+    "sim3_ate_rmse_mean": 0.8644350733613184,
+    "rpe_translation_rmse_median": 0.25932987649624956,
+    "rpe_rotation_rmse_median": 0.012014004691696941,
+    "ate_rmse_median": 2.942369488692012,
+    "rotation_rmse_median": 0.185070837516709,
+    "velocity_rmse_median": 0.26246888946272456,
+    "angular_velocity_rmse_median": 0.033679343748626495,
+    "frames_attempted": 12000,
+    "fuel_per_frame_max": 21874382,
+    "fuel_per_frame_mean": 19219569.00625,
+    "fuel_per_frame_median": 19220094.0,
+    "fuel_per_frame_p95": 19284141.35,
+    "fuel_per_frame_p99": 19287005.0,
+    "fuel_total": 230634828075,
+    "wall_per_frame_median_ms": 1.515592448413372
+  }
+}

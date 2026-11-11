@@ -1,0 +1,49 @@
+supervised 01 rotation=3.05029 EPE=0.32883 best=1
+supervised 02 rotation=3.07190 EPE=0.33921 best=1
+supervised 03 rotation=3.50825 EPE=0.61971 best=1
+supervised 04 rotation=3.52280 EPE=0.58707 best=1
+supervised 05 rotation=4.31845 EPE=1.11154 best=1
+supervised 06 rotation=3.26503 EPE=0.99640 best=1
+supervised 07 rotation=3.66859 EPE=1.06743 best=1
+supervised 08 rotation=3.26425 EPE=1.07623 best=1
+supervised 09 rotation=3.05331 EPE=1.08749 best=1
+supervised 10 rotation=3.26718 EPE=1.06829 best=1
+supervised 11 rotation=2.91516 EPE=1.07275 best=11
+supervised 12 rotation=3.39042 EPE=1.06722 best=11
+supervised 13 rotation=2.72759 EPE=1.06758 best=13
+supervised 14 rotation=2.81105 EPE=1.06514 best=13
+supervised 15 rotation=3.13791 EPE=1.06530 best=13
+supervised 16 rotation=3.26716 EPE=1.06416 best=13
+supervised 17 rotation=2.93411 EPE=1.06285 best=13
+supervised 18 rotation=2.98278 EPE=1.06285 best=13
+supervised 19 rotation=2.91133 EPE=1.05824 best=13
+supervised 20 rotation=3.22650 EPE=1.06034 best=13
+supervised 21 rotation=3.01316 EPE=1.05897 best=13
+supervised 22 rotation=2.97861 EPE=1.05641 best=13
+supervised 23 rotation=3.02279 EPE=1.05492 best=13
+supervised 24 rotation=2.86355 EPE=1.05645 best=13
+supervised 25 rotation=3.21500 EPE=1.05053 best=13
+supervised 26 rotation=3.20499 EPE=1.04837 best=13
+supervised 27 rotation=3.05671 EPE=1.04425 best=13
+supervised 28 rotation=3.06306 EPE=1.04356 best=13
+supervised 29 rotation=2.89474 EPE=1.03941 best=13
+supervised 30 rotation=3.03067 EPE=1.03806 best=13
+supervised 31 rotation=2.96702 EPE=1.03721 best=13
+supervised 32 rotation=2.98998 EPE=1.03522 best=13
+supervised 33 rotation=3.01462 EPE=1.03359 best=13
+supervised 34 rotation=3.09294 EPE=1.03222 best=13
+supervised 35 rotation=2.95033 EPE=1.03595 best=13
+supervised 36 rotation=3.04113 EPE=1.03423 best=13
+supervised 37 rotation=2.99266 EPE=1.03176 best=13
+supervised 38 rotation=3.01214 EPE=1.03139 best=13
+supervised 39 rotation=3.00047 EPE=1.03151 best=13
+supervised 40 rotation=3.03238 EPE=1.03129 best=13
+/root/projects/AeroVIO/scripts/train_correspondence.py:226: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(net, (torch.zeros(1, 2, 48, 64), torch.zeros(1, 14), torch.zeros(1, 3)), str(path),
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/jit_utils.py:308: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_node_shape_type_inference(node, params_dict, opset_version)
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:712: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:1185: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+{"status": "complete", "best_epoch": 13, "elapsed_seconds": 16.35676978994161, "pose_eligibility": {"eligible": false, "checks": {"rotation": false, "aligned_position": true, "unaligned_position": true, "rotation_wins": false}, "rotation_wins": 0}}

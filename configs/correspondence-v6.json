@@ -1,0 +1,55 @@
+{
+  "purpose": "Isolate explicit geometric matching supervision while preserving the v5 deployed architecture",
+  "parent_commit": "86541d25a4e77a0b56104f68617831cdad1e07b5",
+  "initial_model": "models/correlation-temporal-v5",
+  "initial_onnx_sha256": "dfc4185c04da67ca198cf371edd9936478909ee0622fd7a29363c646df8dd7f7",
+  "original_cache": "data/motion-cache-v2",
+  "causal_cache": "data/correlation-cache-v5",
+  "correspondence_cache": "data/correspondence-cache-v6",
+  "manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "geometry": {
+    "feature_centres": "(4*x,4*y) in 64x48 images, matching two k3 stride2 padding1 convolutions",
+    "mapping": "current camera-z depth, intrinsics and labeled relative pose map current points into previous image",
+    "offsets": "previous-minus-current in feature cells, x/y each in [-1,1]; row-major dy then dx",
+    "soft_targets": "bilinear mass over 9 lattice offsets, preserving subpixel location",
+    "mask": "fixed original GT visibility AND positive depths AND finite/in-window displacement AND full 3x3 grid support",
+    "mask_policy": "exclude invalid/occluded/out-of-window points; no predicted confidence or masks",
+    "depth_approximation": "reuse recorded low-resolution point-sampled depth and its known 0.05 pixel sampling offset"
+  },
+  "training": {
+    "variants": ["continuation", "supervised"],
+    "seed": 17, "epochs": 40, "batch": 64, "threads": 4,
+    "optimizer": "fresh Adam on existing encoder/rotation head only; translation base frozen",
+    "lr": 0.0001, "final_lr": 0.00001, "schedule": "cosine", "gradient_clip": 5.0,
+    "rotation_loss": "unchanged SmoothL1 calibrated residual divided by 0.01 rad",
+    "matching_loss": "equal usable-pair soft-label cross entropy of local correlations / temperature",
+    "temperature": 0.1, "matching_weight": 0.1,
+    "shared_initial_weights_and_orders": true,
+    "data": "2388 original train pairs scenes2/3/4, 796 original validation pairs scenes5/6; public scene1 excluded",
+    "checkpoint": "lowest equal-episode accumulated validation rotation RMSE among trained epochs1..40; earlier on ties; preserve epoch0 separately",
+    "new_parameters_or_guest_operations": false,
+    "new_warp_or_multiframe_loss": false
+  },
+  "matching_evaluation": {
+    "metric": "soft-argmax endpoint error in 64x48 image pixels; equal valid points within each episode then equal episodes",
+    "moving_subset_threshold_image_pixels": 0.25,
+    "controls": ["v5 temporal", "v5 single-frame actual current/current volume", "zero displacement", "matched continuation"],
+    "minimum_relative_epe_gain_for_matching_claim": 0.05,
+    "note": "Measure all-valid and moving-subset EPE; small-displacement/zero-predictor baselines prevent trivial centre-match claims"
+  },
+  "acceptance": {
+    "reference": "preserved calibrated-gyro zero-correction reference, consistent with v5 eligibility",
+    "min_rotation_improvement_percent": 5, "min_rotation_episode_wins": 3,
+    "max_aligned_ate_ratio": 1.01, "max_unaligned_position_ratio": 1.01,
+    "numeric_absolute_tolerance": 0.000001,
+    "explicit_matching_required": "at least 5% lower validation EPE than starting v5 temporal AND matched continuation on both all-valid and moving subsets",
+    "otherwise": "retain previous choices; compare trained candidates as diagnostics"
+  },
+  "public_runs": ["baseline", "v5-calibrated-gyro", "v5-single-frame", "v5-temporal", "v6-continuation", "v6-supervised", "v6-supervised-repeat"],
+  "public_selection": "configs/public-episodes.json",
+  "limits": "configs/evaluation-limits.json",
+  "timing": "serial complete WASM runs after training; use exact preserved artifacts for old references",
+  "verification": ["independent projection/axis/subpixel tests", "invalid-mask finite gradients", "matching/EPE evaluation", "frozen translation", "ONNX/OpenCV parity", "actual Solution.step validation", "40-frame WASM checks", "exact full repeat"],
+  "budget": "two fixed 40-epoch CPU fits and seven serial public runs; no search or paid compute",
+  "submission": false
+}

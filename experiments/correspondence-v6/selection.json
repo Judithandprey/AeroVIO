@@ -1,0 +1,50 @@
+{
+  "selected_v6_variant": "retain_previous",
+  "pose_decisions": {
+    "continuation": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 0
+    },
+    "supervised": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 0
+    }
+  },
+  "matching_checks": {
+    "v5_all": false,
+    "v5_moving": false,
+    "continuation_all": false,
+    "continuation_moving": false
+  },
+  "public_data_used": false,
+  "protocol_sha256": "a5759341257c9a6b8f3956cf4aa205e73aeb5bc6cd7f03cb61492c05d16b951f",
+  "validation_sha256": "2407578b65e509d32477b4392bc5650da281cc4a970cb5c9a0ee30381a3008fe",
+  "source_sha256": {
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+  },
+  "model_sha256": {
+    "continuation": "d490b571c44207e441c0a5102dc79b0ed647ece2fd836126afc2b1662fabfd74",
+    "supervised": "fe0df6441f2494e5b964c854dac4459c607bbab2f4aa221238ec4f72d40aecba",
+    "v5-temporal": "dfc4185c04da67ca198cf371edd9936478909ee0622fd7a29363c646df8dd7f7",
+    "v5-single-frame": "5de194f6698dd7783cbc58c506a81f032abdc4e1e58dd9bc735de01948a6259b",
+    "calibrated-gyro": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7"
+  },
+  "frozen_utc": "2026-11-11T02:18:28.657700+00:00",
+  "previous_selection_unchanged": true
+}

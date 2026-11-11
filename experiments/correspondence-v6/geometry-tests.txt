@@ -1,0 +1,15 @@
+test_identity_uses_exact_lattice_and_only_full_support (test_correspondence_supervision.CorrespondenceTests.test_identity_uses_exact_lattice_and_only_full_support) ... ok
+test_invalid_locations_have_no_gradient_and_empty_mask_is_finite (test_correspondence_supervision.CorrespondenceTests.test_invalid_locations_have_no_gradient_and_empty_mask_is_finite) ... /root/projects/AeroVIO/tests/test_correspondence_supervision.py:85: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  if empty: self.assertEqual(float(loss), 0.)
+ok
+test_matching_supervision_trains_encoder_with_zero_rotation_head (test_correspondence_supervision.CorrespondenceTests.test_matching_supervision_trains_encoder_with_zero_rotation_head) ... ok
+test_rotation_translation_matches_independent_opencv_projection (test_correspondence_supervision.CorrespondenceTests.test_rotation_translation_matches_independent_opencv_projection) ... ok
+test_soft_argmax_recovers_subpixel_label_expectation (test_correspondence_supervision.CorrespondenceTests.test_soft_argmax_recovers_subpixel_label_expectation) ... ok
+test_subpixel_translation_direction_and_bilinear_mass (test_correspondence_supervision.CorrespondenceTests.test_subpixel_translation_direction_and_bilinear_mass) ... ok
+test_visibility_out_of_window_and_behind_camera_are_excluded (test_correspondence_supervision.CorrespondenceTests.test_visibility_out_of_window_and_behind_camera_are_excluded) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.528s
+
+OK
