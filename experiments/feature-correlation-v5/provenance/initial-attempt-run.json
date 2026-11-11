@@ -1,0 +1,124 @@
+{
+  "status": "running",
+  "variant": "single-frame",
+  "started_utc": "2026-11-11T01:40:30.319323+00:00",
+  "settings": {
+    "seed": 17,
+    "epochs": 40,
+    "batch": 64,
+    "threads": 4,
+    "optimizer": "Adam on new rotation branch only",
+    "lr": 0.001,
+    "final_lr": 0.0001,
+    "schedule": "cosine",
+    "gradient_clip": 5.0,
+    "objective": "SmoothL1 of calibrated rotation residual vector divided by fixed 0.01 radians",
+    "data": "original 2388 train pairs from scenes2/3/4; 796 validation pairs from scenes5/6; no synthetic auxiliary/public training",
+    "new_warp_or_multiframe_loss": false,
+    "shared_initialization_and_minibatch_order": true,
+    "checkpoint": "lowest equal-episode accumulated validation rotation RMSE among epochs1..40; earlier on ties; retain this best trained candidate even if not eligible"
+  },
+  "initial_weights_sha256": "48e17f0806151cf4abf1f1b34c4486ed4b3520d3ca0e630a245148b6f711f0ff",
+  "protocol_sha256": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+  "cache_record_sha256": "9ba5f8cba58300f7549086b65f17de3726492b176f100120dae513257667d846",
+  "base_checkpoint_sha256": "5cec91213dc289da88d9d29c300c234663672c900cf3e7e49379c0de646a45a0",
+  "base_onnx_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "source_sha256": {
+    "scripts/train_feature_correlation.py": "7e7f143c05b73f7833c365734d42493d54b03dc152a2016e13f18afad132515b",
+    "configs/feature-correlation-v5.json": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+    "training/feature_correlation.py": "028be4cce7187007aa2ad1cafd8d3b077990be8b169e7f1356663cbed1356655",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769"
+  },
+  "parameters": 35641,
+  "trainable_parameters": 6243,
+  "reference": {
+    "rotation_deg": 2.170469754079973,
+    "sim3_ate_m": 0.26563040429158785,
+    "unaligned_ate_m": 0.5113318938191261,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19950498879671394,
+          "rpe_rotation_rmse": 0.010654413883001606,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6257078774408436,
+          "rotation_rmse": 0.03125655641568702,
+          "rotation_max": 0.04325524476084499,
+          "velocity_rmse": 0.20297139250540266,
+          "angular_velocity_rmse": 0.04262245728816466,
+          "sim3_scale": 2.1049317935164233,
+          "sim3_ate_rmse": 0.17552932395171494,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.0805942794316585,
+          "drift_per_metre": 0.6568048079019694
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2010395599596247,
+          "rpe_rotation_rmse": 0.01144178829257507,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.42238463334986487,
+          "rotation_rmse": 0.04460490137591729,
+          "rotation_max": 0.07917019757064943,
+          "velocity_rmse": 0.2015892641653764,
+          "angular_velocity_rmse": 0.04437192857346534,
+          "sim3_scale": 1.2708680465013251,
+          "sim3_ate_rmse": 0.29300811027015206,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.45061406257902087,
+          "drift_per_metre": 0.21398306722989358
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.17084879639088002,
+          "rpe_rotation_rmse": 0.01049500560540017,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.49311537987768433,
+          "rotation_rmse": 0.03782372322641897,
+          "rotation_max": 0.07052608088289164,
+          "velocity_rmse": 0.18446332939698665,
+          "angular_velocity_rmse": 0.04296681606900384,
+          "sim3_scale": 0.9391706455642945,
+          "sim3_ate_rmse": 0.23052400891237673,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.6102566705424015,
+          "drift_per_metre": 0.3811199848657129
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27787219907025434,
+          "rpe_rotation_rmse": 0.013550275578040156,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5041196846081116,
+          "rotation_rmse": 0.03784219307656532,
+          "rotation_max": 0.07094517698653395,
+          "velocity_rmse": 0.2806395693293083,
+          "angular_velocity_rmse": 0.04334091576435618,
+          "sim3_scale": 1.7817500518754759,
+          "sim3_ate_rmse": 0.3634601740321078,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.2305122449684827,
+          "drift_per_metre": 0.4674844561178163
+        }
+      }
+    ]
+  },
+  "history": [],
+  "torch": "2.15.0+cpu",
+  "opencv": "5.0.0"
+}

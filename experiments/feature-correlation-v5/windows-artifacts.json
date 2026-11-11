@@ -1,0 +1,19 @@
+{
+  "verified_utc": "2026-11-11T01:51:32.5888593Z",
+  "copies": [
+    {
+      "source": "\\\\wsl.localhost\\Ubuntu\\root\\projects\\AeroVIO\\artifacts\\correlation-v5-temporal.wasm",
+      "destination": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-correlation-temporal-v5.wasm",
+      "sha256": "1985d1c74e531b976bba2f26a0b6e1142d444d3f8a699944af30e82d6db18a7e",
+      "bytes": 50219205,
+      "role": "unselected diagnostic; not submitted"
+    },
+    {
+      "source": "\\\\wsl.localhost\\Ubuntu\\root\\projects\\AeroVIO\\artifacts\\correlation-v5-single-frame.wasm",
+      "destination": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-correlation-control-v5.wasm",
+      "sha256": "8f66188949d06436cd755343e4c1c851ddaf054a939a2099ae6af72e2831e99d",
+      "bytes": 50217571,
+      "role": "unselected diagnostic; not submitted"
+    }
+  ]
+}

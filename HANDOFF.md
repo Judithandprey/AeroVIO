@@ -1,5 +1,27 @@
 # AeroVIO - Handoff
 
+The v5 lightweight feature-correlation experiment is complete. The old translation
+network is frozen; a 6,243-parameter local matching branch corrects the actual
+causal calibrated gyro prior. A matched current/current-image control isolates
+previous-frame information. Both seed-17 fits ran 40 epochs. Validation chose
+trained epochs 7 (temporal) and 14 (single-frame) as diagnostics, but neither
+qualified: mean rotation RMSE is 2.780753 and 2.453287 degrees versus 2.170470
+for calibrated gyro. V5 retains its calibrated-gyro reference, while v4's selected
+`current` and the workspace pose-only default remain unchanged.
+
+All six v5 public runs completed 10/10 episodes. Temporal correlation achieves
+0.870938 m mean Sim(3) ATE, 9.7654 degrees median rotation RMSE and 1.522 ms median
+step time. Against calibrated gyro, these are -1.23%, -19.93% and +26.91%.
+The single-frame control is better on the first two metrics (0.855547 m, 9.0634
+degrees) and faster (1.440 ms), so this round does not establish an incremental
+benefit from temporal matching. 111 tests and both 40-frame WASM checks pass.
+Full temporal repetition reproduces outputs, accuracy and frame fuel exactly;
+the three preserved references reproduce v4 exactly. See
+`docs/feature-correlation.md`, `experiments/feature-correlation-v5/README.md`,
+`comparison.md`, `selection.json` and `windows-artifacts.json` in that record.
+No new training or default change is pending; proposed next hypotheses are not
+authorization to start more experiments.
+
 The v4 startup gyro-calibration experiment has completed original simulated-flight
 validation. Selection remains `current`: the unchanged v1 warp model with bias
 calibration off and its learned residual on. Calibrated gyro-only rotation lowers

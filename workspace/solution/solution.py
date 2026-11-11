@@ -88,14 +88,19 @@ class Solution:
             return np.array([0, 0, 0, 0, 0, 0, 1.0, 0, 0, 0, 0, 0, 0])
         interval = t - self.previous_t
         state = make_state(imu, self.T_cam_imu, self.config, self.previous_t, t)
-        motion = np.asarray(self.predictor.predict(np.stack([self.previous, small]), state), dtype=np.float64)
-        if motion.shape != (6,) or not np.isfinite(motion).all():
-            raise ValueError("motion prediction must contain six finite values")
         delta = np.eye(4)
         delta[:3, :3] = exp_so3(state[:3].astype(np.float64))
         if self.gyro_calibration is not None and self.gyro_calibration.accepted:
             delta[:3, :3] = integrate_debiased_rotation(imu, self.T_cam_imu, self.previous_t, t,
                                                        self.gyro_calibration.bias_imu)
+        pair = np.stack([self.previous, small])
+        if getattr(self.predictor, "requires_rotation_prior", False):
+            prediction = self.predictor.predict(pair, state, rotation_prior=log_so3(delta[:3, :3]))
+        else:
+            prediction = self.predictor.predict(pair, state)
+        motion = np.asarray(prediction, dtype=np.float64)
+        if motion.shape != (6,) or not np.isfinite(motion).all():
+            raise ValueError("motion prediction must contain six finite values")
         if self.rotation_residual_enabled:
             delta[:3, :3] = delta[:3, :3] @ exp_so3(motion[3:])
         delta[:3, 3] = motion[:3]

@@ -1,0 +1,15 @@
+{
+  "configs/feature-correlation-v5.json": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+  "scripts/plot_feature_correlation.py": "cd404efc48cdb61403f77f9eb71e3768a470434f9cd356638127570e5bae46e3",
+  "scripts/report_feature_correlation.py": "37497e105972f972ac79044a9cd2b44ad2fd3143276c2e653afe52e917ace51b",
+  "scripts/run_feature_correlation_evaluation.py": "d21796691587d2a1c06d7704f5de839485a1484ffba8ac95ce2b2af9ed5f40d9",
+  "scripts/train_feature_correlation.py": "258328211acc5e63f8994d583e59871c80bc0427210a06ed0410545dd8c30d34",
+  "scripts/validate_feature_correlation.py": "d07338d1caf4581561a16df7a32b45d540fca45a431ae7464976bfbda4b5f115",
+  "training/feature_correlation.py": "028be4cce7187007aa2ad1cafd8d3b077990be8b169e7f1356663cbed1356655",
+  "tests/test_feature_correlation.py": "061313da99d98cdfa03fb1fdbf76a26f0923f160fbfcbaffc9b5f45fecd11963",
+  "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+  "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+  "workspace/solution/motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+  "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+  "workspace/solution/solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+}

@@ -1,0 +1,49 @@
+temporal epoch 01 rotation=3.19999 ATE=0.265611 best=1
+temporal epoch 02 rotation=3.60935 ATE=0.265583 best=1
+temporal epoch 03 rotation=3.73478 ATE=0.265564 best=1
+temporal epoch 04 rotation=3.04375 ATE=0.265578 best=4
+temporal epoch 05 rotation=3.85360 ATE=0.265555 best=4
+temporal epoch 06 rotation=3.80970 ATE=0.265599 best=4
+temporal epoch 07 rotation=2.78075 ATE=0.265555 best=7
+temporal epoch 08 rotation=3.10993 ATE=0.265525 best=7
+temporal epoch 09 rotation=3.94453 ATE=0.265587 best=7
+temporal epoch 10 rotation=3.31477 ATE=0.265541 best=7
+temporal epoch 11 rotation=3.40158 ATE=0.265555 best=7
+temporal epoch 12 rotation=3.11821 ATE=0.265550 best=7
+temporal epoch 13 rotation=3.47659 ATE=0.265543 best=7
+temporal epoch 14 rotation=4.14433 ATE=0.265587 best=7
+temporal epoch 15 rotation=3.65613 ATE=0.265557 best=7
+temporal epoch 16 rotation=3.43763 ATE=0.265576 best=7
+temporal epoch 17 rotation=5.24312 ATE=0.265630 best=7
+temporal epoch 18 rotation=3.56904 ATE=0.265562 best=7
+temporal epoch 19 rotation=3.12440 ATE=0.265555 best=7
+temporal epoch 20 rotation=3.51048 ATE=0.265548 best=7
+temporal epoch 21 rotation=3.20728 ATE=0.265505 best=7
+temporal epoch 22 rotation=3.86331 ATE=0.265551 best=7
+temporal epoch 23 rotation=3.58421 ATE=0.265544 best=7
+temporal epoch 24 rotation=3.79648 ATE=0.265538 best=7
+temporal epoch 25 rotation=5.32631 ATE=0.265601 best=7
+temporal epoch 26 rotation=3.56314 ATE=0.265555 best=7
+temporal epoch 27 rotation=3.40456 ATE=0.265529 best=7
+temporal epoch 28 rotation=4.28459 ATE=0.265559 best=7
+temporal epoch 29 rotation=4.30675 ATE=0.265559 best=7
+temporal epoch 30 rotation=4.44680 ATE=0.265550 best=7
+temporal epoch 31 rotation=4.41637 ATE=0.265559 best=7
+temporal epoch 32 rotation=4.22850 ATE=0.265555 best=7
+temporal epoch 33 rotation=4.38733 ATE=0.265548 best=7
+temporal epoch 34 rotation=4.49002 ATE=0.265551 best=7
+temporal epoch 35 rotation=4.49104 ATE=0.265557 best=7
+temporal epoch 36 rotation=4.67235 ATE=0.265559 best=7
+temporal epoch 37 rotation=4.34825 ATE=0.265544 best=7
+temporal epoch 38 rotation=4.54980 ATE=0.265558 best=7
+temporal epoch 39 rotation=4.42334 ATE=0.265544 best=7
+temporal epoch 40 rotation=4.46770 ATE=0.265540 best=7
+/root/projects/AeroVIO/scripts/train_feature_correlation.py:245: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(net, (torch.zeros(1, 2, 48, 64), torch.zeros(1, 14), torch.zeros(1, 3)),
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/jit_utils.py:308: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_node_shape_type_inference(node, params_dict, opset_version)
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:712: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:1185: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+{"status": "complete", "best_epoch": 7, "parameters": 35641, "trainable_parameters": 6243, "acceptance": {"eligible": false, "checks": {"rotation": false, "aligned_position": true, "unaligned_position": true, "rotation_wins": false}, "rotation_wins": 1}, "elapsed_seconds": 8.500695954076946}

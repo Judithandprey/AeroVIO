@@ -6,7 +6,16 @@ Estimate camera pose and twist from RGB + IMU while measuring the
 accuracy-compute trade-off in a WebAssembly runtime. Developed for UC Berkeley
 EECS 116/216, Fall 2026, Project 3.
 
-**Current investigation:** test a fixed, causal startup gyro calibration with
+**Latest completed experiment:** a lightweight local feature-correlation branch
+adds 6,243 trainable rotation parameters while freezing translation. Across ten
+public flights it achieves 0.870938 m aligned ATE, 9.7654 degrees median rotation
+error and 1.522 ms median WASM step time. However, the matched single-frame
+control is more accurate on those aggregate metrics and faster, and both fail
+original-flight validation. No replacement is selected. See the
+[v5 results](experiments/feature-correlation-v5/README.md) and
+[architecture guide](docs/feature-correlation.md).
+
+**Previous investigation:** test a fixed, causal startup gyro calibration with
 the existing model, without retraining. On four original simulated validation
 flights, calibration without the learned rotation residual reduces mean rotation
 RMSE by 68.77%, but raises aligned ATE by 0.02752%. It fails the frozen
@@ -84,6 +93,7 @@ experiments/         Compact reports, model snapshots and provenance
     motion-ablation-v2/
     rotation-focus-v3/
     gyro-bias-v4/
+    feature-correlation-v5/
 docs/                Course sources, requirements, architecture and setup
 reports/             Presentation and final-report sources
 HANDOFF.md           Verified state and development boundaries

@@ -1,0 +1,4351 @@
+{
+  "status": "complete",
+  "variant": "single-frame",
+  "started_utc": "2026-11-11T01:40:47.233841+00:00",
+  "settings": {
+    "seed": 17,
+    "epochs": 40,
+    "batch": 64,
+    "threads": 4,
+    "optimizer": "Adam on new rotation branch only",
+    "lr": 0.001,
+    "final_lr": 0.0001,
+    "schedule": "cosine",
+    "gradient_clip": 5.0,
+    "objective": "SmoothL1 of calibrated rotation residual vector divided by fixed 0.01 radians",
+    "data": "original 2388 train pairs from scenes2/3/4; 796 validation pairs from scenes5/6; no synthetic auxiliary/public training",
+    "new_warp_or_multiframe_loss": false,
+    "shared_initialization_and_minibatch_order": true,
+    "checkpoint": "lowest equal-episode accumulated validation rotation RMSE among epochs1..40; earlier on ties; retain this best trained candidate even if not eligible"
+  },
+  "initial_weights_sha256": "48e17f0806151cf4abf1f1b34c4486ed4b3520d3ca0e630a245148b6f711f0ff",
+  "protocol_sha256": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+  "cache_record_sha256": "9ba5f8cba58300f7549086b65f17de3726492b176f100120dae513257667d846",
+  "base_checkpoint_sha256": "5cec91213dc289da88d9d29c300c234663672c900cf3e7e49379c0de646a45a0",
+  "base_onnx_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "source_sha256": {
+    "scripts/train_feature_correlation.py": "258328211acc5e63f8994d583e59871c80bc0427210a06ed0410545dd8c30d34",
+    "configs/feature-correlation-v5.json": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+    "training/feature_correlation.py": "028be4cce7187007aa2ad1cafd8d3b077990be8b169e7f1356663cbed1356655",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769"
+  },
+  "parameters": 35641,
+  "trainable_parameters": 6243,
+  "reference": {
+    "rotation_deg": 2.170469754079973,
+    "sim3_ate_m": 0.26563040429158785,
+    "unaligned_ate_m": 0.5113318938191261,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19950498879671394,
+          "rpe_rotation_rmse": 0.010654413883001606,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6257078774408436,
+          "rotation_rmse": 0.03125655641568702,
+          "rotation_max": 0.04325524476084499,
+          "velocity_rmse": 0.20297139250540266,
+          "angular_velocity_rmse": 0.04262245728816466,
+          "sim3_scale": 2.1049317935164233,
+          "sim3_ate_rmse": 0.17552932395171494,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.0805942794316585,
+          "drift_per_metre": 0.6568048079019694
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2010395599596247,
+          "rpe_rotation_rmse": 0.01144178829257507,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.42238463334986487,
+          "rotation_rmse": 0.04460490137591729,
+          "rotation_max": 0.07917019757064943,
+          "velocity_rmse": 0.2015892641653764,
+          "angular_velocity_rmse": 0.04437192857346534,
+          "sim3_scale": 1.2708680465013251,
+          "sim3_ate_rmse": 0.29300811027015206,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.45061406257902087,
+          "drift_per_metre": 0.21398306722989358
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.17084879639088002,
+          "rpe_rotation_rmse": 0.01049500560540017,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.49311537987768433,
+          "rotation_rmse": 0.03782372322641897,
+          "rotation_max": 0.07052608088289164,
+          "velocity_rmse": 0.18446332939698665,
+          "angular_velocity_rmse": 0.04296681606900384,
+          "sim3_scale": 0.9391706455642945,
+          "sim3_ate_rmse": 0.23052400891237673,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.6102566705424015,
+          "drift_per_metre": 0.3811199848657129
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27787219907025434,
+          "rpe_rotation_rmse": 0.013550275578040156,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5041196846081116,
+          "rotation_rmse": 0.03784219307656532,
+          "rotation_max": 0.07094517698653395,
+          "velocity_rmse": 0.2806395693293083,
+          "angular_velocity_rmse": 0.04334091576435618,
+          "sim3_scale": 1.7817500518754759,
+          "sim3_ate_rmse": 0.3634601740321078,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.2305122449684827,
+          "drift_per_metre": 0.4674844561178163
+        }
+      }
+    ]
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.006368081042483774,
+      "validation": {
+        "rotation_deg": 3.190893429985008,
+        "sim3_ate_m": 0.2656109186684419,
+        "unaligned_ate_m": 0.513678252871544,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19962300406589634,
+              "rpe_rotation_rmse": 0.011461824047257678,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6335408042548962,
+              "rotation_rmse": 0.051956983810688466,
+              "rotation_max": 0.07266995309624971,
+              "velocity_rmse": 0.20295963582616716,
+              "angular_velocity_rmse": 0.04300909544025983,
+              "sim3_scale": 2.1037768227276303,
+              "sim3_ate_rmse": 0.17522564180830627,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0970381370621936,
+              "drift_per_metre": 0.6667996829052606
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105436716710753,
+              "rpe_rotation_rmse": 0.014194620550654218,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.423433700491787,
+              "rotation_rmse": 0.06490008441043169,
+              "rotation_max": 0.11478936023505767,
+              "velocity_rmse": 0.20158842558701562,
+              "angular_velocity_rmse": 0.04506894352427167,
+              "sim3_scale": 1.271237072632806,
+              "sim3_ate_rmse": 0.2930993133918353,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4554578527838086,
+              "drift_per_metre": 0.21628323753329337
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17080560525630217,
+              "rpe_rotation_rmse": 0.011577521425169403,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49092386789047965,
+              "rotation_rmse": 0.048177750836602584,
+              "rotation_max": 0.08558645205759771,
+              "velocity_rmse": 0.18446790283656106,
+              "angular_velocity_rmse": 0.04321132178188427,
+              "sim3_scale": 0.9391957226010089,
+              "sim3_ate_rmse": 0.23054515534422101,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5986497704238881,
+              "drift_per_metre": 0.3738711962640678
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778688816470402,
+              "rpe_rotation_rmse": 0.015489157454501211,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5068146388490129,
+              "rotation_rmse": 0.05773156667625142,
+              "rotation_max": 0.10525956934778542,
+              "velocity_rmse": 0.28064015375881757,
+              "angular_velocity_rmse": 0.04389435795664538,
+              "sim3_scale": 1.780944143094674,
+              "sim3_ate_rmse": 0.3635735641294048,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2350173502586919,
+              "drift_per_metre": 0.4691959926790806
+            }
+          }
+        ]
+      },
+      "selected": true,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "1f9986ed4e14f3da7249b30b1c3d0b334c4baac2bfef73524b63d69bd748e511"
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.006290567341499293,
+      "validation": {
+        "rotation_deg": 3.7802635686625528,
+        "sim3_ate_m": 0.2655937231281505,
+        "unaligned_ate_m": 0.5163331509855897,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19970272580005047,
+              "rpe_rotation_rmse": 0.013663997312530535,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6377737182679527,
+              "rotation_rmse": 0.07120016528363649,
+              "rotation_max": 0.1094834151334905,
+              "velocity_rmse": 0.20295148468704735,
+              "angular_velocity_rmse": 0.04351887770798937,
+              "sim3_scale": 2.1028953732860827,
+              "sim3_ate_rmse": 0.17504588757976647,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1057398469321056,
+              "drift_per_metre": 0.6720887400364275
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2010450209955823,
+              "rpe_rotation_rmse": 0.014184700962914763,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.422390152520216,
+              "rotation_rmse": 0.06552042544260371,
+              "rotation_max": 0.11526406703729186,
+              "velocity_rmse": 0.201589221500258,
+              "angular_velocity_rmse": 0.04488099366719534,
+              "sim3_scale": 1.271265161316357,
+              "sim3_ate_rmse": 0.2931153337402341,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.45035951809768693,
+              "drift_per_metre": 0.21386219171049559
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17089185211128965,
+              "rpe_rotation_rmse": 0.012770384317249936,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4959028322583284,
+              "rotation_rmse": 0.05610707151837249,
+              "rotation_max": 0.10048218902362631,
+              "velocity_rmse": 0.1844590808404374,
+              "angular_velocity_rmse": 0.043333957346183276,
+              "sim3_scale": 0.9392659280310496,
+              "sim3_ate_rmse": 0.23053519377596304,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6253617536211756,
+              "drift_per_metre": 0.39055347295730725
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778702710313213,
+              "rpe_rotation_rmse": 0.017069576801739244,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5092659008958622,
+              "rotation_rmse": 0.07108452122079639,
+              "rotation_max": 0.12733845033074098,
+              "velocity_rmse": 0.280640262833694,
+              "angular_velocity_rmse": 0.04416188259981763,
+              "sim3_scale": 1.7802414203549646,
+              "sim3_ate_rmse": 0.3636784774166384,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2391117681021082,
+              "drift_per_metre": 0.4707515047891593
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "7ede1f0bff59adda0fbcf2fd10303d620cdb8bf7c9b5c238f34f57fa14c86a89"
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.006195750978262081,
+      "validation": {
+        "rotation_deg": 3.534103712067309,
+        "sim3_ate_m": 0.2655785047685241,
+        "unaligned_ate_m": 0.5165719853362605,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1997196596280505,
+              "rpe_rotation_rmse": 0.01298465888921746,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.638151555264753,
+              "rotation_rmse": 0.06596561254547606,
+              "rotation_max": 0.09902635349111784,
+              "velocity_rmse": 0.20294951195151387,
+              "angular_velocity_rmse": 0.04290350023576788,
+              "sim3_scale": 2.1028389260964895,
+              "sim3_ate_rmse": 0.17502748019555844,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1078803831823116,
+              "drift_per_metre": 0.6733897968043416
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103743665673543,
+              "rpe_rotation_rmse": 0.012824776437607602,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4214611785212984,
+              "rotation_rmse": 0.05645464413154575,
+              "rotation_max": 0.10086873509978656,
+              "velocity_rmse": 0.20158961441999845,
+              "angular_velocity_rmse": 0.044165190434103815,
+              "sim3_scale": 1.271139743410516,
+              "sim3_ate_rmse": 0.29308385949075083,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44597196812997253,
+              "drift_per_metre": 0.21177867617539994
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17092431776759606,
+              "rpe_rotation_rmse": 0.012266414352817319,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4977026119474412,
+              "rotation_rmse": 0.05354942030955271,
+              "rotation_max": 0.09428364424390576,
+              "velocity_rmse": 0.184455514063063,
+              "angular_velocity_rmse": 0.04283275029192228,
+              "sim3_scale": 0.9392509283292457,
+              "sim3_ate_rmse": 0.23052400115261576,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6347722347312631,
+              "drift_per_metre": 0.39643054500154706
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786904670608376,
+              "rpe_rotation_rmse": 0.016629906062571163,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.508972595611549,
+              "rotation_rmse": 0.0707573065435383,
+              "rotation_max": 0.12516106673342314,
+              "velocity_rmse": 0.28064050778563554,
+              "angular_velocity_rmse": 0.04368226082041925,
+              "sim3_scale": 1.780371326351192,
+              "sim3_ate_rmse": 0.36367867823517147,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.23880981931238,
+              "drift_per_metre": 0.4706367912897051
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": false,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "073a553dfb91234066f50df2172c03d83ca25f07133a4c21f68f71f0cb9a0846"
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.006077992983343363,
+      "validation": {
+        "rotation_deg": 3.636643424111601,
+        "sim3_ate_m": 0.2656013438377079,
+        "unaligned_ate_m": 0.5151645662999267,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1996794286876841,
+              "rpe_rotation_rmse": 0.01248484103665554,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6336712213877562,
+              "rotation_rmse": 0.0598584615307736,
+              "rotation_max": 0.09177108509439458,
+              "velocity_rmse": 0.20295319183927127,
+              "angular_velocity_rmse": 0.04205831351512279,
+              "sim3_scale": 2.1031944031083616,
+              "sim3_ate_rmse": 0.17514653315823003,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.096822545554188,
+              "drift_per_metre": 0.6666686424752896
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103173734639745,
+              "rpe_rotation_rmse": 0.01293698647377698,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.420942021753181,
+              "rotation_rmse": 0.05920592865004555,
+              "rotation_max": 0.10445497378125884,
+              "velocity_rmse": 0.20158993766846908,
+              "angular_velocity_rmse": 0.04368255398764508,
+              "sim3_scale": 1.2711005758525473,
+              "sim3_ate_rmse": 0.29307167529484685,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4439024320456369,
+              "drift_per_metre": 0.21079591572506132
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17092964319102874,
+              "rpe_rotation_rmse": 0.013759013906485623,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4978953007796608,
+              "rotation_rmse": 0.06240630179192685,
+              "rotation_max": 0.1138615905722606,
+              "velocity_rmse": 0.18445513384041573,
+              "angular_velocity_rmse": 0.04279937132930246,
+              "sim3_scale": 0.9393278325240835,
+              "sim3_ate_rmse": 0.23052814126161283,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6362158578705646,
+              "drift_per_metre": 0.39733212241243115
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778696324736392,
+              "rpe_rotation_rmse": 0.017613473631042226,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5081497212791086,
+              "rotation_rmse": 0.07241491391424588,
+              "rotation_max": 0.13267801314327948,
+              "velocity_rmse": 0.28064051127430467,
+              "angular_velocity_rmse": 0.043400102943873954,
+              "sim3_scale": 1.7804913176979067,
+              "sim3_ate_rmse": 0.3636590256361419,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2369823229974624,
+              "drift_per_metre": 0.4699425063491611
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "ac812aa6741d0c3f5c2b76c932bd822549220f512debb36d68d4be97680ba862"
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.005860720957680862,
+      "validation": {
+        "rotation_deg": 4.227547935496791,
+        "sim3_ate_m": 0.26555723404584364,
+        "unaligned_ate_m": 0.5184390956068357,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19987758576974857,
+              "rpe_rotation_rmse": 0.015509698518984441,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6461647249060608,
+              "rotation_rmse": 0.08541952980750424,
+              "rotation_max": 0.13003159242415654,
+              "velocity_rmse": 0.2029334784234515,
+              "angular_velocity_rmse": 0.0425498859461912,
+              "sim3_scale": 2.1021151472172486,
+              "sim3_ate_rmse": 0.17475061108070777,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1263121119184372,
+              "drift_per_metre": 0.6845929359308964
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2010575352764122,
+              "rpe_rotation_rmse": 0.01460053019201297,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42287618716413844,
+              "rotation_rmse": 0.06827433157885035,
+              "rotation_max": 0.12267230297077235,
+              "velocity_rmse": 0.20158786064660986,
+              "angular_velocity_rmse": 0.04350943786096832,
+              "sim3_scale": 1.271316463349361,
+              "sim3_ate_rmse": 0.29313941356523515,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4525144036148421,
+              "drift_per_metre": 0.21488548203980987
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17084260642024973,
+              "rpe_rotation_rmse": 0.011574094232581655,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49363604424903484,
+              "rotation_rmse": 0.05247080851959597,
+              "rotation_max": 0.08728186720472934,
+              "velocity_rmse": 0.18446406850335395,
+              "angular_velocity_rmse": 0.04148371534187924,
+              "sim3_scale": 0.9391756216153793,
+              "sim3_ate_rmse": 0.2305400184104931,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6130933205094947,
+              "drift_per_metre": 0.38289154107265616
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786491868882546,
+              "rpe_rotation_rmse": 0.018641607286907287,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5110794261081085,
+              "rotation_rmse": 0.08897385313528086,
+              "rotation_max": 0.15612467965384177,
+              "velocity_rmse": 0.2806415537146323,
+              "angular_velocity_rmse": 0.04324676850658563,
+              "sim3_scale": 1.7800888588883947,
+              "sim3_ate_rmse": 0.36379889312693847,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2435795715459774,
+              "drift_per_metre": 0.4724488699893341
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": false,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "140559b105fde5f832860c8baeae36a235346a3fafcb6928f1444f218e68e24c"
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.005561091332623058,
+      "validation": {
+        "rotation_deg": 3.9173130902751336,
+        "sim3_ate_m": 0.265575380188774,
+        "unaligned_ate_m": 0.5140090813539139,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19978306355969422,
+              "rpe_rotation_rmse": 0.013061714771932083,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6370938640973691,
+              "rotation_rmse": 0.06583019073965012,
+              "rotation_max": 0.09934503476809631,
+              "velocity_rmse": 0.20294190940200926,
+              "angular_velocity_rmse": 0.04044189799545692,
+              "sim3_scale": 2.1035515393639392,
+              "sim3_ate_rmse": 0.17506136514065315,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1027057863465253,
+              "drift_per_metre": 0.6702445829665575
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105081582070866,
+              "rpe_rotation_rmse": 0.013836980444884333,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42200843716544184,
+              "rotation_rmse": 0.06570900117557063,
+              "rotation_max": 0.11567913240546483,
+              "velocity_rmse": 0.20158787059115918,
+              "angular_velocity_rmse": 0.04223872968705061,
+              "sim3_scale": 1.2710093671710219,
+              "sim3_ate_rmse": 0.29305328410338255,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44946171838045296,
+              "drift_per_metre": 0.21343585362385817
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17081988300831466,
+              "rpe_rotation_rmse": 0.01345655445038966,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4906958062884433,
+              "rotation_rmse": 0.05815028030485391,
+              "rotation_max": 0.11133583023402485,
+              "velocity_rmse": 0.1844658307893985,
+              "angular_velocity_rmse": 0.04109867484599504,
+              "sim3_scale": 0.9392116035252694,
+              "sim3_ate_rmse": 0.23054863973162115,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5980282111564773,
+              "drift_per_metre": 0.3734830175353073
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786671165687904,
+              "rpe_rotation_rmse": 0.018842960989525124,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5062382178644013,
+              "rotation_rmse": 0.08379057280702511,
+              "rotation_max": 0.15403409261324977,
+              "velocity_rmse": 0.2806412669703857,
+              "angular_velocity_rmse": 0.042118174019172096,
+              "sim3_scale": 1.7810461298682017,
+              "sim3_ate_rmse": 0.36363823177943927,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2337236009026742,
+              "drift_per_metre": 0.4687044837838837
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "37b6a26bf2ab301cd05ea60a11ac18ac444b4e0231c6482a4cf39ab68a1e5362"
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.005250157250194394,
+      "validation": {
+        "rotation_deg": 4.443206794090348,
+        "sim3_ate_m": 0.26551085326602614,
+        "unaligned_ate_m": 0.5186311635115926,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20006703268596354,
+              "rpe_rotation_rmse": 0.016790096904378222,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6533202049703681,
+              "rotation_rmse": 0.09675263277163913,
+              "rotation_max": 0.14068794253547087,
+              "velocity_rmse": 0.20291381550427465,
+              "angular_velocity_rmse": 0.04076527777870527,
+              "sim3_scale": 2.102877233139004,
+              "sim3_ate_rmse": 0.17460429450938456,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.138931716257578,
+              "drift_per_metre": 0.6922633604015198
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20109113715601762,
+              "rpe_rotation_rmse": 0.01636652877708951,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42602246186303167,
+              "rotation_rmse": 0.07831416287017333,
+              "rotation_max": 0.1437042401469612,
+              "velocity_rmse": 0.20158453252924396,
+              "angular_velocity_rmse": 0.04211601652484072,
+              "sim3_scale": 1.271186352770958,
+              "sim3_ate_rmse": 0.29310800265140463,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.46973715800326876,
+              "drift_per_metre": 0.22306405016768843
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17073125431377864,
+              "rpe_rotation_rmse": 0.010320734160210666,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48676570577600964,
+              "rotation_rmse": 0.041092801148502146,
+              "rotation_max": 0.07189605572938168,
+              "velocity_rmse": 0.1844746628413817,
+              "angular_velocity_rmse": 0.039187279210402146,
+              "sim3_scale": 0.93908112487257,
+              "sim3_ate_rmse": 0.2305584382845832,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.575778939088654,
+              "drift_per_metre": 0.35958781139815
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786086645606123,
+              "rpe_rotation_rmse": 0.019210839145474015,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.508416281436961,
+              "rotation_rmse": 0.09403475482511857,
+              "rotation_max": 0.16704961508304955,
+              "velocity_rmse": 0.28064252898383296,
+              "angular_velocity_rmse": 0.04123874845211698,
+              "sim3_scale": 1.7810056751251113,
+              "sim3_ate_rmse": 0.3637726776187321,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2393693673596162,
+              "drift_per_metre": 0.47084936943803607
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": false,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "2ab3dc8cc64a6fdf840505e3b6eaa716dcca0cedb246073ce3f3a78dab50d64f"
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.00489239640521444,
+      "validation": {
+        "rotation_deg": 4.638310152821247,
+        "sim3_ate_m": 0.265527410809184,
+        "unaligned_ate_m": 0.5163458194228221,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2000757190606378,
+              "rpe_rotation_rmse": 0.016514647113947286,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6500333934760093,
+              "rotation_rmse": 0.09046968857444769,
+              "rotation_max": 0.13320592622657,
+              "velocity_rmse": 0.20291155671605537,
+              "angular_velocity_rmse": 0.03963718869855275,
+              "sim3_scale": 2.102456123935355,
+              "sim3_ate_rmse": 0.1746025780925087,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.132859153585969,
+              "drift_per_metre": 0.6885723466372266
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20108587279380877,
+              "rpe_rotation_rmse": 0.015515010889970279,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42457681270317216,
+              "rotation_rmse": 0.07185728232122386,
+              "rotation_max": 0.13409404217094148,
+              "velocity_rmse": 0.20158464366260406,
+              "angular_velocity_rmse": 0.04073011514041274,
+              "sim3_scale": 1.2712254612355505,
+              "sim3_ate_rmse": 0.2931247967796335,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4623261029642147,
+              "drift_per_metre": 0.219544762998553
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1706627138064488,
+              "rpe_rotation_rmse": 0.013523223010781528,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48251150130941284,
+              "rotation_rmse": 0.06405792208155368,
+              "rotation_max": 0.11462420212256008,
+              "velocity_rmse": 0.1844820302691515,
+              "angular_velocity_rmse": 0.03919301217623837,
+              "sim3_scale": 0.9391434156391081,
+              "sim3_ate_rmse": 0.23059835911336096,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5529304794962492,
+              "drift_per_metre": 0.3453183982243089
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778599664355155,
+              "rpe_rotation_rmse": 0.019948402466275786,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5082615702026939,
+              "rotation_rmse": 0.09743024260442319,
+              "rotation_max": 0.17508644071978652,
+              "velocity_rmse": 0.2806430034969897,
+              "angular_velocity_rmse": 0.04042402993837421,
+              "sim3_scale": 1.7809369130725103,
+              "sim3_ate_rmse": 0.36378390925123294,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2389691046000997,
+              "drift_per_metre": 0.47069730543444577
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "f0ad9b721750568e973e1c67b807965174eece5c321cb975c14e0f3f321fc8df"
+    },
+    {
+      "epoch": 9,
+      "train_loss": 0.004586715220787268,
+      "validation": {
+        "rotation_deg": 4.3854405821769165,
+        "sim3_ate_m": 0.26555104347386116,
+        "unaligned_ate_m": 0.514740984700425,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19997790662757992,
+              "rpe_rotation_rmse": 0.015757011239166875,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6394067985961156,
+              "rotation_rmse": 0.07613250823858954,
+              "rotation_max": 0.11884620742753126,
+              "velocity_rmse": 0.202920103177966,
+              "angular_velocity_rmse": 0.03827916063807129,
+              "sim3_scale": 2.1021396521981144,
+              "sim3_ate_rmse": 0.17475894704447997,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1090884599493058,
+              "drift_per_metre": 0.6741240877810566
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2010613726655442,
+              "rpe_rotation_rmse": 0.015743221448149068,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4221052581124828,
+              "rotation_rmse": 0.07810786723368586,
+              "rotation_max": 0.13921412002714936,
+              "velocity_rmse": 0.2015864895916213,
+              "angular_velocity_rmse": 0.03988312648708788,
+              "sim3_scale": 1.2713398850291393,
+              "sim3_ate_rmse": 0.29313992557986357,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4502639782079993,
+              "drift_per_metre": 0.21381682269000574
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17077251033641316,
+              "rpe_rotation_rmse": 0.013877057238440302,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4884005050067558,
+              "rotation_rmse": 0.06636407349680289,
+              "rotation_max": 0.11942851320484768,
+              "velocity_rmse": 0.18447021314156647,
+              "angular_velocity_rmse": 0.03840306650151045,
+              "sim3_scale": 0.9392840587427127,
+              "sim3_ate_rmse": 0.2305676479385354,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5868012737124535,
+              "drift_per_metre": 0.3664715247728413
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778636453325573,
+              "rpe_rotation_rmse": 0.01864379967720509,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5090513770863456,
+              "rotation_rmse": 0.08555706026917828,
+              "rotation_max": 0.15826171675756215,
+              "velocity_rmse": 0.28064275238821007,
+              "angular_velocity_rmse": 0.03875715689442824,
+              "sim3_scale": 1.7801334232842572,
+              "sim3_ate_rmse": 0.3637376533325656,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2384106176146685,
+              "drift_per_metre": 0.4704851303945787
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "bfefc6cabe771f7fdb2ae1fd0e225d60406f545f8d76a2664a4d65c1196991b9"
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.004479634708926156,
+      "validation": {
+        "rotation_deg": 3.4513163055129565,
+        "sim3_ate_m": 0.26550475060999146,
+        "unaligned_ate_m": 0.5147037948299289,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20001436383625942,
+              "rpe_rotation_rmse": 0.01564216957280578,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6398032089543746,
+              "rotation_rmse": 0.06689580810776768,
+              "rotation_max": 0.09624356038784464,
+              "velocity_rmse": 0.20291644449233298,
+              "angular_velocity_rmse": 0.037537134604544935,
+              "sim3_scale": 2.1016677616852144,
+              "sim3_ate_rmse": 0.17468745906746574,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1141598208728938,
+              "drift_per_metre": 0.6772065529584316
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105418271842904,
+              "rpe_rotation_rmse": 0.012875567777004859,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4210208404473986,
+              "rotation_rmse": 0.05604181687653794,
+              "rotation_max": 0.10156424607826087,
+              "velocity_rmse": 0.20158647611501987,
+              "angular_velocity_rmse": 0.038271948353821805,
+              "sim3_scale": 1.2711214445343348,
+              "sim3_ate_rmse": 0.2930812018987182,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4447623793117389,
+              "drift_per_metre": 0.21120427882097378
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1707908485109657,
+              "rpe_rotation_rmse": 0.010548785864932197,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4898007426752889,
+              "rotation_rmse": 0.0472854965005244,
+              "rotation_max": 0.07977428607015447,
+              "velocity_rmse": 0.18446772672539194,
+              "angular_velocity_rmse": 0.03678534058598439,
+              "sim3_scale": 0.9391491189500626,
+              "sim3_ate_rmse": 0.23054510168413375,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5935329371985341,
+              "drift_per_metre": 0.3706756107087735
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786204837997996,
+              "rpe_rotation_rmse": 0.015486085055625525,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5081903872426534,
+              "rotation_rmse": 0.07072421075104042,
+              "rotation_max": 0.12987247184210646,
+              "velocity_rmse": 0.28064319769518686,
+              "angular_velocity_rmse": 0.03685187561466751,
+              "sim3_scale": 1.780383310874284,
+              "sim3_ate_rmse": 0.36370523978964797,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2371741421588656,
+              "drift_per_metre": 0.47001538045237157
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "965750e5edea9b2ddb5686855fc660683d717105e56711cc71ec2eca68293049"
+    },
+    {
+      "epoch": 11,
+      "train_loss": 0.004308018053786664,
+      "validation": {
+        "rotation_deg": 4.506082343737785,
+        "sim3_ate_m": 0.26551525259816877,
+        "unaligned_ate_m": 0.515058074696722,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20016827268587795,
+              "rpe_rotation_rmse": 0.01734254875001265,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6466661845843408,
+              "rotation_rmse": 0.08341639810862435,
+              "rotation_max": 0.12157998593799917,
+              "velocity_rmse": 0.20290087011506028,
+              "angular_velocity_rmse": 0.03802073056910366,
+              "sim3_scale": 2.1020800845761847,
+              "sim3_ate_rmse": 0.17453928970520363,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1264036556614472,
+              "drift_per_metre": 0.6846485778787457
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20108673989376025,
+              "rpe_rotation_rmse": 0.015177096433422398,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42424773834392543,
+              "rotation_rmse": 0.06823896776553712,
+              "rotation_max": 0.13042189276367214,
+              "velocity_rmse": 0.2015838730154619,
+              "angular_velocity_rmse": 0.03861789918802861,
+              "sim3_scale": 1.2712018030009595,
+              "sim3_ate_rmse": 0.29312201347251254,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4606049503266082,
+              "drift_per_metre": 0.21872743937030675
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17063455451907916,
+              "rpe_rotation_rmse": 0.013597382757171999,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48102723092195293,
+              "rotation_rmse": 0.06784571103184046,
+              "rotation_max": 0.11793827237730584,
+              "velocity_rmse": 0.1844846621407494,
+              "angular_velocity_rmse": 0.03740109201064955,
+              "sim3_scale": 0.9391534322864042,
+              "sim3_ate_rmse": 0.2306008201803688,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5451929935618895,
+              "drift_per_metre": 0.34048615195065357
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27785666511928964,
+              "rpe_rotation_rmse": 0.019497644981276152,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.508291144936669,
+              "rotation_rmse": 0.09508281615082703,
+              "rotation_max": 0.17446740847776546,
+              "velocity_rmse": 0.28064426616878724,
+              "angular_velocity_rmse": 0.038121143613527766,
+              "sim3_scale": 1.78076680109546,
+              "sim3_ate_rmse": 0.3637988870345901,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2387860930726067,
+              "drift_per_metre": 0.4706277774433647
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "ba27665024e1e470edba32b1f3d9617a0c625be7b6ff372ccfde49fecb3c22b3"
+    },
+    {
+      "epoch": 12,
+      "train_loss": 0.00413914253292496,
+      "validation": {
+        "rotation_deg": 2.46145003849531,
+        "sim3_ate_m": 0.26554322281085546,
+        "unaligned_ate_m": 0.5112323390785947,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19984143632137047,
+              "rpe_rotation_rmse": 0.016158793268383514,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6232175770780857,
+              "rotation_rmse": 0.04438639980618134,
+              "rotation_max": 0.0756012941249868,
+              "velocity_rmse": 0.20293216232714192,
+              "angular_velocity_rmse": 0.036806822204189876,
+              "sim3_scale": 2.101820319267825,
+              "sim3_ate_rmse": 0.17502705245762987,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0818606697515603,
+              "drift_per_metre": 0.657574542914105
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.201025707166551,
+              "rpe_rotation_rmse": 0.011757032398086013,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4196792962829944,
+              "rotation_rmse": 0.053883596809269345,
+              "rotation_max": 0.08885672010617648,
+              "velocity_rmse": 0.20158811450539352,
+              "angular_velocity_rmse": 0.037091871201821176,
+              "sim3_scale": 1.2709576608756765,
+              "sim3_ate_rmse": 0.29302499735162607,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.43951306934809775,
+              "drift_per_metre": 0.2087115393790852
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.170865897619159,
+              "rpe_rotation_rmse": 0.009570391892244842,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49481737658001507,
+              "rotation_rmse": 0.04239250088655409,
+              "rotation_max": 0.07023137008819219,
+              "velocity_rmse": 0.1844604698474138,
+              "angular_velocity_rmse": 0.03580562468289915,
+              "sim3_scale": 0.9391521398583842,
+              "sim3_ate_rmse": 0.23051616101770664,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.620352213743017,
+              "drift_per_metre": 0.3874248946808075
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786798392847567,
+              "rpe_rotation_rmse": 0.009994797355626072,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5072151063732837,
+              "rotation_rmse": 0.031179132678332565,
+              "rotation_max": 0.057774735868954194,
+              "velocity_rmse": 0.2806425519504667,
+              "angular_velocity_rmse": 0.03407563927208643,
+              "sim3_scale": 1.7804268416366957,
+              "sim3_ate_rmse": 0.3636046804164592,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.234655301670113,
+              "drift_per_metre": 0.46905844663822477
+            }
+          }
+        ]
+      },
+      "selected": true,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "84c380c7360a8386292115c9b79f323472f680aef375d5ed168c3c87823f3c5d"
+    },
+    {
+      "epoch": 13,
+      "train_loss": 0.004138600600296803,
+      "validation": {
+        "rotation_deg": 5.011498617122431,
+        "sim3_ate_m": 0.26556952689969565,
+        "unaligned_ate_m": 0.5118384001087173,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1999557538199246,
+              "rpe_rotation_rmse": 0.01835129996694139,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.628550885665244,
+              "rotation_rmse": 0.07531460087906454,
+              "rotation_max": 0.12815068371710478,
+              "velocity_rmse": 0.20292072510373546,
+              "angular_velocity_rmse": 0.037735939576495306,
+              "sim3_scale": 2.1025115229947615,
+              "sim3_ate_rmse": 0.1749280417851881,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0834102329643847,
+              "drift_per_metre": 0.6585163955480708
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103703702822334,
+              "rpe_rotation_rmse": 0.017201636347643347,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.420298397863605,
+              "rotation_rmse": 0.08860673713954882,
+              "rotation_max": 0.15377742458962426,
+              "velocity_rmse": 0.20158789839135974,
+              "angular_velocity_rmse": 0.03896242649347102,
+              "sim3_scale": 1.2713581997603038,
+              "sim3_ate_rmse": 0.29312575110815564,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44205724869202195,
+              "drift_per_metre": 0.2099196936396957
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17083847429191035,
+              "rpe_rotation_rmse": 0.018052105119793597,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49084210928204264,
+              "rotation_rmse": 0.0899652618809359,
+              "rotation_max": 0.16368701012539427,
+              "velocity_rmse": 0.18446305014156344,
+              "angular_velocity_rmse": 0.03861218862977077,
+              "sim3_scale": 0.9394999861571735,
+              "sim3_ate_rmse": 0.2305709927179517,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.602291965774603,
+              "drift_per_metre": 0.37614583495946896
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778647539588039,
+              "rpe_rotation_rmse": 0.020651478518296552,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5076622076239773,
+              "rotation_rmse": 0.0959820054121671,
+              "rotation_max": 0.17651249318061402,
+              "velocity_rmse": 0.28064324328206786,
+              "angular_velocity_rmse": 0.03777647426809666,
+              "sim3_scale": 1.7803376982070889,
+              "sim3_ate_rmse": 0.36365332198748723,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.235226859932839,
+              "drift_per_metre": 0.46927558759288224
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "635060bac8e24529c521502eec84800cafe80a033000537aad0b792ad560f70e"
+    },
+    {
+      "epoch": 14,
+      "train_loss": 0.004094641588603332,
+      "validation": {
+        "rotation_deg": 2.45328748708259,
+        "sim3_ate_m": 0.2655266909376253,
+        "unaligned_ate_m": 0.5121525620543161,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19993484016055435,
+              "rpe_rotation_rmse": 0.015995239732531447,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6266412877788675,
+              "rotation_rmse": 0.037057179843829675,
+              "rotation_max": 0.061809552149611674,
+              "velocity_rmse": 0.20292266211966659,
+              "angular_velocity_rmse": 0.036172656503788474,
+              "sim3_scale": 2.1023632905611733,
+              "sim3_ate_rmse": 0.17496181508379413,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0847174014366339,
+              "drift_per_metre": 0.6593109162610277
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103714236070133,
+              "rpe_rotation_rmse": 0.011621740626898854,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42027899672652985,
+              "rotation_rmse": 0.047878588211860675,
+              "rotation_max": 0.08120389585548204,
+              "velocity_rmse": 0.2015871818862931,
+              "angular_velocity_rmse": 0.03664702275729885,
+              "sim3_scale": 1.2709484758546212,
+              "sim3_ate_rmse": 0.2930241621822345,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4418801882596977,
+              "drift_per_metre": 0.20983561296503378
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17087998087876244,
+              "rpe_rotation_rmse": 0.010392541388734047,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4948538822981833,
+              "rotation_rmse": 0.045229904082487934,
+              "rotation_max": 0.07782957366802315,
+              "velocity_rmse": 0.18445876047774842,
+              "angular_velocity_rmse": 0.03556690107595512,
+              "sim3_scale": 0.9392615495329498,
+              "sim3_ate_rmse": 0.23050827174878594,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6217463216957926,
+              "drift_per_metre": 0.38829554866545096
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778637821189467,
+              "rpe_rotation_rmse": 0.012277886513294502,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5068360814136841,
+              "rotation_rmse": 0.041106104452097926,
+              "rotation_max": 0.0828528626762746,
+              "velocity_rmse": 0.28064327701193015,
+              "angular_velocity_rmse": 0.03421937424527508,
+              "sim3_scale": 1.7805437016212824,
+              "sim3_ate_rmse": 0.3636125147356866,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2339646547853267,
+              "drift_per_metre": 0.46879606267201557
+            }
+          }
+        ]
+      },
+      "selected": true,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "44cad1f283194ba6146e43846758007473f1c813333efe6c4f794b205b664144"
+    },
+    {
+      "epoch": 15,
+      "train_loss": 0.004000245441777797,
+      "validation": {
+        "rotation_deg": 3.916744813562579,
+        "sim3_ate_m": 0.2654952467190811,
+        "unaligned_ate_m": 0.5149793899178484,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20014983670756661,
+              "rpe_rotation_rmse": 0.0177756181330845,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6417598330983186,
+              "rotation_rmse": 0.07616155695417907,
+              "rotation_max": 0.11359590731657294,
+              "velocity_rmse": 0.20290224260107081,
+              "angular_velocity_rmse": 0.037206252575436576,
+              "sim3_scale": 2.101653191769343,
+              "sim3_ate_rmse": 0.17456711084713408,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1159116007428245,
+              "drift_per_metre": 0.6782713165453362
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20107051079602697,
+              "rpe_rotation_rmse": 0.014639501313944597,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4224575947266775,
+              "rotation_rmse": 0.06616860959396485,
+              "rotation_max": 0.12486853289301869,
+              "velocity_rmse": 0.2015848362281113,
+              "angular_velocity_rmse": 0.037459535247349185,
+              "sim3_scale": 1.2712731400052786,
+              "sim3_ate_rmse": 0.29312704591928446,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.45179962694955506,
+              "drift_per_metre": 0.21454605609658237
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1707394701012288,
+              "rpe_rotation_rmse": 0.0122370885710176,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.487257466187523,
+              "rotation_rmse": 0.05918214142841205,
+              "rotation_max": 0.10108718770660494,
+              "velocity_rmse": 0.18447338246921682,
+              "angular_velocity_rmse": 0.03606922314571444,
+              "sim3_scale": 0.9392425371801212,
+              "sim3_ate_rmse": 0.23055403175565095,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5809146479205802,
+              "drift_per_metre": 0.3627951852242464
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778589928121466,
+              "rpe_rotation_rmse": 0.01623712244812176,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5084426656588744,
+              "rotation_rmse": 0.07192806385175785,
+              "rotation_max": 0.13712397514548716,
+              "velocity_rmse": 0.2806442521330144,
+              "angular_velocity_rmse": 0.03586080874414725,
+              "sim3_scale": 1.7802354266854585,
+              "sim3_ate_rmse": 0.3637327983542548,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.237582868784654,
+              "drift_per_metre": 0.47017065996717433
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "33dec4532d598eafb4f7e7c88ccc93dea9e9ebd4184fcfd7433a0a996366c303"
+    },
+    {
+      "epoch": 16,
+      "train_loss": 0.003966080129358737,
+      "validation": {
+        "rotation_deg": 2.994631769592939,
+        "sim3_ate_m": 0.2655348128424141,
+        "unaligned_ate_m": 0.5118187270344458,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19995311247596612,
+              "rpe_rotation_rmse": 0.016361109548710562,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6280155072178041,
+              "rotation_rmse": 0.04628616057931283,
+              "rotation_max": 0.07763069760244465,
+              "velocity_rmse": 0.20292109687557544,
+              "angular_velocity_rmse": 0.0362294750769681,
+              "sim3_scale": 2.1020230640647615,
+              "sim3_ate_rmse": 0.17489786676932875,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0875904708132516,
+              "drift_per_metre": 0.6610572199532802
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20104178864666272,
+              "rpe_rotation_rmse": 0.012602641524995776,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4203415984051523,
+              "rotation_rmse": 0.0551102113884853,
+              "rotation_max": 0.09728095776184353,
+              "velocity_rmse": 0.20158691841621057,
+              "angular_velocity_rmse": 0.0366815249179064,
+              "sim3_scale": 1.2711249643751414,
+              "sim3_ate_rmse": 0.29306478494428945,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4418518528649029,
+              "drift_per_metre": 0.20982215733816173
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17082339331037527,
+              "rpe_rotation_rmse": 0.011354783398724923,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49141872765081446,
+              "rotation_rmse": 0.052797078617441595,
+              "rotation_max": 0.09009606223634989,
+              "velocity_rmse": 0.18446500841177024,
+              "angular_velocity_rmse": 0.03558859354019115,
+              "sim3_scale": 0.9392886322867161,
+              "sim3_ate_rmse": 0.23052223049678922,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6040128990486598,
+              "drift_per_metre": 0.3772205992267411
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778618736412645,
+              "rpe_rotation_rmse": 0.014419621156706303,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5074990748640122,
+              "rotation_rmse": 0.05487128647164426,
+              "rotation_max": 0.10839445059738187,
+              "velocity_rmse": 0.28064368563035325,
+              "angular_velocity_rmse": 0.03514599008100816,
+              "sim3_scale": 1.7803328546651078,
+              "sim3_ate_rmse": 0.363654369159249,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2351776564570587,
+              "drift_per_metre": 0.4692568946784408
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "468c73051532fc830aade88bd1a9fe58136d82dc879a1939b842db4cacd16091"
+    },
+    {
+      "epoch": 17,
+      "train_loss": 0.003919354907878155,
+      "validation": {
+        "rotation_deg": 3.5015424813529523,
+        "sim3_ate_m": 0.2655222295967405,
+        "unaligned_ate_m": 0.5124695816119962,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20003284481188488,
+              "rpe_rotation_rmse": 0.01696550239728526,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6321025198756751,
+              "rotation_rmse": 0.05884502320859248,
+              "rotation_max": 0.09564986516520158,
+              "velocity_rmse": 0.2029129354159984,
+              "angular_velocity_rmse": 0.036439283988341356,
+              "sim3_scale": 2.1018878121975577,
+              "sim3_ate_rmse": 0.17477689264335877,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.095267977124619,
+              "drift_per_metre": 0.6657237475797785
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105153473201887,
+              "rpe_rotation_rmse": 0.013753877479730479,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42094683792051807,
+              "rotation_rmse": 0.06243595928573154,
+              "rotation_max": 0.11354770508425426,
+              "velocity_rmse": 0.2015862649991258,
+              "angular_velocity_rmse": 0.03701280925853698,
+              "sim3_scale": 1.2712177663093311,
+              "sim3_ate_rmse": 0.29309898879658564,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44459493840827924,
+              "drift_per_metre": 0.21112476617128645
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17077509144875586,
+              "rpe_rotation_rmse": 0.013184129862960966,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48900766619435715,
+              "rotation_rmse": 0.06323829589666113,
+              "rotation_max": 0.11141109777996966,
+              "velocity_rmse": 0.18446990869622626,
+              "angular_velocity_rmse": 0.03615933352649685,
+              "sim3_scale": 0.9393251267230496,
+              "sim3_ate_rmse": 0.23054758708852777,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5910663086391877,
+              "drift_per_metre": 0.369135141780557
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778621843012553,
+              "rpe_rotation_rmse": 0.01452117846734148,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5078213024574343,
+              "rotation_rmse": 0.05993450240125954,
+              "rotation_max": 0.11386236612179346,
+              "velocity_rmse": 0.2806438412196666,
+              "angular_velocity_rmse": 0.03466252361757968,
+              "sim3_scale": 1.780226757334531,
+              "sim3_ate_rmse": 0.36366544985848986,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2357104378900954,
+              "drift_per_metre": 0.46945930391042634
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "e3fe2e514ff792cc2dee3e86031bbe3c779d7a23578ce318d97e316b6557e959"
+    },
+    {
+      "epoch": 18,
+      "train_loss": 0.0039013335703586664,
+      "validation": {
+        "rotation_deg": 3.261964271741156,
+        "sim3_ate_m": 0.2655086075017827,
+        "unaligned_ate_m": 0.5125812460997144,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2000714528722015,
+              "rpe_rotation_rmse": 0.016747125487118545,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6348672906109508,
+              "rotation_rmse": 0.058253608355222905,
+              "rotation_max": 0.0883982870712904,
+              "velocity_rmse": 0.20290924149148962,
+              "angular_velocity_rmse": 0.036321838289553196,
+              "sim3_scale": 2.1017167766569544,
+              "sim3_ate_rmse": 0.17471268496894485,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1026384449968845,
+              "drift_per_metre": 0.6702036516724941
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105466568312744,
+              "rpe_rotation_rmse": 0.012431033238144457,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4214071434851666,
+              "rotation_rmse": 0.05249123048283934,
+              "rotation_max": 0.09810410414720001,
+              "velocity_rmse": 0.20158577060094124,
+              "angular_velocity_rmse": 0.036409684140743824,
+              "sim3_scale": 1.2710749445197669,
+              "sim3_ate_rmse": 0.2930715531585487,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4463191241073561,
+              "drift_per_metre": 0.2119435301092132
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17070765451189698,
+              "rpe_rotation_rmse": 0.01117459508520675,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48670502930996007,
+              "rotation_rmse": 0.052121734474472874,
+              "rotation_max": 0.0892955898014162,
+              "velocity_rmse": 0.1844777083104154,
+              "angular_velocity_rmse": 0.03545960462934415,
+              "sim3_scale": 0.9391773336977751,
+              "sim3_ate_rmse": 0.23054767195721815,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5770405162244471,
+              "drift_per_metre": 0.3603756966964345
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27785921057432195,
+              "rpe_rotation_rmse": 0.014889220268352432,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5073455209927805,
+              "rotation_rmse": 0.06486149318467367,
+              "rotation_max": 0.12399125192288261,
+              "velocity_rmse": 0.2806443218017536,
+              "angular_velocity_rmse": 0.03508223039104687,
+              "sim3_scale": 1.7804985086087706,
+              "sim3_ate_rmse": 0.3637025199224189,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2356130513938741,
+              "drift_per_metre": 0.46942230576318694
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "4840382dcb791fa9f379d8e591a3ab9a9bd68046047d672bc115d2c94d943b9f"
+    },
+    {
+      "epoch": 19,
+      "train_loss": 0.0038888550779222195,
+      "validation": {
+        "rotation_deg": 3.6349147078807937,
+        "sim3_ate_m": 0.26550636130558763,
+        "unaligned_ate_m": 0.5128958547255378,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2001444827078847,
+              "rpe_rotation_rmse": 0.017004781658597725,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6397166175938369,
+              "rotation_rmse": 0.06536323589695227,
+              "rotation_max": 0.09483828494200193,
+              "velocity_rmse": 0.2029022908329269,
+              "angular_velocity_rmse": 0.03643675749120852,
+              "sim3_scale": 2.102340970166889,
+              "sim3_ate_rmse": 0.17466955646803897,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1110012298122167,
+              "drift_per_metre": 0.6752867040064826
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2010676434370728,
+              "rpe_rotation_rmse": 0.013050965472249801,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4225894048312302,
+              "rotation_rmse": 0.05301190695042208,
+              "rotation_max": 0.10410603216465585,
+              "velocity_rmse": 0.20158470237639897,
+              "angular_velocity_rmse": 0.0366631649284272,
+              "sim3_scale": 1.2710077342816786,
+              "sim3_ate_rmse": 0.29305839847343923,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.45241915880241657,
+              "drift_per_metre": 0.2148402531426381
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17066155574176606,
+              "rpe_rotation_rmse": 0.012771452308324662,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48326466565948695,
+              "rotation_rmse": 0.060226779416618685,
+              "rotation_max": 0.10705750105681625,
+              "velocity_rmse": 0.18448198623594006,
+              "angular_velocity_rmse": 0.03601743054059031,
+              "sim3_scale": 0.9391960413327429,
+              "sim3_ate_rmse": 0.23056867560319494,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.558266004281827,
+              "drift_per_metre": 0.3486505619247445
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778572698005585,
+              "rpe_rotation_rmse": 0.01720107883857553,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5060127308175972,
+              "rotation_rmse": 0.07516299646275783,
+              "rotation_max": 0.14443905599300771,
+              "velocity_rmse": 0.2806445903050657,
+              "angular_velocity_rmse": 0.036159958715709414,
+              "sim3_scale": 1.781070664231683,
+              "sim3_ate_rmse": 0.3637288146776774,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2338576899750917,
+              "drift_per_metre": 0.4687554256232248
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "d6057ff14b7ce64d8bc99b90b74f977849f30e5896b04a93846edd0ae3bd7596"
+    },
+    {
+      "epoch": 20,
+      "train_loss": 0.003859278620368921,
+      "validation": {
+        "rotation_deg": 3.0244241779404213,
+        "sim3_ate_m": 0.26549801582878835,
+        "unaligned_ate_m": 0.5125841700241323,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20009095383168576,
+              "rpe_rotation_rmse": 0.0168722385087556,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6352784513705051,
+              "rotation_rmse": 0.0553950081011817,
+              "rotation_max": 0.08063264803293405,
+              "velocity_rmse": 0.2029071991521457,
+              "angular_velocity_rmse": 0.03626956113579254,
+              "sim3_scale": 2.1018169180924815,
+              "sim3_ate_rmse": 0.17471072407772986,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.103551038608968,
+              "drift_per_metre": 0.6707583426268015
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105518686183182,
+              "rpe_rotation_rmse": 0.012167900436094238,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4213001757017382,
+              "rotation_rmse": 0.04760609004685223,
+              "rotation_max": 0.09042190163444819,
+              "velocity_rmse": 0.20158564134695459,
+              "angular_velocity_rmse": 0.03636871182217485,
+              "sim3_scale": 1.2709934785993628,
+              "sim3_ate_rmse": 0.29304725299195017,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44617704092710564,
+              "drift_per_metre": 0.2118760590797079
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17072396684942484,
+              "rpe_rotation_rmse": 0.010813636160881655,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4868957261204455,
+              "rotation_rmse": 0.048395253799887954,
+              "rotation_max": 0.08284270836481886,
+              "velocity_rmse": 0.18447535257492664,
+              "angular_velocity_rmse": 0.03531411090225132,
+              "sim3_scale": 0.9391876870248056,
+              "sim3_ate_rmse": 0.2305383926010153,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5783951730544419,
+              "drift_per_metre": 0.3612217125049745
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778597533976405,
+              "rpe_rotation_rmse": 0.014599678524402887,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5068623269038403,
+              "rotation_rmse": 0.059748287580010946,
+              "rotation_max": 0.11641759522976235,
+              "velocity_rmse": 0.2806442670222308,
+              "angular_velocity_rmse": 0.03497441683942879,
+              "sim3_scale": 1.7805985782866567,
+              "sim3_ate_rmse": 0.36369569364445803,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2345712899092178,
+              "drift_per_metre": 0.46902652969265174
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "6c2211fdde10182e799644ea2b41327335c0959f5ec602de2f83d11dd16be9c4"
+    },
+    {
+      "epoch": 21,
+      "train_loss": 0.0038527517269055047,
+      "validation": {
+        "rotation_deg": 3.283046599445071,
+        "sim3_ate_m": 0.26547081266887673,
+        "unaligned_ate_m": 0.5143536470937368,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20023110523071722,
+              "rpe_rotation_rmse": 0.017909194670639346,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6438700203648403,
+              "rotation_rmse": 0.06966981270713185,
+              "rotation_max": 0.10630211182895838,
+              "velocity_rmse": 0.20289355340684687,
+              "angular_velocity_rmse": 0.036763861365986625,
+              "sim3_scale": 2.102358492343272,
+              "sim3_ate_rmse": 0.17458304074944056,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.121221120367031,
+              "drift_per_metre": 0.6814985389017816
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20107700332615613,
+              "rpe_rotation_rmse": 0.012430609989484117,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42329650826275206,
+              "rotation_rmse": 0.04260179955974075,
+              "rotation_max": 0.09118636227305658,
+              "velocity_rmse": 0.20158380558276318,
+              "angular_velocity_rmse": 0.03655615071529155,
+              "sim3_scale": 1.27080299017748,
+              "sim3_ate_rmse": 0.2930162886687169,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.45614763148272575,
+              "drift_per_metre": 0.21661079269404304
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17067120240624845,
+              "rpe_rotation_rmse": 0.009994707793609241,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48486377971321737,
+              "rotation_rmse": 0.041394357203936846,
+              "rotation_max": 0.06980726768142848,
+              "velocity_rmse": 0.18448114958857478,
+              "angular_velocity_rmse": 0.03523433378697778,
+              "sim3_scale": 0.9390840447985938,
+              "sim3_ate_rmse": 0.23054145474725032,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5664789482152581,
+              "drift_per_metre": 0.35377974316717176
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778552324144012,
+              "rpe_rotation_rmse": 0.01710383321770589,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5053842800341373,
+              "rotation_rmse": 0.07553392115607026,
+              "rotation_max": 0.14704462791518533,
+              "velocity_rmse": 0.28064504142164576,
+              "angular_velocity_rmse": 0.03609826631059476,
+              "sim3_scale": 1.7813744443539294,
+              "sim3_ate_rmse": 0.36374246651009934,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2334395257624478,
+              "drift_per_metre": 0.4685965606705881
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "615af75cfc1fcae55044e89f1591aa1985606ba1a83fd90786c03b9cc4b16e45"
+    },
+    {
+      "epoch": 22,
+      "train_loss": 0.0038720544496273477,
+      "validation": {
+        "rotation_deg": 3.29591843741557,
+        "sim3_ate_m": 0.26548638114882084,
+        "unaligned_ate_m": 0.5134322922884987,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2001448475479156,
+              "rpe_rotation_rmse": 0.017805388560369968,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6390981741902857,
+              "rotation_rmse": 0.06440239534901578,
+              "rotation_max": 0.09399777790402229,
+              "velocity_rmse": 0.2029020032983852,
+              "angular_velocity_rmse": 0.03668022710070705,
+              "sim3_scale": 2.1014424308248367,
+              "sim3_ate_rmse": 0.1746090025038527,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.113786227234939,
+              "drift_per_metre": 0.6769794759672972
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105936843879066,
+              "rpe_rotation_rmse": 0.012672998386260853,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4214823704063165,
+              "rotation_rmse": 0.049141606707512095,
+              "rotation_max": 0.09185505619815647,
+              "velocity_rmse": 0.2015850922769746,
+              "angular_velocity_rmse": 0.03642578246862656,
+              "sim3_scale": 1.2709178795613028,
+              "sim3_ate_rmse": 0.2930346501346087,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4469136027657523,
+              "drift_per_metre": 0.21222583014662944
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17068533539978784,
+              "rpe_rotation_rmse": 0.010456415315071809,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4859789775874909,
+              "rotation_rmse": 0.05005620180797478,
+              "rotation_max": 0.07917714654195636,
+              "velocity_rmse": 0.18447982226042203,
+              "angular_velocity_rmse": 0.03518943459040149,
+              "sim3_scale": 0.939093095105993,
+              "sim3_ate_rmse": 0.2305434426760782,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5724748005732673,
+              "drift_per_metre": 0.3575242973363387
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778580325060339,
+              "rpe_rotation_rmse": 0.015152213376628546,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5071696469699017,
+              "rotation_rmse": 0.0664983105758508,
+              "rotation_max": 0.12684718955543392,
+              "velocity_rmse": 0.28064467581580355,
+              "angular_velocity_rmse": 0.03523523670990604,
+              "sim3_scale": 1.7806826807513358,
+              "sim3_ate_rmse": 0.3637584292807437,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2358458962226888,
+              "drift_per_metre": 0.4695107659460119
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "2ca1d43f56674396350498d3512b1d5100f1c7e41967ffb818a2c2cc6da1ddeb"
+    },
+    {
+      "epoch": 23,
+      "train_loss": 0.003845340172546468,
+      "validation": {
+        "rotation_deg": 3.355956522124104,
+        "sim3_ate_m": 0.26548685983892145,
+        "unaligned_ate_m": 0.5142137267182666,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20016640530226543,
+              "rpe_rotation_rmse": 0.018208063140787153,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6397189495775807,
+              "rotation_rmse": 0.06983163627362361,
+              "rotation_max": 0.10475057910602709,
+              "velocity_rmse": 0.20289995468412078,
+              "angular_velocity_rmse": 0.036897141892552006,
+              "sim3_scale": 2.101997897862026,
+              "sim3_ate_rmse": 0.17463468410348312,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1102979908452912,
+              "drift_per_metre": 0.6748592626037542
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20106537051593673,
+              "rpe_rotation_rmse": 0.012962449843173893,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42207196004315545,
+              "rotation_rmse": 0.0513914150604573,
+              "rotation_max": 0.10130927563517612,
+              "velocity_rmse": 0.2015848723515339,
+              "angular_velocity_rmse": 0.036513151374760966,
+              "sim3_scale": 1.2710017222127117,
+              "sim3_ate_rmse": 0.2930558246749933,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4500191178960132,
+              "drift_per_metre": 0.2137005458914039
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17074023196772484,
+              "rpe_rotation_rmse": 0.011358767343136069,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4883312020803272,
+              "rotation_rmse": 0.05197966828460237,
+              "rotation_max": 0.08736237974329027,
+              "velocity_rmse": 0.18447408910599244,
+              "angular_velocity_rmse": 0.035340563749167726,
+              "sim3_scale": 0.9392369663476581,
+              "sim3_ate_rmse": 0.23053262900930252,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5864071975359446,
+              "drift_per_metre": 0.3662254147118181
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786048405704367,
+              "rpe_rotation_rmse": 0.014945577262083539,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5067327951720031,
+              "rotation_rmse": 0.06108724384069086,
+              "rotation_max": 0.1183102630264488,
+              "velocity_rmse": 0.2806442635612492,
+              "angular_velocity_rmse": 0.03506603839193056,
+              "sim3_scale": 1.7806613927827326,
+              "sim3_ate_rmse": 0.36372430156790697,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.23418599865745,
+              "drift_per_metre": 0.46888015352125145
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "681aa727bcb52dcda9e6cd7a71c51b523f7d55124ecaa0b102750eee5523aa27"
+    },
+    {
+      "epoch": 24,
+      "train_loss": 0.0038264237373125064,
+      "validation": {
+        "rotation_deg": 3.273699167978241,
+        "sim3_ate_m": 0.2654845674081501,
+        "unaligned_ate_m": 0.5141460593420077,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20017713819927835,
+              "rpe_rotation_rmse": 0.01806787034399704,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6403627629617399,
+              "rotation_rmse": 0.06805282793513119,
+              "rotation_max": 0.09925852426767798,
+              "velocity_rmse": 0.20289886684640857,
+              "angular_velocity_rmse": 0.0367734532395905,
+              "sim3_scale": 2.1018034416354534,
+              "sim3_ate_rmse": 0.17460818354780538,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1130542014100087,
+              "drift_per_metre": 0.676534537390003
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105964087274603,
+              "rpe_rotation_rmse": 0.012365026724398844,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4216556722925044,
+              "rotation_rmse": 0.04600550504632202,
+              "rotation_max": 0.0899486717349075,
+              "velocity_rmse": 0.20158524346217452,
+              "angular_velocity_rmse": 0.03626907384046961,
+              "sim3_scale": 1.2709584152650217,
+              "sim3_ate_rmse": 0.29304343666278254,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44791833914278983,
+              "drift_per_metre": 0.21270294923715546
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1707344241363612,
+              "rpe_rotation_rmse": 0.010685581786905025,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48801141151251587,
+              "rotation_rmse": 0.04807425416092232,
+              "rotation_max": 0.07831064064772425,
+              "velocity_rmse": 0.18447490596724242,
+              "angular_velocity_rmse": 0.035150264361070487,
+              "sim3_scale": 0.9391875726789671,
+              "sim3_ate_rmse": 0.23053172074162928,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.58444281257068,
+              "drift_per_metre": 0.3649986090014165
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778591890238334,
+              "rpe_rotation_rmse": 0.015646317342188333,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5065543906012706,
+              "rotation_rmse": 0.06641472966170132,
+              "rotation_max": 0.12838100126361943,
+              "velocity_rmse": 0.28064451440264665,
+              "angular_velocity_rmse": 0.03530014048311842,
+              "sim3_scale": 1.7808101607198745,
+              "sim3_ate_rmse": 0.36375492868038295,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.234324370350679,
+              "drift_per_metre": 0.46893272237297623
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "e8dbae2fdfd7383f8b046d3d18423b4f5506bfad58ca5f03c2ba37f397c5328b"
+    },
+    {
+      "epoch": 25,
+      "train_loss": 0.003807774104936114,
+      "validation": {
+        "rotation_deg": 3.012245712501653,
+        "sim3_ate_m": 0.26552110496839704,
+        "unaligned_ate_m": 0.5122434685209325,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19999567230608767,
+              "rpe_rotation_rmse": 0.017535176708064454,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6274866955018928,
+              "rotation_rmse": 0.04869378639266421,
+              "rotation_max": 0.08483845897445455,
+              "velocity_rmse": 0.2029160086448122,
+              "angular_velocity_rmse": 0.03639986778875952,
+              "sim3_scale": 2.10212706629852,
+              "sim3_ate_rmse": 0.17490567267299004,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0850625245088814,
+              "drift_per_metre": 0.6595206883257931
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103306628755688,
+              "rpe_rotation_rmse": 0.012852146198478194,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.41985262350129865,
+              "rotation_rmse": 0.054309059929912674,
+              "rotation_max": 0.0913114270251666,
+              "velocity_rmse": 0.20158743004306823,
+              "angular_velocity_rmse": 0.036481389700079886,
+              "sim3_scale": 1.2710186561278676,
+              "sim3_ate_rmse": 0.29302869987880326,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4403544155215005,
+              "drift_per_metre": 0.20911106937545607
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17086477236563796,
+              "rpe_rotation_rmse": 0.012011931271871272,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4949649101969616,
+              "rotation_rmse": 0.052626695389870526,
+              "rotation_max": 0.09115958825864894,
+              "velocity_rmse": 0.18446128287699448,
+              "angular_velocity_rmse": 0.03547288048056635,
+              "sim3_scale": 0.939355322899598,
+              "sim3_ate_rmse": 0.2305021748168878,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6229920903876639,
+              "drift_per_metre": 0.3890735612098615
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786473198332495,
+              "rpe_rotation_rmse": 0.014244448289043119,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5066696448835771,
+              "rotation_rmse": 0.054664880536498005,
+              "rotation_max": 0.10409387536411815,
+              "velocity_rmse": 0.2806437189270726,
+              "angular_velocity_rmse": 0.03466652770676201,
+              "sim3_scale": 1.7805145657652424,
+              "sim3_ate_rmse": 0.363647872504907,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2334362720939767,
+              "drift_per_metre": 0.4685953245679473
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "a9d3ccb6c18a32b548c40a59e85acac3e4da1db2ddc778b1bfa35d6de7a57fb6"
+    },
+    {
+      "epoch": 26,
+      "train_loss": 0.003799460623943726,
+      "validation": {
+        "rotation_deg": 2.701728347661083,
+        "sim3_ate_m": 0.26550768237944733,
+        "unaligned_ate_m": 0.5126926632681484,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20003413099795753,
+              "rpe_rotation_rmse": 0.01733356130752554,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6303178839617237,
+              "rotation_rmse": 0.04703207283050461,
+              "rotation_max": 0.07596432004758694,
+              "velocity_rmse": 0.20291253433570808,
+              "angular_velocity_rmse": 0.0362893173255154,
+              "sim3_scale": 2.1017872761453114,
+              "sim3_ate_rmse": 0.1748204099459763,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0926374822473783,
+              "drift_per_metre": 0.664124885069196
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103857572911635,
+              "rpe_rotation_rmse": 0.011989309306586832,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4201203237482109,
+              "rotation_rmse": 0.04697923542254055,
+              "rotation_max": 0.07897645423131198,
+              "velocity_rmse": 0.20158682084185556,
+              "angular_velocity_rmse": 0.036188083040339866,
+              "sim3_scale": 1.2709410570810469,
+              "sim3_ate_rmse": 0.29301864695249125,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4414340721046309,
+              "drift_per_metre": 0.20962376581881814
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17083295513845456,
+              "rpe_rotation_rmse": 0.010837151540827332,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.493673659477192,
+              "rotation_rmse": 0.04723168076110442,
+              "rotation_max": 0.07823859921611151,
+              "velocity_rmse": 0.18446407376285523,
+              "angular_velocity_rmse": 0.0351382564249119,
+              "sim3_scale": 0.9392956234090409,
+              "sim3_ate_rmse": 0.23050167051950907,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6155866327439354,
+              "drift_per_metre": 0.384448674598474
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778635930013343,
+              "rpe_rotation_rmse": 0.013040601517912271,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5066587858854672,
+              "rotation_rmse": 0.04737323163045816,
+              "rotation_max": 0.09218408204551737,
+              "velocity_rmse": 0.2806438390025295,
+              "angular_velocity_rmse": 0.03419667790234411,
+              "sim3_scale": 1.780531227355031,
+              "sim3_ate_rmse": 0.3636900020998128,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2335276734449478,
+              "drift_per_metre": 0.46863004889598375
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "56fafbd85d13ba7f9c2dd7b701887acdaf0c0cc393fdb3b5c72ef30aaea00d45"
+    },
+    {
+      "epoch": 27,
+      "train_loss": 0.0037702530699702513,
+      "validation": {
+        "rotation_deg": 2.8798159608843044,
+        "sim3_ate_m": 0.26548035959418304,
+        "unaligned_ate_m": 0.5133294154459155,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2001464600259092,
+              "rpe_rotation_rmse": 0.017967550908204413,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6369708924369926,
+              "rotation_rmse": 0.059097970109569464,
+              "rotation_max": 0.08680299822301965,
+              "velocity_rmse": 0.20290154519055162,
+              "angular_velocity_rmse": 0.036559519744537305,
+              "sim3_scale": 2.1014951398808623,
+              "sim3_ate_rmse": 0.17464230732023897,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1080953553490263,
+              "drift_per_metre": 0.6735204607874394
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105144527107546,
+              "rpe_rotation_rmse": 0.01165846344715435,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42107316206024925,
+              "rotation_rmse": 0.0417502942615631,
+              "rotation_max": 0.0762969054771569,
+              "velocity_rmse": 0.20158556797757307,
+              "angular_velocity_rmse": 0.035956006605906476,
+              "sim3_scale": 1.2708564946891214,
+              "sim3_ate_rmse": 0.29301632002172834,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4453522901037337,
+              "drift_per_metre": 0.2114844097160031
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17074048632020616,
+              "rpe_rotation_rmse": 0.00953149152103546,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48859375054677956,
+              "rotation_rmse": 0.04013085467706284,
+              "rotation_max": 0.06364514142971774,
+              "velocity_rmse": 0.18447420671949613,
+              "angular_velocity_rmse": 0.034748472917480434,
+              "sim3_scale": 0.9391337091690947,
+              "sim3_ate_rmse": 0.23052204622990086,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5873842939957957,
+              "drift_per_metre": 0.3668356349780871
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778595304025996,
+              "rpe_rotation_rmse": 0.014376317637267157,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5066798567396406,
+              "rotation_rmse": 0.06006996242746594,
+              "rotation_max": 0.11629924491932574,
+              "velocity_rmse": 0.28064459770769173,
+              "angular_velocity_rmse": 0.03469483443781356,
+              "sim3_scale": 1.7807043313239233,
+              "sim3_ate_rmse": 0.36374076480486417,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.234348372332454,
+              "drift_per_metre": 0.4689418409765836
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "1af6705759d26e4590a646175aa19e5fcaf779f4ca367b70b14660bb08b041f8"
+    },
+    {
+      "epoch": 28,
+      "train_loss": 0.003762982842641909,
+      "validation": {
+        "rotation_deg": 3.2266368097818425,
+        "sim3_ate_m": 0.26550192531871575,
+        "unaligned_ate_m": 0.51308914952649,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20013808863525406,
+              "rpe_rotation_rmse": 0.01810242020456172,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6366253971762187,
+              "rotation_rmse": 0.06266729108227327,
+              "rotation_max": 0.096971428184779,
+              "velocity_rmse": 0.20290230268519158,
+              "angular_velocity_rmse": 0.03667057221533292,
+              "sim3_scale": 2.101689083085541,
+              "sim3_ate_rmse": 0.17467252614766526,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1049805641246844,
+              "drift_per_metre": 0.671627234170661
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105475335844056,
+              "rpe_rotation_rmse": 0.0125130173208548,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42114468488084533,
+              "rotation_rmse": 0.045562159167778664,
+              "rotation_max": 0.0870337269639004,
+              "velocity_rmse": 0.2015855390697861,
+              "angular_velocity_rmse": 0.036242090779960545,
+              "sim3_scale": 1.270953173938588,
+              "sim3_ate_rmse": 0.29303726847707073,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44573484650752354,
+              "drift_per_metre": 0.2116660742477376
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17072217737768206,
+              "rpe_rotation_rmse": 0.0113080225185544,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.48779977590524765,
+              "rotation_rmse": 0.04910066035832275,
+              "rotation_max": 0.08470548696934345,
+              "velocity_rmse": 0.18447606934196922,
+              "angular_velocity_rmse": 0.03522292546833876,
+              "sim3_scale": 0.9392193843511906,
+              "sim3_ate_rmse": 0.23053193666042607,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.5833101688729427,
+              "drift_per_metre": 0.36429124573973154
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778600674812633,
+              "rpe_rotation_rmse": 0.01593977105186389,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5067867401436486,
+              "rotation_rmse": 0.06793163377858184,
+              "rotation_max": 0.13008461741150923,
+              "velocity_rmse": 0.28064456362017143,
+              "angular_velocity_rmse": 0.03525125599059445,
+              "sim3_scale": 1.7806774598134945,
+              "sim3_ate_rmse": 0.363765969989701,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2344161158654818,
+              "drift_per_metre": 0.4689675774524476
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "ce4f1e6a12608697e5da67df07d25defc6cb210d81bd5713e40c34d4151e94e4"
+    },
+    {
+      "epoch": 29,
+      "train_loss": 0.0037636665617220314,
+      "validation": {
+        "rotation_deg": 2.725377235966745,
+        "sim3_ate_m": 0.2655037383922168,
+        "unaligned_ate_m": 0.5130914250441303,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20005199917313987,
+              "rpe_rotation_rmse": 0.017693690059208286,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6316468867267875,
+              "rotation_rmse": 0.04999244042904098,
+              "rotation_max": 0.07988437567880931,
+              "velocity_rmse": 0.20291090065084683,
+              "angular_velocity_rmse": 0.03644188628646508,
+              "sim3_scale": 2.1015475527886553,
+              "sim3_ate_rmse": 0.17477536711542743,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.095848230021156,
+              "drift_per_metre": 0.6660764358176294
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103676512876903,
+              "rpe_rotation_rmse": 0.011810134544942683,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4201338486694901,
+              "rotation_rmse": 0.045921277772537114,
+              "rotation_max": 0.07532939863909434,
+              "velocity_rmse": 0.20158682850814874,
+              "angular_velocity_rmse": 0.03605750053866116,
+              "sim3_scale": 1.2709094617201897,
+              "sim3_ate_rmse": 0.29301360027492024,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44153288603770485,
+              "drift_per_metre": 0.2096706895840535
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17081992080422304,
+              "rpe_rotation_rmse": 0.010513101645321425,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49372153762508514,
+              "rotation_rmse": 0.046074242592552835,
+              "rotation_max": 0.07392992234996451,
+              "velocity_rmse": 0.18446571327970337,
+              "angular_velocity_rmse": 0.03495246736809854,
+              "sim3_scale": 0.9392682722305362,
+              "sim3_ate_rmse": 0.23050125432443652,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6153629517344726,
+              "drift_per_metre": 0.3843089804221441
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778636848560227,
+              "rpe_rotation_rmse": 0.01315151390915344,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5068634271551583,
+              "rotation_rmse": 0.04827926371195761,
+              "rotation_max": 0.09411914323575685,
+              "velocity_rmse": 0.2806438957288784,
+              "angular_velocity_rmse": 0.03423698508573563,
+              "sim3_scale": 1.7804672338845329,
+              "sim3_ate_rmse": 0.36372473185408305,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2338750028676044,
+              "drift_per_metre": 0.4687620029719454
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "e5697f51c698d44fba08b2d558d4dcf3d0d1b34228e215434958f121509393b2"
+    },
+    {
+      "epoch": 30,
+      "train_loss": 0.0037391611688475514,
+      "validation": {
+        "rotation_deg": 2.603000790085767,
+        "sim3_ate_m": 0.2655031794559485,
+        "unaligned_ate_m": 0.5125972584414593,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20006161223465704,
+              "rpe_rotation_rmse": 0.017708223166809384,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6320614058092728,
+              "rotation_rmse": 0.049688179501288975,
+              "rotation_max": 0.07838535214536092,
+              "velocity_rmse": 0.20290997999991395,
+              "angular_velocity_rmse": 0.03639055459180555,
+              "sim3_scale": 2.101536256962157,
+              "sim3_ate_rmse": 0.17476570053397322,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0968093139976776,
+              "drift_per_metre": 0.6666606000951868
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20104010849830764,
+              "rpe_rotation_rmse": 0.011530450105106458,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4203536732776981,
+              "rotation_rmse": 0.042918892552246665,
+              "rotation_max": 0.0716547103664314,
+              "velocity_rmse": 0.20158648353972705,
+              "angular_velocity_rmse": 0.035942486609988306,
+              "sim3_scale": 1.27086633489067,
+              "sim3_ate_rmse": 0.2930070492984072,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4424865115187691,
+              "drift_per_metre": 0.21012353764711394
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17079143322090418,
+              "rpe_rotation_rmse": 0.009625497053567649,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4912547527516325,
+              "rotation_rmse": 0.038792395337962686,
+              "rotation_max": 0.06330646959302737,
+              "velocity_rmse": 0.1844687692797199,
+              "angular_velocity_rmse": 0.03471134844484334,
+              "sim3_scale": 0.9391973637266928,
+              "sim3_ate_rmse": 0.23050893707741762,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6021503836337281,
+              "drift_per_metre": 0.37605741350339617
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778625438423386,
+              "rpe_rotation_rmse": 0.013471998098600363,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5067192019272337,
+              "rotation_rmse": 0.050324269484543285,
+              "rotation_max": 0.09942136193006576,
+              "velocity_rmse": 0.2806441465968413,
+              "angular_velocity_rmse": 0.034361787823704845,
+              "sim3_scale": 1.7805590862994738,
+              "sim3_ate_rmse": 0.36373103091399595,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2337482034133134,
+              "drift_per_metre": 0.4687138305346798
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "e2c19f56650b4e8a0b955afafb21295136aee0e3b9141878be12d3da7e4a32c1"
+    },
+    {
+      "epoch": 31,
+      "train_loss": 0.003731309720182439,
+      "validation": {
+        "rotation_deg": 2.8585262051470655,
+        "sim3_ate_m": 0.26550503826528105,
+        "unaligned_ate_m": 0.5133197586749727,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20005168045338947,
+              "rpe_rotation_rmse": 0.018232134931843058,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6301680782778906,
+              "rotation_rmse": 0.05145531780982691,
+              "rotation_max": 0.08739989816060582,
+              "velocity_rmse": 0.20291054597693892,
+              "angular_velocity_rmse": 0.036545006597613346,
+              "sim3_scale": 2.101349382828164,
+              "sim3_ate_rmse": 0.17477813738127515,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.092677331814615,
+              "drift_per_metre": 0.6641491063591399
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103266111037224,
+              "rpe_rotation_rmse": 0.012356793732914971,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.41980339559269403,
+              "rotation_rmse": 0.05018291031729121,
+              "rotation_max": 0.07941742698413395,
+              "velocity_rmse": 0.2015871930681493,
+              "angular_velocity_rmse": 0.03608459887038982,
+              "sim3_scale": 1.2709555447372793,
+              "sim3_ate_rmse": 0.2930216092495518,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4403014423334974,
+              "drift_per_metre": 0.2090859140015093
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17084654133593394,
+              "rpe_rotation_rmse": 0.011364023570661604,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4960798775302577,
+              "rotation_rmse": 0.05246463145785812,
+              "rotation_max": 0.08376211321120265,
+              "velocity_rmse": 0.18446320917461806,
+              "angular_velocity_rmse": 0.035016493064982154,
+              "sim3_scale": 0.9393272908259621,
+              "sim3_ate_rmse": 0.23049507893349963,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6278412131657526,
+              "drift_per_metre": 0.3921019551447521
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778648079142904,
+              "rpe_rotation_rmse": 0.01255133735258629,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5072276832990484,
+              "rotation_rmse": 0.04545991655244444,
+              "rotation_max": 0.0871020470131105,
+              "velocity_rmse": 0.28064389689688896,
+              "angular_velocity_rmse": 0.03370278526038969,
+              "sim3_scale": 1.7803046432809997,
+              "sim3_ate_rmse": 0.3637253274967976,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2342615097386267,
+              "drift_per_metre": 0.4689088409697991
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "e363068f1101caca3e9f9c1e64c56341c9c25c354e9570c7ead6509ea16b4629"
+    },
+    {
+      "epoch": 32,
+      "train_loss": 0.0037215483461473906,
+      "validation": {
+        "rotation_deg": 2.8348757933320203,
+        "sim3_ate_m": 0.2655008697867307,
+        "unaligned_ate_m": 0.5128811450453918,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.200087385652208,
+              "rpe_rotation_rmse": 0.018379067363222604,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6327858148242068,
+              "rotation_rmse": 0.05616351812253145,
+              "rotation_max": 0.09191897054278031,
+              "velocity_rmse": 0.2029072353038385,
+              "angular_velocity_rmse": 0.036696113436718275,
+              "sim3_scale": 2.101344839046504,
+              "sim3_ate_rmse": 0.17472339484705687,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0977529508882509,
+              "drift_per_metre": 0.6672341597173682
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20104357139316997,
+              "rpe_rotation_rmse": 0.012061234586090652,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4203778882281721,
+              "rotation_rmse": 0.04607535229278759,
+              "rotation_max": 0.08026770757294613,
+              "velocity_rmse": 0.20158629375380877,
+              "angular_velocity_rmse": 0.03602108928273818,
+              "sim3_scale": 1.2709415176265988,
+              "sim3_ate_rmse": 0.29302561774465175,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44236728944852,
+              "drift_per_metre": 0.21006692267125768
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17078650346364602,
+              "rpe_rotation_rmse": 0.010644978097058356,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49093094306053253,
+              "rotation_rmse": 0.04590639172804304,
+              "rotation_max": 0.07630910128513181,
+              "velocity_rmse": 0.18446897960048095,
+              "angular_velocity_rmse": 0.034889523704003875,
+              "sim3_scale": 0.9392473510664631,
+              "sim3_ate_rmse": 0.23051273664792787,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6007544783641401,
+              "drift_per_metre": 0.3751856370511265
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786371296388984,
+              "rpe_rotation_rmse": 0.013339343343670722,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5074299340686561,
+              "rotation_rmse": 0.04976640377155821,
+              "rotation_max": 0.09721433130887325,
+              "velocity_rmse": 0.28064410279434976,
+              "angular_velocity_rmse": 0.03409204562661002,
+              "sim3_scale": 1.7802927222563243,
+              "sim3_ate_rmse": 0.36374172990728626,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2346811065866592,
+              "drift_per_metre": 0.4690682501955856
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "d82815b43483bc7505b8556b0145b3038ae55b40c5171338f2799ab4b3aa3bf0"
+    },
+    {
+      "epoch": 33,
+      "train_loss": 0.0037172556194902664,
+      "validation": {
+        "rotation_deg": 2.7571292798255573,
+        "sim3_ate_m": 0.26549144315306666,
+        "unaligned_ate_m": 0.5133468114782043,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20011077174661876,
+              "rpe_rotation_rmse": 0.018094326160195805,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6346195936423271,
+              "rotation_rmse": 0.055474220121980486,
+              "rotation_max": 0.08576665897738792,
+              "velocity_rmse": 0.20290508540742896,
+              "angular_velocity_rmse": 0.03655831903153338,
+              "sim3_scale": 2.101413788147786,
+              "sim3_ate_rmse": 0.1746982780071732,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1022200206073687,
+              "drift_per_metre": 0.6699493257372116
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20104660343802963,
+              "rpe_rotation_rmse": 0.011737415142384626,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42064186545538906,
+              "rotation_rmse": 0.04106147558141644,
+              "rotation_max": 0.07162168863439287,
+              "velocity_rmse": 0.20158599543662978,
+              "angular_velocity_rmse": 0.03596023839088683,
+              "sim3_scale": 1.2708515013449142,
+              "sim3_ate_rmse": 0.2930080887532152,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44371547510967035,
+              "drift_per_metre": 0.21070713549843223
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1707721985992155,
+              "rpe_rotation_rmse": 0.009950847290256217,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4913880102874689,
+              "rotation_rmse": 0.041189178544572866,
+              "rotation_max": 0.06554375906945789,
+              "velocity_rmse": 0.18447096211090666,
+              "angular_velocity_rmse": 0.03475255921517768,
+              "sim3_scale": 0.939207518733307,
+              "sim3_ate_rmse": 0.23050673000538394,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6025151138521283,
+              "drift_per_metre": 0.3762851963069716
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778621256211332,
+              "rpe_rotation_rmse": 0.01393659940425707,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5067377765276322,
+              "rotation_rmse": 0.05475906109641439,
+              "rotation_max": 0.10617820063142125,
+              "velocity_rmse": 0.2806442870560878,
+              "angular_velocity_rmse": 0.03445471678986374,
+              "sim3_scale": 1.7805745322985755,
+              "sim3_ate_rmse": 0.36375267584649423,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2338950405618436,
+              "drift_per_metre": 0.4687696155013059
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "3370d27bd62c6725a9d6a1d424e6f8d5a2c36386d8b5df23ae02e702bb8e089d"
+    },
+    {
+      "epoch": 34,
+      "train_loss": 0.0037120485021553346,
+      "validation": {
+        "rotation_deg": 2.988153892485233,
+        "sim3_ate_m": 0.26548357643051024,
+        "unaligned_ate_m": 0.5144528374393442,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20013547519342031,
+              "rpe_rotation_rmse": 0.01878621236840026,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6361262926320247,
+              "rotation_rmse": 0.06284703188768184,
+              "rotation_max": 0.09911347481876902,
+              "velocity_rmse": 0.20290271850500832,
+              "angular_velocity_rmse": 0.036963815801133164,
+              "sim3_scale": 2.101192914949513,
+              "sim3_ate_rmse": 0.17464176952344537,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1049312719410853,
+              "drift_per_metre": 0.6715972734871777
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105072844837987,
+              "rpe_rotation_rmse": 0.01230289904589149,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4206233012041448,
+              "rotation_rmse": 0.04422899159330602,
+              "rotation_max": 0.07928121416204889,
+              "velocity_rmse": 0.20158570996105082,
+              "angular_velocity_rmse": 0.03606746113314767,
+              "sim3_scale": 1.2709180843958372,
+              "sim3_ate_rmse": 0.29302417720479373,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44349516810460526,
+              "drift_per_metre": 0.210602518326908
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1708129349899399,
+              "rpe_rotation_rmse": 0.011017716061997175,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49355129830168876,
+              "rotation_rmse": 0.04993964687801378,
+              "rotation_max": 0.08008951725567008,
+              "velocity_rmse": 0.1844658344168578,
+              "angular_velocity_rmse": 0.03493895581373009,
+              "sim3_scale": 0.939289615813321,
+              "sim3_ate_rmse": 0.23050244596083583,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6145443581138332,
+              "drift_per_metre": 0.38379774899548563
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786450357424963,
+              "rpe_rotation_rmse": 0.013671642643171052,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5075104576195189,
+              "rotation_rmse": 0.051596825561606184,
+              "rotation_max": 0.0993124547649775,
+              "velocity_rmse": 0.2806439662729988,
+              "angular_velocity_rmse": 0.03435696859267247,
+              "sim3_scale": 1.7802948934715639,
+              "sim3_ate_rmse": 0.3637659130329659,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2348532479659755,
+              "drift_per_metre": 0.46913364850382194
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "870f0c598daeeb451f131c2018d89927f327e250303580b91969adb8d5aff45c"
+    },
+    {
+      "epoch": 35,
+      "train_loss": 0.0037080478063555218,
+      "validation": {
+        "rotation_deg": 2.9724135856219593,
+        "sim3_ate_m": 0.2654896131841001,
+        "unaligned_ate_m": 0.5143055527294265,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20012059165062068,
+              "rpe_rotation_rmse": 0.018756991926130003,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6351802889132059,
+              "rotation_rmse": 0.061162425936821786,
+              "rotation_max": 0.09780352214558345,
+              "velocity_rmse": 0.20290412258128004,
+              "angular_velocity_rmse": 0.03692094031468298,
+              "sim3_scale": 2.101215455804096,
+              "sim3_ate_rmse": 0.17466511941481738,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1027508341176169,
+              "drift_per_metre": 0.6702719638191137
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105050274130912,
+              "rpe_rotation_rmse": 0.012313149470856653,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.420614759395303,
+              "rotation_rmse": 0.04436085539403225,
+              "rotation_max": 0.07982653084388334,
+              "velocity_rmse": 0.20158572373551958,
+              "angular_velocity_rmse": 0.03607772901513562,
+              "sim3_scale": 1.270921311999022,
+              "sim3_ate_rmse": 0.29302423226746066,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4434712361533312,
+              "drift_per_metre": 0.21059115376294144
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17081403667558567,
+              "rpe_rotation_rmse": 0.011132870080424372,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49386087910595916,
+              "rotation_rmse": 0.050521563921098314,
+              "rotation_max": 0.08105625190748389,
+              "velocity_rmse": 0.18446564927844367,
+              "angular_velocity_rmse": 0.03496097510080154,
+              "sim3_scale": 0.9393010472654844,
+              "sim3_ate_rmse": 0.23050147675335658,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6161113148767466,
+              "drift_per_metre": 0.3847763512240135
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778645389357462,
+              "rpe_rotation_rmse": 0.0137054148430085,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5075662835032377,
+              "rotation_rmse": 0.051468769948501955,
+              "rotation_max": 0.09921188284616407,
+              "velocity_rmse": 0.28064398835754967,
+              "angular_velocity_rmse": 0.034385361977811335,
+              "sim3_scale": 1.7802649245738318,
+              "sim3_ate_rmse": 0.3637676243007657,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.234914255489916,
+              "drift_per_metre": 0.46915682589946756
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "e96489e8aa1f027b5b52cc94994a2ce3257c28b1047410a58c0e8627dbb45842"
+    },
+    {
+      "epoch": 36,
+      "train_loss": 0.003705067293315976,
+      "validation": {
+        "rotation_deg": 2.9881528696588733,
+        "sim3_ate_m": 0.2655154968879385,
+        "unaligned_ate_m": 0.5128453514716602,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20004121944679765,
+              "rpe_rotation_rmse": 0.018752351673653425,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6299158384759402,
+              "rotation_rmse": 0.056805650536709947,
+              "rotation_max": 0.10030656190258991,
+              "velocity_rmse": 0.20291172178410025,
+              "angular_velocity_rmse": 0.03686197019486996,
+              "sim3_scale": 2.101225057688723,
+              "sim3_ate_rmse": 0.17478070073626167,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0911773280684285,
+              "drift_per_metre": 0.6632373768681376
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103225858421,
+              "rpe_rotation_rmse": 0.012575214721926783,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4197587008237581,
+              "rotation_rmse": 0.05299284509235104,
+              "rotation_max": 0.08702439936019302,
+              "velocity_rmse": 0.20158725862824864,
+              "angular_velocity_rmse": 0.03614759351501576,
+              "sim3_scale": 1.2710208499522193,
+              "sim3_ate_rmse": 0.29303717281112057,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4398825118625319,
+              "drift_per_metre": 0.20888697651913204
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17083716046853228,
+              "rpe_rotation_rmse": 0.011494762935000081,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49377530209354814,
+              "rotation_rmse": 0.051545107226093456,
+              "rotation_max": 0.08589951869300491,
+              "velocity_rmse": 0.18446393645301892,
+              "angular_velocity_rmse": 0.03508343846509151,
+              "sim3_scale": 0.9393206477850766,
+              "sim3_ate_rmse": 0.23050490672336926,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6164210112411802,
+              "drift_per_metre": 0.38496976406064987
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778657980526048,
+              "rpe_rotation_rmse": 0.013067149525736371,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5079315644933946,
+              "rotation_rmse": 0.047268821658702775,
+              "rotation_max": 0.09013925626986398,
+              "velocity_rmse": 0.2806438260533291,
+              "angular_velocity_rmse": 0.03386581600102349,
+              "sim3_scale": 1.7800936401813043,
+              "sim3_ate_rmse": 0.36373920728100256,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2352103841686728,
+              "drift_per_metre": 0.4692693282779653
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "deab5ebfe397e999a0d3a07fb5cfc69ad11cbe911012e706187a1965bdb4836a"
+    },
+    {
+      "epoch": 37,
+      "train_loss": 0.0037035534565510162,
+      "validation": {
+        "rotation_deg": 2.829299073879494,
+        "sim3_ate_m": 0.2654848713387834,
+        "unaligned_ate_m": 0.5141776095338092,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20012647756987392,
+              "rpe_rotation_rmse": 0.01874372818103838,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6350727144195232,
+              "rotation_rmse": 0.05959185954239389,
+              "rotation_max": 0.09469236833293655,
+              "velocity_rmse": 0.20290341698610245,
+              "angular_velocity_rmse": 0.036866724699648856,
+              "sim3_scale": 2.1012764089183187,
+              "sim3_ate_rmse": 0.1746713446128694,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.102522497616397,
+              "drift_per_metre": 0.6701331767510389
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2010502349769447,
+              "rpe_rotation_rmse": 0.012044002571911756,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4206315923398392,
+              "rotation_rmse": 0.04161572386391176,
+              "rotation_max": 0.07406599692471072,
+              "velocity_rmse": 0.2015856879573423,
+              "angular_velocity_rmse": 0.035986382804335956,
+              "sim3_scale": 1.270864881123508,
+              "sim3_ate_rmse": 0.2930096119727888,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44369904833497914,
+              "drift_per_metre": 0.21069933491712545
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1708100884007359,
+              "rpe_rotation_rmse": 0.010764591480923848,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4937244321190518,
+              "rotation_rmse": 0.04780659441059289,
+              "rotation_max": 0.07630995681371959,
+              "velocity_rmse": 0.1844659834265044,
+              "angular_velocity_rmse": 0.03483961903198644,
+              "sim3_scale": 0.9392826207824405,
+              "sim3_ate_rmse": 0.2304995620091416,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6152752878652248,
+              "drift_per_metre": 0.3842542322249777
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778651208183117,
+              "rpe_rotation_rmse": 0.013344851022171637,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5072816992568224,
+              "rotation_rmse": 0.04850815963439534,
+              "rotation_max": 0.09411737062495297,
+              "velocity_rmse": 0.2806439016811933,
+              "angular_velocity_rmse": 0.03424374332165004,
+              "sim3_scale": 1.7803229933226783,
+              "sim3_ate_rmse": 0.3637589667603338,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.234369935775363,
+              "drift_per_metre": 0.4689500331538021
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "e8c429d46005b9d9615e62bc96c8dc2b66b113136770fb747427bfa265f4af74"
+    },
+    {
+      "epoch": 38,
+      "train_loss": 0.003692594662595734,
+      "validation": {
+        "rotation_deg": 3.0446836498026837,
+        "sim3_ate_m": 0.2654879722895985,
+        "unaligned_ate_m": 0.5143326405256625,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20014039220559865,
+              "rpe_rotation_rmse": 0.01904757392299544,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6363174070581212,
+              "rotation_rmse": 0.06451383836075077,
+              "rotation_max": 0.10314433077318697,
+              "velocity_rmse": 0.20290210082554463,
+              "angular_velocity_rmse": 0.0370715087716416,
+              "sim3_scale": 2.1012024255974397,
+              "sim3_ate_rmse": 0.17464018486679284,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1046625540079051,
+              "drift_per_metre": 0.6714339418521305
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105437317666666,
+              "rpe_rotation_rmse": 0.012567626401768086,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42083162098357624,
+              "rotation_rmse": 0.044879371420353746,
+              "rotation_max": 0.08372352654306923,
+              "velocity_rmse": 0.2015854524402923,
+              "angular_velocity_rmse": 0.03614363514088775,
+              "sim3_scale": 1.2709302193620322,
+              "sim3_ate_rmse": 0.29302800261974565,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44443551782748725,
+              "drift_per_metre": 0.21104906213164285
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17078119760858354,
+              "rpe_rotation_rmse": 0.011243627640389334,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.492585121465697,
+              "rotation_rmse": 0.049921507367111366,
+              "rotation_max": 0.08083553262063116,
+              "velocity_rmse": 0.18446931042906772,
+              "angular_velocity_rmse": 0.034984593816600316,
+              "sim3_scale": 0.9392933666705351,
+              "sim3_ate_rmse": 0.23050667402099423,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6091159394380139,
+              "drift_per_metre": 0.3804075708238416
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.277864534698082,
+              "rpe_rotation_rmse": 0.014028839770263627,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5075964125952556,
+              "rotation_rmse": 0.05324430033456344,
+              "rotation_max": 0.10259456805708193,
+              "velocity_rmse": 0.28064406299163697,
+              "angular_velocity_rmse": 0.034478214662419716,
+              "sim3_scale": 1.7802427172654123,
+              "sim3_ate_rmse": 0.3637770276508611,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2349466831169427,
+              "drift_per_metre": 0.4691691454937225
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "2dde1dc91940f378aa60c538740a37926faab497b7599df6a5c9617c212a9e9e"
+    },
+    {
+      "epoch": 39,
+      "train_loss": 0.003695335310152178,
+      "validation": {
+        "rotation_deg": 2.853089288253396,
+        "sim3_ate_m": 0.2654973921021976,
+        "unaligned_ate_m": 0.5137959122604542,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20007740679806127,
+              "rpe_rotation_rmse": 0.018713189914714067,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6317518267544164,
+              "rotation_rmse": 0.05550901164549907,
+              "rotation_max": 0.09377447995347389,
+              "velocity_rmse": 0.20290816973712447,
+              "angular_velocity_rmse": 0.03682351510193506,
+              "sim3_scale": 2.1012644074855626,
+              "sim3_ate_rmse": 0.17474046665570592,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0952797249766886,
+              "drift_per_metre": 0.6657308881374037
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20104001277252223,
+              "rpe_rotation_rmse": 0.01222257552286075,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4201015024791109,
+              "rotation_rmse": 0.0461721419005729,
+              "rotation_max": 0.07638854651680868,
+              "velocity_rmse": 0.20158656036268538,
+              "angular_velocity_rmse": 0.03605614363946202,
+              "sim3_scale": 1.270911760246706,
+              "sim3_ate_rmse": 0.2930134085293448,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4414877746650056,
+              "drift_per_metre": 0.20964926754977012
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17085160370740834,
+              "rpe_rotation_rmse": 0.01153954654051438,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4959389852781672,
+              "rotation_rmse": 0.05272377552401801,
+              "rotation_max": 0.08485143707140685,
+              "velocity_rmse": 0.18446202932901593,
+              "angular_velocity_rmse": 0.0350795524229678,
+              "sim3_scale": 0.9393457125935694,
+              "sim3_ate_rmse": 0.23049308514126704,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.627380905710573,
+              "drift_per_metre": 0.39181448205544417
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778666626947548,
+              "rpe_rotation_rmse": 0.012899511486168093,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5073913345301222,
+              "rotation_rmse": 0.04477827866352337,
+              "rotation_max": 0.08577529729832736,
+              "velocity_rmse": 0.2806436693424082,
+              "angular_velocity_rmse": 0.03404332107014546,
+              "sim3_scale": 1.7802416419794675,
+              "sim3_ate_rmse": 0.36374260808247255,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2343414015446614,
+              "drift_per_metre": 0.4689391927014825
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 0
+      },
+      "order_sha256": "9a2191138f31990fb65a5cdce35c64fac2c129fe67ecce50ec6e54d8d76a1ef1"
+    },
+    {
+      "epoch": 40,
+      "train_loss": 0.0036980671838543673,
+      "validation": {
+        "rotation_deg": 2.8214667083610188,
+        "sim3_ate_m": 0.2654835790857104,
+        "unaligned_ate_m": 0.514591728710025,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20011901026500648,
+              "rpe_rotation_rmse": 0.018784901947799068,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6347329273851066,
+              "rotation_rmse": 0.058827501927916,
+              "rotation_max": 0.09376455116520709,
+              "velocity_rmse": 0.20290424607641874,
+              "angular_velocity_rmse": 0.036902701516086545,
+              "sim3_scale": 2.101169073159994,
+              "sim3_ate_rmse": 0.17467132744347733,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.1021811593875697,
+              "drift_per_metre": 0.6699257051827715
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20104668423018063,
+              "rpe_rotation_rmse": 0.012007705812416159,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42042833489131887,
+              "rotation_rmse": 0.04239721580622659,
+              "rotation_max": 0.07221501418731562,
+              "velocity_rmse": 0.20158594790870132,
+              "angular_velocity_rmse": 0.03597963320544879,
+              "sim3_scale": 1.2708620457801627,
+              "sim3_ate_rmse": 0.2930065587182229,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.44285787805855975,
+              "drift_per_metre": 0.21029988844894232
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17085508603317703,
+              "rpe_rotation_rmse": 0.011032494881464667,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49568052128489726,
+              "rotation_rmse": 0.051679817237993884,
+              "rotation_max": 0.08242327887157601,
+              "velocity_rmse": 0.18446092785502746,
+              "angular_velocity_rmse": 0.03496026184436867,
+              "sim3_scale": 0.9393037620086938,
+              "sim3_ate_rmse": 0.23049379802456985,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6259013616549695,
+              "drift_per_metre": 0.39089047116740483
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.27786617227700044,
+              "rpe_rotation_rmse": 0.01303850050350379,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5075251312787774,
+              "rotation_rmse": 0.04407100021308914,
+              "rotation_max": 0.08591074360906321,
+              "velocity_rmse": 0.2806437906070878,
+              "angular_velocity_rmse": 0.03437458311196284,
+              "sim3_scale": 1.7801971635157816,
+              "sim3_ate_rmse": 0.3637626321565715,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2346334855278835,
+              "drift_per_metre": 0.46905015845789466
+            }
+          }
+        ]
+      },
+      "selected": false,
+      "acceptance": {
+        "eligible": false,
+        "checks": {
+          "rotation": false,
+          "aligned_position": true,
+          "unaligned_position": true,
+          "rotation_wins": false
+        },
+        "rotation_wins": 1
+      },
+      "order_sha256": "551b185727c8ec01d2685bf406589a913fee15148a4afbd8d0040400546834f5"
+    }
+  ],
+  "torch": "2.15.0+cpu",
+  "opencv": "5.0.0",
+  "best_epoch": 14,
+  "best_validation": {
+    "rotation_deg": 2.45328748708259,
+    "sim3_ate_m": 0.2655266909376253,
+    "unaligned_ate_m": 0.5121525620543161,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19993484016055435,
+          "rpe_rotation_rmse": 0.015995239732531447,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6266412877788675,
+          "rotation_rmse": 0.037057179843829675,
+          "rotation_max": 0.061809552149611674,
+          "velocity_rmse": 0.20292266211966659,
+          "angular_velocity_rmse": 0.036172656503788474,
+          "sim3_scale": 2.1023632905611733,
+          "sim3_ate_rmse": 0.17496181508379413,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.0847174014366339,
+          "drift_per_metre": 0.6593109162610277
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.20103714236070133,
+          "rpe_rotation_rmse": 0.011621740626898854,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.42027899672652985,
+          "rotation_rmse": 0.047878588211860675,
+          "rotation_max": 0.08120389585548204,
+          "velocity_rmse": 0.2015871818862931,
+          "angular_velocity_rmse": 0.03664702275729885,
+          "sim3_scale": 1.2709484758546212,
+          "sim3_ate_rmse": 0.2930241621822345,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.4418801882596977,
+          "drift_per_metre": 0.20983561296503378
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.17087998087876244,
+          "rpe_rotation_rmse": 0.010392541388734047,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.4948538822981833,
+          "rotation_rmse": 0.045229904082487934,
+          "rotation_max": 0.07782957366802315,
+          "velocity_rmse": 0.18445876047774842,
+          "angular_velocity_rmse": 0.03556690107595512,
+          "sim3_scale": 0.9392615495329498,
+          "sim3_ate_rmse": 0.23050827174878594,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.6217463216957926,
+          "drift_per_metre": 0.38829554866545096
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2778637821189467,
+          "rpe_rotation_rmse": 0.012277886513294502,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5068360814136841,
+          "rotation_rmse": 0.041106104452097926,
+          "rotation_max": 0.0828528626762746,
+          "velocity_rmse": 0.28064327701193015,
+          "angular_velocity_rmse": 0.03421937424527508,
+          "sim3_scale": 1.7805437016212824,
+          "sim3_ate_rmse": 0.3636125147356866,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.2339646547853267,
+          "drift_per_metre": 0.46879606267201557
+        }
+      }
+    ]
+  },
+  "finished_utc": "2026-11-11T01:40:55.957178+00:00",
+  "elapsed_seconds": 8.722229113802314,
+  "best_checkpoint_sha256": "80103dc53b886365a0c9ddae25f6341c61f1c3e6542790c97fa7bdf1c48322b5",
+  "model_sha256": "5de194f6698dd7783cbc58c506a81f032abdc4e1e58dd9bc735de01948a6259b",
+  "frozen_base_exact": true,
+  "onnx_max_abs_difference": 9.834766387939453e-07,
+  "onnx_translation_max_abs_difference": 2.384185791015625e-07,
+  "acceptance": {
+    "eligible": false,
+    "checks": {
+      "rotation": false,
+      "aligned_position": true,
+      "unaligned_position": true,
+      "rotation_wins": false
+    },
+    "rotation_wins": 0
+  },
+  "optimizer_steps": 1520
+}

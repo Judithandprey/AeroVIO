@@ -1,0 +1,38 @@
+{
+  "baseline": {
+    "mean_sim3_ate_m_change_percent": -57.34114456333934,
+    "median_rotation_deg_change_percent": -26.27093044214449,
+    "median_step_ms_change_percent": -54.42942686485838,
+    "max_fuel_change_percent": -84.60013197299945,
+    "median_unaligned_ate_m_change_percent": -92.93615517211639,
+    "rotation_wins": 6,
+    "aligned_ate_wins": 10
+  },
+  "current": {
+    "mean_sim3_ate_m_change_percent": -9.898829558561273,
+    "median_rotation_deg_change_percent": -54.775434335246786,
+    "median_step_ms_change_percent": 40.36160676372973,
+    "max_fuel_change_percent": 55.09569461692807,
+    "median_unaligned_ate_m_change_percent": -0.32179871985480446,
+    "rotation_wins": 6,
+    "aligned_ate_wins": 7
+  },
+  "calibrated-gyro": {
+    "mean_sim3_ate_m_change_percent": -1.233804393960325,
+    "median_rotation_deg_change_percent": -19.931520828818115,
+    "median_step_ms_change_percent": 26.90644445559689,
+    "max_fuel_change_percent": 48.09187923029108,
+    "median_unaligned_ate_m_change_percent": -1.8414160000050583,
+    "rotation_wins": 5,
+    "aligned_ate_wins": 7
+  },
+  "single-frame": {
+    "mean_sim3_ate_m_change_percent": 1.7990143973368955,
+    "median_rotation_deg_change_percent": 7.745202256942596,
+    "median_step_ms_change_percent": 5.683920529458697,
+    "max_fuel_change_percent": 8.504761997441257,
+    "median_unaligned_ate_m_change_percent": 0.005161296765421319,
+    "rotation_wins": 3,
+    "aligned_ate_wins": 0
+  }
+}

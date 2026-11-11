@@ -42,6 +42,11 @@ class MotionPredictor:
         if self.meta.get("schema_version") != 1:
             raise ValueError("unsupported motion metadata schema")
         self.input_mode, self.network_inputs, self.rotation_residual_enabled = validate_motion_options(self.meta)
+        self.requires_rotation_prior = self.meta.get("rotation_prior_input", False)
+        if type(self.requires_rotation_prior) is not bool:
+            raise ValueError("rotation_prior_input must be a Boolean")
+        if self.requires_rotation_prior and (self.input_mode != "image_imu" or self.network_inputs != "images_state"):
+            raise ValueError("rotation prior input requires paired images and state")
         self.size = (int(self.meta["input_width"]), int(self.meta["input_height"]))
         if min(self.size) <= 0:
             raise ValueError("network image dimensions must be positive")
@@ -64,7 +69,7 @@ class MotionPredictor:
             raise ValueError("invalid metadata vector: " + key)
         return value
 
-    def predict(self, pair, state):
+    def predict(self, pair, state, rotation_prior=None):
         pair = np.asarray(pair, dtype=np.float32)
         state = np.asarray(state, dtype=np.float32)
         if pair.shape != (2, self.size[1], self.size[0]) or state.shape != (14,):
@@ -78,6 +83,11 @@ class MotionPredictor:
             images = np.zeros_like(pair) if self.input_mode == "imu_only" else pair
             self.net.setInput(np.ascontiguousarray(images[None]), "images")
         self.net.setInput(np.ascontiguousarray(normalized[None]), "state")
+        if self.requires_rotation_prior:
+            prior = np.asarray(rotation_prior, dtype=np.float32)
+            if prior.shape != (3,) or not np.isfinite(prior).all():
+                raise ValueError("rotation prior must contain three finite camera-axis radians")
+            self.net.setInput(np.ascontiguousarray(prior[None]), "rotation_prior")
         raw = np.asarray(self.net.forward(), dtype=np.float32).reshape(-1)
         if raw.shape != (6,):
             raise ValueError("motion network must return six values")

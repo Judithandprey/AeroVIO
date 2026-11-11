@@ -1,0 +1,180 @@
+{
+  "kind": "previous-only permutation, fixed current image/state/causal prior/translation",
+  "seed": 314162,
+  "ordinary": {
+    "rotation_deg": 2.780753288154069,
+    "sim3_ate_m": 0.26555462732126334,
+    "unaligned_ate_m": 0.5139040861826467,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.1998380407345422,
+          "rpe_rotation_rmse": 0.012963090568449683,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6337392144594688,
+          "rotation_rmse": 0.046948378679450724,
+          "rotation_max": 0.06972819228608855,
+          "velocity_rmse": 0.2029362117829288,
+          "angular_velocity_rmse": 0.03850731242390554,
+          "sim3_scale": 2.102351328218069,
+          "sim3_ate_rmse": 0.1749595000626899,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.09960444443705,
+          "drift_per_metre": 0.6683595310873615
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.201053556900531,
+          "rpe_rotation_rmse": 0.010370084603167419,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.4225544664572531,
+          "rotation_rmse": 0.0418111269323797,
+          "rotation_max": 0.07739041403501187,
+          "velocity_rmse": 0.20158685116497552,
+          "angular_velocity_rmse": 0.03937553776872544,
+          "sim3_scale": 1.2708268814933368,
+          "sim3_ate_rmse": 0.2930155894415264,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.4516193143702987,
+          "drift_per_metre": 0.21446043107514254
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.17081386371550333,
+          "rpe_rotation_rmse": 0.010837260642250962,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.49250017184195694,
+          "rotation_rmse": 0.05107987833257603,
+          "rotation_max": 0.08482892765742056,
+          "velocity_rmse": 0.1844660741637785,
+          "angular_velocity_rmse": 0.03840125331926823,
+          "sim3_scale": 0.9392406073731968,
+          "sim3_ate_rmse": 0.23052676844308823,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.6075659089542804,
+          "drift_per_metre": 0.3794395394642223
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27786582939232496,
+          "rpe_rotation_rmse": 0.01400327460953253,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5068224919719084,
+          "rotation_rmse": 0.05429381831138208,
+          "rotation_max": 0.10421507977907755,
+          "velocity_rmse": 0.2806421014723723,
+          "angular_velocity_rmse": 0.03862019948922128,
+          "sim3_scale": 1.7806939578816554,
+          "sim3_ate_rmse": 0.3637166513377488,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.2342708771065336,
+          "drift_per_metre": 0.4689123997307209
+        }
+      }
+    ]
+  },
+  "shuffled_previous": {
+    "rotation_deg": 2.829766175414357,
+    "sim3_ate_m": 0.265557871479197,
+    "unaligned_ate_m": 0.514798205704824,
+    "episodes": [
+      {
+        "episode_id": 0,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.1998379411254424,
+          "rpe_rotation_rmse": 0.012857532991690776,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.6345936683958235,
+          "rotation_rmse": 0.04789346977297559,
+          "rotation_max": 0.06966644550164847,
+          "velocity_rmse": 0.20293596098848762,
+          "angular_velocity_rmse": 0.03855076808758401,
+          "sim3_scale": 2.1025067062244496,
+          "sim3_ate_rmse": 0.17496652616619746,
+          "distance_travelled": 1.6452289423449855,
+          "final_drift": 1.101216471230417,
+          "drift_per_metre": 0.6693393502188371
+        }
+      },
+      {
+        "episode_id": 1,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.20105800515079403,
+          "rpe_rotation_rmse": 0.01119413203331849,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.4227800379604251,
+          "rotation_rmse": 0.048087695063048684,
+          "rotation_max": 0.08776797139938469,
+          "velocity_rmse": 0.20158653127388418,
+          "angular_velocity_rmse": 0.03958250278079951,
+          "sim3_scale": 1.2709282847757415,
+          "sim3_ate_rmse": 0.2930355271855196,
+          "distance_travelled": 2.1058398143947614,
+          "final_drift": 0.4524506472553673,
+          "drift_per_metre": 0.2148552060620081
+        }
+      },
+      {
+        "episode_id": 2,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.1708405429786535,
+          "rpe_rotation_rmse": 0.010851451439041242,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.49418945518317237,
+          "rotation_rmse": 0.05186892184133882,
+          "rotation_max": 0.08525647747766166,
+          "velocity_rmse": 0.18446369588023,
+          "angular_velocity_rmse": 0.038364571150119244,
+          "sim3_scale": 0.9392532929583037,
+          "sim3_ate_rmse": 0.23051643843001535,
+          "distance_travelled": 1.601219287299837,
+          "final_drift": 0.6167904327381885,
+          "drift_per_metre": 0.38520047668067536
+        }
+      },
+      {
+        "episode_id": 3,
+        "metrics": {
+          "frames": 200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27786743381111134,
+          "rpe_rotation_rmse": 0.013043859865678386,
+          "rpe_pairs": 180,
+          "ate_rmse": 0.5076296612798751,
+          "rotation_rmse": 0.049704860612828666,
+          "rotation_max": 0.09173776389614394,
+          "velocity_rmse": 0.280641849668292,
+          "angular_velocity_rmse": 0.03844304275508138,
+          "sim3_scale": 1.7803532734916485,
+          "sim3_ate_rmse": 0.36371299413505565,
+          "distance_travelled": 2.632199271794326,
+          "final_drift": 1.2354925203309137,
+          "drift_per_metre": 0.46937651475326914
+        }
+      }
+    ]
+  },
+  "prediction_change_rms_rad": 0.00010643307905411348,
+  "interpretation": "OOD diagnostic; degradation alone does not prove correspondence accuracy"
+}

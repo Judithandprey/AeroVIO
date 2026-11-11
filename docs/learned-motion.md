@@ -1,5 +1,11 @@
 # Small motion network and controlled geometry ablations
 
+The completed [feature-correlation follow-up](feature-correlation.md) freezes this
+translation model and adds a local matching rotation branch. Both the temporal
+branch and a matched single-frame control fail original-flight validation; their
+public diagnostic results do not replace the prior model. The implementation,
+extra causal prior input and measured compute are recorded separately.
+
 This experiment implements the proposed inverse inference: estimate camera
 motion from consecutive observations. Warping supplies a training constraint;
 it does not require a full image generator at inference time.

@@ -1,0 +1,49 @@
+single-frame epoch 01 rotation=3.19089 ATE=0.265611 best=1
+single-frame epoch 02 rotation=3.78026 ATE=0.265594 best=1
+single-frame epoch 03 rotation=3.53410 ATE=0.265579 best=1
+single-frame epoch 04 rotation=3.63664 ATE=0.265601 best=1
+single-frame epoch 05 rotation=4.22755 ATE=0.265557 best=1
+single-frame epoch 06 rotation=3.91731 ATE=0.265575 best=1
+single-frame epoch 07 rotation=4.44321 ATE=0.265511 best=1
+single-frame epoch 08 rotation=4.63831 ATE=0.265527 best=1
+single-frame epoch 09 rotation=4.38544 ATE=0.265551 best=1
+single-frame epoch 10 rotation=3.45132 ATE=0.265505 best=1
+single-frame epoch 11 rotation=4.50608 ATE=0.265515 best=1
+single-frame epoch 12 rotation=2.46145 ATE=0.265543 best=12
+single-frame epoch 13 rotation=5.01150 ATE=0.265570 best=12
+single-frame epoch 14 rotation=2.45329 ATE=0.265527 best=14
+single-frame epoch 15 rotation=3.91674 ATE=0.265495 best=14
+single-frame epoch 16 rotation=2.99463 ATE=0.265535 best=14
+single-frame epoch 17 rotation=3.50154 ATE=0.265522 best=14
+single-frame epoch 18 rotation=3.26196 ATE=0.265509 best=14
+single-frame epoch 19 rotation=3.63491 ATE=0.265506 best=14
+single-frame epoch 20 rotation=3.02442 ATE=0.265498 best=14
+single-frame epoch 21 rotation=3.28305 ATE=0.265471 best=14
+single-frame epoch 22 rotation=3.29592 ATE=0.265486 best=14
+single-frame epoch 23 rotation=3.35596 ATE=0.265487 best=14
+single-frame epoch 24 rotation=3.27370 ATE=0.265485 best=14
+single-frame epoch 25 rotation=3.01225 ATE=0.265521 best=14
+single-frame epoch 26 rotation=2.70173 ATE=0.265508 best=14
+single-frame epoch 27 rotation=2.87982 ATE=0.265480 best=14
+single-frame epoch 28 rotation=3.22664 ATE=0.265502 best=14
+single-frame epoch 29 rotation=2.72538 ATE=0.265504 best=14
+single-frame epoch 30 rotation=2.60300 ATE=0.265503 best=14
+single-frame epoch 31 rotation=2.85853 ATE=0.265505 best=14
+single-frame epoch 32 rotation=2.83488 ATE=0.265501 best=14
+single-frame epoch 33 rotation=2.75713 ATE=0.265491 best=14
+single-frame epoch 34 rotation=2.98815 ATE=0.265484 best=14
+single-frame epoch 35 rotation=2.97241 ATE=0.265490 best=14
+single-frame epoch 36 rotation=2.98815 ATE=0.265515 best=14
+single-frame epoch 37 rotation=2.82930 ATE=0.265485 best=14
+single-frame epoch 38 rotation=3.04468 ATE=0.265488 best=14
+single-frame epoch 39 rotation=2.85309 ATE=0.265497 best=14
+single-frame epoch 40 rotation=2.82147 ATE=0.265484 best=14
+/root/projects/AeroVIO/scripts/train_feature_correlation.py:245: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter has become the default. Learn more about the new export logic: https://docs.pytorch.org/docs/stable/onnx_export.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html
+  torch.onnx.export(net, (torch.zeros(1, 2, 48, 64), torch.zeros(1, 14), torch.zeros(1, 3)),
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/jit_utils.py:308: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_node_shape_type_inference(node, params_dict, opset_version)
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:712: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+/root/projects/AeroVIO/.train-venv/lib/python3.14/site-packages/torch/onnx/_internal/torchscript_exporter/utils.py:1185: UserWarning: Constant folding - Only steps=1 can be constant folded for opset >= 10 onnx::Slice op. Constant folding not applied. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/jit/passes/onnx/constant_fold.cpp:178.)
+  _C._jit_pass_onnx_graph_shape_type_inference(
+{"status": "complete", "best_epoch": 14, "parameters": 35641, "trainable_parameters": 6243, "acceptance": {"eligible": false, "checks": {"rotation": false, "aligned_position": true, "unaligned_position": true, "rotation_wins": false}, "rotation_wins": 0}, "elapsed_seconds": 8.722229113802314}

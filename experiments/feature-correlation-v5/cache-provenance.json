@@ -1,0 +1,488 @@
+{
+  "protocol_sha256": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+  "manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+  "source_sha256": {
+    "scripts/train_feature_correlation.py": "7e7f143c05b73f7833c365734d42493d54b03dc152a2016e13f18afad132515b",
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024"
+  },
+  "splits": {
+    "train": {
+      "sha256": "b666a00c5c858409aa07d3a043147b3dd822ca6c5f33365bdf3b886612d44f75",
+      "original_sha256": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336",
+      "episodes": [
+        {
+          "episode_id": 0,
+          "scene": "ProcTHOR-Train-2",
+          "episode_json_sha256": "be64325ef6e72000c38a0c0a85bbf7d52786d219e2d1c700d7f01ecd58d33fa0",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6546908003086797,
+            "gyro_std_norm": 0.15019613302021156,
+            "gyro_mean_imu": [
+              0.014782453508084988,
+              0.005387802812615002,
+              0.01992618145448999
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.014782453508084988,
+              0.005387802812615002,
+              0.01992618145448999
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 1,
+          "scene": "ProcTHOR-Train-2",
+          "episode_json_sha256": "0d176cd9ee3baad7709d48267b2da634314ae60174f7a0c2323672a191b9861b",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6366930645627152,
+            "gyro_std_norm": 0.13681372954803694,
+            "gyro_mean_imu": [
+              -0.004169106923749999,
+              -0.0013835512437150022,
+              0.019914852877830007
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.004169106923749999,
+              -0.0013835512437150022,
+              0.019914852877830007
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 2,
+          "scene": "ProcTHOR-Train-2",
+          "episode_json_sha256": "df4b92c6c01218801c7364514880f44280598a1d74442c7fba9e2b14328cd804",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6636500757578924,
+            "gyro_std_norm": 0.14347782840302312,
+            "gyro_mean_imu": [
+              0.00012467932284999995,
+              -0.015894449870359494,
+              -0.009535131969795007
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.00012467932284999995,
+              -0.015894449870359494,
+              -0.009535131969795007
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 3,
+          "scene": "ProcTHOR-Train-2",
+          "episode_json_sha256": "d26fe35a155247b5463a90f6ff36cfca5509e6865f4dfa3cc077cd50a8934b67",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6862774274790848,
+            "gyro_std_norm": 0.1477016129138668,
+            "gyro_mean_imu": [
+              0.01695455841200001,
+              0.013161030470669997,
+              -0.007415890438924997
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.01695455841200001,
+              0.013161030470669997,
+              -0.007415890438924997
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 4,
+          "scene": "ProcTHOR-Train-3",
+          "episode_json_sha256": "e5a3ea7759b2c8959cb18a2cd8590d99992e382013ec7b6f207c4205dec50180",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6673358268091663,
+            "gyro_std_norm": 0.14473038035275193,
+            "gyro_mean_imu": [
+              0.01888219043525999,
+              -0.023679110614134993,
+              -0.005445418319838
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.01888219043525999,
+              -0.023679110614134993,
+              -0.005445418319838
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 5,
+          "scene": "ProcTHOR-Train-3",
+          "episode_json_sha256": "2db9430b532030a60308f4c37921b4e3a030fcd6d755e830758ea020f25273b2",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6483346293151268,
+            "gyro_std_norm": 0.1380451792801896,
+            "gyro_mean_imu": [
+              -0.0015314309356000038,
+              -0.007240550091350002,
+              0.02294090679990499
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.0015314309356000038,
+              -0.007240550091350002,
+              0.02294090679990499
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 6,
+          "scene": "ProcTHOR-Train-3",
+          "episode_json_sha256": "1b4581c4e10a9e869fb3b7586ef41492fbe122435687ed37260f75e9966e989e",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6868182275829428,
+            "gyro_std_norm": 0.15137215204757862,
+            "gyro_mean_imu": [
+              -0.014024343986195809,
+              0.001457771872108,
+              -0.0008352177273500013
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.014024343986195809,
+              0.001457771872108,
+              -0.0008352177273500013
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 7,
+          "scene": "ProcTHOR-Train-3",
+          "episode_json_sha256": "6c40043c4aa6b02e0d5c39d65bb46d02ff35e930342ec219da391649fe6047c5",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6435175432112811,
+            "gyro_std_norm": 0.14839481649041739,
+            "gyro_mean_imu": [
+              0.009318736379465002,
+              -0.01034211621446999,
+              0.013592022254950003
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.009318736379465002,
+              -0.01034211621446999,
+              0.013592022254950003
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 8,
+          "scene": "ProcTHOR-Train-4",
+          "episode_json_sha256": "fd2e2484449bed4904d3999544738084d36c018501ff01e17855a4647061eb37",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6370753768321954,
+            "gyro_std_norm": 0.14338013403237862,
+            "gyro_mean_imu": [
+              -0.01008749435101099,
+              -0.007146137052584994,
+              -0.025902055608105004
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.01008749435101099,
+              -0.007146137052584994,
+              -0.025902055608105004
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 9,
+          "scene": "ProcTHOR-Train-4",
+          "episode_json_sha256": "63dc13b57b3849b6c284b164b3db2225b8767c067a121fd8d10aa288618a11f4",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6265890469738606,
+            "gyro_std_norm": 0.15346382974036074,
+            "gyro_mean_imu": [
+              -0.003281004832307006,
+              0.007700730088390504,
+              -0.011935298478543
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.003281004832307006,
+              0.007700730088390504,
+              -0.011935298478543
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 10,
+          "scene": "ProcTHOR-Train-4",
+          "episode_json_sha256": "5642a34e1fb27506814f227d792f87c9a328945a4c2d7cf7189c7df7badb6141",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6606674678252775,
+            "gyro_std_norm": 0.1493724079669425,
+            "gyro_mean_imu": [
+              0.005606258824309995,
+              -0.014321192057589997,
+              0.018824206112925
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.005606258824309995,
+              -0.014321192057589997,
+              0.018824206112925
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 11,
+          "scene": "ProcTHOR-Train-4",
+          "episode_json_sha256": "e5760be16a7e135365f76fc649bd88764c0d88461aa531f14c0b3c2b6fe2b60f",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6353794590666536,
+            "gyro_std_norm": 0.1510587553091014,
+            "gyro_mean_imu": [
+              -0.016268129864199978,
+              0.0021177704191449966,
+              -0.0026127377963650004
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.016268129864199978,
+              0.0021177704191449966,
+              -0.0026127377963650004
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        }
+      ]
+    },
+    "validation": {
+      "sha256": "363f4b0213650f3d1d512af07a3e6651f9d99ed54e469f9d3e1c0abee265d3f0",
+      "original_sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516",
+      "episodes": [
+        {
+          "episode_id": 0,
+          "scene": "ProcTHOR-Train-5",
+          "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6653981832988053,
+            "gyro_std_norm": 0.1506648567111109,
+            "gyro_mean_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 1,
+          "scene": "ProcTHOR-Train-5",
+          "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6452634399820144,
+            "gyro_std_norm": 0.14710804945631892,
+            "gyro_mean_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 2,
+          "scene": "ProcTHOR-Train-6",
+          "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6220047673718117,
+            "gyro_std_norm": 0.1463892224040755,
+            "gyro_mean_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 3,
+          "scene": "ProcTHOR-Train-6",
+          "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6429471135396831,
+            "gyro_std_norm": 0.14823311630473782,
+            "gyro_mean_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        }
+      ]
+    }
+  },
+  "status": "complete"
+}

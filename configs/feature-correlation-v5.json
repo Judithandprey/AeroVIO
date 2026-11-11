@@ -1,0 +1,46 @@
+{
+  "purpose": "Test whether lightweight local feature correspondence improves rotation beyond the preserved calibrated-gyro diagnostic",
+  "parent_commit": "4e8a7ac74d118e48627a37f6808cd277ad7abb46",
+  "reference": "calibrated-gyro v4; this experiment does not revise v4 strict selection",
+  "base_model": "models/motion-warp-v1",
+  "base_onnx_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+  "cache": "data/motion-cache-v2",
+  "manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "architecture": {
+    "translation": "freeze the entire existing MotionNet; keep its translation output",
+    "rotation": "replace old residual with a zero-initialized correction about the actual causal calibrated gyro prior",
+    "shared_encoder": "1->8 k3s2p1 ReLU, 8->16 k3s2p1 ReLU; 12x16 feature grid",
+    "correlation": "channel-normalized dot product at 9 offsets in a radius-1 local window; zero support outside image",
+    "spatial_pool": "3x4 average pool preserves a 4x4 grid per offset",
+    "head": "144 correlation features + 3 actual rotation prior values scaled by 0.01 + 5 normalized intrinsics/dt; Linear152->32 ReLU Linear32->3",
+    "correction_scale_rad": 0.01,
+    "variants": ["temporal: previous/current feature correlation", "single-frame: current/current correlation with identical trainable parameters and schedule"],
+    "map": false
+  },
+  "training": {
+    "seed": 17, "epochs": 40, "batch": 64, "threads": 4,
+    "optimizer": "Adam on new rotation branch only", "lr": 0.001,
+    "final_lr": 0.0001, "schedule": "cosine", "gradient_clip": 5.0,
+    "objective": "SmoothL1 of calibrated rotation residual vector divided by fixed 0.01 radians",
+    "data": "original 2388 train pairs from scenes2/3/4; 796 validation pairs from scenes5/6; no synthetic auxiliary/public training",
+    "new_warp_or_multiframe_loss": false,
+    "shared_initialization_and_minibatch_order": true,
+    "checkpoint": "lowest equal-episode accumulated validation rotation RMSE among epochs1..40; earlier on ties; retain this best trained candidate even if not eligible"
+  },
+  "acceptance": {
+    "reference": "epoch0 zero correction calibrated gyro",
+    "min_rotation_improvement_percent": 5,
+    "min_rotation_episode_wins": 3,
+    "max_aligned_ate_ratio": 1.01,
+    "max_unaligned_position_ratio": 1.01,
+    "numeric_absolute_tolerance": 0.000001,
+    "note": "New v5 engineering budget permits at most 1% position degradation; not a reinterpretation of v4's stricter result. Otherwise retain reference. Both trained validation-selected candidates still receive public diagnostics."
+  },
+  "verification": ["known-shift correlation geometry", "frozen translation", "causal prior input", "ONNX/OpenCV parity", "40-frame WASM checks", "validation actual Solution.step parity", "previous-image shuffle with fixed current/state/prior", "exact repeated public candidate output/fuel"],
+  "public_runs_fixed_before_training": ["official baseline", "preserved current v4", "preserved calibrated-gyro v4", "single-frame control", "temporal correlation", "temporal correlation repeat"],
+  "public_selection": "configs/public-episodes.json",
+  "limits": "configs/evaluation-limits.json",
+  "timing": "serial WASM runs after training and probes stop; wall time and deterministic fuel separately",
+  "budget": "two 40-epoch CPU fits, no hyperparameter search, no paid compute",
+  "submission": false
+}

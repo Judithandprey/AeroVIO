@@ -65,3 +65,5 @@ report-*/
 !experiments/rotation-focus-v3/control/diagnostic-last/net.onnx
 !experiments/rotation-focus-v3/focus/diagnostic-last/net.onnx
 !workspace/solution/net.onnx
+!experiments/feature-correlation-v5/single-frame/net.onnx
+!experiments/feature-correlation-v5/temporal/net.onnx

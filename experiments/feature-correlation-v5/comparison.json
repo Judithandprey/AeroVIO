@@ -1,0 +1,1310 @@
+[
+  {
+    "name": "baseline",
+    "completed": 10,
+    "frames": 12000,
+    "mean_sim3_ate_m": 2.04163486385224,
+    "median_rotation_deg": 13.244939008722964,
+    "mean_rotation_deg": 19.486437200535295,
+    "median_step_ms": 3.3397753722965717,
+    "max_fuel": 141910846,
+    "median_unaligned_ate_m": 41.42875375995165,
+    "median_angular_velocity_rmse_rad_s": 0.12197852620502328,
+    "median_rotation_rpe_deg": 0.8885955281264709,
+    "median_sim3_scale": 0.06426887024821804,
+    "wasm_sha256": "ffb32bdd5dacae31619f75012bf25a46cfa73f810ac78f4168aa451fb0f98237",
+    "model_sha256": null,
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 20.78782700074638,
+          "rpe_rotation_rmse": 0.019153981617823234,
+          "rpe_pairs": 1180,
+          "ate_rmse": 450.6132738260891,
+          "rotation_rmse": 0.47088456014758556,
+          "rotation_max": 0.7055585409227667,
+          "velocity_rmse": 21.399867200362166,
+          "angular_velocity_rmse": 0.12237734727170703,
+          "sim3_scale": 0.012924927852300542,
+          "sim3_ate_rmse": 2.0992349930420335,
+          "distance_travelled": 19.27355608046622,
+          "final_drift": 857.841960228937,
+          "drift_per_metre": 44.50875368548937
+        }
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 29.349976910723644,
+          "rpe_rotation_rmse": 0.03455801168942603,
+          "rpe_pairs": 1180,
+          "ate_rmse": 692.833462571267,
+          "rotation_rmse": 1.0925338303109475,
+          "rotation_max": 1.7443985565444908,
+          "velocity_rmse": 29.66980148480238,
+          "angular_velocity_rmse": 0.12267237381680156,
+          "sim3_scale": 0.008366544819301077,
+          "sim3_ate_rmse": 1.9141201995915653,
+          "distance_travelled": 19.68856579137152,
+          "final_drift": 1099.6060982094575,
+          "drift_per_metre": 55.8499846998179
+        }
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 2.124636552097751,
+          "rpe_rotation_rmse": 0.023514699888033425,
+          "rpe_pairs": 1180,
+          "ate_rmse": 27.494834559649863,
+          "rotation_rmse": 0.48831203703860965,
+          "rotation_max": 0.8419958177330422,
+          "velocity_rmse": 2.2960814161974707,
+          "angular_velocity_rmse": 0.12537193611280947,
+          "sim3_scale": 0.08420909175175528,
+          "sim3_ate_rmse": 2.499867629131487,
+          "distance_travelled": 19.730964563762242,
+          "final_drift": 56.08354456035264,
+          "drift_per_metre": 2.842412715258498
+        }
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 2.0796252728216245,
+          "rpe_rotation_rmse": 0.011802523737166011,
+          "rpe_pairs": 1180,
+          "ate_rmse": 37.57286039958167,
+          "rotation_rmse": 0.14407511849793364,
+          "rotation_max": 0.27506142112494886,
+          "velocity_rmse": 2.1836290348226863,
+          "angular_velocity_rmse": 0.11997076971569823,
+          "sim3_scale": 0.0811576054560158,
+          "sim3_ate_rmse": 1.928537444232877,
+          "distance_travelled": 13.676677197376234,
+          "final_drift": 79.86919519062671,
+          "drift_per_metre": 5.839809921517268
+        }
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 8.954181731906765,
+          "rpe_rotation_rmse": 0.019548777706533196,
+          "rpe_pairs": 1180,
+          "ate_rmse": 149.90330822749237,
+          "rotation_rmse": 0.38686733589967426,
+          "rotation_max": 0.7231679848288849,
+          "velocity_rmse": 9.196727065240541,
+          "angular_velocity_rmse": 0.12283974206188619,
+          "sim3_scale": 0.02350832764868326,
+          "sim3_ate_rmse": 1.0741717112262261,
+          "distance_travelled": 14.114004419046505,
+          "final_drift": 307.22107961205165,
+          "drift_per_metre": 21.76710949569098
+        }
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.9408950357509966,
+          "rpe_rotation_rmse": 0.010852705291634323,
+          "rpe_pairs": 1180,
+          "ate_rmse": 20.801775243051615,
+          "rotation_rmse": 0.14138149385342244,
+          "rotation_max": 0.21241987680360863,
+          "velocity_rmse": 1.0184189961425898,
+          "angular_velocity_rmse": 0.11905375092604029,
+          "sim3_scale": 0.29284790136189937,
+          "sim3_ate_rmse": 2.330614646521935,
+          "distance_travelled": 19.937031873615467,
+          "final_drift": 33.27822661080745,
+          "drift_per_metre": 1.6691665450386137
+        }
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 3.280895993699212,
+          "rpe_rotation_rmse": 0.009868248674531989,
+          "rpe_pairs": 1180,
+          "ate_rmse": 47.52314435565106,
+          "rotation_rmse": 0.11680359314223529,
+          "rotation_max": 0.15733492795368156,
+          "velocity_rmse": 3.4088811363972913,
+          "angular_velocity_rmse": 0.1209940384719194,
+          "sim3_scale": 0.04972653955797249,
+          "sim3_ate_rmse": 2.1976043515852335,
+          "distance_travelled": 19.17265173996768,
+          "final_drift": 105.28562833011631,
+          "drift_per_metre": 5.491448431759487
+        }
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 1.3761158490748648,
+          "rpe_rotation_rmse": 0.014905569787189096,
+          "rpe_pairs": 1180,
+          "ate_rmse": 18.046723821673513,
+          "rotation_rmse": 0.1225438669195736,
+          "rotation_max": 0.20538465240071774,
+          "velocity_rmse": 1.4994795987865568,
+          "angular_velocity_rmse": 0.12290855893720581,
+          "sim3_scale": 0.17963836769981784,
+          "sim3_ate_rmse": 2.1561385472804777,
+          "distance_travelled": 18.52035105983549,
+          "final_drift": 28.68950969008146,
+          "drift_per_metre": 1.549080230574004
+        }
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 1.7551632878346313,
+          "rpe_rotation_rmse": 0.011672841619772577,
+          "rpe_pairs": 1180,
+          "ate_rmse": 36.89381288858848,
+          "rotation_rmse": 0.11936257915632623,
+          "rotation_max": 0.1655903903925798,
+          "velocity_rmse": 1.9219588982598512,
+          "angular_velocity_rmse": 0.12157970513833954,
+          "sim3_scale": 0.03907206029608551,
+          "sim3_ate_rmse": 2.6198808453952545,
+          "distance_travelled": 19.091905999647423,
+          "final_drift": 62.516461149099314,
+          "drift_per_metre": 3.2745007832247772
+        }
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 2.6356300379410573,
+          "rpe_rotation_rmse": 0.0161122655814205,
+          "rpe_pairs": 1180,
+          "ate_rmse": 45.284647120321615,
+          "rotation_rmse": 0.3182604713581657,
+          "rotation_max": 0.4993766221138431,
+          "velocity_rmse": 2.8171269496854685,
+          "angular_velocity_rmse": 0.12007134143011453,
+          "sim3_scale": 0.07881120093846358,
+          "sim3_ate_rmse": 1.5961782705153091,
+          "distance_travelled": 19.08432760653786,
+          "final_drift": 91.12394421272013,
+          "drift_per_metre": 4.774805069972867
+        }
+      }
+    ]
+  },
+  {
+    "name": "current",
+    "completed": 10,
+    "frames": 12000,
+    "mean_sim3_ate_m": 0.9666223655565684,
+    "median_rotation_deg": 21.593065961156935,
+    "mean_rotation_deg": 21.62630690177549,
+    "median_step_ms": 1.0843098862096667,
+    "max_fuel": 14090709,
+    "median_unaligned_ate_m": 2.935910602463791,
+    "median_angular_velocity_rmse_rad_s": 0.032257110670809386,
+    "median_rotation_rpe_deg": 0.9038516577719385,
+    "median_sim3_scale": 2.156312440796272,
+    "wasm_sha256": "f57b5c216e26ed4b111f84a3c7b4effdeb6cf313407bd35490830b3fd4b45660",
+    "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.25520669905867194,
+          "rpe_rotation_rmse": 0.015462812797764687,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.943461735790304,
+          "rotation_rmse": 0.39519763030795524,
+          "rotation_max": 0.614589894169594,
+          "velocity_rmse": 0.25794470674409564,
+          "angular_velocity_rmse": 0.031330978061067535,
+          "sim3_scale": 2.6335305219505325,
+          "sim3_ate_rmse": 0.6683078570054157,
+          "distance_travelled": 19.27355608046622,
+          "final_drift": 4.68874753522907,
+          "drift_per_metre": 0.24327360844328685
+        }
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2751951393855782,
+          "rpe_rotation_rmse": 0.021321772358501075,
+          "rpe_pairs": 1180,
+          "ate_rmse": 6.3090443325524195,
+          "rotation_rmse": 0.5738110164478029,
+          "rotation_max": 0.8067126032184461,
+          "velocity_rmse": 0.278818975613771,
+          "angular_velocity_rmse": 0.035153038792529887,
+          "sim3_scale": 3.8455390857577463,
+          "sim3_ate_rmse": 0.558813354602588,
+          "distance_travelled": 19.68856579137152,
+          "final_drift": 6.034097359404459,
+          "drift_per_metre": 0.3064772428496997
+        }
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2863976470092985,
+          "rpe_rotation_rmse": 0.02569820794466259,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.415167885679019,
+          "rotation_rmse": 0.5383215249316754,
+          "rotation_max": 0.959716309015673,
+          "velocity_rmse": 0.28976058420305806,
+          "angular_velocity_rmse": 0.03805438668743621,
+          "sim3_scale": 3.321254450346177,
+          "sim3_ate_rmse": 0.9830211762852415,
+          "distance_travelled": 19.730964563762242,
+          "final_drift": 3.9121920242244306,
+          "drift_per_metre": 0.19827677514608366
+        }
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.18214708139987282,
+          "rpe_rotation_rmse": 0.020188726047694745,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.463975224893029,
+          "rotation_rmse": 0.524216267891554,
+          "rotation_max": 0.8809550878987291,
+          "velocity_rmse": 0.18617602544143474,
+          "angular_velocity_rmse": 0.03406991670546153,
+          "sim3_scale": 1.7572697234726322,
+          "sim3_ate_rmse": 0.6072437970183293,
+          "distance_travelled": 13.676677197376234,
+          "final_drift": 2.5266645213537893,
+          "drift_per_metre": 0.18474257196320393
+        }
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19760771488677428,
+          "rpe_rotation_rmse": 0.014698427496515717,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.596363760867307,
+          "rotation_rmse": 0.2809099219961385,
+          "rotation_max": 0.4514049448377629,
+          "velocity_rmse": 0.2009903160631377,
+          "angular_velocity_rmse": 0.03107585002188624,
+          "sim3_scale": 2.1510538816397298,
+          "sim3_ate_rmse": 0.6360325791823814,
+          "distance_travelled": 14.114004419046505,
+          "final_drift": 4.940546605573254,
+          "drift_per_metre": 0.3500457034650001
+        }
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2986550253507309,
+          "rpe_rotation_rmse": 0.016087561957693956,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.615282741995266,
+          "rotation_rmse": 0.3585425629370497,
+          "rotation_max": 0.6649892314366346,
+          "velocity_rmse": 0.3016888274317532,
+          "angular_velocity_rmse": 0.03318324328055123,
+          "sim3_scale": 2.161570999952814,
+          "sim3_ate_rmse": 1.5214550811199326,
+          "distance_travelled": 19.937031873615467,
+          "final_drift": 7.51348414190183,
+          "drift_per_metre": 0.3768607177603565
+        }
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.26341526751233285,
+          "rpe_rotation_rmse": 0.015054995687127691,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.115989379785035,
+          "rotation_rmse": 0.2090253898689429,
+          "rotation_max": 0.30271465357351574,
+          "velocity_rmse": 0.26699972409770034,
+          "angular_velocity_rmse": 0.031201651776164657,
+          "sim3_scale": 1.780793916258715,
+          "sim3_ate_rmse": 1.5524185146928169,
+          "distance_travelled": 19.17265173996768,
+          "final_drift": 5.3505322774320145,
+          "drift_per_metre": 0.27907106173937285
+        }
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2787254587165387,
+          "rpe_rotation_rmse": 0.010869519152883233,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.275457444060275,
+          "rotation_rmse": 0.06214489369375499,
+          "rotation_max": 0.11729487292455586,
+          "velocity_rmse": 0.2833721418480043,
+          "angular_velocity_rmse": 0.02995291650366197,
+          "sim3_scale": 2.4816501767872428,
+          "sim3_ate_rmse": 1.058314609424784,
+          "distance_travelled": 18.52035105983549,
+          "final_drift": 3.8138531159369147,
+          "drift_per_metre": 0.20592769022655835
+        }
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2483601348014283,
+          "rpe_rotation_rmse": 0.024945859666701455,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.4468254755129295,
+          "rotation_rmse": 0.7730746984539626,
+          "rotation_max": 1.2825710150568015,
+          "velocity_rmse": 0.25174872635642775,
+          "angular_velocity_rmse": 0.03698574496817532,
+          "sim3_scale": 1.565562508514045,
+          "sim3_ate_rmse": 1.5899271902191707,
+          "distance_travelled": 19.091905999647423,
+          "final_drift": 4.073888914383627,
+          "drift_per_metre": 0.21338303857450694
+        }
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.23927334846328788,
+          "rpe_rotation_rmse": 0.013092372155898967,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.924851193015922,
+          "rotation_rmse": 0.05925869829872572,
+          "rotation_max": 0.10219340634769059,
+          "velocity_rmse": 0.244735095313131,
+          "angular_velocity_rmse": 0.03089237231625083,
+          "sim3_scale": 1.9154439487536965,
+          "sim3_ate_rmse": 0.49068949601502276,
+          "distance_travelled": 19.08432760653786,
+          "final_drift": 1.2708393285725577,
+          "drift_per_metre": 0.06659073113674682
+        }
+      }
+    ]
+  },
+  {
+    "name": "calibrated-gyro",
+    "completed": 10,
+    "frames": 12000,
+    "mean_sim3_ate_m": 0.8818179740254486,
+    "median_rotation_deg": 12.196272984977124,
+    "mean_rotation_deg": 14.120281175584614,
+    "median_step_ms": 1.1992730433121324,
+    "max_fuel": 14757111,
+    "median_unaligned_ate_m": 2.981362159553088,
+    "median_angular_velocity_rmse_rad_s": 0.040501902330354445,
+    "median_rotation_rpe_deg": 0.717399434999172,
+    "median_sim3_scale": 2.147050397578405,
+    "wasm_sha256": "5c6a8414d059111f72a1d68dab6b6eb46df526fea5c7fdc1f3539c4a70e3affd",
+    "model_sha256": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7",
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2551716159513564,
+          "rpe_rotation_rmse": 0.010245954388896153,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.837562859689895,
+          "rotation_rmse": 0.1763843987424461,
+          "rotation_max": 0.2575083312198422,
+          "velocity_rmse": 0.25794584494383105,
+          "angular_velocity_rmse": 0.03980874317938072,
+          "sim3_scale": 2.6663527806297838,
+          "sim3_ate_rmse": 0.5930501050135211,
+          "distance_travelled": 19.27355608046622,
+          "final_drift": 4.652707640058005,
+          "drift_per_metre": 0.2414036942966395
+        }
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27506445441080807,
+          "rpe_rotation_rmse": 0.02152859640794164,
+          "rpe_pairs": 1180,
+          "ate_rmse": 6.282280660413396,
+          "rotation_rmse": 0.6882693215286086,
+          "rotation_max": 1.1301284017430255,
+          "velocity_rmse": 0.27883275143086966,
+          "angular_velocity_rmse": 0.04352463493877661,
+          "sim3_scale": 3.810357445822124,
+          "sim3_ate_rmse": 0.737879707716164,
+          "distance_travelled": 19.68856579137152,
+          "final_drift": 5.652374631841553,
+          "drift_per_metre": 0.28708920150591655
+        }
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.28651647189585966,
+          "rpe_rotation_rmse": 0.010899360719922214,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.2591651922428873,
+          "rotation_rmse": 0.13548776237453597,
+          "rotation_max": 0.22419650571687255,
+          "velocity_rmse": 0.2897451444686169,
+          "angular_velocity_rmse": 0.0399636545729736,
+          "sim3_scale": 3.114761742934796,
+          "sim3_ate_rmse": 0.7935691351878075,
+          "distance_travelled": 19.730964563762242,
+          "final_drift": 3.2852562245980925,
+          "drift_per_metre": 0.16650256575047387
+        }
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.18220733148963197,
+          "rpe_rotation_rmse": 0.013003104493992269,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.471131203496832,
+          "rotation_rmse": 0.21714457784945707,
+          "rotation_max": 0.3353725094804327,
+          "velocity_rmse": 0.18616750438342733,
+          "angular_velocity_rmse": 0.04043573757397457,
+          "sim3_scale": 1.8179971433235724,
+          "sim3_ate_rmse": 0.4617042746926846,
+          "distance_travelled": 13.676677197376234,
+          "final_drift": 2.674296030074,
+          "drift_per_metre": 0.19553697082117602
+        }
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.1977285793402684,
+          "rpe_rotation_rmse": 0.013850051973771605,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.663082796004254,
+          "rotation_rmse": 0.13908269794322836,
+          "rotation_max": 0.22412463953555806,
+          "velocity_rmse": 0.20097429178853918,
+          "angular_velocity_rmse": 0.04083892654969172,
+          "sim3_scale": 2.085486659251289,
+          "sim3_ate_rmse": 0.6962017113301022,
+          "distance_travelled": 14.114004419046505,
+          "final_drift": 4.93778759065402,
+          "drift_per_metre": 0.34985022280357203
+        }
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2988079321122313,
+          "rpe_rotation_rmse": 0.011897247316965403,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.496301683387275,
+          "rotation_rmse": 0.10241045272245856,
+          "rotation_max": 0.23062833547656178,
+          "velocity_rmse": 0.3016690589688418,
+          "angular_velocity_rmse": 0.04056806708673432,
+          "sim3_scale": 2.2086141359055214,
+          "sim3_ate_rmse": 1.4603220760126538,
+          "distance_travelled": 19.937031873615467,
+          "final_drift": 7.164675206269858,
+          "drift_per_metre": 0.3593651879421199
+        }
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2635481961664505,
+          "rpe_rotation_rmse": 0.01637907334015721,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.23920622909064,
+          "rotation_rmse": 0.26186370532497627,
+          "rotation_max": 0.36008507842952103,
+          "velocity_rmse": 0.2669828711593905,
+          "angular_velocity_rmse": 0.040811245846715825,
+          "sim3_scale": 1.745872869894628,
+          "sim3_ate_rmse": 1.5764056329319605,
+          "distance_travelled": 19.17265173996768,
+          "final_drift": 5.490251619308302,
+          "drift_per_metre": 0.2863584909260735
+        }
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27860144856815516,
+          "rpe_rotation_rmse": 0.015625704196153986,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.2996415231019216,
+          "rotation_rmse": 0.31032988575948767,
+          "rotation_max": 0.5395405806567363,
+          "velocity_rmse": 0.2833815770438371,
+          "angular_velocity_rmse": 0.04157039298600881,
+          "sim3_scale": 2.492352797645776,
+          "sim3_ate_rmse": 1.0660125644579903,
+          "distance_travelled": 18.52035105983549,
+          "final_drift": 3.6656385532341296,
+          "drift_per_metre": 0.1979248957749881
+        }
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.24833040266537162,
+          "rpe_rotation_rmse": 0.012038859891372922,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.0194324627647053,
+          "rotation_rmse": 0.20858566227031838,
+          "rotation_max": 0.36145964282421816,
+          "velocity_rmse": 0.25174710570356285,
+          "angular_velocity_rmse": 0.0399807025869393,
+          "sim3_scale": 2.0396680664759455,
+          "sim3_ate_rmse": 0.9335560049364215,
+          "distance_travelled": 19.091905999647423,
+          "final_drift": 1.8987798169111687,
+          "drift_per_metre": 0.09945470174356788
+        }
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.23933616478873634,
+          "rpe_rotation_rmse": 0.011479519862823105,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.9555614043263223,
+          "rotation_rmse": 0.22489551369775349,
+          "rotation_max": 0.3704700477079473,
+          "velocity_rmse": 0.24472602525021267,
+          "angular_velocity_rmse": 0.04003230215264309,
+          "sim3_scale": 1.8858607355852877,
+          "sim3_ate_rmse": 0.4994785279751793,
+          "distance_travelled": 19.08432760653786,
+          "final_drift": 1.1868346020030787,
+          "drift_per_metre": 0.062188966070593744
+        }
+      }
+    ]
+  },
+  {
+    "name": "single-frame",
+    "completed": 10,
+    "frames": 12000,
+    "mean_sim3_ate_m": 0.8555466575695794,
+    "median_rotation_deg": 9.063392234717956,
+    "mean_rotation_deg": 12.075001223919323,
+    "median_step_ms": 1.4401006046682596,
+    "max_fuel": 20141128,
+    "median_unaligned_ate_m": 2.926311844090426,
+    "median_angular_velocity_rmse_rad_s": 0.0309829161428221,
+    "median_rotation_rpe_deg": 0.7416104172830387,
+    "median_sim3_scale": 2.1338927988725995,
+    "wasm_sha256": "8f66188949d06436cd755343e4c1c851ddaf054a939a2099ae6af72e2831e99d",
+    "model_sha256": "5de194f6698dd7783cbc58c506a81f032abdc4e1e58dd9bc735de01948a6259b",
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2551840168939327,
+          "rpe_rotation_rmse": 0.009409707706391919,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.834981432176041,
+          "rotation_rmse": 0.11629215673883744,
+          "rotation_max": 0.14604516292288003,
+          "velocity_rmse": 0.25794646160836165,
+          "angular_velocity_rmse": 0.029430275059585734,
+          "sim3_scale": 2.6817837607005965,
+          "sim3_ate_rmse": 0.5785585180110212,
+          "distance_travelled": 19.27355608046622,
+          "final_drift": 4.685579142780943,
+          "drift_per_metre": 0.24310921779140618
+        }
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2751236219198199,
+          "rpe_rotation_rmse": 0.01795474005846823,
+          "rpe_pairs": 1180,
+          "ate_rmse": 6.250537817322714,
+          "rotation_rmse": 0.5483785051726356,
+          "rotation_max": 0.8523266340337585,
+          "velocity_rmse": 0.2788263969782617,
+          "angular_velocity_rmse": 0.03316583520424682,
+          "sim3_scale": 3.807749554096082,
+          "sim3_ate_rmse": 0.6595128600745132,
+          "distance_travelled": 19.68856579137152,
+          "final_drift": 5.811358832222908,
+          "drift_per_metre": 0.29516415232082194
+        }
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.28649653994703683,
+          "rpe_rotation_rmse": 0.013467984059026137,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.2568956939274942,
+          "rotation_rmse": 0.20366259867627545,
+          "rotation_max": 0.37943888563453604,
+          "velocity_rmse": 0.28974891574166345,
+          "angular_velocity_rmse": 0.03126207986999893,
+          "sim3_scale": 3.1610313183367897,
+          "sim3_ate_rmse": 0.8024542024406256,
+          "distance_travelled": 19.730964563762242,
+          "final_drift": 3.3747575873859397,
+          "drift_per_metre": 0.17103865229092738
+        }
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.18219201954119574,
+          "rpe_rotation_rmse": 0.009554178245409007,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.46367450506421,
+          "rotation_rmse": 0.1268780278047115,
+          "rotation_max": 0.17607717767287037,
+          "velocity_rmse": 0.18617100967007347,
+          "angular_velocity_rmse": 0.029847099877788875,
+          "sim3_scale": 1.8263568699431858,
+          "sim3_ate_rmse": 0.45351639323097437,
+          "distance_travelled": 13.676677197376234,
+          "final_drift": 2.710445927982373,
+          "drift_per_metre": 0.19818014923261854
+        }
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19787315149925863,
+          "rpe_rotation_rmse": 0.010804085439976355,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.5750930977707305,
+          "rotation_rmse": 0.1256093353839473,
+          "rotation_max": 0.22155183216694205,
+          "velocity_rmse": 0.20096258234371292,
+          "angular_velocity_rmse": 0.0297130626250897,
+          "sim3_scale": 2.061633549506949,
+          "sim3_ate_rmse": 0.6925966559757174,
+          "distance_travelled": 14.114004419046505,
+          "final_drift": 4.803424214045244,
+          "drift_per_metre": 0.3403303606425927
+        }
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.29872375154471653,
+          "rpe_rotation_rmse": 0.014439027436389735,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.4720393256629074,
+          "rotation_rmse": 0.12502466940197557,
+          "rotation_max": 0.2808972301182462,
+          "velocity_rmse": 0.3016804813314645,
+          "angular_velocity_rmse": 0.032439787534591,
+          "sim3_scale": 2.2027757431975954,
+          "sim3_ate_rmse": 1.457673569337333,
+          "distance_travelled": 19.937031873615467,
+          "final_drift": 7.147640230859284,
+          "drift_per_metre": 0.35851074905078634
+        }
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.26357090074257034,
+          "rpe_rotation_rmse": 0.014385784948526905,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.206466563226088,
+          "rotation_rmse": 0.2908489843110046,
+          "rotation_max": 0.4892815947635695,
+          "velocity_rmse": 0.26698313904115706,
+          "angular_velocity_rmse": 0.030783704129601963,
+          "sim3_scale": 1.8494570497992893,
+          "sim3_ate_rmse": 1.4993999213202092,
+          "distance_travelled": 19.17265173996768,
+          "final_drift": 5.9253260462909605,
+          "drift_per_metre": 0.3090509401961812
+        }
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2787437460453484,
+          "rpe_rotation_rmse": 0.01284468797523395,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.277530590410122,
+          "rotation_rmse": 0.2544189361169548,
+          "rotation_max": 0.46617681981543024,
+          "velocity_rmse": 0.2833698415553822,
+          "angular_velocity_rmse": 0.031182128156042235,
+          "sim3_scale": 2.495035301303747,
+          "sim3_ate_rmse": 1.0383606722214451,
+          "distance_travelled": 18.52035105983549,
+          "final_drift": 3.7006584557528064,
+          "drift_per_metre": 0.1998157833939935
+        }
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.24833984937136605,
+          "rpe_rotation_rmse": 0.011354386100089786,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.9956142999641677,
+          "rotation_rmse": 0.1380014861960469,
+          "rotation_max": 0.21511973137900336,
+          "velocity_rmse": 0.2517480284855685,
+          "angular_velocity_rmse": 0.03032187467499877,
+          "sim3_scale": 2.065009854547604,
+          "sim3_ate_rmse": 0.8782045349757961,
+          "distance_travelled": 19.091905999647423,
+          "final_drift": 1.6928207852893287,
+          "drift_per_metre": 0.0886669348424715
+        }
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.23927088360079762,
+          "rpe_rotation_rmse": 0.013042399122122218,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.928125786417865,
+          "rotation_rmse": 0.17837058559498323,
+          "rotation_max": 0.2772218087896831,
+          "velocity_rmse": 0.24473483747925295,
+          "angular_velocity_rmse": 0.031381292908775935,
+          "sim3_scale": 1.896050397952154,
+          "sim3_ate_rmse": 0.4951892481081598,
+          "distance_travelled": 19.08432760653786,
+          "final_drift": 1.1623733249476134,
+          "drift_per_metre": 0.060907219206895735
+        }
+      }
+    ]
+  },
+  {
+    "name": "temporal",
+    "completed": 10,
+    "frames": 12000,
+    "mean_sim3_ate_m": 0.8709380651151907,
+    "median_rotation_deg": 9.765370294636892,
+    "mean_rotation_deg": 12.73687211844402,
+    "median_step_ms": 1.5219547785818577,
+    "max_fuel": 21854083,
+    "median_unaligned_ate_m": 2.926462879728981,
+    "median_angular_velocity_rmse_rad_s": 0.034834309337588645,
+    "median_rotation_rpe_deg": 0.6878482061177046,
+    "median_sim3_scale": 2.1346193559114015,
+    "wasm_sha256": "1985d1c74e531b976bba2f26a0b6e1142d444d3f8a699944af30e82d6db18a7e",
+    "model_sha256": "dfc4185c04da67ca198cf371edd9936478909ee0622fd7a29363c646df8dd7f7",
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.25517405339592497,
+          "rpe_rotation_rmse": 0.009445416488844333,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.843486158820802,
+          "rotation_rmse": 0.16937183403381098,
+          "rotation_max": 0.2250317856930166,
+          "velocity_rmse": 0.2579466182144317,
+          "angular_velocity_rmse": 0.03400048399267314,
+          "sim3_scale": 2.6804020012055263,
+          "sim3_ate_rmse": 0.5794245388354081,
+          "distance_travelled": 19.27355608046622,
+          "final_drift": 4.6944141612270665,
+          "drift_per_metre": 0.24356761884667782
+        }
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27511893091877493,
+          "rpe_rotation_rmse": 0.019695190223667253,
+          "rpe_pairs": 1180,
+          "ate_rmse": 6.311174523219429,
+          "rotation_rmse": 0.6099227784162043,
+          "rotation_max": 0.9455733273073571,
+          "velocity_rmse": 0.27882665143779534,
+          "angular_velocity_rmse": 0.03831546902987953,
+          "sim3_scale": 3.828270689525568,
+          "sim3_ate_rmse": 0.6799104577000225,
+          "distance_travelled": 19.68856579137152,
+          "final_drift": 5.85066272948819,
+          "drift_per_metre": 0.2971604326838389
+        }
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.28648223207597523,
+          "rpe_rotation_rmse": 0.012883414546432149,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.2711119695739157,
+          "rotation_rmse": 0.15959988321693813,
+          "rotation_max": 0.29849054917198964,
+          "velocity_rmse": 0.28974947312732774,
+          "angular_velocity_rmse": 0.03557983076264677,
+          "sim3_scale": 3.1009780165302043,
+          "sim3_ate_rmse": 0.8209775061631086,
+          "distance_travelled": 19.730964563762242,
+          "final_drift": 3.342634206319723,
+          "drift_per_metre": 0.16941058281858062
+        }
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.18217498833617693,
+          "rpe_rotation_rmse": 0.009413866152361481,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.406154460073895,
+          "rotation_rmse": 0.07325333454677863,
+          "rotation_max": 0.11428969229213477,
+          "velocity_rmse": 0.18617171141049862,
+          "angular_velocity_rmse": 0.03440760735248629,
+          "sim3_scale": 1.8180254497889297,
+          "sim3_ate_rmse": 0.4558621948549966,
+          "distance_travelled": 13.676677197376234,
+          "final_drift": 2.669287735849402,
+          "drift_per_metre": 0.19517077849592623
+        }
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19778535361231345,
+          "rpe_rotation_rmse": 0.011691178107978602,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.630057131898258,
+          "rotation_rmse": 0.17150389460191404,
+          "rotation_max": 0.3388910339271108,
+          "velocity_rmse": 0.20097005593954928,
+          "angular_velocity_rmse": 0.03448845920246414,
+          "sim3_scale": 2.0488797963180874,
+          "sim3_ate_rmse": 0.722108250939273,
+          "distance_travelled": 14.114004419046505,
+          "final_drift": 4.908371577671935,
+          "drift_per_metre": 0.3477660507919501
+        }
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2987130844119248,
+          "rpe_rotation_rmse": 0.011963978133794538,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.462267019670956,
+          "rotation_rmse": 0.16747628706191556,
+          "rotation_max": 0.3441475630937812,
+          "velocity_rmse": 0.3016801930224945,
+          "angular_velocity_rmse": 0.035322394543302195,
+          "sim3_scale": 2.210313448631009,
+          "sim3_ate_rmse": 1.457727929334629,
+          "distance_travelled": 19.937031873615467,
+          "final_drift": 7.108862748418756,
+          "drift_per_metre": 0.3565657512855049
+        }
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.263479770819883,
+          "rpe_rotation_rmse": 0.014344118980300587,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.12366878927794,
+          "rotation_rmse": 0.3084246083780773,
+          "rotation_max": 0.48339739897700446,
+          "velocity_rmse": 0.26699106697651687,
+          "angular_velocity_rmse": 0.03472603585496985,
+          "sim3_scale": 1.7915492000570146,
+          "sim3_ate_rmse": 1.5374022341017433,
+          "distance_travelled": 19.17265173996768,
+          "final_drift": 5.697999013817606,
+          "drift_per_metre": 0.29719410184348405
+        }
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2786292352386415,
+          "rpe_rotation_rmse": 0.012046453767586555,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.2228686275597047,
+          "rotation_rmse": 0.19773563777355566,
+          "rotation_max": 0.36312093645977056,
+          "velocity_rmse": 0.28338031966240435,
+          "angular_velocity_rmse": 0.034942582820207437,
+          "sim3_scale": 2.498975424612087,
+          "sim3_ate_rmse": 1.0548615793497718,
+          "distance_travelled": 18.52035105983549,
+          "final_drift": 3.6152606220997576,
+          "drift_per_metre": 0.19520475667116596
+        }
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.24833521856109653,
+          "rpe_rotation_rmse": 0.009998939776383145,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.9964487744332775,
+          "rotation_rmse": 0.1398830346982633,
+          "rotation_max": 0.2163972566746431,
+          "velocity_rmse": 0.2517473205584937,
+          "angular_velocity_rmse": 0.03407508042670504,
+          "sim3_scale": 2.0589252631917945,
+          "sim3_ate_rmse": 0.8864658181123282,
+          "distance_travelled": 19.091905999647423,
+          "final_drift": 1.7597871025265237,
+          "drift_per_metre": 0.09217451115457106
+        }
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.23926808918542977,
+          "rpe_rotation_rmse": 0.01258182836504185,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.9412509359771102,
+          "rotation_rmse": 0.22583225599567552,
+          "rotation_max": 0.35527491982428855,
+          "velocity_rmse": 0.2447341464865031,
+          "angular_velocity_rmse": 0.035365387605885444,
+          "sim3_scale": 1.8842050707586975,
+          "sim3_ate_rmse": 0.5146401417606264,
+          "distance_travelled": 19.08432760653786,
+          "final_drift": 1.163881332766424,
+          "drift_per_metre": 0.060986237333701204
+        }
+      }
+    ]
+  },
+  {
+    "name": "temporal-repeat",
+    "completed": 10,
+    "frames": 12000,
+    "mean_sim3_ate_m": 0.8709380651151907,
+    "median_rotation_deg": 9.765370294636892,
+    "mean_rotation_deg": 12.73687211844402,
+    "median_step_ms": 1.5425141900777817,
+    "max_fuel": 21854083,
+    "median_unaligned_ate_m": 2.926462879728981,
+    "median_angular_velocity_rmse_rad_s": 0.034834309337588645,
+    "median_rotation_rpe_deg": 0.6878482061177046,
+    "median_sim3_scale": 2.1346193559114015,
+    "wasm_sha256": "1985d1c74e531b976bba2f26a0b6e1142d444d3f8a699944af30e82d6db18a7e",
+    "model_sha256": "dfc4185c04da67ca198cf371edd9936478909ee0622fd7a29363c646df8dd7f7",
+    "per_episode": [
+      {
+        "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.25517405339592497,
+          "rpe_rotation_rmse": 0.009445416488844333,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.843486158820802,
+          "rotation_rmse": 0.16937183403381098,
+          "rotation_max": 0.2250317856930166,
+          "velocity_rmse": 0.2579466182144317,
+          "angular_velocity_rmse": 0.03400048399267314,
+          "sim3_scale": 2.6804020012055263,
+          "sim3_ate_rmse": 0.5794245388354081,
+          "distance_travelled": 19.27355608046622,
+          "final_drift": 4.6944141612270665,
+          "drift_per_metre": 0.24356761884667782
+        }
+      },
+      {
+        "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.27511893091877493,
+          "rpe_rotation_rmse": 0.019695190223667253,
+          "rpe_pairs": 1180,
+          "ate_rmse": 6.311174523219429,
+          "rotation_rmse": 0.6099227784162043,
+          "rotation_max": 0.9455733273073571,
+          "velocity_rmse": 0.27882665143779534,
+          "angular_velocity_rmse": 0.03831546902987953,
+          "sim3_scale": 3.828270689525568,
+          "sim3_ate_rmse": 0.6799104577000225,
+          "distance_travelled": 19.68856579137152,
+          "final_drift": 5.85066272948819,
+          "drift_per_metre": 0.2971604326838389
+        }
+      },
+      {
+        "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.28648223207597523,
+          "rpe_rotation_rmse": 0.012883414546432149,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.2711119695739157,
+          "rotation_rmse": 0.15959988321693813,
+          "rotation_max": 0.29849054917198964,
+          "velocity_rmse": 0.28974947312732774,
+          "angular_velocity_rmse": 0.03557983076264677,
+          "sim3_scale": 3.1009780165302043,
+          "sim3_ate_rmse": 0.8209775061631086,
+          "distance_travelled": 19.730964563762242,
+          "final_drift": 3.342634206319723,
+          "drift_per_metre": 0.16941058281858062
+        }
+      },
+      {
+        "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.18217498833617693,
+          "rpe_rotation_rmse": 0.009413866152361481,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.406154460073895,
+          "rotation_rmse": 0.07325333454677863,
+          "rotation_max": 0.11428969229213477,
+          "velocity_rmse": 0.18617171141049862,
+          "angular_velocity_rmse": 0.03440760735248629,
+          "sim3_scale": 1.8180254497889297,
+          "sim3_ate_rmse": 0.4558621948549966,
+          "distance_travelled": 13.676677197376234,
+          "final_drift": 2.669287735849402,
+          "drift_per_metre": 0.19517077849592623
+        }
+      },
+      {
+        "hash": "489ad518363d88bfa877f86afea144de0d846258",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.19778535361231345,
+          "rpe_rotation_rmse": 0.011691178107978602,
+          "rpe_pairs": 1180,
+          "ate_rmse": 2.630057131898258,
+          "rotation_rmse": 0.17150389460191404,
+          "rotation_max": 0.3388910339271108,
+          "velocity_rmse": 0.20097005593954928,
+          "angular_velocity_rmse": 0.03448845920246414,
+          "sim3_scale": 2.0488797963180874,
+          "sim3_ate_rmse": 0.722108250939273,
+          "distance_travelled": 14.114004419046505,
+          "final_drift": 4.908371577671935,
+          "drift_per_metre": 0.3477660507919501
+        }
+      },
+      {
+        "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2987130844119248,
+          "rpe_rotation_rmse": 0.011963978133794538,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.462267019670956,
+          "rotation_rmse": 0.16747628706191556,
+          "rotation_max": 0.3441475630937812,
+          "velocity_rmse": 0.3016801930224945,
+          "angular_velocity_rmse": 0.035322394543302195,
+          "sim3_scale": 2.210313448631009,
+          "sim3_ate_rmse": 1.457727929334629,
+          "distance_travelled": 19.937031873615467,
+          "final_drift": 7.108862748418756,
+          "drift_per_metre": 0.3565657512855049
+        }
+      },
+      {
+        "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.263479770819883,
+          "rpe_rotation_rmse": 0.014344118980300587,
+          "rpe_pairs": 1180,
+          "ate_rmse": 4.12366878927794,
+          "rotation_rmse": 0.3084246083780773,
+          "rotation_max": 0.48339739897700446,
+          "velocity_rmse": 0.26699106697651687,
+          "angular_velocity_rmse": 0.03472603585496985,
+          "sim3_scale": 1.7915492000570146,
+          "sim3_ate_rmse": 1.5374022341017433,
+          "distance_travelled": 19.17265173996768,
+          "final_drift": 5.697999013817606,
+          "drift_per_metre": 0.29719410184348405
+        }
+      },
+      {
+        "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.2786292352386415,
+          "rpe_rotation_rmse": 0.012046453767586555,
+          "rpe_pairs": 1180,
+          "ate_rmse": 3.2228686275597047,
+          "rotation_rmse": 0.19773563777355566,
+          "rotation_max": 0.36312093645977056,
+          "velocity_rmse": 0.28338031966240435,
+          "angular_velocity_rmse": 0.034942582820207437,
+          "sim3_scale": 2.498975424612087,
+          "sim3_ate_rmse": 1.0548615793497718,
+          "distance_travelled": 18.52035105983549,
+          "final_drift": 3.6152606220997576,
+          "drift_per_metre": 0.19520475667116596
+        }
+      },
+      {
+        "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.24833521856109653,
+          "rpe_rotation_rmse": 0.009998939776383145,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.9964487744332775,
+          "rotation_rmse": 0.1398830346982633,
+          "rotation_max": 0.2163972566746431,
+          "velocity_rmse": 0.2517473205584937,
+          "angular_velocity_rmse": 0.03407508042670504,
+          "sim3_scale": 2.0589252631917945,
+          "sim3_ate_rmse": 0.8864658181123282,
+          "distance_travelled": 19.091905999647423,
+          "final_drift": 1.7597871025265237,
+          "drift_per_metre": 0.09217451115457106
+        }
+      },
+      {
+        "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+        "metrics": {
+          "frames": 1200,
+          "filled_frames": 0,
+          "rpe_translation_rmse": 0.23926808918542977,
+          "rpe_rotation_rmse": 0.01258182836504185,
+          "rpe_pairs": 1180,
+          "ate_rmse": 1.9412509359771102,
+          "rotation_rmse": 0.22583225599567552,
+          "rotation_max": 0.35527491982428855,
+          "velocity_rmse": 0.2447341464865031,
+          "angular_velocity_rmse": 0.035365387605885444,
+          "sim3_scale": 1.8842050707586975,
+          "sim3_ate_rmse": 0.5146401417606264,
+          "distance_travelled": 19.08432760653786,
+          "final_drift": 1.163881332766424,
+          "drift_per_metre": 0.060986237333701204
+        }
+      }
+    ]
+  }
+]

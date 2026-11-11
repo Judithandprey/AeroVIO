@@ -1,0 +1,42 @@
+{
+  "selected_v5_variant": "calibrated-gyro",
+  "decisions": {
+    "single-frame": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 0
+    },
+    "temporal": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 1
+    }
+  },
+  "v4_selected_variant_unchanged": "current",
+  "public_data_used": false,
+  "protocol_sha256": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+  "validation_sha256": "8e06b2e732248ba49b5faf039d1434a996724500b0a642e648a55ace836b3ab4",
+  "source_sha256": {
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+  },
+  "model_sha256": {
+    "single-frame": "5de194f6698dd7783cbc58c506a81f032abdc4e1e58dd9bc735de01948a6259b",
+    "temporal": "dfc4185c04da67ca198cf371edd9936478909ee0622fd7a29363c646df8dd7f7",
+    "calibrated-gyro": "0271431fc621b160cabad4b448cedc91f9ea4e355f080a366823273041afdbb7"
+  },
+  "frozen_utc": "2026-11-11T01:41:55.247844+00:00"
+}

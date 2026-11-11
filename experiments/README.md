@@ -10,6 +10,7 @@
 | [Rotation diagnostics](motion-ablation-v2/rotation-diagnostics.md) | Saved-trajectory evidence and limits on interpreting accumulated orientation errors |
 | [Rotation-focused training](rotation-focus-v3/README.md) | Calibrated pure-rotation data and matched continuation; six complete public runs show no accepted rotation gain; epoch-zero selection retained |
 | [Startup gyro-calibration experiment](gyro-bias-v4/README.md) | Seven complete public runs and exact repeats; diagnostic improves baseline accuracy/compute, while strict validation still retains current |
+| [Lightweight feature correlation](feature-correlation-v5/README.md) | Frozen translation and calibrated prior; matched temporal versus single-frame rotation branches, validation decision and six public runs |
 
 `baseline-klt-imu-v1` preserves the official reference. The current working
 solution is the pose-only learned model; do not assume a working-tree filename

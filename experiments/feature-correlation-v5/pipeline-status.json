@@ -1,0 +1,169 @@
+[
+  {
+    "stage": "package-single-frame",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/correlation-single-frame-v5-complete",
+      "--name",
+      "correlation-v5-single-frame",
+      "--calibrate-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 1.0704983449541032,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-package-single-frame.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "check-single-frame",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/correlation-v5-single-frame.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-correlation-v5-single-frame"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.508260937407613,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-check-single-frame.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "package-temporal",
+    "command": [
+      ".venv/bin/python",
+      "scripts/package_motion.py",
+      "--model",
+      "models/correlation-temporal-v5",
+      "--name",
+      "correlation-v5-temporal",
+      "--calibrate-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6238561710342765,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-package-temporal.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "check-temporal",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/correlation-v5-temporal.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-correlation-v5-temporal"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.3562819682992995,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-check-temporal.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "evaluate-baseline",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/klt_imu.wasm",
+      "--run-dir",
+      "results/correlation-v5-baseline",
+      "--verify-baseline"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 85.17142421705648,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-evaluate-baseline.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "evaluate-current",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-current.wasm",
+      "--run-dir",
+      "results/correlation-v5-current"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 56.06137688178569,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-evaluate-current.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "evaluate-calibrated-gyro",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-cal-gyro.wasm",
+      "--run-dir",
+      "results/correlation-v5-calibrated-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 56.47238987404853,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-evaluate-calibrated-gyro.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "evaluate-single-frame",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correlation-v5-single-frame.wasm",
+      "--run-dir",
+      "results/correlation-v5-single-frame"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 59.52296497300267,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-evaluate-single-frame.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "evaluate-temporal",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correlation-v5-temporal.wasm",
+      "--run-dir",
+      "results/correlation-v5-temporal"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 62.00572067126632,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-evaluate-temporal.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  },
+  {
+    "stage": "evaluate-temporal-repeat",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correlation-v5-temporal.wasm",
+      "--run-dir",
+      "results/correlation-v5-temporal-repeat"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 61.63890192192048,
+    "log": "/root/projects/AeroVIO/logs/correlation-v5-evaluate-temporal-repeat.log",
+    "selection_sha256": "c3c9936bfc7fdad0e94adcae356db6d45cac0065548b580e2e421cd3a5614336"
+  }
+]

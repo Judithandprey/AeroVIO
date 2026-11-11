@@ -1,0 +1,23 @@
+{
+  "initial_attempt": {
+    "directory": "models/correlation-single-frame-v5",
+    "completed_epochs_before_abort": 1,
+    "failure": "NumPy Boolean in acceptance report was not JSON serializable",
+    "fix": "Convert condition values to Python bool; full fixed-seed fit restarted in a new directory",
+    "protocol_or_objective_changed": false,
+    "retained_checkpoint_sha256": "fbaefb5d4c22d02c2016ce46ea053639ac0321d84098adbf5ff9e27d878bd041"
+  },
+  "cache_source_snapshot": {
+    "path": "provenance/cache-preparation-source.py",
+    "sha256": "7e7f143c05b73f7833c365734d42493d54b03dc152a2016e13f18afad132515b",
+    "reconstruction": "Undo the single reporting-only Boolean conversion; bytes match pre-preparation recorded hash"
+  },
+  "plot_runtime": "Windows Python with matplotlib 3.10.8; no training/evaluation dependency environment modified",
+  "plot_first_attempt": "Training venv lacks matplotlib; used existing Windows installation instead",
+  "formal_fits": {
+    "count": 2,
+    "epochs_each": 40,
+    "optimizer_steps_each": 1520,
+    "pair_exposures_each": 95520
+  }
+}

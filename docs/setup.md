@@ -1,5 +1,10 @@
 # Development setup and artifact reproduction
 
+The completed [v5 feature-correlation experiment](feature-correlation.md) adds an
+optional three-value causal rotation-prior ONNX input. Its two trained exports
+are unselected diagnostics; package them with `--calibrate-gyro` as shown in that
+guide. Existing models and preserved WASM files keep their original contracts.
+
 The experimental branch contains a trained **small motion CNN**, a version with
 training-only warping supervision, optional sparse-map correction, and explicit
 rotation/input ablations, a rotation-focused auxiliary-training experiment, and

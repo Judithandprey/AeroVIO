@@ -1,0 +1,7 @@
+{
+  "source_sha256": "cd404efc48cdb61403f77f9eb71e3768a470434f9cd356638127570e5bae46e3",
+  "comparison_sha256": "96f7f467010cfdb2e5829494481c93eab8de3f4e253344d193ca2813738b143e",
+  "figure_sha256": "4ffc802151631897864bf00f465263e867c43bcf486ce70b0869ad85c00018a8",
+  "selection": "first five archived rows; deterministic temporal repeat excluded from bars",
+  "zero_based_axes": true
+}

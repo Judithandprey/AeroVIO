@@ -1,0 +1,1201 @@
+{
+  "protocol_sha256": "26fdf1adaf022422bd2f84a7090aaf7aa08212da85e9d4d9e72a39d3b580acaa",
+  "matching_initialization_and_orders": true,
+  "source_sha256": {
+    "workspace/solution/gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "workspace/solution/local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "workspace/solution/motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "workspace/solution/solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+  },
+  "variants": {
+    "single-frame": {
+      "episodes": [
+        {
+          "episode_id": 0,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.19993484058347993,
+            "rpe_rotation_rmse": 0.01599523984462035,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.6266412809306676,
+            "rotation_rmse": 0.03705717631695041,
+            "rotation_max": 0.06180955800349601,
+            "velocity_rmse": 0.20292266226730557,
+            "angular_velocity_rmse": 0.03617265650465033,
+            "sim3_scale": 2.1023632689995866,
+            "sim3_ate_rmse": 0.17496181822819767,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.0847173894937372,
+            "drift_per_metre": 0.6593109090019184
+          },
+          "outputs_sha256": "4c04fc0a2c963c2eca0acac571176d228df0ee4be5c985d44e0705cb077ba692",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6653981832988053,
+            "gyro_std_norm": 0.1506648567111109,
+            "gyro_mean_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 1,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2010371413968085,
+            "rpe_rotation_rmse": 0.011621740862514178,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4202789966307663,
+            "rotation_rmse": 0.047878590338806204,
+            "rotation_max": 0.08120389985091542,
+            "velocity_rmse": 0.20158718070905793,
+            "angular_velocity_rmse": 0.03664702298296049,
+            "sim3_scale": 1.270948477120564,
+            "sim3_ate_rmse": 0.2930241604533904,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.441880181558344,
+            "drift_per_metre": 0.20983560978276242
+          },
+          "outputs_sha256": "01d09cf857b98a47fc466d32c64d92915b07954a6b3957db156e2337c6160f5b",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6452634399820144,
+            "gyro_std_norm": 0.14710804945631892,
+            "gyro_mean_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 2,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17087998129140666,
+            "rpe_rotation_rmse": 0.010392541416410554,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.49485389784965206,
+            "rotation_rmse": 0.04522990421963347,
+            "rotation_max": 0.07782957402678539,
+            "velocity_rmse": 0.18445876113794704,
+            "angular_velocity_rmse": 0.03556690109593538,
+            "sim3_scale": 0.9392615299387208,
+            "sim3_ate_rmse": 0.23050827224904163,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.6217463248817855,
+            "drift_per_metre": 0.3882955506551803
+          },
+          "outputs_sha256": "a1a4dc2633e6dddf4f36844f0f451e177c7c5a6d8885655e307e63ccc580e5bc",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6220047673718117,
+            "gyro_std_norm": 0.1463892224040755,
+            "gyro_mean_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 3,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2778637820435141,
+            "rpe_rotation_rmse": 0.012277886436574797,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5068360821533004,
+            "rotation_rmse": 0.04110610361886021,
+            "rotation_max": 0.08285286048140887,
+            "velocity_rmse": 0.2806432770852103,
+            "angular_velocity_rmse": 0.03421937423855937,
+            "sim3_scale": 1.780543696288679,
+            "sim3_ate_rmse": 0.363612515133185,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.2339646508978603,
+            "drift_per_metre": 0.4687960611951265
+          },
+          "outputs_sha256": "74ec50a9a3690694e68b589fb367cb78a6a1c56455008f119f9a70f4b5df3715",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6429471135396831,
+            "gyro_std_norm": 0.14823311630473782,
+            "gyro_mean_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        }
+      ],
+      "summary": {
+        "rotation_deg": 2.4532874570592305,
+        "sim3_ate_m": 0.2655266915159537,
+        "unaligned_ate_m": 0.5121525643910966,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.19993484058347993,
+              "rpe_rotation_rmse": 0.01599523984462035,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6266412809306676,
+              "rotation_rmse": 0.03705717631695041,
+              "rotation_max": 0.06180955800349601,
+              "velocity_rmse": 0.20292266226730557,
+              "angular_velocity_rmse": 0.03617265650465033,
+              "sim3_scale": 2.1023632689995866,
+              "sim3_ate_rmse": 0.17496181822819767,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0847173894937372,
+              "drift_per_metre": 0.6593109090019184
+            },
+            "outputs_sha256": "4c04fc0a2c963c2eca0acac571176d228df0ee4be5c985d44e0705cb077ba692",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6653981832988053,
+              "gyro_std_norm": 0.1506648567111109,
+              "gyro_mean_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2010371413968085,
+              "rpe_rotation_rmse": 0.011621740862514178,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.4202789966307663,
+              "rotation_rmse": 0.047878590338806204,
+              "rotation_max": 0.08120389985091542,
+              "velocity_rmse": 0.20158718070905793,
+              "angular_velocity_rmse": 0.03664702298296049,
+              "sim3_scale": 1.270948477120564,
+              "sim3_ate_rmse": 0.2930241604533904,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.441880181558344,
+              "drift_per_metre": 0.20983560978276242
+            },
+            "outputs_sha256": "01d09cf857b98a47fc466d32c64d92915b07954a6b3957db156e2337c6160f5b",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6452634399820144,
+              "gyro_std_norm": 0.14710804945631892,
+              "gyro_mean_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17087998129140666,
+              "rpe_rotation_rmse": 0.010392541416410554,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49485389784965206,
+              "rotation_rmse": 0.04522990421963347,
+              "rotation_max": 0.07782957402678539,
+              "velocity_rmse": 0.18445876113794704,
+              "angular_velocity_rmse": 0.03556690109593538,
+              "sim3_scale": 0.9392615299387208,
+              "sim3_ate_rmse": 0.23050827224904163,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6217463248817855,
+              "drift_per_metre": 0.3882955506551803
+            },
+            "outputs_sha256": "a1a4dc2633e6dddf4f36844f0f451e177c7c5a6d8885655e307e63ccc580e5bc",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6220047673718117,
+              "gyro_std_norm": 0.1463892224040755,
+              "gyro_mean_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778637820435141,
+              "rpe_rotation_rmse": 0.012277886436574797,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5068360821533004,
+              "rotation_rmse": 0.04110610361886021,
+              "rotation_max": 0.08285286048140887,
+              "velocity_rmse": 0.2806432770852103,
+              "angular_velocity_rmse": 0.03421937423855937,
+              "sim3_scale": 1.780543696288679,
+              "sim3_ate_rmse": 0.363612515133185,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2339646508978603,
+              "drift_per_metre": 0.4687960611951265
+            },
+            "outputs_sha256": "74ec50a9a3690694e68b589fb367cb78a6a1c56455008f119f9a70f4b5df3715",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6429471135396831,
+              "gyro_std_norm": 0.14823311630473782,
+              "gyro_mean_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          }
+        ]
+      },
+      "training_rollout_absolute_differences": {
+        "rotation_deg": 3.0023359354203194e-08,
+        "sim3_ate_m": 5.783283851812371e-10,
+        "unaligned_ate_m": 2.3367804358187527e-09
+      }
+    },
+    "temporal": {
+      "episodes": [
+        {
+          "episode_id": 0,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.199838041213179,
+            "rpe_rotation_rmse": 0.012963090536366418,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.633739211849452,
+            "rotation_rmse": 0.046948377410599734,
+            "rotation_max": 0.06972819095653374,
+            "velocity_rmse": 0.2029362119243055,
+            "angular_velocity_rmse": 0.03850731243652168,
+            "sim3_scale": 2.1023513066550126,
+            "sim3_ate_rmse": 0.17495950313334602,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.0996044417994988,
+            "drift_per_metre": 0.6683595294842098
+          },
+          "outputs_sha256": "415f1812bf6859528abf8fd7dc0bd27338166e9f6e5327365013c80516e00157",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6653981832988053,
+            "gyro_std_norm": 0.1506648567111109,
+            "gyro_mean_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 1,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.20105355593820942,
+            "rpe_rotation_rmse": 0.010370084632491021,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.42255446608463915,
+            "rotation_rmse": 0.041811126517312114,
+            "rotation_max": 0.07739041336018032,
+            "velocity_rmse": 0.20158684998706544,
+            "angular_velocity_rmse": 0.03937553783784858,
+            "sim3_scale": 1.270826882775764,
+            "sim3_ate_rmse": 0.2930155877143229,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.4516193068001407,
+            "drift_per_metre": 0.21446042748030214
+          },
+          "outputs_sha256": "ff5ff047caca47c90116961778d9c173f225270b36506f544c2c2bdbe41dbd30",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6452634399820144,
+            "gyro_std_norm": 0.14710804945631892,
+            "gyro_mean_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 2,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17081386413064667,
+            "rpe_rotation_rmse": 0.010837260522009364,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.49250018781593774,
+            "rotation_rmse": 0.05107987807102987,
+            "rotation_max": 0.08482892698658437,
+            "velocity_rmse": 0.18446607482435318,
+            "angular_velocity_rmse": 0.0384012532235407,
+            "sim3_scale": 0.9392405877793977,
+            "sim3_ate_rmse": 0.23052676893842355,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.6075659140728841,
+            "drift_per_metre": 0.37943954266091356
+          },
+          "outputs_sha256": "c9a540bd074eec1beaee67ffde6bda247a88621cff728faeb4c31daba8c6140a",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6220047673718117,
+            "gyro_std_norm": 0.1463892224040755,
+            "gyro_mean_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 3,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.277865829315688,
+            "rpe_rotation_rmse": 0.014003274554640606,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5068224922111384,
+            "rotation_rmse": 0.054293817704617484,
+            "rotation_max": 0.10421507878862066,
+            "velocity_rmse": 0.2806421015460246,
+            "angular_velocity_rmse": 0.038620199542329176,
+            "sim3_scale": 1.7806939525800771,
+            "sim3_ate_rmse": 0.3637166517411366,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.2342708722891376,
+            "drift_per_metre": 0.46891239790054184
+          },
+          "outputs_sha256": "24c41c91950dfb1013d0099c9b4851cefabc2f3e2a3814e5235f79cee6f83882",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6429471135396831,
+            "gyro_std_norm": 0.14823311630473782,
+            "gyro_mean_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        }
+      ],
+      "summary": {
+        "rotation_deg": 2.7807532515960767,
+        "sim3_ate_m": 0.2655546278818073,
+        "unaligned_ate_m": 0.5139040894902918,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.199838041213179,
+              "rpe_rotation_rmse": 0.012963090536366418,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.633739211849452,
+              "rotation_rmse": 0.046948377410599734,
+              "rotation_max": 0.06972819095653374,
+              "velocity_rmse": 0.2029362119243055,
+              "angular_velocity_rmse": 0.03850731243652168,
+              "sim3_scale": 2.1023513066550126,
+              "sim3_ate_rmse": 0.17495950313334602,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.0996044417994988,
+              "drift_per_metre": 0.6683595294842098
+            },
+            "outputs_sha256": "415f1812bf6859528abf8fd7dc0bd27338166e9f6e5327365013c80516e00157",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6653981832988053,
+              "gyro_std_norm": 0.1506648567111109,
+              "gyro_mean_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20105355593820942,
+              "rpe_rotation_rmse": 0.010370084632491021,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42255446608463915,
+              "rotation_rmse": 0.041811126517312114,
+              "rotation_max": 0.07739041336018032,
+              "velocity_rmse": 0.20158684998706544,
+              "angular_velocity_rmse": 0.03937553783784858,
+              "sim3_scale": 1.270826882775764,
+              "sim3_ate_rmse": 0.2930155877143229,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4516193068001407,
+              "drift_per_metre": 0.21446042748030214
+            },
+            "outputs_sha256": "ff5ff047caca47c90116961778d9c173f225270b36506f544c2c2bdbe41dbd30",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6452634399820144,
+              "gyro_std_norm": 0.14710804945631892,
+              "gyro_mean_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17081386413064667,
+              "rpe_rotation_rmse": 0.010837260522009364,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49250018781593774,
+              "rotation_rmse": 0.05107987807102987,
+              "rotation_max": 0.08482892698658437,
+              "velocity_rmse": 0.18446607482435318,
+              "angular_velocity_rmse": 0.0384012532235407,
+              "sim3_scale": 0.9392405877793977,
+              "sim3_ate_rmse": 0.23052676893842355,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6075659140728841,
+              "drift_per_metre": 0.37943954266091356
+            },
+            "outputs_sha256": "c9a540bd074eec1beaee67ffde6bda247a88621cff728faeb4c31daba8c6140a",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6220047673718117,
+              "gyro_std_norm": 0.1463892224040755,
+              "gyro_mean_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.277865829315688,
+              "rpe_rotation_rmse": 0.014003274554640606,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5068224922111384,
+              "rotation_rmse": 0.054293817704617484,
+              "rotation_max": 0.10421507878862066,
+              "velocity_rmse": 0.2806421015460246,
+              "angular_velocity_rmse": 0.038620199542329176,
+              "sim3_scale": 1.7806939525800771,
+              "sim3_ate_rmse": 0.3637166517411366,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2342708722891376,
+              "drift_per_metre": 0.46891239790054184
+            },
+            "outputs_sha256": "24c41c91950dfb1013d0099c9b4851cefabc2f3e2a3814e5235f79cee6f83882",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6429471135396831,
+              "gyro_std_norm": 0.14823311630473782,
+              "gyro_mean_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          }
+        ]
+      },
+      "training_rollout_absolute_differences": {
+        "rotation_deg": 3.655799218904576e-08,
+        "sim3_ate_m": 5.605439445943716e-10,
+        "unaligned_ate_m": 3.307645046746188e-09
+      }
+    },
+    "calibrated-gyro": {
+      "episodes": [
+        {
+          "episode_id": 0,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1995049892861569,
+            "rpe_rotation_rmse": 0.010654413883117275,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.6257078752841813,
+            "rotation_rmse": 0.03125655641601177,
+            "rotation_max": 0.043255244761070934,
+            "velocity_rmse": 0.20297139264576214,
+            "angular_velocity_rmse": 0.0426224572885226,
+            "sim3_scale": 2.104931771635829,
+            "sim3_ate_rmse": 0.17552932696119597,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.080594277609439,
+            "drift_per_metre": 0.6568048067943913
+          },
+          "outputs_sha256": "9f9564d036b3f4bae1624444085ef0de56ddf5d36ca6ac06a9d30e92f34ca3c7",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6653981832988053,
+            "gyro_std_norm": 0.1506648567111109,
+            "gyro_mean_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005864166384994995,
+              0.020885697650950007,
+              0.012383876862589996
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 1,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.20103955899708736,
+            "rpe_rotation_rmse": 0.011441788292945634,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.42238463296931295,
+            "rotation_rmse": 0.04460490137848785,
+            "rotation_max": 0.07917019757505171,
+            "velocity_rmse": 0.20158926298733731,
+            "angular_velocity_rmse": 0.04437192857378627,
+            "sim3_scale": 1.2708680477943246,
+            "sim3_ate_rmse": 0.29300810854219084,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.4506140549697446,
+            "drift_per_metre": 0.21398306361647712
+          },
+          "outputs_sha256": "de867776e53046bccae3e39f19868506c3c7e37c2bb46752ec77666a17d024ea",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6452634399820144,
+            "gyro_std_norm": 0.14710804945631892,
+            "gyro_mean_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.005722131072645011,
+              -0.014352762186875005,
+              0.012403025037059999
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 2,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17084879680518417,
+            "rpe_rotation_rmse": 0.010495005605654415,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.49311539568950485,
+            "rotation_rmse": 0.03782372322702544,
+            "rotation_max": 0.07052608088462155,
+            "velocity_rmse": 0.18446333005745874,
+            "angular_velocity_rmse": 0.04296681606974091,
+            "sim3_scale": 0.9391706259701856,
+            "sim3_ate_rmse": 0.2305240094079467,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.6102566748883006,
+            "drift_per_metre": 0.38111998757983157
+          },
+          "outputs_sha256": "fd82b27fd3e23cff062a928138d4b6cd0ab739e78e93f33a9d61c9b304da707b",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6220047673718117,
+            "gyro_std_norm": 0.1463892224040755,
+            "gyro_mean_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              -0.002361590285671251,
+              -0.009823311879409994,
+              0.016551613771324997
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        },
+        {
+          "episode_id": 3,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2778721989955363,
+            "rpe_rotation_rmse": 0.013550275578241544,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5041196850979203,
+            "rotation_rmse": 0.03784219307684662,
+            "rotation_max": 0.07094517698676887,
+            "velocity_rmse": 0.2806395694028446,
+            "angular_velocity_rmse": 0.04334091576506387,
+            "sim3_scale": 1.781750046542842,
+            "sim3_ate_rmse": 0.3634601744147563,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.2305122407364966,
+            "drift_per_metre": 0.46748445451004056
+          },
+          "outputs_sha256": "c75803f02b08da6e0754db2eb37454eb1d65fbfaa36c82daf9d2ea03e0b1a152",
+          "calibration": {
+            "enabled": true,
+            "status": "accepted",
+            "reason": "accepted",
+            "anchor_t": 0.0,
+            "deadline_t": 1.0,
+            "samples": 200,
+            "sample_span_s": 0.994999978,
+            "accel_std_norm": 0.6429471135396831,
+            "gyro_std_norm": 0.14823311630473782,
+            "gyro_mean_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "mean_guard_limit": 0.0348492424049175,
+            "bias_imu": [
+              0.021173474762314983,
+              -0.02575608617706999,
+              -0.012436104421399998
+            ],
+            "finalized_at_t": 0.999999978,
+            "activation_after_t": 0.999999978
+          }
+        }
+      ],
+      "summary": {
+        "rotation_deg": 2.1704697541341615,
+        "sim3_ate_m": 0.26563040483152245,
+        "unaligned_ate_m": 0.5113318972602299,
+        "episodes": [
+          {
+            "episode_id": 0,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.1995049892861569,
+              "rpe_rotation_rmse": 0.010654413883117275,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.6257078752841813,
+              "rotation_rmse": 0.03125655641601177,
+              "rotation_max": 0.043255244761070934,
+              "velocity_rmse": 0.20297139264576214,
+              "angular_velocity_rmse": 0.0426224572885226,
+              "sim3_scale": 2.104931771635829,
+              "sim3_ate_rmse": 0.17552932696119597,
+              "distance_travelled": 1.6452289423449855,
+              "final_drift": 1.080594277609439,
+              "drift_per_metre": 0.6568048067943913
+            },
+            "outputs_sha256": "9f9564d036b3f4bae1624444085ef0de56ddf5d36ca6ac06a9d30e92f34ca3c7",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6653981832988053,
+              "gyro_std_norm": 0.1506648567111109,
+              "gyro_mean_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005864166384994995,
+                0.020885697650950007,
+                0.012383876862589996
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 1,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.20103955899708736,
+              "rpe_rotation_rmse": 0.011441788292945634,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.42238463296931295,
+              "rotation_rmse": 0.04460490137848785,
+              "rotation_max": 0.07917019757505171,
+              "velocity_rmse": 0.20158926298733731,
+              "angular_velocity_rmse": 0.04437192857378627,
+              "sim3_scale": 1.2708680477943246,
+              "sim3_ate_rmse": 0.29300810854219084,
+              "distance_travelled": 2.1058398143947614,
+              "final_drift": 0.4506140549697446,
+              "drift_per_metre": 0.21398306361647712
+            },
+            "outputs_sha256": "de867776e53046bccae3e39f19868506c3c7e37c2bb46752ec77666a17d024ea",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6452634399820144,
+              "gyro_std_norm": 0.14710804945631892,
+              "gyro_mean_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.005722131072645011,
+                -0.014352762186875005,
+                0.012403025037059999
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 2,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.17084879680518417,
+              "rpe_rotation_rmse": 0.010495005605654415,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.49311539568950485,
+              "rotation_rmse": 0.03782372322702544,
+              "rotation_max": 0.07052608088462155,
+              "velocity_rmse": 0.18446333005745874,
+              "angular_velocity_rmse": 0.04296681606974091,
+              "sim3_scale": 0.9391706259701856,
+              "sim3_ate_rmse": 0.2305240094079467,
+              "distance_travelled": 1.601219287299837,
+              "final_drift": 0.6102566748883006,
+              "drift_per_metre": 0.38111998757983157
+            },
+            "outputs_sha256": "fd82b27fd3e23cff062a928138d4b6cd0ab739e78e93f33a9d61c9b304da707b",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6220047673718117,
+              "gyro_std_norm": 0.1463892224040755,
+              "gyro_mean_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                -0.002361590285671251,
+                -0.009823311879409994,
+                0.016551613771324997
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          },
+          {
+            "episode_id": 3,
+            "metrics": {
+              "frames": 200,
+              "filled_frames": 0,
+              "rpe_translation_rmse": 0.2778721989955363,
+              "rpe_rotation_rmse": 0.013550275578241544,
+              "rpe_pairs": 180,
+              "ate_rmse": 0.5041196850979203,
+              "rotation_rmse": 0.03784219307684662,
+              "rotation_max": 0.07094517698676887,
+              "velocity_rmse": 0.2806395694028446,
+              "angular_velocity_rmse": 0.04334091576506387,
+              "sim3_scale": 1.781750046542842,
+              "sim3_ate_rmse": 0.3634601744147563,
+              "distance_travelled": 2.632199271794326,
+              "final_drift": 1.2305122407364966,
+              "drift_per_metre": 0.46748445451004056
+            },
+            "outputs_sha256": "c75803f02b08da6e0754db2eb37454eb1d65fbfaa36c82daf9d2ea03e0b1a152",
+            "calibration": {
+              "enabled": true,
+              "status": "accepted",
+              "reason": "accepted",
+              "anchor_t": 0.0,
+              "deadline_t": 1.0,
+              "samples": 200,
+              "sample_span_s": 0.994999978,
+              "accel_std_norm": 0.6429471135396831,
+              "gyro_std_norm": 0.14823311630473782,
+              "gyro_mean_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "mean_guard_limit": 0.0348492424049175,
+              "bias_imu": [
+                0.021173474762314983,
+                -0.02575608617706999,
+                -0.012436104421399998
+              ],
+              "finalized_at_t": 0.999999978,
+              "activation_after_t": 0.999999978
+            }
+          }
+        ]
+      },
+      "training_rollout_absolute_differences": {
+        "rotation_deg": 5.418865356432434e-11,
+        "sim3_ate_m": 5.399345970324987e-10,
+        "unaligned_ate_m": 3.441103735291051e-09
+      }
+    }
+  },
+  "checks": [
+    {
+      "episode_id": 0,
+      "variant": "single-frame",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 0,
+      "variant": "temporal",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 1,
+      "variant": "single-frame",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 1,
+      "variant": "temporal",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 2,
+      "variant": "single-frame",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 2,
+      "variant": "temporal",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 3,
+      "variant": "single-frame",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    },
+    {
+      "episode_id": 3,
+      "variant": "temporal",
+      "max_translation_difference_m": 0.0,
+      "raw_state_exact": true,
+      "causal_rotation_prior_matches": true
+    }
+  ],
+  "status": "complete",
+  "frozen_utc": "2026-11-11T01:41:55.247309+00:00"
+}

@@ -1,0 +1,12 @@
+0386e5c941b50fe9972ddabff84c414540fb8989: ok Sim(3) ATE 0.668 m  RPE 0.255 m/1 s  ATE 4.943 m  rot 22.6 deg  vel 0.258 m/s  filled 0  fuel/frame max 14,090,209 (p95 13,076,224)  wall/frame 1.1 ms
+9b6a92791e46815931b6d6f20e74ca9ebf62682e: ok Sim(3) ATE 0.559 m  RPE 0.275 m/1 s  ATE 6.309 m  rot 32.9 deg  vel 0.279 m/s  filled 0  fuel/frame max 14,090,459 (p95 13,077,862)  wall/frame 1.1 ms
+6e8e3766f46272c1b91eca39c320081251884947: ok Sim(3) ATE 0.983 m  RPE 0.286 m/1 s  ATE 2.415 m  rot 30.8 deg  vel 0.290 m/s  filled 0  fuel/frame max 14,090,209 (p95 13,073,807)  wall/frame 1.1 ms
+f8fb89fff0c39d51e0f073603ef93b9a2ee00455: ok Sim(3) ATE 0.607 m  RPE 0.182 m/1 s  ATE 2.464 m  rot 30.0 deg  vel 0.186 m/s  filled 0  fuel/frame max 14,090,459 (p95 13,075,786)  wall/frame 1.1 ms
+489ad518363d88bfa877f86afea144de0d846258: ok Sim(3) ATE 0.636 m  RPE 0.198 m/1 s  ATE 2.596 m  rot 16.1 deg  vel 0.201 m/s  filled 0  fuel/frame max 14,090,709 (p95 13,081,377)  wall/frame 1.1 ms
+51ea6311a50f4eeb59672012b9796244dab52f60: ok Sim(3) ATE 1.521 m  RPE 0.299 m/1 s  ATE 3.615 m  rot 20.5 deg  vel 0.302 m/s  filled 0  fuel/frame max 14,090,459 (p95 13,077,634)  wall/frame 1.1 ms
+60ed4323f3aab9c83a854f30062cb4ffbefeac12: ok Sim(3) ATE 1.552 m  RPE 0.263 m/1 s  ATE 4.116 m  rot 12.0 deg  vel 0.267 m/s  filled 0  fuel/frame max 14,090,459 (p95 13,073,336)  wall/frame 1.1 ms
+8fff5c8dc6376171fc6f865fd214cee44df2b7c3: ok Sim(3) ATE 1.058 m  RPE 0.279 m/1 s  ATE 3.275 m  rot 3.6 deg  vel 0.283 m/s  filled 0  fuel/frame max 14,090,209 (p95 13,077,017)  wall/frame 1.1 ms
+41e11443a9a5cc165ef9aeeaef11dba63614685b: ok Sim(3) ATE 1.590 m  RPE 0.248 m/1 s  ATE 2.447 m  rot 44.3 deg  vel 0.252 m/s  filled 0  fuel/frame max 14,090,459 (p95 13,079,339)  wall/frame 1.1 ms
+8321da1faa306e72df46f86a72aa3fa0d611c6d9: ok Sim(3) ATE 0.491 m  RPE 0.239 m/1 s  ATE 1.925 m  rot 3.4 deg  vel 0.245 m/s  filled 0  fuel/frame max 14,090,709 (p95 13,077,877)  wall/frame 1.1 ms
+report: /root/projects/AeroVIO/results/correlation-v5-current/report-gyro-v4-current/report.json
+summary: 10/10 episodes completed, Sim(3) ATE mean 0.967 m, fuel/frame max 14,090,709 (mean 13,025,069, median 13,015,181, p95 13,078,964, p99 13,082,392)

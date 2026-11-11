@@ -74,3 +74,13 @@ solution bundle.
 
 Course PDFs in `docs/course/` retain their authors' rights and are stored in this
 private repository for coursework.
+
+## Feature-correlation background
+
+The v5 local matching branch is an original small implementation using PyTorch
+and exported ONNX operators. Feature correlation is a standard matching concept;
+the discussion references Teed and Deng, "RAFT: Recurrent All-Pairs Field
+Transforms for Optical Flow", ECCV 2020:
+https://www.ecva.net/papers/eccv_2020/papers_ECCV/html/3526_ECCV_2020_paper.php.
+No RAFT code or pretrained weights are included, and the model does not implement
+RAFT's full architecture. Existing viobench adaptation attribution above remains.

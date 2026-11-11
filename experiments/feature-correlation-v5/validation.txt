@@ -1,0 +1,54 @@
+[ WARN:0@1.603] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.715] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@1.824] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@2.665] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@2.769] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@2.876] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@3.994] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.099] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@4.212] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@5.463] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@5.568] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+[ WARN:0@5.680] global net_impl_backend.cpp:345 setPreferableTarget Targets are not supported by the new graph engine for now
+{
+  "selected": "calibrated-gyro",
+  "decisions": {
+    "single-frame": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 0
+    },
+    "temporal": {
+      "eligible": false,
+      "checks": {
+        "rotation": false,
+        "aligned_position": true,
+        "unaligned_position": true,
+        "rotation_wins": false
+      },
+      "rotation_wins": 1
+    }
+  },
+  "metrics": {
+    "single-frame": {
+      "rotation_deg": 2.4532874570592305,
+      "sim3_ate_m": 0.2655266915159537,
+      "unaligned_ate_m": 0.5121525643910966
+    },
+    "temporal": {
+      "rotation_deg": 2.7807532515960767,
+      "sim3_ate_m": 0.2655546278818073,
+      "unaligned_ate_m": 0.5139040894902918
+    },
+    "calibrated-gyro": {
+      "rotation_deg": 2.1704697541341615,
+      "sim3_ate_m": 0.26563040483152245,
+      "unaligned_ate_m": 0.5113318972602299
+    }
+  }
+}
