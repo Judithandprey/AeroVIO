@@ -6,7 +6,22 @@ Estimate camera pose and twist from RGB + IMU while measuring the
 accuracy-compute trade-off in a WebAssembly runtime. Developed for UC Berkeley
 EECS 116/216, Fall 2026, Project 3.
 
-**Latest completed experiment:** explicit geometric correspondence supervision
+**Baseline naming correction:** in the v1-v6 local reports, `baseline` means
+the particular upstream **KLT + IMU example**, not the benchmark's full baseline
+frontier. The signed-in server's similarly priced, more accurate point is
+**tiny_cnn** (0.668412 m / 14,684,708 max fuel on its 20-episode set).
+See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
+local comparison and the boundary between reproducing an algorithm and obtaining
+the server's actual weights. Earlier reports remain preserved.
+
+**Latest completed comparison:** two local Tiny CNN reproductions achieve
+1.095712 m and 1.171630 m mean Sim(3) ATE at about 14.68 M maximum fuel/frame.
+The preserved calibrated-gyro model achieves 0.881818 m at 14.76 M on the same
+ten public episodes. All eight runs complete, including exact repetition.
+These locally retrained baselines do not reproduce the server's stronger
+checkpoint; see the [full comparison](experiments/tiny-cnn-v7/comparison.md).
+
+**Previous completed experiment:** explicit geometric correspondence supervision
 continues the V5 temporal network without changing its deployed architecture.
 Matching endpoint error worsens despite lower cross-entropy; public median
 rotation error rises from 9.7654 to 10.6784 degrees, with nearly unchanged aligned
@@ -30,7 +45,7 @@ RMSE by 68.77%, but raises aligned ATE by 0.02752%. It fails the frozen
 nonregression guard, so the selected variant remains `current` (the v1 warp model
 with calibration off and its residual on). All seven public runs completed;
 the calibrated-gyro diagnostic reduces mean aligned ATE by 56.81% and maximum
-fuel/frame by 89.60% versus the official baseline, with exact complete-run
+fuel/frame by 89.60% versus the selected KLT + IMU reference, with exact complete-run
 reproduction. Its validation status and tradeoffs remain explicit. See the
 [calibration guide](docs/gyro-bias-calibration.md) and
 [completed comparison](experiments/gyro-bias-v4/README.md).
@@ -54,10 +69,13 @@ rotation/scale limitations and map regression. The
 [warping and world-model guide](docs/warping-and-world-models.md) explains how the
 implemented geometric constraint relates to the broader project ideas.
 
-The official KLT + IMU reference remains frozen at tag `baseline-klt-imu-v1`.
+The upstream KLT + IMU reference remains frozen at tag `baseline-klt-imu-v1`.
 It completed 10/10 public episodes with mean Sim(3) ATE **2.041635 m** and maximum
 fuel/frame **141,910,846**; see [baseline evidence](experiments/baseline-klt-imu/README.md).
-No course-server submission, held-out result, or physical-robot result is claimed.
+The local experiment runner has not uploaded to the course server. The v7 record
+separately transcribes the user's existing server results and verifies that the
+latest upload is v4 calibrated-gyro by filename/SHA-256. It does not claim
+physical-robot performance.
 
 The working branch is `experiment/perspective-map`. Its default
 `workspace/solution/` model is the **pose-only learned variant**, not the tagged
@@ -103,6 +121,7 @@ experiments/         Compact reports, model snapshots and provenance
     gyro-bias-v4/
     feature-correlation-v5/
     correspondence-v6/
+    tiny-cnn-v7/
 docs/                Course sources, requirements, architecture and setup
 reports/             Presentation and final-report sources
 HANDOFF.md           Verified state and development boundaries

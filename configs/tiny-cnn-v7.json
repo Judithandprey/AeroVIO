@@ -1,0 +1,18 @@
+{
+  "purpose": "Reproduce the public tiny_cnn algorithm; server weights and training provenance are unavailable",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "latest_checked_upstream_commit": "17303aa14ba14e16cb54d9291d684371e1d3b548",
+  "tiny_cnn_source_identical_at_both_commits": true,
+  "data_manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "train_episodes": 12,
+  "validation_episodes": 4,
+  "upstream": {"epochs": 10, "seed": 0, "batch": 64, "lr": 0.001, "selection": "last epoch, original train.py unchanged"},
+  "matched": {"epochs": 40, "seed": 17, "batch": 64, "lr": 0.001, "scheduler": "cosine to 0.0001", "gradient_norm_cap": 5.0, "selection": "minimum scene-disjoint validation normalized pose loss"},
+  "matched_scope": "Same data, seed, epoch/batch budget, order, optimizer, scheduler and selection policy as v1; retain upstream architecture, normalization, targets and preintegration. Not a one-factor ablation or reproduction of server weights. V5/V6 additionally received later fine-tuning.",
+  "threads": 4,
+  "evaluation": "configs/public-episodes.json",
+  "limits": "configs/evaluation-limits.json",
+  "variants": {"upstream": "tiny-cnn-v7-upstream", "matched": "tiny-cnn-v7-matched", "v1-pose": "motion-pose-v1", "v4-current": "gyro-v4-current", "calibrated-gyro": "gyro-v4-cal-gyro", "v5-single": "correlation-v5-single-frame", "v6-supervised": "correspondence-v6-supervised", "matched-repeat": "tiny-cnn-v7-matched"},
+  "selection_changes": false,
+  "server_upload": false
+}

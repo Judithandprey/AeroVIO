@@ -1,0 +1,23 @@
+{
+  "upstream_source_sha256": {
+    "README.md": "6c0824b1aa244669dd89805b9659d8bf48408ee900948d3a518ff9da4e3a3bcd",
+    "train.py": "cadcd0214d7b77c697093ad8efe09598ad552472db56c419a308d2d2b7e1c67d",
+    "solution/solution.py": "e4b10fadec89b9688698f0ee9b0674cc3a13c94159c21d638607ec7158909e72",
+    "solution/preintegrate.py": "ced7a1b17bed25d363aa4b61f732238e85502147a89fa5b8da6f4ca859c0e380",
+    "solution/tinynn.py": "c2ab72190047b436b2179c72eae6cb8bd96eea49e5d074f5e510b6e2cce8acb3"
+  },
+  "training_packages": {
+    "torch": "2.15.0+cpu",
+    "onnx": "1.23.2",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "unchanged_runtime_pin": true,
+  "tiny_cnn_latest_source_matches_pin": true,
+  "source_note": "Original upstream files copied byte-for-byte; original and matched local weights are not the server checkpoint.",
+  "syntax_checks": "AST parse of all three new scripts passed",
+  "preserved_failed_attempt_logs": {
+    "tiny-cnn-v7-matched-preprocessing-check-failed.log": "c79e2301971be7ebf88006debef602cd37d6e04a42119bb86c36b09a5f486248",
+    "tiny-cnn-v7-matched-record-check-failed.log": "ea39f910f1b1ac59de1ff410cacf94b98715525233130a2d6e59530e52753a66"
+  }
+}

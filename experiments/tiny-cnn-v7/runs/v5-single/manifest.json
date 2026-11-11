@@ -1,0 +1,186 @@
+{
+  "started_utc": "2026-11-11T06:14:03.640609+00:00",
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "-u",
+    "-m",
+    "viobench",
+    "evaluate",
+    "/root/projects/AeroVIO/artifacts/correlation-v5-single-frame.wasm",
+    "conta:0386e5c941b50fe9972ddabff84c414540fb8989",
+    "conta:9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+    "conta:6e8e3766f46272c1b91eca39c320081251884947",
+    "conta:f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+    "conta:489ad518363d88bfa877f86afea144de0d846258",
+    "conta:51ea6311a50f4eeb59672012b9796244dab52f60",
+    "conta:60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+    "conta:8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+    "conta:41e11443a9a5cc165ef9aeeaef11dba63614685b",
+    "conta:8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+    "--limits",
+    "/root/projects/AeroVIO/configs/evaluation-limits.json"
+  ],
+  "working_directory": "/root/projects/AeroVIO/results/tiny-cnn-v7-v5-single",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "solution_sha256": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9",
+  "workspace_solution_sha256": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9",
+  "bundle_files_sha256": {
+    "gyro_bias.py": "c7f8e98d9ace1bc43b7110b3f5246a38b75fdf9276ee2df3d6fd01ae9dfc7bfa",
+    "local_map.py": "692340a3e2e41002b74d2a2f508ebdaf42abab0b510fc24d6223d46cb0232c12",
+    "meta.json": "f2f6feed8c755a1a17f068509fd97d32258ba27c3034cc2ff6942fd384ad4ebe",
+    "motion_inference.py": "1e2f6ae5b04fb3b81dcdfe9161e55ece5227fd0dc02029334809d16ff49ad2e9",
+    "net.onnx": "5de194f6698dd7783cbc58c506a81f032abdc4e1e58dd9bc735de01948a6259b",
+    "preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024",
+    "solution.py": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9"
+  },
+  "embedded_model_metadata": {
+    "schema_version": 1,
+    "input_width": 64,
+    "input_height": 48,
+    "state_mean": [
+      0.0002903045096900314,
+      -0.0024019810371100903,
+      4.056700709043071e-05,
+      -0.0006200654897838831,
+      -0.48943668603897095,
+      -0.0006987960077822208,
+      -1.5106808859854937e-05,
+      -0.012232117354869843,
+      -1.4507308151223697e-05,
+      0.27396294474601746,
+      0.36528390645980835,
+      0.5,
+      0.5,
+      0.05000000819563866
+    ],
+    "state_std": [
+      0.0016396129503846169,
+      0.010300121270120144,
+      0.00165434496011585,
+      0.007795785553753376,
+      0.008918380364775658,
+      0.006590625736862421,
+      0.00020447226415853947,
+      0.0002373328316025436,
+      0.0001760648301569745,
+      0.046288568526506424,
+      0.06171809509396553,
+      9.999999974752427e-07,
+      9.999999974752427e-07,
+      9.999999974752427e-07
+    ],
+    "target_mean": [
+      -7.096362969605252e-05,
+      -0.0015134280547499657,
+      0.008229664526879787,
+      -0.0002667608205229044,
+      -2.9533328415709548e-05,
+      -5.9541638620430604e-05
+    ],
+    "target_std": [
+      0.0010000000474974513,
+      0.005779764149338007,
+      0.00969107635319233,
+      0.001214494463056326,
+      0.0013117530616000295,
+      0.0012225416721776128
+    ],
+    "map": {
+      "enabled": false
+    },
+    "diagnostics_interval": 0,
+    "model_sha256": "5de194f6698dd7783cbc58c506a81f032abdc4e1e58dd9bc735de01948a6259b",
+    "training_stage": "warp",
+    "training_seed": 17,
+    "rotation_prior_input": true,
+    "rotation_residual_enabled": true,
+    "gyro_bias": {
+      "enabled": true
+    },
+    "architecture": "local-correlation-v5",
+    "correlation_variant": "single-frame",
+    "selected_epoch": 14,
+    "checkpoint_role": "best trained validation rotation candidate; eligibility is separate"
+  },
+  "runtime_sha256": "9d889ab05cd22059913d3ac2ec34aecd9f442865c1341da416730e95add49535",
+  "wasm_sha256": "8f66188949d06436cd755343e4c1c851ddaf054a939a2099ae6af72e2831e99d",
+  "wasm_bytes": 50217571,
+  "limits_sha256": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+  "selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "episodes": [
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0000.zip",
+      "hash": "0386e5c941b50fe9972ddabff84c414540fb8989"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0001.zip",
+      "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0002.zip",
+      "hash": "6e8e3766f46272c1b91eca39c320081251884947"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0003.zip",
+      "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0004.zip",
+      "hash": "489ad518363d88bfa877f86afea144de0d846258"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0005.zip",
+      "hash": "51ea6311a50f4eeb59672012b9796244dab52f60"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0006.zip",
+      "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0007.zip",
+      "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0008.zip",
+      "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0009.zip",
+      "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "wasmtime": "50.0.1",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "conta": "0.0.7",
+    "viobench": "0.0.1"
+  },
+  "baseline_source_verified": false,
+  "evidence_scope": "Local public-set evaluation only; server limits and held-out performance unverified.",
+  "finished_utc": "2026-11-11T06:15:06.435310+00:00",
+  "exit_code": 0,
+  "report_sha256": "3765d8bc56f187c82030fabb9f917743a34b9dc4d1a01966f2ff9e99fb234181",
+  "summary": {
+    "episodes": 10,
+    "completed": 10,
+    "duration_s_median": 59.949999999999996,
+    "sim3_ate_rmse_mean": 0.8555466575695794,
+    "rpe_translation_rmse_median": 0.2593774588182515,
+    "rpe_rotation_rmse_median": 0.012943543548678084,
+    "ate_rmse_median": 2.926311844090426,
+    "rotation_rmse_median": 0.15818603589551505,
+    "velocity_rmse_median": 0.2624648003247594,
+    "angular_velocity_rmse_median": 0.0309829161428221,
+    "frames_attempted": 12000,
+    "fuel_per_frame_max": 20141128,
+    "fuel_per_frame_mean": 17829675.178416666,
+    "fuel_per_frame_median": 17827058.0,
+    "fuel_per_frame_p95": 17893344.05,
+    "fuel_per_frame_p99": 17895056.25,
+    "fuel_total": 213956102141,
+    "wall_per_frame_median_ms": 1.5305159613490105
+  }
+}

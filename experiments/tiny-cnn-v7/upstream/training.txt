@@ -1,0 +1,27 @@
+train-ProcTHOR-Train-2-seed271828: 199 pairs
+train-ProcTHOR-Train-2-seed271829: 199 pairs
+train-ProcTHOR-Train-2-seed271830: 199 pairs
+train-ProcTHOR-Train-2-seed271831: 199 pairs
+train-ProcTHOR-Train-3-seed271832: 199 pairs
+train-ProcTHOR-Train-3-seed271833: 199 pairs
+train-ProcTHOR-Train-3-seed271834: 199 pairs
+train-ProcTHOR-Train-3-seed271835: 199 pairs
+train-ProcTHOR-Train-4-seed271836: 199 pairs
+train-ProcTHOR-Train-4-seed271837: 199 pairs
+train-ProcTHOR-Train-4-seed271838: 199 pairs
+train-ProcTHOR-Train-4-seed271839: 199 pairs
+/root/projects/AeroVIO/external/viobench/viobench/solution/examples/python/tiny_cnn/train.py:127: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:820.)
+  total += float(loss) * len(index)
+epoch 1: loss 0.3686
+epoch 2: loss 0.3190
+epoch 3: loss 0.2911
+epoch 4: loss 0.2762
+epoch 5: loss 0.2673
+epoch 6: loss 0.2629
+epoch 7: loss 0.2599
+epoch 8: loss 0.2571
+epoch 9: loss 0.2547
+epoch 10: loss 0.2532
+wrote /root/projects/AeroVIO/models/tiny-cnn-v7-upstream/net.onnx, weights.npz, meta.json (2388 training pairs)
+FINISHED {"validation_pairs": 796, "max_normalized_output_error": 7.152557373046875e-07, "tolerance": 0.0001}

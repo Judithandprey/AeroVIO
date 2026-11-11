@@ -1,0 +1,14 @@
+[
+  {
+    "variant": "upstream",
+    "path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-tiny-cnn-v7-upstream.wasm",
+    "sha256": "894d903e360ca6de32a950a471a36959044383d6c1823f46aacb4d2e69c13041",
+    "bytes": 50268040
+  },
+  {
+    "variant": "matched",
+    "path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-tiny-cnn-v7-matched.wasm",
+    "sha256": "1bed5dde26c3c4f576b575aed72f29da259f3e4cfa79a0ff53e62df82d4fc599",
+    "bytes": 50268097
+  }
+]

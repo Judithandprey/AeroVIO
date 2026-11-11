@@ -1,0 +1,75 @@
+{
+  "variant": "upstream",
+  "started_utc": "2026-11-11T06:05:59.466171+00:00",
+  "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76",
+  "manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+  "source_sha256": {
+    "train.py": "cadcd0214d7b77c697093ad8efe09598ad552472db56c419a308d2d2b7e1c67d",
+    "solution/preintegrate.py": "ced7a1b17bed25d363aa4b61f732238e85502147a89fa5b8da6f4ca859c0e380",
+    "solution/solution.py": "e4b10fadec89b9688698f0ee9b0674cc3a13c94159c21d638607ec7158909e72",
+    "solution/tinynn.py": "c2ab72190047b436b2179c72eae6cb8bd96eea49e5d074f5e510b6e2cce8acb3"
+  },
+  "data_sha256": {
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828.zip": "1b548e9e8833a989f9bbe5d525e66bd2d82107206a405a03c631ed56b8a62313",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829.zip": "510daca7097665a4216a36b99488b1af2e7a59957cb020fcd9e55cf62284f69c",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830.zip": "3e5c874c1ad4e9cc834b8fd8aba429977839b45138a266e7096c8ad24fb19ff7",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831.zip": "f1f085aeb54d2c911cc84a9ddd2471397d6c242cecacf843208e8ca02fe0afd3",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832.zip": "0193db3d026f54a25b155b7cd12950fc5758536b51cc8ebcd7c28e0dbd8a7706",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833.zip": "d149e47d2ac419fe7fe7bc4569f5c863f0010a2364c7447c3db4c781548b9145",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834.zip": "c401975bf403d7cf4ffd3b3fae6dc3851c250f8ad029bc89dd25404ea2aea50b",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835.zip": "e9e687495ef11af2cb025ffb4c107af36a72c6db60a3bd6bad5d9273e61c98f0",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836.zip": "ae7b1708c0724f7ff537cf89e2cdbbe92a04bb9109778dd75f70c59037c1f2c9",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837.zip": "5c0a23dab792a0be546cc287aacf78448f3ab215b7b4828ae187ee2954bcb7c5",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838.zip": "5728a9c8fbc31d19357a435adde0a013e26961012b50ed52532ee1b7db64d97e",
+    "data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839.zip": "c139b34ef18fa24fbda616249bf12945da61256f1f93028a8efa9162e7e65b85",
+    "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840.zip": "636bd4731b9ebdd856ba76871274c3d5a2d9a6e9f51d249e6e1e5e0ed8e06013",
+    "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841.zip": "84f8328139c72e9628a94373c3caa1c12896a8effd89ac1953827756f78ad19d",
+    "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842.zip": "e47c3b925a20c049686b542c8435f129dc82d1ea6cc6e638175d7a3f2d6c0da6",
+    "data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843.zip": "5ae40c894abdce7b541d46167519892840db1255cc67f5acd235d48547dd97b3"
+  },
+  "server_weights_reproduced": false,
+  "settings": {
+    "epochs": 10,
+    "seed": 0,
+    "batch": 64,
+    "lr": 0.001,
+    "selection": "last epoch, original train.py unchanged"
+  },
+  "threads": 4,
+  "parameters": 29078,
+  "public_data_used_for_training_or_selection": false,
+  "command_argv": [
+    "/root/projects/AeroVIO/external/viobench/viobench/solution/examples/python/tiny_cnn/train.py",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838",
+    "/root/projects/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839",
+    "--out",
+    "/root/projects/AeroVIO/models/tiny-cnn-v7-upstream"
+  ],
+  "selected_epoch": 10,
+  "export_check": {
+    "validation_pairs": 796,
+    "max_normalized_output_error": 7.152557373046875e-07,
+    "tolerance": 0.0001
+  },
+  "finished_utc": "2026-11-11T06:06:17.424045+00:00",
+  "elapsed_seconds": 17.957914976403117,
+  "bundle_files_sha256": {
+    "meta.json": "a392e9b81052c3ef5ad4816beab2156b30c45317245ddc2f13bfc4db7e36b25a",
+    "net.onnx": "d3a339128809771047810d259f9fbcc1f77f61aab30611dc77bf415497422eb6",
+    "preintegrate.py": "ced7a1b17bed25d363aa4b61f732238e85502147a89fa5b8da6f4ca859c0e380",
+    "solution.py": "e4b10fadec89b9688698f0ee9b0674cc3a13c94159c21d638607ec7158909e72",
+    "tinynn.py": "c2ab72190047b436b2179c72eae6cb8bd96eea49e5d074f5e510b6e2cce8acb3",
+    "weights.npz": "413ac94aa7cd99c806416192c4af5c1ae1550a3fc7704da04c9bb92ca8867bac"
+  },
+  "model_sha256": "d3a339128809771047810d259f9fbcc1f77f61aab30611dc77bf415497422eb6"
+}

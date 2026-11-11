@@ -1,0 +1,66 @@
+{
+  "upstream": {
+    "v1-pose": {
+      "mean_sim3_ate_m_change_percent": -9.494804204263808,
+      "median_rotation_deg_change_percent": 31.727247846623996,
+      "median_step_ms_change_percent": -0.6607332997294768,
+      "max_fuel_change_percent": -4.129734513563699
+    },
+    "v4-current": {
+      "mean_sim3_ate_m_change_percent": -11.781339781326604,
+      "median_rotation_deg_change_percent": 34.314090738267836,
+      "median_step_ms_change_percent": -1.2543483685726442,
+      "max_fuel_change_percent": -4.014714641726558
+    },
+    "calibrated-gyro": {
+      "mean_sim3_ate_m_change_percent": -19.52100117145754,
+      "median_rotation_deg_change_percent": -24.136233394568272,
+      "median_step_ms_change_percent": 9.719119499481522,
+      "max_fuel_change_percent": 0.5247862544543347
+    },
+    "v5-single": {
+      "mean_sim3_ate_m_change_percent": -21.918649335312224,
+      "median_rotation_deg_change_percent": -43.6235090838765,
+      "median_step_ms_change_percent": 30.707381017003744,
+      "max_fuel_change_percent": 37.20047149632508
+    },
+    "v6-supervised": {
+      "mean_sim3_ate_m_change_percent": -20.726775891802728,
+      "median_rotation_deg_change_percent": -33.577827401280345,
+      "median_step_ms_change_percent": 38.344692032605685,
+      "max_fuel_change_percent": 49.00732094501989
+    }
+  },
+  "matched": {
+    "v1-pose": {
+      "mean_sim3_ate_m_change_percent": -15.359277284196239,
+      "median_rotation_deg_change_percent": 20.8626830831927,
+      "median_step_ms_change_percent": 0.04372446319134138,
+      "max_fuel_change_percent": -4.164673760866555
+    },
+    "v4-current": {
+      "mean_sim3_ate_m_change_percent": -17.49765201568443,
+      "median_rotation_deg_change_percent": 23.236169037767528,
+      "median_step_ms_change_percent": -0.5541001871931628,
+      "max_fuel_change_percent": -4.049695807216736
+    },
+    "calibrated-gyro": {
+      "mean_sim3_ate_m_change_percent": -24.735805890460615,
+      "median_rotation_deg_change_percent": -30.393304873372973,
+      "median_step_ms_change_percent": 10.49718529400221,
+      "max_fuel_change_percent": 0.4881506996325058
+    },
+    "v5-single": {
+      "mean_sim3_ate_m_change_percent": -26.978093436745777,
+      "median_rotation_deg_change_percent": -48.27331424344674,
+      "median_step_ms_change_percent": 31.634283663731555,
+      "max_fuel_change_percent": 37.15046974469378
+    },
+    "v6-supervised": {
+      "mean_sim3_ate_m_change_percent": -25.863449920896166,
+      "median_rotation_deg_change_percent": -39.05617761145743,
+      "median_step_ms_change_percent": 39.325754159380935,
+      "max_fuel_change_percent": 48.95301626973794
+    }
+  }
+}

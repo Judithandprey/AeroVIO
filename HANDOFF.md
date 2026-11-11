@@ -1,5 +1,32 @@
 # AeroVIO - Handoff
 
+## Baseline correction (November 10, 2026)
+
+The server's Exact values table identifies the similar-compute frontier point
+as `tiny_cnn`, not KLT + IMU. Its current 20-episode score is 0.6684122639764059 m
+mean Sim(3) ATE and 14,684,708 max fuel/frame; the user's latest upload
+is 0.9155300067970294 m / 14,757,611. All v1-v6 references to "the official
+baseline" should be read as the chosen upstream KLT + IMU sample on our local
+ten-episode set. Those experiments do not establish superiority over the full
+server baseline frontier. See `experiments/tiny-cnn-v7/` and its source/weights
+limitations. Preserve the existing defaults and prior acceptance decisions.
+Details / Raw JSON subsequently confirmed the upload is v4 calibrated-gyro
+(SHA-256 matches the Windows artifact), the server set is `public+private-10`,
+and the six saved resource limits match. Private data and official Tiny CNN
+weights were not obtained; this is a local algorithm reproduction.
+
+V7 is complete: original trainer (10 epochs/seed 0/final checkpoint) and a
+matched-budget fit (40 epochs/seed 17/validation epoch 7) retain byte-identical
+upstream inference code. Their local public mean ATE is 1.095712/1.171630 m at
+14,680,072/14,685,424 max fuel/frame. All eight serial runs finished 10/10, the
+matched full repeat is exact, and all five preserved-reference reruns reproduce
+trajectory/twist/fuel/accuracy exactly. Both 40-frame WASM checks and 796-pair
+ONNX checks passed. The public part of the user's existing server result also
+matches our calibrated-gyro ATE and max fuel exactly for every episode.
+Reports, source snapshots, weights, provenance and Windows artifact hashes are
+in `experiments/tiny-cnn-v7/`. No experiment or training run is pending.
+
+
 The v6 explicit-correspondence supervision experiment is complete and rejected
 by the frozen acceptance rule. V5 temporal architecture and all guest source are
 unchanged; two 40-epoch fine-tunes share initial weights and minibatches. The

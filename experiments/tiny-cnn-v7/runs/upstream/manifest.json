@@ -1,0 +1,150 @@
+{
+  "started_utc": "2026-11-11T06:09:04.493988+00:00",
+  "command": [
+    "/root/projects/AeroVIO/.venv/bin/python",
+    "-u",
+    "-m",
+    "viobench",
+    "evaluate",
+    "/root/projects/AeroVIO/artifacts/tiny-cnn-v7-upstream.wasm",
+    "conta:0386e5c941b50fe9972ddabff84c414540fb8989",
+    "conta:9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+    "conta:6e8e3766f46272c1b91eca39c320081251884947",
+    "conta:f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+    "conta:489ad518363d88bfa877f86afea144de0d846258",
+    "conta:51ea6311a50f4eeb59672012b9796244dab52f60",
+    "conta:60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+    "conta:8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+    "conta:41e11443a9a5cc165ef9aeeaef11dba63614685b",
+    "conta:8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+    "--limits",
+    "/root/projects/AeroVIO/configs/evaluation-limits.json"
+  ],
+  "working_directory": "/root/projects/AeroVIO/results/tiny-cnn-v7-upstream",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "solution_sha256": "e4b10fadec89b9688698f0ee9b0674cc3a13c94159c21d638607ec7158909e72",
+  "workspace_solution_sha256": "d87a668ed4b9b2e744e04bbba6c7d50b88f80450299190b9d801f0010963e7d9",
+  "bundle_files_sha256": {
+    "meta.json": "a392e9b81052c3ef5ad4816beab2156b30c45317245ddc2f13bfc4db7e36b25a",
+    "net.onnx": "d3a339128809771047810d259f9fbcc1f77f61aab30611dc77bf415497422eb6",
+    "preintegrate.py": "ced7a1b17bed25d363aa4b61f732238e85502147a89fa5b8da6f4ca859c0e380",
+    "solution.py": "e4b10fadec89b9688698f0ee9b0674cc3a13c94159c21d638607ec7158909e72",
+    "tinynn.py": "c2ab72190047b436b2179c72eae6cb8bd96eea49e5d074f5e510b6e2cce8acb3",
+    "weights.npz": "413ac94aa7cd99c806416192c4af5c1ae1550a3fc7704da04c9bb92ca8867bac"
+  },
+  "embedded_model_metadata": {
+    "input_width": 64,
+    "input_height": 48,
+    "imu_mean": [
+      0.00025593378813937306,
+      -0.0021557495929300785,
+      2.8252938136574812e-05,
+      -0.0005362713127397001,
+      -0.44053980708122253,
+      -0.0006333717610687017,
+      -1.0971283700200729e-05,
+      -0.009909491054713726,
+      -1.1814192475867458e-05
+    ],
+    "imu_std": [
+      0.0015140373725444078,
+      0.009276144206523895,
+      0.001517110737040639,
+      0.007147848140448332,
+      0.008134976029396057,
+      0.006081451661884785,
+      0.00016993627650663257,
+      0.00019600456289481372,
+      0.0001475502795074135
+    ],
+    "target_std": [
+      0.0005392539314925671,
+      0.005780761130154133,
+      0.009692077524960041,
+      0.0011395751498639584,
+      0.0015310419257730246,
+      0.001149932388216257
+    ]
+  },
+  "runtime_sha256": "9d889ab05cd22059913d3ac2ec34aecd9f442865c1341da416730e95add49535",
+  "wasm_sha256": "894d903e360ca6de32a950a471a36959044383d6c1823f46aacb4d2e69c13041",
+  "wasm_bytes": 50268040,
+  "limits_sha256": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+  "selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e",
+  "episodes": [
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0000.zip",
+      "hash": "0386e5c941b50fe9972ddabff84c414540fb8989"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0001.zip",
+      "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0002.zip",
+      "hash": "6e8e3766f46272c1b91eca39c320081251884947"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0003.zip",
+      "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0004.zip",
+      "hash": "489ad518363d88bfa877f86afea144de0d846258"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0005.zip",
+      "hash": "51ea6311a50f4eeb59672012b9796244dab52f60"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0006.zip",
+      "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0007.zip",
+      "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0008.zip",
+      "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b"
+    },
+    {
+      "description": "viobench-public/sim-ProcTHOR-Train-1-0009.zip",
+      "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9"
+    }
+  ],
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "wasmtime": "50.0.1",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "conta": "0.0.7",
+    "viobench": "0.0.1"
+  },
+  "baseline_source_verified": false,
+  "evidence_scope": "Local public-set evaluation only; server limits and held-out performance unverified.",
+  "finished_utc": "2026-11-11T06:10:03.693948+00:00",
+  "exit_code": 0,
+  "report_sha256": "a5452461ac96a5fc83a2c1d4430ff48bde1d5dc3029115ce48cc3a3f1a623358",
+  "summary": {
+    "episodes": 10,
+    "completed": 10,
+    "duration_s_median": 59.949999999999996,
+    "sim3_ate_rmse_mean": 1.0957119085242715,
+    "rpe_translation_rmse_median": 0.2872858011268422,
+    "rpe_rotation_rmse_median": 0.0146635818903753,
+    "ate_rmse_median": 3.1505514656337104,
+    "rotation_rmse_median": 0.2805886519805977,
+    "velocity_rmse_median": 0.2916474849024213,
+    "angular_velocity_rmse_median": 0.031074745943606433,
+    "frames_attempted": 12000,
+    "fuel_per_frame_max": 14680072,
+    "fuel_per_frame_mean": 13615010.49125,
+    "fuel_per_frame_median": 13596475.0,
+    "fuel_per_frame_p95": 13695886.3,
+    "fuel_per_frame_p99": 13700930.04,
+    "fuel_total": 163380125895,
+    "wall_per_frame_median_ms": 1.1709483806043863
+  }
+}

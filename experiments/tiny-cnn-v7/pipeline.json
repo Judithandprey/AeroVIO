@@ -1,0 +1,204 @@
+[
+  {
+    "stage": "package-upstream",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "viobench",
+      "bundle",
+      "/root/projects/AeroVIO/artifacts/tiny-cnn-v7-upstream-solution",
+      "-o",
+      "artifacts/tiny-cnn-v7-upstream.wasm",
+      "--runtime",
+      "workspace/build/runtime/dist/runtime.wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.6227197721600533,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-package-upstream.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "check-upstream",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/tiny-cnn-v7-upstream.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-tiny-cnn-v7-upstream"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 5.150780647061765,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-check-upstream.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "package-matched",
+    "command": [
+      ".venv/bin/python",
+      "-m",
+      "viobench",
+      "bundle",
+      "/root/projects/AeroVIO/artifacts/tiny-cnn-v7-matched-solution",
+      "-o",
+      "artifacts/tiny-cnn-v7-matched.wasm",
+      "--runtime",
+      "workspace/build/runtime/dist/runtime.wasm"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.4133285149000585,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-package-matched.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "check-matched",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "-m",
+      "viobench",
+      "check",
+      "artifacts/tiny-cnn-v7-matched.wasm",
+      "--frames",
+      "40",
+      "--logs",
+      "logs/check-tiny-cnn-v7-matched"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 4.9225231455639005,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-check-matched.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-upstream",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/tiny-cnn-v7-upstream.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-upstream"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 59.46814524009824,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-upstream.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-matched",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/tiny-cnn-v7-matched.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-matched"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 57.57314106589183,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-matched.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-v1-pose",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/motion-pose-v1.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-v1-pose"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 63.00998616218567,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-v1-pose.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-v4-current",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-current.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-v4-current"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 57.99620840512216,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-v4-current.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-calibrated-gyro",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/gyro-v4-cal-gyro.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-calibrated-gyro"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 59.736567162908614,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-calibrated-gyro.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-v5-single",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correlation-v5-single-frame.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-v5-single"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 63.039810734800994,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-v5-single.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-v6-supervised",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/correspondence-v6-supervised.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-v6-supervised"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 64.17874466907233,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-v6-supervised.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  },
+  {
+    "stage": "evaluate-matched-repeat",
+    "command": [
+      ".venv/bin/python",
+      "-u",
+      "scripts/evaluate_public.py",
+      "--wasm",
+      "artifacts/tiny-cnn-v7-matched.wasm",
+      "--run-dir",
+      "results/tiny-cnn-v7-matched-repeat"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 55.90688605699688,
+    "log": "/root/projects/AeroVIO/logs/tiny-cnn-v7-evaluate-matched-repeat.log",
+    "protocol_sha256": "855a7b889260d1b262cc0ba0061cd82622888405163674476ac7ed0e60d79c76"
+  }
+]

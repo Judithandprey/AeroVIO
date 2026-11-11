@@ -5,7 +5,7 @@ pinned to revision `2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca`.
 The upstream `pyproject.toml` declares the MIT license; that checkout has no root
 LICENSE file. Original notices in copied files are preserved.
 
-## Frozen official baseline
+## Frozen KLT example reference
 
 At AeroVIO tag `baseline-klt-imu-v1`, `workspace/solution/solution.py` is the
 byte-identical upstream example at
@@ -13,6 +13,12 @@ byte-identical upstream example at
 The baseline artifact and evidence retain this identity. The working experimental
 branch has since replaced that file with a learned estimator; it must not be
 presented as the unchanged KLT example.
+
+The v7 `tiny_cnn` reproduction copies upstream `train.py`, `solution.py`,
+`preintegrate.py` and `tinynn.py` with byte-identical source snapshots and hashes.
+One run uses the original trainer; a second matches AeroVIO's training budget
+and image adaptation while retaining the upstream model and deployed algorithm.
+These are locally trained weights, not the unpublished server checkpoint.
 
 ## Learned-motion implementation
 

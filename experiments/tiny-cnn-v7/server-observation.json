@@ -1,0 +1,26 @@
+{
+  "source": "https://viobench.rl.tools/",
+  "observed_at_local": "2026-11-10T22:01:05-08:00",
+  "method": "Signed-in browser; expanded Exact values and read visible table",
+  "episodes": 20,
+  "score": "equal-episode mean Sim(3) ATE; maximum fuel per frame",
+  "baselines": [
+    {"label": "cpp_minimal", "max_fuel": 113, "mean_sim3_ate_m": 2.695243472068691},
+    {"label": "vins_mono", "max_fuel": 1883775164, "mean_sim3_ate_m": 0.5062945507665002},
+    {"label": "tiny_cnn", "max_fuel": 14684708, "mean_sim3_ate_m": 0.6684122639764059},
+    {"label": "orbslam3", "max_fuel": 4531834998, "mean_sim3_ate_m": 1.7382295663956566},
+    {"label": "openvins", "max_fuel": 3867211576, "mean_sim3_ate_m": 0.4954516788001665},
+    {"label": "python_minimal", "max_fuel": 212230, "mean_sim3_ate_m": 2.695243472068691},
+    {"label": "klt_imu", "max_fuel": 289275943, "mean_sim3_ate_m": 1.8522170531057802},
+    {"label": "dead_reckoning", "max_fuel": 4221379, "mean_sim3_ate_m": 1.9354894729646535}
+  ],
+  "latest_own_submission": {"id": "5d9abcd2c8503561", "max_fuel": 14757611, "mean_sim3_ate_m": 0.9155300067970294, "local_artifact_identity": "AeroVIO-gyro-v4-cal-gyro.wasm", "sha256": "5c6a8414d059111f72a1d68dab6b6eb46df526fea5c7fdc1f3539c4a70e3affd", "identity_method": "Follow-up Details / Raw JSON read at 22:15 Los Angeles; matches Windows artifact SHA-256"},
+  "followup_episode_set": "public+private-10; all 20 full hashes in visible Raw JSON match this pinned upstream catalog preset in order",
+  "followup_limits": {"init_fuel": 200000000000, "step_fuel": 20000000000, "memory_bytes": 2147483648, "table_elements": 1048576, "init_wall_seconds": 300, "step_wall_seconds": 60},
+  "server_episode_timeout_seconds": 1440,
+  "claimed_area_percent": 0,
+  "server_model_binary_or_weights_obtained": false,
+  "server_training_dataset_or_schedule_obtained": false,
+  "public_source_check": {"latest_upstream_commit": "17303aa14ba14e16cb54d9291d684371e1d3b548", "tiny_cnn_unchanged_from_local_pin": true, "published_releases": 0, "tracked_trained_weights": false, "server_readme_exposes_model_download_endpoint": false},
+  "scope": "Read-only observation, no upload. Local public-10 results cannot be compared numerically against the combined public+private-10 result to claim server-score reproduction. Private dataset and baseline weights were not obtained."
+}
