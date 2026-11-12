@@ -1,0 +1,212 @@
+{
+  "control_parity": [
+    {
+      "episode": "0386e5c941b50fe9972ddabff84c414540fb8989",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "6e8e3766f46272c1b91eca39c320081251884947",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "489ad518363d88bfa877f86afea144de0d846258",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "51ea6311a50f4eeb59672012b9796244dab52f60",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    },
+    {
+      "episode": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": false
+    }
+  ],
+  "combined_repeat": [
+    {
+      "episode": "0386e5c941b50fe9972ddabff84c414540fb8989",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "6e8e3766f46272c1b91eca39c320081251884947",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "489ad518363d88bfa877f86afea144de0d846258",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "51ea6311a50f4eeb59672012b9796244dab52f60",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    }
+  ],
+  "selected_repeat": [
+    {
+      "episode": "0386e5c941b50fe9972ddabff84c414540fb8989",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "6e8e3766f46272c1b91eca39c320081251884947",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "489ad518363d88bfa877f86afea144de0d846258",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "51ea6311a50f4eeb59672012b9796244dab52f60",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    }
+  ],
+  "preserved_teacher_repeat": [
+    {
+      "episode": "0386e5c941b50fe9972ddabff84c414540fb8989",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "6e8e3766f46272c1b91eca39c320081251884947",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "489ad518363d88bfa877f86afea144de0d846258",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "51ea6311a50f4eeb59672012b9796244dab52f60",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    },
+    {
+      "episode": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+      "pose_twist_metrics_exact": true,
+      "fuel_exact": true
+    }
+  ],
+  "max_angular_twist_consistency_error_rad_s": 1.0047518372857667e-14,
+  "scope": "Local public set; no server upload or private evaluation."
+}

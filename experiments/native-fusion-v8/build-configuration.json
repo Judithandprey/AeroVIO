@@ -1,0 +1,66 @@
+{
+  "control": {
+    "settings": {
+      "CMAKE_CXX_COMPILER_AR": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ar",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/clang-scan-deps",
+      "CMAKE_CXX_COMPILER_RANLIB": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ranlib",
+      "CMAKE_TOOLCHAIN_FILE": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/share/cmake/wasi-sdk-p1.cmake",
+      "VISUAL_CONFIDENCE_WEIGHTING": "OFF",
+      "VISUAL_DOWNSAMPLE": "2",
+      "VISUAL_ROTATION_CORRECTION": "OFF",
+      "VISUAL_SPARSE_DIRECTION": "ON",
+      "CMAKE_CXX_COMPILER_AR-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_RANLIB-ADVANCED": "1"
+    },
+    "exported_weights_sha256": "9774a48663a3e5b221e6645a1d7a7ddddc00050725c2744707ecd42e0db52b77"
+  },
+  "confidence": {
+    "settings": {
+      "CMAKE_CXX_COMPILER_AR": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ar",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/clang-scan-deps",
+      "CMAKE_CXX_COMPILER_RANLIB": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ranlib",
+      "CMAKE_TOOLCHAIN_FILE": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/share/cmake/wasi-sdk-p1.cmake",
+      "VISUAL_CONFIDENCE_WEIGHTING": "ON",
+      "VISUAL_DOWNSAMPLE": "2",
+      "VISUAL_ROTATION_CORRECTION": "OFF",
+      "VISUAL_SPARSE_DIRECTION": "ON",
+      "CMAKE_CXX_COMPILER_AR-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_RANLIB-ADVANCED": "1"
+    },
+    "exported_weights_sha256": "9774a48663a3e5b221e6645a1d7a7ddddc00050725c2744707ecd42e0db52b77"
+  },
+  "rotation": {
+    "settings": {
+      "CMAKE_CXX_COMPILER_AR": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ar",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/clang-scan-deps",
+      "CMAKE_CXX_COMPILER_RANLIB": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ranlib",
+      "CMAKE_TOOLCHAIN_FILE": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/share/cmake/wasi-sdk-p1.cmake",
+      "VISUAL_CONFIDENCE_WEIGHTING": "OFF",
+      "VISUAL_DOWNSAMPLE": "2",
+      "VISUAL_ROTATION_CORRECTION": "ON",
+      "VISUAL_SPARSE_DIRECTION": "ON",
+      "CMAKE_CXX_COMPILER_AR-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_RANLIB-ADVANCED": "1"
+    },
+    "exported_weights_sha256": "9774a48663a3e5b221e6645a1d7a7ddddc00050725c2744707ecd42e0db52b77"
+  },
+  "combined": {
+    "settings": {
+      "CMAKE_CXX_COMPILER_AR": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ar",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/clang-scan-deps",
+      "CMAKE_CXX_COMPILER_RANLIB": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/bin/llvm-ranlib",
+      "CMAKE_TOOLCHAIN_FILE": "/root/projects/AeroVIO/workspace/build/toolchain/wasi-sdk/share/cmake/wasi-sdk-p1.cmake",
+      "VISUAL_CONFIDENCE_WEIGHTING": "ON",
+      "VISUAL_DOWNSAMPLE": "2",
+      "VISUAL_ROTATION_CORRECTION": "ON",
+      "VISUAL_SPARSE_DIRECTION": "ON",
+      "CMAKE_CXX_COMPILER_AR-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED": "1",
+      "CMAKE_CXX_COMPILER_RANLIB-ADVANCED": "1"
+    },
+    "exported_weights_sha256": "9774a48663a3e5b221e6645a1d7a7ddddc00050725c2744707ecd42e0db52b77"
+  }
+}

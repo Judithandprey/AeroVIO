@@ -14,7 +14,18 @@ See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
 local comparison and the boundary between reproducing an algorithm and obtaining
 the server's actual weights. Earlier reports remain preserved.
 
-**Latest completed comparison:** two local Tiny CNN reproductions achieve
+**Latest completed experiment:** the native fusion V8 ablation extends teacher
+commit `0c4f778`. A bounded geometric rotation correction is selected on four
+scene-disjoint validation flights before public evaluation. On ten public
+flights it lowers mean Sim(3) ATE from 0.486329 to 0.479744 m and median rotation
+RMSE from 12.1963 to 11.4083 degrees. Peak fuel changes from 2,232,749 to
+2,233,398; mean fuel increases 1.39%. Heuristic confidence weighting worsens
+ATE and is rejected. No retraining, online bias update, map or server upload
+was performed. Native switches default off; package variants explicitly.
+See [V8 evidence](experiments/native-fusion-v8/README.md) and
+[implementation and reproduction](docs/native-fusion-v8.md).
+
+**Previous completed comparison:** two local Tiny CNN reproductions achieve
 1.095712 m and 1.171630 m mean Sim(3) ATE at about 14.68 M maximum fuel/frame.
 The preserved calibrated-gyro model achieves 0.881818 m at 14.76 M on the same
 ten public episodes. All eight runs complete, including exact repetition.
@@ -77,7 +88,9 @@ separately transcribes the user's existing server results and verifies that the
 latest upload is v4 calibrated-gyro by filename/SHA-256. It does not claim
 physical-robot performance.
 
-The working branch is `experiment/perspective-map`. Its default
+The working branch is `experiment/native-fusion-v8`, based on the teacher's
+`codex/aerovio-wasm-optimization` branch. The earlier `experiment/perspective-map`
+branch remains preserved. Its default
 `workspace/solution/` model is the **pose-only learned variant**, not the tagged
 KLT baseline. Package each variant explicitly to avoid mixing model identities.
 

@@ -1,0 +1,29 @@
+{
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "packages": {
+    "wasmtime": "50.0.1",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "source_sha256": {
+    "configs/native-fusion-v8.json": "a9df1b85d76ef475510162f1bd7539f19d768df772a7788df2f765e67b209aa2",
+    "scripts/run_native_fusion.py": "d62c8934d46b7a0706b7a01706fc4b81ae614f3307635e67ba55f2640ab0f007",
+    "scripts/test_native_fusion.py": "c8300ceadcb3a8c3d42463eeb1fa64419f6ba52820ccec364e5b2315c774eb4b",
+    "tests/native_fusion_geometry.cpp": "9cc795d403844253e9a9cd38dfa8836e49b88f222aa20ab8bfa82bb2acd9332b",
+    "workspace/visual_native/visual_direction.h": "a45f7dc31e9e3a53ceeafccb8ae8891e8277dfe85af7cf415130b8cb28d5fce7",
+    "workspace/visual_native/export_weights.py": "57888a0b97364965dab3fe6f0462c7447b4bce43673f3450f941c61fa1435ba7",
+    "workspace/visual_native/solution.cpp": "b1891adf104677ff8072d70e382c2a590d1bb9594bd65815608619c96ef996d0",
+    "workspace/visual_native/CMakeLists.txt": "2d16120acdbc677c89b8209b42d40268a8e13b62df4181eb663f49e0cf93d0c9",
+    "workspace/visual_native/inference.h": "c323b73e81b576aaff02f03f6f4c2db4c6e2e79c82ab21614196ea8603033a54",
+    "workspace/visual_native/fusion_geometry.h": "523226333eba8f24a5ae0556d628da989e4591ad0619c3d5747636fc26a5cd91",
+    "workspace/visual_native/gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+    "workspace/visual_native/README.md": "ebe1da70997ebd4f58cbc9cd619a63696d319e1b9fb58826d44b18c1c94a2d97",
+    "workspace/visual_native/rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+    "workspace/visual_native/split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a"
+  },
+  "protocol_sha256": "a9df1b85d76ef475510162f1bd7539f19d768df772a7788df2f765e67b209aa2",
+  "limits_sha256": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+  "public_selection_sha256": "54e3f91874ecfacd126197cf308e184c8893a5a7a76d5f1efce74ec9a5b47d0e"
+}

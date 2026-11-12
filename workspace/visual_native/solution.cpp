@@ -30,6 +30,8 @@ struct State {
     InitialGyroBias calibration;
     visual_direction::Tracker tracker;
     Vec3d imu_position{0., 0., 0.};
+    Matx33d visual_alignment = Matx33d::eye();
+    Matx33d output_rotation = Matx33d::eye();
 } state;
 
 double number(const cv::FileNode& node) {
@@ -118,6 +120,12 @@ int32_t abi_version() { return VIOBENCH_ABI_VERSION; }
 void* alloc(uint32_t size) { return std::malloc(size ? size : 1); }
 int32_t frame_width() { return 320; }
 
+// Optional read-only host diagnostics; it does not participate in estimation.
+extern "C" VIOBENCH_EXPORT(fusion_diagnostics) void fusion_diagnostics(double* out) {
+    const auto values = state.tracker.diagnostics();
+    std::copy(values.begin(), values.end(), out);
+}
+
 int32_t init(const char* json, uint32_t size) {
     try {
         const cv::FileStorage config(std::string(json, size),
@@ -167,11 +175,23 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             const Vec3d increment = state.rotation * Vec3d(motion[0], motion[1], motion[2]);
             const Vec3d imu_position = state.imu_position + increment;
             const Vec3d correction = state.tracker.step(frame, rotation, imu_position);
-            const Vec3d position = state.position + increment + correction;
+            Vec3d position = state.position + increment + correction;
+            Matx33d output_rotation = rotation;
+            Matx33d previous_output_rotation = state.rotation;
+            if constexpr (VISUAL_ROTATION_CORRECTION) {
+                // Tracking and the learned IMU prior stay in the original gyro
+                // frame. Apply delayed, cumulative visual rotation only to the
+                // emitted pose and its translation increments. This prevents
+                // stale captured rays from mixing corrected/uncorrected axes.
+                position = state.position + state.visual_alignment * (increment + correction);
+                state.visual_alignment = state.visual_alignment * rotation_matrix(state.tracker.rotation_step());
+                output_rotation = state.visual_alignment * rotation;
+                previous_output_rotation = state.output_rotation;
+            }
             const double dt = time - state.previous_time;
-            const Vec3d linear = (rotation.t() * (position - state.position)) / dt;
-            const Vec3d angular = rotation_vector(state.rotation.t() * rotation, state.rigid_extrinsics) / dt;
-            const auto q = quaternion(rotation);
+            const Vec3d linear = (output_rotation.t() * (position - state.position)) / dt;
+            const Vec3d angular = rotation_vector(previous_output_rotation.t() * output_rotation, state.rigid_extrinsics) / dt;
+            const auto q = quaternion(output_rotation);
             std::copy_n(position.val, 3, out);
             std::copy(q.begin(), q.end(), out + 3);
             std::copy_n(linear.val, 3, out + 7);
@@ -180,6 +200,7 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
                 if (!std::isfinite(out[i])) throw std::runtime_error("nonfinite output");
             }
             state.rotation = rotation;
+            state.output_rotation = output_rotation;
             state.position = position;
             state.imu_position = imu_position;
         }

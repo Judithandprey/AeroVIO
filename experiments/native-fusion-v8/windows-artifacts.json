@@ -1,0 +1,23 @@
+[
+  {
+    "variant": "confidence",
+    "selected_on_validation": false,
+    "path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-native-v8-confidence.wasm",
+    "sha256": "8a28e507d49e0d987f121bcfc4f614439a58a0431e14406eaa6fab578e093bf3",
+    "bytes": 1931101
+  },
+  {
+    "variant": "rotation",
+    "selected_on_validation": true,
+    "path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-native-v8-rotation.wasm",
+    "sha256": "50fac7f6d17e37f0cc5f473a326bca70d0fc6bc602a502fc0216bb17a5ae19ac",
+    "bytes": 1939524
+  },
+  {
+    "variant": "combined",
+    "selected_on_validation": false,
+    "path": "C:/Users/ROG/Documents/GitHub/AeroVIO/artifacts/AeroVIO-native-v8-combined.wasm",
+    "sha256": "1cc0445d7dce49fb03af66d9f982badea323af45a555f6b2d9e713cfc026ebaf",
+    "bytes": 1940620
+  }
+]

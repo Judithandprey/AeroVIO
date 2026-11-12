@@ -1,5 +1,40 @@
 # AeroVIO - Handoff
 
+## Native fusion V8 (November 12, 2026)
+
+Read `docs/native-fusion-v8.md` and `experiments/native-fusion-v8/README.md`
+for the newest experiment on `experiment/native-fusion-v8`, based directly on
+teacher commit `0c4f7781cfc844d7fdc4f7223619a739b9f30cc7`. The old experiment
+branch and all earlier models/artifacts remain preserved. The teacher's exact
+Native 160 artifact is the reference; a flags-off rebuild has identical
+trajectories, twists and metrics, with separately measured runtime overhead.
+
+The fixed 2x2 experiment tests heuristic confidence weighting and bounded
+two-view geometric rotation refinement. Original IMU weights, calibration,
+tracking resolution and 8/4/8-frame capture/delay/spread schedule stay fixed.
+There is no retraining, online bias estimation, 3D map or server submission.
+Both CMake options remain OFF by default.
+
+Four original validation flights select `rotation`: mean rotation RMSE falls
+from 2.17047 to 2.00309 degrees (-7.71%), with essentially unchanged mean aligned
+ATE. Selection is frozen before public evaluation. The confidence and combined
+arms fail the validation position guards and remain diagnostic artifacts.
+
+On ten complete public episodes the selected rotation arm achieves 0.479744 m
+mean Sim(3) ATE, 11.4083 degrees median rotation RMSE and 2,233,398 peak fuel,
+versus teacher Native 160's 0.486329 m, 12.1963 degrees and 2,232,749. Mean fuel
+increases 1.39%. Confidence and combined ATE are 0.629407/0.624094 m. Timing is
+host-dependent; prefer deterministic fuel when describing compute changes.
+The complete repeated-run and ABI/test evidence is in the V8 record. Never
+describe these ten public episodes as the course server's private result.
+
+Windows WASMs are under `artifacts/`: `AeroVIO-native-v8-rotation.wasm` is the
+validation-selected candidate; `...-confidence.wasm` and `...-combined.wasm`
+are rejected diagnostics. Original `AeroVIO-native-160-0c4f778.wasm` stays intact.
+Use `experiments/native-fusion-v8/windows-artifacts.json` for hashes.
+Raw logs/traces live in WSL `results/native-fusion-v8/`. Reproduce to a fresh
+name using `scripts/reproduce_native_fusion.py`; keep both evidence sets.
+
 ## Baseline correction (November 10, 2026)
 
 The server's Exact values table identifies the similar-compute frontier point
@@ -117,7 +152,7 @@ conceptual distinction between geometric warping and a learned world model.
 ## Workspace and branch
 
 - Private repository: https://github.com/Judithandprey/AeroVIO.
-- Branch: `experiment/perspective-map`.
+- Current branch: `experiment/native-fusion-v8`; earlier branch `experiment/perspective-map` is preserved.
 - Build checkout: WSL Ubuntu `/root/projects/AeroVIO`.
 - Windows Git mirror: `C:/Users/ROG/Documents/GitHub/AeroVIO`.
 - WSL owns build products, datasets and caches; source changes must be synchronized

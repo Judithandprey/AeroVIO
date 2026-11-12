@@ -1,0 +1,804 @@
+{
+  "scope": "4 original scene-disjoint 10-second validation flights, actual WASM",
+  "manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+  "variants": {
+    "teacher": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17657057145288832,
+            "rpe_rotation_rmse": 0.010654413883117275,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.48944713475087365,
+            "rotation_rmse": 0.03125655641601184,
+            "rotation_max": 0.043255244761070934,
+            "velocity_rmse": 0.18564268497388045,
+            "angular_velocity_rmse": 0.04262245728907989,
+            "sim3_scale": 2.440537427753925,
+            "sim3_ate_rmse": 0.18871353616201378,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 0.9648426153043738,
+            "drift_per_metre": 0.5864488464013766
+          },
+          "max_fuel": 1857213,
+          "median_step_ms": 0.08361450090887956,
+          "diagnostics": null
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17858170850828176,
+            "rpe_rotation_rmse": 0.011441788292944987,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.40623602598785674,
+            "rotation_rmse": 0.04460490137848815,
+            "rotation_max": 0.07917019757505171,
+            "velocity_rmse": 0.19010082410939602,
+            "angular_velocity_rmse": 0.04437192857415984,
+            "sim3_scale": 1.1493798614090107,
+            "sim3_ate_rmse": 0.2582510468172359,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.2910226575405219,
+            "drift_per_metre": 0.13819790828874828
+          },
+          "max_fuel": 2208350,
+          "median_step_ms": 0.08457700096187182,
+          "diagnostics": null
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15091624315358693,
+            "rpe_rotation_rmse": 0.010495005605655826,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.2913599581601398,
+            "rotation_rmse": 0.03782372322702544,
+            "rotation_max": 0.07052608088462155,
+            "velocity_rmse": 0.17283447903275206,
+            "angular_velocity_rmse": 0.042966816070267505,
+            "sim3_scale": 1.0741450575388252,
+            "sim3_ate_rmse": 0.19716794969527768,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.41284488984913986,
+            "drift_per_metre": 0.2578315744280892
+          },
+          "max_fuel": 2587891,
+          "median_step_ms": 0.10635349826770835,
+          "diagnostics": null
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.26030230228049084,
+            "rpe_rotation_rmse": 0.013550275578241452,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5305387363629475,
+            "rotation_rmse": 0.03784219307684648,
+            "rotation_max": 0.07094517698676887,
+            "velocity_rmse": 0.26920943346141224,
+            "angular_velocity_rmse": 0.04334091576564517,
+            "sim3_scale": 2.1497986077444358,
+            "sim3_ate_rmse": 0.2435042559780223,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.4530439456640571,
+            "drift_per_metre": 0.5520265738366918
+          },
+          "max_fuel": 2515113,
+          "median_step_ms": 0.11023100159945898,
+          "diagnostics": null
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.2219091971631374,
+        "mean_rotation_deg": 2.1704697541341647,
+        "mean_unaligned_ate_m": 0.4293954638154544,
+        "max_fuel": 2587891
+      }
+    },
+    "control": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17657057145288832,
+            "rpe_rotation_rmse": 0.010654413883117275,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.48944713475087365,
+            "rotation_rmse": 0.03125655641601184,
+            "rotation_max": 0.043255244761070934,
+            "velocity_rmse": 0.18564268497388045,
+            "angular_velocity_rmse": 0.04262245728907989,
+            "sim3_scale": 2.440537427753925,
+            "sim3_ate_rmse": 0.18871353616201378,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 0.9648426153043738,
+            "drift_per_metre": 0.5864488464013766
+          },
+          "max_fuel": 1857858,
+          "median_step_ms": 0.07848050154279917,
+          "diagnostics": {
+            "direct_fits": 0.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 0.0,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17858170850828176,
+            "rpe_rotation_rmse": 0.011441788292944987,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.40623602598785674,
+            "rotation_rmse": 0.04460490137848815,
+            "rotation_max": 0.07917019757505171,
+            "velocity_rmse": 0.19010082410939602,
+            "angular_velocity_rmse": 0.04437192857415984,
+            "sim3_scale": 1.1493798614090107,
+            "sim3_ate_rmse": 0.2582510468172359,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.2910226575405219,
+            "drift_per_metre": 0.13819790828874828
+          },
+          "max_fuel": 2208557,
+          "median_step_ms": 0.08864399933372624,
+          "diagnostics": {
+            "direct_fits": 0.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 0.0,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15091624315358693,
+            "rpe_rotation_rmse": 0.010495005605655826,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.2913599581601398,
+            "rotation_rmse": 0.03782372322702544,
+            "rotation_max": 0.07052608088462155,
+            "velocity_rmse": 0.17283447903275206,
+            "angular_velocity_rmse": 0.042966816070267505,
+            "sim3_scale": 1.0741450575388252,
+            "sim3_ate_rmse": 0.19716794969527768,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.41284488984913986,
+            "drift_per_metre": 0.2578315744280892
+          },
+          "max_fuel": 2588804,
+          "median_step_ms": 0.10653400022420101,
+          "diagnostics": {
+            "direct_fits": 0.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 0.0,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.26030230228049084,
+            "rpe_rotation_rmse": 0.013550275578241452,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5305387363629475,
+            "rotation_rmse": 0.03784219307684648,
+            "rotation_max": 0.07094517698676887,
+            "velocity_rmse": 0.26920943346141224,
+            "angular_velocity_rmse": 0.04334091576564517,
+            "sim3_scale": 2.1497986077444358,
+            "sim3_ate_rmse": 0.2435042559780223,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.4530439456640571,
+            "drift_per_metre": 0.5520265738366918
+          },
+          "max_fuel": 2515326,
+          "median_step_ms": 0.10631799887050875,
+          "diagnostics": {
+            "direct_fits": 0.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 0.0,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.2219091971631374,
+        "mean_rotation_deg": 2.1704697541341647,
+        "mean_unaligned_ate_m": 0.4293954638154544,
+        "max_fuel": 2588804
+      }
+    },
+    "confidence": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1818178036589757,
+            "rpe_rotation_rmse": 0.010654413883117275,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5389238204102443,
+            "rotation_rmse": 0.03125655641601184,
+            "rotation_max": 0.043255244761070934,
+            "velocity_rmse": 0.18868987754108482,
+            "angular_velocity_rmse": 0.04262245728907989,
+            "sim3_scale": 2.4201689953791843,
+            "sim3_ate_rmse": 0.19889623518097432,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.04107182147167,
+            "drift_per_metre": 0.6327823409110496
+          },
+          "max_fuel": 1857888,
+          "median_step_ms": 0.08326450188178569,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 10.634119936925632,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1789797101249086,
+            "rpe_rotation_rmse": 0.011441788292944987,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.42104535861228204,
+            "rotation_rmse": 0.04460490137848815,
+            "rotation_max": 0.07917019757505171,
+            "velocity_rmse": 0.18732663839117888,
+            "angular_velocity_rmse": 0.04437192857415984,
+            "sim3_scale": 1.133822026924144,
+            "sim3_ate_rmse": 0.26209043484131933,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.24846162712214623,
+            "drift_per_metre": 0.1179869548594115
+          },
+          "max_fuel": 2208637,
+          "median_step_ms": 0.08521799827576615,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 10.738871286071756,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1512842819218312,
+            "rpe_rotation_rmse": 0.010495005605655826,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.33298623017195617,
+            "rotation_rmse": 0.03782372322702544,
+            "rotation_max": 0.07052608088462155,
+            "velocity_rmse": 0.17121987127622187,
+            "angular_velocity_rmse": 0.042966816070267505,
+            "sim3_scale": 1.026439883659061,
+            "sim3_ate_rmse": 0.2060345149755126,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.3651905112869944,
+            "drift_per_metre": 0.22807026756642515
+          },
+          "max_fuel": 2588854,
+          "median_step_ms": 0.10784650294226594,
+          "diagnostics": {
+            "direct_fits": 17.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 12.190387141383836,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2609715933374298,
+            "rpe_rotation_rmse": 0.013550275578241452,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5071815023151233,
+            "rotation_rmse": 0.03784219307684648,
+            "rotation_max": 0.07094517698676887,
+            "velocity_rmse": 0.2675343320994832,
+            "angular_velocity_rmse": 0.04334091576564517,
+            "sim3_scale": 2.004967703925112,
+            "sim3_ate_rmse": 0.27363653752716705,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.3745271288212317,
+            "drift_per_metre": 0.5221972149107995
+          },
+          "max_fuel": 2515416,
+          "median_step_ms": 0.10210950131295249,
+          "diagnostics": {
+            "direct_fits": 19.0,
+            "rotation_fits": 0.0,
+            "weight_sum": 13.697179756488248,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.0
+          }
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.23516443063124332,
+        "mean_rotation_deg": 2.1704697541341647,
+        "mean_unaligned_ate_m": 0.45003422787740144,
+        "max_fuel": 2588854
+      }
+    },
+    "rotation": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17657228446778528,
+            "rpe_rotation_rmse": 0.010435879255701936,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4893971355782863,
+            "rotation_rmse": 0.030599144901609428,
+            "rotation_max": 0.042559231462235295,
+            "velocity_rmse": 0.18564257922777674,
+            "angular_velocity_rmse": 0.04261700374312874,
+            "sim3_scale": 2.4404337067821222,
+            "sim3_ate_rmse": 0.18869535738046078,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 0.9648497122250367,
+            "drift_per_metre": 0.5864531600385127
+          },
+          "max_fuel": 1858254,
+          "median_step_ms": 0.07816450306563638,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 11.0,
+            "weight_sum": 14.85,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.006673504504541594
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17857380991707422,
+            "rpe_rotation_rmse": 0.011131455368288337,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.40630031874264516,
+            "rotation_rmse": 0.04158251945442642,
+            "rotation_max": 0.07053643848803928,
+            "velocity_rmse": 0.19009990995956977,
+            "angular_velocity_rmse": 0.044410268266494045,
+            "sim3_scale": 1.149307791709627,
+            "sim3_ate_rmse": 0.2582288746689282,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.2909090853588676,
+            "drift_per_metre": 0.13814397627507943
+          },
+          "max_fuel": 2208969,
+          "median_step_ms": 0.08706099833943881,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 13.0,
+            "weight_sum": 15.0,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.019995201616778466
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15091716223668314,
+            "rpe_rotation_rmse": 0.009759234037916986,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.2921708257778675,
+            "rotation_rmse": 0.03399650298583022,
+            "rotation_max": 0.06293213831834645,
+            "velocity_rmse": 0.17283446770003869,
+            "angular_velocity_rmse": 0.04279038451573565,
+            "sim3_scale": 1.0740317096078507,
+            "sim3_ate_rmse": 0.19718359237751812,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.415269398356188,
+            "drift_per_metre": 0.2593457383694545
+          },
+          "max_fuel": 2589216,
+          "median_step_ms": 0.11032600014004856,
+          "diagnostics": {
+            "direct_fits": 17.0,
+            "rotation_fits": 17.0,
+            "weight_sum": 17.0,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.014581681583382987
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2603031555122324,
+            "rpe_rotation_rmse": 0.012597121003379232,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.530478949448598,
+            "rotation_rmse": 0.033663696807934684,
+            "rotation_max": 0.06129396897897738,
+            "velocity_rmse": 0.26920844961741713,
+            "angular_velocity_rmse": 0.04326205753226144,
+            "sim3_scale": 2.1499955722130566,
+            "sim3_ate_rmse": 0.24345562451804958,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.4529317917411353,
+            "drift_per_metre": 0.5519839653897846
+          },
+          "max_fuel": 2515738,
+          "median_step_ms": 0.10651900083757937,
+          "diagnostics": {
+            "direct_fits": 19.0,
+            "rotation_fits": 17.0,
+            "weight_sum": 19.0,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.020147511735534033
+          }
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.22189086223623916,
+        "mean_rotation_deg": 2.003087153756349,
+        "mean_unaligned_ate_m": 0.42958680738684923,
+        "max_fuel": 2589216
+      }
+    },
+    "combined": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.18182077019466167,
+            "rpe_rotation_rmse": 0.010435879255701936,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5388627440665401,
+            "rotation_rmse": 0.030599144901609428,
+            "rotation_max": 0.042559231462235295,
+            "velocity_rmse": 0.18868966080968394,
+            "angular_velocity_rmse": 0.04261700374312874,
+            "sim3_scale": 2.4200644220697565,
+            "sim3_ate_rmse": 0.19887928021486642,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.0410847170373985,
+            "drift_per_metre": 0.6327901790698592
+          },
+          "max_fuel": 1858284,
+          "median_step_ms": 0.07957700290717185,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 11.0,
+            "weight_sum": 10.634119936925632,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.006673504504541594
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17897408399051046,
+            "rpe_rotation_rmse": 0.011131455368288337,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4210963571865761,
+            "rotation_rmse": 0.04158251945442642,
+            "rotation_max": 0.07053643848803928,
+            "velocity_rmse": 0.18732579711937977,
+            "angular_velocity_rmse": 0.044410268266494045,
+            "sim3_scale": 1.1337575748589213,
+            "sim3_ate_rmse": 0.26207002482781694,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.24846632853240888,
+            "drift_per_metre": 0.11798918741776211
+          },
+          "max_fuel": 2209049,
+          "median_step_ms": 0.08461700053885579,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 13.0,
+            "weight_sum": 10.738871286071756,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.019995201616778466
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1512854930831614,
+            "rpe_rotation_rmse": 0.009759234037916986,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.33360590312169347,
+            "rotation_rmse": 0.03399650298583022,
+            "rotation_max": 0.06293213831834645,
+            "velocity_rmse": 0.17121977541092456,
+            "angular_velocity_rmse": 0.04279038451573565,
+            "sim3_scale": 1.026356940429664,
+            "sim3_ate_rmse": 0.20604475734598784,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.3676553556346156,
+            "drift_per_metre": 0.229609622211458
+          },
+          "max_fuel": 2589266,
+          "median_step_ms": 0.11107250247732736,
+          "diagnostics": {
+            "direct_fits": 17.0,
+            "rotation_fits": 17.0,
+            "weight_sum": 12.190387141383836,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.014581681583382987
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.260971131877414,
+            "rpe_rotation_rmse": 0.012597121003379232,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5069895772371652,
+            "rotation_rmse": 0.033663696807934684,
+            "rotation_max": 0.06129396897897738,
+            "velocity_rmse": 0.26753369085983203,
+            "angular_velocity_rmse": 0.04326205753226144,
+            "sim3_scale": 2.0051661579245974,
+            "sim3_ate_rmse": 0.2736015367892219,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.3741921512764141,
+            "drift_per_metre": 0.5220699534422598
+          },
+          "max_fuel": 2515828,
+          "median_step_ms": 0.10610849858494475,
+          "diagnostics": {
+            "direct_fits": 19.0,
+            "rotation_fits": 17.0,
+            "weight_sum": 13.697179756488248,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.020147511735534033
+          }
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.2351488997944733,
+        "mean_rotation_deg": 2.003087153756349,
+        "mean_unaligned_ate_m": 0.45013864540299375,
+        "max_fuel": 2589266
+      }
+    },
+    "combined-repeat": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.18182077019466167,
+            "rpe_rotation_rmse": 0.010435879255701936,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5388627440665401,
+            "rotation_rmse": 0.030599144901609428,
+            "rotation_max": 0.042559231462235295,
+            "velocity_rmse": 0.18868966080968394,
+            "angular_velocity_rmse": 0.04261700374312874,
+            "sim3_scale": 2.4200644220697565,
+            "sim3_ate_rmse": 0.19887928021486642,
+            "distance_travelled": 1.6452289423449855,
+            "final_drift": 1.0410847170373985,
+            "drift_per_metre": 0.6327901790698592
+          },
+          "max_fuel": 1858284,
+          "median_step_ms": 0.08192649693228304,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 11.0,
+            "weight_sum": 10.634119936925632,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.006673504504541594
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17897408399051046,
+            "rpe_rotation_rmse": 0.011131455368288337,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.4210963571865761,
+            "rotation_rmse": 0.04158251945442642,
+            "rotation_max": 0.07053643848803928,
+            "velocity_rmse": 0.18732579711937977,
+            "angular_velocity_rmse": 0.044410268266494045,
+            "sim3_scale": 1.1337575748589213,
+            "sim3_ate_rmse": 0.26207002482781694,
+            "distance_travelled": 2.1058398143947614,
+            "final_drift": 0.24846632853240888,
+            "drift_per_metre": 0.11798918741776211
+          },
+          "max_fuel": 2209049,
+          "median_step_ms": 0.0987089988484513,
+          "diagnostics": {
+            "direct_fits": 15.0,
+            "rotation_fits": 13.0,
+            "weight_sum": 10.738871286071756,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.019995201616778466
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1512854930831614,
+            "rpe_rotation_rmse": 0.009759234037916986,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.33360590312169347,
+            "rotation_rmse": 0.03399650298583022,
+            "rotation_max": 0.06293213831834645,
+            "velocity_rmse": 0.17121977541092456,
+            "angular_velocity_rmse": 0.04279038451573565,
+            "sim3_scale": 1.026356940429664,
+            "sim3_ate_rmse": 0.20604475734598784,
+            "distance_travelled": 1.601219287299837,
+            "final_drift": 0.3676553556346156,
+            "drift_per_metre": 0.229609622211458
+          },
+          "max_fuel": 2589266,
+          "median_step_ms": 0.10739050048869103,
+          "diagnostics": {
+            "direct_fits": 17.0,
+            "rotation_fits": 17.0,
+            "weight_sum": 12.190387141383836,
+            "carry_fits": 0.0,
+            "applied_rotation_norm_sum_rad": 0.014581681583382987
+          }
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "metrics": {
+            "frames": 200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.260971131877414,
+            "rpe_rotation_rmse": 0.012597121003379232,
+            "rpe_pairs": 180,
+            "ate_rmse": 0.5069895772371652,
+            "rotation_rmse": 0.033663696807934684,
+            "rotation_max": 0.06129396897897738,
+            "velocity_rmse": 0.26753369085983203,
+            "angular_velocity_rmse": 0.04326205753226144,
+            "sim3_scale": 2.0051661579245974,
+            "sim3_ate_rmse": 0.2736015367892219,
+            "distance_travelled": 2.632199271794326,
+            "final_drift": 1.3741921512764141,
+            "drift_per_metre": 0.5220699534422598
+          },
+          "max_fuel": 2515828,
+          "median_step_ms": 0.1058074994944036,
+          "diagnostics": {
+            "direct_fits": 19.0,
+            "rotation_fits": 17.0,
+            "weight_sum": 13.697179756488248,
+            "carry_fits": 1.0,
+            "applied_rotation_norm_sum_rad": 0.020147511735534033
+          }
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.2351488997944733,
+        "mean_rotation_deg": 2.003087153756349,
+        "mean_unaligned_ate_m": 0.45013864540299375,
+        "max_fuel": 2589266
+      }
+    }
+  },
+  "checks": [
+    {
+      "episode": 0,
+      "control_pose_twist_exact": true,
+      "confidence_orientation_exact": true,
+      "combined_repeat_outputs_fuel_exact": true,
+      "causal_prefix_exact": true,
+      "twist_consistent": true,
+      "input_sha256": "191d7e815b95157d94738ea3e546bacea74274f8641cfd2e27e49b56d03f6369",
+      "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9"
+    },
+    {
+      "episode": 1,
+      "control_pose_twist_exact": true,
+      "confidence_orientation_exact": true,
+      "combined_repeat_outputs_fuel_exact": true,
+      "causal_prefix_exact": true,
+      "twist_consistent": true,
+      "input_sha256": "2e6d26ffd08016462c365ea4ebd70fc5da1fbd4131e7295f6918be0a560ded2a",
+      "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b"
+    },
+    {
+      "episode": 2,
+      "control_pose_twist_exact": true,
+      "confidence_orientation_exact": true,
+      "combined_repeat_outputs_fuel_exact": true,
+      "causal_prefix_exact": true,
+      "twist_consistent": true,
+      "input_sha256": "b951052e2a3fe5d1f9b3501f52f12347623806d007d2e7aa75ce02e1b3d90192",
+      "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a"
+    },
+    {
+      "episode": 3,
+      "control_pose_twist_exact": true,
+      "confidence_orientation_exact": true,
+      "combined_repeat_outputs_fuel_exact": true,
+      "causal_prefix_exact": true,
+      "twist_consistent": true,
+      "input_sha256": "20eb835ef40affdb39c701ee278f9dc8098a082c878c2a62f58629a59b4217ae",
+      "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a"
+    }
+  ]
+}

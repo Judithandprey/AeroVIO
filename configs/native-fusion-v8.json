@@ -1,0 +1,27 @@
+{
+  "reference_commit": "0c4f7781cfc844d7fdc4f7223619a739b9f30cc7",
+  "checkpoint": "experiments/motion-ablation-v2/imu-only-compact/net.onnx",
+  "checkpoint_sha256": "710de3d43219f61390b12dcf40cc4d205cc2a8120c2b9230fc57cfeb29a0e28b",
+  "validation_manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "validation_scenes": ["ProcTHOR-Train-5", "ProcTHOR-Train-6"],
+  "public_episodes": "configs/public-episodes.json",
+  "limits": "configs/evaluation-limits.json",
+  "variants": [
+    {"name": "control", "confidence": false, "rotation": false},
+    {"name": "confidence", "confidence": true, "rotation": false},
+    {"name": "rotation", "confidence": false, "rotation": true},
+    {"name": "combined", "confidence": true, "rotation": true}
+  ],
+  "selection": {
+    "minimum_relative_improvement": 0.02,
+    "mean_sim3_ate_ratio_max": 1.0,
+    "mean_rotation_rmse_ratio_max": 1.0,
+    "mean_unaligned_ate_ratio_max": 1.02,
+    "max_fuel_ratio_max": 1.5,
+    "minimum_sim3_episode_wins": 3,
+    "absolute_tolerance": 1e-9,
+    "rule": "All guards pass; at least 2% lower mean Sim3 ATE or mean rotation RMSE. Rank eligible candidates by mean Sim3 ATE, then mean rotation. Freeze on 4 validation flights before public evaluation. No validation-driven parameter sweep in this round."
+  },
+  "scope": "Fixed 2x2 inference ablation. No retraining, online bias estimation, map, adaptive capture interval or server submission. Preserve source defaults and prior artifacts. All public arms are diagnostic even when not selected.",
+  "latency": {"capture_interval_frames": 8, "fit_delay_frames": 4, "correction_spread_frames": 8}
+}

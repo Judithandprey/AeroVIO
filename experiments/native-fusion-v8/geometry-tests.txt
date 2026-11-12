@@ -1,0 +1,17 @@
+rotation known 0.004000 0.000000 0.000000, applied 0.000931 0.000091 -0.000012
+PASS mixed-depth translation plus gyro error recovers the correct rotation sign
+rotation known 0.000000 0.004000 0.000000, applied 0.000096 0.000605 0.000000
+PASS mixed-depth translation plus gyro error recovers the correct rotation sign
+rotation known 0.000000 0.000000 0.004000, applied -0.000012 0.000000 0.000922
+PASS mixed-depth translation plus gyro error recovers the correct rotation sign
+rotation known 0.003000 -0.002000 0.002000, applied 0.000648 -0.000241 0.000453
+PASS mixed-depth translation plus gyro error recovers the correct rotation sign
+PASS translation alone does not create rotation
+PASS coincident rays reject unobservable rotation
+PASS too few tracks reject
+PASS invalid focal rejects
+PASS tracking degradation lowers bounded quality
+PASS empty quality is zero
+PASS outliers cannot create an unbounded correction
+11 geometry checks, 0 failed
+geometry fuel: 2095546

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "split_corners.h"
+#include "fusion_geometry.h"
 #include <opencv2/imgproc.hpp>
 #include <opencv2/video/tracking.hpp>
 #include <algorithm>
@@ -13,15 +14,6 @@ namespace visual_direction {
 using cv::Matx33d;
 using cv::Point2f;
 using cv::Vec3d;
-
-struct Match {
-    Vec3d anchor;
-    Vec3d current;
-    Vec3d normal;
-    Vec3d unit_normal;
-};
-
-inline double length(const Vec3d& v) { return std::sqrt(v.dot(v)); }
 
 // The two rays are expressed in the anchor camera's axes. For any valid
 // match, its epipolar-plane normal is perpendicular to camera translation.
@@ -112,6 +104,7 @@ public:
     }
 
     Vec3d step(const uint8_t* rgb, const Matx33d& camera_to_world, const Vec3d& imu_position) {
+        rotation_step_ = {0., 0., 0.};
         switch (frame_index_ % VISUAL_INTERVAL) {
         case 0:
             make_gray(rgb);
@@ -151,9 +144,18 @@ public:
             break;
         }
         ++frame_index_;
+        if constexpr (VISUAL_ROTATION_CORRECTION) {
+            if (rotation_frames_ > 0) { --rotation_frames_; rotation_step_ = pending_rotation_; }
+        }
         if (correction_frames_ == 0) return {0., 0., 0.};
         --correction_frames_;
         return pending_;
+    }
+
+    Vec3d rotation_step() const { return rotation_step_; }
+    std::array<double,5> diagnostics() const {
+        return {double(direct_fits_), double(rotation_fits_), quality_sum_,
+                double(carry_fits_), rotation_sum_};
     }
 
 private:
@@ -179,6 +181,9 @@ private:
     Vec3d previous_visual_heading_{0., 0., 0.}, previous_inertial_heading_{0., 0., 0.};
     double previous_baseline_ = 0.;
     bool previous_heading_valid_ = false;
+    int direct_fits_ = 0, rotation_fits_ = 0, carry_fits_ = 0, rotation_frames_ = 0;
+    double quality_sum_ = 0., rotation_sum_ = 0., previous_weight_ = 1.;
+    Vec3d pending_rotation_{0.,0.,0.}, rotation_step_{0.,0.,0.};
 
     void make_gray(const uint8_t* rgb) {
         current_.create(height, width, CV_8UC1);
@@ -247,6 +252,8 @@ private:
             auto& observation = observations_[indices[i]];
             observation.after = point;
             observation.match = {a, b, normal, normal * (1. / magnitude)};
+            if constexpr (VISUAL_CONFIDENCE_WEIGHTING)
+                observation.match.photometric_error = errors[i];
             observation.forward_ok = true;
         }
     }
@@ -273,6 +280,8 @@ private:
         for (size_t i = 0; i < indices.size(); ++i) {
             const auto back_error = reverse[i] - points_[indices[i]];
             observations_[indices[i]].reverse_ok = status[i] && !(back_error.dot(back_error) > .49f);
+            if constexpr (VISUAL_CONFIDENCE_WEIGHTING)
+                observations_[indices[i]].match.backward_error = std::sqrt(back_error.dot(back_error));
         }
     }
 
@@ -307,7 +316,22 @@ private:
         const bool sparse = VISUAL_SPARSE_DIRECTION && scale == 2 && matches.size() < 10;
         if (baseline > .005 && estimate_direction(matches, sparse, direction)) {
             const Vec3d heading = anchor_rotation_ * direction;
-            const double weight = sparse ? .85 : 1.;
+            double weight = sparse ? .85 : 1.;
+            if constexpr (VISUAL_CONFIDENCE_WEIGHTING) {
+                const double quality = fusion_quality(matches, direction, fx_, fy_);
+                weight *= .35 + .65 * quality;
+            }
+            if constexpr (VISUAL_CONFIDENCE_WEIGHTING || VISUAL_ROTATION_CORRECTION) {
+                ++direct_fits_; quality_sum_ += weight; previous_weight_ = weight;
+            }
+            if constexpr (VISUAL_ROTATION_CORRECTION) {
+                Vec3d residual;
+                if (refine_rotation(matches, direction, std::sqrt(fx_*fy_), residual)) {
+                    pending_rotation_ = anchor_rotation_ * residual / double(VISUAL_INTERVAL);
+                    rotation_frames_ = VISUAL_INTERVAL;
+                    ++rotation_fits_; rotation_sum_ += length(residual);
+                }
+            }
             pending_ = (heading * baseline - prior) * (weight / VISUAL_INTERVAL);
             correction_frames_ = VISUAL_INTERVAL;
             previous_visual_heading_ = heading;
@@ -316,7 +340,10 @@ private:
             previous_heading_valid_ = true;
         } else {
             if (supports_previous_heading(matches, prior, baseline)) {
-                pending_ = (previous_visual_heading_ * baseline - prior) * (.55 / VISUAL_INTERVAL);
+                double weight = .55;
+                if constexpr (VISUAL_CONFIDENCE_WEIGHTING) weight *= previous_weight_;
+                pending_ = (previous_visual_heading_ * baseline - prior) * (weight / VISUAL_INTERVAL);
+                if constexpr (VISUAL_CONFIDENCE_WEIGHTING || VISUAL_ROTATION_CORRECTION) ++carry_fits_;
                 correction_frames_ = VISUAL_INTERVAL;
             }
             // Extrapolation can only follow a directly observed heading.

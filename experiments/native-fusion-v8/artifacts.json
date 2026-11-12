@@ -1,0 +1,27 @@
+{
+  "teacher": {
+    "path": "/root/projects/AeroVIO/artifacts/teacher-0c4f778-results/AeroVIO-teacher-native-160-0c4f778.wasm",
+    "sha256": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+    "bytes": 1929107
+  },
+  "control": {
+    "path": "/root/projects/AeroVIO/results/native-fusion-v8/AeroVIO-native-v8-control.wasm",
+    "sha256": "88b9d384f4c849b20235ace8ebe740dcb79810762682625279b7819db30d7809",
+    "bytes": 1929521
+  },
+  "confidence": {
+    "path": "/root/projects/AeroVIO/results/native-fusion-v8/AeroVIO-native-v8-confidence.wasm",
+    "sha256": "8a28e507d49e0d987f121bcfc4f614439a58a0431e14406eaa6fab578e093bf3",
+    "bytes": 1931101
+  },
+  "rotation": {
+    "path": "/root/projects/AeroVIO/results/native-fusion-v8/AeroVIO-native-v8-rotation.wasm",
+    "sha256": "50fac7f6d17e37f0cc5f473a326bca70d0fc6bc602a502fc0216bb17a5ae19ac",
+    "bytes": 1939524
+  },
+  "combined": {
+    "path": "/root/projects/AeroVIO/results/native-fusion-v8/AeroVIO-native-v8-combined.wasm",
+    "sha256": "1cc0445d7dce49fb03af66d9f982badea323af45a555f6b2d9e713cfc026ebaf",
+    "bytes": 1940620
+  }
+}
