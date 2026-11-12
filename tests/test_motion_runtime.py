@@ -138,6 +138,22 @@ class MotionRuntimeTests(unittest.TestCase):
         np.testing.assert_array_equal(state[:3], [0, 0, 0])
         self.assertEqual(len(two.predictor.calls), 0)
 
+    def test_state_only_solution_never_prepares_a_frame_pair(self):
+        predictor = Predictor([0.1, 0, 0, 0, 0, 0], {"input_mode": "imu_only", "network_inputs": "state"})
+        solution = Solution(CONFIG, predictor)
+        with patch("solution.prepare_frame", side_effect=AssertionError("unexpected image preprocessing")), \
+             patch.object(predictor, "predict", return_value=predictor.motion) as predict:
+            initial = solution.step(0.0, FRAME, EMPTY)
+            first = solution.step(0.05, FRAME, EMPTY)
+            second = solution.step(0.10, FRAME, EMPTY)
+        np.testing.assert_array_equal(initial[:7], [0, 0, 0, 0, 0, 0, 1])
+        np.testing.assert_allclose(first[:3], [0.1, 0, 0])
+        np.testing.assert_allclose(second[:3], [0.2, 0, 0])
+        self.assertEqual(predict.call_count, 2)
+        for call in predict.call_args_list:
+            self.assertIsNone(call.args[0])
+            self.assertEqual(call.args[1].shape, (14,))
+
     def test_rejects_nonfinite_prediction_without_advancing_state(self):
         solution = Solution(CONFIG, Predictor([np.nan, 0, 0, 0, 0, 0]))
         solution.step(0, FRAME, EMPTY)
@@ -266,6 +282,7 @@ class InferenceContractTests(unittest.TestCase):
         one = predictor.predict(np.ones((2, 48, 64)), np.full(14, 5))
         two = predictor.predict(np.zeros((2, 48, 64)), np.full(14, 5))
         np.testing.assert_array_equal(one, two)
+        np.testing.assert_array_equal(one, predictor.predict(None, np.full(14, 5)))
         self.assertEqual(set(network.inputs), {"state"})
         np.testing.assert_array_equal(network.inputs["state"], np.full((1, 14), 2))
 

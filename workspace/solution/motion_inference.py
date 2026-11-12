@@ -70,14 +70,19 @@ class MotionPredictor:
         return value
 
     def predict(self, pair, state, rotation_prior=None):
-        pair = np.asarray(pair, dtype=np.float32)
+        """Predict motion from state and, for image graphs, a prepared frame pair."""
         state = np.asarray(state, dtype=np.float32)
-        if pair.shape != (2, self.size[1], self.size[0]) or state.shape != (14,):
-            raise ValueError("incorrect motion network input shape")
-        if not np.isfinite(pair).all() or not np.isfinite(state).all():
-            raise ValueError("motion network inputs must be finite")
+        if state.shape != (14,):
+            raise ValueError("incorrect motion network state shape")
+        if not np.isfinite(state).all():
+            raise ValueError("motion network state must be finite")
         normalized = (state - self.state_mean) / self.state_std
         if self.network_inputs == "images_state":
+            pair = np.asarray(pair, dtype=np.float32)
+            if pair.shape != (2, self.size[1], self.size[0]):
+                raise ValueError("incorrect motion network image pair shape")
+            if not np.isfinite(pair).all():
+                raise ValueError("motion network image pair must be finite")
             # The matched information ablation keeps the entire CNN graph and cost.
             # Its separately trained weights never receive visual observations.
             images = np.zeros_like(pair) if self.input_mode == "imu_only" else pair

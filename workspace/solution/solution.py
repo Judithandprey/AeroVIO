@@ -49,7 +49,8 @@ class Solution:
             import solution_bundle as bundle
             predictor = MotionPredictor(bundle)
         self.predictor = predictor
-        _, _, self.rotation_residual_enabled = validate_motion_options(predictor.meta)
+        _, network_inputs, self.rotation_residual_enabled = validate_motion_options(predictor.meta)
+        self.uses_image_pair = network_inputs == "images_state"
         self.gyro_calibration = InitialGyroBias() if validate_gyro_bias_options(predictor.meta) else None
         self.size = tuple(predictor.size)
         self.previous = None
@@ -76,8 +77,8 @@ class Solution:
             raise ValueError("frame time must be finite")
         if self.previous_t is not None and t <= self.previous_t:
             raise ValueError("frame times must strictly increase")
-        small = prepare_frame(frame, self.size)
-        if self.previous is None:
+        small = prepare_frame(frame, self.size) if self.uses_image_pair else None
+        if self.previous_t is None:
             if self.map is not None:
                 gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
                 self.T, self.last_map_diagnostics = self.map.update(gray, self.K, self.T.copy())
@@ -93,7 +94,7 @@ class Solution:
         if self.gyro_calibration is not None and self.gyro_calibration.accepted:
             delta[:3, :3] = integrate_debiased_rotation(imu, self.T_cam_imu, self.previous_t, t,
                                                        self.gyro_calibration.bias_imu)
-        pair = np.stack([self.previous, small])
+        pair = np.stack([self.previous, small]) if self.uses_image_pair else None
         if getattr(self.predictor, "requires_rotation_prior", False):
             prediction = self.predictor.predict(pair, state, rotation_prior=log_so3(delta[:3, :3]))
         else:
