@@ -21,6 +21,7 @@ from torch.nn import functional as F
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from training.motion_model import MotionNet, fold_zero_image_features, network_image_input, photometric_loss
+from training.motion_sampling import validate_plan
 
 
 def digest(path):
@@ -117,6 +118,7 @@ def main():
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--input-mode", choices=["image_imu", "imu_only"], default="image_imu")
     parser.add_argument("--compact-out", type=Path, help="Optional equivalent state-only graph for an IMU-only run")
+    parser.add_argument("--sampling-plan", type=Path, help="Optional fixed training index plan; normalization/validation stay unchanged")
     args = parser.parse_args()
     if args.out.exists():
         parser.error("output already exists; preserve previous runs")
@@ -132,6 +134,10 @@ def main():
     torch.set_num_threads(args.threads)
     torch.use_deterministic_algorithms(True)
     train, validation = (load_data(args.cache / f"{split}.npz") for split in ["train", "validation"])
+    sampling_plan = None
+    if args.sampling_plan is not None:
+        with np.load(args.sampling_plan, allow_pickle=False) as plan:
+            sampling_plan = validate_plan(plan['order'], args.epochs, len(train['target']))
     state_mean = train["state"].mean(0)
     state_std = train["state"].std(0, correction=0).clamp_min(1e-6)
     target_mean = train["target"].mean(0)
@@ -162,6 +168,9 @@ def main():
            "source_sha256": {str(p.relative_to(ROOT)): digest(p) for p in
                              [Path(__file__), ROOT / "training/motion_model.py", ROOT / "workspace/solution/preintegrate.py"]}}
     (args.out / "run.json").write_text(json.dumps(run, indent=2) + "\n")
+    run['sampling'] = ({'kind': 'fixed_index_plan', 'path': str(args.sampling_plan.resolve()),
+                        'sha256': digest(args.sampling_plan)} if sampling_plan is not None
+                       else {'kind': 'original_uniform_randperm'})
     best_loss = float("inf")
     history = []
     minibatch_order_hash = hashlib.sha256()
@@ -169,7 +178,8 @@ def main():
     for epoch in range(args.epochs):
         epoch_start = time.perf_counter()
         # Identical order in both ablations, independent of other RNG consumption.
-        order = torch.randperm(len(train["target"]), generator=torch.Generator().manual_seed(args.seed + epoch + 1000))
+        order = (torch.randperm(len(train["target"]), generator=torch.Generator().manual_seed(args.seed + epoch + 1000))
+                 if sampling_plan is None else torch.from_numpy(sampling_plan[epoch]))
         minibatch_order_hash.update(order.numpy().tobytes())
         net.train()
         loss_sum = 0.

@@ -73,3 +73,6 @@ report-*/
 !experiments/tiny-cnn-v7/matched/net.onnx
 !experiments/tiny-cnn-v7/upstream/weights.npz
 !experiments/tiny-cnn-v7/matched/weights.npz
+!experiments/data-balance-v9/control/net.onnx
+!experiments/data-balance-v9/balanced/net.onnx
+!experiments/data-balance-v9/balanced-repeat/net.onnx

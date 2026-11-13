@@ -1,0 +1,8 @@
+{
+  "mean_sim3_ate_m": -2.138352367794949,
+  "mean_unaligned_ate_m": -0.40319846816302407,
+  "length_rmse_1s_m": 1.0227602433122707,
+  "median_local_direction_deg": -3.392780269443618,
+  "mean_fuel": 8.109140110512669e-05,
+  "max_fuel": 0.0
+}

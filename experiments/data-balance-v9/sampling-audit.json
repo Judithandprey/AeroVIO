@@ -1,0 +1,223 @@
+{
+  "protocol_sha256": "4661c1312c04595c89d4e7e8c40917406edc7daafd92ab54ccc09f7c3c4e5811",
+  "manifest_sha256": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+  "groups": {
+    "names": [
+      "startup_transition",
+      "cruise",
+      "turn"
+    ],
+    "startup_seconds": 1.0,
+    "low_speed_m_s": 0.1,
+    "turn_deg_s": 15.0,
+    "tangential_acceleration_m_s2": 0.2,
+    "speed_smoothing_frames": 5,
+    "precedence": "first second -> startup; then angular speed >=15 -> turn; then speed <0.1 or absolute smoothed tangential acceleration >0.2 -> startup/transition; otherwise approximately steady cruise"
+  },
+  "splits": {
+    "train": {
+      "pairs": 2388,
+      "counts": [
+        1346,
+        749,
+        293
+      ],
+      "source_cache_sha256": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336",
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-2",
+          "seed": 271828,
+          "counts": [
+            169,
+            18,
+            12
+          ],
+          "episode_json_sha256": "be64325ef6e72000c38a0c0a85bbf7d52786d219e2d1c700d7f01ecd58d33fa0"
+        },
+        {
+          "scene": "ProcTHOR-Train-2",
+          "seed": 271829,
+          "counts": [
+            64,
+            38,
+            97
+          ],
+          "episode_json_sha256": "0d176cd9ee3baad7709d48267b2da634314ae60174f7a0c2323672a191b9861b"
+        },
+        {
+          "scene": "ProcTHOR-Train-2",
+          "seed": 271830,
+          "counts": [
+            104,
+            84,
+            11
+          ],
+          "episode_json_sha256": "df4b92c6c01218801c7364514880f44280598a1d74442c7fba9e2b14328cd804"
+        },
+        {
+          "scene": "ProcTHOR-Train-2",
+          "seed": 271831,
+          "counts": [
+            138,
+            33,
+            28
+          ],
+          "episode_json_sha256": "d26fe35a155247b5463a90f6ff36cfca5509e6865f4dfa3cc077cd50a8934b67"
+        },
+        {
+          "scene": "ProcTHOR-Train-3",
+          "seed": 271832,
+          "counts": [
+            71,
+            89,
+            39
+          ],
+          "episode_json_sha256": "e5a3ea7759b2c8959cb18a2cd8590d99992e382013ec7b6f207c4205dec50180"
+        },
+        {
+          "scene": "ProcTHOR-Train-3",
+          "seed": 271833,
+          "counts": [
+            96,
+            89,
+            14
+          ],
+          "episode_json_sha256": "2db9430b532030a60308f4c37921b4e3a030fcd6d755e830758ea020f25273b2"
+        },
+        {
+          "scene": "ProcTHOR-Train-3",
+          "seed": 271834,
+          "counts": [
+            81,
+            97,
+            21
+          ],
+          "episode_json_sha256": "1b4581c4e10a9e869fb3b7586ef41492fbe122435687ed37260f75e9966e989e"
+        },
+        {
+          "scene": "ProcTHOR-Train-3",
+          "seed": 271835,
+          "counts": [
+            84,
+            115,
+            0
+          ],
+          "episode_json_sha256": "6c40043c4aa6b02e0d5c39d65bb46d02ff35e930342ec219da391649fe6047c5"
+        },
+        {
+          "scene": "ProcTHOR-Train-4",
+          "seed": 271836,
+          "counts": [
+            137,
+            57,
+            5
+          ],
+          "episode_json_sha256": "fd2e2484449bed4904d3999544738084d36c018501ff01e17855a4647061eb37"
+        },
+        {
+          "scene": "ProcTHOR-Train-4",
+          "seed": 271837,
+          "counts": [
+            165,
+            33,
+            1
+          ],
+          "episode_json_sha256": "63dc13b57b3849b6c284b164b3db2225b8767c067a121fd8d10aa288618a11f4"
+        },
+        {
+          "scene": "ProcTHOR-Train-4",
+          "seed": 271838,
+          "counts": [
+            162,
+            27,
+            10
+          ],
+          "episode_json_sha256": "5642a34e1fb27506814f227d792f87c9a328945a4c2d7cf7189c7df7badb6141"
+        },
+        {
+          "scene": "ProcTHOR-Train-4",
+          "seed": 271839,
+          "counts": [
+            75,
+            69,
+            55
+          ],
+          "episode_json_sha256": "e5760be16a7e135365f76fc649bd88764c0d88461aa531f14c0b3c2b6fe2b60f"
+        }
+      ]
+    },
+    "validation": {
+      "pairs": 796,
+      "counts": [
+        425,
+        280,
+        91
+      ],
+      "source_cache_sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516",
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271840,
+          "counts": [
+            148,
+            21,
+            30
+          ],
+          "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9"
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 271841,
+          "counts": [
+            92,
+            90,
+            17
+          ],
+          "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271842,
+          "counts": [
+            89,
+            89,
+            21
+          ],
+          "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 271843,
+          "counts": [
+            96,
+            80,
+            23
+          ],
+          "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a"
+        }
+      ]
+    }
+  },
+  "public_data_used": false,
+  "balanced_plan_sha256": "a7492dd69e7e0c4ce5ef66124937665f2a8fafa9a1ea8f1dbd5f198718a182fb",
+  "sampled_group_counts_each_epoch": [
+    796,
+    796,
+    796
+  ],
+  "unique_training_pairs_seen": 2388,
+  "sampled_per_episode_total": [
+    6052,
+    13717,
+    7269,
+    7681,
+    9686,
+    7552,
+    8339,
+    6865,
+    6243,
+    5358,
+    6081,
+    10677
+  ]
+}

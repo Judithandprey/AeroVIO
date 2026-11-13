@@ -1,0 +1,14 @@
+[
+  {
+    "name": "AeroVIO-native-v9-control.wasm",
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-native-v9-control.wasm",
+    "sha256": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+    "bytes": 1929107
+  },
+  {
+    "name": "AeroVIO-native-v9-balanced.wasm",
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-native-v9-balanced.wasm",
+    "sha256": "75ff86ccf0a2ecebdbe417ed05e2651462d480858a27a4acd60c30079c48281e",
+    "bytes": 1929107
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "teacher_control": {
+    "all_10_episodes_pose_twist_metrics_fuel_exact": true
+  },
+  "teacher_repeat": {
+    "all_10_episodes_pose_twist_metrics_fuel_exact": true
+  },
+  "balanced_repeat": {
+    "all_10_episodes_pose_twist_metrics_fuel_exact": true
+  },
+  "preserved_teacher": {
+    "all_10_episodes_pose_twist_metrics_fuel_exact": true
+  },
+  "rebuilt_control_wasm_byte_identical_to_teacher": true,
+  "all_balanced_rotations_and_angular_twists_exact": true
+}

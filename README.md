@@ -14,7 +14,19 @@ See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
 local comparison and the boundary between reproducing an algorithm and obtaining
 the server's actual weights. Earlier reports remain preserved.
 
-**Latest completed experiment:** the native fusion V8 ablation extends teacher
+**Latest completed experiment:** V9 balances startup/transition, cruise and turn
+training exposure while preserving the teacher's network, losses, normalization
+and native inference code. The control reproduces the teacher WASM byte for byte.
+On ten public flights, balancing lowers mean Sim(3) ATE from 0.486329 to
+0.475930 m, but worsens one-second displacement-length RMSE from 0.229366 to
+0.231712 m. Rotations and peak fuel remain unchanged. It fails the fixed
+validation guards, so the teacher reference is retained. Category balance did
+not remove low-speed bias: low-speed exposure rose from 49.7% to 51.5% because
+many turning examples are slow. See [V9 evidence](experiments/data-balance-v9/README.md)
+and [method and reproduction](docs/data-balance-v9.md). No workspace default or
+server submission changed.
+
+**Previous completed experiment:** the native fusion V8 ablation extends teacher
 commit `0c4f778`. A bounded geometric rotation correction is selected on four
 scene-disjoint validation flights before public evaluation. On ten public
 flights it lowers mean Sim(3) ATE from 0.486329 to 0.479744 m and median rotation

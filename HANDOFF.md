@@ -1,5 +1,49 @@
 # AeroVIO - Handoff
 
+## Data balance V9 (November 12, 2026)
+
+Read `docs/data-balance-v9.md` and `experiments/data-balance-v9/README.md` for
+the completed sampling-only contrast on `experiment/native-fusion-v8`.
+It builds exact teacher `0c4f778` C++ sources, not the V8 rotation/confidence
+variants. The control retrains the original IMU-only graph and reproduces both
+the teacher compact ONNX and entire Native 160 WASM byte for byte.
+
+Original startup/transition, cruise and turn counts are 1,346 / 749 / 293.
+Balanced exposure is 796 per category per epoch, with the original 2,388-example
+epoch size, seed 17, normalization, losses, 40 epochs and 1,520 optimizer steps.
+The original validation pose-loss criterion selects epochs 14 and 7 for control
+and balanced. A full balanced-training repeat reproduces the weights exactly.
+
+Validation retains teacher: mean one-second length RMSE improves only 0.85%,
+below the frozen 2% requirement, while mean Sim3 ATE worsens 0.30%. On ten public
+flights balancing changes Sim3 ATE from 0.486329 to 0.475930 m (-2.14%), but
+one-second displacement-length RMSE worsens from 0.229366 to 0.231712 m (+1.02%).
+Median predicted/true distance stays around 0.40. All rotations are identical;
+peak fuel is unchanged at 2,232,749. Mean fuel differs by less than 0.0001%.
+
+Category balance did not reduce low-speed exposure: 84.6% of the original turn
+examples are below 0.1 m/s, so overall low-speed exposure rises from 49.7% to
+51.5%. This does not refute speed-distribution balancing; it exposes a limitation
+of this three-category design. No new thresholds or fits were tried after
+viewing the results. A speed-by-turn design and fresh long-flight validation
+are future discussion, not pending authorized work.
+
+All 123 host tests pass. Both new WASMs pass 80-frame checks. Five full public
+runs complete 10/10 with exact teacher/control and both repeat pose/twist/fuel
+checks. Serial timing fluctuates even for identical teacher/control binaries,
+so a separate 12,000-frame paired timing audit alternates execution order.
+Paired medians are 0.1403 ms teacher and 0.1395 ms balanced; treat speed as
+essentially unchanged, not a large speedup inferred from serial wall times.
+Paired outputs and fuel also reproduce the saved public results.
+
+Windows artifacts: `artifacts/AeroVIO-native-v9-control.wasm` (identical teacher)
+and `artifacts/AeroVIO-native-v9-balanced.wasm` (unselected diagnostic).
+Hashes are in `experiments/data-balance-v9/windows-artifacts.json`.
+Raw logs, traces, build sources and timing plan remain under WSL
+`results/data-balance-v9/`; data sampling plans under `data/motion-balance-v9/`.
+All earlier models, branch references and workspace defaults remain unchanged.
+No training/evaluation is pending, and no course-server upload occurred.
+
 ## Native fusion V8 (November 12, 2026)
 
 Read `docs/native-fusion-v8.md` and `experiments/native-fusion-v8/README.md`

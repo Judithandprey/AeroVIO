@@ -1,0 +1,57 @@
+{
+  "teacher_control_model_exact": true,
+  "balanced_retraining_exact": true,
+  "normalization_and_settings_exact": true,
+  "optimizer_steps_each": 1520,
+  "epochs_each": 40,
+  "source_sha256": {
+    "configs/data-balance-v9.json": "4661c1312c04595c89d4e7e8c40917406edc7daafd92ab54ccc09f7c3c4e5811",
+    "scripts/run_data_balance.py": "cd8ecc00b034a5d4507309287548e85aeed71fbd713c98fd0e7ed2aae614d9bd",
+    "scripts/train_motion.py": "687478e9c3dd0362e6bbde50879f879bd826fae9f7bedd3920ffdda65cb6e368",
+    "scripts/prepare_motion_balance.py": "e3d9688ba01719cfda609431cedfd36053e99cfd7d1a9d08cb7e2e39b59a5a8e",
+    "training/motion_sampling.py": "a27b0191b02c2843e47c5727d8a5af14fae67c7a70c0a523557f92574ae6980e",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+    "tests/test_motion_sampling.py": "a134f7304c6b2fcebdd307f0a5605612b2694ed08e4e9e3ddd1e1f81388fa54f"
+  },
+  "runs": {
+    "control": {
+      "best_epoch": 14,
+      "best_validation": {
+        "pose_loss": 0.2582994480827945,
+        "photo_loss": 0.0044540478169319015,
+        "visible_pairs": 796,
+        "translation_rmse_m": 0.010649434994406662,
+        "rotation_residual_rmse_rad": 0.0018395292946244066
+      },
+      "model_sha256": "b1a3ecb7c4241a3364254f539e5f6aadd1d3744bb66df475fddd81a634145fce",
+      "minibatch_order_sha256": "4f03096bfdabe2435d28a897eb296a298f1eab94147c7633fcfa0a671c4df62e",
+      "elapsed_s": 22.208360239000285
+    },
+    "balanced": {
+      "best_epoch": 7,
+      "best_validation": {
+        "pose_loss": 0.26123404098515535,
+        "photo_loss": 0.004446680547585289,
+        "visible_pairs": 796,
+        "translation_rmse_m": 0.010556440848292199,
+        "rotation_residual_rmse_rad": 0.0018638534891113406
+      },
+      "model_sha256": "bc61612f9d4438926dba6de485aed9fd23ec6e2fc2c3ab27b86e439169888632",
+      "minibatch_order_sha256": "9041b72bd241df4bdadeb3f6670c772ee387920c0b499aca388f70403d5e5875",
+      "elapsed_s": 24.888722804999816
+    },
+    "balanced-repeat": {
+      "best_epoch": 7,
+      "best_validation": {
+        "pose_loss": 0.26123404098515535,
+        "photo_loss": 0.004446680547585289,
+        "visible_pairs": 796,
+        "translation_rmse_m": 0.010556440848292199,
+        "rotation_residual_rmse_rad": 0.0018638534891113406
+      },
+      "model_sha256": "bc61612f9d4438926dba6de485aed9fd23ec6e2fc2c3ab27b86e439169888632",
+      "minibatch_order_sha256": "9041b72bd241df4bdadeb3f6670c772ee387920c0b499aca388f70403d5e5875",
+      "elapsed_s": 12.655618302999756
+    }
+  }
+}

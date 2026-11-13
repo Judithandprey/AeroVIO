@@ -1,0 +1,12 @@
+{
+  "teacher_commit": "0c4f7781cfc844d7fdc4f7223619a739b9f30cc7",
+  "cpp_sha256": {
+    "workspace/visual_native/gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+    "workspace/visual_native/inference.h": "c323b73e81b576aaff02f03f6f4c2db4c6e2e79c82ab21614196ea8603033a54",
+    "workspace/visual_native/rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+    "workspace/visual_native/solution.cpp": "1712952fa7df18cc881718316122d8299d06692718c1dfe35c63d14d78a1d455",
+    "workspace/visual_native/split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a",
+    "workspace/visual_native/visual_direction.h": "d4ab358af8adb94886b9831de626e2279eb4c95d777f59a9bc4b432feb2a1af4"
+  },
+  "changes": "Only build paths to new checkpoints. All C++ files byte-identical to teacher."
+}

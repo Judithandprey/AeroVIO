@@ -2,6 +2,7 @@
 
 | Record | Scope |
 | --- | --- |
+| [Teacher training-distribution contrast](data-balance-v9/README.md) | Fixed motion-category balancing; byte-identical teacher control, small public ATE gain but no distance improvement; teacher retained |
 | [Official KLT + IMU baseline](baseline-klt-imu/README.md) | Frozen source, initial build/public evaluation, source hashes and one-episode repeat |
 | [Small motion network and geometry ablations](learned-motion-v1/README.md) | Separate training data, pose/warp models, optional map, model snapshots and provenance |
 | [First geometry comparison](learned-motion-v1/comparison.md) | Completed four-way public evaluation with matched runtime, inputs and limits |

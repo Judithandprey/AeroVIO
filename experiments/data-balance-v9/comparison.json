@@ -1,0 +1,67 @@
+[
+  {
+    "name": "teacher",
+    "mean_sim3_ate_m": 0.4863289383661157,
+    "mean_unaligned_ate_m": 3.0122927639485426,
+    "median_rotation_deg": 12.196272984893167,
+    "length_rmse_1s_m": 0.2293659322590689,
+    "median_distance_ratio": 0.40058547767785724,
+    "median_local_direction_deg": 7.433414777856596,
+    "mean_fuel": 1035046.03675,
+    "max_fuel": 2232749,
+    "median_step_ms": 0.29158124993955425,
+    "wasm_bytes": 1929107
+  },
+  {
+    "name": "control",
+    "mean_sim3_ate_m": 0.4863289383661157,
+    "mean_unaligned_ate_m": 3.0122927639485426,
+    "median_rotation_deg": 12.196272984893167,
+    "length_rmse_1s_m": 0.2293659322590689,
+    "median_distance_ratio": 0.40058547767785724,
+    "median_local_direction_deg": 7.433414777856596,
+    "mean_fuel": 1035046.03675,
+    "max_fuel": 2232749,
+    "median_step_ms": 0.14806650028731383,
+    "wasm_bytes": 1929107
+  },
+  {
+    "name": "balanced",
+    "mean_sim3_ate_m": 0.47592951199729183,
+    "mean_unaligned_ate_m": 3.0001472456677165,
+    "median_rotation_deg": 12.196272984893167,
+    "length_rmse_1s_m": 0.2317117958259172,
+    "median_distance_ratio": 0.4000058156215802,
+    "median_local_direction_deg": 7.181215347927571,
+    "mean_fuel": 1035046.8760833333,
+    "max_fuel": 2232749,
+    "median_step_ms": 0.14800650001234317,
+    "wasm_bytes": 1929107
+  },
+  {
+    "name": "balanced-repeat",
+    "mean_sim3_ate_m": 0.47592951199729183,
+    "mean_unaligned_ate_m": 3.0001472456677165,
+    "median_rotation_deg": 12.196272984893167,
+    "length_rmse_1s_m": 0.2317117958259172,
+    "median_distance_ratio": 0.4000058156215802,
+    "median_local_direction_deg": 7.181215347927571,
+    "mean_fuel": 1035046.8760833333,
+    "max_fuel": 2232749,
+    "median_step_ms": 0.23610250013916811,
+    "wasm_bytes": 1929107
+  },
+  {
+    "name": "teacher-repeat",
+    "mean_sim3_ate_m": 0.4863289383661157,
+    "mean_unaligned_ate_m": 3.0122927639485426,
+    "median_rotation_deg": 12.196272984893167,
+    "length_rmse_1s_m": 0.2293659322590689,
+    "median_distance_ratio": 0.40058547767785724,
+    "median_local_direction_deg": 7.433414777856596,
+    "mean_fuel": 1035046.03675,
+    "max_fuel": 2232749,
+    "median_step_ms": 0.32146374996955274,
+    "wasm_bytes": 1929107
+  }
+]

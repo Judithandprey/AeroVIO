@@ -1,0 +1,132 @@
+{
+  "plan": {
+    "purpose": "Timing only; serial same-binary median timings varied substantially.",
+    "models": [
+      "teacher",
+      "balanced"
+    ],
+    "frames": "all 10 unchanged public episodes; no subsampling",
+    "order": "teacher first on even (episode index + frame index), balanced first on odd",
+    "reported": "all-frame pooled median, median per-episode ratio, and full per-episode medians",
+    "artifact_sha256": {
+      "teacher": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+      "balanced": "75ff86ccf0a2ecebdbe417ed05e2651462d480858a27a4acd60c30079c48281e"
+    },
+    "selection_sha256": "c1f03825b7a3dc0826cf8dc7ca12f9d6cfb3313cad9cfdb35cca93b7ffc79ed7",
+    "no_training_or_selection_change": true
+  },
+  "episodes": [
+    {
+      "hash": "0386e5c941b50fe9972ddabff84c414540fb8989",
+      "median_step_ms": {
+        "teacher": 0.14446150044022943,
+        "balanced": 0.141986999551591
+      },
+      "balanced_teacher_ratio": 0.9828708626097772,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "9b6a92791e46815931b6d6f20e74ca9ebf62682e",
+      "median_step_ms": {
+        "teacher": 0.1497220005148847,
+        "balanced": 0.15054300001793308
+      },
+      "balanced_teacher_ratio": 1.0054834927413807,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "6e8e3766f46272c1b91eca39c320081251884947",
+      "median_step_ms": {
+        "teacher": 0.1298584998039587,
+        "balanced": 0.1282760003959993
+      },
+      "balanced_teacher_ratio": 0.9878136632538614,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "f8fb89fff0c39d51e0f073603ef93b9a2ee00455",
+      "median_step_ms": {
+        "teacher": 0.1551175000713556,
+        "balanced": 0.15294300010282313
+      },
+      "balanced_teacher_ratio": 0.9859815948069548,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "489ad518363d88bfa877f86afea144de0d846258",
+      "median_step_ms": {
+        "teacher": 0.13837000005878508,
+        "balanced": 0.13755349982602638
+      },
+      "balanced_teacher_ratio": 0.9940991527613513,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "51ea6311a50f4eeb59672012b9796244dab52f60",
+      "median_step_ms": {
+        "teacher": 0.1245785001628974,
+        "balanced": 0.12387200058583403
+      },
+      "balanced_teacher_ratio": 0.9943288803755097,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "60ed4323f3aab9c83a854f30062cb4ffbefeac12",
+      "median_step_ms": {
+        "teacher": 0.13606599986815127,
+        "balanced": 0.13238349993116572
+      },
+      "balanced_teacher_ratio": 0.9729359285894058,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "8fff5c8dc6376171fc6f865fd214cee44df2b7c3",
+      "median_step_ms": {
+        "teacher": 0.12423299995134585,
+        "balanced": 0.12380699990899302
+      },
+      "balanced_teacher_ratio": 0.9965709590646634,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "41e11443a9a5cc165ef9aeeaef11dba63614685b",
+      "median_step_ms": {
+        "teacher": 0.15410100013468764,
+        "balanced": 0.15147600015552598
+      },
+      "balanced_teacher_ratio": 0.9829657174394238,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    },
+    {
+      "hash": "8321da1faa306e72df46f86a72aa3fa0d611c6d9",
+      "median_step_ms": {
+        "teacher": 0.15146050009207102,
+        "balanced": 0.1515359999757493
+      },
+      "balanced_teacher_ratio": 1.000498479033361,
+      "fuel_exact": true,
+      "saved_text_pose_twist_tolerance": 1e-07
+    }
+  ],
+  "pairs": 12000,
+  "median_step_ms": {
+    "teacher": 0.140259000545484,
+    "balanced": 0.1394675000483403
+  },
+  "median_episode_ratio": 0.9909564080076063,
+  "episode_ratio_quartiles": [
+    0.9837196867813066,
+    0.996010439392375
+  ],
+  "source_sha256": "f06930b6d1b25225d67ed29af0c77a9b8ce13cb0094799c1242697b796299c76",
+  "interpretation": "Paired warm-process timing reduces temporal host drift. It is not a server or hardware-independent latency guarantee."
+}

@@ -1,0 +1,22 @@
+{
+  "reference_commit": "0c4f7781cfc844d7fdc4f7223619a739b9f30cc7",
+  "reference_wasm_sha256": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+  "reference_model_sha256": "710de3d43219f61390b12dcf40cc4d205cc2a8120c2b9230fc57cfeb29a0e28b",
+  "cache": "data/motion-cache-v2",
+  "manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "public_episodes": "configs/public-episodes.json",
+  "limits": "configs/evaluation-limits.json",
+  "training": {"seed": 17, "epochs": 40, "batch": 64, "learning_rate": 0.001, "warp_weight": 2.0, "threads": 4, "device": "cpu", "samples_per_epoch": 2388, "checkpoint_selection": "minimum unchanged validation normalized pose loss"},
+  "groups": {
+    "names": ["startup_transition", "cruise", "turn"],
+    "startup_seconds": 1.0,
+    "low_speed_m_s": 0.1,
+    "turn_deg_s": 15.0,
+    "tangential_acceleration_m_s2": 0.2,
+    "speed_smoothing_frames": 5,
+    "precedence": "first second -> startup; then angular speed >=15 -> turn; then speed <0.1 or absolute smoothed tangential acceleration >0.2 -> startup/transition; otherwise approximately steady cruise"
+  },
+  "sampling": "Same original cache and normalization. Balanced arm draws 796 examples per group per epoch, cycling shuffled group members when needed; shuffle the combined epoch. Control uses original uniform randperm. Labels affect sampling only, never inference.",
+  "selection": {"minimum_distance_rmse_improvement": 0.02, "mean_sim3_ate_ratio_max": 1.0, "max_fuel_ratio_max": 1.05, "absolute_tolerance": 1e-9, "rule": "Prefer balanced only if unchanged validation flights show >=2% lower 1-second step-length RMSE, no mean Sim3 ATE regression, exact unchanged rotations, <=5% peak fuel increase. Otherwise retain teacher. Freeze before public evaluation; report both arms regardless."},
+  "scope": "One fixed sampling contrast, same seed and training budget. Exact teacher C++ inference sources and build settings. No new data, architecture, loss, calibration, map or V8 fusion changes. Public set already inspected; no independent generalization claim or server submission."
+}
