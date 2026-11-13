@@ -1,0 +1,14 @@
+{
+  "seed": 420000,
+  "duration_seconds": 60.0,
+  "fov_degrees": 120.0,
+  "validation": [
+    {"scene": "ProcTHOR-Train-5", "episodes": 2},
+    {"scene": "ProcTHOR-Train-6", "episodes": 2},
+    {"scene": "ProcTHOR-Train-7", "episodes": 2}
+  ],
+  "max_attempts_per_requested_episode": 3,
+  "physical_output": "/mnt/d/Robotics/我的机器人助手/artifacts/AeroVIO-data/long-validation-v10",
+  "logical_output": "data/long-validation-v10",
+  "crash_policy": "Accept first non-crashing 60s flights in predetermined sequential seed order; retain all attempts. No model-score based exclusion; if quota is not reached stop and report without silently changing scenes or seeds."
+}

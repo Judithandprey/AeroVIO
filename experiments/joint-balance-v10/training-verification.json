@@ -1,0 +1,30 @@
+{
+  "unchanged_settings_and_normalization": true,
+  "repeat_model_metrics_minibatches_exact": true,
+  "optimizer_steps_each": 1520,
+  "frozen": {
+    "frozen_utc": "2026-11-13T06:09:03.293589+00:00",
+    "source_sha256": {
+      "configs/joint-balance-v10.json": "1ddff99f4ad6ae54d1a56c26900f814a50cd6a7eefb10cfad4ed8dd447397cd8",
+      "configs/long-validation-v10.json": "8fdefee1ed78af3e31b9544b26c6beccb94384a1f2d1e1e6c3347253cbaa19fe",
+      "scripts/train_motion.py": "687478e9c3dd0362e6bbde50879f879bd826fae9f7bedd3920ffdda65cb6e368",
+      "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+      "training/joint_sampling.py": "4c02f7ec1958c0b46658163d7bf6093e4bb84c4c134b03e3b2ee02c13d8e90c5",
+      "scripts/prepare_joint_sampling.py": "9e431cca9c2c7bc71e46486a87f6cb366dd5fe910c4dba735c6f2318893d9389",
+      "scripts/train_joint_balance.py": "5d23aa0021f3df714b3ea445787ca6865cb3a1761d83858e776387de82dde193",
+      "scripts/generate_long_validation.py": "ccfa95f9dad9ec7f72e438084227d07e6e2e910c2cbeefe15f2ad36267baf607",
+      "data/joint-sampling-v10/sampling-audit.json": "1adff6adab1c3bfbbeca6011fd284fcc435b04d3961306808a5defbde9a16328",
+      "data/joint-sampling-v10/joint-plan.npz": "9e2227b7e00ecc5bbf2ec1a4d6d90b3586a0d3b640efac875ae51f78e8974fad"
+    },
+    "new_long_scores_used": false
+  },
+  "compact_model_sha256": "9f12df01190c6db3f06b8236f256e46e741701df891539e0c609288a641c767c",
+  "best_epoch": 5,
+  "best_validation": {
+    "pose_loss": 0.2776860671127262,
+    "photo_loss": 0.0046080236192137455,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.010488360988031329,
+    "rotation_residual_rmse_rad": 0.001947554369048231
+  }
+}

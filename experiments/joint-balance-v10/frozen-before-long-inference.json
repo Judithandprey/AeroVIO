@@ -1,0 +1,8 @@
+{
+  "frozen_utc": "2026-11-13T06:12:50.244493+00:00",
+  "protocol_sha256": "1ddff99f4ad6ae54d1a56c26900f814a50cd6a7eefb10cfad4ed8dd447397cd8",
+  "source_sha256": "130245f3b5b3c6e54f8527e2f3093263c43b8d044aff0e3d84536dc43a2f1f81",
+  "artifacts_sha256": "796ade7b2b1c1a6d87d0171981ac58834f3ec2f0daa79d8cd5573914f01a3019",
+  "evaluation_order": "rotate [teacher, category-v9, joint-v10, joint-repeat] by frame+episode index",
+  "new_long_scores_used_to_select_weights": false
+}

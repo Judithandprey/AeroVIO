@@ -1,0 +1,17 @@
+{
+  "teacher": {
+    "path": "/root/projects/AeroVIO/artifacts/teacher-0c4f778-results/AeroVIO-teacher-native-160-0c4f778.wasm",
+    "sha256": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+    "bytes": 1929107
+  },
+  "category-v9": {
+    "path": "/root/projects/AeroVIO/results/data-balance-v9/AeroVIO-native-v9-balanced.wasm",
+    "sha256": "75ff86ccf0a2ecebdbe417ed05e2651462d480858a27a4acd60c30079c48281e",
+    "bytes": 1929107
+  },
+  "joint-v10": {
+    "path": "/root/projects/AeroVIO/results/joint-balance-v10/AeroVIO-native-v10-joint.wasm",
+    "sha256": "ce8a2f4dde5108d41ccdd64333ab44906ded11be304d62136af0e03b48a4cd3e",
+    "bytes": 1929107
+  }
+}

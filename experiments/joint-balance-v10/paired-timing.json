@@ -1,0 +1,23 @@
+{
+  "category-v9": {
+    "median_episode_ratio_vs_teacher": 1.0306916601936504,
+    "episode_ratio_quartiles": [
+      1.0011724269215057,
+      1.049706191927464
+    ]
+  },
+  "joint-v10": {
+    "median_episode_ratio_vs_teacher": 0.9868416128974665,
+    "episode_ratio_quartiles": [
+      0.957534663704335,
+      1.045954716742567
+    ]
+  },
+  "joint-repeat": {
+    "median_episode_ratio_vs_teacher": 0.8675226029982154,
+    "episode_ratio_quartiles": [
+      0.8041802048262653,
+      0.9052514067707049
+    ]
+  }
+}

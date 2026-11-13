@@ -1,0 +1,189 @@
+{
+  "plan": {
+    "scope": "timing only, after accuracy evaluation; unchanged three distinct artifacts",
+    "reason": "four-way run included a duplicate V10 instance and showed cache-sensitive timing",
+    "order": "all six permutations per six-frame block, shuffled with a fixed independent seed",
+    "seed": 20261112,
+    "episodes": 6,
+    "frames_per_episode": 1200,
+    "artifacts_sha256": "796ade7b2b1c1a6d87d0171981ac58834f3ec2f0daa79d8cd5573914f01a3019",
+    "selection_sha256": "abe3e6262aedc1796b181ec0a83b3224a102e58b59a6c823d6a69c4a5138c389"
+  },
+  "source_sha256": "cc91bf45c29bbeadbdb10db8b7280c99c645ab8f1fe2ec615787490ee6c88f9e",
+  "episodes": [
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420000,
+      "position_counts": {
+        "teacher": [
+          400,
+          400,
+          400
+        ],
+        "category-v9": [
+          400,
+          400,
+          400
+        ],
+        "joint-v10": [
+          400,
+          400,
+          400
+        ]
+      },
+      "pose_twist_fuel_exact_vs_accuracy_run": true,
+      "median_step_ms": {
+        "teacher": 0.1719645006232895,
+        "category-v9": 0.17321149971394334,
+        "joint-v10": 0.18156300029659178
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420001,
+      "position_counts": {
+        "teacher": [
+          400,
+          400,
+          400
+        ],
+        "category-v9": [
+          400,
+          400,
+          400
+        ],
+        "joint-v10": [
+          400,
+          400,
+          400
+        ]
+      },
+      "pose_twist_fuel_exact_vs_accuracy_run": true,
+      "median_step_ms": {
+        "teacher": 0.1503234998381231,
+        "category-v9": 0.14640100198448636,
+        "joint-v10": 0.15126000107557047
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420002,
+      "position_counts": {
+        "teacher": [
+          400,
+          400,
+          400
+        ],
+        "category-v9": [
+          400,
+          400,
+          400
+        ],
+        "joint-v10": [
+          400,
+          400,
+          400
+        ]
+      },
+      "pose_twist_fuel_exact_vs_accuracy_run": true,
+      "median_step_ms": {
+        "teacher": 0.17741499868861865,
+        "category-v9": 0.17745500008459203,
+        "joint-v10": 0.18449400158715434
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420003,
+      "position_counts": {
+        "teacher": [
+          400,
+          400,
+          400
+        ],
+        "category-v9": [
+          400,
+          400,
+          400
+        ],
+        "joint-v10": [
+          400,
+          400,
+          400
+        ]
+      },
+      "pose_twist_fuel_exact_vs_accuracy_run": true,
+      "median_step_ms": {
+        "teacher": 0.17895300152304117,
+        "category-v9": 0.17946899970411323,
+        "joint-v10": 0.1810870016925037
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420004,
+      "position_counts": {
+        "teacher": [
+          400,
+          400,
+          400
+        ],
+        "category-v9": [
+          400,
+          400,
+          400
+        ],
+        "joint-v10": [
+          400,
+          400,
+          400
+        ]
+      },
+      "pose_twist_fuel_exact_vs_accuracy_run": true,
+      "median_step_ms": {
+        "teacher": 0.14720699982717633,
+        "category-v9": 0.14485700012301095,
+        "joint-v10": 0.14883550102240406
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420005,
+      "position_counts": {
+        "teacher": [
+          400,
+          400,
+          400
+        ],
+        "category-v9": [
+          400,
+          400,
+          400
+        ],
+        "joint-v10": [
+          400,
+          400,
+          400
+        ]
+      },
+      "pose_twist_fuel_exact_vs_accuracy_run": true,
+      "median_step_ms": {
+        "teacher": 0.13499349915946368,
+        "category-v9": 0.13196300096751656,
+        "joint-v10": 0.13491350000549573
+      }
+    }
+  ],
+  "frames_per_model": 7200,
+  "median_step_ms": {
+    "teacher": 0.16101900109788403,
+    "category-v9": 0.16043250070651993,
+    "joint-v10": 0.16499149933224544
+  },
+  "median_episode_ratio_vs_teacher": {
+    "teacher": 1.0,
+    "category-v9": 0.9921307775904841,
+    "joint-v10": 1.011493790540916
+  },
+  "scope": "fixed random order with exact first/second/third-position balance; host-specific, no accuracy/selection change"
+}

@@ -1,0 +1,142 @@
+{
+  "status": "passed_before_training",
+  "protocol_sha256": "1ddff99f4ad6ae54d1a56c26900f814a50cd6a7eefb10cfad4ed8dd447397cd8",
+  "labels_sha256": "d2596780411833a4b8513b1e30f202748cc0d1dc676edf3976c1e7c7853ca970",
+  "train_cache_sha256": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336",
+  "validation_cache_sha256": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516",
+  "counts": [
+    [
+      761,
+      179,
+      83,
+      165
+    ],
+    [
+      277,
+      81,
+      16,
+      20
+    ],
+    [
+      466,
+      72,
+      0,
+      9
+    ],
+    [
+      258,
+      1,
+      0,
+      0
+    ]
+  ],
+  "unique_episodes_per_cell": [
+    [
+      12,
+      12,
+      11,
+      8
+    ],
+    [
+      12,
+      5,
+      3,
+      3
+    ],
+    [
+      12,
+      4,
+      0,
+      1
+    ],
+    [
+      8,
+      1,
+      0,
+      0
+    ]
+  ],
+  "quotas_each_epoch": [
+    [
+      150,
+      149,
+      149,
+      149
+    ],
+    [
+      227,
+      226,
+      64,
+      80
+    ],
+    [
+      281,
+      280,
+      0,
+      36
+    ],
+    [
+      593,
+      4,
+      0,
+      0
+    ]
+  ],
+  "speed_exposure_each_epoch": [
+    597,
+    597,
+    597,
+    597
+  ],
+  "low_speed_fraction_original": 0.49748743718592964,
+  "low_speed_fraction_v9": 0.5150858458961474,
+  "low_speed_fraction_joint_each_epoch": [
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "max_sample_repeats_each_epoch": 4,
+  "unique_pairs_seen_over_40_epochs": 2388,
+  "plan_sha256": "9e2227b7e00ecc5bbf2ec1a4d6d90b3586a0d3b640efac875ae51f78e8974fad",
+  "speed_median_original": 0.10215270627733222,
+  "speed_median_joint": 0.24977859589856333,
+  "missing_cell_policy": "zero quota, never fabricated examples; support holes remain",
+  "public_or_new_long_scores_used": false
+}

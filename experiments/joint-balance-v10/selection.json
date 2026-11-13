@@ -1,0 +1,17 @@
+{
+  "selected_variant": "joint-v10",
+  "checks": {
+    "teacher_distance": true,
+    "teacher_aligned_ate": true,
+    "category-v9_distance": true,
+    "category-v9_aligned_ate": true,
+    "episode_wins": true,
+    "rotations_exact": true,
+    "fuel": true
+  },
+  "length_episode_wins_vs_teacher": 5,
+  "validation_sha256": "72fe654188c7560cb6fe3cbd9dfc9a2683a5e10746b6b67456eb138bdfe72483",
+  "protocol_sha256": "1ddff99f4ad6ae54d1a56c26900f814a50cd6a7eefb10cfad4ed8dd447397cd8",
+  "new_long_used_for_training_or_epoch_selection": false,
+  "finished_utc": "2026-11-13T06:30:15.895621+00:00"
+}

@@ -1,0 +1,1704 @@
+{
+  "scope": "6 new 60-second generated flights; rotating interleaved runtime order",
+  "manifest_sha256": "911f57d74fe3ba2fed30f7e610d9267ba5c986a9672d8a1aaf9b88e4a875df57",
+  "variants": {
+    "teacher": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.08823765658230147,
+            "rpe_rotation_rmse": 0.012037771223238855,
+            "rpe_pairs": 1180,
+            "ate_rmse": 0.5403068814076335,
+            "rotation_rmse": 0.2042455173807728,
+            "rotation_max": 0.35529038210747727,
+            "velocity_rmse": 0.11516217681206624,
+            "angular_velocity_rmse": 0.04070983753689159,
+            "sim3_scale": 1.1521528231549374,
+            "sim3_ate_rmse": 0.3038285030440083,
+            "distance_travelled": 14.371459654965982,
+            "final_drift": 0.24121767412290987,
+            "drift_per_metre": 0.016784493705867824
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.0808943916011481,
+            "length_bias_m": -0.03595437168323052,
+            "median_predicted_true_ratio": 0.8312804884588494,
+            "median_direction_deg": 6.2591248277439515,
+            "speed_bins": {
+              "slow": {
+                "windows": 104,
+                "length_rmse_m": 0.1320112535220785,
+                "length_bias_m": 0.12312488227984697,
+                "median_predicted_true_ratio": 2.800859934832736,
+                "median_direction_deg": 16.850733007688525
+              },
+              "medium": {
+                "windows": 490,
+                "length_rmse_m": 0.05408688426341425,
+                "length_bias_m": -0.015702394360730253,
+                "median_predicted_true_ratio": 0.9942312424738512,
+                "median_direction_deg": 6.771822493210918
+              },
+              "cruise": {
+                "windows": 586,
+                "length_rmse_m": 0.08739653517327325,
+                "length_bias_m": -0.08112111451631106,
+                "median_predicted_true_ratio": 0.7053679075520067,
+                "median_direction_deg": 5.957147706290039
+              }
+            }
+          },
+          "max_fuel": 2666142,
+          "mean_fuel": 1363863.3133333332,
+          "median_step_ms": 0.228663000598317,
+          "trace_sha256": "a23cd3513461c2c0b622b60727a3c2d424b3e16e12df84030e9bbb498e918e79"
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2625124466960336,
+            "rpe_rotation_rmse": 0.016645849499755644,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.551324708648446,
+            "rotation_rmse": 0.2567336634820793,
+            "rotation_max": 0.4856942673625863,
+            "velocity_rmse": 0.2692212143836979,
+            "angular_velocity_rmse": 0.04265827607470805,
+            "sim3_scale": 2.176627371079106,
+            "sim3_ate_rmse": 0.7801433100961347,
+            "distance_travelled": 21.708843837515964,
+            "final_drift": 1.874017643241612,
+            "drift_per_metre": 0.08632507826156285
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.26037223610379223,
+            "length_bias_m": -0.21112063869962394,
+            "median_predicted_true_ratio": 0.420648686606194,
+            "median_direction_deg": 5.165914300838839,
+            "speed_bins": {
+              "slow": {
+                "windows": 115,
+                "length_rmse_m": 0.07672711350287957,
+                "length_bias_m": 0.04650512493185584,
+                "median_predicted_true_ratio": 1.4644593003141582,
+                "median_direction_deg": 33.08687077489647
+              },
+              "medium": {
+                "windows": 247,
+                "length_rmse_m": 0.10423407740669346,
+                "length_bias_m": -0.09248175677985487,
+                "median_predicted_true_ratio": 0.5181629839476407,
+                "median_direction_deg": 12.924935621607819
+              },
+              "cruise": {
+                "windows": 480,
+                "length_rmse_m": 0.21099323558707211,
+                "length_bias_m": -0.2003547647373157,
+                "median_predicted_true_ratio": 0.454231878232807,
+                "median_direction_deg": 5.2415246610514945
+              },
+              "fast": {
+                "windows": 338,
+                "length_rmse_m": 0.4043669005678488,
+                "length_bias_m": -0.4007608344206627,
+                "median_predicted_true_ratio": 0.3325497548864732,
+                "median_direction_deg": 2.778951160406904
+              }
+            }
+          },
+          "max_fuel": 2803471,
+          "mean_fuel": 1202836.3225,
+          "median_step_ms": 0.20773799951712135,
+          "trace_sha256": "5e235142d2a7a10cd1f628b8a2da1d06194eb3ee6fd6d684bfde8e368f223160"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.18083542892065058,
+            "rpe_rotation_rmse": 0.02092816152448574,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.2100754657771946,
+            "rotation_rmse": 0.20309712156372514,
+            "rotation_max": 0.45449110382726154,
+            "velocity_rmse": 0.18931915646696174,
+            "angular_velocity_rmse": 0.04348296595760626,
+            "sim3_scale": 2.1087557278441516,
+            "sim3_ate_rmse": 0.33624974325684875,
+            "distance_travelled": 15.937211417420215,
+            "final_drift": 2.3649054019192235,
+            "drift_per_metre": 0.14838890819596312
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.17715349457066099,
+            "length_bias_m": -0.13468446188294475,
+            "median_predicted_true_ratio": 0.46934858367661847,
+            "median_direction_deg": 6.8545891948496,
+            "speed_bins": {
+              "slow": {
+                "windows": 140,
+                "length_rmse_m": 0.07810314808029753,
+                "length_bias_m": 0.06614154932448937,
+                "median_predicted_true_ratio": 1.8896804319959162,
+                "median_direction_deg": 26.54551085709452
+              },
+              "medium": {
+                "windows": 353,
+                "length_rmse_m": 0.09140072339937577,
+                "length_bias_m": -0.07662051737309106,
+                "median_predicted_true_ratio": 0.6366019008069378,
+                "median_direction_deg": 9.763165685997162
+              },
+              "cruise": {
+                "windows": 628,
+                "length_rmse_m": 0.19940949975825856,
+                "length_bias_m": -0.1897159860953011,
+                "median_predicted_true_ratio": 0.4290870361517368,
+                "median_direction_deg": 5.436203065304659
+              },
+              "fast": {
+                "windows": 59,
+                "length_rmse_m": 0.374108464128385,
+                "length_bias_m": -0.37286101740259486,
+                "median_predicted_true_ratio": 0.28903561659063404,
+                "median_direction_deg": 2.614532829298929
+              }
+            }
+          },
+          "max_fuel": 3124076,
+          "mean_fuel": 1515142.0275,
+          "median_step_ms": 0.23923350090626627,
+          "trace_sha256": "1a5e1fe772c014abab87fa3eb5c697ab91b95cf154084c615b48bd09b8b23768"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2042523443064497,
+            "rpe_rotation_rmse": 0.01517492459502848,
+            "rpe_pairs": 1180,
+            "ate_rmse": 3.0379740561406265,
+            "rotation_rmse": 0.3135120314410063,
+            "rotation_max": 0.42026309716686056,
+            "velocity_rmse": 0.21280688207245077,
+            "angular_velocity_rmse": 0.04049504272521912,
+            "sim3_scale": 2.641197008350339,
+            "sim3_ate_rmse": 0.47720060226355643,
+            "distance_travelled": 16.903879745461445,
+            "final_drift": 1.9426725105353988,
+            "drift_per_metre": 0.1149246527890729
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.20164047106366803,
+            "length_bias_m": -0.1622704344697833,
+            "median_predicted_true_ratio": 0.4129999895646709,
+            "median_direction_deg": 6.643519691025892,
+            "speed_bins": {
+              "slow": {
+                "windows": 185,
+                "length_rmse_m": 0.053689797995627196,
+                "length_bias_m": 0.03429050221570177,
+                "median_predicted_true_ratio": 0.9707818789703976,
+                "median_direction_deg": 23.062451745678743
+              },
+              "medium": {
+                "windows": 191,
+                "length_rmse_m": 0.08950323333919334,
+                "length_bias_m": -0.08106713312653742,
+                "median_predicted_true_ratio": 0.5701259735986954,
+                "median_direction_deg": 12.007173890076766
+              },
+              "cruise": {
+                "windows": 730,
+                "length_rmse_m": 0.21813812828421852,
+                "length_bias_m": -0.2104924794081033,
+                "median_predicted_true_ratio": 0.39656569038981115,
+                "median_direction_deg": 6.0928899311933975
+              },
+              "fast": {
+                "windows": 74,
+                "length_rmse_m": 0.38865033671595745,
+                "length_bias_m": -0.3875611241779053,
+                "median_predicted_true_ratio": 0.28132859258396814,
+                "median_direction_deg": 2.4950655585452823
+              }
+            }
+          },
+          "max_fuel": 2775160,
+          "mean_fuel": 1465155.9325,
+          "median_step_ms": 0.2547740004956722,
+          "trace_sha256": "0bf1a80f257f4637c634ae7b02de148bcc7772cad5a5c730ec9e5c96bc5299b1"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420004,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.2087076287166006,
+            "rpe_rotation_rmse": 0.017997965024253496,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.001620623598219,
+            "rotation_rmse": 0.3944550220603174,
+            "rotation_max": 0.590857070161532,
+            "velocity_rmse": 0.21656964223791955,
+            "angular_velocity_rmse": 0.04201522083371013,
+            "sim3_scale": 2.2302733045719365,
+            "sim3_ate_rmse": 0.6637613617247772,
+            "distance_travelled": 16.851425957016854,
+            "final_drift": 0.7617437815250397,
+            "drift_per_metre": 0.04520352066751082
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.2027045600680277,
+            "length_bias_m": -0.1593082812229181,
+            "median_predicted_true_ratio": 0.42069600958280373,
+            "median_direction_deg": 10.731181126888858,
+            "speed_bins": {
+              "slow": {
+                "windows": 135,
+                "length_rmse_m": 0.0962273226998885,
+                "length_bias_m": 0.07025426007672299,
+                "median_predicted_true_ratio": 1.3442703342597961,
+                "median_direction_deg": 60.51313296314596
+              },
+              "medium": {
+                "windows": 340,
+                "length_rmse_m": 0.10550694927385734,
+                "length_bias_m": -0.09688878326123493,
+                "median_predicted_true_ratio": 0.48657773453416475,
+                "median_direction_deg": 15.331554216898652
+              },
+              "cruise": {
+                "windows": 630,
+                "length_rmse_m": 0.22585837526685537,
+                "length_bias_m": -0.21528174672064987,
+                "median_predicted_true_ratio": 0.39873231241298546,
+                "median_direction_deg": 8.707481838363124
+              },
+              "fast": {
+                "windows": 75,
+                "length_rmse_m": 0.3883774335742594,
+                "length_bias_m": -0.3853121361409554,
+                "median_predicted_true_ratio": 0.2756131322316807,
+                "median_direction_deg": 7.874581154946942
+              }
+            }
+          },
+          "max_fuel": 2062190,
+          "mean_fuel": 950528.69,
+          "median_step_ms": 0.21420049779408146,
+          "trace_sha256": "d7565cf1bd3a6cf4d59c7faf685c9b4cfa76fbff0a35f425c8ac4f202c53a908"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420005,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15083730944969026,
+            "rpe_rotation_rmse": 0.01555939295837705,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.609241377657609,
+            "rotation_rmse": 0.22038728026554252,
+            "rotation_max": 0.32381937975576763,
+            "velocity_rmse": 0.1634687418700556,
+            "angular_velocity_rmse": 0.041669561011605,
+            "sim3_scale": 1.6093797777028969,
+            "sim3_ate_rmse": 0.5538078396051417,
+            "distance_travelled": 14.862443020499615,
+            "final_drift": 1.2354810359694939,
+            "drift_per_metre": 0.08312772229070332
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.1451339361864459,
+            "length_bias_m": -0.10735037656834005,
+            "median_predicted_true_ratio": 0.5516173315675214,
+            "median_direction_deg": 7.484206491973252,
+            "speed_bins": {
+              "slow": {
+                "windows": 144,
+                "length_rmse_m": 0.09017996641549322,
+                "length_bias_m": 0.059184446624795335,
+                "median_predicted_true_ratio": 1.0490105336637692,
+                "median_direction_deg": 30.381642734945295
+              },
+              "medium": {
+                "windows": 471,
+                "length_rmse_m": 0.08960370805966748,
+                "length_bias_m": -0.07656583773934339,
+                "median_predicted_true_ratio": 0.5882542750462384,
+                "median_direction_deg": 12.009559236866334
+              },
+              "cruise": {
+                "windows": 565,
+                "length_rmse_m": 0.1876859945882103,
+                "length_bias_m": -0.17545751343253282,
+                "median_predicted_true_ratio": 0.5049328346096859,
+                "median_direction_deg": 4.957143058535284
+              }
+            }
+          },
+          "max_fuel": 1998233,
+          "mean_fuel": 898826.8308333333,
+          "median_step_ms": 0.32768300116003957,
+          "trace_sha256": "331d71b1654e5694ac241e0f213209850e36f22753eb74ff2ed3d32807627347"
+        }
+      ],
+      "pooled_distance": {
+        "all": {
+          "windows": 7080,
+          "length_rmse_m": 0.18642819987014123,
+          "length_bias_m": -0.13511476075447343,
+          "median_predicted_true_ratio": 0.4859516907988044,
+          "median_local_direction_deg": 7.146669708397031
+        },
+        "speed_bins": {
+          "below_0.1": {
+            "windows": 823,
+            "length_rmse_m": 0.08747739521860688,
+            "length_bias_m": 0.0628961389598165,
+            "median_predicted_true_ratio": 1.398480865989397,
+            "median_local_direction_deg": 28.99549865125723
+          },
+          "0.1_to_0.25": {
+            "windows": 2092,
+            "length_rmse_m": 0.08789675376148277,
+            "length_bias_m": -0.06791239393178891,
+            "median_predicted_true_ratio": 0.6251748515810704,
+            "median_local_direction_deg": 11.18589654215507
+          },
+          "0.25_to_0.5": {
+            "windows": 3619,
+            "length_rmse_m": 0.1949864300966039,
+            "length_bias_m": -0.17995838765947078,
+            "median_predicted_true_ratio": 0.45776338888762097,
+            "median_local_direction_deg": 6.080148993827892
+          },
+          "above_0.5": {
+            "windows": 546,
+            "length_rmse_m": 0.3969091584120498,
+            "length_bias_m": -0.3938349733711973,
+            "median_predicted_true_ratio": 0.3233289050623329,
+            "median_local_direction_deg": 3.2260892756418924
+          }
+        }
+      },
+      "summary": {
+        "mean_sim3_ate_m": 0.5191652266650778,
+        "mean_unaligned_ate_m": 1.8250905188716213,
+        "median_rotation_deg": 13.668508197018747,
+        "mean_length_rmse_1s_m": 0.17798318159895718,
+        "pooled_length_rmse_1s_m": 0.18642819987014123,
+        "median_distance_ratio": 0.4859516907988044,
+        "max_fuel": 3124076,
+        "mean_fuel": 1232725.5194444444,
+        "paired_median_step_ms": 0.2451250020385487
+      }
+    },
+    "category-v9": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.09040127817134944,
+            "rpe_rotation_rmse": 0.012037771223238855,
+            "rpe_pairs": 1180,
+            "ate_rmse": 0.7171150057770763,
+            "rotation_rmse": 0.2042455173807728,
+            "rotation_max": 0.35529038210747727,
+            "velocity_rmse": 0.11128280539468635,
+            "angular_velocity_rmse": 0.04070983753689159,
+            "sim3_scale": 1.2147044208424305,
+            "sim3_ate_rmse": 0.2905326534645173,
+            "distance_travelled": 14.371459654965982,
+            "final_drift": 0.4991560963289984,
+            "drift_per_metre": 0.03473245643190583
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.08358865031137801,
+            "length_bias_m": -0.04340612770518263,
+            "median_predicted_true_ratio": 0.7960026903787933,
+            "median_direction_deg": 6.1133560982240285,
+            "speed_bins": {
+              "slow": {
+                "windows": 104,
+                "length_rmse_m": 0.1336056900375707,
+                "length_bias_m": 0.1264281016595984,
+                "median_predicted_true_ratio": 2.7681321551879563,
+                "median_direction_deg": 20.03175001905563
+              },
+              "medium": {
+                "windows": 490,
+                "length_rmse_m": 0.03877788460118503,
+                "length_bias_m": -0.019631698662184036,
+                "median_predicted_true_ratio": 0.9485755918557331,
+                "median_direction_deg": 6.316750203272202
+              },
+              "cruise": {
+                "windows": 586,
+                "length_rmse_m": 0.09820451962502894,
+                "length_bias_m": -0.0934269981574122,
+                "median_predicted_true_ratio": 0.6746515185960684,
+                "median_direction_deg": 5.7373114432475125
+              }
+            }
+          },
+          "max_fuel": 2666142,
+          "mean_fuel": 1363865.1833333333,
+          "median_step_ms": 0.2330269999220036,
+          "trace_sha256": "8c4852d1105e5264fa65ecead406c9eb64add058478adf62b7c3e37bff054aca"
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.26678569050457196,
+            "rpe_rotation_rmse": 0.016645849499755644,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.6190426669866684,
+            "rotation_rmse": 0.2567336634820793,
+            "rotation_max": 0.4856942673625863,
+            "velocity_rmse": 0.27223656262883505,
+            "angular_velocity_rmse": 0.04265827607470805,
+            "sim3_scale": 2.2657725589920594,
+            "sim3_ate_rmse": 0.699673710305658,
+            "distance_travelled": 21.708843837515964,
+            "final_drift": 1.7144174892560313,
+            "drift_per_metre": 0.07897322870291575
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.26532185505421824,
+            "length_bias_m": -0.21121842235202243,
+            "median_predicted_true_ratio": 0.41569142795509356,
+            "median_direction_deg": 5.005979384386007,
+            "speed_bins": {
+              "slow": {
+                "windows": 115,
+                "length_rmse_m": 0.08012749923584535,
+                "length_bias_m": 0.057258384976375,
+                "median_predicted_true_ratio": 1.260728737484766,
+                "median_direction_deg": 20.84869453903311
+              },
+              "medium": {
+                "windows": 247,
+                "length_rmse_m": 0.08628516925470828,
+                "length_bias_m": -0.07687432438068084,
+                "median_predicted_true_ratio": 0.6181773601594137,
+                "median_direction_deg": 9.52233424441848
+              },
+              "cruise": {
+                "windows": 480,
+                "length_rmse_m": 0.21357446738925898,
+                "length_bias_m": -0.202772922930508,
+                "median_predicted_true_ratio": 0.4352437279282796,
+                "median_direction_deg": 5.672833449524941
+              },
+              "fast": {
+                "windows": 338,
+                "length_rmse_m": 0.416362345812698,
+                "length_bias_m": -0.4127322234289869,
+                "median_predicted_true_ratio": 0.311299255393157,
+                "median_direction_deg": 2.572580715279509
+              }
+            }
+          },
+          "max_fuel": 2803471,
+          "mean_fuel": 1202872.8391666666,
+          "median_step_ms": 0.21652499890478794,
+          "trace_sha256": "3cca0524355d4e4bdd925e8360cde09c1e9f40e3987be12da25aaa1e6e708f6b"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17683100461388793,
+            "rpe_rotation_rmse": 0.02092816152448574,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.1812682175075948,
+            "rotation_rmse": 0.20309712156372514,
+            "rotation_max": 0.45449110382726154,
+            "velocity_rmse": 0.1843297781452551,
+            "angular_velocity_rmse": 0.04348296595760626,
+            "sim3_scale": 2.0424781464754087,
+            "sim3_ate_rmse": 0.30232787657457194,
+            "distance_travelled": 15.937211417420215,
+            "final_drift": 2.3422251403853713,
+            "drift_per_metre": 0.1469658071941742
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.173329957248357,
+            "length_bias_m": -0.12710659116996234,
+            "median_predicted_true_ratio": 0.5082850515275629,
+            "median_direction_deg": 6.703025329868007,
+            "speed_bins": {
+              "slow": {
+                "windows": 140,
+                "length_rmse_m": 0.08844676566857339,
+                "length_bias_m": 0.07928407052306509,
+                "median_predicted_true_ratio": 2.0201121094941783,
+                "median_direction_deg": 25.09289941957116
+              },
+              "medium": {
+                "windows": 353,
+                "length_rmse_m": 0.07781460189052368,
+                "length_bias_m": -0.0630520740687916,
+                "median_predicted_true_ratio": 0.6799134497235649,
+                "median_direction_deg": 8.681616969352245
+              },
+              "cruise": {
+                "windows": 628,
+                "length_rmse_m": 0.19535432859550597,
+                "length_bias_m": -0.1860382471891651,
+                "median_predicted_true_ratio": 0.441838429629987,
+                "median_direction_deg": 5.560091412579752
+              },
+              "fast": {
+                "windows": 59,
+                "length_rmse_m": 0.3739811363284136,
+                "length_bias_m": -0.37281603513060274,
+                "median_predicted_true_ratio": 0.28888196125257937,
+                "median_direction_deg": 2.231314365447646
+              }
+            }
+          },
+          "max_fuel": 3124076,
+          "mean_fuel": 1515185.4075,
+          "median_step_ms": 0.2330820007045986,
+          "trace_sha256": "8ac71883bb71c970b952d60b02886178370aaa929abdb916273bb732368d0374"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.19267376624004343,
+            "rpe_rotation_rmse": 0.01517492459502848,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.8478209583628606,
+            "rotation_rmse": 0.3135120314410063,
+            "rotation_max": 0.42026309716686056,
+            "velocity_rmse": 0.1997615288983668,
+            "angular_velocity_rmse": 0.04049504272521912,
+            "sim3_scale": 2.331675554416422,
+            "sim3_ate_rmse": 0.4573025255779579,
+            "distance_travelled": 16.903879745461445,
+            "final_drift": 1.8313010989498544,
+            "drift_per_metre": 0.1083361409644164
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.19018996944968322,
+            "length_bias_m": -0.1471043859261994,
+            "median_predicted_true_ratio": 0.4706737760588606,
+            "median_direction_deg": 6.602271895903705,
+            "speed_bins": {
+              "slow": {
+                "windows": 185,
+                "length_rmse_m": 0.05908098595965395,
+                "length_bias_m": 0.04619984096570172,
+                "median_predicted_true_ratio": 1.4606912207375324,
+                "median_direction_deg": 22.887919398789624
+              },
+              "medium": {
+                "windows": 191,
+                "length_rmse_m": 0.06937881536225192,
+                "length_bias_m": -0.05827160916823674,
+                "median_predicted_true_ratio": 0.6660317629465997,
+                "median_direction_deg": 10.776279399462961
+              },
+              "cruise": {
+                "windows": 730,
+                "length_rmse_m": 0.20457839979886985,
+                "length_bias_m": -0.19605559538724704,
+                "median_predicted_true_ratio": 0.44915790990898474,
+                "median_direction_deg": 5.784650608245514
+              },
+              "fast": {
+                "windows": 74,
+                "length_rmse_m": 0.3778658547496071,
+                "length_bias_m": -0.37675248632089886,
+                "median_predicted_true_ratio": 0.30552903117078445,
+                "median_direction_deg": 2.5044219194954787
+              }
+            }
+          },
+          "max_fuel": 2775160,
+          "mean_fuel": 1465155.9575,
+          "median_step_ms": 0.25355149773531593,
+          "trace_sha256": "2959921e99e0368c03ca4f73f40d0dade0c1014a2a1a257f9e2e5b41df022f40"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420004,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.20422306566519502,
+            "rpe_rotation_rmse": 0.017997965024253496,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.9373674614570078,
+            "rotation_rmse": 0.3944550220603174,
+            "rotation_max": 0.590857070161532,
+            "velocity_rmse": 0.2109633750686208,
+            "angular_velocity_rmse": 0.04201522083371013,
+            "sim3_scale": 2.0706455946428717,
+            "sim3_ate_rmse": 0.67729880741699,
+            "distance_travelled": 16.851425957016854,
+            "final_drift": 0.8207292860254876,
+            "drift_per_metre": 0.048703847859459026
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.19854463574590073,
+            "length_bias_m": -0.1531578599866269,
+            "median_predicted_true_ratio": 0.45681066910942986,
+            "median_direction_deg": 10.362805421737194,
+            "speed_bins": {
+              "slow": {
+                "windows": 135,
+                "length_rmse_m": 0.10057793378341127,
+                "length_bias_m": 0.0705522351274774,
+                "median_predicted_true_ratio": 1.362855964770051,
+                "median_direction_deg": 24.603406252209524
+              },
+              "medium": {
+                "windows": 340,
+                "length_rmse_m": 0.09327021752522194,
+                "length_bias_m": -0.0841117851514813,
+                "median_predicted_true_ratio": 0.5782648044097625,
+                "median_direction_deg": 14.781752936207143
+              },
+              "cruise": {
+                "windows": 630,
+                "length_rmse_m": 0.22191012877124938,
+                "length_bias_m": -0.2109560589432168,
+                "median_predicted_true_ratio": 0.4190448266325808,
+                "median_direction_deg": 8.448495756421647
+              },
+              "fast": {
+                "windows": 75,
+                "length_rmse_m": 0.3858904580108729,
+                "length_bias_m": -0.383340032542653,
+                "median_predicted_true_ratio": 0.2788023555815761,
+                "median_direction_deg": 7.515065072837574
+              }
+            }
+          },
+          "max_fuel": 2062190,
+          "mean_fuel": 950528.6208333333,
+          "median_step_ms": 0.22537650147569366,
+          "trace_sha256": "1b2b20e05e90e14e32f430273294037899423b243f58ea2dbdfb7d186a465a8f"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420005,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15312002950563453,
+            "rpe_rotation_rmse": 0.01555939295837705,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.6289070976247997,
+            "rotation_rmse": 0.22038728026554252,
+            "rotation_max": 0.32381937975576763,
+            "velocity_rmse": 0.16323370666480858,
+            "angular_velocity_rmse": 0.041669561011605,
+            "sim3_scale": 1.6308544377338379,
+            "sim3_ate_rmse": 0.5363743045833147,
+            "distance_travelled": 14.862443020499615,
+            "final_drift": 1.2342272725888725,
+            "drift_per_metre": 0.08304336446481346
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.14819191902259396,
+            "length_bias_m": -0.10856790107915675,
+            "median_predicted_true_ratio": 0.5477575854616976,
+            "median_direction_deg": 7.215100934627154,
+            "speed_bins": {
+              "slow": {
+                "windows": 144,
+                "length_rmse_m": 0.08938740505450458,
+                "length_bias_m": 0.05761317575004039,
+                "median_predicted_true_ratio": 1.11804706967882,
+                "median_direction_deg": 29.756954779633038
+              },
+              "medium": {
+                "windows": 471,
+                "length_rmse_m": 0.08293370501004073,
+                "length_bias_m": -0.06976579284404574,
+                "median_predicted_true_ratio": 0.633191981352179,
+                "median_direction_deg": 10.339684872869444
+              },
+              "cruise": {
+                "windows": 565,
+                "length_rmse_m": 0.19517944378385227,
+                "length_bias_m": -0.1832685524811774,
+                "median_predicted_true_ratio": 0.49211600366446673,
+                "median_direction_deg": 5.04897468342691
+              }
+            }
+          },
+          "max_fuel": 1998233,
+          "mean_fuel": 898809.5891666666,
+          "median_step_ms": 0.3492989999358542,
+          "trace_sha256": "5dafdadc9890b99473f08d703bcf75f0d095259543c39549a268b123fbcb39dd"
+        }
+      ],
+      "pooled_distance": {
+        "all": {
+          "windows": 7080,
+          "length_rmse_m": 0.1848328366553364,
+          "length_bias_m": -0.13176021470319174,
+          "median_predicted_true_ratio": 0.5227438413661541,
+          "median_local_direction_deg": 6.983177427484553
+        },
+        "speed_bins": {
+          "below_0.1": {
+            "windows": 823,
+            "length_rmse_m": 0.09124475441482435,
+            "length_bias_m": 0.06950282666704806,
+            "median_predicted_true_ratio": 1.5700977953437452,
+            "median_local_direction_deg": 23.392918544150785
+          },
+          "0.1_to_0.25": {
+            "windows": 2092,
+            "length_rmse_m": 0.07519859337257997,
+            "length_bias_m": -0.05901168515533661,
+            "median_predicted_true_ratio": 0.6795027106325159,
+            "median_local_direction_deg": 9.732454389895288
+          },
+          "0.25_to_0.5": {
+            "windows": 3619,
+            "length_rmse_m": 0.19286272141133953,
+            "length_bias_m": -0.17918786324411862,
+            "median_predicted_true_ratio": 0.4708220212308412,
+            "median_local_direction_deg": 5.9873418168887325
+          },
+          "above_0.5": {
+            "windows": 546,
+            "length_rmse_m": 0.402785612895062,
+            "length_bias_m": -0.39950517219807447,
+            "median_predicted_true_ratio": 0.30679184281620203,
+            "median_local_direction_deg": 3.096426106470894
+          }
+        }
+      },
+      "summary": {
+        "mean_sim3_ate_m": 0.4939183129871683,
+        "mean_unaligned_ate_m": 1.8219202346193348,
+        "median_rotation_deg": 13.668508197018747,
+        "mean_length_rmse_1s_m": 0.17652783113868853,
+        "pooled_length_rmse_1s_m": 0.1848328366553364,
+        "median_distance_ratio": 0.5227438413661541,
+        "max_fuel": 3124076,
+        "mean_fuel": 1232736.2662499999,
+        "paired_median_step_ms": 0.24392300110775977
+      }
+    },
+    "joint-v10": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.12417195346432083,
+            "rpe_rotation_rmse": 0.012037771223238855,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.530423590247409,
+            "rotation_rmse": 0.2042455173807728,
+            "rotation_max": 0.35529038210747727,
+            "velocity_rmse": 0.16489393570933922,
+            "angular_velocity_rmse": 0.04070983753689159,
+            "sim3_scale": 0.7424742745133591,
+            "sim3_ate_rmse": 0.29226113904261514,
+            "distance_travelled": 14.371459654965982,
+            "final_drift": 2.7248657096176263,
+            "drift_per_metre": 0.1896025716967492
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.11395216015040001,
+            "length_bias_m": 0.09092431196216391,
+            "median_predicted_true_ratio": 1.376105046122783,
+            "median_direction_deg": 6.194155990193488,
+            "speed_bins": {
+              "slow": {
+                "windows": 104,
+                "length_rmse_m": 0.24049878160895521,
+                "length_bias_m": 0.23494510449784906,
+                "median_predicted_true_ratio": 4.900127902533539,
+                "median_direction_deg": 19.006797253249704
+              },
+              "medium": {
+                "windows": 490,
+                "length_rmse_m": 0.12293415860834354,
+                "length_bias_m": 0.1206023588067376,
+                "median_predicted_true_ratio": 1.5571058401736946,
+                "median_direction_deg": 6.750444241592649
+              },
+              "cruise": {
+                "windows": 586,
+                "length_rmse_m": 0.05696851434553323,
+                "length_bias_m": 0.04054819357043635,
+                "median_predicted_true_ratio": 1.1103185054191653,
+                "median_direction_deg": 5.663959350610366
+              }
+            }
+          },
+          "max_fuel": 2666142,
+          "mean_fuel": 1363866.3675,
+          "median_step_ms": 0.2170705010939855,
+          "trace_sha256": "efb686e555c01afa1503cfaf4e76a5e81be487a6a06af25f9da7c2bc021f55e8"
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1959895351148859,
+            "rpe_rotation_rmse": 0.016645849499755644,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.9962140409314404,
+            "rotation_rmse": 0.2567336634820793,
+            "rotation_max": 0.4856942673625863,
+            "velocity_rmse": 0.21451356429675275,
+            "angular_velocity_rmse": 0.04265827607470805,
+            "sim3_scale": 1.377330238262977,
+            "sim3_ate_rmse": 0.7088715886650808,
+            "distance_travelled": 21.708843837515964,
+            "final_drift": 2.0368561695680225,
+            "drift_per_metre": 0.09382610077318101
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.19219171665783938,
+            "length_bias_m": -0.10099820179196363,
+            "median_predicted_true_ratio": 0.6786422105762258,
+            "median_direction_deg": 4.827911871773321,
+            "speed_bins": {
+              "slow": {
+                "windows": 115,
+                "length_rmse_m": 0.17859866014111658,
+                "length_bias_m": 0.17183493878898928,
+                "median_predicted_true_ratio": 2.6173252358656773,
+                "median_direction_deg": 17.58798451924638
+              },
+              "medium": {
+                "windows": 247,
+                "length_rmse_m": 0.06139629971977393,
+                "length_bias_m": 0.036934373229568586,
+                "median_predicted_true_ratio": 1.1629460779218614,
+                "median_direction_deg": 8.768905381145482
+              },
+              "cruise": {
+                "windows": 480,
+                "length_rmse_m": 0.12200739169395707,
+                "length_bias_m": -0.09644163535721766,
+                "median_predicted_true_ratio": 0.7139103568534301,
+                "median_direction_deg": 5.519109322536361
+              },
+              "fast": {
+                "windows": 338,
+                "length_rmse_m": 0.3069316079032221,
+                "length_bias_m": -0.3010937908032243,
+                "median_predicted_true_ratio": 0.49200662569768094,
+                "median_direction_deg": 2.644583023989428
+              }
+            }
+          },
+          "max_fuel": 2803471,
+          "mean_fuel": 1202873.2975,
+          "median_step_ms": 0.22105850075604394,
+          "trace_sha256": "24bff7e2baa71c87c06eb6143236fc78bc2d9edf8c00a1a2b7b884b2eaa69dec"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.12826562971677619,
+            "rpe_rotation_rmse": 0.02092816152448574,
+            "rpe_pairs": 1180,
+            "ate_rmse": 0.6970288743829206,
+            "rotation_rmse": 0.20309712156372514,
+            "rotation_max": 0.45449110382726154,
+            "velocity_rmse": 0.14880285042643637,
+            "angular_velocity_rmse": 0.04348296595760626,
+            "sim3_scale": 1.3530487434502865,
+            "sim3_ate_rmse": 0.27673822407969934,
+            "distance_travelled": 15.937211417420215,
+            "final_drift": 1.0717404089601532,
+            "drift_per_metre": 0.06724767469600637
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.12187878059965031,
+            "length_bias_m": -0.061239221329018115,
+            "median_predicted_true_ratio": 0.7462749780025324,
+            "median_direction_deg": 6.375680648388069,
+            "speed_bins": {
+              "slow": {
+                "windows": 140,
+                "length_rmse_m": 0.1304070095251989,
+                "length_bias_m": 0.1222629516206427,
+                "median_predicted_true_ratio": 2.7882264556413707,
+                "median_direction_deg": 26.003717642868935
+              },
+              "medium": {
+                "windows": 353,
+                "length_rmse_m": 0.03855868554246915,
+                "length_bias_m": -0.011669290921877748,
+                "median_predicted_true_ratio": 0.9214914227062652,
+                "median_direction_deg": 9.248569568329224
+              },
+              "cruise": {
+                "windows": 628,
+                "length_rmse_m": 0.12132446072587148,
+                "length_bias_m": -0.10756841099627772,
+                "median_predicted_true_ratio": 0.6858388853748878,
+                "median_direction_deg": 5.738602602446297
+              },
+              "fast": {
+                "windows": 59,
+                "length_rmse_m": 0.301932828914207,
+                "length_bias_m": -0.300116484644849,
+                "median_predicted_true_ratio": 0.42747988428553946,
+                "median_direction_deg": 1.839826702145965
+              }
+            }
+          },
+          "max_fuel": 3124076,
+          "mean_fuel": 1515185.4075,
+          "median_step_ms": 0.237188998653437,
+          "trace_sha256": "8798be3e4f033a75540a4461093363abfef5c5271514968335f8227f80bfc274"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1601532978412344,
+            "rpe_rotation_rmse": 0.01517492459502848,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.213739700234143,
+            "rotation_rmse": 0.3135120314410063,
+            "rotation_max": 0.42026309716686056,
+            "velocity_rmse": 0.17711393856031651,
+            "angular_velocity_rmse": 0.04049504272521912,
+            "sim3_scale": 1.716464393053394,
+            "sim3_ate_rmse": 0.4178324389614328,
+            "distance_travelled": 16.903879745461445,
+            "final_drift": 1.4717403825518927,
+            "drift_per_metre": 0.0870652421049696
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.15554548022394304,
+            "length_bias_m": -0.10081961595544457,
+            "median_predicted_true_ratio": 0.6100424894054454,
+            "median_direction_deg": 6.5367764464007365,
+            "speed_bins": {
+              "slow": {
+                "windows": 185,
+                "length_rmse_m": 0.08527214896251255,
+                "length_bias_m": 0.08067996938905,
+                "median_predicted_true_ratio": 2.2241583875511166,
+                "median_direction_deg": 18.149021464358125
+              },
+              "medium": {
+                "windows": 191,
+                "length_rmse_m": 0.044274955367585,
+                "length_bias_m": -0.004885820934087638,
+                "median_predicted_true_ratio": 1.0149658819234328,
+                "median_direction_deg": 12.533180705642442
+              },
+              "cruise": {
+                "windows": 730,
+                "length_rmse_m": 0.1600400522022641,
+                "length_bias_m": -0.1486965176855365,
+                "median_predicted_true_ratio": 0.5795911405671257,
+                "median_direction_deg": 6.0396337862072516
+              },
+              "fast": {
+                "windows": 74,
+                "length_rmse_m": 0.3315080352750674,
+                "length_bias_m": -0.3298823169668444,
+                "median_predicted_true_ratio": 0.3967348187731631,
+                "median_direction_deg": 2.5476809842166706
+              }
+            }
+          },
+          "max_fuel": 2775160,
+          "mean_fuel": 1465155.9325,
+          "median_step_ms": 0.22631850151810795,
+          "trace_sha256": "4fefff1f05ef93b2ad5daab3988244af9ddc26dcd956944f0fb52c8a0d9eadaa"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420004,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15374152235355146,
+            "rpe_rotation_rmse": 0.017997965024253496,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.2270391298082906,
+            "rotation_rmse": 0.3944550220603174,
+            "rotation_max": 0.590857070161532,
+            "velocity_rmse": 0.17280714334671682,
+            "angular_velocity_rmse": 0.04201522083371013,
+            "sim3_scale": 1.308332721738315,
+            "sim3_ate_rmse": 0.6829329431873632,
+            "distance_travelled": 16.851425957016854,
+            "final_drift": 1.4274278567520609,
+            "drift_per_metre": 0.08470665096194346
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.14267895743009512,
+            "length_bias_m": -0.07653766332761033,
+            "median_predicted_true_ratio": 0.7000659482710103,
+            "median_direction_deg": 10.30060424013611,
+            "speed_bins": {
+              "slow": {
+                "windows": 135,
+                "length_rmse_m": 0.1527867657380442,
+                "length_bias_m": 0.14344236700814114,
+                "median_predicted_true_ratio": 3.009001140782148,
+                "median_direction_deg": 25.46396148263696
+              },
+              "medium": {
+                "windows": 340,
+                "length_rmse_m": 0.049454459557352885,
+                "length_bias_m": -0.014974509460092392,
+                "median_predicted_true_ratio": 0.9171715835758649,
+                "median_direction_deg": 15.262441070381144
+              },
+              "cruise": {
+                "windows": 630,
+                "length_rmse_m": 0.14600018493817576,
+                "length_bias_m": -0.13118508532765882,
+                "median_predicted_true_ratio": 0.6430213399248399,
+                "median_direction_deg": 8.217355443342795
+              },
+              "fast": {
+                "windows": 75,
+                "length_rmse_m": 0.29686173904408236,
+                "length_bias_m": -0.292549670664304,
+                "median_predicted_true_ratio": 0.4445291519376326,
+                "median_direction_deg": 7.100623714024967
+              }
+            }
+          },
+          "max_fuel": 2062190,
+          "mean_fuel": 950527.7058333333,
+          "median_step_ms": 0.21039400053268764,
+          "trace_sha256": "01bd5f3aeff131c69f64ee8b3607da577fbf37480dc7638116b79367549b5aa6"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420005,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1175906900307232,
+            "rpe_rotation_rmse": 0.01555939295837705,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.3153077353911986,
+            "rotation_rmse": 0.22038728026554252,
+            "rotation_max": 0.32381937975576763,
+            "velocity_rmse": 0.14913568625462467,
+            "angular_velocity_rmse": 0.041669561011605,
+            "sim3_scale": 0.9738343473154234,
+            "sim3_ate_rmse": 0.5068842533738038,
+            "distance_travelled": 14.862443020499615,
+            "final_drift": 1.883726702125827,
+            "drift_per_metre": 0.12674408235090437
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.10381991791565769,
+            "length_bias_m": 0.005564064068378963,
+            "median_predicted_true_ratio": 0.958190545173681,
+            "median_direction_deg": 6.895918410494551,
+            "speed_bins": {
+              "slow": {
+                "windows": 144,
+                "length_rmse_m": 0.20065549756936826,
+                "length_bias_m": 0.1938821739383805,
+                "median_predicted_true_ratio": 2.770912339268622,
+                "median_direction_deg": 23.460989859627205
+              },
+              "medium": {
+                "windows": 471,
+                "length_rmse_m": 0.06340648203036743,
+                "length_bias_m": 0.04130992580213118,
+                "median_predicted_true_ratio": 1.1996097795354825,
+                "median_direction_deg": 11.895168198986639
+              },
+              "cruise": {
+                "windows": 565,
+                "length_rmse_m": 0.09432855855443108,
+                "length_bias_m": -0.07223081858273168,
+                "median_predicted_true_ratio": 0.8063534653824389,
+                "median_direction_deg": 4.775736843008961
+              }
+            }
+          },
+          "max_fuel": 1998233,
+          "mean_fuel": 898828.9675,
+          "median_step_ms": 0.3712264988280367,
+          "trace_sha256": "fe80b6d5f77c728aa0c403bb1ad100e188846caab8751678ed413bd230b4ca0e"
+        }
+      ],
+      "pooled_distance": {
+        "all": {
+          "windows": 7080,
+          "length_rmse_m": 0.14148465439918279,
+          "length_bias_m": -0.04051772106224896,
+          "median_predicted_true_ratio": 0.8306438110303123,
+          "median_local_direction_deg": 6.793916033011623
+        },
+        "speed_bins": {
+          "below_0.1": {
+            "windows": 823,
+            "length_rmse_m": 0.16482548119180146,
+            "length_bias_m": 0.15008708260704756,
+            "median_predicted_true_ratio": 2.7532233196797007,
+            "median_local_direction_deg": 21.37965491381945
+          },
+          "0.1_to_0.25": {
+            "windows": 2092,
+            "length_rmse_m": 0.07561329455702172,
+            "length_bias_m": 0.03706077263171302,
+            "median_predicted_true_ratio": 1.1635510232074378,
+            "median_local_direction_deg": 10.35794459516774
+          },
+          "0.25_to_0.5": {
+            "windows": 3619,
+            "length_rmse_m": 0.1237757882330575,
+            "length_bias_m": -0.08899949704641096,
+            "median_predicted_true_ratio": 0.6987212034649835,
+            "median_local_direction_deg": 6.012323750972405
+          },
+          "above_0.5": {
+            "windows": 546,
+            "length_rmse_m": 0.3084955525035928,
+            "length_bias_m": -0.3037162832251011,
+            "median_predicted_true_ratio": 0.47046628010264413,
+            "median_local_direction_deg": 3.100071968860582
+          }
+        }
+      },
+      "summary": {
+        "mean_sim3_ate_m": 0.4809200978849992,
+        "mean_unaligned_ate_m": 1.6632921784992336,
+        "median_rotation_deg": 13.668508197018747,
+        "mean_length_rmse_1s_m": 0.1383445021629309,
+        "pooled_length_rmse_1s_m": 0.14148465439918279,
+        "median_distance_ratio": 0.8306438110303123,
+        "max_fuel": 3124076,
+        "mean_fuel": 1232739.6130555556,
+        "paired_median_step_ms": 0.2372999988438096
+      }
+    },
+    "joint-repeat": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.12417195346432083,
+            "rpe_rotation_rmse": 0.012037771223238855,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.530423590247409,
+            "rotation_rmse": 0.2042455173807728,
+            "rotation_max": 0.35529038210747727,
+            "velocity_rmse": 0.16489393570933922,
+            "angular_velocity_rmse": 0.04070983753689159,
+            "sim3_scale": 0.7424742745133591,
+            "sim3_ate_rmse": 0.29226113904261514,
+            "distance_travelled": 14.371459654965982,
+            "final_drift": 2.7248657096176263,
+            "drift_per_metre": 0.1896025716967492
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.11395216015040001,
+            "length_bias_m": 0.09092431196216391,
+            "median_predicted_true_ratio": 1.376105046122783,
+            "median_direction_deg": 6.194155990193488,
+            "speed_bins": {
+              "slow": {
+                "windows": 104,
+                "length_rmse_m": 0.24049878160895521,
+                "length_bias_m": 0.23494510449784906,
+                "median_predicted_true_ratio": 4.900127902533539,
+                "median_direction_deg": 19.006797253249704
+              },
+              "medium": {
+                "windows": 490,
+                "length_rmse_m": 0.12293415860834354,
+                "length_bias_m": 0.1206023588067376,
+                "median_predicted_true_ratio": 1.5571058401736946,
+                "median_direction_deg": 6.750444241592649
+              },
+              "cruise": {
+                "windows": 586,
+                "length_rmse_m": 0.05696851434553323,
+                "length_bias_m": 0.04054819357043635,
+                "median_predicted_true_ratio": 1.1103185054191653,
+                "median_direction_deg": 5.663959350610366
+              }
+            }
+          },
+          "max_fuel": 2666142,
+          "mean_fuel": 1363866.3675,
+          "median_step_ms": 0.18073649880534504,
+          "trace_sha256": "16d8cd2dc804c0f9394c01c78d616c6708f0b10e266496886c763eaba4189564"
+        },
+        {
+          "scene": "ProcTHOR-Train-5",
+          "seed": 420001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1959895351148859,
+            "rpe_rotation_rmse": 0.016645849499755644,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.9962140409314404,
+            "rotation_rmse": 0.2567336634820793,
+            "rotation_max": 0.4856942673625863,
+            "velocity_rmse": 0.21451356429675275,
+            "angular_velocity_rmse": 0.04265827607470805,
+            "sim3_scale": 1.377330238262977,
+            "sim3_ate_rmse": 0.7088715886650808,
+            "distance_travelled": 21.708843837515964,
+            "final_drift": 2.0368561695680225,
+            "drift_per_metre": 0.09382610077318101
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.19219171665783938,
+            "length_bias_m": -0.10099820179196363,
+            "median_predicted_true_ratio": 0.6786422105762258,
+            "median_direction_deg": 4.827911871773321,
+            "speed_bins": {
+              "slow": {
+                "windows": 115,
+                "length_rmse_m": 0.17859866014111658,
+                "length_bias_m": 0.17183493878898928,
+                "median_predicted_true_ratio": 2.6173252358656773,
+                "median_direction_deg": 17.58798451924638
+              },
+              "medium": {
+                "windows": 247,
+                "length_rmse_m": 0.06139629971977393,
+                "length_bias_m": 0.036934373229568586,
+                "median_predicted_true_ratio": 1.1629460779218614,
+                "median_direction_deg": 8.768905381145482
+              },
+              "cruise": {
+                "windows": 480,
+                "length_rmse_m": 0.12200739169395707,
+                "length_bias_m": -0.09644163535721766,
+                "median_predicted_true_ratio": 0.7139103568534301,
+                "median_direction_deg": 5.519109322536361
+              },
+              "fast": {
+                "windows": 338,
+                "length_rmse_m": 0.3069316079032221,
+                "length_bias_m": -0.3010937908032243,
+                "median_predicted_true_ratio": 0.49200662569768094,
+                "median_direction_deg": 2.644583023989428
+              }
+            }
+          },
+          "max_fuel": 2803471,
+          "mean_fuel": 1202873.2975,
+          "median_step_ms": 0.1891430019895779,
+          "trace_sha256": "885281e6b6975e32725785f9bee335f3c37ad36f47b8b9abe8cc5a62f23e1ad9"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.12826562971677619,
+            "rpe_rotation_rmse": 0.02092816152448574,
+            "rpe_pairs": 1180,
+            "ate_rmse": 0.6970288743829206,
+            "rotation_rmse": 0.20309712156372514,
+            "rotation_max": 0.45449110382726154,
+            "velocity_rmse": 0.14880285042643637,
+            "angular_velocity_rmse": 0.04348296595760626,
+            "sim3_scale": 1.3530487434502865,
+            "sim3_ate_rmse": 0.27673822407969934,
+            "distance_travelled": 15.937211417420215,
+            "final_drift": 1.0717404089601532,
+            "drift_per_metre": 0.06724767469600637
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.12187878059965031,
+            "length_bias_m": -0.061239221329018115,
+            "median_predicted_true_ratio": 0.7462749780025324,
+            "median_direction_deg": 6.375680648388069,
+            "speed_bins": {
+              "slow": {
+                "windows": 140,
+                "length_rmse_m": 0.1304070095251989,
+                "length_bias_m": 0.1222629516206427,
+                "median_predicted_true_ratio": 2.7882264556413707,
+                "median_direction_deg": 26.003717642868935
+              },
+              "medium": {
+                "windows": 353,
+                "length_rmse_m": 0.03855868554246915,
+                "length_bias_m": -0.011669290921877748,
+                "median_predicted_true_ratio": 0.9214914227062652,
+                "median_direction_deg": 9.248569568329224
+              },
+              "cruise": {
+                "windows": 628,
+                "length_rmse_m": 0.12132446072587148,
+                "length_bias_m": -0.10756841099627772,
+                "median_predicted_true_ratio": 0.6858388853748878,
+                "median_direction_deg": 5.738602602446297
+              },
+              "fast": {
+                "windows": 59,
+                "length_rmse_m": 0.301932828914207,
+                "length_bias_m": -0.300116484644849,
+                "median_predicted_true_ratio": 0.42747988428553946,
+                "median_direction_deg": 1.839826702145965
+              }
+            }
+          },
+          "max_fuel": 3124076,
+          "mean_fuel": 1515185.4075,
+          "median_step_ms": 0.21280799774103798,
+          "trace_sha256": "b074e2105a82339f3d3be1b12823eb3520d6d51bd52ee5d562ca9e639809eea5"
+        },
+        {
+          "scene": "ProcTHOR-Train-6",
+          "seed": 420003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1601532978412344,
+            "rpe_rotation_rmse": 0.01517492459502848,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.213739700234143,
+            "rotation_rmse": 0.3135120314410063,
+            "rotation_max": 0.42026309716686056,
+            "velocity_rmse": 0.17711393856031651,
+            "angular_velocity_rmse": 0.04049504272521912,
+            "sim3_scale": 1.716464393053394,
+            "sim3_ate_rmse": 0.4178324389614328,
+            "distance_travelled": 16.903879745461445,
+            "final_drift": 1.4717403825518927,
+            "drift_per_metre": 0.0870652421049696
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.15554548022394304,
+            "length_bias_m": -0.10081961595544457,
+            "median_predicted_true_ratio": 0.6100424894054454,
+            "median_direction_deg": 6.5367764464007365,
+            "speed_bins": {
+              "slow": {
+                "windows": 185,
+                "length_rmse_m": 0.08527214896251255,
+                "length_bias_m": 0.08067996938905,
+                "median_predicted_true_ratio": 2.2241583875511166,
+                "median_direction_deg": 18.149021464358125
+              },
+              "medium": {
+                "windows": 191,
+                "length_rmse_m": 0.044274955367585,
+                "length_bias_m": -0.004885820934087638,
+                "median_predicted_true_ratio": 1.0149658819234328,
+                "median_direction_deg": 12.533180705642442
+              },
+              "cruise": {
+                "windows": 730,
+                "length_rmse_m": 0.1600400522022641,
+                "length_bias_m": -0.1486965176855365,
+                "median_predicted_true_ratio": 0.5795911405671257,
+                "median_direction_deg": 6.0396337862072516
+              },
+              "fast": {
+                "windows": 74,
+                "length_rmse_m": 0.3315080352750674,
+                "length_bias_m": -0.3298823169668444,
+                "median_predicted_true_ratio": 0.3967348187731631,
+                "median_direction_deg": 2.5476809842166706
+              }
+            }
+          },
+          "max_fuel": 2775160,
+          "mean_fuel": 1465155.9325,
+          "median_step_ms": 0.21541249952861108,
+          "trace_sha256": "bea3d7a4f3e6075f56fa42ea3bb289aabb3d79b662ff5a6e123711c37dde52cb"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420004,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15374152235355146,
+            "rpe_rotation_rmse": 0.017997965024253496,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.2270391298082906,
+            "rotation_rmse": 0.3944550220603174,
+            "rotation_max": 0.590857070161532,
+            "velocity_rmse": 0.17280714334671682,
+            "angular_velocity_rmse": 0.04201522083371013,
+            "sim3_scale": 1.308332721738315,
+            "sim3_ate_rmse": 0.6829329431873632,
+            "distance_travelled": 16.851425957016854,
+            "final_drift": 1.4274278567520609,
+            "drift_per_metre": 0.08470665096194346
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.14267895743009512,
+            "length_bias_m": -0.07653766332761033,
+            "median_predicted_true_ratio": 0.7000659482710103,
+            "median_direction_deg": 10.30060424013611,
+            "speed_bins": {
+              "slow": {
+                "windows": 135,
+                "length_rmse_m": 0.1527867657380442,
+                "length_bias_m": 0.14344236700814114,
+                "median_predicted_true_ratio": 3.009001140782148,
+                "median_direction_deg": 25.46396148263696
+              },
+              "medium": {
+                "windows": 340,
+                "length_rmse_m": 0.049454459557352885,
+                "length_bias_m": -0.014974509460092392,
+                "median_predicted_true_ratio": 0.9171715835758649,
+                "median_direction_deg": 15.262441070381144
+              },
+              "cruise": {
+                "windows": 630,
+                "length_rmse_m": 0.14600018493817576,
+                "length_bias_m": -0.13118508532765882,
+                "median_predicted_true_ratio": 0.6430213399248399,
+                "median_direction_deg": 8.217355443342795
+              },
+              "fast": {
+                "windows": 75,
+                "length_rmse_m": 0.29686173904408236,
+                "length_bias_m": -0.292549670664304,
+                "median_predicted_true_ratio": 0.4445291519376326,
+                "median_direction_deg": 7.100623714024967
+              }
+            }
+          },
+          "max_fuel": 2062190,
+          "mean_fuel": 950527.7058333333,
+          "median_step_ms": 0.16262149983958807,
+          "trace_sha256": "d5240977d116d75f39a0306a848c6b8b119ad332e6202390a1c0693ee2e33cc8"
+        },
+        {
+          "scene": "ProcTHOR-Train-7",
+          "seed": 420005,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1175906900307232,
+            "rpe_rotation_rmse": 0.01555939295837705,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.3153077353911986,
+            "rotation_rmse": 0.22038728026554252,
+            "rotation_max": 0.32381937975576763,
+            "velocity_rmse": 0.14913568625462467,
+            "angular_velocity_rmse": 0.041669561011605,
+            "sim3_scale": 0.9738343473154234,
+            "sim3_ate_rmse": 0.5068842533738038,
+            "distance_travelled": 14.862443020499615,
+            "final_drift": 1.883726702125827,
+            "drift_per_metre": 0.12674408235090437
+          },
+          "distance_1s": {
+            "windows": 1180,
+            "length_rmse_m": 0.10381991791565769,
+            "length_bias_m": 0.005564064068378963,
+            "median_predicted_true_ratio": 0.958190545173681,
+            "median_direction_deg": 6.895918410494551,
+            "speed_bins": {
+              "slow": {
+                "windows": 144,
+                "length_rmse_m": 0.20065549756936826,
+                "length_bias_m": 0.1938821739383805,
+                "median_predicted_true_ratio": 2.770912339268622,
+                "median_direction_deg": 23.460989859627205
+              },
+              "medium": {
+                "windows": 471,
+                "length_rmse_m": 0.06340648203036743,
+                "length_bias_m": 0.04130992580213118,
+                "median_predicted_true_ratio": 1.1996097795354825,
+                "median_direction_deg": 11.895168198986639
+              },
+              "cruise": {
+                "windows": 565,
+                "length_rmse_m": 0.09432855855443108,
+                "length_bias_m": -0.07223081858273168,
+                "median_predicted_true_ratio": 0.8063534653824389,
+                "median_direction_deg": 4.775736843008961
+              }
+            }
+          },
+          "max_fuel": 1998233,
+          "mean_fuel": 898828.9675,
+          "median_step_ms": 0.3261300007579848,
+          "trace_sha256": "097b375f9f9b20798b81ba6cdb05ea917d41579720518a0abddc3150625ed909"
+        }
+      ],
+      "pooled_distance": {
+        "all": {
+          "windows": 7080,
+          "length_rmse_m": 0.14148465439918279,
+          "length_bias_m": -0.04051772106224896,
+          "median_predicted_true_ratio": 0.8306438110303123,
+          "median_local_direction_deg": 6.793916033011623
+        },
+        "speed_bins": {
+          "below_0.1": {
+            "windows": 823,
+            "length_rmse_m": 0.16482548119180146,
+            "length_bias_m": 0.15008708260704756,
+            "median_predicted_true_ratio": 2.7532233196797007,
+            "median_local_direction_deg": 21.37965491381945
+          },
+          "0.1_to_0.25": {
+            "windows": 2092,
+            "length_rmse_m": 0.07561329455702172,
+            "length_bias_m": 0.03706077263171302,
+            "median_predicted_true_ratio": 1.1635510232074378,
+            "median_local_direction_deg": 10.35794459516774
+          },
+          "0.25_to_0.5": {
+            "windows": 3619,
+            "length_rmse_m": 0.1237757882330575,
+            "length_bias_m": -0.08899949704641096,
+            "median_predicted_true_ratio": 0.6987212034649835,
+            "median_local_direction_deg": 6.012323750972405
+          },
+          "above_0.5": {
+            "windows": 546,
+            "length_rmse_m": 0.3084955525035928,
+            "length_bias_m": -0.3037162832251011,
+            "median_predicted_true_ratio": 0.47046628010264413,
+            "median_local_direction_deg": 3.100071968860582
+          }
+        }
+      },
+      "summary": {
+        "mean_sim3_ate_m": 0.4809200978849992,
+        "mean_unaligned_ate_m": 1.6632921784992336,
+        "median_rotation_deg": 13.668508197018747,
+        "mean_length_rmse_1s_m": 0.1383445021629309,
+        "pooled_length_rmse_1s_m": 0.14148465439918279,
+        "median_distance_ratio": 0.8306438110303123,
+        "max_fuel": 3124076,
+        "mean_fuel": 1232739.6130555556,
+        "paired_median_step_ms": 0.21332400137907825
+      }
+    }
+  },
+  "checks": [
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420000,
+      "joint_repeat_outputs_fuel_exact": true,
+      "all_orientations_angular_twists_exact": true,
+      "translation_twist_consistent": true,
+      "episode_json_sha256": "559e1b6f71711139b0304749c2c03d1336695933bc11d623222a3a4ef87644e1"
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420001,
+      "joint_repeat_outputs_fuel_exact": true,
+      "all_orientations_angular_twists_exact": true,
+      "translation_twist_consistent": true,
+      "episode_json_sha256": "96a34d36611435bfd7fedb77df058f8f2c723baf0a463352e0e546aeaecdaf59"
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420002,
+      "joint_repeat_outputs_fuel_exact": true,
+      "all_orientations_angular_twists_exact": true,
+      "translation_twist_consistent": true,
+      "episode_json_sha256": "761fa4687296dbcdf2312729dd1d9d1bca0b13823aea907426b78fcd2f4935f8"
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420003,
+      "joint_repeat_outputs_fuel_exact": true,
+      "all_orientations_angular_twists_exact": true,
+      "translation_twist_consistent": true,
+      "episode_json_sha256": "ae5ebedde0b824bf3ab67137f52f1fb66b51fcebd60527d1aaf6555c7cd5effe"
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420004,
+      "joint_repeat_outputs_fuel_exact": true,
+      "all_orientations_angular_twists_exact": true,
+      "translation_twist_consistent": true,
+      "episode_json_sha256": "f6e3b0912ecf5f5320ac56ba5bdd00fd2d1bd2f9947587a0ee946608d657a05e"
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420005,
+      "joint_repeat_outputs_fuel_exact": true,
+      "all_orientations_angular_twists_exact": true,
+      "translation_twist_consistent": true,
+      "episode_json_sha256": "457a2002df013acf14fcf0ed6940427fb05e08470a3adacd0d3f839d0a3f8e3c"
+    }
+  ]
+}

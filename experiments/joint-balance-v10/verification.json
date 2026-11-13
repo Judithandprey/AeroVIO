@@ -1,0 +1,42 @@
+{
+  "trace_checks": [
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420000,
+      "all_trace_hashes_valid": true
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420001,
+      "all_trace_hashes_valid": true
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420002,
+      "all_trace_hashes_valid": true
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420003,
+      "all_trace_hashes_valid": true
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420004,
+      "all_trace_hashes_valid": true
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420005,
+      "all_trace_hashes_valid": true
+    }
+  ],
+  "completed_flights_per_variant": 6,
+  "frames_per_variant": 7200,
+  "joint_training_repeat_exact": true,
+  "joint_full_inference_repeat_exact": true,
+  "all_rotations_and_angular_twists_exact": true,
+  "original_network_and_normalization_retained": true,
+  "teacher_and_v9_artifact_hashes_unchanged": true,
+  "sampling_gate_passed_before_training": true
+}

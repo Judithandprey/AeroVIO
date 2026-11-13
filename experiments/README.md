@@ -2,6 +2,7 @@
 
 | Record | Scope |
 | --- | --- |
+| [Joint speed/turn balance](joint-balance-v10/README.md) | Verified 25% low-speed exposure; six fresh long flights show lower aggregate distance/ATE with a substantial low-speed regression |
 | [Teacher training-distribution contrast](data-balance-v9/README.md) | Fixed motion-category balancing; byte-identical teacher control, small public ATE gain but no distance improvement; teacher retained |
 | [Official KLT + IMU baseline](baseline-klt-imu/README.md) | Frozen source, initial build/public evaluation, source hashes and one-episode repeat |
 | [Small motion network and geometry ablations](learned-motion-v1/README.md) | Separate training data, pose/warp models, optional map, model snapshots and provenance |

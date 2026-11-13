@@ -1,5 +1,68 @@
 # AeroVIO - Handoff
 
+## Joint speed/turn balance V10 (November 12, 2026)
+
+Read `docs/joint-balance-v10.md` and `experiments/joint-balance-v10/README.md`.
+The completed experiment stays on `experiment/native-fusion-v8`. Teacher and
+V9 artifacts, earlier records and workspace inference defaults are preserved.
+
+The only training intervention is joint speed/turn sampling. Four speed bins
+each draw 597 examples per epoch, then turn cells are balanced subject to a
+four-exposures-per-example cap and actual support. Before either fit, all 40
+epochs passed exact 25% low-speed exposure, the cap, cache hashes and unchanged
+2,388-example epoch size. All original pairs are seen across training. Old
+exposure was 49.75% (teacher) and 51.51% (V9). High-speed sharp-turn coverage
+is still missing and is not fabricated by oversampling a single example.
+
+The teacher's original training graph, normalization, seed, 40 epochs, 1,520
+optimizer steps, loss and original short-validation epoch rule stay unchanged.
+Epoch 5 is selected; a complete same-seed repeat reproduces its ONNX and metrics.
+The deployed graph has 1,350 parameters. All native C++ source bytes come from
+teacher commit `0c4f778`; only the compiled checkpoint changes.
+
+Six new 60-second flights use seeds 420000 through 420005, two in each of scenes
+5/6/7. No crashes or retries occurred. Scenes 5/6 appeared in prior short
+validation; scene 7 is entirely new. All are excluded from training. The first
+200 GT states of every new flight are distinct from the other new flights and
+all 16 old training/validation flights. Generation never used estimator scores;
+checkpoints were frozen before new-long inference. Raw data is on D: at
+`D:/Robotics/我的机器人助手/artifacts/AeroVIO-data/long-validation-v10`, reached
+through the WSL `data/long-validation-v10` symlink. No old data was moved.
+
+On this new six-flight set, teacher / V9 / V10 mean per-flight one-second length
+RMSE is 0.177983 / 0.176528 / 0.138345 m. V10 improves 22.27% / 21.63% against the
+two references. Pooled RMSE is 0.186428 / 0.184833 / 0.141485 m, a different
+aggregation (24.11% / 23.45% improvement). Mean Sim3 ATE is 0.519165 / 0.493918 /
+0.480920 m (V10 improves 7.37% / 2.63%). Median predicted/true distance rises
+from 0.486 / 0.523 to 0.831. V10 wins distance on five of six flights and passes
+every predeclared aggregate selection guard.
+
+Material tradeoff: length RMSE for windows with true 1s net displacement <0.1 m
+rises from 0.08748 / 0.09124 to 0.16483 m. Do not claim universal improvement or
+silently replace a deployment default. The first new flight has worse distance;
+one new-scene flight has worse aligned ATE despite better distance. No additional
+fit or threshold sweep was performed after observing this tradeoff.
+
+All rotations/angular twists are identical; median rotation RMSE is 13.6685 deg.
+Peak fuel is 3,124,076 for all three. V10 mean fuel is only 0.00114% above teacher.
+Initial four-way median step times were 0.245 / 0.244 / 0.237 ms; the identical
+V10 repeat measured 0.213 ms, exposing cache sensitivity. A final three-artifact
+timing pass uses all six execution orders per six-frame block, shuffled with
+fixed seed 20261112. Each model occupies each position 400 times per flight.
+Final medians are 0.1610 / 0.1604 / 0.1650 ms: V10 is about 2.5% slower than
+teacher in this host measurement, with essentially unchanged fuel. Do not claim
+a speedup. All 7,200 outputs and fuel values per model match the accuracy run.
+The complete inference repeat matches every output and per-frame fuel exactly.
+All four runs complete six flights, 7,200 frames each. 128 host tests, 860-pair
+full/compact parity checks and the new 80-frame WASM check pass.
+
+Windows test artifact: `artifacts/AeroVIO-native-v10-joint.wasm`, SHA-256
+`ce8a2f4dde5108d41ccdd64333ab44906ded11be304d62136af0e03b48a4cd3e`.
+It is an aggregate-validation-selected experimental candidate with the low-speed
+regression above. Raw runtime logs/traces are in WSL `results/joint-balance-v10/`.
+No training/evaluation remains pending and no course-server upload occurred.
+
+
 ## Data balance V9 (November 12, 2026)
 
 Read `docs/data-balance-v9.md` and `experiments/data-balance-v9/README.md` for

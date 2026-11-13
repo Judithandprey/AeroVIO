@@ -1,0 +1,37 @@
+{
+  "teacher_commit": "0c4f7781cfc844d7fdc4f7223619a739b9f30cc7",
+  "teacher_wasm": "artifacts/teacher-0c4f778-results/AeroVIO-teacher-native-160-0c4f778.wasm",
+  "teacher_wasm_sha256": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+  "v9_wasm": "results/data-balance-v9/AeroVIO-native-v9-balanced.wasm",
+  "v9_wasm_sha256": "75ff86ccf0a2ecebdbe417ed05e2651462d480858a27a4acd60c30079c48281e",
+  "cache": "data/motion-cache-v2",
+  "training_labels": "data/motion-balance-v9/train-labels.npz",
+  "training_manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "long_manifest": "data/long-validation-v10/data_manifest.json",
+  "limits": "configs/evaluation-limits.json",
+  "training": {"seed": 17, "epochs": 40, "batch": 64, "learning_rate": 0.001, "warp_weight": 2.0, "threads": 4, "device": "cpu", "samples_per_epoch": 2388, "checkpoint_selection": "minimum unchanged original short-validation normalized pose loss"},
+  "sampling": {
+    "speed_edges_m_s": [0.1, 0.25, 0.5],
+    "turn_edges_deg_s": [5.0, 15.0, 30.0],
+    "speed_quota_each_epoch": [597, 597, 597, 597],
+    "max_exposure_per_example_per_epoch": 4,
+    "allocation": "Within each speed bin allocate as equally as feasible across turn cells, capped at four times the cell's unique sample count. Empty cells receive zero. Break integer ties by ascending turn bin. Draw shuffled cycles within cells and shuffle the entire epoch.",
+    "pretraining_gate": "All 40 epochs have exactly 25% speed below 0.1 m/s, reduced from the original and V9 exposure. Every sample appears at most four times per epoch. Same 2388 examples per epoch. Save counts, quotas, coverage and hashes before any training."
+  },
+  "new_long_validation": {
+    "config": "configs/long-validation-v10.json",
+    "episodes": 6,
+    "duration_seconds": 60,
+    "scenes": ["ProcTHOR-Train-5", "ProcTHOR-Train-6", "ProcTHOR-Train-7"],
+    "fresh_seed_start": 420000,
+    "use": "Generate without estimator scores; exclude training/public scenes 1/2/3/4 and all old seeds. Scenes 5/6 have been used for short validation; scene 7 is new. Freeze checkpoints before first new-long inference. No retraining or threshold changes after observing new-long scores."
+  },
+  "selection": {
+    "minimum_length_rmse_improvement": 0.02,
+    "max_sim3_ate_ratio": 1.0,
+    "max_fuel_ratio": 1.05,
+    "minimum_episode_length_wins_vs_teacher": 4,
+    "rule": "Select joint only if mean per-flight 1s length RMSE improves at least 2% versus both old models, mean Sim3 ATE regresses versus neither, rotations are exact, peak fuel <=1.05 times teacher, and at least four of six distance wins vs teacher. Otherwise retain teacher reference. No default or server upload changes."
+  },
+  "scope": "One fixed joint-sampling contrast and deterministic training repeat; unchanged teacher network, preprocessing, normalization, loss, optimizer, original checkpoint selection and exact C++ inference. Compare teacher, V9 category-balanced, V10 joint on six new 60s flights, with interleaved timing and a full V10 inference repeat. No public-set tuning or additional training sweeps."
+}

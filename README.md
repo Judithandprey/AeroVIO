@@ -14,7 +14,18 @@ See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
 local comparison and the boundary between reproducing an algorithm and obtaining
 the server's actual weights. Earlier reports remain preserved.
 
-**Latest completed experiment:** V9 balances startup/transition, cruise and turn
+**Latest completed experiment:** V10 jointly balances speed and turn-rate
+exposure while preserving the teacher's network and all other training settings.
+Low-speed exposure is verified at 25% in every epoch before training. On six
+fresh 60-second flights, mean per-flight one-second distance RMSE improves from
+0.177983 m (teacher) and 0.176528 m (V9) to 0.138345 m. Mean Sim(3) ATE improves
+from 0.519165 / 0.493918 to 0.480920 m; rotations and peak fuel are unchanged.
+V10 passes the frozen aggregate guards, but low-net-speed distance error worsens
+from 0.08748 to 0.16483 m. It remains an experimental candidate; no workspace
+default changes. See [V10 evidence](experiments/joint-balance-v10/README.md)
+and [method and reproduction](docs/joint-balance-v10.md).
+
+**Previous completed experiment:** V9 balances startup/transition, cruise and turn
 training exposure while preserving the teacher's network, losses, normalization
 and native inference code. The control reproduces the teacher WASM byte for byte.
 On ten public flights, balancing lowers mean Sim(3) ATE from 0.486329 to

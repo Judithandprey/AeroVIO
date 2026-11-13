@@ -1,0 +1,18 @@
+{
+  "teacher": {
+    "mean_sim3_ate_m": -7.366658400014758,
+    "mean_unaligned_ate_m": -8.865222776589787,
+    "mean_length_rmse_1s_m": -22.271025318191374,
+    "pooled_length_rmse_1s_m": -24.107696959078297,
+    "mean_fuel": 0.0011432886631190797,
+    "max_fuel": 0.0
+  },
+  "category-v9": {
+    "mean_sim3_ate_m": -2.6316527977181536,
+    "mean_unaligned_ate_m": -8.706641108975022,
+    "mean_length_rmse_1s_m": -21.63020342427423,
+    "pooled_length_rmse_1s_m": -23.452641338284675,
+    "mean_fuel": 0.00027149404517867737,
+    "max_fuel": 0.0
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fraction_below_0_1_m_s": 0.12760633861551293,
+  "median_speed_m_s": 0.27688712715315456,
+  "episodes": [
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420000,
+      "fraction_below_0_1_m_s": 0.0950792326939116,
+      "median_speed_m_s": 0.2477868681801911,
+      "first_200_gt_states_sha256": "a2b19810e12f9a697f5fc2238b5b3acdd7b0e8e21de9d9ba8db766582f122574"
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 420001,
+      "fraction_below_0_1_m_s": 0.1067556296914095,
+      "median_speed_m_s": 0.3592865415391136,
+      "first_200_gt_states_sha256": "b636db7a000f7b89cb0e45f1236ac93c7437ce763465be44c17f3e49491d3f5e"
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420002,
+      "fraction_below_0_1_m_s": 0.13678065054211844,
+      "median_speed_m_s": 0.27804803803824163,
+      "first_200_gt_states_sha256": "1ddbe19f010ac4c1251f7c800961183c0aa5473cb60d023acea546c98ab42ce1"
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 420003,
+      "fraction_below_0_1_m_s": 0.16597164303586323,
+      "median_speed_m_s": 0.29704424574429356,
+      "first_200_gt_states_sha256": "f8764f12eb1a6ddf4d6b8c92274395e9c2a3db26ad3a62e19d5c509e5fa842e0"
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420004,
+      "fraction_below_0_1_m_s": 0.12176814011676397,
+      "median_speed_m_s": 0.2788288452851542,
+      "first_200_gt_states_sha256": "1c62fc008efeea30f3ff8906972b6928272048c5ef9908ecb307c4fbfb96ae6f"
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 420005,
+      "fraction_below_0_1_m_s": 0.13928273561301086,
+      "median_speed_m_s": 0.24194050794834146,
+      "first_200_gt_states_sha256": "65216b850b9cc029dbeae31ca3228b11d96c501f4138f83d08285a295d865385"
+    }
+  ],
+  "distinct_first_200_gt_states_vs_all_old_flights": true,
+  "role": "post-evaluation description only; never used to tune training exposures"
+}
