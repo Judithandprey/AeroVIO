@@ -80,3 +80,4 @@ report-*/
 !experiments/joint-balance-v10/joint/net.onnx
 !experiments/joint-balance-v10/joint-repeat/net.onnx
 !experiments/velocity-memory-v11/*/net.onnx
+!experiments/memory-gate-v12/*/net.onnx

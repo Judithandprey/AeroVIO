@@ -2,6 +2,7 @@
 
 | Record | Scope |
 | --- | --- |
+| [Frozen-predictor memory gate](memory-gate-v12/README.md) | Adaptive versus constant mixing of frozen V10/V11; turn, stop, cruise and compute comparison |
 | [Explicit velocity memory](velocity-memory-v11/README.md) | Matched 18-input control and causal feedback; original validation retains V10; fixed-final models are diagnostic |
 | [Joint speed/turn balance](joint-balance-v10/README.md) | Verified 25% low-speed exposure; six fresh long flights show lower aggregate distance/ATE with a substantial low-speed regression |
 | [Teacher training-distribution contrast](data-balance-v9/README.md) | Fixed motion-category balancing; byte-identical teacher control, small public ATE gain but no distance improvement; teacher retained |

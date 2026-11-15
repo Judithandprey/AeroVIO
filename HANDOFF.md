@@ -1,5 +1,69 @@
 # AeroVIO - Handoff
 
+## Frozen-predictor memory gate V12 (November 15, 2026)
+
+Work is on `experiment/memory-gate-v12`, based on V11 commit `96e6fcb`.
+Read `docs/memory-gate-v12.md` and `experiments/memory-gate-v12/README.md`.
+V10 and fixed-final V11 predictors are frozen. Only a 24 -> 8 -> 1 sigmoid gate
+is trained (209 parameters); a constant-mixture control trains one scalar bias.
+The gate blends translation, and the blended pre-visual velocity becomes the
+next causal camera-frame memory. Native gyro and visual fusion are unchanged.
+No new visual inputs, stationary detector, ZUPT or training-data changes occur.
+
+Both arms use the exact original target plan, 20-frame contexts, 40 epochs and
+1,520 optimizer steps. A complete adaptive repeat reproduces all epoch metrics
+and the selected ONNX. Predictor weights remain bit-identical. Candidate
+selection was fixed to updated epochs 1..40 before training; both select epoch 1.
+Initial 50/50 mixture validation pose loss is 0.278171. Constant/adaptive best
+updated losses are 0.278540/0.279215, versus V10 0.277686. Neither beats its
+initial mixture or V10 on this criterion. These are experimental candidates.
+Adaptive original-validation gate mean/std is 0.526078/0.004975; constant is
+0.509373. Do not claim learned turn/stop recognition merely from added capacity.
+
+143 host tests, five 80-frame WASM checks, and C++/ONNX gate/history parity pass.
+The gate adds 209 parameters, but preserving exact V10/V11 branches requires
+both predictors: 3,165 total network parameters and 3,016 semantic dense MACs.
+Runtime memory transport, valid/gap handling and bounds retain the V11 contract.
+
+Old six-flight regression is complete. V10 / V11 / constant / adaptive mean
+Sim3 ATE is 0.600712 / 0.692283 / 0.545626 / 0.545311 m. Turning length RMSE
+is 0.115551 / 0.130753 / 0.119655 / 0.121176 m. Two stop-event mean errors are
+0.095571 / 0.123080 / 0.081228 / 0.081858 m; no variant settles. Cruise length
+RMSE is 0.207946 / 0.202840 / 0.201485 / 0.201501 m, with no false-stop runs.
+Much of the improvement over V11 is also achieved by the fixed mixture.
+Regression wall times are excluded because data generation overlaps them.
+
+Fresh confirmation is complete: six new 60-second flights, seeds 440000..440005,
+all successful without retry. V10 / V11 / constant / adaptive mean Sim3 ATE is
+0.493972 / 0.652062 / 0.467923 / 0.469452 m. Pooled one-second length RMSE is
+0.141926 / 0.168497 / 0.151463 / 0.152184 m. Turning RMSE is 0.093519 /
+0.123020 / 0.115388 / 0.116942 m; cruise RMSE is 0.154836 / 0.211336 /
+0.175185 / 0.176222 m. Adaptive improves these two regime errors by 4.94% /
+16.62% versus V11, but worsens them by 25.05% / 13.81% versus V10. Constant
+mixing slightly outperforms the adaptive gate on all four aggregate errors.
+This does not establish useful context-dependent memory selection.
+
+Median guest-step times are 0.296443 / 0.302235 / 0.302249 / 0.301182 ms;
+adaptive mean fuel is 1,167,016.24 (+0.647% versus V10), peak 3,159,826.
+Timing runs after all generation/training/build/regression work has ended;
+all 24 execution orders balance each model's position, with repeats excluded.
+All 48 primary traces, 12 adaptive repeats and preserved original V10/V11
+regression outputs/fuel verify. Five WASM ABI checks and 143 tests pass.
+
+Fresh coverage is 1,920 turning / 1,558 cruise / 247 stationary windows and
+zero qualifying stop events. No model has false-stop runs while truly moving.
+The stopping guard is inconclusive; turning narrowly misses its predeclared
+5% improvement requirement, and cruise/overall distance fail V10 guards.
+V10 remains the reference. Reduced Sim3-aligned ATE does not establish improved
+metric distance. The old two-stop reduction is tentative and no model settles.
+New raw data stays on D: through `data/long-validation-v12`; full traces/logs
+are retained in WSL `results/memory-gate-v12`. Missing coverage is not a pass.
+
+Windows candidates: `artifacts/AeroVIO-native-v12-adaptive.wasm` and
+`artifacts/AeroVIO-native-v12-constant.wasm`; hashes are retained in
+`experiments/memory-gate-v12/windows-artifacts.json`. All earlier artifacts and
+branches remain preserved. Main/defaults and the course server are unchanged.
+
 ## Explicit velocity memory V11 (November 14, 2026)
 
 Work is on `experiment/velocity-memory-v11`, starting at merged main `d1d0e6b`.

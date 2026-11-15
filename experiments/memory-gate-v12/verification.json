@@ -1,0 +1,13 @@
+{
+  "primary_traces_verified": 48,
+  "frames_per_variant_per_set": 7200,
+  "original_predictors_unchanged": true,
+  "adaptive_training_repeat_exact": true,
+  "all_adaptive_output_and_fuel_repeats_exact": true,
+  "forced_gate_endpoints_match_original_outputs": true,
+  "orientation_and_twist_invariants_passed": true,
+  "source_freeze_verified": true,
+  "local_only_no_server_upload": true,
+  "confirmation_timing_after_other_work_complete": true,
+  "v10_v11_outputs_and_fuel_match_preserved_v11_confirmation": true
+}

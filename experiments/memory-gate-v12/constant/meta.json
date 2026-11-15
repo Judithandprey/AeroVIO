@@ -1,0 +1,25 @@
+{
+  "network": "gate_only_24_8_1_sigmoid",
+  "model_sha256": "648bde9d705ded9e147d0bb8e86f82eebd6614a8d14810cdde23aa68a749bfab",
+  "predictors": {
+    "v10": {
+      "path": "experiments/joint-balance-v10/joint",
+      "sha256": "9f12df01190c6db3f06b8236f256e46e741701df891539e0c609288a641c767c"
+    },
+    "v11": {
+      "path": "experiments/velocity-memory-v11/feedback-final",
+      "sha256": "aa9351710cf7f8e3c96879f498974f3163e311079383a6928773cac71a8e8032"
+    }
+  },
+  "gate_parameters": 209,
+  "semantic_dense_macs_total": 3016,
+  "parameters_total": 3165,
+  "candidate_velocity_clip_m_s": 2.0,
+  "runtime_rotation": "unchanged calibrated gyro",
+  "normalization_source": "experiments/joint-balance-v10/joint/meta.json",
+  "onnx_gate_parity": {
+    "maximum_difference": 0.0,
+    "validation_steps": 796,
+    "random_probes": 128
+  }
+}

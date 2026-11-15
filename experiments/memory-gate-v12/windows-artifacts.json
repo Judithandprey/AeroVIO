@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "constant",
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-native-v12-constant.wasm",
+    "sha256": "e170110e56e22fe3e7cb4a8ac943537d6bbabee08ce0c76789387d1f941af2e3",
+    "bytes": 1938801,
+    "experimental_candidate": true,
+    "reference_retained": "v10"
+  },
+  {
+    "variant": "adaptive",
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-native-v12-adaptive.wasm",
+    "sha256": "951fca2af05b855a0891b9395bc71cfd4b6dbf2037485d20dccc1df597302bb8",
+    "bytes": 1939581,
+    "experimental_candidate": true,
+    "reference_retained": "v10"
+  }
+]

@@ -1,0 +1,12 @@
+{
+  "network_steps": 79,
+  "maximum_differences": {
+    "gate_features": 2.3794253545261768e-07,
+    "gate_output": 4.848937917856233e-10,
+    "motion": 5.628959846848414e-09,
+    "memory_transport": 2.0261733846282937e-08,
+    "causal_input": 4.965972633108606e-10
+  },
+  "log_sha256": "f542de198e041dbfab30d9cf7fc4df5694bff798b03f3672d6235552a0cede2a",
+  "diagnostic_guest_excluded_from_timing": true
+}

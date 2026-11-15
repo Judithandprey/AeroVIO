@@ -1,0 +1,5 @@
+{
+  "base": "/root/projects/AeroVIO/experiments/joint-balance-v10/joint",
+  "memory": "/root/projects/AeroVIO/experiments/velocity-memory-v11/feedback-final",
+  "gate": "/root/projects/AeroVIO/models/gate-v12-constant"
+}

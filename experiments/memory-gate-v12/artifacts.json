@@ -1,0 +1,37 @@
+{
+  "v10": {
+    "path": "/root/projects/AeroVIO/results/joint-balance-v10/AeroVIO-native-v10-joint.wasm",
+    "sha256": "ce8a2f4dde5108d41ccdd64333ab44906ded11be304d62136af0e03b48a4cd3e",
+    "bytes": 1929107
+  },
+  "v11": {
+    "path": "/root/projects/AeroVIO/results/velocity-memory-v11/AeroVIO-native-v11-feedback-final.wasm",
+    "sha256": "c47ff4a78df0484800d95b203874aa399c4e0d2a7c74257a6c8373f4f18e30be",
+    "bytes": 1929912
+  },
+  "constant": {
+    "path": "/root/projects/AeroVIO/results/memory-gate-v12/AeroVIO-native-v12-constant.wasm",
+    "sha256": "e170110e56e22fe3e7cb4a8ac943537d6bbabee08ce0c76789387d1f941af2e3",
+    "bytes": 1938801
+  },
+  "adaptive": {
+    "path": "/root/projects/AeroVIO/results/memory-gate-v12/AeroVIO-native-v12-adaptive.wasm",
+    "sha256": "951fca2af05b855a0891b9395bc71cfd4b6dbf2037485d20dccc1df597302bb8",
+    "bytes": 1939581
+  },
+  "endpoint-v10": {
+    "path": "/root/projects/AeroVIO/results/memory-gate-v12/AeroVIO-native-v12-endpoint-v10.wasm",
+    "sha256": "f949bced62a76979f25f4acc478925fbf73102bb1eb82902ca5819f92af45b01",
+    "bytes": 1929486
+  },
+  "endpoint-v11": {
+    "path": "/root/projects/AeroVIO/results/memory-gate-v12/AeroVIO-native-v12-endpoint-v11.wasm",
+    "sha256": "34edf69bae7f095d9d91598ea8186d2ad5b18058e165a57ed5fe16cd126c1f7b",
+    "bytes": 1934849
+  },
+  "adaptive-parity": {
+    "path": "/root/projects/AeroVIO/results/memory-gate-v12/AeroVIO-native-v12-adaptive-parity.wasm",
+    "sha256": "e0e0f4f536ed7892d9c1aeada47eadbd62ecc834edf2d0d7bfebc71121afbcea",
+    "bytes": 1940986
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "reference_retained": "v10",
+  "main_or_default_changed": false,
+  "confirmation_guards": {
+    "turning": false,
+    "stopping": null,
+    "cruise_vs_v10": false,
+    "cruise_vs_v11": true,
+    "ate": true,
+    "overall_distance": false,
+    "mean_fuel": true,
+    "peak_fuel": true
+  },
+  "stop_events": 0,
+  "minimum_stop_events": 5,
+  "candidate_original_validation_beats_v10": false,
+  "candidate_original_validation_beats_initial_mixture": false,
+  "no_long_scores_used_for_checkpoint_selection": true
+}

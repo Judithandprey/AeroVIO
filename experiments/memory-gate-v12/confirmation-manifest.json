@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "train": [],
+  "validation": [
+    {
+      "path": "data/long-validation-v12/validation-ProcTHOR-Train-5-seed440000",
+      "scene": "ProcTHOR-Train-5",
+      "depth_path": "data/long-validation-v12/validation-ProcTHOR-Train-5-seed440000/depth_64x48.npy",
+      "seed": 440000,
+      "frames": 1200,
+      "archive_sha256": "e587121ac9a980cfd1221d7b2602ba6435e3f54c7f07273d4c6c3385d0e7a359",
+      "depth_sha256": "525fc8e3c0bf1ffcaa0d5c7146f54b438cc4239d9df1944f82100e9ea0634014",
+      "camera_fov_degrees": 122.926476,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v12/validation-ProcTHOR-Train-5-seed440001",
+      "scene": "ProcTHOR-Train-5",
+      "depth_path": "data/long-validation-v12/validation-ProcTHOR-Train-5-seed440001/depth_64x48.npy",
+      "seed": 440001,
+      "frames": 1200,
+      "archive_sha256": "ed8b473343f65f78a8d947a8de106b8fc67c16ee631c773559831ff91261c935",
+      "depth_sha256": "303375c019022e721fbe280b6bd6a8b52e8b0bd3af49d38d7044fbd7f3810b87",
+      "camera_fov_degrees": 130.799652,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v12/validation-ProcTHOR-Train-6-seed440002",
+      "scene": "ProcTHOR-Train-6",
+      "depth_path": "data/long-validation-v12/validation-ProcTHOR-Train-6-seed440002/depth_64x48.npy",
+      "seed": 440002,
+      "frames": 1200,
+      "archive_sha256": "f367504ce467def4100a81f0598a6d3c51732b377887d17e6a2579c3f1e235ca",
+      "depth_sha256": "61c729c89baea382843304c02d57bd61c1265f8625e97aedb2be842dba149d1e",
+      "camera_fov_degrees": 106.224678,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v12/validation-ProcTHOR-Train-6-seed440003",
+      "scene": "ProcTHOR-Train-6",
+      "depth_path": "data/long-validation-v12/validation-ProcTHOR-Train-6-seed440003/depth_64x48.npy",
+      "seed": 440003,
+      "frames": 1200,
+      "archive_sha256": "647c81becdb5e58986c12ea321930b56bd1721540dd07da60a77c45b03b813ac",
+      "depth_sha256": "aa4f61250fc8e9ab91b9fa4391b1bbacbc2963b0598b1f6d4523de1d5fca0c6b",
+      "camera_fov_degrees": 110.978409,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v12/validation-ProcTHOR-Train-7-seed440004",
+      "scene": "ProcTHOR-Train-7",
+      "depth_path": "data/long-validation-v12/validation-ProcTHOR-Train-7-seed440004/depth_64x48.npy",
+      "seed": 440004,
+      "frames": 1200,
+      "archive_sha256": "375df5eda747571582f460dfa12dc3e79a32fed8d4c20a3db04bee14bc2abd56",
+      "depth_sha256": "61888a5b6461a528d2f90b73bd74906412136cd4ae53d5c51192f4327a315eb4",
+      "camera_fov_degrees": 123.180214,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v12/validation-ProcTHOR-Train-7-seed440005",
+      "scene": "ProcTHOR-Train-7",
+      "depth_path": "data/long-validation-v12/validation-ProcTHOR-Train-7-seed440005/depth_64x48.npy",
+      "seed": 440005,
+      "frames": 1200,
+      "archive_sha256": "59a3d7be3cabcf37c226f9ff38fca0e49c5284247e3ef8ebf965ae4975fe60aa",
+      "depth_sha256": "358b844bc29fea56fc90db2856ea0b6a3aa95b64c2bbee7aad843c14cea593aa",
+      "camera_fov_degrees": 117.881302,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    }
+  ],
+  "attempts": [
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 440000,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 168.4140987790015
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 440001,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 207.80323644698365
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 440002,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 291.34922581200954
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 440003,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 305.58740012100316
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 440004,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 169.5254397690005
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 440005,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 312.870714086981
+    }
+  ],
+  "config_sha256": "54dcc862023e2e41e9bc2e336d32597f7c4ae6548d4082a0d833689600809ba2",
+  "generator_sha256": "c275768daa719aeff88ca21a342ca7930570f921cb7f42edc75d13714fe301b0",
+  "original_capture_source_sha256": "7281e225a657bf012607eee1a09f67239902db2204e08626ff3c3852ba76a2e3",
+  "world_header_sha256": "b293bfec235d464bdf71fa0023c614b490c189c4f6dd9673d99f619eb6573067",
+  "created_utc": "2026-11-15T12:05:48.197391+00:00",
+  "physical_output": "/mnt/d/Robotics/\u6211\u7684\u673a\u5668\u4eba\u52a9\u624b/artifacts/AeroVIO-data/long-validation-v12",
+  "duration_seconds": 60.0,
+  "packages": {
+    "hyperdrone": "0.1.10",
+    "hyperlux": "0.1.10",
+    "viobench": "0.0.1"
+  },
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "estimator_scores_used_for_generation": false,
+  "finished_utc": "2026-11-15T12:31:37.382832+00:00",
+  "reused_generator_sha256": "ccfa95f9dad9ec7f72e438084227d07e6e2e910c2cbeefe15f2ad36267baf607",
+  "prior_long_seeds_disjoint": true
+}

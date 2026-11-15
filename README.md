@@ -14,7 +14,20 @@ See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
 local comparison and the boundary between reproducing an algorithm and obtaining
 the server's actual weights. Earlier reports remain preserved.
 
-**Latest completed experiment:** V11 adds explicit previous-velocity feedback to the V10
+**Latest completed experiment:** V12 trains a 209-parameter scalar gate between
+frozen V10 and V11 predictors, with a learned constant-mixture control. On six
+fresh 60-second flights, the gate reduces turning and cruise length RMSE by
+4.94% and 16.62% versus V11, but remains 25.05% and 13.81% worse than V10.
+Mean Sim3 ATE improves 4.96% versus V10, while overall one-second length RMSE
+worsens 7.23%. The constant mixture slightly outperforms the adaptive gate on
+all four of these errors; this does not establish useful context-dependent
+memory selection. Median guest step is 0.301 ms versus V10 0.296 ms, and mean
+fuel increases 0.65%. Fresh flights contain no qualifying stops; the two old
+stop events are insufficient to establish a stopping improvement. V10 remains
+the reference, with V11 and all older artifacts preserved. See [V12 evidence](experiments/memory-gate-v12/README.md)
+and [method](docs/memory-gate-v12.md). No main/default or server change occurred.
+
+**Previous completed experiment:** V11 adds explicit previous-velocity feedback to the V10
 compact model, with a matched 18-input no-history control. Both original
 validation selectors retain epoch zero; fixed epoch-40 models are diagnostics.
 The network has 1,606 parameters (+256), and the teacher's rotation/visual
@@ -121,8 +134,9 @@ separately transcribes the user's existing server results and verifies that the
 latest upload is v4 calibrated-gyro by filename/SHA-256. It does not claim
 physical-robot performance.
 
-The working branch is `experiment/velocity-memory-v11`, starting from merged
-main `d1d0e6b`. The teacher, `experiment/native-fusion-v8` and
+The working branch is `experiment/memory-gate-v12`, starting from preserved
+V11 commit `96e6fcb`; main remains at `d1d0e6b`. The teacher, V10, V11,
+`experiment/native-fusion-v8` and
 `experiment/perspective-map` branches remain preserved. The default
 `workspace/solution/` model is the **pose-only learned variant**, not the tagged
 KLT baseline. Package each variant explicitly to avoid mixing model identities.

@@ -1,0 +1,22 @@
+{
+  "parent_commit": "96e6fcbcdbb7419e14add5a5c6149f7dc7366dab",
+  "force_gate": 0,
+  "diagnostic": false,
+  "frozen_models": {
+    "v10": "9f12df01190c6db3f06b8236f256e46e741701df891539e0c609288a641c767c",
+    "v11": "aa9351710cf7f8e3c96879f498974f3163e311079383a6928773cac71a8e8032"
+  },
+  "gate_model_sha256": "3fedcf7b46b764c66c187a4c05513a440354c53ec31831d29a68cc230adcac6f",
+  "source_sha256": {
+    "visual_direction.h": "d4ab358af8adb94886b9831de626e2279eb4c95d777f59a9bc4b432feb2a1af4",
+    "export_weights.py": "b92733bd724d8c0c8d12ca3ce6c9fc028f4e6a2943f7a2ea10f4433ea4e54cf4",
+    "solution.cpp": "68e62824159270d6f3c3c0e703884da19a4d78a29e5aea51c63f45ac8e2d1da4",
+    "CMakeLists.txt": "ab8c04913813accaa2c827a4a3204274e38049c2c8c52d70fecd7f51142bd964",
+    "inference.h": "11be212bd5d39abd5de9e4d1489b1ecb71378038630837309313886ec4f5929c",
+    "gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+    "model-paths.json": "1230a978940804d6d2975375e37a534ac27b7c44d4b97182d50eeef27c077c45",
+    "README.md": "ebe1da70997ebd4f58cbc9cd619a63696d319e1b9fb58826d44b18c1c94a2d97",
+    "rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+    "split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a"
+  }
+}

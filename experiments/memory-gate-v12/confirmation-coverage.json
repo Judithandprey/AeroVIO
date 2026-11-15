@@ -1,0 +1,62 @@
+{
+  "scope": "confirmation",
+  "status": "complete",
+  "estimator_scores_used": false,
+  "episodes": [
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 440000,
+      "cruise_windows": 212,
+      "turning_windows": 301,
+      "stationary_windows": 35,
+      "stop_events": 0
+    },
+    {
+      "scene": "ProcTHOR-Train-5",
+      "seed": 440001,
+      "cruise_windows": 405,
+      "turning_windows": 143,
+      "stationary_windows": 38,
+      "stop_events": 0
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 440002,
+      "cruise_windows": 209,
+      "turning_windows": 193,
+      "stationary_windows": 55,
+      "stop_events": 0
+    },
+    {
+      "scene": "ProcTHOR-Train-6",
+      "seed": 440003,
+      "cruise_windows": 487,
+      "turning_windows": 195,
+      "stationary_windows": 51,
+      "stop_events": 0
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 440004,
+      "cruise_windows": 206,
+      "turning_windows": 461,
+      "stationary_windows": 34,
+      "stop_events": 0
+    },
+    {
+      "scene": "ProcTHOR-Train-7",
+      "seed": 440005,
+      "cruise_windows": 39,
+      "turning_windows": 627,
+      "stationary_windows": 34,
+      "stop_events": 0
+    }
+  ],
+  "totals": {
+    "cruise_windows": 1558,
+    "turning_windows": 1920,
+    "stationary_windows": 247,
+    "stop_events": 0
+  },
+  "manifest_sha256": "d4bae88f52a1996510d1573cb42c4ed59a98c9086278c055275bb96a8d409e03"
+}

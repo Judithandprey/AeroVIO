@@ -1,0 +1,16 @@
+{
+  "parent_commit": "96e6fcbcdbb7419e14add5a5c6149f7dc7366dab",
+  "v10": "experiments/joint-balance-v10/joint",
+  "v11": "experiments/velocity-memory-v11/feedback-final",
+  "cache": "data/motion-cache-v2",
+  "sampling_plan": "data/joint-sampling-v10/joint-plan.npz",
+  "training": {"epochs": 40, "batch": 64, "sequence_length": 20, "seed": 17, "lr": 0.001, "warp_weight": 2.0, "threads": 4},
+  "gate": {"inputs": 24, "hidden": 8, "trainable_parameters": 209, "initial_weight": 0.5, "inputs_description": "V11 normalized state18, frozen V10 velocity3 and frozen V11 velocity3; candidate velocities clipped to +/-2 m/s", "output": "scalar sigmoid; translation = V10 + g * (V11 - V10); raw training rotation residual stays V10; native calibrated gyro unchanged", "memory": "previous blended pre-visual displacement/dt, transported into endpoint-camera axes; same V11 valid/gap/clip contract"},
+  "arms": ["constant", "adaptive", "adaptive-repeat"],
+  "selection": "Minimum complete original-validation pose loss over updated epochs 1..40 for each experimental candidate; record initial, hard-zero and hard-one references. No default promotion. Freeze selected candidate before all long evaluation.",
+  "training_contract": "Only gate weights change. Same original data, normalization, target-frame sampling plan, 20-frame contexts, self-predicted history, pose plus 2x warping loss, 40 epochs and 1520 optimizer steps. Constant control trains one sigmoid bias; adaptive gate trains 209 parameters. No new supervision, history augmentation, visual inputs or stationary detector.",
+  "evaluation": {"regression_manifest": "data/long-validation-v11/data_manifest.json", "confirmation_manifest": "data/long-validation-v12/data_manifest.json", "limits": "configs/evaluation-limits.json", "order_seed": 20261115, "variants": ["v10", "v11", "constant", "adaptive"], "timing": "all 24 execution orders per 24-frame block; repeat and endpoint checks outside timing; fresh timing after generation/training/build finish"},
+  "motion": {"window_frames": 20, "stationary_speed": 0.02, "turn_deg_s": 15.0, "stop_min_frames": 10, "stop_prior_speed": 0.1, "cruise_min_mean_speed": 0.1, "cruise_max_speed_cv": 0.1, "cruise_max_speed_range": 0.05, "cruise_min_path_efficiency": 0.95, "cruise_max_mean_turn_deg_s": 15.0, "false_stop_run_frames": 5},
+  "confirmation_guards": {"turning_ratio_vs_v11": 0.95, "stop_error_ratio_vs_v11": 0.95, "minimum_stop_events": 5, "cruise_ratio_vs_v10": 1.02, "cruise_ratio_vs_v11": 1.02, "ate_ratio_vs_v10": 1.02, "length_ratio_vs_v10": 1.02, "fuel_ratio_vs_v10": 1.05},
+  "scope": "Gate only. Freeze V10/V11 predictor weights and native vision/rotation algorithms. Preserve all older branches/artifacts. No ZUPT, visual cadence change, training-data change, main merge, or server upload. Missing motion coverage stays inconclusive; do not select flights by estimator scores."
+}

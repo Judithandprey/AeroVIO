@@ -1,0 +1,76 @@
+{
+  "arm": "adaptive",
+  "trainable_parameters": 209,
+  "steps": 1520,
+  "settings": {
+    "epochs": 40,
+    "batch": 64,
+    "sequence_length": 20,
+    "seed": 17,
+    "lr": 0.001,
+    "warp_weight": 2.0,
+    "threads": 4
+  },
+  "best_epoch": 1,
+  "initial_gate_sha256": "aadb0ae02831c3467dbc14b2fab999ee743a49ca29bad1403dfe63648d1d7e90",
+  "initial_validation": {
+    "pose_loss": 0.27817052602767944,
+    "translation_rmse_m": 0.010244599543511868,
+    "gate_mean": 0.5,
+    "gate_std": 0.0,
+    "gate_min": 0.5,
+    "gate_max": 0.5
+  },
+  "endpoint_validation_references": {
+    "0": {
+      "pose_loss": 0.27768605947494507,
+      "translation_rmse_m": 0.010488360188901424,
+      "gate_mean": 0.0,
+      "gate_std": 0.0,
+      "gate_min": 0.0,
+      "gate_max": 0.0
+    },
+    "1": {
+      "pose_loss": 0.32656627893447876,
+      "translation_rmse_m": 0.012346277013421059,
+      "gate_mean": 1.0,
+      "gate_std": 0.0,
+      "gate_min": 1.0,
+      "gate_max": 1.0
+    }
+  },
+  "best_validation": {
+    "pose_loss": 0.2792151868343353,
+    "translation_rmse_m": 0.010275815613567829,
+    "gate_mean": 0.5260777694346318,
+    "gate_std": 0.0049745752600883425,
+    "gate_min": 0.5163056254386902,
+    "gate_max": 0.5571823716163635
+  },
+  "source_sha256": {
+    "configs/memory-gate-v12.json": "528935154a21cb83ee9dc2d6ec5c28cbb4c9f4143df2f496286b8b3ed9321c6d",
+    "configs/long-validation-v12.json": "54dcc862023e2e41e9bc2e336d32597f7c4ae6548d4082a0d833689600809ba2",
+    "training/memory_gate.py": "d1536395a6d1875b611248480dd2de9b76ebb0710922de80d9dd16616f0859d0",
+    "scripts/train_memory_gate.py": "c2cbe790a2dd78ff0ef4dd909cc3bc3e1a3a4382624eafca679abb54882df181",
+    "training/velocity_memory.py": "cf222b60bcaf99e0466e2576f4960bb518cf8fbba80d62b9d44ca74b5f08fb17",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+    "scripts/train_velocity_memory.py": "fbc8445d0c28d06834997b556caf475f717213c68d5f5f2117e7db239d62a2b0",
+    "experiments/joint-balance-v10/joint/net.onnx": "9f12df01190c6db3f06b8236f256e46e741701df891539e0c609288a641c767c",
+    "experiments/velocity-memory-v11/feedback-final/net.onnx": "aa9351710cf7f8e3c96879f498974f3163e311079383a6928773cac71a8e8032",
+    "experiments/joint-balance-v10/joint/meta.json": "9c9958d01a887470cc102c974adc3e7763f52b5407468941b006ad67a5d42c82",
+    "experiments/velocity-memory-v11/feedback-final/meta.json": "5442a3f22e0690c270ba854d844c6a19a44692b45b47df56064e800cc51e3336"
+  },
+  "frozen_predictor_tensor_sha256": {
+    "base": "5c6ac00a4b95e4b36d55968d1e345cddbbbc781e6f219c3574434a80e7e36f82",
+    "memory": "708250fc0d5a40365e5b79329d2cb621aead31396a7f7664eb0a0fd0064bf5a2"
+  },
+  "predictors_unchanged": true,
+  "sampling_plan_sha256": "9e2227b7e00ecc5bbf2ec1a4d6d90b3586a0d3b640efac875ae51f78e8974fad",
+  "cache_sha256": {
+    "train": "f489a197e3eb3292156f03b633183e69a83092d40b21bbec8387e0f0fbd56336",
+    "validation": "24b826ddb5dcacb69868de98490e2b62ee652f0697db6ff3ddbe89acef380516"
+  },
+  "model_sha256": "3fedcf7b46b764c66c187a4c05513a440354c53ec31831d29a68cc230adcac6f",
+  "selection": "Minimum complete original-validation pose loss over updated epochs 1..40 for each experimental candidate; record initial, hard-zero and hard-one references. No default promotion. Freeze selected candidate before all long evaluation.",
+  "elapsed_s": 27.855019059992628
+}

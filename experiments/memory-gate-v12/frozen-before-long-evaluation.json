@@ -1,0 +1,47 @@
+{
+  "source_sha256": {
+    "configs/memory-gate-v12.json": "528935154a21cb83ee9dc2d6ec5c28cbb4c9f4143df2f496286b8b3ed9321c6d",
+    "configs/long-validation-v12.json": "54dcc862023e2e41e9bc2e336d32597f7c4ae6548d4082a0d833689600809ba2",
+    "training/memory_gate.py": "d1536395a6d1875b611248480dd2de9b76ebb0710922de80d9dd16616f0859d0",
+    "training/gate_metrics.py": "5e67aa9803011d2e36c619219923fad7d6835d20e7acdea22981183e7b53fbe6",
+    "scripts/train_memory_gate.py": "c2cbe790a2dd78ff0ef4dd909cc3bc3e1a3a4382624eafca679abb54882df181",
+    "scripts/build_memory_gate.py": "d023066eebcae2d89486c9aca400bfee389effa06de8abbfdfc4c6d331756f9e",
+    "scripts/verify_gate_runtime.py": "d3ffa78cb15ce374e8e4d329e2958df38f7eefc71af37bad8264a084e79c7301",
+    "scripts/evaluate_memory_gate.py": "9e9fd6fdd6c43bc2c3375baea933e055edffa2c4ae7a8ac21521b39e0f47ed09",
+    "scripts/evaluate_velocity_memory.py": "8077c359fb6996f3724b3353843e5519f5a1c3fb35e2e6b1aac5a39d724cb04b",
+    "scripts/generate_gate_validation.py": "c275768daa719aeff88ca21a342ca7930570f921cb7f42edc75d13714fe301b0",
+    "scripts/generate_long_validation.py": "ccfa95f9dad9ec7f72e438084227d07e6e2e910c2cbeefe15f2ad36267baf607",
+    "workspace/memory_gate_native/inference.h": "11be212bd5d39abd5de9e4d1489b1ecb71378038630837309313886ec4f5929c",
+    "workspace/memory_gate_native/export_weights.py": "b92733bd724d8c0c8d12ca3ce6c9fc028f4e6a2943f7a2ea10f4433ea4e54cf4"
+  },
+  "artifacts_sha256": "210ed195fdcf3f8ffb36fe3923f10c7a00837b4099a86dcddf9504e7f20c9ea3",
+  "selected_models_sha256": {
+    "constant": "648bde9d705ded9e147d0bb8e86f82eebd6614a8d14810cdde23aa68a749bfab",
+    "adaptive": "3fedcf7b46b764c66c187a4c05513a440354c53ec31831d29a68cc230adcac6f"
+  },
+  "protocol": "fixed predictors, train gate only; best updated epoch chosen on original validation before long scores",
+  "timing": "four distinct artifacts, all 24 orders; regression times excluded while generation overlaps",
+  "motion_definitions": {
+    "window_frames": 20,
+    "stationary_speed": 0.02,
+    "turn_deg_s": 15.0,
+    "stop_min_frames": 10,
+    "stop_prior_speed": 0.1,
+    "cruise_min_mean_speed": 0.1,
+    "cruise_max_speed_cv": 0.1,
+    "cruise_max_speed_range": 0.05,
+    "cruise_min_path_efficiency": 0.95,
+    "cruise_max_mean_turn_deg_s": 15.0,
+    "false_stop_run_frames": 5
+  },
+  "confirmation_guards": {
+    "turning_ratio_vs_v11": 0.95,
+    "stop_error_ratio_vs_v11": 0.95,
+    "minimum_stop_events": 5,
+    "cruise_ratio_vs_v10": 1.02,
+    "cruise_ratio_vs_v11": 1.02,
+    "ate_ratio_vs_v10": 1.02,
+    "length_ratio_vs_v10": 1.02,
+    "fuel_ratio_vs_v10": 1.05
+  }
+}

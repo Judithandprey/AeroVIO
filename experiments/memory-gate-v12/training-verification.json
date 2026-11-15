@@ -1,0 +1,15 @@
+{
+  "adaptive_repeat_exact": true,
+  "all_frozen_predictors_unchanged": true,
+  "same_target_sampling_and_steps": true,
+  "chosen_epochs": {
+    "constant": 1,
+    "adaptive": 1,
+    "adaptive-repeat": 1
+  },
+  "trainable_parameters": {
+    "constant": 1,
+    "adaptive": 209,
+    "adaptive-repeat": 209
+  }
+}
