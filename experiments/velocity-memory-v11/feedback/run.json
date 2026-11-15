@@ -1,0 +1,47 @@
+{
+  "arm": "feedback",
+  "feedback": true,
+  "initial_weights_sha256": "6714d5ce678e500e44f1569ab924bd43634431c678c97696f9475cc78f80f57a",
+  "parent_model_sha256": "9f12df01190c6db3f06b8236f256e46e741701df891539e0c609288a641c767c",
+  "parameters": 1606,
+  "settings": {
+    "epochs": 40,
+    "batch": 64,
+    "sequence_length": 20,
+    "seed": 17,
+    "lr": 0.001,
+    "warp_weight": 2.0,
+    "threads": 4
+  },
+  "steps": 1520,
+  "sampling_plan_sha256": "9e2227b7e00ecc5bbf2ec1a4d6d90b3586a0d3b640efac875ae51f78e8974fad",
+  "preparation_audit_sha256": "3d2a2a3b5b6198ed40f04eb99c42b343b5698f168139a53a153666d3c5603ba8",
+  "model_sha256": "5f18c5e15a9a99f9fe75d5e6c043b7d5ab306e194355c0aa887b0fa4866cd97f",
+  "best_epoch": 0,
+  "best_validation": {
+    "pose_loss": 0.27768605947494507,
+    "translation_rmse_m": 0.010488360188901424,
+    "rotation_residual_rmse_rad": 0.0019475544104352593
+  },
+  "initial_validation": {
+    "pose_loss": 0.27768605947494507,
+    "translation_rmse_m": 0.010488360188901424,
+    "rotation_residual_rmse_rad": 0.0019475544104352593
+  },
+  "selection": "minimum full original validation-episode normalized pose loss, epoch 0 included",
+  "parity": {
+    "random_probe_max_normalized_difference": 4.76837158203125e-07,
+    "closed_loop_max_normalized_difference": 9.5367431640625e-07,
+    "validation_pairs": 796,
+    "random_probes": 128
+  },
+  "elapsed_s": 13.5540659520193,
+  "source_sha256": {
+    "configs/velocity-memory-v11.json": "b3a2c32259fb6eb91ec6eee3bd3ff554c07477c75b048968d60c5b39b466f0d2",
+    "configs/long-validation-v11.json": "ddd2694aa3abe32f2bf53f11cc083420620f5174f4f79bfc2b8bd0d5a524351f",
+    "training/velocity_memory.py": "cf222b60bcaf99e0466e2576f4960bb518cf8fbba80d62b9d44ca74b5f08fb17",
+    "scripts/prepare_velocity_memory.py": "9d7fd01dc6c575caeca6188c46302449884d6fde39c723be877fb2cc46a35349",
+    "scripts/train_velocity_memory.py": "fbc8445d0c28d06834997b556caf475f717213c68d5f5f2117e7db239d62a2b0",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769"
+  }
+}

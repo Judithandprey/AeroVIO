@@ -1,0 +1,12 @@
+{
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "packages": {
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93",
+    "wasmtime": "50.0.1",
+    "viobench": "0.0.1",
+    "hyperdrone": "0.1.10",
+    "hyperlux": "0.1.10"
+  }
+}

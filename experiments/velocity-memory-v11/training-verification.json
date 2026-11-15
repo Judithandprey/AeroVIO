@@ -1,0 +1,14 @@
+{
+  "repeat_exact": true,
+  "same_initialization_targets_steps": true,
+  "parameters_each": 1606,
+  "steps_each": 1520,
+  "chosen_epochs": {
+    "no-history": 0,
+    "feedback": 0,
+    "feedback-repeat": 0,
+    "no-history-final": 40,
+    "feedback-final": 40,
+    "feedback-repeat-final": 40
+  }
+}

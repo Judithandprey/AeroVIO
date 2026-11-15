@@ -1,5 +1,74 @@
 # AeroVIO - Handoff
 
+## Explicit velocity memory V11 (November 14, 2026)
+
+Work is on `experiment/velocity-memory-v11`, starting at merged main `d1d0e6b`.
+Read `docs/velocity-memory-v11.md` and `experiments/velocity-memory-v11/README.md`.
+Both 18-input arms start from V10 with zero
+new columns; feedback adds three previous pre-visual velocity components and a
+validity flag. Teacher gyro and visual direction fusion are unchanged. Causal
+camera-frame transport, 2 m/s component bounds and >0.2 s gap reset are shared
+between training and runtime.
+
+Both arms use exactly the V10 target-frame plan (2,388 targets/epoch), up to
+19 preceding same-episode context frames, self-predicted history, target-only
+pose/warp loss, seed 17, 40 epochs and 1,520 optimizer steps. Both fine-tune the
+compact graph, so matched control is essential when attributing memory effects.
+The original full-episode validation selector includes epoch zero and selects
+it for control, feedback and repeat. Primary reference therefore remains V10.
+
+Before long evaluation, a fixed-final diagnostic replay was added solely to
+retain epoch 40. All epoch metrics and selected weights reproduce the original
+fit exactly; final-feedback repeat weights also match. This is a diagnostic
+endpoint, not a new hyperparameter choice or a long-score-selected checkpoint.
+Initial normalized validation loss is 0.277686; fixed-final control/feedback
+losses are 0.316048/0.332766. Do not present the final models as accepted updates.
+
+136 host tests and five 80-frame WASM checks pass. A separate logging guest
+verifies C++/ONNX motion within 1.12e-8, memory transport within 6.01e-8 and causal
+history inputs exactly. The logging guest is excluded from timing. Native model
+has 1,606 parameters; semantic dense MACs increase from 1,280 to 1,536.
+
+Long evaluation is complete: six old V10 flights are regression evidence;
+six fresh 60-second flights at seeds 430000 through 430005 are confirmation.
+All fresh generation attempts succeeded without crashes or retries. Raw data
+is on D: through WSL `data/long-validation-v11`. All 48 primary trace hashes,
+source/artifact hashes, full feedback output/fuel repeats, selected-zero/V10
+equivalence and rotation/twist invariants pass. Each model completes 7,200
+frames per set. No default changed and no course-server upload occurred.
+
+On fresh confirmation, teacher / V10 / no-history-final / feedback-final mean
+Sim3 ATE is 0.571272 / 0.600712 / 0.579938 / 0.692283 m. Pooled one-second
+length RMSE is 0.220737 / 0.167795 / 0.160293 / 0.168791 m. Small-net-motion
+RMSE is 0.075371 / 0.157649 / 0.136720 / 0.128124 m. Feedback versus matched
+control improves this local metric 6.29%, but worsens overall distance 5.30%
+and ATE 19.37%. Versus V10, local error improves 18.73% while ATE worsens 15.24%.
+The old regression set also shows worse overall distance and ATE; its local
+improvement versus matched control is only 1.28%. This is not an accepted upgrade.
+
+Fresh stationary, slow-straight and decelerating bins improve versus matched
+control, while turning worsens. Small net displacement is not the same as
+stationary motion. Only two qualifying stopping events occur in fresh data
+(none in regression): no variant settles under the predefined rule, and
+feedback post-stop displacement error is worse (0.123080 m versus control
+0.118099 and V10 0.095571 m). Do not claim successful stop detection or recovery.
+
+Regression wall times are excluded because simulation overlaps them. Fresh
+confirmation timing starts after generation/training finish and uses all 24
+orders of four distinct artifacts. Median step times in the same order are
+0.170562 / 0.171959 / 0.180160 / 0.181052 ms. Feedback is about 5.29% slower
+than V10 on this host, while deterministic mean fuel increases only 0.20%.
+Peak fuel increases from 3,366,112 to 3,368,499. No speedup is claimed.
+
+Windows diagnostic artifacts are `artifacts/AeroVIO-native-v11-feedback-final.wasm`
+and `artifacts/AeroVIO-native-v11-no-history-final.wasm`; hashes are recorded in
+`experiments/velocity-memory-v11/windows-artifacts.json`. Feedback adds 805 bytes
+to V10's WASM size. Use V10 as the selected reference, not these diagnostic models.
+
+Raw outputs/logs: WSL `results/velocity-memory-v11`. Compact evidence and model
+snapshots are archived under `experiments/velocity-memory-v11`. Main, teacher,
+V9 and V10 remain preserved. No training or evaluation remains pending.
+
 ## Joint speed/turn balance V10 (November 12, 2026)
 
 Read `docs/joint-balance-v10.md` and `experiments/joint-balance-v10/README.md`.

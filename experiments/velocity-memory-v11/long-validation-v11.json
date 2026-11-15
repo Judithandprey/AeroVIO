@@ -1,0 +1,10 @@
+{
+  "seed": 430000,
+  "duration_seconds": 60.0,
+  "fov_degrees": 120.0,
+  "validation": [{"scene": "ProcTHOR-Train-5", "episodes": 2}, {"scene": "ProcTHOR-Train-6", "episodes": 2}, {"scene": "ProcTHOR-Train-7", "episodes": 2}],
+  "max_attempts_per_requested_episode": 3,
+  "physical_output": "/mnt/d/Robotics/我的机器人助手/artifacts/AeroVIO-data/long-validation-v11",
+  "logical_output": "data/long-validation-v11",
+  "crash_policy": "Same generator and first-success sequential seed policy as V10. Retain failures; never filter by estimator accuracy. Six new flights, no training or model selection."
+}

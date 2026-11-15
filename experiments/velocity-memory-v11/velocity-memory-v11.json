@@ -1,0 +1,15 @@
+{
+  "parent_commit": "d1d0e6b2ad54a39bd9e89b9f24c2953c49576a2d",
+  "teacher_commit": "0c4f7781cfc844d7fdc4f7223619a739b9f30cc7",
+  "parent_model": "models/joint-v10-joint-compact",
+  "cache": "data/motion-cache-v2",
+  "sampling_plan": "data/joint-sampling-v10/joint-plan.npz",
+  "training": {"epochs": 40, "batch": 64, "sequence_length": 20, "seed": 17, "lr": 0.001, "warp_weight": 2.0, "threads": 4},
+  "memory": {"velocity_clip_m_s": 2.0, "max_dt_s": 0.2, "inputs": 18, "parameters": 1606, "source": "pre-visual network displacement divided by dt, transported to endpoint camera axes using causal calibrated gyro rotation", "initialization": "V10 compact weights; four new input columns zero; new input mean zero/std one"},
+  "arms": ["no-history", "feedback", "feedback-repeat"],
+  "training_contract": "Identical V10 target-frame plan, 2388 loss-bearing targets/epoch and 1520 steps per arm. Up to 19 preceding same-episode frames supply self-predicted history. BPTT through context; loss only at target. Never feed true velocity. Full original validation episodes select minimum normalized pose loss, including epoch zero. Compact fine-tuning is shared by both arms and differs from V10 original full-graph training.",
+  "selection": {"feedback_vs_control_low_motion_ratio": 0.95, "feedback_vs_v10_low_motion_ratio": 0.95, "teacher_low_motion_ratio": 1.0, "max_ate_ratio_vs_v10": 1.02, "max_length_ratio_vs_v10": 1.02, "max_mean_fuel_ratio_vs_v10": 1.05, "max_peak_fuel_ratio_vs_v10": 1.05},
+  "evaluation": {"regression_manifest": "data/long-validation-v10/data_manifest.json", "confirmation_manifest": "data/long-validation-v11/data_manifest.json", "limits": "configs/evaluation-limits.json", "order_seed": 20261114, "rule": "No model changes after evaluating long flights. Freeze checkpoints and guards first; compare teacher, V10, no-history and feedback with balanced execution order, then repeat feedback for determinism. Selection requires gates on fresh confirmation set; report regressions and empty diagnostic bins."},
+  "diagnostics": {"stationary_speed_m_s": 0.02, "slow_speed_m_s": 0.1, "turn_deg_s": 15.0, "stop_min_run_s": 0.5, "stop_prior_speed_m_s": 0.1, "stop_error_window_s": 1.0},
+  "scope": "One fixed contrast. No GRU, fusion/rotation changes, new loss, inference depth, ground-truth predictor input, default replacement or server upload. Previous long set is regression evidence; fresh set is confirmation."
+}

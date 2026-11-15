@@ -1,0 +1,27 @@
+{
+  "teacher_commit": "0c4f7781cfc844d7fdc4f7223619a739b9f30cc7",
+  "original": {
+    "CMakeLists.txt": "2214db5ae6772ebb3b47957f7fde82d68d7543a12deb40c98ce47fbd9a64cb21",
+    "README.md": "ebe1da70997ebd4f58cbc9cd619a63696d319e1b9fb58826d44b18c1c94a2d97",
+    "export_weights.py": "57888a0b97364965dab3fe6f0462c7447b4bce43673f3450f941c61fa1435ba7",
+    "gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+    "inference.h": "c323b73e81b576aaff02f03f6f4c2db4c6e2e79c82ab21614196ea8603033a54",
+    "rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+    "solution.cpp": "1712952fa7df18cc881718316122d8299d06692718c1dfe35c63d14d78a1d455",
+    "split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a",
+    "visual_direction.h": "d4ab358af8adb94886b9831de626e2279eb4c95d777f59a9bc4b432feb2a1af4"
+  },
+  "modified": {
+    "visual_direction.h": "d4ab358af8adb94886b9831de626e2279eb4c95d777f59a9bc4b432feb2a1af4",
+    "export_weights.py": "929539b99cb462da6d4cb4319384d66a9a2a25316c0eb79a868cbdaba8b1725c",
+    "solution.cpp": "6f95402d3552d70c04a4a5262e91f8b5f8779d053ea3781e7bd8701628548a46",
+    "CMakeLists.txt": "511f4e63cccda71767e124973e98e1c660e9ab95ce2c07d5e655f5700d97928a",
+    "inference.h": "f19ce4a978471e3ed2615a4d242a81ace74dbe211852adda3d983169be8c2a38",
+    "gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+    "rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+    "split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a"
+  },
+  "feedback": false,
+  "diagnostic_logging": false,
+  "checkpoint_sha256": "5f18c5e15a9a99f9fe75d5e6c043b7d5ab306e194355c0aa887b0fa4866cd97f"
+}

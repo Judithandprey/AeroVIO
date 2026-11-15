@@ -1,0 +1,25 @@
+{
+  "source_sha256": {
+    "configs/velocity-memory-v11.json": "b3a2c32259fb6eb91ec6eee3bd3ff554c07477c75b048968d60c5b39b466f0d2",
+    "configs/long-validation-v11.json": "ddd2694aa3abe32f2bf53f11cc083420620f5174f4f79bfc2b8bd0d5a524351f",
+    "scripts/evaluate_velocity_memory.py": "8077c359fb6996f3724b3353843e5519f5a1c3fb35e2e6b1aac5a39d724cb04b",
+    "scripts/build_velocity_memory.py": "55d093239ad7a409066720d48d819e470f054b13a21d0d173b875f1445972dcb",
+    "scripts/replay_velocity_diagnostics.py": "83bbc68e140b3a52382b091eaa9865258f0d50b68490655670efc3f71ade0915",
+    "training/velocity_memory.py": "cf222b60bcaf99e0466e2576f4960bb518cf8fbba80d62b9d44ca74b5f08fb17",
+    "scripts/train_velocity_memory.py": "fbc8445d0c28d06834997b556caf475f717213c68d5f5f2117e7db239d62a2b0",
+    "scripts/generate_memory_validation.py": "f4e0a11498824d7edb42556884d92e04edc5a5a49b23e757e68ad38af4373916",
+    "scripts/verify_velocity_runtime.py": "9b326e6e02c994da99fa849b90db425469ffaad9b5701d60b3b5503dbceb00bf"
+  },
+  "artifacts_sha256": "4195a8f8e967a410da7015e3ac1006b608384af534c2d36e723b093f9096bea2",
+  "primary_selection": "both arms retain epoch zero by original full-episode validation; V10 remains selected",
+  "diagnostic_policy": "fixed final epoch 40 saved by exact training replay after seeing original validation, before long evaluation; no hyperparameter change or long-score selection",
+  "order": "all 24 permutations of four distinct artifacts per 24 frames, shuffled seed 20261114; selected-arm equality and full feedback repeat run separately after timing",
+  "timed_variants": [
+    "teacher",
+    "v10",
+    "no-history-final",
+    "feedback-final"
+  ],
+  "regression_wall_time_not_used": true,
+  "confirmation_requires_completed_generation": true
+}

@@ -14,7 +14,17 @@ See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
 local comparison and the boundary between reproducing an algorithm and obtaining
 the server's actual weights. Earlier reports remain preserved.
 
-**Latest completed experiment:** V10 jointly balances speed and turn-rate
+**Latest completed experiment:** V11 adds explicit previous-velocity feedback to the V10
+compact model, with a matched 18-input no-history control. Both original
+validation selectors retain epoch zero; fixed epoch-40 models are diagnostics.
+The network has 1,606 parameters (+256), and the teacher's rotation/visual
+algorithms are preserved. On six fresh 60-second flights, feedback reduces
+small-net-motion distance RMSE by 18.73% versus V10 and 6.29% versus matched
+control, but worsens mean Sim3 ATE by 15.24% and 19.37%, respectively. Mean fuel
+increases 0.20% versus V10. V10 remains selected. See [V11 evidence](experiments/velocity-memory-v11/README.md)
+and [method](docs/velocity-memory-v11.md). Earlier artifacts remain preserved.
+
+**Previous completed experiment:** V10 jointly balances speed and turn-rate
 exposure while preserving the teacher's network and all other training settings.
 Low-speed exposure is verified at 25% in every epoch before training. On six
 fresh 60-second flights, mean per-flight one-second distance RMSE improves from
@@ -111,9 +121,9 @@ separately transcribes the user's existing server results and verifies that the
 latest upload is v4 calibrated-gyro by filename/SHA-256. It does not claim
 physical-robot performance.
 
-The working branch is `experiment/native-fusion-v8`, based on the teacher's
-`codex/aerovio-wasm-optimization` branch. The earlier `experiment/perspective-map`
-branch remains preserved. Its default
+The working branch is `experiment/velocity-memory-v11`, starting from merged
+main `d1d0e6b`. The teacher, `experiment/native-fusion-v8` and
+`experiment/perspective-map` branches remain preserved. The default
 `workspace/solution/` model is the **pose-only learned variant**, not the tagged
 KLT baseline. Package each variant explicitly to avoid mixing model identities.
 

@@ -1,0 +1,11 @@
+{
+  "frames": 80,
+  "network_steps": 79,
+  "max_motion_difference_cpp_onnx": 1.1196387483813908e-08,
+  "max_memory_transport_difference": 6.008575437199681e-08,
+  "max_causal_input_difference": 0.0,
+  "log_sha256": "f1ab61cca25eafe4f0a0fc358d9bcce608b78c8a21b4eb65c7bb6e6427a4f040",
+  "model_sha256": "aa9351710cf7f8e3c96879f498974f3163e311079383a6928773cac71a8e8032",
+  "diagnostic_guest_not_used_for_timing": true,
+  "history_is_pre_visual_translation": true
+}

@@ -1,0 +1,14 @@
+{
+  "selected_variant": "v10",
+  "reason": "Both full original-validation selectors retained epoch zero; terminal-epoch models remain diagnostic regardless of long scores.",
+  "fixed_final_epoch_confirmation_guards": {
+    "low_motion_vs_control": true,
+    "low_motion_vs_v10": true,
+    "low_motion_vs_teacher": false,
+    "ate": false,
+    "distance": true,
+    "mean_fuel": true,
+    "peak_fuel": true
+  },
+  "no_long_scores_used_for_checkpoint_selection": true
+}

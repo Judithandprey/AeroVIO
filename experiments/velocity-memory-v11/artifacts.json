@@ -1,0 +1,32 @@
+{
+  "teacher": {
+    "path": "/root/projects/AeroVIO/artifacts/teacher-0c4f778-results/AeroVIO-teacher-native-160-0c4f778.wasm",
+    "sha256": "9d32a8164130a1d13fb65ed376e360925ce615db9f3e43a238686e4b57d156e8",
+    "bytes": 1929107
+  },
+  "v10": {
+    "path": "/root/projects/AeroVIO/results/joint-balance-v10/AeroVIO-native-v10-joint.wasm",
+    "sha256": "ce8a2f4dde5108d41ccdd64333ab44906ded11be304d62136af0e03b48a4cd3e",
+    "bytes": 1929107
+  },
+  "no-history": {
+    "path": "/root/projects/AeroVIO/results/velocity-memory-v11/AeroVIO-native-v11-no-history.wasm",
+    "sha256": "ccad613dd00a06368062e8d9821251ca5c1377fab7d0e89695920092f08d62d3",
+    "bytes": 1929747
+  },
+  "feedback": {
+    "path": "/root/projects/AeroVIO/results/velocity-memory-v11/AeroVIO-native-v11-feedback.wasm",
+    "sha256": "3c0c41ef7d08d07a4a5a16073cce27ed8ff30ff21e81ce99aacd67c2502642e0",
+    "bytes": 1929912
+  },
+  "no-history-final": {
+    "path": "/root/projects/AeroVIO/results/velocity-memory-v11/AeroVIO-native-v11-no-history-final.wasm",
+    "sha256": "d8e171c1180772341e18a63de2fd07761e70d8d2353619b8474d25a9f467430f",
+    "bytes": 1929747
+  },
+  "feedback-final": {
+    "path": "/root/projects/AeroVIO/results/velocity-memory-v11/AeroVIO-native-v11-feedback-final.wasm",
+    "sha256": "c47ff4a78df0484800d95b203874aa399c4e0d2a7c74257a6c8373f4f18e30be",
+    "bytes": 1929912
+  }
+}

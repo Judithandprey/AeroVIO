@@ -1,0 +1,14 @@
+{
+  "trace_hashes_verified": 48,
+  "episodes_per_variant_per_set": 6,
+  "frames_per_variant_per_set": 7200,
+  "teacher_v10_artifacts_unchanged": true,
+  "full_feedback_repeat_outputs_fuel_exact": true,
+  "selected_epoch_zero_guests_match_v10": true,
+  "terminal_training_repeat_exact": true,
+  "rotation_angular_twist_exact": true,
+  "training_and_generation_complete_before_confirmation_timing": true,
+  "new_confirmation_gt_prefixes_distinct": true,
+  "source_freeze_verified": true,
+  "local_only_no_course_upload": true
+}
