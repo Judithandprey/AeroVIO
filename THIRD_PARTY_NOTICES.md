@@ -78,6 +78,11 @@ scene assets and their dependencies retain their respective upstream licenses
 and attribution. Training-only libraries are not included in the deployed
 solution bundle.
 
+The fixed-window WASM Lucas–Kanade kernel in `workspace/visual_native/fixed_lk.h`
+adapts the single-channel tracking arithmetic in OpenCV's `LKTrackerInvoker`.
+The header retains the original copyright and license notice.
+[OpenCV 4.12.0 source](https://github.com/opencv/opencv/blob/4.12.0/modules/video/src/lkpyramid.cpp)
+
 Course PDFs in `docs/course/` retain their authors' rights and are stored in this
 private repository for coursework.
 

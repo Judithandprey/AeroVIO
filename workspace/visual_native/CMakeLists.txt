@@ -44,7 +44,7 @@ target_compile_definitions(solution PRIVATE
     USE_SMALL_ANGLE_ROTATION=1 USE_LEARNED_ROTATION_RESIDUAL=0
     _WASI_EMULATED_PROCESS_CLOCKS _WASI_EMULATED_SIGNAL _WASI_EMULATED_MMAN _WASI_EMULATED_GETPID
 )
-target_compile_options(solution PRIVATE -ffp-contract=off -fwasm-exceptions "SHELL:-mllvm -wasm-use-legacy-eh=false")
+target_compile_options(solution PRIVATE -O3 -ffp-contract=off -fwasm-exceptions "SHELL:-mllvm -wasm-use-legacy-eh=false")
 target_link_options(solution PRIVATE -fwasm-exceptions -Wl,-z,stack-size=8388608 -Wl,--stack-first)
 target_link_libraries(solution PRIVATE ${OpenCV_LIBS} unwind c-printscan-long-double
     wasi-emulated-process-clocks wasi-emulated-signal wasi-emulated-mman wasi-emulated-getpid)
