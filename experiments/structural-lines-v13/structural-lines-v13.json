@@ -1,0 +1,18 @@
+{
+  "parent_commit": "2d09ef5c4907e292a0802c5d66be474cc6eef9c2",
+  "baseline_path": "results/native-fusion-v8/AeroVIO-native-v8-rotation.wasm",
+  "baseline_sha256": "50fac7f6d17e37f0cc5f473a326bca70d0fc6bc602a502fc0216bb17a5ae19ac",
+  "checkpoint": "experiments/motion-ablation-v2/imu-only-compact/net.onnx",
+  "checkpoint_sha256": "710de3d43219f61390b12dcf40cc4d205cc2a8120c2b9230fc57cfeb29a0e28b",
+  "development_manifest": "data/hyperdrone-motion-v2/data_manifest.json",
+  "confirmation_manifest": "data/long-validation-v13/data_manifest.json",
+  "limits": "configs/evaluation-limits.json",
+  "order_seed": 20261116,
+  "variants": ["baseline", "detect", "correct"],
+  "diag_keys": ["sampled_images", "usable_two_direction_images", "decision_attempts", "accepted", "reject_weak", "reject_match", "reject_ambiguous", "reject_shape", "reject_residual", "reject_temporal", "reject_point_overlap", "reject_gap", "canceled", "applied_steps", "scheduled_angle_sum_rad", "applied_angle_sum_rad", "last_capture_frame", "last_line_count", "last_direction_count", "last_residual_rad", "last_reason"],
+  "reason_codes": {"0": "none", "1": "accepted", "2": "weak", "3": "match", "4": "ambiguous", "5": "shape", "6": "residual", "7": "temporal", "8": "point_overlap", "9": "gap"},
+  "guards": {"rotation_ratio_max": 0.98, "raw_ate_ratio_max": 1.02, "sim3_ate_ratio_max": 1.02, "peak_fuel_ratio_max": 1.25, "minimum_rotation_wins": 2},
+  "scope": "Frozen selected rotation-only V8 baseline, identical original checkpoint and point/IMU pipeline. Add only causal local structural-line relative rotation fallback. No memory-gate model, training, global room axes, metric width/scale prior, straight-trajectory constraint, map, server upload, or default replacement. Detector-only must preserve every baseline pose/twist. Preserve negative results.",
+  "schedule": "Match V8 160x120 green-channel preprocessing and pixel-center intrinsics. Capture every8frames atphase0, detect/solve atphase6 after V8 point fit, spread bounded correction over2frames. Past-only persistence and V8-overlap rejection. No future images or truth in inference.",
+  "evaluation": "Development on four original10s rooms5/6 flights. Freeze code/rules/artifacts before scoring four new60s rooms8/9 flights; raw generation can run independently beforehand. Six balanced execution orders, repeats outside timing; fresh timing after generation/build finish. Report perflight raw/Sim3 position, SO3 rotation/RPE, peak fuel and gate rejection reasons. Engineering guards are not significance tests."
+}

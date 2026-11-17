@@ -1,0 +1,18 @@
+[
+  {
+    "variant": "detect",
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-native-v13-detect.wasm",
+    "formal_artifact_replaced": false,
+    "bytes": 3385914,
+    "experimental_diagnostic": true,
+    "sha256": "0e1c7ea1d4fbf0c93f53966fe34285805ec8d9866b4b07b661aa5f02eaef5a3e"
+  },
+  {
+    "variant": "correct",
+    "path": "C:\\Users\\ROG\\Documents\\GitHub\\AeroVIO\\artifacts\\AeroVIO-native-v13-correct.wasm",
+    "formal_artifact_replaced": false,
+    "bytes": 3385914,
+    "experimental_diagnostic": true,
+    "sha256": "2b7bc25f9fbeb5c1c53a08a8f923f0d1c0ad4f657448b8c94a15d47e1928f781"
+  }
+]

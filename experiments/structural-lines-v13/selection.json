@@ -1,0 +1,16 @@
+{
+  "reference_retained": "frozen V8 rotation-only",
+  "main_or_default_changed": false,
+  "server_uploaded": false,
+  "engineering_guards": {
+    "rotation": false,
+    "raw_ate": true,
+    "sim3_ate": true,
+    "peak_fuel": false,
+    "rotation_episode_wins": true
+  },
+  "all_guards_pass": false,
+  "rotation_episode_wins": 2,
+  "evaluated_confirmation_episodes": 4,
+  "rule": "No automatic promotion; fixed engineering guards are not significance tests."
+}

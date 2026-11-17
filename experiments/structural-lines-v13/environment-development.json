@@ -1,0 +1,13 @@
+{
+  "python": "3.14.4 (main, Aug 20 2026, 10:41:58) [GCC 15.2.0]",
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "upstream_commit": "2072fa9b5b4a5eb34160a53f5789a9c4a9d220ca",
+  "source_commit": "2d09ef5c4907e292a0802c5d66be474cc6eef9c2",
+  "packages": {
+    "numpy": "2.5.4",
+    "wasmtime": "50.0.1",
+    "viobench": "0.0.1",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "started_utc": "2026-11-17T00:18:48.201441+00:00"
+}

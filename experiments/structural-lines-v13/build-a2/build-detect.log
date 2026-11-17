@@ -1,0 +1,4 @@
+[ 33%] Generating weights.h
+[ 66%] Building CXX object CMakeFiles/solution.dir/solution.cpp.obj
+[100%] Linking CXX executable solution.wasm
+[100%] Built target solution

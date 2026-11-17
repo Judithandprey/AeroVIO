@@ -1,0 +1,20 @@
+hyperdrone: compiling environment configuration (GENERIC)...
+conta: downloading c541d1918e99435f988f757adef57b9f8e095bc3 (ProcTHOR-Train-8.glb) from https://huggingface.co/datasets/conta-shards/procthor/resolve/main/data/c541d1918e99435f988f757adef57b9f8e095bc3.gz
+#rl_tools::hyperlux: backend=generic
+#rl_tools::hyperlux::datasets: Loaded model with 572 mesh(es)
+GENERATE ProcTHOR-Train-8 450000
+{"scene": "ProcTHOR-Train-8", "seed": 450000, "crashed": false, "frames": 1200, "elapsed_s": 531.6267020570231}
+#rl_tools::hyperlux: backend=generic
+#rl_tools::hyperlux::datasets: Loaded model with 572 mesh(es)
+GENERATE ProcTHOR-Train-8 450001
+{"scene": "ProcTHOR-Train-8", "seed": 450001, "crashed": false, "frames": 1200, "elapsed_s": 575.4615387380472}
+conta: downloading 3df2e0a5b30747554aeff62122b260118a827cd0 (ProcTHOR-Train-9.glb) from https://huggingface.co/datasets/conta-shards/procthor/resolve/main/data/3df2e0a5b30747554aeff62122b260118a827cd0.gz
+#rl_tools::hyperlux: backend=generic
+#rl_tools::hyperlux::datasets: Loaded model with 198 mesh(es)
+GENERATE ProcTHOR-Train-9 450002
+{"scene": "ProcTHOR-Train-9", "seed": 450002, "crashed": false, "frames": 1200, "elapsed_s": 517.6582439339836}
+#rl_tools::hyperlux: backend=generic
+#rl_tools::hyperlux::datasets: Loaded model with 198 mesh(es)
+GENERATE ProcTHOR-Train-9 450003
+{"scene": "ProcTHOR-Train-9", "seed": 450003, "crashed": false, "frames": 1200, "elapsed_s": 364.11294357001316}
+COMPLETE 4 new long flights

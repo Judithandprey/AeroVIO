@@ -1,0 +1,42 @@
+PASS detector: blank image has no evidence
+PASS detector: incorrect resolution rejects
+PASS detector: single stripe cannot invent a vanishing family
+PASS detector: parallel lines recover a direction at infinity without dividing by z
+PASS detector: LSD parallel image has exactly one direction, never an invented yaw axis
+PASS detector: finite perspective VP uses calibrated camera rays
+PASS detector: LSD recovers finite perspective direction
+PASS detector: two oblique families do not require orthogonal room axes
+PASS detector: LSD retains two separated oblique line families
+PASS detector: duplicate edges and collinear fragments count once
+PASS detector: narrow bundle rejects poorly conditioned VP
+PASS detector: short clutter rejects
+PASS detector: invalid calibration rejects
+PASS detector: line, direction and pair-work caps hold
+PASS detector: same input produces deterministic directions
+PASS gate: nonorthogonal direction pair recovers pure-rotation gyro error on each axis
+PASS gate: nonorthogonal direction pair recovers pure-rotation gyro error on each axis
+PASS gate: nonorthogonal direction pair recovers pure-rotation gyro error on each axis
+PASS gate: correct relative pose does not receive a fictitious correction
+PASS gate: unoriented signs and family permutations preserve relative rotation
+PASS gate: one vertical family cannot invent a yaw constraint
+PASS gate: nearly parallel families reject rank deficiency
+PASS gate: changing room-axis angle is rejected rather than orthogonalized
+PASS gate: oversized innovation is rejected before gain or clipping
+PASS gate: unmatched cross-room directions reject
+PASS gate: duplicate candidate axes cannot silently choose an ambiguous assignment
+PASS gate: invalid family residual cannot become trusted evidence
+PASS gate: nonfinite direction rejects
+PASS gate: world-left correction has correct sign and camera-to-world convention
+PASS gate: already-applied V8 alignment is subtracted rather than corrected twice
+PASS gate: changing global gauge rotates the correction without inventing a room heading
+PASS gate: delayed update retains captured gyro pose while acting on current pose
+PASS gate: 3D pure translation with perspective and varying depth produces no rotation correction
+PASS gate: detect-only computes counterfactual approvals while preserving every alignment bit
+PASS gate: real-image temporal controller applies a bounded two-step correction after warmup
+PASS gate: isolated accepted correction improves error and a fresh anchor never undoes it
+PASS gate: same causal image and IMU prefix gives exact controller repetition
+PASS gate: new V8 rotation cancels the remaining line step and invalidates its anchor
+PASS gate: timestamp gap cancels the remaining step instead of carrying stale evidence
+PASS gate: blank observations reject without scheduling correction
+structural line failures: 0
+whole multi-image test batch fuel: 409336583

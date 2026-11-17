@@ -1,0 +1,63 @@
+PASS detector: blank image has no evidence
+PASS detector: incorrect resolution rejects
+PASS detector: single stripe cannot invent a vanishing family
+PASS detector: parallel lines recover a direction at infinity without dividing by z
+PASS detector: LSD parallel image has exactly one direction, never an invented yaw axis
+PASS detector: finite perspective VP uses calibrated camera rays
+PASS detector: LSD recovers finite perspective direction
+PASS detector: two oblique families do not require orthogonal room axes
+PASS detector: LSD retains two separated oblique line families
+PASS detector: duplicate edges and collinear fragments count once
+PASS detector: narrow bundle rejects poorly conditioned VP
+PASS detector: short clutter rejects
+PASS detector: invalid calibration rejects
+PASS detector: line, direction and pair-work caps hold
+PASS detector: same input produces deterministic directions
+PASS gate: nonorthogonal direction pair recovers pure-rotation gyro error on each axis
+PASS gate: nonorthogonal direction pair recovers pure-rotation gyro error on each axis
+PASS gate: nonorthogonal direction pair recovers pure-rotation gyro error on each axis
+PASS gate: correct relative pose does not receive a fictitious correction
+PASS gate: unoriented signs and family permutations preserve relative rotation
+PASS gate: one vertical family cannot invent a yaw constraint
+PASS gate: nearly parallel families reject rank deficiency
+PASS gate: changing room-axis angle is rejected rather than orthogonalized
+PASS gate: oversized innovation is rejected before gain or clipping
+PASS gate: unmatched cross-room directions reject
+PASS gate: duplicate candidate axes cannot silently choose an ambiguous assignment
+PASS gate: invalid family residual cannot become trusted evidence
+PASS gate: nonfinite direction rejects
+PASS gate: world-left correction has correct sign and camera-to-world convention
+PASS gate: already-applied V8 alignment is subtracted rather than corrected twice
+PASS gate: changing global gauge rotates the correction without inventing a room heading
+PASS gate: delayed update retains captured gyro pose while acting on current poseTraceback (most recent call last):
+  File "/root/projects/AeroVIO/scripts/test_native_fusion.py", line 29, in <module>
+    raise SystemExit(main())
+                     ~~~~^^
+  File "/root/projects/AeroVIO/scripts/test_native_fusion.py", line 23, in main
+    result=exports['run_tests'](store)
+  File "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/wasmtime/_func.py", line 93, in __call__
+    with enter_wasm(store) as trap:
+         ~~~~~~~~~~^^^^^^^
+  File "/usr/lib/python3.14/contextlib.py", line 148, in __exit__
+    next(self.gen)
+    ~~~~^^^^^^^^^^
+  File "/root/projects/AeroVIO/.venv/lib/python3.14/site-packages/wasmtime/_func.py", line 238, in enter_wasm
+    raise trap_obj
+wasmtime._trap.Trap: error while executing at wasm backtrace:
+    0: 0x15e4b1 - fusion_tests.wasm!cv::LineSegmentDetectorImpl::compare_norm(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&)
+    1: 0x15e6d6 - fusion_tests.wasm!void std::__2::__stable_sort[abi:nqe230100]<std::__2::_ClassicAlgPolicy, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>(std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::difference_type, std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::value_type*, long)
+    2: 0x1611cc - fusion_tests.wasm!void std::__2::__stable_sort_move[abi:nqe230100]<std::__2::_ClassicAlgPolicy, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>(std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::difference_type, std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::value_type*)
+    3: 0x15e657 - fusion_tests.wasm!void std::__2::__stable_sort[abi:nqe230100]<std::__2::_ClassicAlgPolicy, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>(std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::difference_type, std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::value_type*, long)
+    4: 0x1611e6 - fusion_tests.wasm!void std::__2::__stable_sort_move[abi:nqe230100]<std::__2::_ClassicAlgPolicy, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>(std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::difference_type, std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::value_type*)
+    5: 0x15e657 - fusion_tests.wasm!void std::__2::__stable_sort[abi:nqe230100]<std::__2::_ClassicAlgPolicy, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>(std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>, bool (*&)(cv::LineSegmentDetectorImpl::normPoint const&, cv::LineSegmentDetectorImpl::normPoint const&), std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::difference_type, std::__2::iterator_traits<std::__2::__wrap_iter<cv::LineSegmentDetectorImpl::normPoint*>>::value_type*, long)
+    6: 0x15cb94 - fusion_tests.wasm!cv::LineSegmentDetectorImpl::ll_angle(double const&, unsigned int const&)
+    7: 0x15bf08 - fusion_tests.wasm!cv::LineSegmentDetectorImpl::flsd(std::__2::vector<cv::Vec<float, 4>, std::__2::allocator<cv::Vec<float, 4>>>&, std::__2::vector<double, std::__2::allocator<double>>&, std::__2::vector<double, std::__2::allocator<double>>&, std::__2::vector<double, std::__2::allocator<double>>&)
+    8: 0x15b898 - fusion_tests.wasm!cv::LineSegmentDetectorImpl::detect(cv::_InputArray const&, cv::_OutputArray const&, cv::_OutputArray const&, cv::_OutputArray const&, cv::_OutputArray const&)
+    9:   0x9f3e - fusion_tests.wasm!structural_lines::Detector::detect(cv::Mat const&, double, double, double, double)
+   10:   0xe4fa - fusion_tests.wasm!structural_lines::Controller::step(unsigned char const*, cv::Matx<double, 3, 3> const&, cv::Matx<double, 3, 3> const&, double, bool, double, bool)
+   11:   0x9168 - fusion_tests.wasm!gate_cases()
+   12:   0x2239 - fusion_tests.wasm!run_tests
+
+Caused by:
+    wasm trap: all fuel consumed by WebAssembly
+

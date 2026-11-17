@@ -1,5 +1,70 @@
 # AeroVIO - Handoff
 
+## Structural-line relative rotation fallback V13 (November 16, 2026)
+
+Work is isolated on `experiment/structural-lines-v13`, parent `2d09ef5`.
+Read `docs/structural-lines-v13.md` and the V13 experiment report. This adds
+only a geometry module to the selected rotation-only V8 WASM, not to V10 or
+the V11/V12 memory predictors. Original checkpoint and V8 point/IMU sources
+remain unchanged. No training, global Manhattan heading, metric wall width,
+scale prior, trajectory-straightening rule, main/default or course upload.
+
+Primary arms are frozen V8, detector-only and bounded line correction. The
+detector uses exact V8 green160 preprocessing and retains at most 24 lines and
+three generic vanishing directions; two independently supported directions
+are required. Relative matching uses past-only persistence, ambiguity and
+conditioning gates. Point-rotation overlap rejects line updates. Capture phase 0,
+solve phase 6, spread over 2 frames; accepted updates invalidate the old anchor
+to avoid undoing a delayed correction. Detector-only must match V8 bit for bit.
+
+Actual-WASM feasibility: only 7/100 development images supply two directions;
+all occur in one flight, mostly at startup. Isolated detector peak fuel is
+16,048,279. LSD sorts all 12,065 gradient records before the retained-line cap,
+so reducing output count or frequency does not remove its per-frame cost.
+The original probe/source snapshot and contact sheet retain this negative result.
+
+All 143 host tests and 40 native detector/controller geometry checks pass.
+The old V8 test helper's 200M whole-batch budget was exhausted by the multi-image
+tests; the same test binary passes under a separate 2B batch budget, consuming
+409,336,583. Estimator per-frame limits are unchanged. Both attempts/logs remain.
+Three complete ABI checks pass. Disabled rebuild matches frozen V8 on the first
+development flight; detector-only matches on all four, and correction repeats
+match output, fuel and diagnostics exactly.
+
+Development: V8/detect/correct metrics are identical. Mean Sim3 ATE 0.221891 m,
+raw ATE 0.429587 m, rotation RMSE 2.003087 deg and 1s rotation RPE 0.629161 deg.
+No correction is accepted in 100 decisions: 70 point-overlap, 28 weak and 2 warmup.
+Peak fuel rises from 2,589,216 to 16,760,164. Development wall times are excluded.
+Rules, model/artifact hashes and sources were frozen after this comparison.
+
+Confirmation is complete on four new 60s flights in rooms 8/9, seeds 450000..450003,
+all successful without retries. Baseline / detect / correct mean Sim3 ATE is
+0.555830 / 0.555830 / 0.555803 m; raw ATE is 1.601593 / 1.601593 / 1.601620 m.
+Mean rotation RMSE is 11.023601 / 11.023601 / 11.019874 deg and 1s rotation RPE
+is 0.795742 / 0.795742 / 0.795649 deg. Correction reduces rotation RMSE only
+0.0338%; two flights improve slightly and two are unchanged. One corrected
+flight's raw ATE and 1s rotation RPE worsen slightly. No practical gain is shown.
+
+Only 96/600 images have two usable directions; 2/600 decisions apply correction,
+at frames 902 of seed 450002 and 518 of seed 450003. Four application steps sum
+to 0.0007643 rad. Rejections: 396 point-overlap, 169 weak, 29 temporal, 3 unmatched
+and 1 residual. Early-gate priority means these counts are not independent
+coverage measures. See development-analysis.md and failure-cases.json for cases.
+
+Confirmation peak fuel rises from 3,215,473 to 18,505,582 (5.755x); mean fuel
+from 1,234,655 to 2,911,502 (2.358x). Median guest steps are 0.417089 / 0.489067 /
+0.482811 ms. The isolated fresh timing follows all generation/build/development
+work. Rotation-improvement and peak-fuel guards fail. No reference replacement.
+All 24 primary traces/decision logs and eight full correction repeats verify;
+detector-only poses/twists match frozen V8 on every flight. Sources stayed frozen.
+
+Windows diagnostic files are artifacts/AeroVIO-native-v13-detect.wasm and
+artifacts/AeroVIO-native-v13-correct.wasm. Both are 3,385,914 bytes; identities
+are in experiments/structural-lines-v13/windows-artifacts.json. All previous
+models, branches, raw data and negative results remain preserved. Main/defaults
+and course-server submission are unchanged. The reproducible pipeline and
+cost/coverage evidence are useful; do not describe this as solved drift.
+
 ## Frozen-predictor memory gate V12 (November 15, 2026)
 
 Work is on `experiment/memory-gate-v12`, based on V11 commit `96e6fcb`.

@@ -1,0 +1,19 @@
+{
+  "original_v8_components_unchanged": true,
+  "source_sha256": {
+    "workspace/structural_lines_native/visual_direction.h": "a45f7dc31e9e3a53ceeafccb8ae8891e8277dfe85af7cf415130b8cb28d5fce7",
+    "workspace/structural_lines_native/export_weights.py": "57888a0b97364965dab3fe6f0462c7447b4bce43673f3450f941c61fa1435ba7",
+    "workspace/structural_lines_native/solution.cpp": "cb278d0f006b792840c76e8866dac4b4130729ec6a1cb604ec2554dcb31469b4",
+    "workspace/structural_lines_native/CMakeLists.txt": "c549b7944457851fd6a74a223f88199b0f9345692a97a1e7f2d8b05722f67195",
+    "workspace/structural_lines_native/inference.h": "c323b73e81b576aaff02f03f6f4c2db4c6e2e79c82ab21614196ea8603033a54",
+    "workspace/structural_lines_native/fusion_geometry.h": "523226333eba8f24a5ae0556d628da989e4591ad0619c3d5747636fc26a5cd91",
+    "workspace/structural_lines_native/gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+    "workspace/structural_lines_native/README.md": "fdc4a4d2c3de24bdc8d7b73f31e8f3947b7aabaf7d9742a63854ec83719a62d1",
+    "workspace/structural_lines_native/structural_lines.h": "f2ddd8e987c35b3072c9ff6e6bff81aeb1f8fdbafd0aa80a6e1a640e5165f0f5",
+    "workspace/structural_lines_native/rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+    "workspace/structural_lines_native/structural_line_gate.h": "c27185745bdb5041946ef0c879492349d1970e3195c3a4c23b74019e577cc28d",
+    "workspace/structural_lines_native/split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a"
+  },
+  "finished_utc": "2026-11-17T00:17:33.661484+00:00",
+  "attempt": "a2"
+}

@@ -1,0 +1,7 @@
+[ 20%] Generating weights.h
+[ 40%] Building CXX object CMakeFiles/fusion_tests.dir/root/projects/AeroVIO/tests/structural_lines_geometry.cpp.obj
+[ 60%] Building CXX object CMakeFiles/solution.dir/solution.cpp.obj
+[ 80%] Linking CXX executable solution.wasm
+[100%] Linking CXX executable fusion_tests.wasm
+[100%] Built target solution
+[100%] Built target fusion_tests

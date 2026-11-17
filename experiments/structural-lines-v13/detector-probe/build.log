@@ -1,0 +1,3 @@
+[ 50%] Building CXX object CMakeFiles/structural_line_probe.dir/root/projects/AeroVIO/tests/structural_line_probe.cpp.obj
+[100%] Linking CXX executable structural_line_probe.wasm
+[100%] Built target structural_line_probe

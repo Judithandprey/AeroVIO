@@ -1,0 +1,9 @@
+{
+  "primary_trace_and_decision_log_hashes_verified": 24,
+  "identical_input_hashes": true,
+  "detector_only_outputs_exact_frozen_baseline": true,
+  "all_eight_correct_repeats_outputs_fuel_diagnostics_exact": true,
+  "frozen_sources_artifacts_verified": true,
+  "truth_only_used_for_post_execution_metrics": true,
+  "no_main_default_or_course_submission_change": true
+}

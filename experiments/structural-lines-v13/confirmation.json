@@ -1,0 +1,1483 @@
+{
+  "scope": "confirmation",
+  "variants": {
+    "baseline": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-8",
+          "seed": 450000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.19290449219922703,
+            "rpe_rotation_rmse": 0.01835840628065888,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.4859740676490496,
+            "rotation_rmse": 0.16561281658527122,
+            "rotation_max": 0.3313858045136374,
+            "velocity_rmse": 0.20347053973837476,
+            "angular_velocity_rmse": 0.04279908442675357,
+            "sim3_scale": 1.6881333236099618,
+            "sim3_ate_rmse": 0.5790969073020311,
+            "distance_travelled": 18.84988415590517,
+            "final_drift": 2.307959841257719,
+            "drift_per_metre": 0.12243894032286115
+          },
+          "rotation_rmse_deg": 9.488915423610242,
+          "rpe_rotation_1s_deg": 1.0518591984682168,
+          "max_fuel": 3215473,
+          "mean_fuel": 1631003.8833333333,
+          "peak_frame": 746,
+          "peak_phase": 2,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 2239288.78,
+              "maximum": 2682622
+            },
+            "1": {
+              "frames": 150,
+              "mean": 2104824.8733333335,
+              "maximum": 2856834
+            },
+            "2": {
+              "frames": 150,
+              "mean": 2302310.12,
+              "maximum": 3215473
+            },
+            "3": {
+              "frames": 150,
+              "mean": 1759537.52,
+              "maximum": 2637104
+            },
+            "4": {
+              "frames": 150,
+              "mean": 1789391.4066666667,
+              "maximum": 2549542
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711287.8866666667,
+              "maximum": 711548
+            },
+            "6": {
+              "frames": 150,
+              "mean": 711282.76,
+              "maximum": 711390
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1430107.72,
+              "maximum": 1494860
+            }
+          },
+          "median_step_ms": 0.47548647853545845,
+          "diagnostics_summary": null,
+          "input_sha256": "dad566af4842a7c7fb9f5a58e826c2e5792d159dea9f370aa5b6324031d272ff",
+          "trace_sha256": "6b69ef0a5d6bf6915da696370500c5b0a909881a3e15333e2a30e61603feb35a",
+          "decision_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "scene": "ProcTHOR-Train-8",
+          "seed": 450001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1414033137342256,
+            "rpe_rotation_rmse": 0.01182559561227135,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.0913236863261402,
+            "rotation_rmse": 0.282019212486025,
+            "rotation_max": 0.47199515021177463,
+            "velocity_rmse": 0.1546898059749134,
+            "angular_velocity_rmse": 0.04113715888747687,
+            "sim3_scale": 1.6736288734663938,
+            "sim3_ate_rmse": 0.4115422106443293,
+            "distance_travelled": 13.25884301393238,
+            "final_drift": 0.9595637308772931,
+            "drift_per_metre": 0.07237160360590923
+          },
+          "rotation_rmse_deg": 16.158510617052404,
+          "rpe_rotation_1s_deg": 0.677556718811573,
+          "max_fuel": 3175189,
+          "mean_fuel": 1569446.2541666667,
+          "peak_frame": 923,
+          "peak_phase": 3,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 2188353.3466666667,
+              "maximum": 2729500
+            },
+            "1": {
+              "frames": 150,
+              "mean": 1990103.66,
+              "maximum": 3030810
+            },
+            "2": {
+              "frames": 150,
+              "mean": 2190479.9,
+              "maximum": 3125282
+            },
+            "3": {
+              "frames": 150,
+              "mean": 1638816.9,
+              "maximum": 3175189
+            },
+            "4": {
+              "frames": 150,
+              "mean": 1701127.5066666666,
+              "maximum": 2866825
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711288.6066666667,
+              "maximum": 711548
+            },
+            "6": {
+              "frames": 150,
+              "mean": 711281.7866666666,
+              "maximum": 711390
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1424118.3266666667,
+              "maximum": 1501811
+            }
+          },
+          "median_step_ms": 0.45645501813851297,
+          "diagnostics_summary": null,
+          "input_sha256": "6fb9707d269ed6a72ac5ad68ea53af59439429bf6fad413ca85c51ed4154ea95",
+          "trace_sha256": "17bb554a416a9baa2bf27d9f0dd7edf91dfce49edf16c0d42e2aac531fbd8c59",
+          "decision_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "scene": "ProcTHOR-Train-9",
+          "seed": 450002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15749644657121556,
+            "rpe_rotation_rmse": 0.01332696489173351,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.201690944294973,
+            "rotation_rmse": 0.19134644563399505,
+            "rotation_max": 0.3608881320165563,
+            "velocity_rmse": 0.17001058393793264,
+            "angular_velocity_rmse": 0.04118267787541546,
+            "sim3_scale": 1.6873182816203032,
+            "sim3_ate_rmse": 0.42972320432503947,
+            "distance_travelled": 15.678679331256363,
+            "final_drift": 2.7830040027918317,
+            "drift_per_metre": 0.17750245055677302
+          },
+          "rotation_rmse_deg": 10.963343759657374,
+          "rpe_rotation_1s_deg": 0.7635788420153522,
+          "max_fuel": 1903761,
+          "mean_fuel": 834443.16,
+          "peak_frame": 360,
+          "peak_phase": 0,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 1431166.6733333333,
+              "maximum": 1903761
+            },
+            "1": {
+              "frames": 150,
+              "mean": 633005.68,
+              "maximum": 1822687
+            },
+            "2": {
+              "frames": 150,
+              "mean": 641579.82,
+              "maximum": 1648237
+            },
+            "3": {
+              "frames": 150,
+              "mean": 695409.16,
+              "maximum": 1884083
+            },
+            "4": {
+              "frames": 150,
+              "mean": 662449.92,
+              "maximum": 1749817
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711325.7533333333,
+              "maximum": 711548
+            },
+            "6": {
+              "frames": 150,
+              "mean": 711320.6266666667,
+              "maximum": 711390
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1189287.6466666667,
+              "maximum": 1334959
+            }
+          },
+          "median_step_ms": 0.3645834804046899,
+          "diagnostics_summary": null,
+          "input_sha256": "f21124204943264421d660f2759e693cf0965cc170136c847280e06e82d3aebc",
+          "trace_sha256": "ce42678242c4e1bd6bb6559e73b873fdfe603df1b7586c1766c0dd9e6647495b",
+          "decision_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "scene": "ProcTHOR-Train-9",
+          "seed": 450003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17965675435417652,
+            "rpe_rotation_rmse": 0.012042333142877549,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.6273821527930563,
+            "rotation_rmse": 0.13061402752108597,
+            "rotation_max": 0.2625210189158196,
+            "velocity_rmse": 0.18646876879108834,
+            "angular_velocity_rmse": 0.04103064470751794,
+            "sim3_scale": 1.6442220339118079,
+            "sim3_ate_rmse": 0.8029569223310893,
+            "distance_travelled": 14.679945231453923,
+            "final_drift": 2.3681077133921855,
+            "drift_per_metre": 0.16131584117345135
+          },
+          "rotation_rmse_deg": 7.483632522163808,
+          "rpe_rotation_1s_deg": 0.6899748645773958,
+          "max_fuel": 3127562,
+          "mean_fuel": 903728.5258333334,
+          "peak_frame": 547,
+          "peak_phase": 3,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 1486913.0933333333,
+              "maximum": 2398485
+            },
+            "1": {
+              "frames": 150,
+              "mean": 742960.84,
+              "maximum": 2437261
+            },
+            "2": {
+              "frames": 150,
+              "mean": 756496.14,
+              "maximum": 2297604
+            },
+            "3": {
+              "frames": 150,
+              "mean": 830815.6533333333,
+              "maximum": 3127562
+            },
+            "4": {
+              "frames": 150,
+              "mean": 781071.32,
+              "maximum": 2994316
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711277.4066666666,
+              "maximum": 711548
+            },
+            "6": {
+              "frames": 150,
+              "mean": 711272.28,
+              "maximum": 711390
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1209021.4733333334,
+              "maximum": 1378251
+            }
+          },
+          "median_step_ms": 0.3982184862252325,
+          "diagnostics_summary": null,
+          "input_sha256": "d24dd15ebe58ea6fe9f43c807df9ba33a70961b03115d42e03c2ce252d560a71",
+          "trace_sha256": "44eea4f5f80a90bbf9ae842c47de3086d3a1fec7dec0455c76188f17b72719bb",
+          "decision_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.5558298111506224,
+        "mean_raw_ate_m": 1.6015927127658047,
+        "mean_rotation_rmse_deg": 11.023600580620956,
+        "mean_rpe_rotation_1s_deg": 0.7957424059681344,
+        "mean_fuel": 1234655.4558333333,
+        "max_fuel": 3215473,
+        "median_step_ms": 0.41708897333592176,
+        "diagnostic_counters": null,
+        "acceptance_rate_per_decision": null
+      }
+    },
+    "detect": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-8",
+          "seed": 450000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.19290449219922703,
+            "rpe_rotation_rmse": 0.01835840628065888,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.4859740676490496,
+            "rotation_rmse": 0.16561281658527122,
+            "rotation_max": 0.3313858045136374,
+            "velocity_rmse": 0.20347053973837476,
+            "angular_velocity_rmse": 0.04279908442675357,
+            "sim3_scale": 1.6881333236099618,
+            "sim3_ate_rmse": 0.5790969073020311,
+            "distance_travelled": 18.84988415590517,
+            "final_drift": 2.307959841257719,
+            "drift_per_metre": 0.12243894032286115
+          },
+          "rotation_rmse_deg": 9.488915423610242,
+          "rpe_rotation_1s_deg": 1.0518591984682168,
+          "max_fuel": 18073482,
+          "mean_fuel": 3488568.5633333335,
+          "peak_frame": 814,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 2437214.3,
+              "maximum": 2880539
+            },
+            "1": {
+              "frames": 150,
+              "mean": 2105057.46,
+              "maximum": 2858382
+            },
+            "2": {
+              "frames": 150,
+              "mean": 2302577.2,
+              "maximum": 3215993
+            },
+            "3": {
+              "frames": 150,
+              "mean": 1759855.12,
+              "maximum": 2637432
+            },
+            "4": {
+              "frames": 150,
+              "mean": 1790022.5533333332,
+              "maximum": 2551300
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711780.8866666667,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 15371472.566666666,
+              "maximum": 18073482
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1430568.42,
+              "maximum": 1498040
+            }
+          },
+          "median_step_ms": 0.5432465113699436,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 14.0,
+              "decision_attempts": 150.0,
+              "accepted": 0.0,
+              "reject_weak": 9.0,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.0,
+              "reject_point_overlap": 141.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 0.0,
+              "scheduled_angle_sum_rad": 0.0,
+              "applied_angle_sum_rad": 0.0,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 4.0,
+              "last_direction_count": 1.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 8.0
+            },
+            "acceptance_rate_per_decision": 0.0,
+            "usable_two_direction_rate_per_sample": 0.09333333333333334,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.06,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.0,
+              "reject_point_overlap": 0.94,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "dad566af4842a7c7fb9f5a58e826c2e5792d159dea9f370aa5b6324031d272ff",
+          "trace_sha256": "00e872591cd160875d3708b1541b047130d0c6eff3b44d2aa3c25b5143c797b8",
+          "decision_log_sha256": "164ab2a988a9680d2f9d8eebbe7ee883aa15664f50165bfd88672f1430a6da75"
+        },
+        {
+          "scene": "ProcTHOR-Train-8",
+          "seed": 450001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1414033137342256,
+            "rpe_rotation_rmse": 0.01182559561227135,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.0913236863261402,
+            "rotation_rmse": 0.282019212486025,
+            "rotation_max": 0.47199515021177463,
+            "velocity_rmse": 0.1546898059749134,
+            "angular_velocity_rmse": 0.04113715888747687,
+            "sim3_scale": 1.6736288734663938,
+            "sim3_ate_rmse": 0.4115422106443293,
+            "distance_travelled": 13.25884301393238,
+            "final_drift": 0.9595637308772931,
+            "drift_per_metre": 0.07237160360590923
+          },
+          "rotation_rmse_deg": 16.158510617052404,
+          "rpe_rotation_1s_deg": 0.677556718811573,
+          "max_fuel": 18505582,
+          "mean_fuel": 3446145.2483333335,
+          "peak_frame": 1174,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 2386491.933333333,
+              "maximum": 2927623
+            },
+            "1": {
+              "frames": 150,
+              "mean": 1990654.72,
+              "maximum": 3031579
+            },
+            "2": {
+              "frames": 150,
+              "mean": 2190882.88,
+              "maximum": 3125616
+            },
+            "3": {
+              "frames": 150,
+              "mean": 1639388.54,
+              "maximum": 3175954
+            },
+            "4": {
+              "frames": 150,
+              "mean": 1702000.88,
+              "maximum": 2868781
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711780.4666666667,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 15522579.806666667,
+              "maximum": 18505582
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1425382.76,
+              "maximum": 1504611
+            }
+          },
+          "median_step_ms": 0.5294894799590111,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 16.0,
+              "decision_attempts": 150.0,
+              "accepted": 0.0,
+              "reject_weak": 25.0,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 1.0,
+              "reject_point_overlap": 124.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 0.0,
+              "scheduled_angle_sum_rad": 0.0,
+              "applied_angle_sum_rad": 0.0,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 8.0,
+              "last_direction_count": 1.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 8.0
+            },
+            "acceptance_rate_per_decision": 0.0,
+            "usable_two_direction_rate_per_sample": 0.10666666666666667,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.16666666666666666,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.006666666666666667,
+              "reject_point_overlap": 0.8266666666666667,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "6fb9707d269ed6a72ac5ad68ea53af59439429bf6fad413ca85c51ed4154ea95",
+          "trace_sha256": "ff30b571cbdb8a50ca2c0da812466632811820bd4cdec019ab473b6fbba5ec6c",
+          "decision_log_sha256": "77fe6f551c5d836810645b1a8157eeba61c882893d226cec8f33df0d448bcf7d"
+        },
+        {
+          "scene": "ProcTHOR-Train-9",
+          "seed": 450002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15749644657121556,
+            "rpe_rotation_rmse": 0.01332696489173351,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.201690944294973,
+            "rotation_rmse": 0.19134644563399505,
+            "rotation_max": 0.3608881320165563,
+            "velocity_rmse": 0.17001058393793264,
+            "angular_velocity_rmse": 0.04118267787541546,
+            "sim3_scale": 1.6873182816203032,
+            "sim3_ate_rmse": 0.42972320432503947,
+            "distance_travelled": 15.678679331256363,
+            "final_drift": 2.7830040027918317,
+            "drift_per_metre": 0.17750245055677302
+          },
+          "rotation_rmse_deg": 10.963343759657374,
+          "rpe_rotation_1s_deg": 0.7635788420153522,
+          "max_fuel": 14221665,
+          "mean_fuel": 2276812.225,
+          "peak_frame": 174,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 1629805.8533333333,
+              "maximum": 2101942
+            },
+            "1": {
+              "frames": 150,
+              "mean": 634438.46,
+              "maximum": 1823906
+            },
+            "2": {
+              "frames": 150,
+              "mean": 642542.5,
+              "maximum": 1649144
+            },
+            "3": {
+              "frames": 150,
+              "mean": 696889.76,
+              "maximum": 1885659
+            },
+            "4": {
+              "frames": 150,
+              "mean": 664198.7733333333,
+              "maximum": 1751690
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711813.8933333333,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 12044402.346666666,
+              "maximum": 14221665
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1190406.2133333334,
+              "maximum": 1337123
+            }
+          },
+          "median_step_ms": 0.41213948861695826,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 37.0,
+              "decision_attempts": 150.0,
+              "accepted": 1.0,
+              "reject_weak": 72.0,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 1.0,
+              "reject_temporal": 18.0,
+              "reject_point_overlap": 58.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 0.0,
+              "scheduled_angle_sum_rad": 0.00046304587138017503,
+              "applied_angle_sum_rad": 0.0,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 1.0,
+              "last_direction_count": 0.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 2.0
+            },
+            "acceptance_rate_per_decision": 0.006666666666666667,
+            "usable_two_direction_rate_per_sample": 0.24666666666666667,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.48,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.006666666666666667,
+              "reject_temporal": 0.12,
+              "reject_point_overlap": 0.38666666666666666,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "f21124204943264421d660f2759e693cf0965cc170136c847280e06e82d3aebc",
+          "trace_sha256": "e649a37bb9aba92c244a4a978bc04bae7054d9a0b8a75f61ff30bbac573b8fb0",
+          "decision_log_sha256": "8a32ad986b8316255e3e81418a894582735841ebac750dafff75a8f6b0148640"
+        },
+        {
+          "scene": "ProcTHOR-Train-9",
+          "seed": 450003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17965675435417652,
+            "rpe_rotation_rmse": 0.012042333142877549,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.6273821527930563,
+            "rotation_rmse": 0.13061402752108597,
+            "rotation_max": 0.2625210189158196,
+            "velocity_rmse": 0.18646876879108834,
+            "angular_velocity_rmse": 0.04103064470751794,
+            "sim3_scale": 1.6442220339118079,
+            "sim3_ate_rmse": 0.8029569223310893,
+            "distance_travelled": 14.679945231453923,
+            "final_drift": 2.3681077133921855,
+            "drift_per_metre": 0.16131584117345135
+          },
+          "rotation_rmse_deg": 7.483632522163808,
+          "rpe_rotation_1s_deg": 0.6899748645773958,
+          "max_fuel": 15098647,
+          "mean_fuel": 2434456.185,
+          "peak_frame": 582,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 1685219.4333333333,
+              "maximum": 2596916
+            },
+            "1": {
+              "frames": 150,
+              "mean": 743625.5733333334,
+              "maximum": 2437506
+            },
+            "2": {
+              "frames": 150,
+              "mean": 757081.6666666666,
+              "maximum": 2297806
+            },
+            "3": {
+              "frames": 150,
+              "mean": 831459.0266666666,
+              "maximum": 3127901
+            },
+            "4": {
+              "frames": 150,
+              "mean": 781993.5466666666,
+              "maximum": 2994726
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711766.5666666667,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 12754435.68,
+              "maximum": 15098647
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1210067.9866666666,
+              "maximum": 1373459
+            }
+          },
+          "median_step_ms": 0.4565499839372933,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 29.0,
+              "decision_attempts": 150.0,
+              "accepted": 1.0,
+              "reject_weak": 63.0,
+              "reject_match": 3.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 10.0,
+              "reject_point_overlap": 73.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 0.0,
+              "scheduled_angle_sum_rad": 0.00030126676319062047,
+              "applied_angle_sum_rad": 0.0,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 4.0,
+              "last_direction_count": 1.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 8.0
+            },
+            "acceptance_rate_per_decision": 0.006666666666666667,
+            "usable_two_direction_rate_per_sample": 0.19333333333333333,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.42,
+              "reject_match": 0.02,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.06666666666666667,
+              "reject_point_overlap": 0.4866666666666667,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "d24dd15ebe58ea6fe9f43c807df9ba33a70961b03115d42e03c2ce252d560a71",
+          "trace_sha256": "30d1fe7cbd84ff9ed1f6e3be9279af77d513d6191f3ba82a493a0f56fda28877",
+          "decision_log_sha256": "e1707264556a6f1643560e6f44693dba0fe712533ce04ac459565ebf788c4b13"
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.5558298111506224,
+        "mean_raw_ate_m": 1.6015927127658047,
+        "mean_rotation_rmse_deg": 11.023600580620956,
+        "mean_rpe_rotation_1s_deg": 0.7957424059681344,
+        "mean_fuel": 2911495.5554166664,
+        "max_fuel": 18505582,
+        "median_step_ms": 0.48906748997978866,
+        "diagnostic_counters": {
+          "sampled_images": 600.0,
+          "usable_two_direction_images": 96.0,
+          "decision_attempts": 600.0,
+          "accepted": 2.0,
+          "reject_weak": 169.0,
+          "reject_match": 3.0,
+          "reject_ambiguous": 0.0,
+          "reject_shape": 0.0,
+          "reject_residual": 1.0,
+          "reject_temporal": 29.0,
+          "reject_point_overlap": 396.0,
+          "reject_gap": 0.0,
+          "canceled": 0.0,
+          "applied_steps": 0.0,
+          "scheduled_angle_sum_rad": 0.0007643126345707955,
+          "applied_angle_sum_rad": 0.0
+        },
+        "acceptance_rate_per_decision": 0.0033333333333333335
+      }
+    },
+    "correct": {
+      "episodes": [
+        {
+          "scene": "ProcTHOR-Train-8",
+          "seed": 450000,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.19290449219922703,
+            "rpe_rotation_rmse": 0.01835840628065888,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.4859740676490496,
+            "rotation_rmse": 0.16561281658527122,
+            "rotation_max": 0.3313858045136374,
+            "velocity_rmse": 0.20347053973837476,
+            "angular_velocity_rmse": 0.04279908442675357,
+            "sim3_scale": 1.6881333236099618,
+            "sim3_ate_rmse": 0.5790969073020311,
+            "distance_travelled": 18.84988415590517,
+            "final_drift": 2.307959841257719,
+            "drift_per_metre": 0.12243894032286115
+          },
+          "rotation_rmse_deg": 9.488915423610242,
+          "rpe_rotation_1s_deg": 1.0518591984682168,
+          "max_fuel": 18073482,
+          "mean_fuel": 3488568.5633333335,
+          "peak_frame": 814,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 2437214.3,
+              "maximum": 2880539
+            },
+            "1": {
+              "frames": 150,
+              "mean": 2105057.46,
+              "maximum": 2858382
+            },
+            "2": {
+              "frames": 150,
+              "mean": 2302577.2,
+              "maximum": 3215993
+            },
+            "3": {
+              "frames": 150,
+              "mean": 1759855.12,
+              "maximum": 2637432
+            },
+            "4": {
+              "frames": 150,
+              "mean": 1790022.5533333332,
+              "maximum": 2551300
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711780.8866666667,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 15371472.566666666,
+              "maximum": 18073482
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1430568.42,
+              "maximum": 1498040
+            }
+          },
+          "median_step_ms": 0.5377359921112657,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 14.0,
+              "decision_attempts": 150.0,
+              "accepted": 0.0,
+              "reject_weak": 9.0,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.0,
+              "reject_point_overlap": 141.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 0.0,
+              "scheduled_angle_sum_rad": 0.0,
+              "applied_angle_sum_rad": 0.0,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 4.0,
+              "last_direction_count": 1.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 8.0
+            },
+            "acceptance_rate_per_decision": 0.0,
+            "usable_two_direction_rate_per_sample": 0.09333333333333334,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.06,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.0,
+              "reject_point_overlap": 0.94,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "dad566af4842a7c7fb9f5a58e826c2e5792d159dea9f370aa5b6324031d272ff",
+          "trace_sha256": "5c3ab78e540d4f4547e47da96b8d24e05e23ad939fb05ff82db67d497557af06",
+          "decision_log_sha256": "164ab2a988a9680d2f9d8eebbe7ee883aa15664f50165bfd88672f1430a6da75"
+        },
+        {
+          "scene": "ProcTHOR-Train-8",
+          "seed": 450001,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.1414033137342256,
+            "rpe_rotation_rmse": 0.01182559561227135,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.0913236863261402,
+            "rotation_rmse": 0.282019212486025,
+            "rotation_max": 0.47199515021177463,
+            "velocity_rmse": 0.1546898059749134,
+            "angular_velocity_rmse": 0.04113715888747687,
+            "sim3_scale": 1.6736288734663938,
+            "sim3_ate_rmse": 0.4115422106443293,
+            "distance_travelled": 13.25884301393238,
+            "final_drift": 0.9595637308772931,
+            "drift_per_metre": 0.07237160360590923
+          },
+          "rotation_rmse_deg": 16.158510617052404,
+          "rpe_rotation_1s_deg": 0.677556718811573,
+          "max_fuel": 18505582,
+          "mean_fuel": 3446145.2483333335,
+          "peak_frame": 1174,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 2386491.933333333,
+              "maximum": 2927623
+            },
+            "1": {
+              "frames": 150,
+              "mean": 1990654.72,
+              "maximum": 3031579
+            },
+            "2": {
+              "frames": 150,
+              "mean": 2190882.88,
+              "maximum": 3125616
+            },
+            "3": {
+              "frames": 150,
+              "mean": 1639388.54,
+              "maximum": 3175954
+            },
+            "4": {
+              "frames": 150,
+              "mean": 1702000.88,
+              "maximum": 2868781
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711780.4666666667,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 15522579.806666667,
+              "maximum": 18505582
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1425382.76,
+              "maximum": 1504611
+            }
+          },
+          "median_step_ms": 0.5210335075389594,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 16.0,
+              "decision_attempts": 150.0,
+              "accepted": 0.0,
+              "reject_weak": 25.0,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 1.0,
+              "reject_point_overlap": 124.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 0.0,
+              "scheduled_angle_sum_rad": 0.0,
+              "applied_angle_sum_rad": 0.0,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 8.0,
+              "last_direction_count": 1.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 8.0
+            },
+            "acceptance_rate_per_decision": 0.0,
+            "usable_two_direction_rate_per_sample": 0.10666666666666667,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.16666666666666666,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.006666666666666667,
+              "reject_point_overlap": 0.8266666666666667,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "6fb9707d269ed6a72ac5ad68ea53af59439429bf6fad413ca85c51ed4154ea95",
+          "trace_sha256": "a317468db391ec0d12cadfdd5e50209e61bb853366bb8bdc0f6e597eaae735f6",
+          "decision_log_sha256": "77fe6f551c5d836810645b1a8157eeba61c882893d226cec8f33df0d448bcf7d"
+        },
+        {
+          "scene": "ProcTHOR-Train-9",
+          "seed": 450002,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.15749625482916224,
+            "rpe_rotation_rmse": 0.013327139181788237,
+            "rpe_pairs": 1180,
+            "ate_rmse": 2.2018200043107585,
+            "rotation_rmse": 0.19128953293622475,
+            "rotation_max": 0.36069140218723583,
+            "velocity_rmse": 0.17001059960713075,
+            "angular_velocity_rmse": 0.04118319868392802,
+            "sim3_scale": 1.6873804679097044,
+            "sim3_ate_rmse": 0.4296742689223311,
+            "distance_travelled": 15.678679331256363,
+            "final_drift": 2.783874914313629,
+            "drift_per_metre": 0.1775579980619804
+          },
+          "rotation_rmse_deg": 10.960082902274433,
+          "rpe_rotation_1s_deg": 0.7635888280998991,
+          "max_fuel": 14221665,
+          "mean_fuel": 2276824.82,
+          "peak_frame": 174,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 1629805.8533333333,
+              "maximum": 2101942
+            },
+            "1": {
+              "frames": 150,
+              "mean": 634438.46,
+              "maximum": 1823906
+            },
+            "2": {
+              "frames": 150,
+              "mean": 642542.5,
+              "maximum": 1649144
+            },
+            "3": {
+              "frames": 150,
+              "mean": 696889.76,
+              "maximum": 1885659
+            },
+            "4": {
+              "frames": 150,
+              "mean": 664198.7733333333,
+              "maximum": 1751690
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711813.8933333333,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 12044451.773333333,
+              "maximum": 14221665
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1190457.5466666666,
+              "maximum": 1337123
+            }
+          },
+          "median_step_ms": 0.4100964870303869,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 37.0,
+              "decision_attempts": 150.0,
+              "accepted": 1.0,
+              "reject_weak": 72.0,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 1.0,
+              "reject_temporal": 18.0,
+              "reject_point_overlap": 58.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 2.0,
+              "scheduled_angle_sum_rad": 0.00046304587138017503,
+              "applied_angle_sum_rad": 0.00046304587138017503,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 1.0,
+              "last_direction_count": 0.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 2.0
+            },
+            "acceptance_rate_per_decision": 0.006666666666666667,
+            "usable_two_direction_rate_per_sample": 0.24666666666666667,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.48,
+              "reject_match": 0.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.006666666666666667,
+              "reject_temporal": 0.12,
+              "reject_point_overlap": 0.38666666666666666,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "f21124204943264421d660f2759e693cf0965cc170136c847280e06e82d3aebc",
+          "trace_sha256": "41558a5a08453f6df0d0fdb4991a45ee1c2037e6ca865f203f185528eaafcd74",
+          "decision_log_sha256": "a012b363523fd63d65140e6051201a9eabfc45196f49a03b3e8a6025e150e805"
+        },
+        {
+          "scene": "ProcTHOR-Train-9",
+          "seed": 450003,
+          "metrics": {
+            "frames": 1200,
+            "filled_frames": 0,
+            "rpe_translation_rmse": 0.17965675235798156,
+            "rpe_rotation_rmse": 0.012035633659779443,
+            "rpe_pairs": 1180,
+            "ate_rmse": 1.62736346332901,
+            "rotation_rmse": 0.1304107548909054,
+            "rotation_max": 0.2622233163054944,
+            "velocity_rmse": 0.1864687682223097,
+            "angular_velocity_rmse": 0.04103168452267566,
+            "sim3_scale": 1.6443120709311843,
+            "sim3_ate_rmse": 0.8029000518708836,
+            "distance_travelled": 14.679945231453923,
+            "final_drift": 2.3681276411021663,
+            "drift_per_metre": 0.1613171986519478
+          },
+          "rotation_rmse_deg": 7.471985858363937,
+          "rpe_rotation_1s_deg": 0.689591012470955,
+          "max_fuel": 15098647,
+          "mean_fuel": 2434469.0375,
+          "peak_frame": 582,
+          "peak_phase": 6,
+          "phase_fuel": {
+            "0": {
+              "frames": 150,
+              "mean": 1685219.4333333333,
+              "maximum": 2596916
+            },
+            "1": {
+              "frames": 150,
+              "mean": 743625.5733333334,
+              "maximum": 2437506
+            },
+            "2": {
+              "frames": 150,
+              "mean": 757081.6666666666,
+              "maximum": 2297806
+            },
+            "3": {
+              "frames": 150,
+              "mean": 831459.0266666666,
+              "maximum": 3127901
+            },
+            "4": {
+              "frames": 150,
+              "mean": 781993.5466666666,
+              "maximum": 2994726
+            },
+            "5": {
+              "frames": 150,
+              "mean": 711766.5666666667,
+              "maximum": 712090
+            },
+            "6": {
+              "frames": 150,
+              "mean": 12754487.166666666,
+              "maximum": 15098647
+            },
+            "7": {
+              "frames": 150,
+              "mean": 1210119.32,
+              "maximum": 1373459
+            }
+          },
+          "median_step_ms": 0.4603479756042361,
+          "diagnostics_summary": {
+            "final": {
+              "sampled_images": 150.0,
+              "usable_two_direction_images": 29.0,
+              "decision_attempts": 150.0,
+              "accepted": 1.0,
+              "reject_weak": 63.0,
+              "reject_match": 3.0,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 10.0,
+              "reject_point_overlap": 73.0,
+              "reject_gap": 0.0,
+              "canceled": 0.0,
+              "applied_steps": 2.0,
+              "scheduled_angle_sum_rad": 0.00030126676319062047,
+              "applied_angle_sum_rad": 0.00030126676319062047,
+              "last_capture_frame": 1192.0,
+              "last_line_count": 4.0,
+              "last_direction_count": 1.0,
+              "last_residual_rad": 0.0,
+              "last_reason": 8.0
+            },
+            "acceptance_rate_per_decision": 0.006666666666666667,
+            "usable_two_direction_rate_per_sample": 0.19333333333333333,
+            "rejection_rates_per_decision": {
+              "reject_weak": 0.42,
+              "reject_match": 0.02,
+              "reject_ambiguous": 0.0,
+              "reject_shape": 0.0,
+              "reject_residual": 0.0,
+              "reject_temporal": 0.06666666666666667,
+              "reject_point_overlap": 0.4866666666666667,
+              "reject_gap": 0.0
+            }
+          },
+          "input_sha256": "d24dd15ebe58ea6fe9f43c807df9ba33a70961b03115d42e03c2ce252d560a71",
+          "trace_sha256": "0407651611304004cc8f3a7a4414fdf07cb0ff1bff2f7f83d1a979eb60fe6e7a",
+          "decision_log_sha256": "c13ef6dc542e78ad08d92257928508604b53719725780cfac4f357ef56d25fc4"
+        }
+      ],
+      "summary": {
+        "mean_sim3_ate_m": 0.5558033596848938,
+        "mean_raw_ate_m": 1.6016203054037395,
+        "mean_rotation_rmse_deg": 11.019873700325252,
+        "mean_rpe_rotation_1s_deg": 0.795648939462661,
+        "mean_fuel": 2911501.917291667,
+        "max_fuel": 18505582,
+        "median_step_ms": 0.4828105156775564,
+        "diagnostic_counters": {
+          "sampled_images": 600.0,
+          "usable_two_direction_images": 96.0,
+          "decision_attempts": 600.0,
+          "accepted": 2.0,
+          "reject_weak": 169.0,
+          "reject_match": 3.0,
+          "reject_ambiguous": 0.0,
+          "reject_shape": 0.0,
+          "reject_residual": 1.0,
+          "reject_temporal": 29.0,
+          "reject_point_overlap": 396.0,
+          "reject_gap": 0.0,
+          "canceled": 0.0,
+          "applied_steps": 4.0,
+          "scheduled_angle_sum_rad": 0.0007643126345707955,
+          "applied_angle_sum_rad": 0.0007643126345707955
+        },
+        "acceptance_rate_per_decision": 0.0033333333333333335
+      }
+    }
+  },
+  "checks": [
+    {
+      "scene": "ProcTHOR-Train-8",
+      "seed": 450000,
+      "gt_prefix_sha256": "0ee1d71483d068db5017b4a0b0f4e4d09217ceae812ef5e3347c716172646d6e",
+      "execution_positions": {
+        "baseline": [
+          400,
+          400,
+          400
+        ],
+        "detect": [
+          400,
+          400,
+          400
+        ],
+        "correct": [
+          400,
+          400,
+          400
+        ]
+      },
+      "detect_outputs_exact_baseline": true,
+      "correct_repeat_outputs_fuel_diagnostics_exact": true,
+      "control_rebuild_outputs_exact_baseline": null,
+      "twist_consistency": {
+        "baseline": {
+          "linear_max_difference": 3.941291737419306e-15,
+          "angular_max_difference": 2.0488472030066873e-13
+        },
+        "detect": {
+          "linear_max_difference": 3.941291737419306e-15,
+          "angular_max_difference": 2.0488472030066873e-13
+        },
+        "correct": {
+          "linear_max_difference": 3.941291737419306e-15,
+          "angular_max_difference": 2.0488472030066873e-13
+        }
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-8",
+      "seed": 450001,
+      "gt_prefix_sha256": "724649ec08ddda48ea1fada849f03deb580cbe88202a20faa1ac4fc64c9353af",
+      "execution_positions": {
+        "baseline": [
+          400,
+          400,
+          400
+        ],
+        "detect": [
+          400,
+          400,
+          400
+        ],
+        "correct": [
+          400,
+          400,
+          400
+        ]
+      },
+      "detect_outputs_exact_baseline": true,
+      "correct_repeat_outputs_fuel_diagnostics_exact": true,
+      "control_rebuild_outputs_exact_baseline": null,
+      "twist_consistency": {
+        "baseline": {
+          "linear_max_difference": 4.475586568020162e-15,
+          "angular_max_difference": 3.296529715868246e-13
+        },
+        "detect": {
+          "linear_max_difference": 4.475586568020162e-15,
+          "angular_max_difference": 3.296529715868246e-13
+        },
+        "correct": {
+          "linear_max_difference": 4.475586568020162e-15,
+          "angular_max_difference": 3.296529715868246e-13
+        }
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-9",
+      "seed": 450002,
+      "gt_prefix_sha256": "34f309a8d49889ced82c0925f7166906534a02fbd9f9ed1e8c6034b845e1c672",
+      "execution_positions": {
+        "baseline": [
+          400,
+          400,
+          400
+        ],
+        "detect": [
+          400,
+          400,
+          400
+        ],
+        "correct": [
+          400,
+          400,
+          400
+        ]
+      },
+      "detect_outputs_exact_baseline": true,
+      "correct_repeat_outputs_fuel_diagnostics_exact": true,
+      "control_rebuild_outputs_exact_baseline": null,
+      "twist_consistency": {
+        "baseline": {
+          "linear_max_difference": 3.105588702867479e-15,
+          "angular_max_difference": 3.3939517862791035e-13
+        },
+        "detect": {
+          "linear_max_difference": 3.105588702867479e-15,
+          "angular_max_difference": 3.3939517862791035e-13
+        },
+        "correct": {
+          "linear_max_difference": 3.105588702867479e-15,
+          "angular_max_difference": 3.3939517862791035e-13
+        }
+      }
+    },
+    {
+      "scene": "ProcTHOR-Train-9",
+      "seed": 450003,
+      "gt_prefix_sha256": "96a9c33b42f7ad333d8a6f509d2389f920218c67b974cbbec448c0f0d3f04147",
+      "execution_positions": {
+        "baseline": [
+          400,
+          400,
+          400
+        ],
+        "detect": [
+          400,
+          400,
+          400
+        ],
+        "correct": [
+          400,
+          400,
+          400
+        ]
+      },
+      "detect_outputs_exact_baseline": true,
+      "correct_repeat_outputs_fuel_diagnostics_exact": true,
+      "control_rebuild_outputs_exact_baseline": null,
+      "twist_consistency": {
+        "baseline": {
+          "linear_max_difference": 2.1649348980190553e-15,
+          "angular_max_difference": 2.957634137601417e-13
+        },
+        "detect": {
+          "linear_max_difference": 2.1649348980190553e-15,
+          "angular_max_difference": 2.957634137601417e-13
+        },
+        "correct": {
+          "linear_max_difference": 2.1649348980190553e-15,
+          "angular_max_difference": 2.9032332093947844e-13
+        }
+      }
+    }
+  ],
+  "manifest_sha256": "0532c38858805627f1aafa399381d765e87344351c255f539a45ec5efa8e766b",
+  "confirmation_seed_disjointness": {
+    "confirmation_seeds": [
+      450000,
+      450001,
+      450002,
+      450003
+    ],
+    "prior_unique_seed_count": 34,
+    "prior_manifest_sha256": {
+      "data/hyperdrone-motion-smoke/data_manifest.json": "70a1c4eb9540d320fbf6e5311819537798a4b82eb95404c9fa00abaa008f3abc",
+      "data/hyperdrone-motion-v1/data_manifest.json": "c957567445bc469c0441be567b12fef8ddf58038b88b49c9d78df75f2f840cc2",
+      "data/hyperdrone-motion-v2/data_manifest.json": "98de4de618327863e525ed6caf6d7afeb73005236193ed6c3deca4190e83f14d",
+      "data/long-validation-v10/data_manifest.json": "911f57d74fe3ba2fed30f7e610d9267ba5c986a9672d8a1aaf9b88e4a875df57",
+      "data/long-validation-v11/data_manifest.json": "e0021175f133885ad0b01a5419056849af2204e944a67240b241591eb1243a42",
+      "data/long-validation-v12/data_manifest.json": "d4bae88f52a1996510d1573cb42c4ed59a98c9086278c055275bb96a8d409e03"
+    },
+    "development_scenes_disjoint": true
+  },
+  "input_contract": "Identical current RGB/IMU/calibration; no truth/future data in inference.",
+  "wall_time_comparable": true,
+  "identity": {
+    "source_sha256": {
+      "configs/evaluation-limits.json": "1ba7f216549b84d6042bc331ead92cec664bee929ea1ef469a233ce9a261bee6",
+      "configs/long-validation-v13.json": "d5e3ef25900e8494e72b199c8d736ae452bf9f58dcd3613c6a081bc8bc2acc85",
+      "configs/structural-lines-v13.json": "85003c5e1134c1a11f7049a8acf10623144dddafd9440204ef9cadae01788e2f",
+      "experiments/motion-ablation-v2/imu-only-compact/meta.json": "3bbc2967019d800b31bba67d6a2e08f2bc6313161bd1dc654809c06f4248a0bc",
+      "experiments/motion-ablation-v2/imu-only-compact/net.onnx": "710de3d43219f61390b12dcf40cc4d205cc2a8120c2b9230fc57cfeb29a0e28b",
+      "scripts/build_structural_lines.py": "591c8d12b5d8476ca42e947cc5648e81bc8395ad530916ee70a6ae63d28aa32a",
+      "scripts/evaluate_structural_lines.py": "f4400e1c436a7690add4e16f33a88ef9b2dbe6977ce2d9a49163a1b77841b874",
+      "scripts/generate_line_validation.py": "7b0758afd0fb45d146ad4003660ab59056b0699769b4998a79855bd19cac9e3d",
+      "scripts/generate_long_validation.py": "ccfa95f9dad9ec7f72e438084227d07e6e2e910c2cbeefe15f2ad36267baf607",
+      "scripts/generate_training_data.py": "7281e225a657bf012607eee1a09f67239902db2204e08626ff3c3852ba76a2e3",
+      "scripts/probe_structural_lines.py": "bd81ac81b8553074e3700fbcbca5195da89f274be81e3d4b77d8bab7bf949364",
+      "scripts/report_structural_lines.py": "1c1a42a4fd642c4d410dd51bc8a2d727a58f54fcd953423e94f057c14ae53c56",
+      "scripts/test_native_fusion.py": "c8300ceadcb3a8c3d42463eeb1fa64419f6ba52820ccec364e5b2315c774eb4b",
+      "scripts/test_structural_lines.py": "59668b3d5cdfe0c7ab46dcff047951e19a56200d32dfe9e2fd5e18c8154a2f07",
+      "tests/structural_detector_cases.h": "2c6e31715cae06b6e4acd5f92df06a24e9462ae3d5a4c234148d41adc1772f7d",
+      "tests/structural_gate_cases.h": "1f2c73cb7cd627750cec507dedd8655ae8edf6efe9ca9b9fba2512545006d2a1",
+      "tests/structural_line_probe.cpp": "891fda9ad4690b07f0b5ceef400c99916bc669f6a6cb8949c6e420b126008f9f",
+      "tests/structural_lines_geometry.cpp": "8ef8b5456b028227bcc384e23b26cc51b8e3839e068e210eab2d5162a5f4dce3",
+      "upstream.lock.json": "29ede5f4b705550dd974cdcf119d3db255d2f7fa3d6d8d13fddc2a31546de69e",
+      "workspace/structural_lines_native/CMakeLists.txt": "c549b7944457851fd6a74a223f88199b0f9345692a97a1e7f2d8b05722f67195",
+      "workspace/structural_lines_native/README.md": "fdc4a4d2c3de24bdc8d7b73f31e8f3947b7aabaf7d9742a63854ec83719a62d1",
+      "workspace/structural_lines_native/export_weights.py": "57888a0b97364965dab3fe6f0462c7447b4bce43673f3450f941c61fa1435ba7",
+      "workspace/structural_lines_native/fusion_geometry.h": "523226333eba8f24a5ae0556d628da989e4591ad0619c3d5747636fc26a5cd91",
+      "workspace/structural_lines_native/gyro_bias.h": "7757fc252e059c089b805e4b144524d6b863edcdeb53a677ab0a6fdaf8e8ce12",
+      "workspace/structural_lines_native/inference.h": "c323b73e81b576aaff02f03f6f4c2db4c6e2e79c82ab21614196ea8603033a54",
+      "workspace/structural_lines_native/rotation.h": "df0c3938b2d55619dddba38ea67ffe59fbe62dbebdb9a66c26924eb8f750b441",
+      "workspace/structural_lines_native/solution.cpp": "cb278d0f006b792840c76e8866dac4b4130729ec6a1cb604ec2554dcb31469b4",
+      "workspace/structural_lines_native/split_corners.h": "3f24b3f002ae280fb719e04cdbeb0d18bfdeebe7de07ec499d108ae38d311a0a",
+      "workspace/structural_lines_native/structural_line_gate.h": "c27185745bdb5041946ef0c879492349d1970e3195c3a4c23b74019e577cc28d",
+      "workspace/structural_lines_native/structural_lines.h": "f2ddd8e987c35b3072c9ff6e6bff81aeb1f8fdbafd0aa80a6e1a640e5165f0f5",
+      "workspace/structural_lines_native/visual_direction.h": "a45f7dc31e9e3a53ceeafccb8ae8891e8277dfe85af7cf415130b8cb28d5fce7"
+    },
+    "artifact_sha256": {
+      "baseline": "50fac7f6d17e37f0cc5f473a326bca70d0fc6bc602a502fc0216bb17a5ae19ac",
+      "control": "36a87b5e5cb0e74b3eed2b73d3c63f90ad6e91a3cf690686fa56d8559bf38fb1",
+      "detect": "0e1c7ea1d4fbf0c93f53966fe34285805ec8d9866b4b07b661aa5f02eaef5a3e",
+      "correct": "2b7bc25f9fbeb5c1c53a08a8f923f0d1c0ad4f657448b8c94a15d47e1928f781"
+    },
+    "artifacts_manifest_sha256": "773fa57b223717b03ac14e58790e5d909ee51c141bb57fc825624f9b5ad54676"
+  },
+  "timing_note": "Confirmation must run after all generation/build work ends; diagnostics/repeats excluded.",
+  "finished_utc": "2026-11-17T06:17:32.169453+00:00"
+}

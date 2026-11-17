@@ -1,0 +1,17 @@
+cmake_minimum_required(VERSION 3.20)
+project(aerovio_structural_line_probe LANGUAGES C CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_BUILD_TYPE Release)
+get_filename_component(AEROVIO_ROOT "${CMAKE_CURRENT_SOURCE_DIR}/../.." ABSOLUTE)
+set(VIOBENCH_NATIVE_DIR "${AEROVIO_ROOT}/workspace/runtime/native" CACHE PATH "Pinned native helper directory")
+include("${VIOBENCH_NATIVE_DIR}/viobench_reactor.cmake")
+viobench_find_opencv(core imgproc)
+viobench_solution(structural_line_probe "${AEROVIO_ROOT}/tests/structural_line_probe.cpp")
+target_include_directories(structural_line_probe PRIVATE "${AEROVIO_ROOT}/workspace/structural_lines_native" "${AEROVIO_ROOT}/tests")
+target_compile_definitions(structural_line_probe PRIVATE
+    _WASI_EMULATED_PROCESS_CLOCKS _WASI_EMULATED_SIGNAL _WASI_EMULATED_MMAN _WASI_EMULATED_GETPID)
+target_compile_options(structural_line_probe PRIVATE -ffp-contract=off -fwasm-exceptions "SHELL:-mllvm -wasm-use-legacy-eh=false")
+target_link_options(structural_line_probe PRIVATE -fwasm-exceptions -Wl,-z,stack-size=8388608 -Wl,--stack-first)
+target_link_libraries(structural_line_probe PRIVATE ${OpenCV_LIBS} unwind c-printscan-long-double
+    wasi-emulated-process-clocks wasi-emulated-signal wasi-emulated-mman wasi-emulated-getpid)

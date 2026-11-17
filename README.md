@@ -14,7 +14,20 @@ See [Tiny CNN reproduction](experiments/tiny-cnn-v7/README.md) for the separate
 local comparison and the boundary between reproducing an algorithm and obtaining
 the server's actual weights. Earlier reports remain preserved.
 
-**Latest completed experiment:** V12 trains a 209-parameter scalar gate between
+**Latest completed experiment:** V13 adds a bounded structural-line rotation
+fallback to the frozen, selected V8 estimator, with detector-only and disabled
+controls. On four new 60-second flights in two new rooms, it accepts only 2/600
+decisions and lowers mean rotation RMSE from 11.023601 to 11.019874 degrees
+(0.0338%). Raw position ATE is essentially unchanged, while peak WASM fuel rises
+from 3,215,473 to 18,505,582 (5.755x). The implementation fails the intended
+low-cost/improvement guards and remains diagnostic. Detector-only output exactly
+matches V8; all eight full correction repeats, 24 primary traces, 40 native
+geometry checks and 143 host tests verify. No new training, map, known global
+room axis, scale prior or submission change. See [V13 evidence](experiments/structural-lines-v13/README.md),
+[failure analysis](experiments/structural-lines-v13/development-analysis.md),
+and [method and reproduction](docs/structural-lines-v13.md).
+
+**Previous completed experiment:** V12 trains a 209-parameter scalar gate between
 frozen V10 and V11 predictors, with a learned constant-mixture control. On six
 fresh 60-second flights, the gate reduces turning and cruise length RMSE by
 4.94% and 16.62% versus V11, but remains 25.05% and 13.81% worse than V10.
@@ -134,8 +147,10 @@ separately transcribes the user's existing server results and verifies that the
 latest upload is v4 calibrated-gyro by filename/SHA-256. It does not claim
 physical-robot performance.
 
-The working branch is `experiment/memory-gate-v12`, starting from preserved
-V11 commit `96e6fcb`; main remains at `d1d0e6b`. The teacher, V10, V11,
+The working branch is `experiment/structural-lines-v13`, starting from preserved
+V12 commit `2d09ef5`. Its isolated estimator uses the selected V8 rotation-only
+reference and original weights, without the V11/V12 memory models. Main remains
+at `d1d0e6b`. The teacher, V10, V11, V12,
 `experiment/native-fusion-v8` and
 `experiment/perspective-map` branches remain preserved. The default
 `workspace/solution/` model is the **pose-only learned variant**, not the tagged

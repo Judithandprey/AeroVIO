@@ -1,0 +1,1 @@
+VERIFIED 24 primary traces; guards {'rotation': False, 'raw_ate': True, 'sim3_ate': True, 'peak_fuel': False, 'rotation_episode_wins': True}

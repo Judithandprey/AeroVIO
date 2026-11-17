@@ -1,0 +1,22 @@
+{
+  "baseline": {
+    "path": "/root/projects/AeroVIO/results/native-fusion-v8/AeroVIO-native-v8-rotation.wasm",
+    "sha256": "50fac7f6d17e37f0cc5f473a326bca70d0fc6bc602a502fc0216bb17a5ae19ac",
+    "bytes": 1939524
+  },
+  "control": {
+    "path": "/root/projects/AeroVIO/results/structural-lines-v13/builds/a2/AeroVIO-native-v13-control.wasm",
+    "sha256": "36a87b5e5cb0e74b3eed2b73d3c63f90ad6e91a3cf690686fa56d8559bf38fb1",
+    "bytes": 3286477
+  },
+  "detect": {
+    "path": "/root/projects/AeroVIO/results/structural-lines-v13/builds/a2/AeroVIO-native-v13-detect.wasm",
+    "sha256": "0e1c7ea1d4fbf0c93f53966fe34285805ec8d9866b4b07b661aa5f02eaef5a3e",
+    "bytes": 3385914
+  },
+  "correct": {
+    "path": "/root/projects/AeroVIO/results/structural-lines-v13/builds/a2/AeroVIO-native-v13-correct.wasm",
+    "sha256": "2b7bc25f9fbeb5c1c53a08a8f923f0d1c0ad4f657448b8c94a15d47e1928f781",
+    "bytes": 3385914
+  }
+}

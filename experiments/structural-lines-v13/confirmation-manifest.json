@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "status": "complete",
+  "train": [],
+  "validation": [
+    {
+      "path": "data/long-validation-v13/validation-ProcTHOR-Train-8-seed450000",
+      "scene": "ProcTHOR-Train-8",
+      "depth_path": "data/long-validation-v13/validation-ProcTHOR-Train-8-seed450000/depth_64x48.npy",
+      "seed": 450000,
+      "frames": 1200,
+      "archive_sha256": "69e41b12b3211f1d8780a76d6906b6cf1bbdfa622710aed40cc53a9e37f738e1",
+      "depth_sha256": "e541468f8f984dc14d377147f7d899e2252f3ee098406de39ea7e548a5638d25",
+      "camera_fov_degrees": 120.409271,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v13/validation-ProcTHOR-Train-8-seed450001",
+      "scene": "ProcTHOR-Train-8",
+      "depth_path": "data/long-validation-v13/validation-ProcTHOR-Train-8-seed450001/depth_64x48.npy",
+      "seed": 450001,
+      "frames": 1200,
+      "archive_sha256": "c73f8f458f75931f8f498ebd0b03d8b1dc1235cdc7774cf6347e27e385644167",
+      "depth_sha256": "3750433ad10a45ebf290bc3aeee8d077371616774e2d9a5232beb86fc783b129",
+      "camera_fov_degrees": 127.926735,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v13/validation-ProcTHOR-Train-9-seed450002",
+      "scene": "ProcTHOR-Train-9",
+      "depth_path": "data/long-validation-v13/validation-ProcTHOR-Train-9-seed450002/depth_64x48.npy",
+      "seed": 450002,
+      "frames": 1200,
+      "archive_sha256": "281b8d6daa8e55ab2b2b9af79d357d95346170800e5ff291b6f9a4d2939e13e3",
+      "depth_sha256": "939343113be5ef19520287e91ceca81aef2000af9f7244c6a9582eeac9d6c9ff",
+      "camera_fov_degrees": 109.276169,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    },
+    {
+      "path": "data/long-validation-v13/validation-ProcTHOR-Train-9-seed450003",
+      "scene": "ProcTHOR-Train-9",
+      "depth_path": "data/long-validation-v13/validation-ProcTHOR-Train-9-seed450003/depth_64x48.npy",
+      "seed": 450003,
+      "frames": 1200,
+      "archive_sha256": "92caa52f7dab4e675060c5d482479beec730253da178ce14660dc148ce09fd94",
+      "depth_sha256": "8ead0f55df64537dbf9757e39b2294bfdc0daaf06ce6706d072c7a5418c3216b",
+      "camera_fov_degrees": 117.215103,
+      "camera_parameter_keys": [
+        "camera0"
+      ],
+      "upstream_consistency_check": true
+    }
+  ],
+  "attempts": [
+    {
+      "scene": "ProcTHOR-Train-8",
+      "seed": 450000,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 531.6267020570231
+    },
+    {
+      "scene": "ProcTHOR-Train-8",
+      "seed": 450001,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 575.4615387380472
+    },
+    {
+      "scene": "ProcTHOR-Train-9",
+      "seed": 450002,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 517.6582439339836
+    },
+    {
+      "scene": "ProcTHOR-Train-9",
+      "seed": 450003,
+      "crashed": false,
+      "frames": 1200,
+      "elapsed_s": 364.11294357001316
+    }
+  ],
+  "config_sha256": "d5e3ef25900e8494e72b199c8d736ae452bf9f58dcd3613c6a081bc8bc2acc85",
+  "generator_sha256": "7b0758afd0fb45d146ad4003660ab59056b0699769b4998a79855bd19cac9e3d",
+  "original_capture_source_sha256": "7281e225a657bf012607eee1a09f67239902db2204e08626ff3c3852ba76a2e3",
+  "world_header_sha256": "b293bfec235d464bdf71fa0023c614b490c189c4f6dd9673d99f619eb6573067",
+  "created_utc": "2026-11-17T00:04:36.847274+00:00",
+  "physical_output": "/mnt/d/Robotics/\u6211\u7684\u673a\u5668\u4eba\u52a9\u624b/artifacts/AeroVIO-data/long-validation-v13",
+  "duration_seconds": 60.0,
+  "packages": {
+    "hyperdrone": "0.1.10",
+    "hyperlux": "0.1.10",
+    "viobench": "0.0.1"
+  },
+  "host": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+  "estimator_scores_used_for_generation": false,
+  "finished_utc": "2026-11-17T06:09:52.668920+00:00",
+  "reused_generator_sha256": "ccfa95f9dad9ec7f72e438084227d07e6e2e910c2cbeefe15f2ad36267baf607",
+  "prior_long_seeds_disjoint": true,
+  "development_scene_disjoint": true,
+  "generation_used_estimator_or_line_scores": false
+}

@@ -1,0 +1,10 @@
+{
+  "seed": 450000,
+  "duration_seconds": 60.0,
+  "fov_degrees": 120.0,
+  "validation": [{"scene": "ProcTHOR-Train-8", "episodes": 2}, {"scene": "ProcTHOR-Train-9", "episodes": 2}],
+  "max_attempts_per_requested_episode": 3,
+  "physical_output": "/mnt/d/Robotics/我的机器人助手/artifacts/AeroVIO-data/long-validation-v13",
+  "logical_output": "data/long-validation-v13",
+  "crash_policy": "Same simulator, first-success sequential seeds, retain every attempt. Four fresh long flights in two rooms not used for this module's development. No filtering by estimator accuracy, line coverage, or motion regime."
+}
