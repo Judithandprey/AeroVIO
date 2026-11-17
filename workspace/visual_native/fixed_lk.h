@@ -68,15 +68,13 @@ struct Bilinear {
         const auto scaled = wasm_f32x4_mul(wasm_f32x4_mul(horizontal, vertical),
                                           wasm_f32x4_splat(1 << weight_bits));
         const auto rounded = wasm_i32x4_trunc_sat_f32x4(wasm_f32x4_nearest(scaled));
-        const int top_left = wasm_i32x4_extract_lane(rounded, 0);
-        const int top_right = wasm_i32x4_extract_lane(rounded, 1);
-        const int bottom_left = wasm_i32x4_extract_lane(rounded, 2);
-        // Like OpenCV, make the last weight the remainder after rounding.
-        const int bottom_right = (1 << weight_bits) - top_left - top_right - bottom_left;
-        const auto weights = wasm_i32x4_replace_lane(rounded, 3, bottom_right);
-        const auto packed = wasm_i16x8_narrow_i32x4(weights, weights);
-        top = wasm_i32x4_shuffle(packed, packed, 0, 0, 0, 0);
-        bottom = wasm_i32x4_shuffle(packed, packed, 1, 1, 1, 1);
+        // The first three rounded weights and their remainder all fit in
+        // signed 16-bit lanes. Interleave their low bytes directly.
+        const auto pairs = wasm_i32x4_add(rounded, wasm_i32x4_shuffle(rounded, rounded, 1, 0, 0, 0));
+        const auto sum = wasm_i32x4_add(pairs, wasm_i32x4_shuffle(rounded, rounded, 2, 2, 2, 2));
+        const auto remainder = wasm_i32x4_sub(wasm_i32x4_splat(1 << weight_bits), sum);
+        top = wasm_i8x16_shuffle(rounded, rounded, 0, 1, 4, 5, 0, 1, 4, 5, 0, 1, 4, 5, 0, 1, 4, 5);
+        bottom = wasm_i8x16_shuffle(rounded, remainder, 8, 9, 16, 17, 8, 9, 16, 17, 8, 9, 16, 17, 8, 9, 16, 17);
     }
 
     template<int Shift>
@@ -101,18 +99,13 @@ struct GradientSamples {
 
 template<int Window>
 struct AxisPairs {
-    v128_t low, high, tail{}, edge;
+    v128_t low, high, tail{};
 
-    explicit AxisPairs(const int16_t* row) {
-        const auto first = wasm_v128_load(row);
-        const auto second = wasm_v128_load(row + 8);
+    AxisPairs(v128_t first, v128_t second) {
         low = wasm_i16x8_shuffle(first, first, 0, 1, 1, 2, 2, 3, 3, 4);
         high = wasm_i16x8_shuffle(first, second, 4, 5, 5, 6, 6, 7, 7, 8);
         if constexpr (Window == 13)
             tail = wasm_i16x8_shuffle(second, second, 0, 1, 1, 2, 2, 3, 3, 4);
-        constexpr int last = Window - 9;
-        edge = wasm_i16x8_shuffle(second, second, last, last + 1, last, last + 1,
-                                  last, last + 1, last, last + 1);
     }
 
     GradientSamples interpolate(const Bilinear& w, const AxisPairs& bottom) const {
@@ -127,8 +120,19 @@ struct AxisPairs {
 template<int Window, bool IntegerOrigin>
 struct GradientRow {
     AxisPairs<Window> horizontal, vertical;
+    v128_t edge;
 
-    GradientRow(const int16_t* dx, const int16_t* dy) : horizontal(dx), vertical(dy) {}
+    GradientRow(const int16_t* dx, const int16_t* dy)
+        : GradientRow(wasm_v128_load(dx), wasm_v128_load(dx + 8),
+                      wasm_v128_load(dy), wasm_v128_load(dy + 8)) {}
+
+private:
+    static constexpr int last = Window - 9;
+
+    GradientRow(v128_t dx_first, v128_t dx_second, v128_t dy_first, v128_t dy_second)
+        : horizontal(dx_first, dx_second), vertical(dy_first, dy_second),
+          edge(wasm_i16x8_shuffle(dx_second, dy_second,
+              last, last + 1, 8 + last, 9 + last, last, last + 1, 8 + last, 9 + last)) {}
 };
 
 template<int Window>
@@ -238,6 +242,34 @@ struct PatchRow {
     v128_t edge_sample;
 };
 
+// Cache the bias and gradients for two last-column pixels together.
+struct PatchEdgePair {
+    v128_t bias, gradients;
+
+    PatchEdgePair() = default;
+    PatchEdgePair(v128_t first, v128_t second)
+        : bias(wasm_i32x4_shuffle(first, second, 2, 2, 6, 6)),
+          gradients(wasm_i32x4_shuffle(first, second, 0, 1, 4, 5)) {}
+};
+
+template<int Window>
+struct SourcePatch {
+    std::array<PatchRow, Window> rows;
+    // Cache last-column pairs for the 13x13 windows used at 160x120.
+    static constexpr bool cache_edges = Window == 13;
+    std::array<PatchEdgePair, cache_edges ? Window / 2 : 0> edge_pairs;
+    Covariance matrix;
+    float inverse = 0.f;
+
+    PatchEdgePair edge_pair(int y) const {
+        if constexpr (cache_edges) {
+            return edge_pairs[y / 2];
+        } else {
+            return {rows[y].edge_sample, rows[y + 1].edge_sample};
+        }
+    }
+};
+
 inline void accumulate_covariance(v128_t gx, v128_t gy, v128_t& xx, v128_t& xy, v128_t& yy) {
     const auto dx = wasm_f32x4_convert_i32x4(gx);
     const auto dy = wasm_f32x4_convert_i32x4(gy);
@@ -248,7 +280,7 @@ inline void accumulate_covariance(v128_t gx, v128_t gy, v128_t& xx, v128_t& xy, 
 
 template<int Window, int Width, bool IntegerOrigin, bool ReuseIntensity>
 Covariance prepare_patch(const cv::Mat& image, const cv::Mat& derivative,
-                         const PatchOrigin& origin, std::array<PatchRow, Window>& patch,
+                         const PatchOrigin& origin, SourcePatch<Window>& patch,
                          const IntensityPatch<Window>* samples) {
     // The tracker allocates both image and gradient planes with this padding.
     constexpr int image_stride = Width + 2 * visual_direction::horizontal_padding;
@@ -260,6 +292,7 @@ Covariance prepare_patch(const cv::Mat& image, const cv::Mat& derivative,
     const auto* dy_row = dx_row + gradient_stride / 2;
     auto xx = wasm_f32x4_splat(0.f), xy = xx, yy = xx;
     auto edge = wasm_f32x4_splat(0.f);
+    auto previous_edge = wasm_i32x4_splat(0);
     const auto& w = origin.weights;
     auto top_row = wasm_v128_load(pixels);
     // The lower taps of this patch row become the upper taps of the next row.
@@ -267,7 +300,7 @@ Covariance prepare_patch(const cv::Mat& image, const cv::Mat& derivative,
     GradientRow<Window, IntegerOrigin> top_gradients(dx_row, dy_row);
 #pragma clang loop unroll(full)
     for (int y = 0; y < Window; ++y) {
-        auto& row = patch[y];
+        auto& row = patch.rows[y];
         const auto bottom_row = wasm_v128_load(pixels + image_stride);
         const PixelPairs<Window> bottom_pixels(bottom_row);
         const GradientRow<Window, IntegerOrigin> bottom_gradients(dx_row + gradient_stride,
@@ -315,9 +348,7 @@ Covariance prepare_patch(const cv::Mat& image, const cv::Mat& derivative,
             if constexpr (!ReuseIntensity)
                 last_pixel = wasm_u8x16_extract_lane(top_row, last) << 5;
         } else {
-            const auto upper = wasm_i32x4_shuffle(top_gradients.horizontal.edge, top_gradients.vertical.edge, 0, 4, 0, 4);
-            const auto lower = wasm_i32x4_shuffle(bottom_gradients.horizontal.edge, bottom_gradients.vertical.edge, 0, 4, 0, 4);
-            row.edge_sample = w.sample_pairs<weight_bits>(upper, lower);
+            row.edge_sample = w.sample_pairs<weight_bits>(top_gradients.edge, bottom_gradients.edge);
             if constexpr (!ReuseIntensity) {
                 const auto intensity = w.sample_pairs<intensity_shift>(top_pixels.edge, bottom_pixels.edge);
                 last_pixel = wasm_i32x4_extract_lane(intensity, 0);
@@ -326,6 +357,11 @@ Covariance prepare_patch(const cv::Mat& image, const cv::Mat& derivative,
         const int edge_bias = ReuseIntensity ? samples->edge_bias[y]
                             : (1 << (intensity_shift - 1)) - last_pixel * (1 << intensity_shift);
         row.edge_sample = wasm_i32x4_replace_lane(row.edge_sample, 2, edge_bias);
+        if constexpr (SourcePatch<Window>::cache_edges) {
+            if (y % 2 == 1)
+                patch.edge_pairs[y / 2] = {previous_edge, row.edge_sample};
+            previous_edge = row.edge_sample;
+        }
         const auto left = wasm_i32x4_shuffle(row.edge_sample, row.edge_sample, 0, 0, 1, 1);
         const auto right = wasm_i32x4_shuffle(row.edge_sample, row.edge_sample, 0, 1, 1, 1);
         edge = wasm_f32x4_add(edge, wasm_f32x4_convert_i32x4(wasm_i32x4_mul(left, right)));
@@ -370,8 +406,9 @@ inline v128_t finish_residual(v128_t sum_low, v128_t sum_high, v128_t tail_sum) 
 
 template<int Window, int Width>
 v128_t residual(const cv::Mat& image, const PatchOrigin& origin,
-                     const std::array<PatchRow, Window>& patch) {
+                     const SourcePatch<Window>& source) {
     static_assert(Window % 2 == 1);
+    const auto& patch = source.rows;
     constexpr int stride = Width + 2 * visual_direction::horizontal_padding;
     const auto* pixels = image.data + origin.pixel.y * stride + origin.pixel.x;
     auto sum_low = wasm_f32x4_splat(0.f), sum_high = sum_low;
@@ -388,20 +425,18 @@ v128_t residual(const cv::Mat& image, const PatchOrigin& origin,
         }
     };
     const auto two_edges = [&](const PixelPairs<Window>& top, const PixelPairs<Window>& middle,
-                               const PixelPairs<Window>& bottom, const PatchRow& first, const PatchRow& second) {
+                               const PixelPairs<Window>& bottom, const PatchEdgePair& edge) {
         const auto upper = wasm_i32x4_shuffle(top.edge, middle.edge, 0, 0, 4, 4);
         const auto lower = wasm_i32x4_shuffle(middle.edge, bottom.edge, 0, 0, 4, 4);
-        const auto bias = wasm_i32x4_shuffle(first.edge_sample, second.edge_sample, 2, 2, 6, 6);
-        const auto gradients = wasm_i32x4_shuffle(first.edge_sample, second.edge_sample, 0, 1, 4, 5);
-        const auto difference = w.sample_pairs<intensity_shift>(upper, lower, bias);
-        return wasm_f32x4_convert_i32x4(wasm_i32x4_mul(difference, gradients));
+        const auto difference = w.sample_pairs<intensity_shift>(upper, lower, edge.bias);
+        return wasm_f32x4_convert_i32x4(wasm_i32x4_mul(difference, edge.gradients));
     };
     PixelPairs<Window> top(wasm_v128_load(pixels));
 #pragma clang loop unroll(full)
     for (int y = 0; y + 1 < Window; y += 2) {
         const PixelPairs<Window> middle(wasm_v128_load(pixels + (y + 1) * stride));
         const PixelPairs<Window> bottom(wasm_v128_load(pixels + (y + 2) * stride));
-        const auto edge_products = two_edges(top, middle, bottom, patch[y], patch[y + 1]);
+        const auto edge_products = two_edges(top, middle, bottom, source.edge_pair(y));
         // Add each edge product after its own row's other products.
         accumulate_pixels(top, middle, patch[y]);
         tail_sum = wasm_f32x4_add(tail_sum, edge_products);
@@ -462,7 +497,7 @@ v128_t residual_grid(const cv::Mat& image, cv::Point2i origin, bool x_half,
 
 template<int Window, int Width>
 v128_t initial_reverse_residual(const cv::Mat& image, v128_t estimate,
-                                const std::array<PatchRow, Window>& patch) {
+                                const SourcePatch<Window>& patch) {
     const auto doubled = wasm_f32x4_add(estimate, estimate);
     const auto on_grid = wasm_f32x4_eq(doubled, wasm_f32x4_floor(doubled));
     if ((wasm_i32x4_bitmask(on_grid) & 3) != 3)
@@ -471,13 +506,14 @@ v128_t initial_reverse_residual(const cv::Mat& image, v128_t estimate,
     const auto indices = wasm_i32x4_trunc_sat_f32x4(floor);
     const auto mask = wasm_i32x4_bitmask(wasm_f32x4_ne(estimate, floor));
     const cv::Point2i origin(wasm_i32x4_extract_lane(indices, 0), wasm_i32x4_extract_lane(indices, 1));
-    return mask & 2 ? residual_grid<true, Window, Width>(image, origin, mask & 1, patch)
-                    : residual_grid<false, Window, Width>(image, origin, mask & 1, patch);
+    return mask & 2 ? residual_grid<true, Window, Width>(image, origin, mask & 1, patch.rows)
+                    : residual_grid<false, Window, Width>(image, origin, mask & 1, patch.rows);
 }
 
 template<int Window, int Width, bool SaveIntensity>
 float mean_error(const cv::Mat& image, const PatchOrigin& origin,
-                 const std::array<PatchRow, Window>& patch, IntensityPatch<Window>* samples) {
+                 const SourcePatch<Window>& source, IntensityPatch<Window>* samples) {
+    const auto& patch = source.rows;
     constexpr int stride = Width + 2 * visual_direction::horizontal_padding;
     const auto* pixels = image.data + origin.pixel.y * stride + origin.pixel.x;
     auto vector_sum = wasm_i32x4_splat(0);
@@ -514,9 +550,7 @@ float mean_error(const cv::Mat& image, const PatchOrigin& origin,
         };
         const auto top = join(first.edge, second.edge, third.edge, fourth.edge);
         const auto bottom = join(second.edge, third.edge, fourth.edge, next.edge);
-        const auto first_bias = wasm_i32x4_shuffle(patch[y].edge_sample, patch[y + 1].edge_sample, 2, 6, 2, 6);
-        const auto second_bias = wasm_i32x4_shuffle(patch[y + 2].edge_sample, patch[y + 3].edge_sample, 2, 6, 2, 6);
-        const auto bias = wasm_i32x4_shuffle(first_bias, second_bias, 0, 1, 4, 5);
+        const auto bias = wasm_i32x4_shuffle(source.edge_pair(y).bias, source.edge_pair(y + 2).bias, 0, 2, 4, 6);
         const auto error = w.sample_pairs<intensity_shift>(top, bottom, bias);
         edge_sum = wasm_i32x4_add(edge_sum, wasm_i32x4_abs(error));
         if constexpr (SaveIntensity)
@@ -539,13 +573,6 @@ float mean_error(const cv::Mat& image, const PatchOrigin& origin,
     return float(sum) / (32 * Window * Window);
 }
 
-template<int Window>
-struct SourcePatch {
-    std::array<PatchRow, Window> rows;
-    Covariance matrix;
-    float inverse = 0.f;
-};
-
 template<int Window, int Width, bool ReuseIntensity = false>
 void prepare_source(const cv::Mat& previous, const cv::Mat& derivative, cv::Point2f source,
                     SourcePatch<Window>& patch, const IntensityPatch<Window>* samples = nullptr) {
@@ -555,8 +582,8 @@ void prepare_source(const cv::Mat& previous, const cv::Mat& derivative, cv::Poin
     if (!inside_padded_image<Window, Width>(source_corner)) return;
     const PatchOrigin origin(source_corner);
     const bool integer_origin = source_corner.x == origin.pixel.x && source_corner.y == origin.pixel.y;
-    patch.matrix = integer_origin ? prepare_patch<Window, Width, true, ReuseIntensity>(previous, derivative, origin, patch.rows, samples)
-                                  : prepare_patch<Window, Width, false, ReuseIntensity>(previous, derivative, origin, patch.rows, samples);
+    patch.matrix = integer_origin ? prepare_patch<Window, Width, true, ReuseIntensity>(previous, derivative, origin, patch, samples)
+                                  : prepare_patch<Window, Width, false, ReuseIntensity>(previous, derivative, origin, patch, samples);
     const auto [xx, xy, yy] = patch.matrix;
     const float determinant = xx * yy - xy * xy;
     const float minimum_eigenvalue = (yy + xx - std::sqrt((xx - yy) * (xx - yy) + 4.f * xy * xy))
@@ -592,8 +619,8 @@ void refine_point(const cv::Mat& current, const SourcePatch<Window>& patch, cv::
             break;
         }
         const auto rhs = ReverseGrid && iteration == 0
-            ? initial_reverse_residual<Window, Width>(current, estimate, patch.rows)
-            : residual<Window, Width>(current, PatchOrigin(estimate), patch.rows);
+            ? initial_reverse_residual<Window, Width>(current, estimate, patch)
+            : residual<Window, Width>(current, PatchOrigin(estimate), patch);
         const auto swapped = wasm_i32x4_shuffle(rhs, rhs, 1, 0, 2, 3);
         const auto delta = wasm_f32x4_mul(wasm_f32x4_sub(wasm_f32x4_mul(cross, swapped),
                                                        wasm_f32x4_mul(diagonal, rhs)), inverse);
@@ -622,7 +649,7 @@ void refine_point(const cv::Mat& current, const SourcePatch<Window>& patch, cv::
             if (status) {
                 if (work) ++*work;
                 status = mean_error<Window, Width, SaveIntensity>(
-                    current, PatchOrigin(target_corner), patch.rows, samples) <= photometric_error_limit;
+                    current, PatchOrigin(target_corner), patch, samples) <= photometric_error_limit;
             }
         }
     }

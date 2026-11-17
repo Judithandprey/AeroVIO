@@ -86,7 +86,7 @@ void scharr(const cv::Mat& image, cv::Mat& gradient) {
         auto* dy = dx + derivative_stride / 2;
         HorizontalScharr top(source - stride);
         HorizontalScharr middle(source);
-#pragma clang loop unroll_count(4)
+#pragma clang loop unroll(full)
         for (int y = Begin; y < End; y += 2) {
             const HorizontalScharr bottom(source + stride);
             const HorizontalScharr next(source + 2 * stride);
@@ -108,22 +108,20 @@ inline v128_t gaussian5(v128_t left, v128_t near_left, v128_t center,
     return wasm_i16x8_add(wasm_i16x8_add(near, middle), wasm_i16x8_add(left, right));
 }
 
-// One load lays out eight even and eight odd columns for the 5-tap filter.
+// Group the symmetric byte pairs before widening for the 5-tap filter.
 struct GaussianColumns {
-    v128_t even, odd;
+    v128_t bytes;
 
-    explicit GaussianColumns(const uint8_t* pixels) {
-        const auto row = wasm_v128_load(pixels);
-        const auto zero = wasm_i32x4_splat(0);
-        even = wasm_i8x16_shuffle(row, zero, 0, 16, 2, 16, 4, 16, 6, 16, 8, 16, 10, 16, 12, 16, 14, 16);
-        odd = wasm_i8x16_shuffle(row, zero, 1, 16, 3, 16, 5, 16, 7, 16, 9, 16, 11, 16, 13, 16, 15, 16);
-    }
+    explicit GaussianColumns(const uint8_t* pixels) : bytes(wasm_v128_load(pixels)) {}
 
     v128_t horizontal(const GaussianColumns& next) const {
-        const auto center = wasm_i16x8_shuffle(even, next.even, 1, 2, 3, 4, 5, 6, 7, 8);
-        const auto near_right = wasm_i16x8_shuffle(odd, next.odd, 1, 2, 3, 4, 5, 6, 7, 8);
-        const auto right = wasm_i16x8_shuffle(even, next.even, 2, 3, 4, 5, 6, 7, 8, 9);
-        return gaussian5(even, odd, center, near_right, right);
+        const auto outer = wasm_i8x16_shuffle(bytes, next.bytes, 0, 4, 2, 6, 4, 8, 6, 10, 8, 12, 10, 14, 12, 16, 14, 18);
+        const auto inner = wasm_i8x16_shuffle(bytes, next.bytes, 1, 3, 3, 5, 5, 7, 7, 9, 9, 11, 11, 13, 13, 15, 15, 17);
+        const auto centers = wasm_i8x16_shuffle(bytes, next.bytes, 2, 4, 6, 8, 10, 12, 14, 16, 0, 0, 0, 0, 0, 0, 0, 0);
+        const auto outer_sum = wasm_u16x8_extadd_pairwise_u8x16(outer);
+        const auto inner_sum = wasm_i16x8_shl(wasm_u16x8_extadd_pairwise_u8x16(inner), 2);
+        const auto center = wasm_i16x8_mul(wasm_u16x8_extend_low_u8x16(centers), wasm_i16x8_splat(6));
+        return wasm_i16x8_add(wasm_i16x8_add(outer_sum, inner_sum), center);
     }
 };
 
@@ -131,7 +129,8 @@ template<int Width, int Height>
 void pyramid_down(const cv::Mat& source, cv::Mat& target) {
     static_assert(Width % 16 == 0);
     // Both pyramid levels are already allocated with horizontal padding.
-    using Row = std::array<v128_t, Width / 16>;
+    constexpr size_t blocks = Width / 16;
+    using Row = std::array<v128_t, blocks>;
     std::array<Row, 5> rows;
     constexpr int stride = Width + 2 * horizontal_padding;
     constexpr int target_stride = Width / 2 + 2 * horizontal_padding;
@@ -157,11 +156,18 @@ void pyramid_down(const cv::Mat& source, cv::Mat& target) {
         compute_row(*next1, 2 * y + 1);
         compute_row(*next2, 2 * y + 2);
         auto* dest = target.data + y * target_stride;
-#pragma clang loop unroll(full)
-        for (size_t x = 0; x < center->size(); ++x) {
+        const auto rounded = [&](size_t x) {
             const auto sum = gaussian5((*previous2)[x], (*previous1)[x], (*center)[x], (*next1)[x], (*next2)[x]);
-            const auto rounded = wasm_u16x8_shr(wasm_i16x8_add(sum, wasm_i16x8_splat(128)), 8);
-            wasm_v128_store64_lane(dest + 8 * x, wasm_u8x16_narrow_i16x8(rounded, rounded), 0);
+            return wasm_u16x8_shr(wasm_i16x8_add(sum, wasm_i16x8_splat(128)), 8);
+        };
+#pragma clang loop unroll(full)
+        for (size_t x = 0; x + 1 < blocks; x += 2) {
+            wasm_v128_store(dest + 8 * x, wasm_u8x16_narrow_i16x8(rounded(x), rounded(x + 1)));
+        }
+        if constexpr (blocks % 2 != 0) {
+            constexpr size_t last = blocks - 1;
+            const auto tail = rounded(last);
+            wasm_v128_store64_lane(dest + 8 * last, wasm_u8x16_narrow_i16x8(tail, tail), 0);
         }
         auto* first = previous2;
         auto* second = previous1;

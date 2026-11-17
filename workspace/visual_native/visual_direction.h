@@ -181,6 +181,11 @@ struct TrackingBatch {
     size_t count = 0;
 };
 
+// Start one coarse estimate from each of the second and third batches at capture.
+constexpr bool starts_coarse_at_capture(size_t rank) {
+    return rank == 5 || rank == 10;
+}
+
 template<int Scale, bool Forward>
 constexpr auto make_tracking_batches() {
     std::array<TrackingBatch, 5> batches{};
@@ -197,7 +202,7 @@ constexpr auto make_tracking_batches() {
         }
         if constexpr (Scale == 2 && Forward) {
             if (rank == 0 || rank == 15 || rank % 24 == 1) batch = 0;
-            if (rank == 5) append(0, rank);  // Prepare only the coarse estimate.
+            if (starts_coarse_at_capture(rank)) append(0, rank);
         }
         append(batch, rank);
     }
@@ -241,8 +246,12 @@ public:
             capture_rotation_ = camera_to_world;
             capture_position_ = imu_position;
             current_to_anchor_ = anchor_rotation_.t() * capture_rotation_;
-            observations_.clear();
+            // A successful track replaces the match before the fit can read it.
             observations_.resize(points_.size());
+            for (auto& observation : observations_) {
+                observation.forward_ok = false;
+                observation.reverse_ok = false;
+            }
             if constexpr (levels == 1) {
                 int work = 0;
                 track_forward(0, &work);
@@ -250,8 +259,8 @@ public:
                 // completed iteration count can guide the gradient split.
                 constexpr int coarse_height = height / 2;
                 constexpr int half = height / 4;
-                constexpr int full_budget = 55;
-                constexpr int half_budget = 64;
+                constexpr int full_budget = 69;
+                constexpr int half_budget = 78;
                 if (observations_.empty()) {
                     coarse_rows_ = 0;
                 } else if (work <= full_budget) {
@@ -388,11 +397,6 @@ private:
         }
     }
 
-    // Start one of the second batch's coarse estimates at capture.
-    static bool pretrack_coarse(size_t rank) {
-        return scale == 2 && rank == 5;
-    }
-
     void track_forward(int batch_index, int* work = nullptr) {
         // Use spare capture time at 160x120 for forward tracks.
         const auto anchor_to_current = current_to_anchor_.t();
@@ -403,7 +407,7 @@ private:
         for (size_t job = 0; job < jobs.count; ++job) {
             const size_t i = jobs.ranks[job];
             if (i >= observations_.size()) break;
-            const bool split_coarse = pretrack_coarse(i);
+            const bool split_coarse = scale == 2 && starts_coarse_at_capture(i);
             const bool coarse_only = batch_index == 0 && split_coarse;
             const auto& previous = points_[i];
             const auto a = ray(previous);
