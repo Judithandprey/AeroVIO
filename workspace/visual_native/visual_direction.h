@@ -167,6 +167,10 @@ public:
         return true;
     }
 #endif
+#if LEO_TRANSLATION_LIMITS
+    // Visual cycles since the last direct heading fit (carried headings count as missed).
+    int cycles_without_fit() const { return cycles_without_fit_; }
+#endif
     std::array<double,5> diagnostics() const {
         return {double(direct_fits_), double(rotation_fits_), quality_sum_,
                 double(carry_fits_), rotation_sum_};
@@ -198,6 +202,9 @@ private:
     int direct_fits_ = 0, rotation_fits_ = 0, carry_fits_ = 0, rotation_frames_ = 0;
     double quality_sum_ = 0., rotation_sum_ = 0., previous_weight_ = 1.;
     Vec3d pending_rotation_{0.,0.,0.}, rotation_step_{0.,0.,0.};
+#if LEO_TRANSLATION_LIMITS
+    int cycles_without_fit_ = 0;
+#endif
 #if LEO_ONLINE_BIAS
     Vec3d bias_residual_{0.,0.,0.};
     bool bias_residual_ready_ = false;
@@ -357,6 +364,9 @@ private:
             }
             pending_ = (heading * baseline - prior) * (weight / VISUAL_INTERVAL);
             correction_frames_ = VISUAL_INTERVAL;
+#if LEO_TRANSLATION_LIMITS
+            cycles_without_fit_ = 0;
+#endif
             previous_visual_heading_ = heading;
             previous_inertial_heading_ = prior * (1. / baseline);
             previous_baseline_ = baseline;
@@ -371,6 +381,9 @@ private:
             }
             // Extrapolation can only follow a directly observed heading.
             previous_heading_valid_ = false;
+#if LEO_TRANSLATION_LIMITS
+            ++cycles_without_fit_;
+#endif
         }
         std::swap(anchor_, current_);
         std::swap(anchor_pyramid_, current_pyramid_);

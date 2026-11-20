@@ -224,6 +224,117 @@ Caveats:
   1 s hover, still improves.
 - Not checked on the server yet.
 
+## Server check of the no-hover weights, and the runaway fix (2026-11-20)
+
+**Server.** The no-hover weights scored **11.62 m**, against 5.04 m for the same build with the
+old weights (12 private episodes, none of them in our local sets).
+- Three episodes (`cd6dc7`, `e7aa5a`, `214944`) are the worst with **both** weights: 46% of the
+  summed ATE with the old weights, 62% with the new.
+- They drift away in a near-straight line: final drift 18 / 11 / 12 m with the old weights,
+  57 / 32 / 37 m with the new.
+- Their median fuel is 713k–836k, against 1.4–1.9M elsewhere, so the tracker is mostly idle.
+- Sim(3) scale < 1 on 4/12 (old) and 9/12 (new) episodes. On a runaway this mostly means "wrong
+  shape": the fit shrinks an uncorrelated path toward a point (scale 0.03–0.09 on `cd6dc7`).
+- Server flights cover 39–80 m per 60 s. The stock `viobench simulate` covers 14–22 m.
+
+| Episode | Path (m) | ATE old / new | Sim(3) scale old / new | Rot (°) | Final drift old / new | Median fuel |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| cd6dc7 | 59 | 10.25 / 32.28 | 0.09 / 0.03 | 24.4 | 18.3 / 57.0 | 713,200 |
+| e7aa5a | 74 | 10.04 / 29.26 | 1.33 / 0.36 | 18.9 | 10.9 / 31.9 | 830,854 |
+| 214944 | 80 | 7.73 / 24.34 | 0.61 / 0.14 | 16.4 | 12.1 / 37.3 | 836,123 |
+| 78ed49 | 59 | 4.26 / 9.16 | 1.44 / 0.16 | 20.1 | 5.2 / 10.5 | 1,433,024 |
+| 004c58 | 73 | 3.81 / 9.06 | 1.17 / 0.41 | 31.9 | 5.5 / 17.6 | 1,508,698 |
+| 1c6e73 | 57 | 3.19 / 6.15 | 0.92 / 0.19 | 10.6 | 3.8 / 7.0 | 1,624,766 |
+| dd7a73 | 62 | 3.73 / 6.06 | 0.78 / 0.33 | 9.7 | 4.3 / 7.6 | 1,544,087 |
+| 89f8c9 | 63 | 2.78 / 6.00 | 1.17 / 0.18 | 14.8 | 2.1 / 11.4 | 1,782,324 |
+| f7c254 | 42 | 4.99 / 5.19 | 1.77 / 1.15 | 33.5 | 2.8 / 2.7 | 713,548 |
+| 726458 | 48 | 3.35 / 4.64 | 1.78 / 1.35 | 6.2 | 3.5 / 5.1 | 1,949,424 |
+| a61ad0 | 60 | 3.92 / 4.41 | 2.33 / 0.87 | 24.9 | 6.2 / 8.2 | 1,405,730 |
+| 895039 | 39 | 2.38 / 2.92 | 3.56 / 1.67 | 11.9 | 1.9 / 4.3 | 1,861,166 |
+
+**Cause found locally: the MLP's camera inputs.**
+- Besides the IMU, the network gets the normalized intrinsics (fx/w, fy/h, cx, cy) and the frame
+  interval. Training only had FOV 105–135° and constant cx, cy and dt (their std is clamped to 1e-6).
+- Changing *only* the FOV input on val-fast IMU gives this net drift of the learned translation
+  over 60 s (old weights):
+
+  | FOV input | true FOV (108–115°) | 100° | 90° | 80° | 60° |
+  | --- | --- | --- | --- | --- | --- |
+  | Net drift | 1–3 m | 7–9 m | 15–17 m | 24–27 m | 52–55 m |
+
+- `viobench check` (80° FOV, stationary IMU) shows the same: the estimate moves 0.42 m/s with the
+  old weights and 2.7 m/s with the no-hover weights, while the drone is still.
+- Things I ruled out:
+  - Speed alone: 52 m flights at the stock FOV drift 2–5 m.
+  - Accelerometer bias up to 0.6 m/s²: drift up to 6.5 m.
+  - The MLP never exceeds 2 m/s on any local flight, so speed caps never bind.
+- I could not check the server's FOV (all episodes are private), so this is the best-supported
+  explanation, not a proven one.
+- Not explained: the no-hover weights drift about 3× more on the server, but not more than the old
+  weights at low FOV locally.
+
+**New test sets** (`scripts/simulate_fast.py` raises the autopilot limits that `simulate` doesn't
+expose: cruise 2.5–4 m/s, acceleration 4 m/s², jerk 12, yaw rate 2.5 rad/s):
+- **val-fast:** 12 × 60 s, scenes 20/30/45/65/95/135, seeds 4000+, no hover, 36–47 m per flight,
+  FOV 108–135°.
+- **val-narrow:** the same, but FOV 85 ± 10° (77–95°), scenes 15/35/75/125/155/185, seeds 4500+,
+  23–50 m per flight. Its baseline reproduces the server signature: drift 10.5 m, Sim(3) scale
+  0.36, median fuel 714k.
+
+**Variants.** All on top of V8 + tilt K=0.2 + online bias g=0.2 with the old weights. Each is
+behind its own CMake option, default OFF.
+- `LEO_SPEED_CAP` (`LEO_SPEED_CAP_MPS` 2 / 3): limits the learned per-frame translation.
+- `LEO_VISUAL_DAMPING`: shrinks it by 0.7× per visual cycle without a direct heading fit, after one
+  cycle of grace, down to 0.2×.
+- `LEO_OUTPUT_SCALE` (`LEO_OUTPUT_SCALE_FACTOR` 0.7).
+- `LEO_MLP_FIXED_CAMERA`: feeds the MLP its training-mean intrinsics and frame interval.
+
+| Variant | Set | Done | ATE (m) | Sim(3) ATE (m) | Sim(3) scale | Final drift (m) | Max fuel | ATE better / worse (worst) |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | --- |
+| V8 + tilt + bias (old weights) | val-narrow | 12/12 | 6.417 | 1.724 | 0.36 | 10.49 | 4,238,210 |  |
+| + fixedcam | val-narrow | 12/12 | 2.195 | 1.250 | 2.16 | 2.24 | 4,238,203 | 12 / 0 (-0.43) |
+| + visdamp | val-narrow | 12/12 | 3.932 | 1.621 | 0.67 | 5.74 | 4,238,219 | 12 / 0 (-0.06) |
+| + scale0.7 | val-narrow | 12/12 | 4.908 | 1.724 | 0.52 | 7.57 | 4,238,216 | 11 / 1 (+0.05) |
+| + speedcap2 | val-narrow | 12/12 | 6.417 | 1.724 | 0.36 | 10.49 | 4,238,234 | 0 / 0 (+0.00) |
+| V8 + tilt + bias (old weights) | val-fast | 12/12 | 2.415 | 1.527 | 2.51 | 2.29 | 3,405,718 |  |
+| + fixedcam | val-fast | 12/12 | 2.346 | 1.426 | 2.74 | 2.19 | 3,405,711 | 8 / 4 (+0.06) |
+| + visdamp | val-fast | 12/12 | 2.406 | 1.513 | 2.78 | 2.12 | 3,405,727 | 6 / 6 (+0.12) |
+| + scale0.7 | val-fast | 12/12 | 2.555 | 1.527 | 3.59 | 2.24 | 3,405,724 | 2 / 10 (+0.37) |
+| + speedcap2 | val-fast | 12/12 | 2.415 | 1.527 | 2.51 | 2.29 | 3,405,742 | 0 / 0 (+0.00) |
+| + speedcap3 | val-fast | 12/12 | 2.415 | 1.527 | 2.51 | 2.29 | 3,405,741 | 0 / 0 (+0.00) |
+| V8 + tilt + bias (old weights) | val-nohover | 8/8 | 1.704 | 0.633 | 2.27 | 1.53 | 3,497,671 |  |
+| + fixedcam | val-nohover | 8/8 | 1.646 | 0.592 | 2.15 | 1.40 | 3,497,664 | 5 / 3 (+0.39) |
+| + visdamp | val-nohover | 8/8 | 1.775 | 0.625 | 2.58 | 1.61 | 3,497,680 | 1 / 7 (+0.37) |
+| + scale0.7 | val-nohover | 8/8 | 1.959 | 0.632 | 3.24 | 1.82 | 3,505,441 | 0 / 8 (+0.32) |
+| + speedcap2 | val-nohover | 8/8 | 1.704 | 0.633 | 2.27 | 1.53 | 3,497,695 | 0 / 0 (+0.00) |
+| + speedcap3 | val-nohover | 8/8 | 1.704 | 0.633 | 2.27 | 1.53 | 3,497,694 | 0 / 0 (+0.00) |
+| V8 + tilt + bias (old weights) | val-agile | 12/12 | 1.332 | 0.531 | 2.00 | 1.84 | 2,996,582 |  |
+| + fixedcam | val-agile | 12/12 | 1.237 | 0.536 | 1.86 | 1.71 | 2,996,575 | 9 / 3 (+0.10) |
+| + visdamp | val-agile | 12/12 | 1.426 | 0.536 | 2.16 | 1.87 | 2,996,591 | 4 / 8 (+0.39) |
+| + scale0.7 | val-agile | 12/12 | 1.656 | 0.531 | 2.86 | 2.31 | 2,996,588 | 0 / 12 (+0.60) |
+| + speedcap2 | val-agile | 12/12 | 1.332 | 0.531 | 2.00 | 1.84 | 2,996,606 | 0 / 0 (+0.00) |
+| + speedcap3 | val-agile | 12/12 | 1.332 | 0.531 | 2.00 | 1.84 | 2,996,605 | 0 / 0 (+0.00) |
+| V8 + tilt + bias (old weights) | public | 10/10 | 2.967 | 0.438 | 2.59 | 3.53 | 2,266,834 |  |
+| + fixedcam | public | 10/10 | 2.737 | 0.452 | 2.17 | 3.27 | 2,266,827 | 8 / 2 (+0.27) |
+| + visdamp | public | 10/10 | 3.006 | 0.446 | 2.67 | 3.58 | 2,266,843 | 4 / 6 (+0.18) |
+| + scale0.7 | public | 10/10 | 3.523 | 0.438 | 3.69 | 4.11 | 2,266,840 | 0 / 10 (+1.03) |
+| + speedcap2 | public | 10/10 | 2.967 | 0.438 | 2.59 | 3.53 | 2,266,858 | 0 / 0 (+0.00) |
+| + speedcap3 | public | 10/10 | 2.967 | 0.438 | 2.59 | 3.53 | 2,266,857 | 0 / 0 (+0.00) |
+
+All runs complete every episode.
+- The speed caps are exact no-ops locally (same ATE everywhere).
+- ×0.7 makes every normal set worse (local paths are already 0.3–0.6× too short).
+- Damping helps val-narrow (−39%) but costs 0–7% elsewhere.
+
+**Recommendation for the next upload: `artifacts/aerovio-v8-tilt-bias-g0.2-fixedcam.wasm`
+(`01365bce…`).**
+- It is the only variant that is better on every set: val-narrow −66% (12/12 episodes better),
+  val-agile −7%, public −8%, val-nohover −3%, val-fast −3%.
+- Max fuel is unchanged.
+- It removes an input that cannot carry real information for an IMU-only network. If the server
+  cameras use a narrower FOV, an off-centre principal point or another frame rate, this is exactly
+  the failure it prevents.
+
 ## Server results (2026-11-15)
 
 Official course-server scores (20 episodes: public + private), as reported by Leo from the server:
@@ -274,9 +385,14 @@ Stage 1 is due **2026-11-15, 11:59 pm (America/Los_Angeles)**; quota is 2 submis
 | `artifacts/aerovio-leo-6b-ds4-every16.wasm` | `cf4bb1005094a6a3acc25a2bcbd1e450ab17444672e470bca985e8ddb60b419f` |
 | `artifacts/aerovio-v8-tilt-k0.2.wasm` (stage 2, tilt only) | `619c16264dca0881b62689d8369cca5dcf733025e8309b32567d39ad24df577a` |
 | `artifacts/aerovio-v8-tilt-k1.0.wasm` (stage 2, alternative) | `4bdb001c5b33f571d5d4749cf66999ffa748ed4754a7a666b5ec86026a5d8e2c` |
-| `artifacts/aerovio-v8-tilt-bias-g0.2.wasm` (stage 2, old weights) | `cdc07749e198d9bc48b8c20c1ba82115e967bc19d7af8618c0858b577bedf307` |
-| `artifacts/aerovio-v8-tilt-bias-g0.2-nohover.wasm` (stage 2, no-hover weights, **recommended**) | `3bb0cee07238cce3a99f43630378e8bb60130f4befad48c559422463690dacc3` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2.wasm` (stage 2, old weights; server 5.04 m) | `cdc07749e198d9bc48b8c20c1ba82115e967bc19d7af8618c0858b577bedf307` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-nohover.wasm` (stage 2, no-hover weights; server 11.62 m, superseded) | `3bb0cee07238cce3a99f43630378e8bb60130f4befad48c559422463690dacc3` |
 | `artifacts/aerovio-v8-tilt-bias-g0.2-nohover-balanced.wasm` (stage 2, alternative) | `25bae31220b9970ea045ad1d1fd43827022d2ac7ae233169da8a2cb78a07e5e0` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-fixedcam.wasm` (**recommended next upload**) | `01365bce01db7b1205d337cc99b7617da742f7312f38c2bc7b09c51e667e75cc` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-visdamp.wasm` | `3f3262b0c07daf459ba56d20601d2cd93a24686e6ef9e5f3874868b99b558d02` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-scale0.7.wasm` | `eb526281c1f252a3fc9d87f03b561e57ff8e75ff18e0ac99fbf3bded54066a19` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-speedcap2.wasm` | `5b6fbecb4653ab2b29939a3adb7c874ce89d926ebb7ef4bc402b6b6437f1e6d4` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-speedcap3.wasm` | `2d1a6f5dcc73f7455229598c656a14dc8a848a85dfa8252205637b3842024b4d` |
 
 `artifacts/` and `results/` are gitignored. Raw reports are in `results/leo/<variant>/report.json`.
 
@@ -310,6 +426,11 @@ Stage 1 is due **2026-11-15, 11:59 pm (America/Los_Angeles)**; quota is 2 submis
   unchanged) and writes `weights_nohover.h`. `inference.h` includes it under `#if LEO_WEIGHTS_NOHOVER`.
   `train_motion.py` gets `--compact-tolerance` (default 1e-5, unchanged). Checked after the change:
   default `b385923e…` and V8 + tilt + bias `cdc07749…` are unchanged. 128 host tests pass.
+- Stage 2 runaway experiments: options `LEO_SPEED_CAP`, `LEO_VISUAL_DAMPING`, `LEO_OUTPUT_SCALE`
+  (`translation_limits.h`, applied to the learned translation in `solution.cpp`; the tracker counts
+  cycles without a heading fit) and `LEO_MLP_FIXED_CAMERA` (`solution.cpp` feeds `state_mean[9..13]`).
+  All default OFF and compiled in only when ON. Checked: default `b385923e…` and V8 + tilt + bias
+  `cdc07749…` are unchanged. 128 host tests pass.
 - Side effect: the team's V9/V10 reproduction scripts check the teacher's exact source hashes, so they
   will refuse to run on this branch. Run them from `main`.
 
@@ -344,6 +465,10 @@ python scripts/generate_training_data.py --config configs/training-data-v1.json 
 scripts/run_nohover_training.sh   # needs .train-venv (configs/requirements-training.lock.txt)
 build tilt-bias-nohover -DVISUAL_ROTATION_CORRECTION=ON -DLEO_GRAVITY_TILT=ON -DLEO_GRAVITY_TILT_GAIN=0.2 \
   -DLEO_ONLINE_BIAS=ON -DLEO_ONLINE_BIAS_GAIN=0.2 -DLEO_WEIGHTS_NOHOVER=ON
+# runaway experiments (val-fast / val-narrow generation, then all evaluations)
+scripts/run_runaway_eval.sh; scripts/run_runaway_eval2.sh
+build tilt-bias-fixedcam -DVISUAL_ROTATION_CORRECTION=ON -DLEO_GRAVITY_TILT=ON -DLEO_GRAVITY_TILT_GAIN=0.2 \
+  -DLEO_ONLINE_BIAS=ON -DLEO_ONLINE_BIAS_GAIN=0.2 -DLEO_MLP_FIXED_CAMERA=ON
 # copy each build/<dir>/solution.wasm into artifacts/, then for each artifact:
 python -m viobench check artifacts/<file>.wasm --frames 40
 python -m viobench evaluate artifacts/<file>.wasm --limits configs/evaluation-limits.json -o results/leo/<name>

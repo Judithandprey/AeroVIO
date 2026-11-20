@@ -1,6 +1,9 @@
 // Native compact IMU-only guest with the original weights compiled into SIMD kernels.
 #include "viobench_abi.h"
 #include "inference.h"
+#if LEO_TRANSLATION_LIMITS
+#include "translation_limits.h"
+#endif
 #include "gyro_bias.h"
 #include "gravity_tilt.h"
 #include "online_bias.h"
@@ -142,9 +145,16 @@ Features features(double end_time, const double* imu, int count) {
         float(angle[0]), float(angle[1]), float(angle[2]),
         float(velocity[0]), float(velocity[1]), float(velocity[2]),
         float(position[0]), float(position[1]), float(position[2]),
+#if LEO_MLP_FIXED_CAMERA
+        // The IMU-only network's translation should not depend on the camera; training
+        // only saw FOV 105-135 deg, centred principal points and 20 Hz. Feed it the
+        // training means so other intrinsics or frame intervals stay in distribution.
+        state_mean[9], state_mean[10], state_mean[11], state_mean[12], state_mean[13]};
+#else
         state.camera_features[0], state.camera_features[1],
         state.camera_features[2], state.camera_features[3],
         float(end_time - state.previous_time)};
+#endif
     const auto gyro_rotation = (LEO_GRAVITY_TILT || LEO_ONLINE_BIAS || state.calibration.accepted)
         ? r * corrected * r.t()
         : rotation_matrix({input[0], input[1], input[2]});
@@ -211,7 +221,12 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             if constexpr (USE_LEARNED_ROTATION_RESIDUAL)
                 delta = delta * rotation_matrix({motion[3], motion[4], motion[5]});
             const Matx33d rotation = state.rotation * delta;
+#if LEO_TRANSLATION_LIMITS
+            const Vec3d increment = state.rotation * translation_limits::limit(Vec3d(motion[0], motion[1], motion[2]),
+                time - state.previous_time, state.tracker.cycles_without_fit());
+#else
             const Vec3d increment = state.rotation * Vec3d(motion[0], motion[1], motion[2]);
+#endif
             const Vec3d imu_position = state.imu_position + increment;
 #if LEO_IMU_ONLY
             const Vec3d correction{0., 0., 0.};
