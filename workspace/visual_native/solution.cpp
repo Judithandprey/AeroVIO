@@ -3,6 +3,12 @@
 #include "inference.h"
 #include "gyro_bias.h"
 #include "gravity_tilt.h"
+#ifndef WINDOW_IMU
+#define WINDOW_IMU 0
+#endif
+#if WINDOW_IMU
+#include "window_inference.h"
+#endif
 
 #include "rotation.h"
 #include "visual_direction.h"
@@ -52,6 +58,9 @@ struct State {
     GravityTilt tilt;
     Vec3d online_bias{0., 0., 0.};  // IMU frame, rad/s, added to the startup calibration
     int residual_seen = 0;
+#if WINDOW_IMU
+    WindowImu window;
+#endif
     visual_direction::Tracker tracker;
     Vec3d imu_position{0., 0., 0.};
     Matx33d visual_alignment = Matx33d::eye();
@@ -200,7 +209,15 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
                 delta = delta * rotation_matrix({motion[3], motion[4], motion[5]});
             const Matx33d rotation = state.tilt.correct(state.rotation * delta, imu, count,
                 state.camera_from_imu, time - state.previous_time);
+#if WINDOW_IMU
+            // Windowed network: sees the last frames of IMU, so it can infer the current speed.
+            const auto& in = preintegrated.input;
+            const Vec3d translation = state.window.step(state.rotation, Vec3d(in[3], in[4], in[5]),
+                Vec3d(in[0], in[1], in[2]), time - state.previous_time);
+            const Vec3d increment = state.rotation * (POSITION_SCALE * translation);
+#else
             const Vec3d increment = state.rotation * (POSITION_SCALE * Vec3d(motion[0], motion[1], motion[2]));
+#endif
             const Vec3d imu_position = state.imu_position + increment;
 #if LEO_IMU_ONLY
             const Vec3d correction{0., 0., 0.};
