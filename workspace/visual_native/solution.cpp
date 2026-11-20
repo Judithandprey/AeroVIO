@@ -3,6 +3,7 @@
 #include "inference.h"
 #include "gyro_bias.h"
 #include "gravity_tilt.h"
+#include "online_bias.h"
 
 #include "rotation.h"
 #include "visual_direction.h"
@@ -22,6 +23,8 @@
 #define LEO_IMU_ONLY 0
 #endif
 static_assert(!(LEO_IMU_ONLY && VISUAL_ROTATION_CORRECTION), "LEO_IMU_ONLY has no visual rotation");
+static_assert(!LEO_ONLINE_BIAS || (VISUAL_ROTATION_CORRECTION && !LEO_IMU_ONLY),
+    "LEO_ONLINE_BIAS needs the V8 visual rotation refinement");
 
 namespace {
 using cv::Matx33d;
@@ -38,6 +41,9 @@ struct State {
     InitialGyroBias calibration;
 #if LEO_GRAVITY_TILT
     GravityTilt tilt;
+#endif
+#if LEO_ONLINE_BIAS
+    OnlineGyroBias online_bias;
 #endif
     visual_direction::Tracker tracker;
     Vec3d imu_position{0., 0., 0.};
@@ -110,11 +116,16 @@ Features features(double end_time, const double* imu, int count) {
         velocity += accel * dt;
         const Vec3d omega{row[4], row[5], row[6]};
         rotation = rotation * rotation_matrix(omega * dt);
-#if LEO_GRAVITY_TILT
+#if LEO_GRAVITY_TILT || LEO_ONLINE_BIAS
         {
             Vec3d rate = state.calibration.accepted ? omega - state.calibration.bias : omega;
+#if LEO_ONLINE_BIAS
+            rate -= state.online_bias.bias;
+#endif
+#if LEO_GRAVITY_TILT
             if (state.tilt.ready)
                 rate = GravityTilt::correct(rate, Vec3d(row[1], row[2], row[3]), corrected.t() * tilt_up);
+#endif
             corrected = corrected * rotation_matrix(rate * dt);
         }
 #else
@@ -134,7 +145,7 @@ Features features(double end_time, const double* imu, int count) {
         state.camera_features[0], state.camera_features[1],
         state.camera_features[2], state.camera_features[3],
         float(end_time - state.previous_time)};
-    const auto gyro_rotation = (LEO_GRAVITY_TILT || state.calibration.accepted)
+    const auto gyro_rotation = (LEO_GRAVITY_TILT || LEO_ONLINE_BIAS || state.calibration.accepted)
         ? r * corrected * r.t()
         : rotation_matrix({input[0], input[1], input[2]});
     return {input, gyro_rotation};
@@ -206,6 +217,12 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             const Vec3d correction{0., 0., 0.};
 #else
             const Vec3d correction = state.tracker.step(frame, rotation, imu_position);
+#endif
+#if LEO_ONLINE_BIAS
+            Vec3d bias_residual;
+            if (state.tracker.take_bias_residual(bias_residual) && state.calibration.finished)
+                state.online_bias.update(bias_residual, state.camera_from_imu,
+                                         VISUAL_INTERVAL * (time - state.previous_time));
 #endif
             Vec3d position = state.position + increment + correction;
             Matx33d output_rotation = rotation;

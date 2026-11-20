@@ -100,6 +100,71 @@ estimated up direction) and the rest, which is yaw.
 - This is a small, safe improvement, **not** a fix for the server's 5.22 m. Most of that error is yaw
   drift and scale (Sim(3) scale about 2–2.6 everywhere).
 
+## Stage 2: online gyro bias from the visual rotation (2026-11-19)
+
+**Why.** On val-nohover the startup calibration is rejected in 7 of 8 flights. The gyro bias (about
+1°/s) is then never removed, and rotation error reaches about 20°.
+
+**How.** V8's visual refinement already estimates, every 8 frames (0.4 s), the small rotation the gyro
+got wrong over that interval. A remaining bias `b` shows up there as about `-R b Δt` (R =
+camera_from_imu).
+
+- Option `LEO_ONLINE_BIAS` (default OFF) uses the unscaled estimate. `refine_rotation` returns 0.25×
+  its estimate, so the tracker multiplies by 4 again.
+- Per accepted fit, the bias moves a fraction **g** (`LEO_ONLINE_BIAS_GAIN`) of the measured rate
+  error. This is a slow integral loop that also sees yaw.
+- Fits that imply more than 0.03 rad/s are rejected as outliers (`LEO_ONLINE_BIAS_REJECT`), and each
+  axis is clamped to 0.05 rad/s.
+- Updates start once the startup calibration has finished. They add to its bias when it is accepted
+  and replace it when it is rejected.
+- Cost: a few vector operations per accepted fit. Mean fuel changes by less than 0.3%.
+
+**Results.** All variants below are on top of V8 + tilt K=0.2, except V8, V8 + tilt and "bias only".
+Means over the episodes of each set. Rot = rotation RMSE. Tilt is the error of the up direction; yaw
+is the rest of the rotation error, about the up axis.
+
+| Variant | Set | ATE (m) | Sim(3) ATE (m) | Sim(3) scale | Rot (°) | Tilt (°) | Yaw (°) | Max fuel |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| V8 | val-nohover | 1.827 | 0.742 | 2.21 | 20.1 | 6.9 | 18.1 | 3,499,256 |
+| V8 + tilt K=0.2 | val-nohover | 1.756 | 0.692 | 2.25 | 18.9 | 3.0 | 18.3 | 3,513,144 |
+| V8 + bias g=0.1 (bias only, no tilt) | val-nohover | 1.747 | 0.658 | 2.27 | 12.7 | 5.6 | 10.5 | 3,519,175 |
+| + bias g=0.02 | val-nohover | 1.739 | 0.662 | 2.27 | 16.6 | 2.8 | 16.0 | 3,505,444 |
+| + bias g=0.05 | val-nohover | 1.721 | 0.645 | 2.26 | 14.3 | 2.7 | 13.8 | 3,513,251 |
+| + bias g=0.1 | val-nohover | 1.709 | 0.612 | 2.28 | 10.8 | 2.5 | 10.2 | 3,513,215 |
+| **+ bias g=0.2** | val-nohover | **1.704** | 0.633 | 2.27 | **9.3** | 2.7 | **8.4** | 3,497,671 |
+| + bias g=0.5 | val-nohover | 1.707 | 0.711 | 2.17 | 12.4 | 3.9 | 11.3 | 3,693,265 |
+| + bias g=1.0 | val-nohover | 1.694 | 0.711 | 2.15 | 13.5 | 5.2 | 12.2 | 3,705,704 |
+| + bias g=0.1, sign flipped | val-nohover | 1.921 | 0.997 | 1.96 | 41.8 | 6.9 | 40.8 | 3,738,664 |
+| V8 | val-agile | 1.353 | 0.593 | 1.96 | 13.8 | 4.4 | 12.0 | 2,994,389 |
+| V8 + tilt K=0.2 | val-agile | 1.340 | 0.561 | 1.98 | 12.6 | 2.0 | 12.0 | 2,949,813 |
+| + bias g=0.1 | val-agile | 1.329 | 0.541 | 1.99 | 10.3 | 1.9 | 9.8 | 2,988,822 |
+| **+ bias g=0.2** | val-agile | 1.332 | 0.531 | 2.00 | 10.4 | 2.2 | 10.0 | 2,996,582 |
+| + bias g=0.5 | val-agile | 1.344 | 0.519 | 2.02 | 10.8 | 2.9 | 10.2 | 2,934,333 |
+| V8 | public | 3.007 | 0.480 | 2.59 | 13.3 | 6.1 | 10.6 | 2,233,398 |
+| V8 + tilt K=0.2 | public | 2.971 | 0.470 | 2.59 | 11.0 | 2.0 | 10.6 | 2,258,974 |
+| + bias g=0.1 | public | 2.960 | 0.443 | 2.59 | 7.5 | 1.9 | 7.2 | 2,259,054 |
+| **+ bias g=0.2** | public | 2.967 | 0.438 | 2.59 | 6.7 | 2.1 | 6.2 | 2,266,834 |
+| + bias g=0.5 | public | 2.973 | 0.459 | 2.60 | 6.2 | 2.7 | 5.3 | 2,274,632 |
+
+All runs complete every episode.
+
+**Sign check.** Flipping the update sign more than doubles the yaw error (40.8°), so the convention
+is right.
+
+**Recommendation.** g=0.2 on top of tilt K=0.2 (`artifacts/aerovio-v8-tilt-bias-g0.2.wasm`). It
+clearly improves val-nohover.
+
+- val-nohover: rotation error 18.9° → 9.3°, better on all 8 episodes. Yaw is more than halved
+  (18.3° → 8.4°). Sim(3) ATE −9%. Unaligned ATE −3% (better on 5 of 8 episodes, worst +0.05 m).
+- val-agile and public: rotation 12.6° → 10.4° and 11.0° → 6.7°. Sim(3) ATE −5% and −7%. Unaligned
+  ATE changes by less than 1%.
+- Gains of 0.5 and above get noisy: yaw rises again and max fuel goes up to 3.7M.
+- Not every episode gains. Public `9b6a9279` drops from 35.7° to 3.4°, but `51ea6311` rises from 3.5°
+  to 9.2° and `f8fb89ff` from 2.7° to 6.6°. The visual residual probably has a scene-dependent
+  systematic bias there.
+- Halving the rotation error barely moves the unaligned ATE. Scale is now the main error (Sim(3) scale
+  2.0–2.6 on every set): positions are about 2× too short. That should be the next target.
+
 ## Server results (2026-11-15)
 
 Official course-server scores (20 episodes: public + private), as reported by Leo from the server:
@@ -148,8 +213,9 @@ Stage 1 is due **2026-11-15, 11:59 pm (America/Los_Angeles)**; quota is 2 submis
 | `artifacts/aerovio-v8-rotation.wasm` | `108cb0c4ff7b14a913ed9637a8c658551e4608b8f670f7bc5197a4f1c389f065` |
 | `artifacts/aerovio-leo-6a-imu-only.wasm` | `70512ad7a583053d1b5f8fbfa9307f0211d86b2ed8653019fb7bc90834ca13cb` |
 | `artifacts/aerovio-leo-6b-ds4-every16.wasm` | `cf4bb1005094a6a3acc25a2bcbd1e450ab17444672e470bca985e8ddb60b419f` |
-| `artifacts/aerovio-v8-tilt-k0.2.wasm` (stage 2, recommended) | `619c16264dca0881b62689d8369cca5dcf733025e8309b32567d39ad24df577a` |
+| `artifacts/aerovio-v8-tilt-k0.2.wasm` (stage 2, tilt only) | `619c16264dca0881b62689d8369cca5dcf733025e8309b32567d39ad24df577a` |
 | `artifacts/aerovio-v8-tilt-k1.0.wasm` (stage 2, alternative) | `4bdb001c5b33f571d5d4749cf66999ffa748ed4754a7a666b5ec86026a5d8e2c` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2.wasm` (stage 2, **recommended**) | `cdc07749e198d9bc48b8c20c1ba82115e967bc19d7af8618c0858b577bedf307` |
 
 `artifacts/` and `results/` are gitignored. Raw reports are in `results/leo/<variant>/report.json`.
 
@@ -170,6 +236,12 @@ Stage 1 is due **2026-11-15, 11:59 pm (America/Los_Angeles)**; quota is 2 submis
   is perpendicular to up, so only roll and pitch change. The predicted up comes from the last emitted
   orientation, which includes V8's visual alignment. The definitions are only added when the option is
   ON. After this change the default build is still `b385923e…` and V8 is still `108cb0c4…`.
+- Stage 2: new option `LEO_ONLINE_BIAS` (default OFF; needs `VISUAL_ROTATION_CORRECTION=ON`) with
+  `LEO_ONLINE_BIAS_GAIN` (default 0.05), `LEO_ONLINE_BIAS_REJECT` (rad/s, default 0.03) and
+  `LEO_ONLINE_BIAS_SIGN` (diagnostic). The new header `online_bias.h` holds the estimator.
+  `visual_direction.h` keeps the unscaled refinement residual under `#if LEO_ONLINE_BIAS`, and
+  `solution.cpp` subtracts the online bias from the gyro rate. Checked after the change: the default
+  build is `b385923e…`, V8 is `108cb0c4…` and V8 + tilt K=0.2 is `619c1626…`, all unchanged.
 - Tests: 90 host tests pass (5 test files need PyTorch, which is only in the training venv);
   the 11 native geometry checks pass.
 - Side effect: the team's V9/V10 reproduction scripts check the teacher's exact source hashes, so they
@@ -195,6 +267,8 @@ build v8-rotation  -DVISUAL_ROTATION_CORRECTION=ON
 build leo-imu-only -DLEO_IMU_ONLY=ON
 build leo-ds4-i16  -DVISUAL_DOWNSAMPLE=4 -DVISUAL_INTERVAL=16
 build tilt-k0.2    -DVISUAL_ROTATION_CORRECTION=ON -DLEO_GRAVITY_TILT=ON -DLEO_GRAVITY_TILT_GAIN=0.2
+build tilt-bias-g0.2 -DVISUAL_ROTATION_CORRECTION=ON -DLEO_GRAVITY_TILT=ON -DLEO_GRAVITY_TILT_GAIN=0.2 \
+  -DLEO_ONLINE_BIAS=ON -DLEO_ONLINE_BIAS_GAIN=0.2
 # stage 2 validation sets
 viobench simulate -o data/val-agile --scene-names ProcTHOR-Train-{40,60,80,100,120,140} --episodes 2 --seed 2000 --no-video
 viobench simulate -o data/val-nohover --scene-names ProcTHOR-Train-{50,90,130,170} --episodes 2 --seed 3000 --hover 0 --no-video

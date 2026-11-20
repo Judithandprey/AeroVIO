@@ -10,6 +10,10 @@
 #include <cstdint>
 #include <vector>
 
+#ifndef LEO_ONLINE_BIAS
+#define LEO_ONLINE_BIAS 0
+#endif
+
 namespace visual_direction {
 using cv::Matx33d;
 using cv::Point2f;
@@ -153,6 +157,16 @@ public:
     }
 
     Vec3d rotation_step() const { return rotation_step_; }
+#if LEO_ONLINE_BIAS
+    // Unscaled visual-minus-gyro rotation (anchor camera axes) of the last accepted
+    // refinement over one VISUAL_INTERVAL; returned once.
+    bool take_bias_residual(Vec3d& out) {
+        if (!bias_residual_ready_) return false;
+        out = bias_residual_;
+        bias_residual_ready_ = false;
+        return true;
+    }
+#endif
     std::array<double,5> diagnostics() const {
         return {double(direct_fits_), double(rotation_fits_), quality_sum_,
                 double(carry_fits_), rotation_sum_};
@@ -184,6 +198,10 @@ private:
     int direct_fits_ = 0, rotation_fits_ = 0, carry_fits_ = 0, rotation_frames_ = 0;
     double quality_sum_ = 0., rotation_sum_ = 0., previous_weight_ = 1.;
     Vec3d pending_rotation_{0.,0.,0.}, rotation_step_{0.,0.,0.};
+#if LEO_ONLINE_BIAS
+    Vec3d bias_residual_{0.,0.,0.};
+    bool bias_residual_ready_ = false;
+#endif
 
     void make_gray(const uint8_t* rgb) {
         current_.create(height, width, CV_8UC1);
@@ -330,6 +348,11 @@ private:
                     pending_rotation_ = anchor_rotation_ * residual / double(VISUAL_INTERVAL);
                     rotation_frames_ = VISUAL_INTERVAL;
                     ++rotation_fits_; rotation_sum_ += length(residual);
+#if LEO_ONLINE_BIAS
+                    // refine_rotation returns 0.25 x its estimate; undo that gain here.
+                    bias_residual_ = residual * 4.;
+                    bias_residual_ready_ = true;
+#endif
                 }
             }
             pending_ = (heading * baseline - prior) * (weight / VISUAL_INTERVAL);
