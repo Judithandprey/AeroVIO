@@ -27,3 +27,21 @@ cmake -S workspace/visual_native -B build/v8-s2 -DCMAKE_TOOLCHAIN_FILE="$TC" \
 cmake --build build/v8-s2
 viobench evaluate build/v8-s2/solution.wasm --limits configs/evaluation-limits.json
 ```
+
+## Gravity tilt correction (`-DGRAVITY_TILT_GAIN=<1/s>`, default 0 = off)
+
+Stage 2 flights likely start without the 1 s hover, so `gyro_bias.h` rejects calibration and raw gyro bias
+(up to 0.02 rad/s in the simulator) drifts the rotation. To test this locally, `nohover` copies of the 10 public
+episodes drop the first 2 s. `gravity_tilt.h` anchors the mean specific force in the camera-0 frame over the
+first 5 s and nudges roll/pitch so the 3 s running mean stays aligned with it. Yaw is not observable this way.
+
+| Build | Set | Raw ATE mean (m) | Median tilt error | End tilt error | End total rotation error |
+| --- | --- | ---: | ---: | ---: | ---: |
+| V8 rotation, gain 0 | nohover | 3.198 | 11.4° | 13.3° | 49.6° |
+| V8 rotation, gain 0.5 | nohover | 3.179 | 3.2° | 2.3° | 46.7° |
+| IMU only, gain 0 | nohover | 3.815 | 12.9° | 15.3° | 51.9° |
+| IMU only, gain 0.5 | nohover | 3.748 | 3.4° | 3.0° | 48.7° |
+| V8 rotation, gain 0.5 | public | 2.992 (was 3.007) | | | |
+| IMU only, gain 0.5 | public | 3.477 (was 3.524) | | | |
+
+Tilt is fixed, but raw ATE barely moves: the remaining ~45° end error is yaw, which needs vision.

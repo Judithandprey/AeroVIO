@@ -2,6 +2,7 @@
 #include "viobench_abi.h"
 #include "inference.h"
 #include "gyro_bias.h"
+#include "gravity_tilt.h"
 
 #include "rotation.h"
 #include "visual_direction.h"
@@ -40,6 +41,7 @@ struct State {
     bool started = false;
     bool rigid_extrinsics = true;
     InitialGyroBias calibration;
+    GravityTilt tilt;
     visual_direction::Tracker tracker;
     Vec3d imu_position{0., 0., 0.};
     Matx33d visual_alignment = Matx33d::eye();
@@ -185,7 +187,8 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             Matx33d delta = preintegrated.gyro_rotation;
             if constexpr (USE_LEARNED_ROTATION_RESIDUAL)
                 delta = delta * rotation_matrix({motion[3], motion[4], motion[5]});
-            const Matx33d rotation = state.rotation * delta;
+            const Matx33d rotation = state.tilt.correct(state.rotation * delta, imu, count,
+                state.camera_from_imu, time - state.previous_time);
             const Vec3d increment = state.rotation * (POSITION_SCALE * Vec3d(motion[0], motion[1], motion[2]));
             const Vec3d imu_position = state.imu_position + increment;
 #if LEO_IMU_ONLY
