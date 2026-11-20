@@ -1,6 +1,10 @@
 #pragma once
 
+#if LEO_WEIGHTS_NOHOVER
+#include "weights_nohover.h"
+#else
 #include "weights.h"
+#endif
 #include <array>
 #include <algorithm>
 #include <wasm_simd128.h>

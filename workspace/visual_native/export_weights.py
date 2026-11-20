@@ -14,9 +14,11 @@ CHECKPOINT = ROOT / "experiments/motion-ablation-v2/imu-only-compact"
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
+    parser.add_argument("--checkpoint", type=Path, default=CHECKPOINT,
+                        help="compact state-only checkpoint directory (net.onnx + meta.json)")
     args = parser.parse_args()
-    metadata = json.loads((CHECKPOINT / "meta.json").read_text())
-    checkpoint = (CHECKPOINT / "net.onnx").read_bytes()
+    metadata = json.loads((args.checkpoint / "meta.json").read_text())
+    checkpoint = (args.checkpoint / "net.onnx").read_bytes()
     if sha256(checkpoint).hexdigest() != metadata["model_sha256"]:
         raise ValueError("ONNX hash mismatch")
     if metadata["network_inputs"] != "state" or metadata["map"]["enabled"]:

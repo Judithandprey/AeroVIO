@@ -25,6 +25,21 @@ add_custom_command(
     VERBATIM
 )
 
+option(LEO_WEIGHTS_NOHOVER "Use the MLP retrained on original + no-hover flights (weights_nohover.h)" OFF)
+set(LEO_WEIGHTS_NOHOVER_CHECKPOINT "${CMAKE_CURRENT_SOURCE_DIR}/../../experiments/nohover-v11/compact" CACHE PATH
+    "LEO_WEIGHTS_NOHOVER: compact checkpoint directory (net.onnx + meta.json)")
+set(nohover_checkpoint "${LEO_WEIGHTS_NOHOVER_CHECKPOINT}")
+if(LEO_WEIGHTS_NOHOVER)
+    set(weights "${CMAKE_CURRENT_BINARY_DIR}/weights_nohover.h")
+    add_custom_command(
+        OUTPUT "${weights}"
+        COMMAND "${Python3_EXECUTABLE}" "${CMAKE_CURRENT_SOURCE_DIR}/export_weights.py" "${weights}"
+                --checkpoint "${nohover_checkpoint}"
+        DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/export_weights.py" "${nohover_checkpoint}/net.onnx" "${nohover_checkpoint}/meta.json"
+        VERBATIM
+    )
+endif()
+
 set(VISUAL_DOWNSAMPLE 2 CACHE STRING "Integer downsample factor for sparse visual tracking (2 or 4)")
 if(VISUAL_DOWNSAMPLE STREQUAL "2")
     set(pyramid_levels 1)
@@ -59,6 +74,9 @@ target_compile_definitions(solution PRIVATE
     USE_SMALL_ANGLE_ROTATION=1 USE_LEARNED_ROTATION_RESIDUAL=0
     _WASI_EMULATED_PROCESS_CLOCKS _WASI_EMULATED_SIGNAL _WASI_EMULATED_MMAN _WASI_EMULATED_GETPID
 )
+if(LEO_WEIGHTS_NOHOVER)
+    target_compile_definitions(solution PRIVATE LEO_WEIGHTS_NOHOVER=1)
+endif()
 option(LEO_GRAVITY_TILT "Mahony-style accelerometer roll/pitch correction of the gyro rotation" OFF)
 set(LEO_GRAVITY_TILT_GAIN 0.01 CACHE STRING "LEO_GRAVITY_TILT gain K in 1/s (per-sample correction K * e * dt)")
 set(LEO_GRAVITY_TILT_GATE 0.5 CACHE STRING "LEO_GRAVITY_TILT: use samples with | |a| - 9.81 | below this (m/s^2)")

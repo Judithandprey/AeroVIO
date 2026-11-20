@@ -79,3 +79,4 @@ report-*/
 
 !experiments/joint-balance-v10/joint/net.onnx
 !experiments/joint-balance-v10/joint-repeat/net.onnx
+!experiments/nohover-v11/compact/net.onnx

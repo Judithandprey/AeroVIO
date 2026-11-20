@@ -58,7 +58,7 @@ def evaluate(net, data, normalization, batch_size, input_mode="image_imu"):
             "rotation_residual_rmse_rad": (totals["rotation_residual_sq"] / size) ** .5}
 
 
-def export_compact(net, output, parent_output, meta, run, validation, normalization):
+def export_compact(net, output, parent_output, meta, run, validation, normalization, tolerance=1e-5):
     """Export a separate compute ablation; preserve the matched full graph."""
     output.mkdir(parents=True)
     compact = fold_zero_image_features(net)
@@ -84,7 +84,7 @@ def export_compact(net, output, parent_output, meta, run, validation, normalizat
                 cv_net.setInput(state[index:index + 1].numpy(), "state")
                 actual_cv = cv_net.forward()
                 cv_difference = max(cv_difference, float(np.max(np.abs(actual_cv - expected[index:index + 1]))))
-    if max(torch_difference, cv_difference) > 1e-5:
+    if max(torch_difference, cv_difference) > tolerance:
         raise ValueError(f"compact/full prediction mismatch: torch={torch_difference}, OpenCV={cv_difference}")
     torch.save(compact.state_dict(), output / "best.pt")
     compact_meta = {**meta, "network_inputs": "state", "model_sha256": digest(model_path),
@@ -100,7 +100,7 @@ def export_compact(net, output, parent_output, meta, run, validation, normalizat
                    "folding": "head.0.bias += head.0.weight[:, :64] @ features(zero_images); retain state columns",
                    "equivalence": {"samples": len(states), "validation_samples": len(validation["state"]),
                                    "synthetic_samples": len(probes), "maximum_torch_difference": torch_difference,
-                                   "maximum_opencv_difference": cv_difference, "tolerance": 1e-5},
+                                   "maximum_opencv_difference": cv_difference, "tolerance": tolerance},
                    "exported_utc": datetime.now(timezone.utc).isoformat()}
     (output / "run.json").write_text(json.dumps(compact_run, indent=2) + "\n")
     print("COMPACT", json.dumps(compact_run["equivalence"]), flush=True)
@@ -118,6 +118,8 @@ def main():
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--input-mode", choices=["image_imu", "imu_only"], default="image_imu")
     parser.add_argument("--compact-out", type=Path, help="Optional equivalent state-only graph for an IMU-only run")
+    parser.add_argument("--compact-tolerance", type=float, default=1e-5,
+                        help="max compact/full difference (normalized output units) over validation and synthetic probes")
     parser.add_argument("--sampling-plan", type=Path, help="Optional fixed training index plan; normalization/validation stay unchanged")
     args = parser.parse_args()
     if args.out.exists():
@@ -241,7 +243,7 @@ def main():
     (args.out / "run.json").write_text(json.dumps(run, indent=2) + "\n")
     print("FINISHED", json.dumps({key: run[key] for key in ["best_epoch", "best_validation", "elapsed_s", "model_sha256"]}), flush=True)
     if args.compact_out is not None:
-        export_compact(net, args.compact_out, args.out, meta, run, validation, normalization)
+        export_compact(net, args.compact_out, args.out, meta, run, validation, normalization, args.compact_tolerance)
 
 
 if __name__ == "__main__":

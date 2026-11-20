@@ -165,6 +165,65 @@ clearly improves val-nohover.
 - Halving the rotation error barely moves the unaligned ATE. Scale is now the main error (Sim(3) scale
   2.0–2.6 on every set): positions are about 2× too short. That should be the next target.
 
+## Stage 2: MLP retrained on no-hover flights (2026-11-20)
+
+**Why.** Sim(3) scale is 2.0–2.6 on every local set: positions are about 2× too short.
+- The MLP sees one 50 ms IMU window and never its own velocity, so its translation is roughly the
+  average speed of its training data.
+- That data was 12 × 10 s flights starting with a 1 s hover (median 0.10 m/s).
+- On no-hover flights (0.28 m/s) the old MLP predicts 0.15 m/s.
+
+**What.** The same 14→64→6 network, recipe and fuel, retrained on the original data plus 62 new
+`viobench simulate --hover 0 --no-video` flights (74k pairs).
+- The new scenes and seeds are disjoint from public, the original split, val-agile and val-nohover.
+- The new pairs have no depth, so they get the pose loss only. The original pairs keep pose + warp.
+- Details: `experiments/nohover-v11/README.md`.
+- New option `LEO_WEIGHTS_NOHOVER` (default OFF) builds with `weights_nohover.h`.
+
+**Results.** All rows are V8 + tilt K=0.2 + online bias g=0.2. "old" means the old weights
+(`aerovio-v8-tilt-bias-g0.2.wasm`). "uniform" mixes all pairs as they are. "balanced" draws 25%
+of every epoch from the original pairs.
+
+| Weights | Set | ATE (m) | Sim(3) ATE (m) | Sim(3) scale | Rot (°) | Tilt (°) | Yaw (°) | Max fuel |
+| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| old | val-nohover | 1.704 | 0.633 | 2.27 | 9.3 | 2.7 | 8.4 | 3,497,671 |
+| **uniform** | val-nohover | **1.194** | **0.495** | 1.27 | 9.3 | 2.7 | 8.4 | 3,497,671 |
+| balanced | val-nohover | 1.246 | 0.500 | 1.41 | 9.3 | 2.7 | 8.4 | 3,497,671 |
+| old | val-agile | 1.332 | 0.531 | 2.00 | 10.4 | 2.2 | 10.0 | 2,996,582 |
+| **uniform** | val-agile | 1.051 | 0.454 | 1.10 | 10.4 | 2.1 | 10.0 | 2,996,582 |
+| balanced | val-agile | 0.963 | 0.448 | 1.26 | 10.4 | 2.1 | 10.0 | 2,996,582 |
+| old | public | 2.967 | 0.438 | 2.59 | 6.7 | 2.1 | 6.2 | 2,266,834 |
+| **uniform** | public | **1.456** | **0.387** | 1.28 | 6.7 | 2.1 | 6.2 | 2,266,834 |
+| balanced | public | 1.697 | 0.392 | 1.47 | 6.7 | 2.1 | 6.2 | 2,266,834 |
+
+All runs complete every episode.
+- Rotation is unchanged, as expected: the rotation comes from the gyro, and the learned rotation
+  residual is not used.
+- Max fuel is identical (same network size).
+
+**Per episode (uniform vs old).**
+- val-nohover: ATE better on 7/8 and Sim(3) ATE better on 8/8. One flight (`f3cc5e0d`) loses
+  +0.57 m of unaligned ATE although its scale (1.60 → 1.19) and Sim(3) ATE (0.98 → 0.77) improve.
+  A longer, more correct path makes its heading error count more.
+- val-agile: ATE better on 9/12 (worst +0.13 m).
+- public: ATE better on 10/10 (every episode at least −0.39 m). Sim(3) ATE better on 7/10
+  (worst +0.01 m).
+- Scale ranges move from 1.35–4.03 to 0.88–1.66.
+
+**Recommendation.** Use uniform (`artifacts/aerovio-v8-tilt-bias-g0.2-nohover.wasm`).
+- It clearly improves val-nohover: ATE −30%, Sim(3) ATE −22%, scale 2.27 → 1.27.
+- It also improves public: ATE −51%, Sim(3) ATE −12%.
+- Balanced is better on val-agile only, and worse on val-nohover and public.
+
+Caveats:
+- This shifts the speed prior; it does not measure speed. The model still cannot see velocity,
+  so episodes much faster or slower than the training flights will stay mis-scaled.
+- The server's per-episode scale spread (0.09–3.07) points to that. Measuring scale needs velocity
+  in the state or a visual scale estimate.
+- On hover-start validation pairs the new model over-predicts speed (1.42×). Public, which has a
+  1 s hover, still improves.
+- Not checked on the server yet.
+
 ## Server results (2026-11-15)
 
 Official course-server scores (20 episodes: public + private), as reported by Leo from the server:
@@ -215,7 +274,9 @@ Stage 1 is due **2026-11-15, 11:59 pm (America/Los_Angeles)**; quota is 2 submis
 | `artifacts/aerovio-leo-6b-ds4-every16.wasm` | `cf4bb1005094a6a3acc25a2bcbd1e450ab17444672e470bca985e8ddb60b419f` |
 | `artifacts/aerovio-v8-tilt-k0.2.wasm` (stage 2, tilt only) | `619c16264dca0881b62689d8369cca5dcf733025e8309b32567d39ad24df577a` |
 | `artifacts/aerovio-v8-tilt-k1.0.wasm` (stage 2, alternative) | `4bdb001c5b33f571d5d4749cf66999ffa748ed4754a7a666b5ec86026a5d8e2c` |
-| `artifacts/aerovio-v8-tilt-bias-g0.2.wasm` (stage 2, **recommended**) | `cdc07749e198d9bc48b8c20c1ba82115e967bc19d7af8618c0858b577bedf307` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2.wasm` (stage 2, old weights) | `cdc07749e198d9bc48b8c20c1ba82115e967bc19d7af8618c0858b577bedf307` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-nohover.wasm` (stage 2, no-hover weights, **recommended**) | `3bb0cee07238cce3a99f43630378e8bb60130f4befad48c559422463690dacc3` |
+| `artifacts/aerovio-v8-tilt-bias-g0.2-nohover-balanced.wasm` (stage 2, alternative) | `25bae31220b9970ea045ad1d1fd43827022d2ac7ae233169da8a2cb78a07e5e0` |
 
 `artifacts/` and `results/` are gitignored. Raw reports are in `results/leo/<variant>/report.json`.
 
@@ -244,6 +305,11 @@ Stage 1 is due **2026-11-15, 11:59 pm (America/Los_Angeles)**; quota is 2 submis
   build is `b385923e…`, V8 is `108cb0c4…` and V8 + tilt K=0.2 is `619c1626…`, all unchanged.
 - Tests: 90 host tests pass (5 test files need PyTorch, which is only in the training venv);
   the 11 native geometry checks pass.
+- Stage 2: new option `LEO_WEIGHTS_NOHOVER` (default OFF) and cache path `LEO_WEIGHTS_NOHOVER_CHECKPOINT`
+  (default `experiments/nohover-v11/compact`). `export_weights.py` takes `--checkpoint` (default
+  unchanged) and writes `weights_nohover.h`. `inference.h` includes it under `#if LEO_WEIGHTS_NOHOVER`.
+  `train_motion.py` gets `--compact-tolerance` (default 1e-5, unchanged). Checked after the change:
+  default `b385923e…` and V8 + tilt + bias `cdc07749…` are unchanged. 128 host tests pass.
 - Side effect: the team's V9/V10 reproduction scripts check the teacher's exact source hashes, so they
   will refuse to run on this branch. Run them from `main`.
 
@@ -272,6 +338,12 @@ build tilt-bias-g0.2 -DVISUAL_ROTATION_CORRECTION=ON -DLEO_GRAVITY_TILT=ON -DLEO
 # stage 2 validation sets
 viobench simulate -o data/val-agile --scene-names ProcTHOR-Train-{40,60,80,100,120,140} --episodes 2 --seed 2000 --no-video
 viobench simulate -o data/val-nohover --scene-names ProcTHOR-Train-{50,90,130,170} --episodes 2 --seed 3000 --hover 0 --no-video
+# no-hover MLP retrain (data generation, caches, training; then the 3-set evaluation)
+scripts/generate_nohover_data.sh
+python scripts/generate_training_data.py --config configs/training-data-v1.json --output data/hyperdrone-motion-v2
+scripts/run_nohover_training.sh   # needs .train-venv (configs/requirements-training.lock.txt)
+build tilt-bias-nohover -DVISUAL_ROTATION_CORRECTION=ON -DLEO_GRAVITY_TILT=ON -DLEO_GRAVITY_TILT_GAIN=0.2 \
+  -DLEO_ONLINE_BIAS=ON -DLEO_ONLINE_BIAS_GAIN=0.2 -DLEO_WEIGHTS_NOHOVER=ON
 # copy each build/<dir>/solution.wasm into artifacts/, then for each artifact:
 python -m viobench check artifacts/<file>.wasm --frames 40
 python -m viobench evaluate artifacts/<file>.wasm --limits configs/evaluation-limits.json -o results/leo/<name>

@@ -1,0 +1,762 @@
+{
+  "started_utc": "2026-11-20T12:03:27.360615+00:00",
+  "seed": 17,
+  "epochs": 40,
+  "batch": 64,
+  "learning_rate": 0.001,
+  "warp_weight": 2.0,
+  "threads": 4,
+  "device": "cpu",
+  "input_mode": "imu_only",
+  "network_inputs": "images_state",
+  "photometric_labels": "real RGB images and training-only depth, regardless of network input mode",
+  "parameters": 29398,
+  "initial_weights_sha256": "99d9364370fcf237ba685f6ab1c381e954464789b22218eaa0c65bbb38a03d29",
+  "train_pairs": 76726,
+  "validation_pairs": 10388,
+  "train_cache_sha256": "e5982fa796bcf667f6c9f20b69281f57ade03bbc4d4c4029d8b574b0d2140005",
+  "validation_cache_sha256": "444316a49b4ad170f021d1c4c5515327d5be0279eecfe86a0aaa6b80567aebc9",
+  "cache_provenance": {
+    "kind": "original warp cache + pose-only no-hover flights",
+    "old_cache": "/home/leopouilly/AeroVIO/data/motion-cache-v2",
+    "old_cache_record": {
+      "source_manifest_sha256": "5d3eeeba44a6e9afd7ae6f1fd98170f1c68f29b29fec98ef622c9b9610c48e2a",
+      "source_manifest": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/data_manifest.json",
+      "input_width": 64,
+      "input_height": 48,
+      "guest_resolution": [
+        320,
+        240
+      ],
+      "splits": {
+        "train": {
+          "pairs": 2388,
+          "episodes": [
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271828",
+              "scene": "ProcTHOR-Train-2",
+              "frames": 200,
+              "depth_sha256": "442c71081b2d0664bd87387986089667ce3ad6cdf2bf800251bc13523d222568",
+              "episode_json_sha256": "be64325ef6e72000c38a0c0a85bbf7d52786d219e2d1c700d7f01ecd58d33fa0"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271829",
+              "scene": "ProcTHOR-Train-2",
+              "frames": 200,
+              "depth_sha256": "3180b7498dabe8a322737979b72efc13a2d25e6c5a58c7bdb6090e07fd9d8f2b",
+              "episode_json_sha256": "0d176cd9ee3baad7709d48267b2da634314ae60174f7a0c2323672a191b9861b"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271830",
+              "scene": "ProcTHOR-Train-2",
+              "frames": 200,
+              "depth_sha256": "4d5df08f4cc6701b8a4a539c72ad163b08babe1ce431eb4f8593c7c8d4cb01e5",
+              "episode_json_sha256": "df4b92c6c01218801c7364514880f44280598a1d74442c7fba9e2b14328cd804"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-2-seed271831",
+              "scene": "ProcTHOR-Train-2",
+              "frames": 200,
+              "depth_sha256": "88fba379768e25fd192ede8fdfa9c0b7262a5afbee3c95643cedd2e637c550b4",
+              "episode_json_sha256": "d26fe35a155247b5463a90f6ff36cfca5509e6865f4dfa3cc077cd50a8934b67"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271832",
+              "scene": "ProcTHOR-Train-3",
+              "frames": 200,
+              "depth_sha256": "80678cccd655f0f69fff3c00b1e4057df47b38b45766ef2793fc3579e6997e37",
+              "episode_json_sha256": "e5a3ea7759b2c8959cb18a2cd8590d99992e382013ec7b6f207c4205dec50180"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271833",
+              "scene": "ProcTHOR-Train-3",
+              "frames": 200,
+              "depth_sha256": "9d1c8798b0b4932cdf8b77677a85dfdd2b737c2355b509eb75320cf7827b1973",
+              "episode_json_sha256": "2db9430b532030a60308f4c37921b4e3a030fcd6d755e830758ea020f25273b2"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271834",
+              "scene": "ProcTHOR-Train-3",
+              "frames": 200,
+              "depth_sha256": "4eef45b6cd2dea8e39bfbd5697f56594f756570d173580ecad963c1613341b8b",
+              "episode_json_sha256": "1b4581c4e10a9e869fb3b7586ef41492fbe122435687ed37260f75e9966e989e"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-3-seed271835",
+              "scene": "ProcTHOR-Train-3",
+              "frames": 200,
+              "depth_sha256": "5deb3163b270c6c9eb3477e74a4d1137a949beaede098459828fec235906e12a",
+              "episode_json_sha256": "6c40043c4aa6b02e0d5c39d65bb46d02ff35e930342ec219da391649fe6047c5"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271836",
+              "scene": "ProcTHOR-Train-4",
+              "frames": 200,
+              "depth_sha256": "7ea54a9cf7d18014abb06311f133656ff6727ef0f1aeb253ad02a51b00ea88b6",
+              "episode_json_sha256": "fd2e2484449bed4904d3999544738084d36c018501ff01e17855a4647061eb37"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271837",
+              "scene": "ProcTHOR-Train-4",
+              "frames": 200,
+              "depth_sha256": "84b0cdfe8af7c5c95d5b4e364004b7ef940d2b911232940429a91dfecc55ad5e",
+              "episode_json_sha256": "63dc13b57b3849b6c284b164b3db2225b8767c067a121fd8d10aa288618a11f4"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271838",
+              "scene": "ProcTHOR-Train-4",
+              "frames": 200,
+              "depth_sha256": "d1923052f3f32451bf6dfc6a18eb6c661b5798743fd8f017bdcaee634665cd81",
+              "episode_json_sha256": "5642a34e1fb27506814f227d792f87c9a328945a4c2d7cf7189c7df7badb6141"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/train-ProcTHOR-Train-4-seed271839",
+              "scene": "ProcTHOR-Train-4",
+              "frames": 200,
+              "depth_sha256": "46fa2729dfcb8a52da744975439e5b8fc60c1f436c863da6bb412d97706be1b7",
+              "episode_json_sha256": "e5760be16a7e135365f76fc649bd88764c0d88461aa531f14c0b3c2b6fe2b60f"
+            }
+          ],
+          "visible_pixel_fraction": 0.9652379737227805,
+          "sha256": "3b6b1d851650f148469144d06b8558098bac96013740f87d79a9cfd15f0a4767"
+        },
+        "validation": {
+          "pairs": 796,
+          "episodes": [
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271840",
+              "scene": "ProcTHOR-Train-5",
+              "frames": 200,
+              "depth_sha256": "f2a0ff5dab8cecccbfe1615c4102d8df87ed80126712f78fecfd62ac82337b08",
+              "episode_json_sha256": "0f9dbf40a0ede8dbdfd8d3ec6c9833c147d030119643118cc1ede5be4db84ba9"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-5-seed271841",
+              "scene": "ProcTHOR-Train-5",
+              "frames": 200,
+              "depth_sha256": "4a60e0189efa772e7497e153924003451f81222b0c7f8360ac69f07f0b945bb8",
+              "episode_json_sha256": "9dfe4a5ca4ae2b6f97cc45f1fd5df9b03e28785033c8464287955b578215c50b"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271842",
+              "scene": "ProcTHOR-Train-6",
+              "frames": 200,
+              "depth_sha256": "d01c2763e9bb62a90584122d55d8f24b5b0d2d15b4ef9a7bb4675d3e38025925",
+              "episode_json_sha256": "bffed904ba079ea380bf0f1343588f6a139d751e42ea5c93a8f26bd2c1af327a"
+            },
+            {
+              "path": "/home/leopouilly/AeroVIO/data/hyperdrone-motion-v2/validation-ProcTHOR-Train-6-seed271843",
+              "scene": "ProcTHOR-Train-6",
+              "frames": 200,
+              "depth_sha256": "5b2381dc3b918b587d701ca02771635238765766b6f844146a0955a3c836aa36",
+              "episode_json_sha256": "923165af5b4e16462d3ce1a10b833454ffadf4464a3dd66a6cc8238781896f0a"
+            }
+          ],
+          "visible_pixel_fraction": 0.9626706121754607,
+          "sha256": "51b07e2f9141648cdc429f1f2bcdf516dbc71b9ccbb34339ad91d190c87f11d7"
+        }
+      }
+    },
+    "nohover_dir": "/home/leopouilly/AeroVIO/data/train-nohover",
+    "splits": {
+      "train": {
+        "old_pairs": 2388,
+        "nohover_pairs": 74338,
+        "pairs": 76726,
+        "nohover_episodes": [
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-103-0000.zip",
+            "scene": "ProcTHOR-Train-103",
+            "seed": 7160,
+            "frames": 1200,
+            "archive_sha256": "d0ab0ad15ca9201bea44cfe8c7802f1790722cdce373d35a62d9f230ebcfba20"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-103-0001.zip",
+            "scene": "ProcTHOR-Train-103",
+            "seed": 7160,
+            "frames": 1200,
+            "archive_sha256": "52bca13a035efa570a32adf2eb41c06e8fffb802274b3ceb547b817676fcc6d1"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-109-0000.zip",
+            "scene": "ProcTHOR-Train-109",
+            "seed": 7170,
+            "frames": 1200,
+            "archive_sha256": "117c535987b9d8b8379e2bbf9682c81b57b4eea65df87b8cea9a20f9d9f36eb5"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-109-0001.zip",
+            "scene": "ProcTHOR-Train-109",
+            "seed": 7170,
+            "frames": 1200,
+            "archive_sha256": "ffacf53c2a2266e88523f4ed0384a677322b72658bee6aab7cff421764a2d706"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-115-0000.zip",
+            "scene": "ProcTHOR-Train-115",
+            "seed": 7180,
+            "frames": 1200,
+            "archive_sha256": "5a978fdea8f901ea6a1dae34fbcc2a5832bb1572ba43db2e950229ccf1381233"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-115-0001.zip",
+            "scene": "ProcTHOR-Train-115",
+            "seed": 7180,
+            "frames": 1200,
+            "archive_sha256": "910db98405f76696d8fa0d32d36f68443ef3b945241dad72b4ebec774521f4a4"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-127-0000.zip",
+            "scene": "ProcTHOR-Train-127",
+            "seed": 7200,
+            "frames": 1200,
+            "archive_sha256": "9887daefacf4a2a63deec16463a64af1fb9509c117beb36311592c8b2d04c4fe"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-127-0001.zip",
+            "scene": "ProcTHOR-Train-127",
+            "seed": 7200,
+            "frames": 1200,
+            "archive_sha256": "ed33505489a2a42a3c3d3ba73020323c3816d92fb1c5b1194e6ea83d1414c73a"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-13-0000.zip",
+            "scene": "ProcTHOR-Train-13",
+            "seed": 7010,
+            "frames": 1200,
+            "archive_sha256": "87e2dd1f7291217641168e3acba0b19e2454893e39ee63926f4f119a7d4f8e33"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-13-0001.zip",
+            "scene": "ProcTHOR-Train-13",
+            "seed": 7010,
+            "frames": 1200,
+            "archive_sha256": "4dde718f380fd3d4417229410649cd7bb379899fd4d86892f29a14d3b1649ca8"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-133-0000.zip",
+            "scene": "ProcTHOR-Train-133",
+            "seed": 7210,
+            "frames": 1200,
+            "archive_sha256": "415e833faaf12953025ecab392d5f17d897da25ed8b9d74c699b905dce3e4aad"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-133-0001.zip",
+            "scene": "ProcTHOR-Train-133",
+            "seed": 7210,
+            "frames": 1200,
+            "archive_sha256": "a44c60718ced10cc7e51bf58400e77f72db853c8922d1c0e420d43a4e00eaa55"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-139-0000.zip",
+            "scene": "ProcTHOR-Train-139",
+            "seed": 7220,
+            "frames": 1200,
+            "archive_sha256": "95657cbce71d397af2f8c7bef36dbdd62b7891c8a5af214b5d61cc5af258c444"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-139-0001.zip",
+            "scene": "ProcTHOR-Train-139",
+            "seed": 7220,
+            "frames": 1200,
+            "archive_sha256": "bd6d3d2bc9a2de109c020558e41706714d03c60ddbe403d7e829af14ff026074"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-145-0000.zip",
+            "scene": "ProcTHOR-Train-145",
+            "seed": 7230,
+            "frames": 1200,
+            "archive_sha256": "9a310385420450f7651334a9969a68f2734554ce9f3d567c62a4be3d98f2dd14"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-145-0001.zip",
+            "scene": "ProcTHOR-Train-145",
+            "seed": 7230,
+            "frames": 1200,
+            "archive_sha256": "fff55bacbaa457a2085d65bdc6f9de9cb255558a9d648063b654caaab4513411"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-151-0000.zip",
+            "scene": "ProcTHOR-Train-151",
+            "seed": 7240,
+            "frames": 1200,
+            "archive_sha256": "168acfce24a23920eeb75ddb56014c0c04a5302ab36413d5e698c0f351e24483"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-151-0001.zip",
+            "scene": "ProcTHOR-Train-151",
+            "seed": 7240,
+            "frames": 1200,
+            "archive_sha256": "aca4edcc696469d315e64fadbfda5641ac70a009cb25ab376b6aab5638419dd0"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-157-0000.zip",
+            "scene": "ProcTHOR-Train-157",
+            "seed": 7250,
+            "frames": 1200,
+            "archive_sha256": "9d0ad3b6144f6212bfceb8b2998f31626a39ae4a64306474239c25e4b5f676a9"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-157-0001.zip",
+            "scene": "ProcTHOR-Train-157",
+            "seed": 7250,
+            "frames": 1200,
+            "archive_sha256": "0893ca462ca4faf07b258948e1650b71e873916cd110d0e02a333b0c14ac0fb7"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-163-0000.zip",
+            "scene": "ProcTHOR-Train-163",
+            "seed": 7260,
+            "frames": 1200,
+            "archive_sha256": "1458b95180808c7813b52e947ac39edf3958d361a63305956c23a4861ae941d2"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-163-0001.zip",
+            "scene": "ProcTHOR-Train-163",
+            "seed": 7260,
+            "frames": 1200,
+            "archive_sha256": "e84fdfc7fc30fb00cf36278100eedf930d64556790333aebc09487f57397a30a"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-169-0000.zip",
+            "scene": "ProcTHOR-Train-169",
+            "seed": 7270,
+            "frames": 1200,
+            "archive_sha256": "741cf07867341c446baa759a2ccdf9b21b0ca5768cedb88eff5d456653fbcfbe"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-169-0001.zip",
+            "scene": "ProcTHOR-Train-169",
+            "seed": 7270,
+            "frames": 1200,
+            "archive_sha256": "a0a53c9c9abe5889c8440c2e64a5aa1accf7ed16d67f7411ffd3cb6418c1d243"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-175-0000.zip",
+            "scene": "ProcTHOR-Train-175",
+            "seed": 7280,
+            "frames": 1200,
+            "archive_sha256": "f06dd776a5ad0f9b5fcd9e022be4d610b48f174f3eba6e9fb9cae3febfdb5d2b"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-175-0001.zip",
+            "scene": "ProcTHOR-Train-175",
+            "seed": 7280,
+            "frames": 1200,
+            "archive_sha256": "91407b96e51a97d4dbc11fc72ae13b866c5a89b9631f88aa7d866989b222b2e0"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-181-0000.zip",
+            "scene": "ProcTHOR-Train-181",
+            "seed": 7290,
+            "frames": 1200,
+            "archive_sha256": "24859b19d829334de158603b79825039f11184629613753e6d44cc294c607b9c"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-181-0001.zip",
+            "scene": "ProcTHOR-Train-181",
+            "seed": 7290,
+            "frames": 1200,
+            "archive_sha256": "49bacbe02057237c3cf666ef2003104640369e2ddfb84a00800431378ab6fe90"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-187-0000.zip",
+            "scene": "ProcTHOR-Train-187",
+            "seed": 7300,
+            "frames": 1200,
+            "archive_sha256": "e149e2a7085d581917e0b97bc36d0baf5d5fd991058bc2bf3acf3489fa06170c"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-187-0001.zip",
+            "scene": "ProcTHOR-Train-187",
+            "seed": 7300,
+            "frames": 1200,
+            "archive_sha256": "c53bfb986ce3176686df826ed58fa8ea25f7ea7d8467dc4dbbd3c78512673ada"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-19-0000.zip",
+            "scene": "ProcTHOR-Train-19",
+            "seed": 7020,
+            "frames": 1200,
+            "archive_sha256": "6ee2190eab02ff144326e2c5f6b59383e4a6b16b886715ad658c58d68b59d9bd"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-19-0001.zip",
+            "scene": "ProcTHOR-Train-19",
+            "seed": 7020,
+            "frames": 1200,
+            "archive_sha256": "3bcf3b4785d0b4f412645259ceeab6d77d8826f305f00c63daa458010ce5296f"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-193-0000.zip",
+            "scene": "ProcTHOR-Train-193",
+            "seed": 7310,
+            "frames": 1200,
+            "archive_sha256": "ecc1b39e9b873d8ea5352ff368a25227ba458b0a58e60c447cda178854df8b06"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-193-0001.zip",
+            "scene": "ProcTHOR-Train-193",
+            "seed": 7310,
+            "frames": 1200,
+            "archive_sha256": "fd2bf94c3ee207606395359d8513f406716d0e41ed6b22577ca1752a16a85883"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-25-0000.zip",
+            "scene": "ProcTHOR-Train-25",
+            "seed": 7030,
+            "frames": 1200,
+            "archive_sha256": "80b0edfe69b95f49e66f0ef325c14d3a435a67b8e7ec63ed781cd60c44a7b8f5"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-25-0001.zip",
+            "scene": "ProcTHOR-Train-25",
+            "seed": 7030,
+            "frames": 1200,
+            "archive_sha256": "122a3799d29321270831698fd12123dcb91ea04d4ad2d4b6058a63ae6355b816"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-31-0000.zip",
+            "scene": "ProcTHOR-Train-31",
+            "seed": 7040,
+            "frames": 1200,
+            "archive_sha256": "36f60cd062d10bec480bfa993a430a2c6bd2f6b577067dbf0ef7b03c23bb6fa7"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-31-0001.zip",
+            "scene": "ProcTHOR-Train-31",
+            "seed": 7040,
+            "frames": 1200,
+            "archive_sha256": "7c438986807ddcd66709c31e2ecfbf6e884df34dc6b078c7d1083be7a612e77c"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-37-0000.zip",
+            "scene": "ProcTHOR-Train-37",
+            "seed": 7050,
+            "frames": 1200,
+            "archive_sha256": "fc07c16df98090aa1fd975d41dce2f1be10d5694b9de2e31a898b4fcb6107494"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-37-0001.zip",
+            "scene": "ProcTHOR-Train-37",
+            "seed": 7050,
+            "frames": 1200,
+            "archive_sha256": "d3024b073a198ae1a77f3587cd7bd762936dae0afb23994a89282db06f6b3de5"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-43-0000.zip",
+            "scene": "ProcTHOR-Train-43",
+            "seed": 7060,
+            "frames": 1200,
+            "archive_sha256": "ef7accfe81b162cbe560bb5a0a3e02068465c22e9238cb1f75620ee6b5466536"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-43-0001.zip",
+            "scene": "ProcTHOR-Train-43",
+            "seed": 7060,
+            "frames": 1200,
+            "archive_sha256": "b521ebe492dcb2b04737f6dadb0da00896aa41ec336bc3a4aca084c7adf71211"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-49-0000.zip",
+            "scene": "ProcTHOR-Train-49",
+            "seed": 7070,
+            "frames": 1200,
+            "archive_sha256": "1f21ba1772ff294af642a5c1283fd2478180658261a841bc0dd4088f63f10d4f"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-49-0001.zip",
+            "scene": "ProcTHOR-Train-49",
+            "seed": 7070,
+            "frames": 1200,
+            "archive_sha256": "8e2cde426f97d0d2fbf50852774330fcd23bfb624c536b16b5f5ad4bf45a3c40"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-55-0000.zip",
+            "scene": "ProcTHOR-Train-55",
+            "seed": 7080,
+            "frames": 1200,
+            "archive_sha256": "a1efc8cdb5eb9211b9661694058db99ee33d491985348b56ede231e14aa87995"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-55-0001.zip",
+            "scene": "ProcTHOR-Train-55",
+            "seed": 7080,
+            "frames": 1200,
+            "archive_sha256": "37742667f02fb19169616232ccb582d608928cf2ec4d724a9c31e631c1a32343"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-61-0000.zip",
+            "scene": "ProcTHOR-Train-61",
+            "seed": 7090,
+            "frames": 1200,
+            "archive_sha256": "36eb8c7ba4a0757d39b99317956429edec4b75fc6eb6ab6e6efd9608954ef083"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-61-0001.zip",
+            "scene": "ProcTHOR-Train-61",
+            "seed": 7090,
+            "frames": 1200,
+            "archive_sha256": "427282e2c5eaf147e67b24705b2d94999e820fe06cd9b9ebeb84800b670f1261"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-67-0000.zip",
+            "scene": "ProcTHOR-Train-67",
+            "seed": 7100,
+            "frames": 1200,
+            "archive_sha256": "eb60f83a09dde5d0a83870dea821e10fc3e9dd3f1948856430597c1d86927074"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-67-0001.zip",
+            "scene": "ProcTHOR-Train-67",
+            "seed": 7100,
+            "frames": 1200,
+            "archive_sha256": "9cd1834d940e60fcd7ea5ab9e012474e3abf2c375be26e2c9a44befdb448b7b8"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-7-0000.zip",
+            "scene": "ProcTHOR-Train-7",
+            "seed": 7000,
+            "frames": 1200,
+            "archive_sha256": "793c73d5f3a44030464791a5a6aefb11c1f6eb77f523deec286c4448a8f9fce9"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-7-0001.zip",
+            "scene": "ProcTHOR-Train-7",
+            "seed": 7000,
+            "frames": 1200,
+            "archive_sha256": "78de49135aeec3a3a4ef02c4ca911868de745bd39ff8fad757d2d3d2cecd1868"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-73-0000.zip",
+            "scene": "ProcTHOR-Train-73",
+            "seed": 7110,
+            "frames": 1200,
+            "archive_sha256": "830c536d59c0530f96c78b9bca9dfe2c22b0b67d44428f3c5e2a18fe9d4030a2"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-73-0001.zip",
+            "scene": "ProcTHOR-Train-73",
+            "seed": 7110,
+            "frames": 1200,
+            "archive_sha256": "0b24143fb94e10726c26f9cc076a1223c578ef614619102df3b6e73681e73f74"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-79-0000.zip",
+            "scene": "ProcTHOR-Train-79",
+            "seed": 7120,
+            "frames": 1200,
+            "archive_sha256": "ec198b30d85ccf186ab772c3f0c5804aca9bfd5f1e28ead0b670fa2a5eb383ce"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-79-0001.zip",
+            "scene": "ProcTHOR-Train-79",
+            "seed": 7120,
+            "frames": 1200,
+            "archive_sha256": "854b0515a4dbb7b3d9d01ba4ba2395ee26443cd167dcbb0ee0b24c94d684b837"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-85-0000.zip",
+            "scene": "ProcTHOR-Train-85",
+            "seed": 7130,
+            "frames": 1200,
+            "archive_sha256": "1bc6fe9bbe30fc05becdcd5816a37290620ec20efa7a9240cbc17be36f906dac"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-85-0001.zip",
+            "scene": "ProcTHOR-Train-85",
+            "seed": 7130,
+            "frames": 1200,
+            "archive_sha256": "dc2f8e9592dbc684ec03c54ee8879ed00440ef1748858af7ca6d8f97a2eec00b"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-91-0000.zip",
+            "scene": "ProcTHOR-Train-91",
+            "seed": 7140,
+            "frames": 1200,
+            "archive_sha256": "1fd57a7cbc209c2b54207d678f49532403de6acdfe4a908ce7a50ec689e28e99"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-91-0001.zip",
+            "scene": "ProcTHOR-Train-91",
+            "seed": 7140,
+            "frames": 1200,
+            "archive_sha256": "e10e6a983d27ecb8df06007b090aa61eb061809fbaa272da49a3cc1893151bdd"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-97-0000.zip",
+            "scene": "ProcTHOR-Train-97",
+            "seed": 7150,
+            "frames": 1200,
+            "archive_sha256": "9df7ed972948ed8a86b3ec7613e66ce1486272cc5fae8aef51f27fe5eb528a8e"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-97-0001.zip",
+            "scene": "ProcTHOR-Train-97",
+            "seed": 7150,
+            "frames": 1200,
+            "archive_sha256": "f7d954fb07624d5c23b15555cfe0716a1704e2b086c2552e1fb8de62f76bdce2"
+          }
+        ],
+        "old_motion": {
+          "mean_speed_mps": 0.19114749133586884,
+          "p50_speed_mps": 0.10215228796005249,
+          "p95_speed_mps": 0.5809223055839539,
+          "max_speed_mps": 0.8157374858856201
+        },
+        "nohover_motion": {
+          "mean_speed_mps": 0.28147438168525696,
+          "p50_speed_mps": 0.2757430374622345,
+          "p95_speed_mps": 0.5730478167533875,
+          "max_speed_mps": 0.8158434629440308
+        },
+        "state_std": [
+          0.0015847994945943356,
+          0.014945710077881813,
+          0.001428475952707231,
+          0.007397111970931292,
+          0.007899796590209007,
+          0.006954310927540064,
+          0.00019551401783246547,
+          0.00020858859352301806,
+          0.0001847263192757964,
+          0.05227275565266609,
+          0.0696931853890419,
+          0.0,
+          0.0,
+          3.348121026647277e-05
+        ],
+        "sha256": "e5982fa796bcf667f6c9f20b69281f57ade03bbc4d4c4029d8b574b0d2140005"
+      },
+      "validation": {
+        "old_pairs": 796,
+        "nohover_pairs": 9592,
+        "pairs": 10388,
+        "nohover_episodes": [
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-10-0000.zip",
+            "scene": "ProcTHOR-Train-10",
+            "seed": 8000,
+            "frames": 1200,
+            "archive_sha256": "336037325679e1b62eac18382825f0f6eef0a41d190d9ae432665fc5031a187f"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-10-0001.zip",
+            "scene": "ProcTHOR-Train-10",
+            "seed": 8000,
+            "frames": 1200,
+            "archive_sha256": "b4083e4a5f17c6413a4cfa6ce3792519114dfae384a4273799a570551a311e91"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-110-0000.zip",
+            "scene": "ProcTHOR-Train-110",
+            "seed": 8020,
+            "frames": 1200,
+            "archive_sha256": "c9a86788b633a0d87d90b12d2cb77bfe09a599e737b49056e843de7b5f032d0b"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-110-0001.zip",
+            "scene": "ProcTHOR-Train-110",
+            "seed": 8020,
+            "frames": 1200,
+            "archive_sha256": "d2cc165af32358d263fe45aee1c1589618bc705d19897ee6670033a072669e82"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-150-0000.zip",
+            "scene": "ProcTHOR-Train-150",
+            "seed": 8030,
+            "frames": 1200,
+            "archive_sha256": "23711529997a1c778b191cc84b1d4a4e95393ee3f703c7ddb4863bf8924f5d3c"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-150-0001.zip",
+            "scene": "ProcTHOR-Train-150",
+            "seed": 8030,
+            "frames": 1200,
+            "archive_sha256": "2c9ee8447bc4b34c3a2c01b922dce69d45c812e34a739ffd702938c6c9e0a51e"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-70-0000.zip",
+            "scene": "ProcTHOR-Train-70",
+            "seed": 8010,
+            "frames": 1200,
+            "archive_sha256": "7e64a060e5bd1c63228a9bb8315cf7009308c27467555851771ddea09ad8ce7c"
+          },
+          {
+            "path": "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-70-0001.zip",
+            "scene": "ProcTHOR-Train-70",
+            "seed": 8010,
+            "frames": 1200,
+            "archive_sha256": "60c06271ecf4879f3ce14b31e4a28ac7de2e1a66bfb1985d18a298672c161f6d"
+          }
+        ],
+        "old_motion": {
+          "mean_speed_mps": 0.20061524212360382,
+          "p50_speed_mps": 0.09099332988262177,
+          "p95_speed_mps": 0.5886132121086121,
+          "max_speed_mps": 0.6535511612892151
+        },
+        "nohover_motion": {
+          "mean_speed_mps": 0.28252318501472473,
+          "p50_speed_mps": 0.2691521644592285,
+          "p95_speed_mps": 0.5673588514328003,
+          "max_speed_mps": 0.7165461778640747
+        },
+        "state_std": [
+          0.0016238146927207708,
+          0.016071291640400887,
+          0.0014426825800910592,
+          0.00844232365489006,
+          0.008908331394195557,
+          0.0059893480502069,
+          0.0002215197600889951,
+          0.0002318540500709787,
+          0.00016295278328470886,
+          0.046743545681238174,
+          0.06232251226902008,
+          0.0,
+          0.0,
+          5.125795723870397e-06
+        ],
+        "sha256": "444316a49b4ad170f021d1c4c5515327d5be0279eecfe86a0aaa6b80567aebc9"
+      }
+    },
+    "balanced_plan": {
+      "path": "/home/leopouilly/AeroVIO/data/motion-cache-nohover-v11-balanced-plan.npz",
+      "old_fraction": 0.25,
+      "seed": 17,
+      "sha256": "863d9fed1861bd07f96ff1d6fd555828575aa523f621ee982f63c2da36389615"
+    }
+  },
+  "selection": "minimum validation normalized pose loss",
+  "packages": {
+    "torch": "2.15.0+cpu",
+    "onnx": "1.23.2",
+    "numpy": "2.5.4",
+    "opencv-python-headless": "5.0.0.93"
+  },
+  "source_sha256": {
+    "scripts/train_motion.py": "687478e9c3dd0362e6bbde50879f879bd826fae9f7bedd3920ffdda65cb6e368",
+    "training/motion_model.py": "5f17328af7834c4c9e488ce7cd96ed1f45bec9a93b7bf916429329f6cbdf9769",
+    "workspace/solution/preintegrate.py": "4ab230bff265b068b90fe5b52d20b245f6d8483f00d87aec4c431e9784ba9024"
+  },
+  "sampling": {
+    "kind": "original_uniform_randperm"
+  },
+  "finished_utc": "2026-11-20T12:07:48.342295+00:00",
+  "elapsed_s": 258.4696768269996,
+  "best_epoch": 33,
+  "best_validation": {
+    "pose_loss": 0.27634727245667917,
+    "photo_loss": 0.004633559379726648,
+    "visible_pairs": 796,
+    "translation_rmse_m": 0.010723117906663566,
+    "rotation_residual_rmse_rad": 0.0015411699735425471
+  },
+  "minibatch_order_sha256": "797982e19527ef0c96969ed5416ba19ea07a3edfbafa163547c22f60fa8a225e",
+  "checkpoint_sha256": "7049b62169f0004cc990f78e6cbada7a056bee6a4536b3ed425f42a802afa469",
+  "model_sha256": "7b0f3d8ff3366a0ef859628afe8877067645c35a666155b1b1da7c33ef205100",
+  "model_bytes": 119770,
+  "opencv_torch_max_abs_difference": 1.1324882507324219e-06
+}
