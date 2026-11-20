@@ -15,6 +15,21 @@ All four complete 10/10 episodes with no failures; init fuel is about 220k for e
 For reference (from HANDOFF): server `tiny_cnn` is 0.668 m / 14.68 M, and the team's current upload is
 0.916 m / 14.76 M on the server (0.882 m locally).
 
+## Server results (2026-11-15)
+
+Official course-server scores (20 episodes: public + private), as reported by Leo from the server:
+
+| Variant | Mean Sim(3) ATE (m) | Max fuel / frame |
+| --- | ---: | ---: |
+| 6a IMU only (`aerovio-leo-6a-imu-only.wasm`) | 0.967 | 13.9k |
+| V8 rotation (`aerovio-v8-rotation.wasm`) | 0.514 | 3.5M |
+
+Team claimed area went from **2.55% to 4.89%** after these two uploads.
+
+Compared with the local 10-episode numbers above, 6a's server ATE is lower (0.967 vs 1.062 m) and its
+fuel matches, because its per-frame cost hardly depends on the images. V8's server ATE (0.514 vs 0.480 m) and max fuel
+(3.5M vs 2.23M) are both higher: the private episodes contain at least one frame where image tracking costs more.
+
 ## What each variant does
 
 - **Teacher (Native 160).** A tiny network (1,350 numbers) turns IMU readings into motion, gyro calibration
