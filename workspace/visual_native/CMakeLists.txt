@@ -59,6 +59,18 @@ target_compile_definitions(solution PRIVATE
     USE_SMALL_ANGLE_ROTATION=1 USE_LEARNED_ROTATION_RESIDUAL=0
     _WASI_EMULATED_PROCESS_CLOCKS _WASI_EMULATED_SIGNAL _WASI_EMULATED_MMAN _WASI_EMULATED_GETPID
 )
+option(LEO_GRAVITY_TILT "Mahony-style accelerometer roll/pitch correction of the gyro rotation" OFF)
+set(LEO_GRAVITY_TILT_GAIN 0.01 CACHE STRING "LEO_GRAVITY_TILT gain K in 1/s (per-sample correction K * e * dt)")
+set(LEO_GRAVITY_TILT_GATE 0.5 CACHE STRING "LEO_GRAVITY_TILT: use samples with | |a| - 9.81 | below this (m/s^2)")
+set(LEO_GRAVITY_TILT_SIGN 1 CACHE STRING "LEO_GRAVITY_TILT diagnostic: -1 flips the correction sign")
+if(LEO_GRAVITY_TILT)
+    if(NOT LEO_GRAVITY_TILT_SIGN MATCHES "^-?1$")
+        message(FATAL_ERROR "LEO_GRAVITY_TILT_SIGN must be 1 or -1")
+    endif()
+    target_compile_definitions(solution PRIVATE LEO_GRAVITY_TILT=1
+        LEO_GRAVITY_TILT_GAIN=${LEO_GRAVITY_TILT_GAIN} LEO_GRAVITY_TILT_GATE=${LEO_GRAVITY_TILT_GATE}
+        LEO_GRAVITY_TILT_SIGN=${LEO_GRAVITY_TILT_SIGN})
+endif()
 target_compile_options(solution PRIVATE -ffp-contract=off -fwasm-exceptions "SHELL:-mllvm -wasm-use-legacy-eh=false")
 target_link_options(solution PRIVATE -fwasm-exceptions -Wl,-z,stack-size=8388608 -Wl,--stack-first)
 target_link_libraries(solution PRIVATE ${OpenCV_LIBS} unwind c-printscan-long-double

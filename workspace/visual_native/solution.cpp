@@ -2,6 +2,7 @@
 #include "viobench_abi.h"
 #include "inference.h"
 #include "gyro_bias.h"
+#include "gravity_tilt.h"
 
 #include "rotation.h"
 #include "visual_direction.h"
@@ -35,6 +36,9 @@ struct State {
     bool started = false;
     bool rigid_extrinsics = true;
     InitialGyroBias calibration;
+#if LEO_GRAVITY_TILT
+    GravityTilt tilt;
+#endif
     visual_direction::Tracker tracker;
     Vec3d imu_position{0., 0., 0.};
     Matx33d visual_alignment = Matx33d::eye();
@@ -86,6 +90,12 @@ Features features(double end_time, const double* imu, int count) {
     Vec3d velocity{0., 0., 0.}, position{0., 0., 0.};
     double previous = state.previous_time;
     constexpr double timestamp_tolerance = 1.e-6;
+#if LEO_GRAVITY_TILT
+    // Predicted up direction in the IMU frame at the start of this frame interval,
+    // taken from the last emitted orientation (the one that is scored).
+    const Matx33d& reference = VISUAL_ROTATION_CORRECTION ? state.output_rotation : state.rotation;
+    const Vec3d tilt_up = state.camera_from_imu.t() * (reference.t() * state.tilt.up0);
+#endif
     for (int sample = 0; sample < count; ++sample) {
         const auto* row = imu + VIOBENCH_IMU_ROW_VALUES * sample;
         for (int i = 0; i < VIOBENCH_IMU_ROW_VALUES; ++i) {
@@ -100,8 +110,17 @@ Features features(double end_time, const double* imu, int count) {
         velocity += accel * dt;
         const Vec3d omega{row[4], row[5], row[6]};
         rotation = rotation * rotation_matrix(omega * dt);
+#if LEO_GRAVITY_TILT
+        {
+            Vec3d rate = state.calibration.accepted ? omega - state.calibration.bias : omega;
+            if (state.tilt.ready)
+                rate = GravityTilt::correct(rate, Vec3d(row[1], row[2], row[3]), corrected.t() * tilt_up);
+            corrected = corrected * rotation_matrix(rate * dt);
+        }
+#else
         if (state.calibration.accepted)
             corrected = corrected * rotation_matrix((omega - state.calibration.bias) * dt);
+#endif
         previous = time;
     }
     const auto& r = state.camera_from_imu;
@@ -115,7 +134,7 @@ Features features(double end_time, const double* imu, int count) {
         state.camera_features[0], state.camera_features[1],
         state.camera_features[2], state.camera_features[3],
         float(end_time - state.previous_time)};
-    const auto gyro_rotation = state.calibration.accepted
+    const auto gyro_rotation = (LEO_GRAVITY_TILT || state.calibration.accepted)
         ? r * corrected * r.t()
         : rotation_matrix({input[0], input[1], input[2]});
     return {input, gyro_rotation};
@@ -218,6 +237,9 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             state.imu_position = imu_position;
         }
         state.calibration.observe(time, imu, count);
+#if LEO_GRAVITY_TILT
+        state.tilt.observe(state.rotation * state.camera_from_imu, imu, count);
+#endif
         state.previous_time = time;
         state.started = true;
         return VIOBENCH_STATUS_OK;
