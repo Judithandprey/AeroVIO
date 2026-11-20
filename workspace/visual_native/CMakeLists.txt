@@ -34,6 +34,15 @@ else()
     message(FATAL_ERROR "VISUAL_DOWNSAMPLE must be 2 or 4")
 endif()
 
+set(VISUAL_INTERVAL 8 CACHE STRING "Frames per visual tracking cycle (>= 8); 8 is the teacher schedule, larger values only idle longer between cycles")
+if(NOT VISUAL_INTERVAL MATCHES "^[0-9]+$" OR VISUAL_INTERVAL LESS 8)
+    message(FATAL_ERROR "VISUAL_INTERVAL must be an integer >= 8")
+endif()
+option(LEO_IMU_ONLY "Cheap Pareto point: compact IMU network + gyro calibration only, never call the visual tracker" OFF)
+if(LEO_IMU_ONLY AND (VISUAL_ROTATION_CORRECTION OR VISUAL_CONFIDENCE_WEIGHTING))
+    message(FATAL_ERROR "LEO_IMU_ONLY disables the visual tracker; turn off the V8 visual options")
+endif()
+
 option(VISUAL_SPARSE_DIRECTION "Accept strongly constrained fits with eight or nine tracks at 160x120" ON)
 option(VISUAL_CONFIDENCE_WEIGHTING "V8 heuristic quality weighting of accepted direction fits" OFF)
 option(VISUAL_ROTATION_CORRECTION "V8 bounded joint epipolar rotation refinement" OFF)
@@ -43,7 +52,8 @@ viobench_solution(solution solution.cpp "${weights}")
 target_include_directories(solution PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 target_compile_definitions(solution PRIVATE
     VISUAL_DOWNSAMPLE=${VISUAL_DOWNSAMPLE} VISUAL_PYRAMID_LEVELS=${pyramid_levels}
-    VISUAL_INTERVAL=8 VISUAL_SPARSE_DIRECTION=$<BOOL:${VISUAL_SPARSE_DIRECTION}>
+    VISUAL_INTERVAL=${VISUAL_INTERVAL} VISUAL_SPARSE_DIRECTION=$<BOOL:${VISUAL_SPARSE_DIRECTION}>
+    LEO_IMU_ONLY=$<BOOL:${LEO_IMU_ONLY}>
     VISUAL_CONFIDENCE_WEIGHTING=$<BOOL:${VISUAL_CONFIDENCE_WEIGHTING}>
     VISUAL_ROTATION_CORRECTION=$<BOOL:${VISUAL_ROTATION_CORRECTION}>
     USE_SMALL_ANGLE_ROTATION=1 USE_LEARNED_ROTATION_RESIDUAL=0

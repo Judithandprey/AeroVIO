@@ -15,6 +15,13 @@
 #include <stdexcept>
 #include <string>
 
+// LEO_IMU_ONLY=1 never calls the visual tracker: pose comes only from the compact
+// IMU network and (calibrated) gyro rotation. Default 0 keeps the teacher build.
+#ifndef LEO_IMU_ONLY
+#define LEO_IMU_ONLY 0
+#endif
+static_assert(!(LEO_IMU_ONLY && VISUAL_ROTATION_CORRECTION), "LEO_IMU_ONLY has no visual rotation");
+
 namespace {
 using cv::Matx33d;
 using cv::Vec3d;
@@ -164,7 +171,9 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
         if (!state.started) {
             std::fill_n(out, VIOBENCH_STATE_VALUES, 0.);
             out[6] = 1.;
+#if !LEO_IMU_ONLY
             state.tracker.step(frame, state.rotation, state.imu_position);
+#endif
         } else {
             const auto preintegrated = features(time, imu, count);
             const auto motion = infer(preintegrated.input);
@@ -174,7 +183,11 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             const Matx33d rotation = state.rotation * delta;
             const Vec3d increment = state.rotation * Vec3d(motion[0], motion[1], motion[2]);
             const Vec3d imu_position = state.imu_position + increment;
+#if LEO_IMU_ONLY
+            const Vec3d correction{0., 0., 0.};
+#else
             const Vec3d correction = state.tracker.step(frame, rotation, imu_position);
+#endif
             Vec3d position = state.position + increment + correction;
             Matx33d output_rotation = rotation;
             Matx33d previous_output_rotation = state.rotation;
