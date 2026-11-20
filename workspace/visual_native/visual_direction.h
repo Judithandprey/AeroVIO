@@ -159,6 +159,11 @@ public:
     Vec3d rotation_step() const { return rotation_step_; }
     Vec3d last_residual() const { return last_residual_; }
     int residual_count() const { return residual_count_; }
+    // Visual translation direction between the last two capture frames (frames where
+    // frame_index % VISUAL_INTERVAL == 0), available once the cycle's observation finishes.
+    Vec3d last_heading() const { return last_heading_; }
+    double last_heading_weight() const { return last_heading_weight_; }
+    int heading_count() const { return heading_count_; }
     std::array<double,5> diagnostics() const {
         return {double(direct_fits_), double(rotation_fits_), quality_sum_,
                 double(carry_fits_), rotation_sum_};
@@ -192,6 +197,9 @@ private:
     Vec3d pending_rotation_{0.,0.,0.}, rotation_step_{0.,0.,0.};
     Vec3d last_residual_{0.,0.,0.};
     int residual_count_ = 0;
+    Vec3d last_heading_{0., 0., 0.};
+    double last_heading_weight_ = 0.;
+    int heading_count_ = 0;
 
     void make_gray(const uint8_t* rgb) {
         current_.create(height, width, CV_8UC1);
@@ -348,6 +356,9 @@ private:
             }
             pending_ = (heading * baseline - prior) * (weight / VISUAL_INTERVAL);
             correction_frames_ = VISUAL_INTERVAL;
+            last_heading_ = heading;   // world unit direction, previous capture -> this capture
+            last_heading_weight_ = weight;
+            ++heading_count_;
             previous_visual_heading_ = heading;
             previous_inertial_heading_ = prior * (1. / baseline);
             previous_baseline_ = baseline;

@@ -67,3 +67,22 @@ All rows below use V8 rotation and `GRAVITY_TILT_GAIN=0.5`.
 Rotation is now mostly fixed (end error 47° → 10°). Locally the remaining raw ATE is path length (median Sim(3)
 scale 2.5 at k = 1). The server's stage 2 Sim(3) scales suggested much less (about 1.4 for k = 1), so the safe
 uploads are k = 1.0 (`aerovio-v8-rotfix.wasm`) and k = 1.3 (`aerovio-v8-rotfix-scale1.3.wasm`).
+
+## Position/velocity Kalman filter (`-DVIO_KF=ON`, experimental, not better yet)
+
+`vio_kf.h`: linear KF over p, v, a world-frame acceleration correction, and two capture-position clones.
+Rotation comes from the existing gyro chain. Prediction integrates the preintegrated specific force with a gravity
+estimate (mean specific force over the first 5 s); updates are the tracker's visual direction between capture
+frames (perpendicular components, soft-gated) and the network velocity as a weak pseudo-measurement.
+
+| Build (V8 + tilt + online bias) | s2-val raw ATE (m) |
+| --- | ---: |
+| no KF | 2.915 |
+| KF, network sigma 0.3 m/s | 2.927 |
+| KF, network sigma 1.0 m/s | 4.059 |
+| KF, network sigma 1.0, heading sigma 0.1 | 3.676 |
+
+Why it does not help yet: the remaining tilt error on s2-val is 3.5–6° (median), which leaks 0.6–1 m/s² of gravity
+into the integrated acceleration, faster than the visual direction updates (every 0.4 s, many inconsistent) can
+correct. Making accelerometer scale usable needs orientation in the filter (full error-state EKF), not an external
+rotation.

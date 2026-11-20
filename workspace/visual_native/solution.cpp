@@ -3,6 +3,12 @@
 #include "inference.h"
 #include "gyro_bias.h"
 #include "gravity_tilt.h"
+#ifndef VIO_KF
+#define VIO_KF 0
+#endif
+#if VIO_KF
+#include "vio_kf.h"
+#endif
 #ifndef WINDOW_IMU
 #define WINDOW_IMU 0
 #endif
@@ -58,6 +64,13 @@ struct State {
     GravityTilt tilt;
     Vec3d online_bias{0., 0., 0.};  // IMU frame, rad/s, added to the startup calibration
     int residual_seen = 0;
+    int tracker_steps = 0;  // tracker.step calls so far; captures happen when % VISUAL_INTERVAL == 0
+#if VIO_KF
+    VioKf kf;
+    Vec3d specific_force_sum{0., 0., 0.};  // world-axes specific-force velocity change, for gravity
+    double specific_force_time = 0.;
+    int heading_seen = 0;
+#endif
 #if WINDOW_IMU
     WindowImu window;
 #endif
@@ -198,8 +211,12 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
         if (!state.started) {
             std::fill_n(out, VIOBENCH_STATE_VALUES, 0.);
             out[6] = 1.;
+#if VIO_KF
+            state.kf.capture();
+#endif
 #if !LEO_IMU_ONLY
             state.tracker.step(frame, state.rotation, state.imu_position);
+            ++state.tracker_steps;
 #endif
         } else {
             const auto preintegrated = features(time, imu, count);
@@ -218,11 +235,38 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
 #else
             const Vec3d increment = state.rotation * (POSITION_SCALE * Vec3d(motion[0], motion[1], motion[2]));
 #endif
+#if VIO_KF
+            {
+                const double frame_dt = time - state.previous_time;
+                const auto& in = preintegrated.input;
+                const Vec3d dv_cam(in[3], in[4], in[5]), dp_cam(in[6], in[7], in[8]);
+                if (state.specific_force_time < 5.) {
+                    state.specific_force_sum += state.rotation * dv_cam;
+                    state.specific_force_time += frame_dt;
+                }
+                const double sf = cv::norm(state.specific_force_sum);
+                const Vec3d gravity = sf > 1e-9 ? state.specific_force_sum * (-9.81 / sf) : Vec3d(0., 9.81, 0.);
+                state.kf.predict(state.rotation, dv_cam, dp_cam, frame_dt, gravity);
+                state.kf.update_velocity(increment / frame_dt, VIO_KF_SIGMA_NET);
+#if !LEO_IMU_ONLY
+                if (state.tracker_steps % VISUAL_INTERVAL == 0) state.kf.capture();
+#endif
+            }
+            const Vec3d imu_position = state.kf.get(0);
+#else
             const Vec3d imu_position = state.imu_position + increment;
+#endif
 #if LEO_IMU_ONLY
             const Vec3d correction{0., 0., 0.};
 #else
             const Vec3d correction = state.tracker.step(frame, rotation, imu_position);
+            ++state.tracker_steps;
+#if VIO_KF
+            if (state.tracker.heading_count() != state.heading_seen) {
+                state.heading_seen = state.tracker.heading_count();
+                state.kf.update_heading(state.tracker.last_heading(), state.tracker.last_heading_weight());
+            }
+#endif
             if constexpr (ONLINE_GYRO_BIAS) {
                 if (state.tracker.residual_count() != state.residual_seen) {
                     state.residual_seen = state.tracker.residual_count();
@@ -249,6 +293,17 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
                 output_rotation = state.visual_alignment * rotation;
                 previous_output_rotation = state.output_rotation;
             }
+#if VIO_KF && defined(VIO_KF_DEBUG)
+            if (state.tracker_steps % 200 == 0) {
+                const Vec3d v = state.kf.get(3), b = state.kf.get(6);
+                std::fprintf(stderr, "kf t=%.1f upd=%d rej=%d |v|=%.2f v=(%.2f %.2f %.2f) |b|=%.3f sv=%.3f\n", time,
+                    state.kf.heading_updates, state.kf.heading_rejects, cv::norm(v), v[0], v[1], v[2], cv::norm(b),
+                    std::sqrt(state.kf.P(3, 3)));
+            }
+#endif
+#if VIO_KF
+            position = state.kf.get(0);  // the filter replaces dead-reckoned increments and visual nudges
+#endif
             const double dt = time - state.previous_time;
             const Vec3d linear = (output_rotation.t() * (position - state.position)) / dt;
             const Vec3d angular = rotation_vector(previous_output_rotation.t() * output_rotation, state.rigid_extrinsics) / dt;
