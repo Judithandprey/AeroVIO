@@ -10,6 +10,9 @@
 #include <cstdint>
 #include <vector>
 
+#ifndef ESEKF
+#define ESEKF 0
+#endif
 #ifndef ONLINE_GYRO_BIAS
 #define ONLINE_GYRO_BIAS 0
 #endif
@@ -162,6 +165,7 @@ public:
     // Visual translation direction between the last two capture frames (frames where
     // frame_index % VISUAL_INTERVAL == 0), available once the cycle's observation finishes.
     Vec3d last_heading() const { return last_heading_; }
+    Vec3d last_direction() const { return last_direction_; }
     double last_heading_weight() const { return last_heading_weight_; }
     int heading_count() const { return heading_count_; }
     std::array<double,5> diagnostics() const {
@@ -197,7 +201,7 @@ private:
     Vec3d pending_rotation_{0.,0.,0.}, rotation_step_{0.,0.,0.};
     Vec3d last_residual_{0.,0.,0.};
     int residual_count_ = 0;
-    Vec3d last_heading_{0., 0., 0.};
+    Vec3d last_heading_{0., 0., 0.}, last_direction_{0., 0., 0.};
     double last_heading_weight_ = 0.;
     int heading_count_ = 0;
 
@@ -340,7 +344,7 @@ private:
             if constexpr (VISUAL_CONFIDENCE_WEIGHTING || VISUAL_ROTATION_CORRECTION) {
                 ++direct_fits_; quality_sum_ += weight; previous_weight_ = weight;
             }
-            if constexpr (VISUAL_ROTATION_CORRECTION || ONLINE_GYRO_BIAS) {
+            if constexpr (VISUAL_ROTATION_CORRECTION || ONLINE_GYRO_BIAS || ESEKF) {
                 Vec3d residual;
                 if (refine_rotation(matches, direction, std::sqrt(fx_*fy_), residual)) {
                     // refine_rotation returns 0.25x the fitted residual; keep the full one
@@ -357,6 +361,7 @@ private:
             pending_ = (heading * baseline - prior) * (weight / VISUAL_INTERVAL);
             correction_frames_ = VISUAL_INTERVAL;
             last_heading_ = heading;   // world unit direction, previous capture -> this capture
+            last_direction_ = direction;  // same, in the previous capture camera axes
             last_heading_weight_ = weight;
             ++heading_count_;
             previous_visual_heading_ = heading;

@@ -86,3 +86,20 @@ Why it does not help yet: the remaining tilt error on s2-val is 3.5–6° (media
 into the integrated acceleration, faster than the visual direction updates (every 0.4 s, many inconsistent) can
 correct. Making accelerometer scale usable needs orientation in the filter (full error-state EKF), not an external
 rotation.
+
+## Error-state EKF (`-DESEKF=ON`, experimental)
+
+`esekf.h`: 30-state error-state EKF (orientation, position, velocity, gyro/accel bias, gravity, two pose clones).
+Updates: visual translation direction and visual rotation residual between capture frames, plus the network
+velocity as a pseudo-measurement. On s2-val (window net h128, 48 episodes):
+
+| Build | raw ATE (m) | Sim(3) ATE (m) | rotation RMSE | max fuel |
+| --- | ---: | ---: | ---: | ---: |
+| V8 + tilt + online bias + window net (no EKF) | 1.268 | 0.725 | 20.0° | 4.9M |
+| ESEKF + window net, heading sigma 0.15 | 1.272 | 0.749 | 18.4° | 8.3M |
+| ESEKF + window net, heading 0.15, net sigma 0.5 | 1.274 | 0.740 | 17.7° | 8.3M |
+| ESEKF without the network velocity | 44.6 (one episode) | | | |
+
+The filter slightly reduces rotation error but not position error, and without the network it diverges:
+direction-only constraints between consecutive capture pairs are too weak to observe metric scale. A real gain
+would need multi-frame feature constraints (MSCKF-style), which is a larger build.

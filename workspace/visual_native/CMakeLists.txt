@@ -55,6 +55,11 @@ set(WINDOW_WEIGHTS "" CACHE FILEPATH "window_weights.h exported by scripts/train
 if(WINDOW_IMU AND NOT EXISTS "${WINDOW_WEIGHTS}")
     message(FATAL_ERROR "WINDOW_IMU needs -DWINDOW_WEIGHTS=<path to window_weights.h>")
 endif()
+option(ESEKF "Error-state EKF: orientation, position, velocity, biases, gravity" OFF)
+set(ESEKF_SIGMA_NET 0.3 CACHE STRING "ESEKF network velocity noise (m/s)")
+set(ESEKF_SIGMA_HEADING 0.05 CACHE STRING "ESEKF visual direction noise (rad)")
+set(ESEKF_SIGMA_ROT 0.004 CACHE STRING "ESEKF visual rotation residual noise (rad)")
+set(ESEKF_ROT_SIGN 1 CACHE STRING "ESEKF rotation residual sign (1 or -1)")
 option(VIO_KF "Position/velocity Kalman filter: accelerometer + visual direction + weak network velocity" OFF)
 set(VIO_KF_SIGMA_NET 0.3 CACHE STRING "Network velocity pseudo-measurement noise (m/s)")
 set(VIO_KF_SIGMA_HEADING 0.05 CACHE STRING "Visual direction noise (rad)")
@@ -72,6 +77,7 @@ target_compile_definitions(solution PRIVATE
     LEO_IMU_ONLY=$<BOOL:${LEO_IMU_ONLY}> POSITION_SCALE=${POSITION_SCALE}
     GRAVITY_TILT_GAIN=${GRAVITY_TILT_GAIN} GRAVITY_TILT_TAU=${GRAVITY_TILT_TAU} GRAVITY_TILT_ANCHOR=${GRAVITY_TILT_ANCHOR}
     ONLINE_GYRO_BIAS=$<BOOL:${ONLINE_GYRO_BIAS}> ONLINE_GYRO_BIAS_GAIN=${ONLINE_GYRO_BIAS_GAIN} ONLINE_GYRO_BIAS_SIGN=${ONLINE_GYRO_BIAS_SIGN}
+    ESEKF=$<BOOL:${ESEKF}> ESEKF_SIGMA_NET=${ESEKF_SIGMA_NET} ESEKF_SIGMA_HEADING=${ESEKF_SIGMA_HEADING} ESEKF_SIGMA_ROT=${ESEKF_SIGMA_ROT} ESEKF_ROT_SIGN=${ESEKF_ROT_SIGN}
     VIO_KF=$<BOOL:${VIO_KF}> VIO_KF_SIGMA_NET=${VIO_KF_SIGMA_NET} VIO_KF_SIGMA_HEADING=${VIO_KF_SIGMA_HEADING} VIO_KF_SIGMA_V=${VIO_KF_SIGMA_V}
     WINDOW_IMU=$<BOOL:${WINDOW_IMU}> $<$<BOOL:${WINDOW_IMU}>:WINDOW_WEIGHTS_HEADER="${WINDOW_WEIGHTS}">
     VISUAL_CONFIDENCE_WEIGHTING=$<BOOL:${VISUAL_CONFIDENCE_WEIGHTING}>

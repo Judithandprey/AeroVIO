@@ -3,6 +3,12 @@
 #include "inference.h"
 #include "gyro_bias.h"
 #include "gravity_tilt.h"
+#ifndef ESEKF
+#define ESEKF 0
+#endif
+#if ESEKF
+#include "esekf.h"
+#endif
 #ifndef VIO_KF
 #define VIO_KF 0
 #endif
@@ -64,6 +70,10 @@ struct State {
     GravityTilt tilt;
     Vec3d online_bias{0., 0., 0.};  // IMU frame, rad/s, added to the startup calibration
     int residual_seen = 0;
+#if ESEKF
+    Esekf ekf;
+    int ekf_heading_seen = 0, ekf_residual_seen = 0;
+#endif
     int tracker_steps = 0;  // tracker.step calls so far; captures happen when % VISUAL_INTERVAL == 0
 #if VIO_KF
     VioKf kf;
@@ -204,8 +214,77 @@ int32_t init(const char* json, uint32_t size) {
     }
 }
 
+#if ESEKF
+// Full error-state EKF path: the filter owns rotation and position; heuristics (tilt filter, online bias,
+// visual alignment, dead-reckoned increments) are not used.
+static void esekf_step(double time, const uint8_t* frame, const double* imu, int32_t count, double* out) {
+    auto& f = state.ekf;
+    if (!state.started) {
+        std::fill_n(out, VIOBENCH_STATE_VALUES, 0.);
+        out[6] = 1.;
+        f.init(imu, count, state.camera_from_imu);
+        f.capture();
+#if !LEO_IMU_ONLY
+        state.tracker.step(frame, f.R, f.p);
+        ++state.tracker_steps;
+#endif
+        return;
+    }
+    const double dt = time - state.previous_time;
+    const Matx33d R_prev = f.R;
+    const Vec3d p_prev = f.p;
+    const auto pre = features(time, imu, count);
+    f.propagate(imu, count, state.previous_time, time, state.camera_from_imu);
+#if WINDOW_IMU
+    const auto& in = pre.input;
+    const Vec3d t_net = state.window.step(R_prev, Vec3d(in[3], in[4], in[5]), Vec3d(in[0], in[1], in[2]), dt);
+#else
+    const auto motion = infer(pre.input);
+    const Vec3d t_net(motion[0], motion[1], motion[2]);
+#endif
+    f.update_velocity(R_prev * t_net * (POSITION_SCALE / dt), ESEKF_SIGMA_NET);
+#if !LEO_IMU_ONLY
+    if (state.tracker_steps % VISUAL_INTERVAL == 0) f.capture();
+    state.tracker.step(frame, f.R, f.p);
+    ++state.tracker_steps;
+    if (state.tracker.heading_count() != state.ekf_heading_seen) {
+        state.ekf_heading_seen = state.tracker.heading_count();
+        f.update_heading(state.tracker.last_direction(), state.tracker.last_heading_weight());
+    }
+    if (state.tracker.residual_count() != state.ekf_residual_seen) {
+        state.ekf_residual_seen = state.tracker.residual_count();
+        f.update_rotation(state.tracker.last_residual());
+    }
+#endif
+#ifdef ESEKF_DEBUG
+    if (state.tracker_steps % 200 == 0)
+        std::fprintf(stderr, "ekf t=%.1f head %d/%d rot %d/%d |v|=%.2f bg=(%.4f %.4f %.4f) |ba|=%.3f g=(%.2f %.2f %.2f)\n",
+            time, f.heading_ok, f.heading_soft, f.rot_ok, f.rot_soft, cv::norm(f.v), f.bg[0], f.bg[1], f.bg[2],
+            cv::norm(f.ba), f.g[0], f.g[1], f.g[2]);
+#endif
+    const Vec3d linear = (f.R.t() * (f.p - p_prev)) / dt;
+    const Vec3d angular = rotation_vector(R_prev.t() * f.R, state.rigid_extrinsics) / dt;
+    const auto q = quaternion(f.R);
+    std::copy_n(f.p.val, 3, out);
+    std::copy(q.begin(), q.end(), out + 3);
+    std::copy_n(linear.val, 3, out + 7);
+    std::copy_n(angular.val, 3, out + 10);
+    for (int i = 0; i < VIOBENCH_STATE_VALUES; ++i)
+        if (!std::isfinite(out[i])) throw std::runtime_error("nonfinite output");
+}
+#endif
+
 int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count, double* out) {
     try {
+#if ESEKF
+        if (!std::isfinite(time) || count < 0 || (state.started && time <= state.previous_time))
+            throw std::runtime_error("invalid frame time or sample count");
+        esekf_step(time, frame, imu, count, out);
+        state.calibration.observe(time, imu, count);
+        state.previous_time = time;
+        state.started = true;
+        return VIOBENCH_STATUS_OK;
+#endif
         if (!std::isfinite(time) || count < 0 || (state.started && time <= state.previous_time))
             throw std::runtime_error("invalid frame time or sample count");
         if (!state.started) {
