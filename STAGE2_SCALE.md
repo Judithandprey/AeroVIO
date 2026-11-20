@@ -45,3 +45,25 @@ first 5 s and nudges roll/pitch so the 3 s running mean stays aligned with it. Y
 | IMU only, gain 0.5 | public | 3.477 (was 3.524) | | | |
 
 Tilt is fixed, but raw ATE barely moves: the remaining ~45° end error is yaw, which needs vision.
+
+## Online gyro bias from the visual rotation residual (`-DONLINE_GYRO_BIAS=ON`)
+
+Each accepted visual rotation fit (`refine_rotation`, anchor vs current frame, one visual interval apart) leaves a
+residual rotation that is roughly the remaining gyro bias times the interval. We add
+`gain * sign * residual / interval` (mapped to the IMU frame) to the gyro bias, clamped to ±0.05 rad/s.
+The residual sign convention is `ONLINE_GYRO_BIAS_SIGN=-1` (+1 made things worse).
+All rows below use V8 rotation and `GRAVITY_TILT_GAIN=0.5`.
+
+| Online bias | Scale | nohover raw ATE (m) | public raw ATE (m) | nohover end rotation error |
+| --- | ---: | ---: | ---: | ---: |
+| off | 1.0 | 3.179 | 2.992 | 46.7° |
+| gain 0.3 | 1.0 | 3.060 | | 11.2° |
+| **gain 1.0** | 1.0 | **3.023** | **2.976** | **9.9°** |
+| gain 2.5 | 1.0 | 3.128 | | |
+| gain 1.0 | 1.3 | 2.479 | | |
+| gain 1.0 | 1.6 | 1.986 | 1.986 | |
+| gain 1.0 | 2.0 | 1.633 | | |
+
+Rotation is now mostly fixed (end error 47° → 10°). Locally the remaining raw ATE is path length (median Sim(3)
+scale 2.5 at k = 1). The server's stage 2 Sim(3) scales suggested much less (about 1.4 for k = 1), so the safe
+uploads are k = 1.0 (`aerovio-v8-rotfix.wasm`) and k = 1.3 (`aerovio-v8-rotfix-scale1.3.wasm`).

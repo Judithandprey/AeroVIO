@@ -47,6 +47,9 @@ set(POSITION_SCALE 1.0 CACHE STRING "Multiplier on the learned translation incre
 set(GRAVITY_TILT_GAIN 0 CACHE STRING "Gravity tilt correction rate in 1/s (0 disables)")
 set(GRAVITY_TILT_TAU 3 CACHE STRING "Gravity tilt running-average time constant in seconds")
 set(GRAVITY_TILT_ANCHOR 5 CACHE STRING "Seconds used to anchor the gravity direction")
+option(ONLINE_GYRO_BIAS "Re-estimate gyro bias online from the visual rotation residual" OFF)
+set(ONLINE_GYRO_BIAS_GAIN 0.3 CACHE STRING "Online gyro-bias update gain per visual fit")
+set(ONLINE_GYRO_BIAS_SIGN 1 CACHE STRING "Sign convention of the visual residual (1 or -1)")
 option(VISUAL_SPARSE_DIRECTION "Accept strongly constrained fits with eight or nine tracks at 160x120" ON)
 option(VISUAL_CONFIDENCE_WEIGHTING "V8 heuristic quality weighting of accepted direction fits" OFF)
 option(VISUAL_ROTATION_CORRECTION "V8 bounded joint epipolar rotation refinement" OFF)
@@ -59,6 +62,7 @@ target_compile_definitions(solution PRIVATE
     VISUAL_INTERVAL=${VISUAL_INTERVAL} VISUAL_SPARSE_DIRECTION=$<BOOL:${VISUAL_SPARSE_DIRECTION}>
     LEO_IMU_ONLY=$<BOOL:${LEO_IMU_ONLY}> POSITION_SCALE=${POSITION_SCALE}
     GRAVITY_TILT_GAIN=${GRAVITY_TILT_GAIN} GRAVITY_TILT_TAU=${GRAVITY_TILT_TAU} GRAVITY_TILT_ANCHOR=${GRAVITY_TILT_ANCHOR}
+    ONLINE_GYRO_BIAS=$<BOOL:${ONLINE_GYRO_BIAS}> ONLINE_GYRO_BIAS_GAIN=${ONLINE_GYRO_BIAS_GAIN} ONLINE_GYRO_BIAS_SIGN=${ONLINE_GYRO_BIAS_SIGN}
     VISUAL_CONFIDENCE_WEIGHTING=$<BOOL:${VISUAL_CONFIDENCE_WEIGHTING}>
     VISUAL_ROTATION_CORRECTION=$<BOOL:${VISUAL_ROTATION_CORRECTION}>
     USE_SMALL_ANGLE_ROTATION=1 USE_LEARNED_ROTATION_RESIDUAL=0

@@ -10,6 +10,10 @@
 #include <cstdint>
 #include <vector>
 
+#ifndef ONLINE_GYRO_BIAS
+#define ONLINE_GYRO_BIAS 0
+#endif
+
 namespace visual_direction {
 using cv::Matx33d;
 using cv::Point2f;
@@ -153,6 +157,8 @@ public:
     }
 
     Vec3d rotation_step() const { return rotation_step_; }
+    Vec3d last_residual() const { return last_residual_; }
+    int residual_count() const { return residual_count_; }
     std::array<double,5> diagnostics() const {
         return {double(direct_fits_), double(rotation_fits_), quality_sum_,
                 double(carry_fits_), rotation_sum_};
@@ -184,6 +190,8 @@ private:
     int direct_fits_ = 0, rotation_fits_ = 0, carry_fits_ = 0, rotation_frames_ = 0;
     double quality_sum_ = 0., rotation_sum_ = 0., previous_weight_ = 1.;
     Vec3d pending_rotation_{0.,0.,0.}, rotation_step_{0.,0.,0.};
+    Vec3d last_residual_{0.,0.,0.};
+    int residual_count_ = 0;
 
     void make_gray(const uint8_t* rgb) {
         current_.create(height, width, CV_8UC1);
@@ -324,12 +332,18 @@ private:
             if constexpr (VISUAL_CONFIDENCE_WEIGHTING || VISUAL_ROTATION_CORRECTION) {
                 ++direct_fits_; quality_sum_ += weight; previous_weight_ = weight;
             }
-            if constexpr (VISUAL_ROTATION_CORRECTION) {
+            if constexpr (VISUAL_ROTATION_CORRECTION || ONLINE_GYRO_BIAS) {
                 Vec3d residual;
                 if (refine_rotation(matches, direction, std::sqrt(fx_*fy_), residual)) {
-                    pending_rotation_ = anchor_rotation_ * residual / double(VISUAL_INTERVAL);
-                    rotation_frames_ = VISUAL_INTERVAL;
-                    ++rotation_fits_; rotation_sum_ += length(residual);
+                    // refine_rotation returns 0.25x the fitted residual; keep the full one
+                    // (anchor camera frame) for online gyro-bias estimation.
+                    last_residual_ = residual * 4.;
+                    ++residual_count_;
+                    if constexpr (VISUAL_ROTATION_CORRECTION) {
+                        pending_rotation_ = anchor_rotation_ * residual / double(VISUAL_INTERVAL);
+                        rotation_frames_ = VISUAL_INTERVAL;
+                        ++rotation_fits_; rotation_sum_ += length(residual);
+                    }
                 }
             }
             pending_ = (heading * baseline - prior) * (weight / VISUAL_INTERVAL);

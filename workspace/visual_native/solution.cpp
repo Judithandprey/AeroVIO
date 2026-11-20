@@ -23,6 +23,14 @@
 #endif
 // POSITION_SCALE multiplies the learned translation increment. Stage 2 scores
 // unaligned ATE, and the Sim(3)-trained network under-estimates path length.
+#ifndef ONLINE_GYRO_BIAS_GAIN
+#define ONLINE_GYRO_BIAS_GAIN 0.3
+#endif
+#ifndef ONLINE_GYRO_BIAS_SIGN
+#define ONLINE_GYRO_BIAS_SIGN 1.0
+#endif
+static_assert(!(LEO_IMU_ONLY && ONLINE_GYRO_BIAS), "online gyro bias needs the visual tracker");
+
 #ifndef POSITION_SCALE
 #define POSITION_SCALE 1.0
 #endif
@@ -42,6 +50,8 @@ struct State {
     bool rigid_extrinsics = true;
     InitialGyroBias calibration;
     GravityTilt tilt;
+    Vec3d online_bias{0., 0., 0.};  // IMU frame, rad/s, added to the startup calibration
+    int residual_seen = 0;
     visual_direction::Tracker tracker;
     Vec3d imu_position{0., 0., 0.};
     Matx33d visual_alignment = Matx33d::eye();
@@ -92,6 +102,7 @@ Features features(double end_time, const double* imu, int count) {
     Matx33d rotation = Matx33d::eye(), corrected = Matx33d::eye();
     Vec3d velocity{0., 0., 0.}, position{0., 0., 0.};
     double previous = state.previous_time;
+    const Vec3d bias = (state.calibration.accepted ? state.calibration.bias : Vec3d(0., 0., 0.)) + state.online_bias;
     constexpr double timestamp_tolerance = 1.e-6;
     for (int sample = 0; sample < count; ++sample) {
         const auto* row = imu + VIOBENCH_IMU_ROW_VALUES * sample;
@@ -107,8 +118,8 @@ Features features(double end_time, const double* imu, int count) {
         velocity += accel * dt;
         const Vec3d omega{row[4], row[5], row[6]};
         rotation = rotation * rotation_matrix(omega * dt);
-        if (state.calibration.accepted)
-            corrected = corrected * rotation_matrix((omega - state.calibration.bias) * dt);
+        if (state.calibration.accepted || ONLINE_GYRO_BIAS)
+            corrected = corrected * rotation_matrix((omega - bias) * dt);
         previous = time;
     }
     const auto& r = state.camera_from_imu;
@@ -122,7 +133,7 @@ Features features(double end_time, const double* imu, int count) {
         state.camera_features[0], state.camera_features[1],
         state.camera_features[2], state.camera_features[3],
         float(end_time - state.previous_time)};
-    const auto gyro_rotation = state.calibration.accepted
+    const auto gyro_rotation = (state.calibration.accepted || ONLINE_GYRO_BIAS)
         ? r * corrected * r.t()
         : rotation_matrix({input[0], input[1], input[2]});
     return {input, gyro_rotation};
@@ -195,6 +206,18 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             const Vec3d correction{0., 0., 0.};
 #else
             const Vec3d correction = state.tracker.step(frame, rotation, imu_position);
+            if constexpr (ONLINE_GYRO_BIAS) {
+                if (state.tracker.residual_count() != state.residual_seen) {
+                    state.residual_seen = state.tracker.residual_count();
+                    // Residual rotation left over a visual interval ~ remaining bias x interval.
+                    const double interval = VISUAL_INTERVAL * (time - state.previous_time);
+                    const Vec3d measured = state.camera_from_imu.t() * state.tracker.last_residual()
+                        * (ONLINE_GYRO_BIAS_SIGN / interval);
+                    state.online_bias += ONLINE_GYRO_BIAS_GAIN * measured;
+                    for (int axis = 0; axis < 3; ++axis)
+                        state.online_bias[axis] = std::clamp(state.online_bias[axis], -.05, .05);
+                }
+            }
 #endif
             Vec3d position = state.position + increment + correction;
             Matx33d output_rotation = rotation;
