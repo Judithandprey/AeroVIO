@@ -43,6 +43,7 @@ if(LEO_IMU_ONLY AND (VISUAL_ROTATION_CORRECTION OR VISUAL_CONFIDENCE_WEIGHTING))
     message(FATAL_ERROR "LEO_IMU_ONLY disables the visual tracker; turn off the V8 visual options")
 endif()
 
+set(POSITION_SCALE 1.0 CACHE STRING "Multiplier on the learned translation increment (stage 2 metric scale)")
 option(VISUAL_SPARSE_DIRECTION "Accept strongly constrained fits with eight or nine tracks at 160x120" ON)
 option(VISUAL_CONFIDENCE_WEIGHTING "V8 heuristic quality weighting of accepted direction fits" OFF)
 option(VISUAL_ROTATION_CORRECTION "V8 bounded joint epipolar rotation refinement" OFF)
@@ -53,7 +54,7 @@ target_include_directories(solution PRIVATE "${CMAKE_CURRENT_BINARY_DIR}")
 target_compile_definitions(solution PRIVATE
     VISUAL_DOWNSAMPLE=${VISUAL_DOWNSAMPLE} VISUAL_PYRAMID_LEVELS=${pyramid_levels}
     VISUAL_INTERVAL=${VISUAL_INTERVAL} VISUAL_SPARSE_DIRECTION=$<BOOL:${VISUAL_SPARSE_DIRECTION}>
-    LEO_IMU_ONLY=$<BOOL:${LEO_IMU_ONLY}>
+    LEO_IMU_ONLY=$<BOOL:${LEO_IMU_ONLY}> POSITION_SCALE=${POSITION_SCALE}
     VISUAL_CONFIDENCE_WEIGHTING=$<BOOL:${VISUAL_CONFIDENCE_WEIGHTING}>
     VISUAL_ROTATION_CORRECTION=$<BOOL:${VISUAL_ROTATION_CORRECTION}>
     USE_SMALL_ANGLE_ROTATION=1 USE_LEARNED_ROTATION_RESIDUAL=0

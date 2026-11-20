@@ -20,6 +20,11 @@
 #ifndef LEO_IMU_ONLY
 #define LEO_IMU_ONLY 0
 #endif
+// POSITION_SCALE multiplies the learned translation increment. Stage 2 scores
+// unaligned ATE, and the Sim(3)-trained network under-estimates path length.
+#ifndef POSITION_SCALE
+#define POSITION_SCALE 1.0
+#endif
 static_assert(!(LEO_IMU_ONLY && VISUAL_ROTATION_CORRECTION), "LEO_IMU_ONLY has no visual rotation");
 
 namespace {
@@ -181,7 +186,7 @@ int32_t step(double time, const uint8_t* frame, const double* imu, int32_t count
             if constexpr (USE_LEARNED_ROTATION_RESIDUAL)
                 delta = delta * rotation_matrix({motion[3], motion[4], motion[5]});
             const Matx33d rotation = state.rotation * delta;
-            const Vec3d increment = state.rotation * Vec3d(motion[0], motion[1], motion[2]);
+            const Vec3d increment = state.rotation * (POSITION_SCALE * Vec3d(motion[0], motion[1], motion[2]));
             const Vec3d imu_position = state.imu_position + increment;
 #if LEO_IMU_ONLY
             const Vec3d correction{0., 0., 0.};
