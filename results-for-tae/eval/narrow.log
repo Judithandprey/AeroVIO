@@ -1,0 +1,26 @@
+274e6bf2a3725fd0bfaf394ada9533f224ddeadf: ok Sim(3) ATE 1.952 m  RPE 0.585 m/1 s  ATE 3.012 m  rot 32.0 deg  vel 0.810 m/s  filled 0  fuel/frame max 3,480,730 (p95 2,395,851)  wall/frame 0.2 ms
+video: results-for-tae/eval/narrow/logs/274e6bf2a3725fd0bfaf394ada9533f224ddeadf/trajectory.mp4
+9fa0a91632e7a9a9b33de463f1a08db0faab5560: ok Sim(3) ATE 1.891 m  RPE 0.628 m/1 s  ATE 3.799 m  rot 9.1 deg  vel 0.799 m/s  filled 0  fuel/frame max 3,692,443 (p95 2,486,988)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/9fa0a91632e7a9a9b33de463f1a08db0faab5560/trajectory.mp4
+55f923661a09512b24329fbd0ce4f5f121683869: ok Sim(3) ATE 2.022 m  RPE 0.605 m/1 s  ATE 4.298 m  rot 23.6 deg  vel 0.803 m/s  filled 0  fuel/frame max 2,576,414 (p95 2,162,889)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/55f923661a09512b24329fbd0ce4f5f121683869/trajectory.mp4
+42a15407b19ee98ca778c49ca0dc8aac2a203a1f: ok Sim(3) ATE 0.683 m  RPE 0.348 m/1 s  ATE 1.606 m  rot 9.7 deg  vel 0.574 m/s  filled 0  fuel/frame max 4,884,316 (p95 3,434,072)  wall/frame 0.2 ms
+video: results-for-tae/eval/narrow/logs/42a15407b19ee98ca778c49ca0dc8aac2a203a1f/trajectory.mp4
+9175bce94cb61b0555cecfdea5527cbe468585bc: ok Sim(3) ATE 0.774 m  RPE 0.319 m/1 s  ATE 1.750 m  rot 13.3 deg  vel 0.468 m/s  filled 0  fuel/frame max 4,988,746 (p95 3,861,049)  wall/frame 0.2 ms
+video: results-for-tae/eval/narrow/logs/9175bce94cb61b0555cecfdea5527cbe468585bc/trajectory.mp4
+fd25c9b2672e89e74f84be0c3a9bdc1504c19270: ok Sim(3) ATE 0.841 m  RPE 0.370 m/1 s  ATE 2.386 m  rot 40.4 deg  vel 0.533 m/s  filled 0  fuel/frame max 2,661,876 (p95 2,208,039)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/fd25c9b2672e89e74f84be0c3a9bdc1504c19270/trajectory.mp4
+343aeee7c0750ca6ad4c8542148cea1fcad065d9: ok Sim(3) ATE 1.473 m  RPE 0.541 m/1 s  ATE 2.577 m  rot 32.7 deg  vel 0.656 m/s  filled 0  fuel/frame max 2,647,911 (p95 2,060,307)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/343aeee7c0750ca6ad4c8542148cea1fcad065d9/trajectory.mp4
+ce076042f61e2a16b5fa261d6529a60dcfaf1e2b: ok Sim(3) ATE 2.484 m  RPE 0.653 m/1 s  ATE 3.632 m  rot 23.8 deg  vel 0.814 m/s  filled 0  fuel/frame max 2,837,198 (p95 2,213,314)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/ce076042f61e2a16b5fa261d6529a60dcfaf1e2b/trajectory.mp4
+8d7c2ebd4e2acc89a33b5e726322cb17fa0d02cb: ok Sim(3) ATE 1.679 m  RPE 0.514 m/1 s  ATE 2.362 m  rot 10.2 deg  vel 0.637 m/s  filled 0  fuel/frame max 2,904,339 (p95 2,167,096)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/8d7c2ebd4e2acc89a33b5e726322cb17fa0d02cb/trajectory.mp4
+e0ed31d2ebd707d742e3d71a37dd3027f2af1da6: ok Sim(3) ATE 1.628 m  RPE 0.488 m/1 s  ATE 2.434 m  rot 7.4 deg  vel 0.625 m/s  filled 0  fuel/frame max 2,929,432 (p95 2,237,333)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/e0ed31d2ebd707d742e3d71a37dd3027f2af1da6/trajectory.mp4
+db048e08573979f096950454f67c46cd8fbabcc8: ok Sim(3) ATE 0.682 m  RPE 0.383 m/1 s  ATE 1.176 m  rot 42.8 deg  vel 0.588 m/s  filled 0  fuel/frame max 3,396,452 (p95 2,540,704)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/db048e08573979f096950454f67c46cd8fbabcc8/trajectory.mp4
+573771fe8e87b8af856d08e071b9e976e43b96dc: ok Sim(3) ATE 0.581 m  RPE 0.354 m/1 s  ATE 1.051 m  rot 28.9 deg  vel 0.524 m/s  filled 0  fuel/frame max 3,514,674 (p95 2,624,865)  wall/frame 0.1 ms
+video: results-for-tae/eval/narrow/logs/573771fe8e87b8af856d08e071b9e976e43b96dc/trajectory.mp4
+report: results-for-tae/eval/narrow/report.json
+summary: 12/12 episodes completed, raw ATE mean 2.507 m, fuel/frame max 4,988,746 (mean 1,653,008, median 1,415,444, p95 2,765,255, p99 3,525,952)

@@ -1,0 +1,26 @@
+2e487e06a40611c36ae5ddfad6ccdbb278da9b93: ok Sim(3) ATE 0.667 m  RPE 0.158 m/1 s  ATE 1.388 m  rot 11.0 deg  vel 0.187 m/s  filled 0  fuel/frame max 3,251,987 (p95 2,509,646)  wall/frame 0.2 ms
+video: results-for-tae/eval/agile/logs/2e487e06a40611c36ae5ddfad6ccdbb278da9b93/trajectory.mp4
+5d62c98bf5acff3addd94c29dad5ebb0e9f66465: ok Sim(3) ATE 0.640 m  RPE 0.118 m/1 s  ATE 1.647 m  rot 19.8 deg  vel 0.144 m/s  filled 0  fuel/frame max 2,656,036 (p95 2,145,186)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/5d62c98bf5acff3addd94c29dad5ebb0e9f66465/trajectory.mp4
+91117cd4dedf6322de2403e9afcd18a746a1a294: ok Sim(3) ATE 0.634 m  RPE 0.148 m/1 s  ATE 1.356 m  rot 7.4 deg  vel 0.180 m/s  filled 0  fuel/frame max 3,016,561 (p95 2,335,351)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/91117cd4dedf6322de2403e9afcd18a746a1a294/trajectory.mp4
+31f42c282da0a07312b19236cb46270cf7d6a6d6: ok Sim(3) ATE 0.579 m  RPE 0.139 m/1 s  ATE 1.652 m  rot 20.1 deg  vel 0.169 m/s  filled 0  fuel/frame max 3,083,144 (p95 2,443,774)  wall/frame 0.2 ms
+video: results-for-tae/eval/agile/logs/31f42c282da0a07312b19236cb46270cf7d6a6d6/trajectory.mp4
+a070c6a13d25d7c285a4250439ff102b62173144: ok Sim(3) ATE 0.410 m  RPE 0.140 m/1 s  ATE 0.790 m  rot 14.2 deg  vel 0.187 m/s  filled 0  fuel/frame max 3,464,247 (p95 2,357,780)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/a070c6a13d25d7c285a4250439ff102b62173144/trajectory.mp4
+1ec26622c603b27fe40b06e45ddcf60b9af24bbb: ok Sim(3) ATE 0.610 m  RPE 0.166 m/1 s  ATE 1.166 m  rot 28.4 deg  vel 0.201 m/s  filled 0  fuel/frame max 2,972,558 (p95 2,483,069)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/1ec26622c603b27fe40b06e45ddcf60b9af24bbb/trajectory.mp4
+01df15eff793257656f98ca3ac56e14f39996c62: ok Sim(3) ATE 0.287 m  RPE 0.122 m/1 s  ATE 0.954 m  rot 8.7 deg  vel 0.171 m/s  filled 0  fuel/frame max 2,757,778 (p95 2,364,767)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/01df15eff793257656f98ca3ac56e14f39996c62/trajectory.mp4
+2c6e254b8703f01ecfe306429d8ccda54e5b13ac: ok Sim(3) ATE 0.484 m  RPE 0.133 m/1 s  ATE 0.585 m  rot 8.6 deg  vel 0.159 m/s  filled 0  fuel/frame max 2,969,109 (p95 2,445,753)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/2c6e254b8703f01ecfe306429d8ccda54e5b13ac/trajectory.mp4
+c1fc74c41951dd916bc791816dcd164dd2215b7d: ok Sim(3) ATE 0.527 m  RPE 0.158 m/1 s  ATE 1.040 m  rot 3.9 deg  vel 0.185 m/s  filled 0  fuel/frame max 2,685,532 (p95 2,147,006)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/c1fc74c41951dd916bc791816dcd164dd2215b7d/trajectory.mp4
+4aa4f12d41eb1619c607eebf60775b1ba2e01bc4: ok Sim(3) ATE 0.686 m  RPE 0.166 m/1 s  ATE 1.040 m  rot 12.9 deg  vel 0.185 m/s  filled 0  fuel/frame max 3,698,407 (p95 2,581,391)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/4aa4f12d41eb1619c607eebf60775b1ba2e01bc4/trajectory.mp4
+5feda068a214640facb4778301d755b3b17d8288: ok Sim(3) ATE 1.015 m  RPE 0.156 m/1 s  ATE 1.869 m  rot 38.0 deg  vel 0.173 m/s  filled 0  fuel/frame max 2,529,436 (p95 2,117,955)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/5feda068a214640facb4778301d755b3b17d8288/trajectory.mp4
+ff202b84cbec00dd71d7a299b879752f159a0b0a: ok Sim(3) ATE 0.654 m  RPE 0.143 m/1 s  ATE 1.123 m  rot 9.9 deg  vel 0.171 m/s  filled 0  fuel/frame max 2,603,858 (p95 2,137,554)  wall/frame 0.1 ms
+video: results-for-tae/eval/agile/logs/ff202b84cbec00dd71d7a299b879752f159a0b0a/trajectory.mp4
+report: results-for-tae/eval/agile/report.json
+summary: 12/12 episodes completed, raw ATE mean 1.217 m, fuel/frame max 3,698,407 (mean 1,656,856, median 1,552,345, p95 2,371,965, p99 2,658,273)

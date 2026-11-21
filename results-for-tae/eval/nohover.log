@@ -1,0 +1,18 @@
+0fa2fd2e4e6019b6c327bf8142ef0b0f3f8b7fb8: ok Sim(3) ATE 0.297 m  RPE 0.134 m/1 s  ATE 0.735 m  rot 5.3 deg  vel 0.176 m/s  filled 0  fuel/frame max 4,544,013 (p95 3,312,757)  wall/frame 0.2 ms
+video: results-for-tae/eval/nohover/logs/0fa2fd2e4e6019b6c327bf8142ef0b0f3f8b7fb8/trajectory.mp4
+3f6b86a2ded7bb2ca2cd36041b5ebcef4556ffa1: ok Sim(3) ATE 0.409 m  RPE 0.142 m/1 s  ATE 0.979 m  rot 8.6 deg  vel 0.167 m/s  filled 0  fuel/frame max 2,704,534 (p95 2,296,485)  wall/frame 0.1 ms
+video: results-for-tae/eval/nohover/logs/3f6b86a2ded7bb2ca2cd36041b5ebcef4556ffa1/trajectory.mp4
+9ea330dbd6fba2846a3878df70ca747ef653c049: ok Sim(3) ATE 0.807 m  RPE 0.241 m/1 s  ATE 1.600 m  rot 14.7 deg  vel 0.254 m/s  filled 0  fuel/frame max 2,650,512 (p95 2,295,378)  wall/frame 0.1 ms
+video: results-for-tae/eval/nohover/logs/9ea330dbd6fba2846a3878df70ca747ef653c049/trajectory.mp4
+3fb64866d9941f1bc9e46c769def4bc4ca4d8000: ok Sim(3) ATE 1.086 m  RPE 0.209 m/1 s  ATE 1.931 m  rot 11.2 deg  vel 0.227 m/s  filled 0  fuel/frame max 2,976,325 (p95 2,495,286)  wall/frame 0.2 ms
+video: results-for-tae/eval/nohover/logs/3fb64866d9941f1bc9e46c769def4bc4ca4d8000/trajectory.mp4
+29173ad3959088e89b0627e2cde254373061eb0f: ok Sim(3) ATE 0.597 m  RPE 0.175 m/1 s  ATE 1.024 m  rot 14.9 deg  vel 0.207 m/s  filled 0  fuel/frame max 2,546,006 (p95 2,268,178)  wall/frame 0.1 ms
+video: results-for-tae/eval/nohover/logs/29173ad3959088e89b0627e2cde254373061eb0f/trajectory.mp4
+1a71e2d5a3708594cc79e01ccd6a17358ced369f: ok Sim(3) ATE 0.824 m  RPE 0.207 m/1 s  ATE 1.384 m  rot 8.9 deg  vel 0.243 m/s  filled 0  fuel/frame max 2,922,580 (p95 2,428,462)  wall/frame 0.1 ms
+video: results-for-tae/eval/nohover/logs/1a71e2d5a3708594cc79e01ccd6a17358ced369f/trajectory.mp4
+f3cc5e0d16e4252bb2040ab0cd2aa70232f5b587: ok Sim(3) ATE 0.926 m  RPE 0.185 m/1 s  ATE 2.479 m  rot 7.3 deg  vel 0.207 m/s  filled 0  fuel/frame max 2,376,645 (p95 2,092,459)  wall/frame 0.1 ms
+video: results-for-tae/eval/nohover/logs/f3cc5e0d16e4252bb2040ab0cd2aa70232f5b587/trajectory.mp4
+b105a1333136f901c286f94389475fa4e9bb4563: ok Sim(3) ATE 0.631 m  RPE 0.160 m/1 s  ATE 1.074 m  rot 7.6 deg  vel 0.185 m/s  filled 0  fuel/frame max 2,329,994 (p95 2,084,770)  wall/frame 0.1 ms
+video: results-for-tae/eval/nohover/logs/b105a1333136f901c286f94389475fa4e9bb4563/trajectory.mp4
+report: results-for-tae/eval/nohover/report.json
+summary: 8/8 episodes completed, raw ATE mean 1.401 m, fuel/frame max 4,544,013 (mean 1,663,986, median 1,535,025, p95 2,405,161, p99 3,013,236)

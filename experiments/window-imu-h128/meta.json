@@ -1,0 +1,322 @@
+{
+ "window": 40,
+ "inputs": 241,
+ "hidden": 128,
+ "train": [
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-103-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-103-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-109-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-109-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-115-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-115-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-127-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-127-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-13-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-13-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-133-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-133-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-139-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-139-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-145-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-145-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-151-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-151-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-157-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-157-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-163-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-163-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-169-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-169-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-175-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-175-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-181-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-181-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-187-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-187-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-19-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-19-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-193-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-193-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-25-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-25-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-31-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-31-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-37-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-37-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-43-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-43-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-49-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-49-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-55-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-55-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-61-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-61-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-67-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-67-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-7-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-7-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-73-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-73-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-79-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-79-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-85-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-85-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-91-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-91-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-97-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/train/sim-ProcTHOR-Train-97-0001.zip"
+ ],
+ "val": [
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-10-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-10-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-110-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-110-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-150-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-150-0001.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-70-0000.zip",
+  "/home/leopouilly/AeroVIO/data/train-nohover/validation/sim-ProcTHOR-Train-70-0001.zip"
+ ],
+ "log": [
+  {
+   "epoch": 1,
+   "train_mse": 0.5412,
+   "val_step_rmse_m": 0.00969,
+   "val_ate_gt_rotation_m": 1.673,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 2,
+   "train_mse": 0.4009,
+   "val_step_rmse_m": 0.0092,
+   "val_ate_gt_rotation_m": 1.517,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 3,
+   "train_mse": 0.3481,
+   "val_step_rmse_m": 0.00939,
+   "val_ate_gt_rotation_m": 1.69,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 4,
+   "train_mse": 0.3155,
+   "val_step_rmse_m": 0.00941,
+   "val_ate_gt_rotation_m": 1.758,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 5,
+   "train_mse": 0.286,
+   "val_step_rmse_m": 0.00962,
+   "val_ate_gt_rotation_m": 1.905,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 6,
+   "train_mse": 0.2628,
+   "val_step_rmse_m": 0.00947,
+   "val_ate_gt_rotation_m": 1.808,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 7,
+   "train_mse": 0.2422,
+   "val_step_rmse_m": 0.00929,
+   "val_ate_gt_rotation_m": 1.697,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 8,
+   "train_mse": 0.2241,
+   "val_step_rmse_m": 0.00947,
+   "val_ate_gt_rotation_m": 1.732,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 9,
+   "train_mse": 0.2108,
+   "val_step_rmse_m": 0.00947,
+   "val_ate_gt_rotation_m": 1.474,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 10,
+   "train_mse": 0.1982,
+   "val_step_rmse_m": 0.00927,
+   "val_ate_gt_rotation_m": 1.526,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 11,
+   "train_mse": 0.1873,
+   "val_step_rmse_m": 0.00951,
+   "val_ate_gt_rotation_m": 1.735,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 12,
+   "train_mse": 0.1782,
+   "val_step_rmse_m": 0.00967,
+   "val_ate_gt_rotation_m": 1.597,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 13,
+   "train_mse": 0.1682,
+   "val_step_rmse_m": 0.00924,
+   "val_ate_gt_rotation_m": 1.325,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 14,
+   "train_mse": 0.1598,
+   "val_step_rmse_m": 0.00954,
+   "val_ate_gt_rotation_m": 1.499,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 15,
+   "train_mse": 0.1556,
+   "val_step_rmse_m": 0.00943,
+   "val_ate_gt_rotation_m": 1.579,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 16,
+   "train_mse": 0.1482,
+   "val_step_rmse_m": 0.00954,
+   "val_ate_gt_rotation_m": 1.425,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 17,
+   "train_mse": 0.1412,
+   "val_step_rmse_m": 0.00969,
+   "val_ate_gt_rotation_m": 1.578,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 18,
+   "train_mse": 0.1364,
+   "val_step_rmse_m": 0.00979,
+   "val_ate_gt_rotation_m": 1.655,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 19,
+   "train_mse": 0.1318,
+   "val_step_rmse_m": 0.00966,
+   "val_ate_gt_rotation_m": 1.4,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 20,
+   "train_mse": 0.1275,
+   "val_step_rmse_m": 0.00975,
+   "val_ate_gt_rotation_m": 1.495,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 21,
+   "train_mse": 0.1238,
+   "val_step_rmse_m": 0.00968,
+   "val_ate_gt_rotation_m": 1.471,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 22,
+   "train_mse": 0.1211,
+   "val_step_rmse_m": 0.00964,
+   "val_ate_gt_rotation_m": 1.457,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 23,
+   "train_mse": 0.1183,
+   "val_step_rmse_m": 0.00971,
+   "val_ate_gt_rotation_m": 1.472,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 24,
+   "train_mse": 0.1159,
+   "val_step_rmse_m": 0.00962,
+   "val_ate_gt_rotation_m": 1.377,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 25,
+   "train_mse": 0.1141,
+   "val_step_rmse_m": 0.00971,
+   "val_ate_gt_rotation_m": 1.395,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 26,
+   "train_mse": 0.1123,
+   "val_step_rmse_m": 0.0097,
+   "val_ate_gt_rotation_m": 1.369,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 27,
+   "train_mse": 0.111,
+   "val_step_rmse_m": 0.00973,
+   "val_ate_gt_rotation_m": 1.43,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 28,
+   "train_mse": 0.1101,
+   "val_step_rmse_m": 0.00974,
+   "val_ate_gt_rotation_m": 1.431,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 29,
+   "train_mse": 0.1094,
+   "val_step_rmse_m": 0.00971,
+   "val_ate_gt_rotation_m": 1.406,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  },
+  {
+   "epoch": 30,
+   "train_mse": 0.109,
+   "val_step_rmse_m": 0.00971,
+   "val_ate_gt_rotation_m": 1.411,
+   "val_ate_constant_speed_m": 1.354,
+   "seconds": 0.1
+  }
+ ],
+ "best_val_ate_gt_rotation_m": 1.324792042374611
+}
